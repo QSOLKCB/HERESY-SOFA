@@ -10,6 +10,10 @@
 
 [The isolated HERESY-011 fixture](../experiments/HERESY-011/run.py) forces an atomic swap in a disposable Linux directory, compares the unsafe pathname-check/open with target-correct open/fstat/same-FD read, and records real timeouts and outcomes. The experiment does **not** execute TOMBSTONE's Rust binary or reproduce production conditions. Generated receipts stay in the ignored receipts/generated directory; they are not committed as executed evidence.
 
+## Published Blueprint
+
+The [SOFA-published design and evidence boundaries](../blueprints/HERESY-011/README.md) include a [verbatim snapshot of the Blueprint body](../blueprints/HERESY-011/BLUEPRINT.md).
+
 ## Mitigation and limitations
 
 Validate the opened descriptor, use O_NONBLOCK plus the target-appropriate O_NOFOLLOW, and read only that descriptor with a strict length limit. Neither a correctly formatted local anchor nor a green test establishes independent custody, physical history or hardware proof. Both x86-64 and ARM64 jobs executed on supported Linux CI runners; this does not establish other targets.
