@@ -20,6 +20,6 @@ Native os.O_NOFOLLOW is checked against the supported Linux target ABI. **Only o
 
 The deterministic interleaving proves a race is possible; it does not measure probability or execute the original TOMBSTONE CLI. No claims for other Linux platforms, Windows, malicious kernels, real hardware, filesystem deletion, signer identity, chronology, or independent custody. An anchor file alone does not authenticate its source.
 
-Require real x86-64 and ARM64 HERESY-SOFA CI runs, local receipt integrity, and independent review before promoting to a Blueprint or SOFA publication. **Not published.**
+The x86-64 and ARM64 checks passed in HERESY-SOFA run `41332181292`, and repository evidence checks passed in run `41332181270`. Codex reported no actionable issues at reviewed commit `bbc666ff26fb66552c069d49e22308cc30242a46`. **SOFA Blueprint published** under ID `31f6e754-bf85-4e81-b626-ea17d0d70fb9` (reviewed, human-requested publication; no automatic publishing enabled).
 
 > The pathname supplied an alibi. The descriptor testified under oath. The hardcoded flag attempted to flee to another architecture.
