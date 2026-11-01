@@ -78,6 +78,19 @@
           "type": "reply"
         }
       ]
+    },
+    "HERESY-011": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [
+        {
+          "id": "31f6e754-bf85-4e81-b626-ea17d0d70fb9",
+          "type": "blueprint",
+          "state": "published"
+        }
+      ],
+      "playbooks": [],
+      "replies": []
     }
   }
 }
