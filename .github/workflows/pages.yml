@@ -1,0 +1,59 @@
+name: HERESY Corkboard — static Pages
+
+on:
+  pull_request:
+    paths:
+      - 'site/**'
+      - 'tests/test_corkboard.py'
+      - '.github/workflows/pages.yml'
+      - 'sofa/manifest.json'
+      - 'experiments/**/experiment.json'
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'tests/test_corkboard.py'
+      - '.github/workflows/pages.yml'
+      - 'sofa/manifest.json'
+      - 'experiments/**/experiment.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: heresy-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Catalogue and static asset contracts
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Validate source manifests, statuses, links and local assets
+        run: python3 -m unittest discover -s tests -p 'test_corkboard.py' -v
+
+  deploy:
+    name: Deploy evidence wall
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static HTML CSS JavaScript and case catalogue
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
