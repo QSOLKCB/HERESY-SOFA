@@ -66,11 +66,11 @@ See the [evidence review checklist](docs/EVIDENCE_REVIEW.md) before promoting an
 
 ## QSOL CHAOS — guarded pilot
 
-See [CHAOS pilot v0.1.0](docs/CHAOS_PILOT.md). The new `chaos_pilot/` provides pinned public research scope, no-cost local triage, an optional explicitly approved *single-request* Responses API adapter, and a conservative local budget ledger. Default actions neither call the network nor execute model output.
+See [CHAOS pilot v0.1.0](docs/CHAOS_PILOT.md). The new `chaos_pilot/` provides pinned public research scope, byte-exact snapshot hashing, no-cost local triage, offline model-review planning, and a simulated budget ledger. **No external API integration, credential handling, network requests or model execution is included**, in accordance with [AGENTS.md](AGENTS.md).
 
 ```sh
 python3 -m chaos_pilot dry-run
 python3 -m unittest discover -s tests -p 'test_chaos_pilot.py' -v
 ```
 
-**No paid calls, credential access, SOFA submissions, production scans or auto-merges are performed by CI.**
+**No cloud services, paid calls, credential access, SOFA submissions, production scans or auto-merges are introduced by this pilot.**
