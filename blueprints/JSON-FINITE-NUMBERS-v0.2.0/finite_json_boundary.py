@@ -90,27 +90,32 @@ def create_handler():
         def log_message(self, fmt, *args):
             pass
 
-        def reply(self, status, body):
+        def reply(self, status, body, *, close=False):
+            # Early errors can leave unread request bytes on an HTTP/1.1 socket.
+            # The next request must never be parsed from those leftover bytes.
+            if close:
+                self.close_connection = True
             payload = strict_json(body)
             self.send_response(status)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(payload)))
+            if close:
+                self.send_header("Connection", "close")
             self.end_headers()
             self.wfile.write(payload)
 
         def do_POST(self):
             if self.path != "/measure":
-                return self.reply(404, {"error": "not found"})
+                return self.reply(404, {"error": "not found"}, close=True)
             if self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower() != "application/json":
-                return self.reply(415, {"error": "expected application/json"})
+                return self.reply(415, {"error": "expected application/json"}, close=True)
             try:
                 size_text = self.headers.get("Content-Length")
                 if size_text is None or not size_text.isascii() or not size_text.isdigit():
-                    return self.reply(411, {"error": "valid Content-Length required"})
+                    return self.reply(411, {"error": "valid Content-Length required"}, close=True)
                 size = int(size_text)
                 if size > MAX_BODY_BYTES:
-                    self.close_connection = True
-                    return self.reply(413, {"error": "request body exceeds size limit"})
+                    return self.reply(413, {"error": "request body exceeds size limit"}, close=True)
                 document = parse_body(self.rfile.read(size))
                 value = domain_value(document)
             except BoundaryError as exc:
