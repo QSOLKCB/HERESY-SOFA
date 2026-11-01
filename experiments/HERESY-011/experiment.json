@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-011",
+  "title": "The Anchor That Became a FIFO",
+  "status": "implemented",
+  "platform": "Linux x86-64 or AArch64; Python 3 standard library, glibc renameat2",
+  "entrypoint": "run.py"
+}
