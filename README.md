@@ -32,6 +32,7 @@ Receipts are written to `receipts/generated/` and are intentionally not committe
 | HERESY-005 | CUDA assertion behaviour | Placeholder; not tested |
 | HERESY-006 | NetworkX Louvain instability | Placeholder; not tested |
 | HERESY-007 | Git conflict-marker pathology | Placeholder; not tested |
+| [HERESY-008](experiments/HERESY-008/experiment.md) | The Git Identity Crisis — PEBKAC / Layer 8 / ID-10-T | Executable on Linux with Git; Windows batch untested |
 
 Use `python3 -m harness verify-all` to validate all generated receipts and their evidence hashes. `python3 -m unittest discover -s tests -v` runs the regression suite.
 
@@ -52,3 +53,7 @@ python3 -m unittest discover -s blueprints/JSON-FINITE-NUMBERS-v0.2.0 -p 'test_*
 ```
 
 See the [evidence review checklist](docs/EVIDENCE_REVIEW.md) before promoting any new experiment or Blueprint. This repository does not require Node.js and does not publish to SOFA.
+
+## Incident reports
+
+[The Git Identity Crisis — HERESY-008](incidents/HERESY-008.md) records the operator-controlled `GIT_DIR` incident, the wrong-index staging demonstration, and fail-closed evidence. The [incident index](incidents/README.md) distinguishes observed outcomes from satirical verdicts.
