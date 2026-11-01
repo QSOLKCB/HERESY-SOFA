@@ -23,6 +23,7 @@ class Assets(HTMLParser):
         self.paths = []
         self.has_main = False
         self.dialogs = []
+        self.dialog_labels = {}
         self.canvases = []
 
     def handle_starttag(self, tag, attrs):
@@ -31,6 +32,7 @@ class Assets(HTMLParser):
             self.has_main = True
         if tag == "dialog":
             self.dialogs.append(attributes.get("id"))
+            self.dialog_labels[attributes.get("id")] = attributes.get("aria-labelledby")
         if tag == "canvas":
             self.canvases.append(attributes.get("id"))
         if tag == "script" and "src" in attributes:
@@ -94,6 +96,35 @@ class CorkboardTests(unittest.TestCase):
             key = tuple(sorted(pair))
             self.assertNotIn(key, seen)
             seen.add(key)
+
+    def test_dialog_name_resolves_to_selected_case_heading(self):
+        # Structural check, not a claimed assistive-technology/browser test.
+        parser = Assets()
+        parser.feed((SITE / "index.html").read_text(encoding="utf-8"))
+        self.assertEqual(parser.dialog_labels.get("case-dialog"), "dialog-title")
+        js = (SITE / "app.js").read_text(encoding="utf-8")
+        self.assertIn('const heading = make("h2", "dossier-title", item.name);', js)
+        self.assertIn('heading.id = "dialog-title";', js)
+        self.assertIn("body.append(heading);", js)
+        self.assertIn("detail.replaceChildren();", js)
+
+    def test_canvas_redraw_lifecycle_covers_transform_and_reversal(self):
+        # Regression contract for dynamically positioned pins. CSS transforms
+        # do not trigger ResizeObserver; only a real browser can verify pixels.
+        js = (SITE / "app.js").read_text(encoding="utf-8")
+        css = (SITE / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('event.propertyName !== "transform"', js)
+        self.assertIn('["transitionrun", "transitionend", "transitioncancel"]', js)
+        self.assertIn('root.addEventListener(type, trackCardTransition)', js)
+        self.assertIn("activeTransitions.add(event.target)", js)
+        self.assertIn("activeTransitions.delete(event.target)", js)
+        self.assertIn("if (activeTransitions.size > 0) requestDrawing();", js)
+        for event in ("pointerenter", "pointerleave", "focus", "blur"):
+            self.assertIn(event, js)
+        self.assertIn(".case-card:hover,.case-card:focus-visible", css)
+        self.assertIn("transition:transform", css)
+        self.assertIn("getBoundingClientRect()", js)
+        self.assertIn("@media(prefers-reduced-motion:reduce)", css)
 
     def test_case_sources_exist_and_no_external_runtime_dependencies(self):
         parser = Assets()
