@@ -64,6 +64,11 @@
     paper.append(foot);
     button.append(paper);
     button.addEventListener("click", () => openDossier(item, button));
+    // Handle instant transforms too (reduced-motion, or a zero-duration CSS
+    // transition). Animated transforms are tracked below until completion.
+    for (const name of ["pointerenter", "pointerleave", "focus", "blur"]) {
+      button.addEventListener(name, requestDrawing);
+    }
     root.append(button);
   }
   function rule(title, body) {
@@ -78,7 +83,9 @@
     const body = make("div", "dossier-content");
     const s = status(item);
     body.append(make("div", "dossier-kicker", item.category + " / " + item.type));
-    body.append(make("h2", "dossier-title", item.name));
+    const heading = make("h2", "dossier-title", item.name);
+    heading.id = "dialog-title"; // Resolves the modal's aria-labelledby.
+    body.append(heading);
     body.append(make("p", "dossier-description", item.teaser));
     const stamps = make("div", "dossier-stamps");
     stamps.append(make("span",item.status === "placeholder" ? "unverified" : "verified",s.extended));
@@ -156,10 +163,33 @@
     state.query = search.value.trim().toLowerCase();
     updateView();
   });
+  // ResizeObserver does not observe CSS transforms: a moving card also moves
+  // its pin. Follow the transform on every animation frame while it is active,
+  // then redraw once at the exact final position (including reversals/cancels).
+  const activeTransitions = new Set();
   let frame = 0;
   function requestDrawing() {
-    if (frame) cancelAnimationFrame(frame);
-    frame = requestAnimationFrame(() => {frame = 0; drawThreads();});
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      drawThreads();
+      if (activeTransitions.size > 0) requestDrawing();
+    });
+  }
+  function trackCardTransition(event) {
+    if (event.propertyName !== "transform" ||
+        !event.target.classList?.contains("case-card")) return;
+    if (event.type === "transitionrun") {
+      activeTransitions.add(event.target);
+    } else {
+      activeTransitions.delete(event.target);
+    }
+    // Both transitionend and transitioncancel need a final redraw. A rapid
+    // hover reversal emits cancel then run; the new run resumes the loop.
+    requestDrawing();
+  }
+  for (const type of ["transitionrun", "transitionend", "transitioncancel"]) {
+    root.addEventListener(type, trackCardTransition);
   }
   function drawThreads() {
     const ctx = canvas.getContext("2d");
