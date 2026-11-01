@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-005",
+  "title": "CUDA assertion behaviour",
+  "status": "placeholder",
+  "platform": "CUDA-capable environment required",
+  "entrypoint": null
+}

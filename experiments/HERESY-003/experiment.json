@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-003",
+  "title": "Schrödinger's SQLite Backup",
+  "status": "implemented",
+  "platform": "Python 3 standard library sqlite3; Linux-first",
+  "entrypoint": "run.py"
+}

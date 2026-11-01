@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-006",
+  "title": "NetworkX Louvain instability",
+  "status": "placeholder",
+  "platform": "NetworkX environment required",
+  "entrypoint": null
+}

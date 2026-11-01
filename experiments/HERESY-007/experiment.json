@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-007",
+  "title": "Git conflict-marker pathology",
+  "status": "placeholder",
+  "platform": "Git environment required",
+  "entrypoint": null
+}
