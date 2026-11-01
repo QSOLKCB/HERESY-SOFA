@@ -40,12 +40,12 @@ class GitDirIncidentTests(unittest.TestCase):
             marker = root / "hook-executed"
             hook = hooks / "pre-commit"
             hook.write_text(
-                '#!/bin/sh\\nprintf invoked > "' + str(marker) + '"\\nexit 42\\n',
+                '#!/bin/sh\nprintf invoked > "' + str(marker) + '"\nexit 42\n',
                 encoding="utf-8",
             )
             hook.chmod(0o755)
             config.write_text(
-                "[core]\\n    hooksPath = " + str(hooks) + "\\n",
+                "[core]\n    hooksPath = " + str(hooks) + "\n",
                 encoding="utf-8",
             )
             from harness.runner import ROOT
