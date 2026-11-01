@@ -18,6 +18,8 @@
 - Promote CUDA assertion, NetworkX Louvain, and Git conflict-marker placeholders only after a minimal reproduction, safe fixtures, and a tested mitigation exist.
 - Add Windows execution evidence before making claims about `cmd.exe`.
 
+- [x] Add HERESY-008 PEBKAC/Layer-8 incident as a separate executable Git experiment with negative-control receipt tests; keep the existing CUDA, NetworkX and conflict-marker placeholders unchanged.
+
 ## Stage 4 — SOFA contributions
 
 - Prepare reviewed drafts and link them to local experiments.

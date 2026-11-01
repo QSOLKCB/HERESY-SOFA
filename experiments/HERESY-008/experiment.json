@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-008",
+  "title": "The Git Identity Crisis",
+  "status": "implemented",
+  "platform": "Git CLI + Python 3; Linux-tested, Windows cmd.exe not tested",
+  "entrypoint": "run.py"
+}
