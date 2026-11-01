@@ -57,6 +57,9 @@ def main():
                 "GIT_NAMESPACE", "GIT_CONFIG", "GIT_CONFIG_COUNT",
                 "GIT_CONFIG_GLOBAL", "GIT_CONFIG_SYSTEM"):
         env.pop(key, None)
+    # Unsetting GIT_CONFIG_GLOBAL re-enables HOME/.gitconfig and XDG config.
+    # Point it at the null device so inherited hooks/signing cannot affect fixtures.
+    env["GIT_CONFIG_GLOBAL"] = os.devnull
     env["GIT_CONFIG_NOSYSTEM"] = "1"
     with tempfile.TemporaryDirectory(prefix="heresy-008-") as root:
         target = Path(root) / "target checkout"
