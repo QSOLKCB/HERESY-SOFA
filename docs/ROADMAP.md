@@ -23,6 +23,7 @@
   - Positive controls: valid regular 64-hex anchor accepted; negative controls: FIFO and symlink fail promptly, repeated concurrent rename-exchange never blocks or follows a substituted link, invalid/nonregular descriptor returns a deterministic error. Record actual exit codes, timeouts, descriptor type, toolchain and source commit as evidence rather than claiming a successful race from inference.
   - [x] Implement isolated deterministic Linux Python reproduction and bounded subprocess timeouts (no production targets). [x] Both supported Linux architecture CI runs and exact-head review passed; reviewed Blueprint published on SOFA. **No auto-publishing.**
 - [x] Add SQLite WAL queue double-drain (HERESY-009) and UTF-16/JCS key-ordering (HERESY-010) experiments with bounded evidence and SOFA replies.
+- [x] **HERESY-012 — The Four Revocations in a Trench Coat:** independently reproduce QEC #623's originally weak JUnit family-count completeness logic using synthetic standard-library XML, then compare against exact node-ID validation. Keep QEC's executed signed IRC trials and local HERESY synthetic model distinct; prepare an **unpublished** SOFA candidate. No claim that QEC actually omitted revocation tests.
 - Add Windows execution evidence before making claims about `cmd.exe`.
 
 - [x] Add HERESY-008 PEBKAC/Layer-8 incident as a separate executable Git experiment with negative-control receipt tests; keep the existing CUDA, NetworkX and conflict-marker placeholders unchanged.
