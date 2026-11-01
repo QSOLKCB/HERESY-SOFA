@@ -1,4 +1,5 @@
 """Independent integration and parser-contract evidence; Python stdlib only."""
+import http.client
 import json
 import math
 import subprocess
@@ -121,6 +122,70 @@ class ApiIntegration(unittest.TestCase):
 
     def test_15_works_through_non_ascii_transport(self):
         self.assertEqual(self.send('{"value":1,"note":"café"}')[0], 200)
+
+
+    def test_16_early_rejections_close_unread_body_before_next_request(self):
+        cases = (
+            ("/unknown", "application/json", b'{"value":1}', 404, True),
+            ("/measure", "text/plain", b'{"value":1}', 415, True),
+            ("/measure", "application/json", b'{"value":1}', 411, False),
+            ("/measure", "application/json", b"x" * (MAX_BODY_BYTES + 1), 413, True),
+        )
+        for path, content_type, body, expected_status, send_length in cases:
+            with self.subTest(status=expected_status):
+                connection = http.client.HTTPConnection(
+                    "127.0.0.1", self.server.server_port, timeout=3
+                )
+                try:
+                    if send_length:
+                        connection.request("POST", path, body=body,
+                                           headers={"Content-Type": content_type})
+                    else:
+                        # http.client.request adds Content-Length automatically;
+                        # manually construct an unframed body to exercise 411.
+                        connection.putrequest("POST", path)
+                        connection.putheader("Content-Type", content_type)
+                        connection.endheaders(body)
+                    response = connection.getresponse()
+                    self.assertEqual(response.status, expected_status)
+                    self.assertEqual(response.getheader("Connection"), "close")
+                    self.assertTrue(response.will_close)
+                    self.assertIn("error", json.loads(response.read()))
+
+                    # A subsequent request on the same HTTPConnection object
+                    # must reconnect, not parse the rejected body's bytes.
+                    connection.request("POST", "/measure", body=b'{"value":2}',
+                                       headers={"Content-Type": "application/json"})
+                    next_response = connection.getresponse()
+                    self.assertEqual(next_response.status, 200)
+                    self.assertEqual(json.loads(next_response.read()),
+                                     {"accepted": True, "value": 2})
+                finally:
+                    connection.close()
+
+    def test_17_consumed_invalid_json_body_allows_keepalive(self):
+        connection = http.client.HTTPConnection(
+            "127.0.0.1", self.server.server_port, timeout=3
+        )
+        try:
+            connection.request("POST", "/measure", body=b'{"value":',
+                               headers={"Content-Type": "application/json"})
+            response = connection.getresponse()
+            self.assertEqual(response.status, 400)
+            self.assertFalse(response.will_close)
+            response.read()
+            sock = connection.sock
+            self.assertIsNotNone(sock)
+
+            connection.request("POST", "/measure", body=b'{"value":3}',
+                               headers={"Content-Type": "application/json"})
+            next_response = connection.getresponse()
+            self.assertEqual(next_response.status, 200)
+            self.assertEqual(json.loads(next_response.read()),
+                             {"accepted": True, "value": 3})
+            self.assertIs(connection.sock, sock)
+        finally:
+            connection.close()
 
 
 if __name__ == '__main__':
