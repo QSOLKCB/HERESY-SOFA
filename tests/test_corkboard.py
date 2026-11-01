@@ -126,6 +126,41 @@ class CorkboardTests(unittest.TestCase):
         self.assertIn("getBoundingClientRect()", js)
         self.assertIn("@media(prefers-reduced-motion:reduce)", css)
 
+    def test_evidence_and_mitigation_text_are_searchable(self):
+        # The browser implements search; this test guards its search corpus and
+        # confirms Codex's concrete missing-term examples are in the catalogue.
+        js = (SITE / "app.js").read_text(encoding="utf-8")
+        self.assertIn("item.cause,item.finding,item.mitigation,item.teaser", js)
+        items = {item["id"]: item for item in CASES["cases"]}
+        for term, case_id in (
+            ("sha-256", "HERESY-010"),
+            ("fstat", "HERESY-011"),
+            ("idempotent", "HERESY-004"),
+        ):
+            with self.subTest(term=term, case_id=case_id):
+                item = items[case_id]
+                displayed = " ".join(
+                    str(item[key]) for key in ("cause", "finding", "mitigation")
+                ).lower()
+                self.assertIn(term, displayed)
+
+    def test_pages_deployment_requires_explicit_main_branch_dispatch(self):
+        # Parsing the workflow here is a source contract, not a deployment
+        # claim. Pushes and PRs must validate, but must not publish.
+        workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("  push:\n    branches: [main]", workflow)
+        self.assertIn("  pull_request:", workflow)
+        self.assertIn("  workflow_dispatch:", workflow)
+        self.assertIn(
+            "if: github.event_name == 'workflow_dispatch' && "
+            "github.ref == 'refs/heads/main'",
+            workflow,
+        )
+        self.assertNotIn("if: github.event_name != 'pull_request'", workflow)
+        self.assertIn("needs: validate", workflow)
+
     def test_case_sources_exist_and_no_external_runtime_dependencies(self):
         parser = Assets()
         parser.feed((SITE / "index.html").read_text(encoding="utf-8"))
