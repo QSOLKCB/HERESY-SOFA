@@ -1,0 +1,46 @@
+name: HERESY-011 Linux pathname TOCTOU and no-follow ABI
+
+on:
+  push:
+    paths:
+      - 'experiments/HERESY-011/**'
+      - 'tests/test_heresy011.py'
+      - '.github/workflows/heresy011-linux.yml'
+  pull_request:
+    paths:
+      - 'experiments/HERESY-011/**'
+      - 'tests/test_heresy011.py'
+      - '.github/workflows/heresy011-linux.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    name: Isolated evidence (${{ matrix.runner }})
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Execute bounded Linux reproducer and verify hash receipt
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests -p 'test_heresy011.py' -v
+          python3 -m harness run HERESY-011
+          python3 -m harness verify HERESY-011
+      - name: Retain generated evidence separately from source
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heresy011-${{ matrix.runner }}-receipt
+          path: receipts/generated/HERESY-011.json
+          if-no-files-found: warn
+          retention-days: 30
