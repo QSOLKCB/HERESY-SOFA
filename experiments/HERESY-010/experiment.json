@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-010",
+  "title": "The Emoji That Broke the Signature",
+  "status": "implemented",
+  "platform": "Python 3 standard library key-ordering test",
+  "entrypoint": "run.py"
+}

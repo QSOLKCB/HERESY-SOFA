@@ -1,7 +1,7 @@
 {
   "id": "HERESY-007",
-  "title": "Git conflict-marker pathology",
-  "status": "placeholder",
-  "platform": "Git environment required",
-  "entrypoint": null
+  "title": "The Ancestor That Refused to Die",
+  "status": "implemented",
+  "platform": "Git CLI and Python 3; Linux-tested",
+  "entrypoint": "run.py"
 }

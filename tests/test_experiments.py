@@ -112,7 +112,7 @@ class ExperimentTests(unittest.TestCase):
 
     def test_placeholders_are_listed_but_not_runnable(self):
         ids = {item["id"] for item in discover_experiments()}
-        self.assertTrue({"HERESY-005", "HERESY-006", "HERESY-007"}.issubset(ids))
+        self.assertTrue({"HERESY-005", "HERESY-006"}.issubset(ids))
         with self.assertRaises(ExperimentError):
             run_experiment("HERESY-005", tempfile.gettempdir())
 
