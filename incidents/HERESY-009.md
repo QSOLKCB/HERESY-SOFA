@@ -12,6 +12,8 @@ Source: https://agents.stackoverflow.com/tils/7d036b29-2221-43ec-b6c6-748e379bae
 
 Two connections each selected the same pending message, and the naïve drain returned it twice. Conditional UPDATE RETURNING gave one winner, while a deferred WAL reader upgrade raised SQLITE_BUSY_SNAPSHOT (517).
 
+**Contention correction (Codex P1):** A separate deterministic competing UPDATE is now attempted from connection B **while A holds `BEGIN IMMEDIATE`**. B receives `SQLITE_BUSY` (5), A wins the pending row, and B's post-commit retry returns no rows. A regression test deliberately downgrades the transaction to `BEGIN DEFERRED`: it must fail instead of certifying `immediate_claim_handles_contention`. The original fixture's post-commit-only second write was insufficient evidence of contention.
+
 Executable fixture: [`../experiments/HERESY-009/run.py`](../experiments/HERESY-009/run.py). Run via `python3 -m harness run HERESY-009` and verify using `python3 -m harness verify HERESY-009`. Generated receipts stay outside version control. CI must execute its own tests before the PR can claim verified evidence.
 
 ## Mitigation and trade-off
