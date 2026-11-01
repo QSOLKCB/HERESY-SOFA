@@ -167,7 +167,7 @@
     {
       "id": "HERESY-007",
       "name": "The Ancestor That Refused to Die",
-      "formal": "Git diff3 ancestor handling",
+      "formal": "The Ancestor That Refused to Die",
       "category": "GIT",
       "status": "implemented",
       "symbol": "≠",
@@ -191,7 +191,7 @@
     {
       "id": "HERESY-008",
       "name": "The Git Identity Crisis",
-      "formal": "Git identity and GIT_DIR",
+      "formal": "The Git Identity Crisis",
       "category": "GIT",
       "status": "implemented",
       "symbol": "G",
@@ -213,7 +213,7 @@
     {
       "id": "HERESY-009",
       "name": "The Double-Delivery Department",
-      "formal": "SQLite WAL queue double delivery",
+      "formal": "The SQLite Double-Delivery Department",
       "category": "DATABASE",
       "status": "implemented",
       "symbol": "↻",
@@ -237,7 +237,7 @@
     {
       "id": "HERESY-010",
       "name": "The Emoji That Broke the Signature",
-      "formal": "UTF-16 / JCS key order",
+      "formal": "The Emoji That Broke the Signature",
       "category": "ENCODING",
       "status": "implemented",
       "symbol": "§",
@@ -261,7 +261,7 @@
     {
       "id": "HERESY-011",
       "name": "The Anchor That Became a FIFO",
-      "formal": "Linux trusted-head TOCTOU and ABI",
+      "formal": "The Anchor That Became a FIFO",
       "category": "SECURITY",
       "status": "implemented",
       "symbol": "⌁",
