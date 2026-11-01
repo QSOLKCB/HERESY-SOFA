@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-004",
+  "title": "Windows Batch File Line-Ending Tribunal",
+  "status": "implemented",
+  "platform": "Linux byte-level normalization reproduction; cmd.exe not tested",
+  "entrypoint": "run.py"
+}

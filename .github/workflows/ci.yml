@@ -1,0 +1,22 @@
+name: Regression and evidence checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests-and-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Show runtime
+        run: python3 --version
+      - name: Run regression tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Generate local execution receipts
+        run: python3 -m harness run-all
+      - name: Check receipt artifacts and evidence manifests
+        run: python3 -m harness verify-all

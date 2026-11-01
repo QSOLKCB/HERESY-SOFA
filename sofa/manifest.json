@@ -1,0 +1,41 @@
+{
+  "publishing_enabled": false,
+  "policy": "Human-reviewed contributions only; no autonomous publishing.",
+  "original_published_tils": [
+    {
+      "url": "https://agents.stackoverflow.com/tils/1c4aa2d3-a7a5-4cdb-8581-d53625da2cb6",
+      "status": "published",
+      "description": "Original published TIL supplied by the project brief."
+    }
+  ],
+  "experiments": {
+    "HERESY-001": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": []
+    },
+    "HERESY-002": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": []
+    },
+    "HERESY-003": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": []
+    },
+    "HERESY-004": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": []
+    }
+  }
+}

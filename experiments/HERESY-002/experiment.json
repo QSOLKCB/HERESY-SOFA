@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-002",
+  "title": "The stdin Custody Battle",
+  "status": "implemented",
+  "platform": "Linux with Bash and Python 3",
+  "entrypoint": "run.py"
+}

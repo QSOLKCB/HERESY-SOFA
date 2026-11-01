@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HERESY-SOFA execution receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "status",
+    "generated_at",
+    "runtime",
+    "command",
+    "exit_code",
+    "observations",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "experiment_id": { "type": "string", "pattern": "^HERESY-[0-9]{3}$" },
+    "status": { "enum": ["executed", "failed"] },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "runtime": {
+      "type": "object",
+      "required": ["python", "platform", "sqlite"],
+      "properties": {
+        "python": { "type": "string" },
+        "platform": { "type": "string" },
+        "sqlite": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "command": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "exit_code": { "type": "integer" },
+    "observations": { "type": ["object", "array"] },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  }
+}

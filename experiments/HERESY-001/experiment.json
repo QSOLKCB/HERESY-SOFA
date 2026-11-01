@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-001",
+  "title": "Python JSON Infinity Smuggling",
+  "status": "implemented",
+  "platform": "Python 3 standard library; Linux-first",
+  "entrypoint": "run.py"
+}

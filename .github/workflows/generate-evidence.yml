@@ -1,0 +1,24 @@
+name: Generate evidence (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Generate execution receipts
+        run: python3 -m harness run-all
+      - name: Validate receipt artifacts
+        run: python3 -m harness verify-all
+      - name: Store receipts as a workflow artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: heresy-sofa-local-evidence
+          path: receipts/generated/*.json
+          if-no-files-found: error
+          retention-days: 30
