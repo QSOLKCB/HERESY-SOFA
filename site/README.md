@@ -32,7 +32,7 @@ The tests check all eleven case IDs, each status and formal title against its or
 1. Merge the reviewed corkboard PR to `main`.
 2. Visit [Repository Settings → Pages](https://github.com/QSOLKCB/HERESY-SOFA/settings/pages).
 3. Under **Build and deployment**, select **Source: GitHub Actions**. The GitHub plugin can commit the workflow but cannot change this repository administrative setting.
-4. Run **HERESY Corkboard — static Pages** from the Actions tab with `workflow_dispatch`, or use the push-to-main deployment triggered by the merge.
+4. **Explicitly approve publication:** use Actions → **HERESY Corkboard — static Pages** → **Run workflow**, select `main`, and start the manual `workflow_dispatch`. Pushes and pull requests validate the site but **never deploy it automatically**.
 5. The expected Pages URL, **only after GitHub reports successful deployment**, is `https://qsolkcb.github.io/HERESY-SOFA/`.
 
 The workflow uploads `site/` as the artifact and uses GitHub's official Pages deployment actions. It does not modify branch settings, credentials, repository secrets or any archival data.
