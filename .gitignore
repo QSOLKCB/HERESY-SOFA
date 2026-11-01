@@ -2,3 +2,6 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 receipts/generated/
+
+# CHAOS local cost ledger, API reports, private reviewed evidence
+.chaos-state/

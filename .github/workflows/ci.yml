@@ -22,3 +22,7 @@ jobs:
         run: python3 -m harness verify-all
       - name: Test unpublished JSON Blueprint (HTTP contract)
         run: python3 -m unittest discover -s blueprints/JSON-FINITE-NUMBERS-v0.2.0 -p 'test_*.py' -v
+      - name: Test CHAOS pilot and offline dry run (zero API spend)
+        run: |
+          python3 -m unittest discover -s tests -p 'test_chaos_pilot.py' -v
+          python3 -m chaos_pilot dry-run > /dev/null
