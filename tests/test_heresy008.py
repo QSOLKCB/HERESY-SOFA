@@ -2,6 +2,8 @@
 import json
 import os
 import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -22,6 +24,46 @@ class GitDirIncidentTests(unittest.TestCase):
             self.assertFalse(obs["windows_cmd_executed"])
             self.assertEqual(set(receipt["observations"]["claims"].values()), {"executed"})
             self.assertEqual(verify_experiment("HERESY-008", directory, quiet=True), 0)
+
+
+    @unittest.skipUnless(shutil.which("git"), "Git CLI unavailable")
+    def test_inherited_global_hook_does_not_escape_fixture(self):
+        # This tests the entrypoint directly: the harness intentionally supplies
+        # a minimal environment, which otherwise masks this exact failure.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            home = root / "home"
+            home.mkdir()
+            config = home / ".gitconfig"
+            hooks = root / "external hooks"
+            hooks.mkdir()
+            marker = root / "hook-executed"
+            hook = hooks / "pre-commit"
+            hook.write_text(
+                '#!/bin/sh\\nprintf invoked > "' + str(marker) + '"\\nexit 42\\n',
+                encoding="utf-8",
+            )
+            hook.chmod(0o755)
+            config.write_text(
+                "[core]\\n    hooksPath = " + str(hooks) + "\\n",
+                encoding="utf-8",
+            )
+            from harness.runner import ROOT
+            env = os.environ.copy()
+            env["HOME"] = str(home)
+            env["XDG_CONFIG_HOME"] = str(home / ".config")
+            env.pop("GIT_CONFIG_GLOBAL", None)
+            entrypoint = ROOT / "experiments" / "HERESY-008" / "run.py"
+            process = subprocess.run(
+                [sys.executable, str(entrypoint)],
+                env=env, cwd=root, capture_output=True, text=True,
+                timeout=30, check=False,
+            )
+            self.assertEqual(process.returncode, 0, process.stderr)
+            report = json.loads(process.stdout)
+            self.assertTrue(report["observations"]["all_checks_passed"])
+            self.assertEqual(set(report["claims"].values()), {"executed"})
+            self.assertFalse(marker.exists(), "fixture invoked an inherited pre-commit hook")
 
     def test_missing_git_cannot_create_success_receipt(self):
         with tempfile.TemporaryDirectory() as directory:
