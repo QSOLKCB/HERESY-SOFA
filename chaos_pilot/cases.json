@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "CODECOV-2021",
+      "source": "https://about.codecov.io/apr-2021-post-mortem/",
+      "failure_class": "Build uploader/supply-chain compromise crossing into CI credentials",
+      "comparison_repositories": ["QSOLKCB/PROVENANCE", "QSOLKCB/HERESY-SOFA"],
+      "review_question": "Do workflows fetch executable dependencies or uploaders without provenance validation, and what credentials would those jobs receive?"
+    },
+    {
+      "id": "GITHUB-PRIVILEGED-PR",
+      "source": "https://docs.github.com/en/actions/reference/security/securely-using-pull_request_target",
+      "failure_class": "Untrusted pull-request content executed in privileged workflows",
+      "comparison_repositories": ["QSOLKCB/HERESY-SOFA", "QSOLKCB/QSOL-IBAE"],
+      "review_question": "Can external PR-controlled data reach privileged execution, workflows, cache, artifacts, or shell commands?"
+    },
+    {
+      "id": "CIRCLECI-2023",
+      "source": "https://circleci.com/blog/jan-4-2023-incident-report/",
+      "failure_class": "Compromised session access and overly broad downstream credentials",
+      "comparison_repositories": ["QSOLKCB/QSOL-IBAE", "QSOLKCB/PROVENANCE"],
+      "review_question": "Are credentials scoped, rotated, isolated from model inputs, and prevented from reaching untrusted logs or tools?"
+    }
+  ]
+}

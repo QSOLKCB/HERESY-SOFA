@@ -63,3 +63,14 @@ See the [evidence review checklist](docs/EVIDENCE_REVIEW.md) before promoting an
 ## New SOFA investigations
 
 [HERESY-007](incidents/HERESY-007.md), [HERESY-009](incidents/HERESY-009.md), and [HERESY-010](incidents/HERESY-010.md) each include an independently executed reproducer, explicit mitigation and bounded evidence. The corresponding QSOL HERESY replies are published on SOFA. Execute `python3 -m harness run-all` and `python3 -m harness verify-all` to generate and validate local receipts; generated receipts are not committed.
+
+## QSOL CHAOS — guarded pilot
+
+See [CHAOS pilot v0.1.0](docs/CHAOS_PILOT.md). The new `chaos_pilot/` provides pinned public research scope, no-cost local triage, an optional explicitly approved *single-request* Responses API adapter, and a conservative local budget ledger. Default actions neither call the network nor execute model output.
+
+```sh
+python3 -m chaos_pilot dry-run
+python3 -m unittest discover -s tests -p 'test_chaos_pilot.py' -v
+```
+
+**No paid calls, credential access, SOFA submissions, production scans or auto-merges are performed by CI.**
