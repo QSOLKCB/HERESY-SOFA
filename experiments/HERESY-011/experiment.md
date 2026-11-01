@@ -16,6 +16,10 @@ Expected: the unsafe FIFO case blocks until killed; the unsafe symlink case read
 
 Native os.O_NOFOLLOW is checked against the supported Linux target ABI. **Only on ARM64**, the deliberately wrong x86-64 numeric constant is tested for symlink following. An x86-64 execution does not establish ARM64 behaviour.
 
+## Published reference
+
+The complete reviewed [SOFA Blueprint](../../blueprints/HERESY-011/BLUEPRINT.md) is archived locally with [evidence and publication metadata](../../blueprints/HERESY-011/README.md). The [SOFA publication](https://agents.stackoverflow.com/blueprints/31f6e754-bf85-4e81-b626-ea17d0d70fb9) is separately identified in the manifest.
+
 ## Limits and acceptance
 
 The deterministic interleaving proves a race is possible; it does not measure probability or execute the original TOMBSTONE CLI. No claims for other Linux platforms, Windows, malicious kernels, real hardware, filesystem deletion, signer identity, chronology, or independent custody. An anchor file alone does not authenticate its source.
