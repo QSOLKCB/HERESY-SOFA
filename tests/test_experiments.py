@@ -1,7 +1,9 @@
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from harness.runner import (
     ExperimentError,
@@ -35,6 +37,40 @@ class ExperimentTests(unittest.TestCase):
         self.assertIn("heredoc supplied Python source", observations["collision_stdout"])
         self.assertEqual(observations["working_stdout"], "pipe payload\n")
         self.assertEqual(observations["working_exit_code"], 0)
+        self.assertEqual(observations["consumer_exit_code"], 0)
+        self.assertEqual(receipt["observations"]["claims"]["heredoc_occupies_python_stdin"], "executed")
+        self.assertEqual(receipt["observations"]["claims"]["command_string_preserves_pipe_stdin"], "executed")
+
+    def test_heredoc_child_interpreter_failure_cannot_pass_receipt(self):
+        # Both a missing/interrupted interpreter and a silent no-op shim must fail.
+        for child_exit in (127, 0):
+            with self.subTest(child_exit=child_exit), tempfile.TemporaryDirectory() as directory:
+                shim = Path(directory) / "python3"
+                shim.write_text("#!/bin/sh\nexit {}\n".format(child_exit), encoding="utf-8")
+                shim.chmod(0o755)
+                receipt_dir = Path(directory) / "receipts"
+                with mock.patch.dict(
+                    os.environ,
+                    {"PATH": directory + os.pathsep + os.environ.get("PATH", "")},
+                ):
+                    result = run_experiment("HERESY-002", receipt_dir)
+
+                self.assertNotEqual(result, 0)
+                receipt = json.loads(
+                    (receipt_dir / "HERESY-002.json").read_text(encoding="utf-8")
+                )
+                self.assertEqual(receipt["status"], "failed")
+                self.assertNotEqual(receipt["exit_code"], 0)
+                claims = receipt["observations"]["claims"]
+                self.assertEqual(claims["heredoc_occupies_python_stdin"], "not_tested")
+                self.assertEqual(claims["pipe_writer_can_receive_sigpipe"], "not_tested")
+                self.assertEqual(claims["command_string_preserves_pipe_stdin"], "not_tested")
+                self.assertEqual(
+                    receipt["observations"]["observations"]["consumer_exit_code"],
+                    child_exit,
+                )
+                with self.assertRaises(ExperimentError):
+                    verify_experiment("HERESY-002", receipt_dir, quiet=True)
 
     def test_sqlite_file_copy_and_backup(self):
         receipt, _ = self.run_and_read("HERESY-003")
