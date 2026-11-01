@@ -136,7 +136,7 @@
     if (filter === "placeholder" && item.status !== "placeholder") return false;
     if (filter === "published" && !item.published) return false;
     if (!state.query) return true;
-    const corpus = [item.id,item.name,item.formal,item.category,item.cause,item.teaser,item.scope,...(item.tags || [])].join(" ").toLowerCase();
+    const corpus = [item.id,item.name,item.formal,item.category,item.cause,item.finding,item.mitigation,item.teaser,item.scope,...(item.tags || [])].join(" ").toLowerCase();
     return corpus.includes(state.query);
   }
   function updateView() {
