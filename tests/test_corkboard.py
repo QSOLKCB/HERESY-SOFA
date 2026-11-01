@@ -86,6 +86,27 @@ class CorkboardTests(unittest.TestCase):
         self.assertEqual(sum(e["status"] == "placeholder" for e in CASES["cases"]), 2)
         self.assertEqual(sum(bool(e.get("published")) for e in CASES["cases"]), 4)
 
+    def test_heresy012_is_an_independent_reproduction_not_a_sofa_publication(self):
+        entry = next(case for case in CASES["cases"] if case["id"] == "HERESY-012")
+        manifest = json.loads(
+            (ROOT / "experiments" / "HERESY-012" / "experiment.json").read_text()
+        )
+        sofa = json.loads((ROOT / "sofa" / "manifest.json").read_text())
+        self.assertEqual(entry["formal"], manifest["title"])
+        self.assertEqual(entry["status"], "implemented")
+        self.assertEqual(entry["category"], "SECURITY")
+        self.assertIn("synthetic", entry["finding"].lower())
+        self.assertIn("separate upstream evidence", entry["scope"].lower())
+        self.assertNotIn("sofaId", entry)
+        self.assertNotIn("published", entry)
+        self.assertFalse(sofa["publishing_enabled"])
+        self.assertEqual(
+            sofa["experiments"]["HERESY-012"],
+            {"questions": [], "tils": [], "blueprints": [], "playbooks": [], "replies": []},
+        )
+        self.assertTrue((ROOT / "incidents" / "HERESY-012.md").is_file())
+        self.assertTrue((ROOT / "blueprints" / "HERESY-012" / "BLUEPRINT.md").is_file())
+
     def test_canvas_threads_only_connect_known_cases(self):
         known = {e["id"] for e in CASES["cases"]}
         seen = set()
