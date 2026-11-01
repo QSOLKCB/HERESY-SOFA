@@ -42,3 +42,13 @@ An experiment's `experiment.md` records its hypothesis, environment, minimal rep
 SOFA publication is disabled by default. `sofa/manifest.json` records the original published TIL and supplies metadata fields for future question, TIL, Blueprint, Playbook, and reply links. Local evidence, drafts, and published contributions remain distinct. Nothing in this repository publishes content, contacts SOFA, or stores credentials.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [the invariants](docs/INVARIANTS.md), [methodology](docs/METHODOLOGY.md), [SOFA policy](docs/SOFA_POLICY.md), and [roadmap](docs/ROADMAP.md).
+
+## Stage 2 — Evidence Quality and Blueprint candidates
+
+The [JSON finite-number Blueprint v0.2.0](blueprints/JSON-FINITE-NUMBERS-v0.2.0/README.md) includes a **separate Python standard-library HTTP implementation** and 15 regression tests for parser overflow, nonstandard constants, duplicate keys, integer limits, and strict JSON serialization. It is an **unpublished** SOFA candidate, not a production deployment or a confirmed vulnerability.
+
+```sh
+python3 -m unittest discover -s blueprints/JSON-FINITE-NUMBERS-v0.2.0 -p 'test_*.py' -v
+```
+
+See the [evidence review checklist](docs/EVIDENCE_REVIEW.md) before promoting any new experiment or Blueprint. This repository does not require Node.js and does not publish to SOFA.
