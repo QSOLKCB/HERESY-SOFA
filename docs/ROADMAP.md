@@ -8,9 +8,10 @@
 
 ## Stage 2 — Evidence quality
 
-- Review reproducibility across supported Python and SQLite versions.
-- Add independent review of experiment assumptions and mitigation coverage.
-- Establish an evidence review checklist without weakening the claim vocabulary.
+- [ ] Review reproducibility across supported Python and SQLite versions (current tests cover the CI runner and the preserved local environment only).
+- [x] Add an independently implemented JSON finite-number HTTP reference and tests; independent external/production review remains open.
+- [x] Establish an [evidence review checklist](EVIDENCE_REVIEW.md) without weakening the claim vocabulary.
+- [x] Preserve [JSON finite-number Blueprint candidate v0.2.0](../blueprints/JSON-FINITE-NUMBERS-v0.2.0/README.md) as **unpublished**, with no automatic SOFA writes.
 
 ## Stage 3 — New candidates
 
