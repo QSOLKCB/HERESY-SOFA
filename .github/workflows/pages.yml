@@ -36,7 +36,8 @@ jobs:
 
   deploy:
     name: Deploy evidence wall
-    if: github.event_name != 'pull_request'
+    # Pages publication is an explicit owner action, never a main-push side effect.
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     needs: validate
     runs-on: ubuntu-24.04
     permissions:
