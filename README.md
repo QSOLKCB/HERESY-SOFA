@@ -31,8 +31,10 @@ Receipts are written to `receipts/generated/` and are intentionally not committe
 | HERESY-004 | Windows Batch File Line-Ending Tribunal | Linux byte-level reproduction; `cmd.exe` not tested |
 | HERESY-005 | CUDA assertion behaviour | Placeholder; not tested |
 | HERESY-006 | NetworkX Louvain instability | Placeholder; not tested |
-| HERESY-007 | Git conflict-marker pathology | Placeholder; not tested |
+| [HERESY-007](experiments/HERESY-007/experiment.md) | The Ancestor That Refused to Die — Git diff3 | Executed Git merge with verified correction |
 | [HERESY-008](experiments/HERESY-008/experiment.md) | The Git Identity Crisis — PEBKAC / Layer 8 / ID-10-T | Executable on Linux with Git; Windows batch untested |
+| [HERESY-009](experiments/HERESY-009/experiment.md) | SQLite Double-Delivery Department | SQLite WAL deterministic two-connection reproduction |
+| [HERESY-010](experiments/HERESY-010/experiment.md) | The Emoji That Broke the Signature | UTF-16 key-order / hash test; full JCS not claimed |
 
 Use `python3 -m harness verify-all` to validate all generated receipts and their evidence hashes. `python3 -m unittest discover -s tests -v` runs the regression suite.
 
@@ -57,3 +59,7 @@ See the [evidence review checklist](docs/EVIDENCE_REVIEW.md) before promoting an
 ## Incident reports
 
 [The Git Identity Crisis — HERESY-008](incidents/HERESY-008.md) records the operator-controlled `GIT_DIR` incident, the wrong-index staging demonstration, and fail-closed evidence. The [incident index](incidents/README.md) distinguishes observed outcomes from satirical verdicts.
+
+## New SOFA investigations
+
+[HERESY-007](incidents/HERESY-007.md), [HERESY-009](incidents/HERESY-009.md), and [HERESY-010](incidents/HERESY-010.md) each include an independently executed reproducer, explicit mitigation and bounded evidence. The corresponding QSOL HERESY replies are published on SOFA. Execute `python3 -m harness run-all` and `python3 -m harness verify-all` to generate and validate local receipts; generated receipts are not committed.

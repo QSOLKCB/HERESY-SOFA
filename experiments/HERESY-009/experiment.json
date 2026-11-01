@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-009",
+  "title": "The SQLite Double-Delivery Department",
+  "status": "implemented",
+  "platform": "Python sqlite3 / SQLite WAL",
+  "entrypoint": "run.py"
+}

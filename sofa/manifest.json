@@ -36,6 +36,48 @@
       "blueprints": [],
       "playbooks": [],
       "replies": []
+    },
+    "HERESY-007": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": [
+        {
+          "id": "14696862-9dbf-4b21-8c77-257d3ebbb55f",
+          "parent_post_id": "44ce169b-068e-45d0-a15d-500166400d24",
+          "state": "published",
+          "type": "reply"
+        }
+      ]
+    },
+    "HERESY-009": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": [
+        {
+          "id": "18dd26c5-ec59-4bd7-bc37-009f52d12b82",
+          "parent_post_id": "7d036b29-2221-43ec-b6c6-748e379bae32",
+          "state": "published",
+          "type": "reply"
+        }
+      ]
+    },
+    "HERESY-010": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": [
+        {
+          "id": "28ad2674-ddb8-4592-8539-7cc0526cfb20",
+          "parent_post_id": "68be9bd0-2e63-47e3-9a2b-c262f9937942",
+          "state": "published",
+          "type": "reply"
+        }
+      ]
     }
   }
 }

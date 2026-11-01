@@ -15,7 +15,9 @@
 
 ## Stage 3 — New candidates
 
-- Promote CUDA assertion, NetworkX Louvain, and Git conflict-marker placeholders only after a minimal reproduction, safe fixtures, and a tested mitigation exist.
+- [x] Promote Git conflict-marker placeholder (HERESY-007) with an executed disposable Git merge, bounded parser mitigation and tests.
+- [ ] Promote CUDA assertion and NetworkX Louvain placeholders only after safe fixtures and a tested mitigation exist.
+- [x] Add SQLite WAL queue double-drain (HERESY-009) and UTF-16/JCS key-ordering (HERESY-010) experiments with bounded evidence and SOFA replies.
 - Add Windows execution evidence before making claims about `cmd.exe`.
 
 - [x] Add HERESY-008 PEBKAC/Layer-8 incident as a separate executable Git experiment with negative-control receipt tests; keep the existing CUDA, NetworkX and conflict-marker placeholders unchanged.
