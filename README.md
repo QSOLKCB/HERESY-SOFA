@@ -8,6 +8,12 @@ The compiler is innocent until proven nonconforming. The programmer, however, re
 
 Humour is editorial seasoning, not evidence. Every experiment distinguishes recorded observations from inference and explicitly labels what was not tested.
 
+## The Gremlin Files — interactive corkboard
+
+The [static evidence corkboard](site/README.md) presents all eleven HERESY case files as pinned notes with **Canvas red-thread connections**, search, status filters and clickable dossiers. It distinguishes nine bounded reproductions from two untested candidates and links the four confirmed SOFA contributions. The `site/` directory contains plain HTML, CSS, JavaScript and a versioned case catalogue, with no build step or telemetry.
+
+**GitHub Pages:** after merging the reviewed site PR, select **Source: GitHub Actions** in [Settings → Pages](https://github.com/QSOLKCB/HERESY-SOFA/settings/pages). The workflow `HERESY Corkboard — static Pages` publishes the site. [Local preview and evidence rules](site/README.md).
+
 ## Quick start
 
 Requires Python 3. No third-party packages are needed.

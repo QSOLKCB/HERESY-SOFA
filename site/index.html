@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#111817">
+  <meta name="description" content="QSOL HERESY — an interactive evidence corkboard of reproduced software gremlins, suspected goblins and their actual receipts.">
+  <meta property="og:title" content="HERESY • The Gremlin Files">
+  <meta property="og:description" content="The bugs have been pinned. The evidence hasn't been embellished.">
+  <title>HERESY — The Gremlin Files</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a href="#caseboard" class="skip-link">Skip to the caseboard</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="HERESY corkboard home">
+        <span class="brand-seal" aria-hidden="true">H<span>!</span></span>
+        <span class="brand-words"><strong>HERESY</strong><small>THE COMPILER INQUISITOR</small></span>
+      </a>
+      <div class="topbar-right">
+        <span class="signal" aria-label="Evidence archive"><i aria-hidden="true"></i> PUBLIC CASE FILES</span>
+        <a class="topbar-link" href="https://github.com/QSOLKCB/HERESY-SOFA" target="_blank" rel="noopener noreferrer">SOURCE ARCHIVE <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-rule"></span> QSOL-IMC / BUREAU OF SOFTWARE ANOMALIES / EST. 2026</div>
+          <h1 id="page-title">THE <em>GREMLIN</em><br>FILES<span class="title-period">.</span></h1>
+          <p>Eleven suspects. One corkboard. A growing collection of software absurdities, caught with reproducible experiments and a frankly unreasonable quantity of evidence.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#caseboard">INSPECT THE BOARD <span aria-hidden="true">↓</span></a>
+            <a class="secondary-link" href="https://github.com/QSOLKCB/HERESY-SOFA/tree/main/incidents" target="_blank" rel="noopener noreferrer">THE CASE ARCHIVE ↗</a>
+          </div>
+        </div>
+        <div class="hero-aside" aria-label="Caseboard statistics">
+          <div class="case-file-stamp" aria-hidden="true"><span>CLASSIFIED</span><b>UNCLASSIFIED</b><small>THE EVIDENCE SPEAKS</small></div>
+          <div class="stats">
+            <div><strong id="stat-total">11</strong><span>CASE FILES</span></div>
+            <div><strong id="stat-captured">9</strong><span>REPRODUCERS</span></div>
+            <div><strong id="stat-watch">2</strong><span>ON THE WATCHLIST</span></div>
+          </div>
+          <p class="stat-footnote">“Captured” means a bounded reproducible case, not proof across every platform.</p>
+        </div>
+        <span class="hero-index" aria-hidden="true">ARCHIVE // 001—011</span>
+      </section>
+
+      <section class="board-section" id="caseboard" aria-labelledby="board-title">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">EVIDENCE WALL / INTERNAL AFFAIRS</div>
+            <h2 id="board-title">The corkboard<span class="red-dot">.</span></h2>
+          </div>
+          <div class="board-header-annotation"><span class="annotation-arrow" aria-hidden="true">↙</span> SELECT A FILE TO BREAK THE SEAL</div>
+        </div>
+        <div class="board-toolbar">
+          <div class="filter-buttons" aria-label="Filter cases">
+            <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">ALL CASES <span id="filter-count-all">11</span></button>
+            <button type="button" class="filter" data-filter="implemented" aria-pressed="false">CAUGHT <span id="filter-count-implemented">9</span></button>
+            <button type="button" class="filter" data-filter="placeholder" aria-pressed="false">WANTED <span id="filter-count-placeholder">2</span></button>
+            <button type="button" class="filter" data-filter="published" aria-pressed="false">ON SOFA <span id="filter-count-published">4</span></button>
+          </div>
+          <label class="search-label"><span aria-hidden="true">⌕</span><span class="sr-only">Search cases</span><input id="case-search" type="search" placeholder="SEARCH THE EVIDENCE..." autocomplete="off" spellcheck="false"></label>
+        </div>
+        <div class="board-frame">
+          <div class="board-rivets" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="board-surface" id="board-surface">
+            <canvas id="thread-canvas" aria-hidden="true"></canvas>
+            <div class="board-watermark" aria-hidden="true">EVIDENCE<br>DO NOT DISTURB</div>
+            <div class="case-grid" id="case-grid" aria-live="polite" aria-label="Interactive case files">
+              <p class="loading-message">LOADING THE CASE FILES…</p>
+            </div>
+            <p class="no-results" id="no-results" hidden>No matching suspects. Try a different search or filter.</p>
+            <div class="board-footer">
+              <span><b aria-hidden="true">●</b> RED THREADS = DOCUMENTED THEMATIC CONNECTIONS</span>
+              <span>NO INVENTED RECEIPTS · NO FALSE CONFESSIONS</span>
+            </div>
+          </div>
+        </div>
+        <div class="below-board">
+          <p><span class="square-icon" aria-hidden="true">+</span> Click any card for the allegation, observed scope, mitigation, and original case file.</p>
+          <span>EXHIBITS ARE READ-ONLY / NO CLIENT TELEMETRY</span>
+        </div>
+      </section>
+
+      <section class="dispatch" aria-labelledby="dispatch-title">
+        <div class="dispatch-heading"><span>NOTE FROM THE INQUISITOR</span><span aria-hidden="true">/ / /</span></div>
+        <blockquote id="dispatch-title">“The compiler is innocent until proven nonconforming. The programmer, however, remains a person of interest.”</blockquote>
+        <p>The board is deliberately strict about evidence. A Linux reproduction is not a Windows test; a Python model is not a Rust execution; an unpublished candidate is not a SOFA post. Every card links to the source material so the allegations can be checked.</p>
+        <div class="dispatch-links"><a href="https://github.com/QSOLKCB/HERESY-SOFA/blob/main/docs/METHODOLOGY.md" target="_blank" rel="noopener noreferrer">INVESTIGATION METHOD ↗</a><a href="https://github.com/QSOLKCB/HERESY-SOFA/blob/main/docs/EVIDENCE_REVIEW.md" target="_blank" rel="noopener noreferrer">EVIDENCE STANDARDS ↗</a></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© QSOL HERESY / THE COMPILER INQUISITOR</span>
+      <span>PURE WEB STANDARDS · HTML / CSS / JS / CANVAS</span>
+      <a href="https://github.com/QSOLKCB/HERESY-SOFA" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+    </footer>
+  </div>
+
+  <dialog id="case-dialog" class="case-dialog" aria-labelledby="dialog-title">
+    <div class="dossier" id="dossier">
+      <header class="dossier-head"><span id="dialog-number">CASE / 000</span><button id="dialog-close" class="close-btn" type="button" aria-label="Close dossier">×</button></header>
+      <div id="dialog-content"></div>
+    </div>
+  </dialog>
+  <noscript><p class="noscript">JavaScript is required for the interactive corkboard. The <a href="https://github.com/QSOLKCB/HERESY-SOFA/tree/main/experiments">experiment catalogue is available on GitHub</a>.</p></noscript>
+</body>
+</html>
