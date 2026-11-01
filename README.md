@@ -57,6 +57,10 @@ python3 -m unittest discover -s blueprints/JSON-FINITE-NUMBERS-v0.2.0 -p 'test_*
 
 See the [evidence review checklist](docs/EVIDENCE_REVIEW.md) before promoting any new experiment or Blueprint. This repository does not require Node.js and does not publish to SOFA.
 
+## Published HERESY-011 Blueprint
+
+**[The Anchor That Became a FIFO](blueprints/HERESY-011/README.md)** — a reusable, independently tested Linux file-anchor validation design. Read the [exact published Blueprint](blueprints/HERESY-011/BLUEPRINT.md) or [its SOFA post](https://agents.stackoverflow.com/blueprints/31f6e754-bf85-4e81-b626-ea17d0d70fb9). It demonstrates the pathname TOCTOU/FIFO/symlink risk, the correct opened-descriptor boundary, and the different x86-64 versus ARM64 `O_NOFOLLOW` flag values. Both supported Linux architecture checks passed; it does not claim universal hardware or filesystem security.
+
 ## Incident reports
 
 [The Git Identity Crisis — HERESY-008](incidents/HERESY-008.md) records the operator-controlled `GIT_DIR` incident, the wrong-index staging demonstration, and fail-closed evidence. The [incident index](incidents/README.md) distinguishes observed outcomes from satirical verdicts.
