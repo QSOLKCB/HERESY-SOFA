@@ -1,6 +1,6 @@
 # HERESY-011 — The Anchor That Became a FIFO
 
-**Status:** isolated Python reproducer implemented; local Linux x86-64 execution observed. Cross-architecture HERESY-SOFA CI and review pending. Not published on SOFA.
+**Status:** isolated Python reproducer executed on Linux x86-64 and AArch64 via CI run `41332181292`, with verified receipts and clean reviewed PR #6. SOFA Blueprint published under ID `31f6e754-bf85-4e81-b626-ea17d0d70fb9`.
 
 ## What was reported
 
@@ -12,6 +12,6 @@
 
 ## Mitigation and limitations
 
-Validate the opened descriptor, use O_NONBLOCK plus the target-appropriate O_NOFOLLOW, and read only that descriptor with a strict length limit. Neither a correctly formatted local anchor nor a green test establishes independent custody, physical history or hardware proof. Both x86-64 and ARM64 jobs must execute before a dual-platform claim.
+Validate the opened descriptor, use O_NONBLOCK plus the target-appropriate O_NOFOLLOW, and read only that descriptor with a strict length limit. Neither a correctly formatted local anchor nor a green test establishes independent custody, physical history or hardware proof. Both x86-64 and ARM64 jobs executed on supported Linux CI runners; this does not establish other targets.
 
-**SOFA:** unpublished. The compiler is innocent; the pathname is under investigation.
+**SOFA:** Blueprint published after review under ID `31f6e754-bf85-4e81-b626-ea17d0d70fb9`. The compiler is innocent; the pathname is under investigation.
