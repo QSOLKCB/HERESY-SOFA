@@ -34,21 +34,41 @@ python3 -m chaos_pilot compare \
 
 There is intentionally **no** automated vulnerability reproduction command in the API module. A future reproduction executor must launch only human-reviewed, synthetic fixtures in a verified network-disabled OS sandbox such as a hardened rootless container. A Python subprocess plus a helpful prompt is **not** an isolation boundary.
 
-## Paid execution (not invoked by ChatGPT)
+## Offline review planning (no cloud integration)
 
-`gpt-6.1-sol` / Responses API / high reasoning / short-context Standard assumptions. Pricing reference: https://developers.openai.com/api/docs/models/gpt-6.1-sol — US$2 per 1M input tokens and US$10 per 1M output tokens. API usage and pricing can change. The runner applies conservative **estimated** US$3/M input and US$10/M output ledger calculations; tool calls are disabled, request size is capped and model outputs are never executed.
+HERESY-SOFA's [agent policy](../AGENTS.md) forbids adding cloud services or
+credentials. Therefore the CHAOS pilot contains **no live Responses API path**,
+no account-key handling, no network request sender, and no paid model command.
+Prior versions of this unmerged PR proposed a `paid-once` option; that option
+was removed in response to the Codex P1 review.
 
-Create a dedicated OpenAI API project and personally configure project billing/spend enforcement of **US$20**. Avoid sharing API keys in chat or Git. The local ledger halts admission before a new request would exceed its **US$17 estimated stop**. It reserves cost before contacting the API; unknown usage retains the reservation. This is **not** a guaranteed hard account-wide cap; other processes, pricing changes, project enforcement delays, or requests outside this runner are beyond its control. One paid request per command only. Run only with a dedicated project key and manually reviewed, **redacted** evidence text. The basic secret filter is not exhaustive.
+The hypothetical `gpt-6.1-sol` template and budget calculator are local
+planning artifacts, **not connected services**. `plan-review` consumes
+operator-reviewed redacted notes, calculates a prospective request digest,
+byte count and estimated reservation, and prints **metadata only**; it does
+not transmit data, save the notes, reserve real funds or write any API report.
+The independent ledger in `budget.py` is an offline budgeting simulation,
+not an accounting record of actual API charges.
 
 ```sh
-export OPENAI_API_KEY='...set securely in your shell, not in this document...'
-python3 -m chaos_pilot paid-once \
+python3 -m chaos_pilot plan-review \
   --case GITHUB-PRIVILEGED-PR \
-  --reviewed-evidence /path/to/redacted-reviewed-summary.txt \
-  --ack 'AUTHORIZE ONE PAID REQUEST'
+  --reviewed-evidence /path/to/redacted-reviewed-summary.txt
 ```
 
-The private report and local cost ledger are written under `.chaos-state/` (excluded from Git). Never commit them. SOFA contributes **zero** new public posts from this pilot until reviewed findings are independently approved for publication. Permission to read public SOFA examples is not permission to leak private findings there.
+Any future paid API integration requires **a separately approved project or
+explicit revision to this repository's policy**, independent credentials,
+security review and a new scoped PR. The suggested $20 project ceiling and $17
+local estimate are design targets only; no API budget is being consumed here.
+
+## Byte-accurate evidence
+
+The `compare` subcommand reads the supplied snapshot using `read_bytes()`,
+hashes those bytes directly with SHA-256, and decodes UTF-8 strictly **only
+for analysis**. CRLF, bare CR and LF remain distinct in the recorded digest.
+Invalid UTF-8 and oversized snapshots fail closed. A receipt remains a
+claim about the exact bytes **supplied by the operator**: it does not
+independently re-fetch or verify those bytes against the named Git commit.
 
 ## Evidence and review
 
