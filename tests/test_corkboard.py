@@ -45,9 +45,9 @@ class CorkboardTests(unittest.TestCase):
     def test_catalogue_exact_case_manifest_identity_and_status(self):
         entries = CASES["cases"]
         self.assertEqual(CASES["schema"], 1)
-        self.assertEqual(len(entries), 11)
+        self.assertEqual(len(entries), 12)
         self.assertEqual([e["id"] for e in entries], [
-            f"HERESY-{index:03}" for index in range(1, 12)
+            f"HERESY-{index:03}" for index in range(1, 13)
         ])
         for entry in entries:
             with self.subTest(entry=entry["id"]):
@@ -82,7 +82,7 @@ class CorkboardTests(unittest.TestCase):
                     x["id"] == entry["sofaId"] and x["state"] == "published"
                     for x in matching
                 ))
-        self.assertEqual(sum(e["status"] == "implemented" for e in CASES["cases"]), 9)
+        self.assertEqual(sum(e["status"] == "implemented" for e in CASES["cases"]), 10)
         self.assertEqual(sum(e["status"] == "placeholder" for e in CASES["cases"]), 2)
         self.assertEqual(sum(bool(e.get("published")) for e in CASES["cases"]), 4)
 
