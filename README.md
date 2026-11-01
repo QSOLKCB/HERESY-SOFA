@@ -35,6 +35,7 @@ Receipts are written to `receipts/generated/` and are intentionally not committe
 | [HERESY-008](experiments/HERESY-008/experiment.md) | The Git Identity Crisis — PEBKAC / Layer 8 / ID-10-T | Executable on Linux with Git; Windows batch untested |
 | [HERESY-009](experiments/HERESY-009/experiment.md) | SQLite Double-Delivery Department | SQLite WAL deterministic two-connection reproduction |
 | [HERESY-010](experiments/HERESY-010/experiment.md) | The Emoji That Broke the Signature | UTF-16 key-order / hash test; full JCS not claimed |
+| [HERESY-011](experiments/HERESY-011/experiment.md) | The Anchor That Became a FIFO | Linux pathname TOCTOU/ABI: isolated Python model; x86-64 executed locally, ARM64 CI pending; unpublished |
 
 Use `python3 -m harness verify-all` to validate all generated receipts and their evidence hashes. `python3 -m unittest discover -s tests -v` runs the regression suite.
 
