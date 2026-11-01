@@ -53,18 +53,42 @@ def main():
                 snapshot_code=getattr(e,"sqlite_errorcode",None)
             finally:
                 a.execute("ROLLBACK")
-            # IMMEDIATE serializes the claim before SELECT and observes latest row.
+            # Exercise actual contention WHILE A owns the IMMEDIATE write reservation.
+            # With BEGIN DEFERRED substituted, B wins and A's snapshot cannot upgrade.
             a.execute("BEGIN IMMEDIATE")
-            immediate_rows=a.execute("UPDATE message SET status='delivered' WHERE id=2 AND status='pending' RETURNING id").fetchall()
+            read_during_claim=a.execute("SELECT status FROM message WHERE id=2").fetchone()
+            contention_code=None
+            contention_rows=None
+            try:
+                contention_rows=b.execute(
+                    "UPDATE message SET status='delivered' WHERE id=2 "
+                    "AND status='pending' RETURNING id"
+                ).fetchall()
+            except sqlite3.OperationalError as e:
+                contention_code=getattr(e,"sqlite_errorcode",None)
+            immediate_rows=a.execute(
+                "UPDATE message SET status='delivered' WHERE id=2 "
+                "AND status='pending' RETURNING id"
+            ).fetchall()
             a.execute("COMMIT")
-            other_rows=b.execute("UPDATE message SET status='delivered' WHERE id=2 AND status='pending' RETURNING id").fetchall()
+            # After the first writer releases its lock, the loser can retry.
+            other_rows=b.execute(
+                "UPDATE message SET status='delivered' WHERE id=2 "
+                "AND status='pending' RETURNING id"
+            ).fetchall()
             checks={"two_readers_can_duplicate_delivery":len(naïve_deliveries)==2 and pending_a==pending_b,
                     "conditional_update_only_one_wins":win_a==[(1,)] and win_b==[],
                     "deferred_reader_upgrade_hits_busy_snapshot":snapshot_code==sqlite3.SQLITE_BUSY_SNAPSHOT,
-                    "immediate_claim_handles_contention":immediate_rows==[(2,)] and other_rows==[]}
+                    "immediate_claim_handles_contention":(read_during_claim==("pending",)
+                        and contention_code==sqlite3.SQLITE_BUSY
+                        and contention_rows is None and immediate_rows==[(2,)]
+                        and other_rows==[])}
             return report(checks,{"naive_delivery_count":len(naïve_deliveries),
                 "conditional_winners":[len(win_a),len(win_b)],"snapshot_extended_code":snapshot_code,
-                "immediate_winners":[len(immediate_rows),len(other_rows)]})
+                "immediate_winners":[len(immediate_rows),len(other_rows)],
+                "read_under_immediate":read_during_claim,
+                "contender_busy_code":contention_code,
+                "contender_claimed_rows":contention_rows})
         finally:
             a.close();b.close()
 
