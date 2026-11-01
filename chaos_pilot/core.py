@@ -45,23 +45,25 @@ def candidate_workflow_flags(text):
     return sorted(set(flags))
 
 
-def compare_snapshot(repo, sha, relative_path, text):
-    """Inspect a caller-supplied public snapshot only; do not fetch code here."""
+def compare_snapshot(repo, sha, relative_path, source_bytes):
+    """Hash exact supplied bytes; decode only for offline text heuristics."""
     if repo not in SCOPE or SCOPE[repo] != sha:
         raise ValueError("repository and exact SHA must match approved scope")
     path = Path(relative_path)
     if path.is_absolute() or ".." in path.parts or not path.parts:
         raise ValueError("unsafe relative path")
-    encoded = text.encode("utf-8")
-    if len(encoded) > 256_000:
+    if not isinstance(source_bytes, bytes):
+        raise ValueError("snapshot must be raw bytes")
+    if len(source_bytes) > 256_000:
         raise ValueError("snapshot too large")
+    text = source_bytes.decode("utf-8", errors="strict")
     return {
         "schema_version": 1,
         "status": "review_candidate_not_vulnerability",
         "repository": repo,
         "source_sha": sha,
         "relative_path": str(path),
-        "sha256": hashlib.sha256(encoded).hexdigest(),
+        "sha256": hashlib.sha256(source_bytes).hexdigest(),
         "flags": candidate_workflow_flags(text) if path.suffix in {".yml", ".yaml"} else [],
         "limitations": "Text heuristics only. No YAML semantics, execution, network or exploit testing.",
     }
