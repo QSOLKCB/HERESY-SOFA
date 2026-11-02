@@ -1,6 +1,6 @@
 # HERESY — The Gremlin Files
 
-A read-only, interactive **evidence corkboard** for all eleven HERESY experiments.
+A read-only, interactive **evidence corkboard** for all twelve HERESY experiments.
 
 - **HTML:** accessible semantic layout, keyboard-focusable evidence cards, native modal dossiers.
 - **CSS:** textured cork, scattered note paper, pushpins, labels, industrial lettering and responsive layouts.
@@ -25,7 +25,7 @@ Then open `http://localhost:8000`. Opening `index.html` with a `file://` URL may
 python3 -m unittest discover -s tests -p 'test_corkboard.py' -v
 ```
 
-The tests check all eleven case IDs, each status and formal title against its original `experiment.json`, the documented case-file paths, the four SOFA publications against `sofa/manifest.json`, red-thread graph references, local asset dependencies, and native Canvas/modal features. They **do not** constitute browser rendering, accessibility certification or additional experiment execution.
+The tests check all twelve case IDs, each status and formal title against its original `experiment.json`, the documented case-file paths, the four SOFA publications against `sofa/manifest.json`, red-thread graph references, local asset dependencies, and native Canvas/modal features. They **do not** constitute browser rendering, accessibility certification or additional experiment execution.
 
 ## GitHub Pages deployment
 
@@ -43,6 +43,7 @@ The workflow uploads `site/` as the artifact and uses GitHub's official Pages de
 - **WANTED** means an untested placeholder, not an executed incident. `HERESY-005` and `HERESY-006` remain untested.
 - **ON SOFA** means the manifest records a published contribution, not that a new post was sent by this website.
 - `HERESY-011` records separate Python x86-64/ARM64 reproduction and upstream TOMBSTONE Rust evidence; these are not conflated.
+- `HERESY-012` reproduces only the JUnit parameter-identity bookkeeping flaw on synthetic Python XML; QEC #623 live-socket/Ed25519 CI is separately reported upstream, never attributed to this site.
 - Red strings are thematic links between cases, not cryptographic or scientific causality.
 
 All controls are client-side. To add a case, update its source experiment first, then curate `site/cases.json`, preserving the exact manifest identity and status. The static tests will fail if an invalid publication or missing source path is introduced.

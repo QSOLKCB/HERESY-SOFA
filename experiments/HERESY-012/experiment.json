@@ -1,0 +1,7 @@
+{
+  "id": "HERESY-012",
+  "title": "The Four Revocations in a Trench Coat",
+  "status": "implemented",
+  "platform": "Python 3 standard library; synthetic JUnit XML, no QEC execution",
+  "entrypoint": "run.py"
+}

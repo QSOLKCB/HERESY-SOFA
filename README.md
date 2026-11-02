@@ -10,7 +10,7 @@ Humour is editorial seasoning, not evidence. Every experiment distinguishes reco
 
 ## The Gremlin Files — interactive corkboard
 
-The [static evidence corkboard](site/README.md) presents all eleven HERESY case files as pinned notes with **Canvas red-thread connections**, search, status filters and clickable dossiers. It distinguishes nine bounded reproductions from two untested candidates and links the four confirmed SOFA contributions. The `site/` directory contains plain HTML, CSS, JavaScript and a versioned case catalogue, with no build step or telemetry.
+The [static evidence corkboard](site/README.md) presents all twelve HERESY case files as pinned notes with **Canvas red-thread connections**, search, status filters and clickable dossiers. It distinguishes ten bounded reproductions from two untested candidates and links the four confirmed SOFA contributions. The `site/` directory contains plain HTML, CSS, JavaScript and a versioned case catalogue, with no build step or telemetry.
 
 **GitHub Pages:** after merging the reviewed site PR, select **Source: GitHub Actions** in [Settings → Pages](https://github.com/QSOLKCB/HERESY-SOFA/settings/pages). The workflow `HERESY Corkboard — static Pages` publishes the site. [Local preview and evidence rules](site/README.md).
 
@@ -42,6 +42,7 @@ Receipts are written to `receipts/generated/` and are intentionally not committe
 | [HERESY-009](experiments/HERESY-009/experiment.md) | SQLite Double-Delivery Department | SQLite WAL deterministic two-connection reproduction |
 | [HERESY-010](experiments/HERESY-010/experiment.md) | The Emoji That Broke the Signature | UTF-16 key-order / hash test; full JCS not claimed |
 | [HERESY-011](experiments/HERESY-011/experiment.md) | The Anchor That Became a FIFO | Linux pathname TOCTOU/ABI: isolated Python model; x86-64 and ARM64 CI passed; SOFA Blueprint published |
+| [HERESY-012](experiments/HERESY-012/experiment.md) | The Four Revocations in a Trench Coat | Independent synthetic JUnit counterexample: family counts disguise missing parameter dimensions; SOFA candidate unpublished |
 
 Use `python3 -m harness verify-all` to validate all generated receipts and their evidence hashes. `python3 -m unittest discover -s tests -v` runs the regression suite.
 
@@ -62,6 +63,12 @@ python3 -m unittest discover -s blueprints/JSON-FINITE-NUMBERS-v0.2.0 -p 'test_*
 ```
 
 See the [evidence review checklist](docs/EVIDENCE_REVIEW.md) before promoting any new experiment or Blueprint. This repository does not require Node.js and does not publish to SOFA.
+
+## HERESY-012 — JUnit evidence-integrity investigation
+
+**[The Four Revocations in a Trench Coat](experiments/HERESY-012/experiment.md)** demonstrates, with a separate standard-library synthetic JUnit fixture, how a CI completeness guard can count four parametrized tests while failing to verify their dimension identities. The actual QEC #623 signed-socket trial results are **upstream evidence only**, not experiments performed by HERESY. The [incident report](incidents/HERESY-012.md) and [unpublished SOFA Blueprint candidate](blueprints/HERESY-012/BLUEPRINT.md) keep that distinction explicit.
+
+Run `python3 -m harness run HERESY-012` and `python3 -m harness verify HERESY-012` for a locally generated, source-hash-verified receipt. The corresponding SOFA contribution is **not published**.
 
 ## Published HERESY-011 Blueprint
 

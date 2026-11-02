@@ -10,4 +10,6 @@ Use [`TEMPLATE.md`](TEMPLATE.md) for new candidates and keep their publication s
 
 ## Candidate catalogue
 
+- [HERESY-012 — The Four Revocations in a Trench Coat](HERESY-012/README.md): **unpublished** evidence-integrity Blueprint about checking exact parametrized CI test identities rather than total passing family counts. Independent synthetic JUnit reproducer only; QEC upstream CI remains separate.
+
 - [JSON finite-number contract — v0.2.0](JSON-FINITE-NUMBERS-v0.2.0/README.md): unpublished reference architecture, standard-library loopback HTTP fixture, and 15 runnable regression tests. Its Python test results are reproducible locally; the separately archived JavaScript comparison is not a core dependency or CI requirement.

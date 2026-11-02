@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_from": "QSOLKCB/HERESY-SOFA main (experiment manifests, incident records, SOFA manifest)",
+  "updated_from": "HERESY-SOFA local experiment manifests and SOFA registry; HERESY-012 additionally cites QEC #623 externally",
   "connections": [
     [
       "HERESY-001",
@@ -29,6 +29,14 @@
     [
       "HERESY-005",
       "HERESY-006"
+    ],
+    [
+      "HERESY-010",
+      "HERESY-012"
+    ],
+    [
+      "HERESY-011",
+      "HERESY-012"
     ]
   ],
   "cases": [
@@ -281,6 +289,29 @@
       "sofaId": "31f6e754-bf85-4e81-b626-ea17d0d70fb9",
       "doc": "experiments/HERESY-011/experiment.md",
       "incident": "incidents/HERESY-011.md"
+    },
+    {
+      "id": "HERESY-012",
+      "name": "The Four Revocations in a Trench Coat",
+      "formal": "The Four Revocations in a Trench Coat",
+      "category": "SECURITY",
+      "status": "implemented",
+      "symbol": "Ⅳ",
+      "type": "JUnit completeness / evidence identity",
+      "teaser": "Eleven names on the register. Three witnesses never checked in.",
+      "cause": "A JUnit completeness checker grouped parametrized node IDs by base test name, discarding the identity of the revocation dimension while counting passing cases.",
+      "finding": "Independent Python standard-library synthetic JUnit fixture demonstrates that four different operation-only parameters can satisfy the old 11-test family counts; exact-name checking rejects the same substitution.",
+      "mitigation": "Require the full independently declared set of exact pytest node IDs, reject missing/extra/substituted parameter identities and failed/skipped records, and retain actual JUnit results.",
+      "scope": "Bounded synthetic XML reproduction only. QEC #623 corrected CI is separate upstream evidence; no claim QEC skipped tests or that HERESY ran QEC signing, IRC, or security tests.",
+      "tags": [
+        "junit",
+        "pytest",
+        "security evidence",
+        "parameter identities"
+      ],
+      "rotation": 2.2,
+      "doc": "experiments/HERESY-012/experiment.md",
+      "incident": "incidents/HERESY-012.md"
     }
   ]
 }

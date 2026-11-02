@@ -45,9 +45,9 @@ class CorkboardTests(unittest.TestCase):
     def test_catalogue_exact_case_manifest_identity_and_status(self):
         entries = CASES["cases"]
         self.assertEqual(CASES["schema"], 1)
-        self.assertEqual(len(entries), 11)
+        self.assertEqual(len(entries), 12)
         self.assertEqual([e["id"] for e in entries], [
-            f"HERESY-{index:03}" for index in range(1, 12)
+            f"HERESY-{index:03}" for index in range(1, 13)
         ])
         for entry in entries:
             with self.subTest(entry=entry["id"]):
@@ -82,9 +82,30 @@ class CorkboardTests(unittest.TestCase):
                     x["id"] == entry["sofaId"] and x["state"] == "published"
                     for x in matching
                 ))
-        self.assertEqual(sum(e["status"] == "implemented" for e in CASES["cases"]), 9)
+        self.assertEqual(sum(e["status"] == "implemented" for e in CASES["cases"]), 10)
         self.assertEqual(sum(e["status"] == "placeholder" for e in CASES["cases"]), 2)
         self.assertEqual(sum(bool(e.get("published")) for e in CASES["cases"]), 4)
+
+    def test_heresy012_is_an_independent_reproduction_not_a_sofa_publication(self):
+        entry = next(case for case in CASES["cases"] if case["id"] == "HERESY-012")
+        manifest = json.loads(
+            (ROOT / "experiments" / "HERESY-012" / "experiment.json").read_text()
+        )
+        sofa = json.loads((ROOT / "sofa" / "manifest.json").read_text())
+        self.assertEqual(entry["formal"], manifest["title"])
+        self.assertEqual(entry["status"], "implemented")
+        self.assertEqual(entry["category"], "SECURITY")
+        self.assertIn("synthetic", entry["finding"].lower())
+        self.assertIn("separate upstream evidence", entry["scope"].lower())
+        self.assertNotIn("sofaId", entry)
+        self.assertNotIn("published", entry)
+        self.assertFalse(sofa["publishing_enabled"])
+        self.assertEqual(
+            sofa["experiments"]["HERESY-012"],
+            {"questions": [], "tils": [], "blueprints": [], "playbooks": [], "replies": []},
+        )
+        self.assertTrue((ROOT / "incidents" / "HERESY-012.md").is_file())
+        self.assertTrue((ROOT / "blueprints" / "HERESY-012" / "BLUEPRINT.md").is_file())
 
     def test_canvas_threads_only_connect_known_cases(self):
         known = {e["id"] for e in CASES["cases"]}
