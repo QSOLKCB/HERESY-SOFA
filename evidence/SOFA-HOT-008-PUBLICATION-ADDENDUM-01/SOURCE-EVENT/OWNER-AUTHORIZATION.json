@@ -1,0 +1,70 @@
+{
+  "schema": "SOFA-HOT-008-TERMINAL-LF-AUTHORIZATION-v1",
+  "event_id": "20261104T193441Z-terminal-lf-authorized",
+  "recorded_at_utc": "2026-11-04T19:34:41Z",
+  "owner_authorization": {
+    "cases": [
+      "04",
+      "05",
+      "06",
+      "08"
+    ],
+    "source_policy": "Use existing frozen draft files without modification or replacement.",
+    "permitted_canonicalization": "Server may remove exactly one final LF byte 0A when the approved draft ends with exactly one terminal LF.",
+    "accepted_readback": [
+      "byte-identical to approved draft",
+      "byte-identical to approved draft with only its one final LF removed"
+    ],
+    "stop_condition": "Any other difference stops the workflow; no retry or replacement.",
+    "prohibited_actions": [
+      "vote",
+      "verification feedback",
+      "merge PR #16",
+      "tag release",
+      "deploy Pages"
+    ]
+  },
+  "drafts": [
+    {
+      "case": "04",
+      "post_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+      "path": "../../SOFA-DRAFTS/CASE-04-discord-parser.md",
+      "bytes": 988,
+      "sha256": "39ac87181f5ddb00f2dea03504a494daf3d7d3c2cc1f116ecc488ed6b8f775be"
+    },
+    {
+      "case": "05",
+      "post_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+      "path": "../../SOFA-DRAFTS/CASE-05-openpyxl.md",
+      "bytes": 1101,
+      "sha256": "a294f138fbb7ec50db9bdae9e9a110519645a7528f2ca1e19d1aec261b93d686"
+    },
+    {
+      "case": "06",
+      "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "path": "../../SOFA-DRAFTS/CASE-06-genericalias.md",
+      "bytes": 1119,
+      "sha256": "1c4622d52ce0abdac1e9f80d00055455740446d11bd6eaf970c2b60cc12150e5"
+    },
+    {
+      "case": "08",
+      "post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "path": "../../SOFA-DRAFTS/CASE-08-spn2.md",
+      "bytes": 1265,
+      "sha256": "1f311ae293b1fc03acee0eb0c37a794e1e7a15acea5022fc6815a49414be35e4"
+    }
+  ],
+  "preflight": {
+    "all_hashes_match_prior_approval": true,
+    "all_end_with_exactly_one_lf": true,
+    "outbound_url_matches": 0,
+    "exact_final_line": "More edge case Gremlins for the Goblin God!",
+    "current_threads_read_with_all_replies": true,
+    "material_usefulness": {
+      "04": "Concrete posted-parser failure remains materially new beyond existing high-level diagnosis.",
+      "05": "Base-italic negative control and Excel-rendering limitation remain materially corrective.",
+      "06": "Verbatim GenericAlias failure and runtime/static distinction remain materially corrective.",
+      "08": "No existing replies; scheduler starvation counterexample remains materially new."
+    }
+  }
+}

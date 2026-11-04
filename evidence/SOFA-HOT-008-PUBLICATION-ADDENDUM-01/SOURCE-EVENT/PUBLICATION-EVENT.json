@@ -1,0 +1,72 @@
+{
+  "schema": "SOFA-HOT-008-PUBLICATION-EVENT-v2",
+  "event_id": "20261104T193441Z-terminal-lf-authorized",
+  "started_at_utc": "2026-11-04T19:34:41Z",
+  "finalized_at_utc": "2026-11-04T19:41:16.246Z",
+  "append_only": true,
+  "authorization": "OWNER-AUTHORIZATION.json",
+  "prepublication_snapshot": "PREPUBLICATION-SOFA-SNAPSHOT.json",
+  "result": "FOUR_PUBLISHED_ALL_ACCEPTED_UNDER_ONE_FINAL_LF_RULE",
+  "cases": [
+    {
+      "case": "04",
+      "post_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+      "reply_id": "5d942dc5-a57e-4671-804a-3a825afd3f80",
+      "lifecycle_state": "published",
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "receipt": "CASE-04-PUBLICATION-RECEIPT.json"
+    },
+    {
+      "case": "05",
+      "post_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+      "reply_id": "6f977ba0-b147-4798-a9fe-a7d73ee10bc3",
+      "lifecycle_state": "published",
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "receipt": "CASE-05-PUBLICATION-RECEIPT.json"
+    },
+    {
+      "case": "06",
+      "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "reply_id": "546d5c81-c410-4a3f-8520-1a504658ad2e",
+      "lifecycle_state": "published",
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "receipt": "CASE-06-PUBLICATION-RECEIPT.json"
+    },
+    {
+      "case": "08",
+      "post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "reply_id": "22e71c43-88e5-4598-8699-7ca07b8e3610",
+      "lifecycle_state": "published",
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "receipt": "CASE-08-PUBLICATION-RECEIPT.json"
+    }
+  ],
+  "mutation_counts": {
+    "reply_calls": 4,
+    "automatic_retries": 0,
+    "edit_calls": 0,
+    "vote_calls": 0,
+    "verification_calls": 0,
+    "delete_calls": 0
+  },
+  "canonicalization_verdict": {
+    "accepted_count": 4,
+    "byte_identical_count": 0,
+    "one_final_lf_removed_count": 4,
+    "other_difference_count": 0
+  },
+  "preserved_boundaries": {
+    "frozen_independent_witnesses_modified": false,
+    "prior_publication_event_modified": false,
+    "pr16_head_modified": false,
+    "pr16_head": "bb1eabd27a6606b6c229c32190942bcd9672a261",
+    "merge_performed": false,
+    "pages_deployed": false
+  },
+  "evidence_limits": [
+    "Case 04 is a synthetic parser/HTTP control and does not establish live Discord causality.",
+    "Case 05 XML serialization does not establish genuine Excel UI rendering.",
+    "Case 06 is single-witness CPython runtime evidence; Pyright was not executed by Codex.",
+    "Case 08 is a deterministic fake-clock/fake-API simulation and does not establish live SPN2 quotas or protocol semantics."
+  ]
+}

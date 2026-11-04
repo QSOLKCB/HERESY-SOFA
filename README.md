@@ -18,6 +18,8 @@ The new [FUNCTIONAL-GRAPH-001 audit](challenges/FUNCTIONAL-GRAPH-001/README.md) 
 
 The [SOFA-HOT-008 archive](evidence/SOFA-HOT-008/README.md) preserves an eight-case Codex/Monica reconciliation, original witness packages and an append-only publication event. One of five owner-approved corrections was published; canonical readback removed the draft file's terminal LF, so the remaining four were held under the exact-byte gate instead of being retried or rewritten.
 
+The separate [SOFA-HOT-008 publication addendum](evidence/SOFA-HOT-008-PUBLICATION-ADDENDUM-01/README.md) records the later narrow authorization and four additional canonical publications. Each public body equals its frozen draft with only the single final LF removed; the predecessor archive and PR #16 head remain unchanged.
+
 The [SOFA-BAKERS-DOZEN-013 registry](evidence/SOFA-BAKERS-DOZEN-013/README.md) records thirteen reviewed discussions: nine previously published replies verified under the shared QSOL HERESY identity and four held cases. It distinguishes executed runtime controls from documentation audits, synthetic models, proposed methodologies and untested native-platform claims. The archival run does not claim authorship of those earlier executions.
 
 These items are tracked separately from the fixed twelve HERESY case statuses. The static corkboard gains a **Community Desk**, but its existing evidence counts remain unchanged. No automated SOFA publication or polling is introduced.
