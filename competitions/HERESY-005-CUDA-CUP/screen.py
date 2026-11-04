@@ -15,6 +15,7 @@ from typing import Any
 
 COMPETITION_ID = "HERESY-005-CUDA-CUP"
 MAX_REPORT_BYTES = 2_000_000
+MAX_PROBE_STDOUT_CHARS = 4096  # A device probe prints one small JSON object.
 MAX_REPEATS = 5
 CUDA_ERROR_ASSERT = 710
 REQUIRED_EVIDENCE = frozenset({
@@ -205,10 +206,16 @@ def screen(report: Any) -> dict[str, Any]:
                 and probe_record["observation"] == probe,
                 "recorded device probe disagrees with actual.device_probe",
             )
-            try:
-                probe_stdout = json.loads(probe_record.get("stdout"))
-            except (TypeError, ValueError):
+            probe_text = probe_record.get("stdout")
+            # The outer report has a byte bound, but its embedded stdout is
+            # untrusted JSON text with its own nesting/CPU budget.
+            if not isinstance(probe_text, str) or len(probe_text) > MAX_PROBE_STDOUT_CHARS:
                 probe_stdout = None
+            else:
+                try:
+                    probe_stdout = json.loads(probe_text)
+                except (ValueError, RecursionError):
+                    probe_stdout = None
             require(
                 isinstance(probe_stdout, dict) and probe_stdout == probe,
                 "device probe stdout disagrees with recorded observation",
@@ -309,7 +316,8 @@ def main(argv: list[str] | None = None) -> int:
             raise ValueError("report exceeds 2 MB bound")
         report = json.loads(args.report.read_text(encoding="utf-8"))
         result = screen(report)
-    except (OSError, UnicodeError, ValueError):
+    except (OSError, UnicodeError, ValueError, RecursionError):
+        # Deeply nested outer JSON must also produce a machine-readable denial.
         result = {
             "competition_id": COMPETITION_ID, "screening": "REJECTED",
             "verified_hardware": False, "errors": ["report unavailable, malformed or oversized"],

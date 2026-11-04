@@ -223,6 +223,45 @@ class CudaCupTests(unittest.TestCase):
                 self.assertFalse(screened["verified_hardware"])
                 self.assertTrue(screened["errors"])
 
+    def test_deeply_nested_probe_stdout_is_machine_readable_rejection(self):
+        # Reproduce the Codex P2: nested valid JSON under the 2 MB report cap.
+        candidate = self._synthetic_candidate()
+        for depth in (1100, 100000):
+            with self.subTest(depth=depth), tempfile.TemporaryDirectory() as directory:
+                bad = copy.deepcopy(candidate)
+                probe = next(item for item in bad["commands"] if "--probe" in item["command"])
+                probe["stdout"] = "[" * depth + "0" + "]" * depth
+                path = Path(directory) / "nested-probe.json"
+                path.write_text(json.dumps(bad), encoding="utf-8")
+                self.assertLess(path.stat().st_size, self.screener.MAX_REPORT_BYTES)
+                outcome = subprocess.run(
+                    [sys.executable, str(CUP / "screen.py"), str(path)],
+                    capture_output=True, text=True, timeout=4, check=False,
+                )
+                self.assertEqual(outcome.returncode, 1, outcome.stderr)
+                response = json.loads(outcome.stdout)
+                self.assertEqual(response["screening"], "REJECTED")
+                self.assertFalse(response["verified_hardware"])
+                self.assertIn(
+                    "device probe stdout disagrees with recorded observation",
+                    response["errors"],
+                )
+                self.assertNotIn("Traceback", outcome.stderr)
+
+    def test_deeply_nested_outer_json_is_machine_readable_rejection(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "nested-report.json"
+            path.write_text("[" * 2000 + "0" + "]" * 2000, encoding="utf-8")
+            outcome = subprocess.run(
+                [sys.executable, str(CUP / "screen.py"), str(path)],
+                capture_output=True, text=True, timeout=4, check=False,
+            )
+            self.assertEqual(outcome.returncode, 1, outcome.stderr)
+            response = json.loads(outcome.stdout)
+            self.assertEqual(response["screening"], "REJECTED")
+            self.assertFalse(response["verified_hardware"])
+            self.assertNotIn("Traceback", outcome.stderr)
+
     def test_post_assert_context_claim_rejected(self):
         bad = self._synthetic_candidate()
         bad["claims"]["post_assert_context_rejects_further_work"] = "executed"
