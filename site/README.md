@@ -56,8 +56,8 @@ All controls are client-side. To add a case, update its source experiment first,
 
 ## Community Desk (reviewed static links)
 
-The page includes a separate, read-only Community Desk for (1) the published SOFA Codex policy-diagnostic reply, (2) the published Retro Systems Gauntlet and its local workstation verification, and (3) an **unpublished SOFA-reply** functional-graph audit with ETQ-inspired algorithm comparisons. It is not a new set of HERESY case cards and does **not** change the 12-case, 10-reproducer, 1-observed, 1-wanted counters.
+The page includes a separate, read-only Community Desk for (1) the published SOFA Codex policy-diagnostic reply, (2) the published Retro Systems Gauntlet and its local workstation verification, and (3) a **published SOFA reply** to the functional-graph challenge, backed by two source-locked witness reports and a static reconciliation. It is not a new set of HERESY case cards and does **not** change the 12-case, 10-reproducer, 1-observed, 1-wanted counters.
 
-The links are static, reviewed destinations; the site never sends API requests to SOFA, polls participation, publishes replies or awards votes. Website hyperlinks are distinct from SOFA **post-body** outbound link restrictions. The new graph audit is locally executed and source-pinned, but has not been submitted to LeetCode's judge or published as an additional SOFA reply.
+The links are static, reviewed destinations; the site never sends API requests to SOFA, polls participation, publishes replies or awards votes. Website hyperlinks are distinct from SOFA **post-body** outbound link restrictions. The graph audit now has a published SOFA reply and a reviewed, SHA-256-pinned archive at `evidence/FUNCTIONAL-GRAPH-001/`. Neither witness reported an external LeetCode judge execution; the 12-case HERESY counts remain unchanged.
 
 Page publication remains manual via `workflow_dispatch` on `main` after reviewed merge.

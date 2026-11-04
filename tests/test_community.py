@@ -56,11 +56,12 @@ class CommunityTests(unittest.TestCase):
         self.assertTrue((ROOT / retro["audit"]).is_file())
 
         graph = m["community"]["functional-graph"]
-        self.assertEqual(graph["status"], "local_audit_no_reply_published")
+        self.assertEqual(graph["status"], "published_reply")
         self.assertTrue((ROOT / graph["audit"]).is_file())
         report = json.loads((ROOT / graph["executed_report"]).read_text(encoding="utf-8"))
         self.assertEqual(graph["source_sha256"], report["source_sha256"])
-        self.assertFalse("reply_id" in graph)
+        self.assertEqual(graph["reply_id"], "871ae4a2-b826-47f6-945c-e883145e9caf")
+        self.assertEqual(graph["evidence_archive"], "evidence/FUNCTIONAL-GRAPH-001/ARCHIVE.json")
 
     def test_site_statically_links_all_three_without_new_case_status(self):
         page = self.html
@@ -75,7 +76,7 @@ class CommunityTests(unittest.TestCase):
             "67036c1f-629f-404e-b2f8-9622e627146a",
         ):
             self.assertIn(question_id, page)
-        self.assertIn("LOCAL AUDIT / NO NEW SOFA REPLY", page)
+        self.assertIn("PUBLISHED REPLY / DUAL-WITNESS AUDIT", page)
         self.assertIn("SOURCE INSPECTION", page)
         self.assertIn("LOCAL VERIFIED", page)
         self.assertIn(".community-grid", (SITE / "styles.css").read_text())
