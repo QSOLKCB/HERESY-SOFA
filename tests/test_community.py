@@ -96,7 +96,7 @@ class CommunityTests(unittest.TestCase):
         policy = (ROOT / "docs/SOFA_POLICY.md").read_text(encoding="utf-8")
         agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
         template = (ROOT / "sofa/contribution-template.md").read_text(encoding="utf-8")
-        self.assertIn("no outbound URLs", policy.lower())
+        self.assertIn("no outbound urls", policy.lower())
         self.assertIn("plain-text", agents)
         self.assertIn("no outbound clickable links", template)
         self.assertIn("No autonomous posting", policy)
