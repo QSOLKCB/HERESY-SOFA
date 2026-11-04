@@ -1,0 +1,972 @@
+{
+  "archive_after": {
+    "bytes": 65649,
+    "mode": "0o664",
+    "mtime_ns": 1793810164192481068,
+    "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202"
+  },
+  "archive_before": {
+    "bytes": 65649,
+    "mode": "0o664",
+    "mtime_ns": 1793810164192481068,
+    "path": "MONICA-001/SOFA-HOT-008-MONICA-001-evidence.gz",
+    "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202"
+  },
+  "archive_byte_identical_and_metadata_stable": true,
+  "archive_kind": "gzip_compressed_posix_tar",
+  "decisions": [
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001"
+    },
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001/tests"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py"
+    },
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001/records"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode"
+    },
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001/sources"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/environment.txt"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/build_reports.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt"
+    }
+  ],
+  "extracted_files": [
+    {
+      "bytes": 2990,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "sha256": "7ba9f80dc1c0a7c391b880e0c5a19b3ee11d2e1284874a9f0e7d565a1dcc1a1d"
+    },
+    {
+      "bytes": 3242,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "sha256": "5e3a3823172e00c0fcb358346291aa59ffa2ba93654798caeeaf9000571a566e"
+    },
+    {
+      "bytes": 1704,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "sha256": "d66a2d7c1fc93eceb2f22819d0728bab1e71e570bcaf3e1960222afc2698a44c"
+    },
+    {
+      "bytes": 2990,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "sha256": "624ecc5f64e325190b9de3d9cd4203197fc70fee654c29310a171134b29e968c"
+    },
+    {
+      "bytes": 2214,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "sha256": "c4dfa0c017a9fa04f07f027496b2743bf625d65d7cf2321d730edd8a04b5f407"
+    },
+    {
+      "bytes": 2316,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "sha256": "cd84496104951ccea720345b2b5b55bcffd6a06459f3fb5f38113b374e67cfbd"
+    },
+    {
+      "bytes": 3384,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "sha256": "b14b1c41f758ce20169b74dce88000bb237f3dd86a9ce6959772d18569df569d"
+    },
+    {
+      "bytes": 4934,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "sha256": "1e08dcf52e90f912fd8fabc22c1dae7df736104f282beee5779727031efa71be"
+    },
+    {
+      "bytes": 1248,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "sha256": "10caaff74e05365f14d3a615a5658ce7282b12b929251bb08b91ebf9c7d99e49"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1216,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "sha256": "b9b5cb0d3b206490cb949f870b68a144bdc2970535e04183961b1766169e1ffa"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 628,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "sha256": "216356bf25de485cc29344bf1c4471f8364d370cb7620036113558306bfcd2e3"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1249,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "sha256": "9a358d52b44885669eafaa7e32c495936577f3be89071349d12aabae4bb1d086"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 796,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "sha256": "b0bc6bcddb75b78773b3c3e5d2f19ae21c64a8aab13707341c883861d68b2bda"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1661,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "sha256": "5607d158734b8b04e98119841136c689d2ac98d283d191a19aaceb4077ac7ea7"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1496,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "sha256": "5acff2e331bd9f4157511a4cd4d3f1230ca1f0cce36cb7c70cc13a32156c930b"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1466,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "sha256": "03ff2db4597fee2a88824694b2fd556e633bf088e00c5d4eb22fcd979a574664"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 220787,
+      "member_name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "sha256": "487f3c53898b63380413e34d0413111d36362fc80dd36fa47a27e0d9c2d21b16"
+    },
+    {
+      "bytes": 120270,
+      "member_name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "sha256": "77219145926c1641040b039ccd55513db199ebb27092099a4abf607c4423662c"
+    },
+    {
+      "bytes": 427,
+      "member_name": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "sha256": "5c87c045bd5690598835b0c5c97a259fd19c25acdbc2dcc41199534bc9f3f938"
+    },
+    {
+      "bytes": 13646,
+      "member_name": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "sha256": "d369e7722ba6c24522eaf0cd6699d75600d603d5a3f2ddc9eace1e5ce214cffa"
+    },
+    {
+      "bytes": 12097,
+      "member_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "sha256": "f1d7d424ccb42b3d5d9e06b05b2d18c8bf99a123ab317731f036ad01c4e485ef"
+    },
+    {
+      "bytes": 7726,
+      "member_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "sha256": "8e1f59f9ae45c840fafebf9459cf712e9dec0be72f5dea13fe96111b97505f62"
+    },
+    {
+      "bytes": 3880,
+      "member_name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "sha256": "bb9d6bed1975866358eac8e18325d4f6fff921cf40935af809b8449a4c3ac092"
+    }
+  ],
+  "extraction_root": "RECONCILIATION/MONICA-EXTRACTED-cc3d4ae960c6",
+  "finished_at_utc": "2026-11-04T16:58:49.402967+00:00",
+  "gzip_integrity": {
+    "status": "PASS",
+    "uncompressed_bytes": 450560,
+    "uncompressed_sha256": "83992c3b400a3f35949be73c67d8408ef64762010f56b6218297a1c805740344"
+  },
+  "limits": {
+    "max_gzip_uncompressed_bytes": 67108864,
+    "max_regular_files": 512,
+    "max_single_file_bytes": 33554432,
+    "max_tar_members": 1024,
+    "max_total_regular_bytes": 67108864
+  },
+  "members": [
+    {
+      "gid": 0,
+      "index": 0,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001",
+      "normalized_name": "SOFA-HOT-008/MONICA-001",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 1,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001/tests",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 2,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "size": 2990,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 3,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "size": 3242,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 4,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "size": 1704,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 5,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "size": 2990,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 6,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "size": 2214,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 7,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "size": 2316,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 8,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "size": 3384,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 9,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "size": 4934,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 10,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001/records",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 11,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "size": 1248,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 12,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 13,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 14,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "size": 1216,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 15,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 16,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 17,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "size": 628,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 18,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 19,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 20,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "size": 1249,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 21,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 22,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 23,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "size": 796,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 24,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 25,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 26,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "size": 1661,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 27,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 28,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 29,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "size": 1496,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 30,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 31,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 32,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "size": 1466,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 33,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 34,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 35,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001/sources",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/sources",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 36,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "size": 220787,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 37,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "size": 120270,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 38,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "size": 427,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 39,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "size": 13646,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 40,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "size": 12097,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 41,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "size": 7726,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 42,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "size": 3880,
+      "uid": 0
+    }
+  ],
+  "safety_checks": {
+    "absolute_paths": "PASS",
+    "declared_regular_bytes": 412375,
+    "devices": "PASS_NONE_PRESENT",
+    "dotdot_traversal": "PASS",
+    "duplicate_normalized_paths": "PASS",
+    "fifos": "PASS_NONE_PRESENT",
+    "hardlinks": "PASS_NONE_PRESENT",
+    "member_count": 43,
+    "regular_file_count": 39,
+    "symlinks": "PASS_NONE_PRESENT",
+    "unexpected_types": "PASS_NONE_PRESENT"
+  },
+  "schema": "SOFA-HOT-008-MONICA-INGESTION-v1",
+  "scripts_executed_from_archive": false,
+  "started_at_utc": "2026-11-04T16:58:49.397033+00:00",
+  "status": "ACCEPTED_AND_SAFELY_EXTRACTED"
+}

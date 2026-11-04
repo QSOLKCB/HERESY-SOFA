@@ -1,0 +1,3 @@
+cell = ws['A1']
+cell.font = Font()      # default font
+# then add your conditional formatting rule

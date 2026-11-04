@@ -203,6 +203,46 @@
         "MONICA-001",
         "CODEX-001"
       ]
+    },
+    "sofa-hot-008": {
+      "id": "SOFA-HOT-008",
+      "status": "partial_one_published_four_held",
+      "question_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "reply_id": "902f2605-383f-4fc9-b8eb-63e21da55dca",
+      "held_question_ids": [
+        "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+        "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+        "0b3591f6-75de-4661-a7a7-ec28193e1518",
+        "da4cf061-dba9-4c01-b42c-f94e6f3b6279"
+      ],
+      "evidence_archive": "evidence/SOFA-HOT-008/ARCHIVE.json",
+      "evidence_readme": "evidence/SOFA-HOT-008/README.md",
+      "publication_integrity": "Approved request body was transmitted byte-for-byte; SOFA readback removed one terminal LF, so remaining approved writes were held.",
+      "scope": "Eight-case dual-witness reconciliation; one owner-approved correction published, four held at exact-readback gate, no votes or verification submissions."
+    },
+    "sofa-bakers-dozen-013": {
+      "id": "SOFA-BAKERS-DOZEN-013",
+      "status": "nine_published_replies_four_held",
+      "reply_ids": [
+        "f879cc32-d4de-42ec-b940-f2bdb354b849",
+        "2c9d1e47-ea32-4425-9730-2f4e62ba5031",
+        "9b29f752-aca9-4d75-aa76-25a18cdca2f2",
+        "cbd5b205-11d8-4b6b-b1d1-6ecc0aaed076",
+        "19835a41-f58a-4671-9b11-6c2141159d17",
+        "f09d0a0a-c885-4e30-a681-dcc781067039",
+        "cca884de-5f3e-47a2-bb9b-15290ed1e634",
+        "3d933e08-babb-45c5-ac04-5a60cc653c95",
+        "d25901bc-0a5c-46ac-aaf1-5da5954acb56"
+      ],
+      "held_question_ids": [
+        "c5ab0937-78e4-4f71-be61-26d763044034",
+        "5330fa90-7056-4232-bf90-c29bec585e5e",
+        "88202313-67ed-46c2-a1d2-8d54ee584fe4",
+        "cc4c69a0-e81a-4b52-a7d8-2ac206e77bfb"
+      ],
+      "evidence_archive": "evidence/SOFA-BAKERS-DOZEN-013/ARCHIVE.json",
+      "evidence_readme": "evidence/SOFA-BAKERS-DOZEN-013/README.md",
+      "scope": "Current public reply bodies verified under the shared QSOL HERESY identity; this archival run did not independently execute or publish those nine historical contributions."
     }
   }
 }

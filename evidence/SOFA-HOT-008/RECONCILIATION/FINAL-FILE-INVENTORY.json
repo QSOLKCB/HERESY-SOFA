@@ -1,0 +1,529 @@
+{
+  "created_at_utc": "2026-11-04T17:29:43.932323+00:00",
+  "entries": [
+    {
+      "bytes": 15286,
+      "mode": "0o444",
+      "path": "CODEX-BASELINE.json",
+      "scope": "reconciliation-tree",
+      "sha256": "d335c8331afa13990f7ac66c0049fdcc58bdb46f742ac11fd974bcdcab59e66e"
+    },
+    {
+      "bytes": 1635,
+      "mode": "0o444",
+      "path": "CODEX-RECONCILIATION-TESTS/CASE-06/receipt.json",
+      "scope": "reconciliation-tree",
+      "sha256": "12f442354fc2b6a5aa18825df5da711c3326f388798ed59cdfcdec77e7c0866f"
+    },
+    {
+      "bytes": 2899,
+      "mode": "0o444",
+      "path": "CODEX-RECONCILIATION-TESTS/CASE-06/typevartuple_runtime.py",
+      "scope": "reconciliation-tree",
+      "sha256": "a791326411fee3fbbd467b34fd3761f29eb793fd4816f8d0e430d9fecd5d03f8"
+    },
+    {
+      "bytes": 77963,
+      "mode": "0o444",
+      "path": "MONICA-ARCHIVE-INVENTORY.json",
+      "scope": "reconciliation-tree",
+      "sha256": "24a35dfcdb6e3b53b1304d14e908c6f13f1142f0af909daf702cf6a4793afaff"
+    },
+    {
+      "bytes": 12097,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "scope": "reconciliation-tree",
+      "sha256": "f1d7d424ccb42b3d5d9e06b05b2d18c8bf99a123ab317731f036ad01c4e485ef"
+    },
+    {
+      "bytes": 7726,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "scope": "reconciliation-tree",
+      "sha256": "8e1f59f9ae45c840fafebf9459cf712e9dec0be72f5dea13fe96111b97505f62"
+    },
+    {
+      "bytes": 3880,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "scope": "reconciliation-tree",
+      "sha256": "bb9d6bed1975866358eac8e18325d4f6fff921cf40935af809b8449a4c3ac092"
+    },
+    {
+      "bytes": 13646,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/build_reports.py",
+      "scope": "reconciliation-tree",
+      "sha256": "d369e7722ba6c24522eaf0cd6699d75600d603d5a3f2ddc9eace1e5ce214cffa"
+    },
+    {
+      "bytes": 427,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/environment.txt",
+      "scope": "reconciliation-tree",
+      "sha256": "5c87c045bd5690598835b0c5c97a259fd19c25acdbc2dcc41199534bc9f3f938"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1248,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "scope": "reconciliation-tree",
+      "sha256": "10caaff74e05365f14d3a615a5658ce7282b12b929251bb08b91ebf9c7d99e49"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1216,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "scope": "reconciliation-tree",
+      "sha256": "b9b5cb0d3b206490cb949f870b68a144bdc2970535e04183961b1766169e1ffa"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 628,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "scope": "reconciliation-tree",
+      "sha256": "216356bf25de485cc29344bf1c4471f8364d370cb7620036113558306bfcd2e3"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1249,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "scope": "reconciliation-tree",
+      "sha256": "9a358d52b44885669eafaa7e32c495936577f3be89071349d12aabae4bb1d086"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 796,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "scope": "reconciliation-tree",
+      "sha256": "b0bc6bcddb75b78773b3c3e5d2f19ae21c64a8aab13707341c883861d68b2bda"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1661,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "scope": "reconciliation-tree",
+      "sha256": "5607d158734b8b04e98119841136c689d2ac98d283d191a19aaceb4077ac7ea7"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1496,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "scope": "reconciliation-tree",
+      "sha256": "5acff2e331bd9f4157511a4cd4d3f1230ca1f0cce36cb7c70cc13a32156c930b"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "scope": "reconciliation-tree",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1466,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "scope": "reconciliation-tree",
+      "sha256": "03ff2db4597fee2a88824694b2fd556e633bf088e00c5d4eb22fcd979a574664"
+    },
+    {
+      "bytes": 0,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "scope": "reconciliation-tree",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 120270,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "scope": "reconciliation-tree",
+      "sha256": "77219145926c1641040b039ccd55513db199ebb27092099a4abf607c4423662c"
+    },
+    {
+      "bytes": 220787,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "scope": "reconciliation-tree",
+      "sha256": "487f3c53898b63380413e34d0413111d36362fc80dd36fa47a27e0d9c2d21b16"
+    },
+    {
+      "bytes": 2990,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "scope": "reconciliation-tree",
+      "sha256": "7ba9f80dc1c0a7c391b880e0c5a19b3ee11d2e1284874a9f0e7d565a1dcc1a1d"
+    },
+    {
+      "bytes": 3242,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "scope": "reconciliation-tree",
+      "sha256": "5e3a3823172e00c0fcb358346291aa59ffa2ba93654798caeeaf9000571a566e"
+    },
+    {
+      "bytes": 1704,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "scope": "reconciliation-tree",
+      "sha256": "d66a2d7c1fc93eceb2f22819d0728bab1e71e570bcaf3e1960222afc2698a44c"
+    },
+    {
+      "bytes": 2990,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "scope": "reconciliation-tree",
+      "sha256": "624ecc5f64e325190b9de3d9cd4203197fc70fee654c29310a171134b29e968c"
+    },
+    {
+      "bytes": 2214,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "scope": "reconciliation-tree",
+      "sha256": "c4dfa0c017a9fa04f07f027496b2743bf625d65d7cf2321d730edd8a04b5f407"
+    },
+    {
+      "bytes": 2316,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "scope": "reconciliation-tree",
+      "sha256": "cd84496104951ccea720345b2b5b55bcffd6a06459f3fb5f38113b374e67cfbd"
+    },
+    {
+      "bytes": 3384,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "scope": "reconciliation-tree",
+      "sha256": "b14b1c41f758ce20169b74dce88000bb237f3dd86a9ce6959772d18569df569d"
+    },
+    {
+      "bytes": 4934,
+      "mode": "0o444",
+      "path": "MONICA-EXTRACTED-cc3d4ae960c6/SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "scope": "reconciliation-tree",
+      "sha256": "1e08dcf52e90f912fd8fabc22c1dae7df736104f282beee5779727031efa71be"
+    },
+    {
+      "bytes": 32301,
+      "mode": "0o444",
+      "path": "MONICA-INGESTION-RECEIPT.json",
+      "scope": "reconciliation-tree",
+      "sha256": "5781117b8ebc5249c2cfabc01e9b6da80be528ce976fcf99008a2e7364469dd2"
+    },
+    {
+      "bytes": 7847,
+      "mode": "0o644",
+      "path": "RECONCILIATION-COMMAND-LOG.json",
+      "scope": "reconciliation-tree",
+      "sha256": "17e6335279ea7905f5cfa729b85b280d335495283415d8b2065f7261d294cd07"
+    },
+    {
+      "bytes": 14570,
+      "mode": "0o664",
+      "path": "RECONCILIATION-VALIDATION.json",
+      "scope": "reconciliation-tree",
+      "sha256": "3312b5b445f334f2fba0c5614d0cab3af5bb384dd7e6c5182972c5715a69d160"
+    },
+    {
+      "bytes": 4833,
+      "mode": "0o664",
+      "path": "SOFA-ACTIVITY-RECONCILIATION.json",
+      "scope": "reconciliation-tree",
+      "sha256": "9a130e00a6904abfff659d0facd72de067d944a8b8861dc78dd2b694de775d19"
+    },
+    {
+      "bytes": 766,
+      "mode": "0o444",
+      "path": "SOFA-CONNECTION-STATUS.json",
+      "scope": "reconciliation-tree",
+      "sha256": "9af9ebaa3155a504e2aacc4ffa65707af0312011a2697ee55a84712a3747e3f6"
+    },
+    {
+      "bytes": 53274,
+      "mode": "0o444",
+      "path": "SOFA-CURRENT-SNAPSHOT.json",
+      "scope": "reconciliation-tree",
+      "sha256": "9042e5dc325bff20798b5a8104a29352c7eccd2f406dd4057a566e27dfa10c08"
+    },
+    {
+      "bytes": 1186,
+      "mode": "0o444",
+      "path": "SOFA-DRAFTS/CASE-03-dataclass.md",
+      "scope": "reconciliation-tree",
+      "sha256": "068e560c0ed773fec5444f4bca8c68e58b3a3f144939a464f5916b19dba8b353"
+    },
+    {
+      "bytes": 988,
+      "mode": "0o444",
+      "path": "SOFA-DRAFTS/CASE-04-discord-parser.md",
+      "scope": "reconciliation-tree",
+      "sha256": "39ac87181f5ddb00f2dea03504a494daf3d7d3c2cc1f116ecc488ed6b8f775be"
+    },
+    {
+      "bytes": 1101,
+      "mode": "0o444",
+      "path": "SOFA-DRAFTS/CASE-05-openpyxl.md",
+      "scope": "reconciliation-tree",
+      "sha256": "a294f138fbb7ec50db9bdae9e9a110519645a7528f2ca1e19d1aec261b93d686"
+    },
+    {
+      "bytes": 1119,
+      "mode": "0o444",
+      "path": "SOFA-DRAFTS/CASE-06-genericalias.md",
+      "scope": "reconciliation-tree",
+      "sha256": "1c4622d52ce0abdac1e9f80d00055455740446d11bd6eaf970c2b60cc12150e5"
+    },
+    {
+      "bytes": 1265,
+      "mode": "0o444",
+      "path": "SOFA-DRAFTS/CASE-08-spn2.md",
+      "scope": "reconciliation-tree",
+      "sha256": "1f311ae293b1fc03acee0eb0c37a794e1e7a15acea5022fc6815a49414be35e4"
+    },
+    {
+      "bytes": 2187,
+      "mode": "0o444",
+      "path": "SOFA-DRAFTS/INDEX.json",
+      "scope": "reconciliation-tree",
+      "sha256": "5f909bb9686c9cea48673640c39bfe2a8c59245794c7754cbe38f68c17130681"
+    },
+    {
+      "bytes": 26008,
+      "mode": "0o444",
+      "path": "SOFA-HOT-008-CLAIM-LEDGER.csv",
+      "scope": "reconciliation-tree",
+      "sha256": "4ac5a18d6a1c7609b294fd0ea9c275e334dc4c7f193ab78802ad5008233af1b3"
+    },
+    {
+      "bytes": 40486,
+      "mode": "0o644",
+      "path": "SOFA-HOT-008-DUAL-WITNESS-REPORT.json",
+      "scope": "reconciliation-tree",
+      "sha256": "eb14652b5f4c71f6ddf4949551db536b6cc2cc5b14f61803c228099e915a2db3"
+    },
+    {
+      "bytes": 12370,
+      "mode": "0o644",
+      "path": "SOFA-HOT-008-DUAL-WITNESS-REVIEW.md",
+      "scope": "reconciliation-tree",
+      "sha256": "e8fc273522163df3adb6c28de4fa555a7464b70ddce906a8211840ea6914b048"
+    },
+    {
+      "bytes": 9574,
+      "mode": "0o644",
+      "path": "SOFA-HOT-008-PUBLICATION-LEDGER.json",
+      "scope": "reconciliation-tree",
+      "sha256": "c1028251c24b996076a4489c28903ad76908ca00644e0db1554b927985196ccf"
+    },
+    {
+      "bytes": 473,
+      "mode": "0o444",
+      "path": "SOFA-SESSION-SUMMARY.json",
+      "scope": "reconciliation-tree",
+      "sha256": "e161974d4e16efe6a89f60400e76c705c5ca1aff34b5995c85d6ec1130b13629"
+    },
+    {
+      "bytes": 52591,
+      "mode": "0o644",
+      "path": "build_reconciliation.py",
+      "scope": "reconciliation-tree",
+      "sha256": "431b7ab4046bea00efde412d7c4eb7b17dcea35cb785c21bc8efa3609d9cb05c"
+    },
+    {
+      "bytes": 8859,
+      "mode": "0o444",
+      "path": "create_codex_baseline.py",
+      "scope": "reconciliation-tree",
+      "sha256": "7468ddb0bf766281534605c610e68d74b2fe86437c8f97e3d96926b219619719"
+    },
+    {
+      "bytes": 4205,
+      "mode": "0o444",
+      "path": "enrich_source_identity.py",
+      "scope": "reconciliation-tree",
+      "sha256": "c49a289a4d2c3c6cbc3075cd281b3f6bca2a7036f4d80cda09b6ff26802e313f"
+    },
+    {
+      "bytes": 3820,
+      "mode": "0o644",
+      "path": "finalize_evidence.py",
+      "scope": "reconciliation-tree",
+      "sha256": "fa9d8e3afb8011b23d948de957574be2fe3d81f7e9194a0c6fb67a8cba1d1b48"
+    },
+    {
+      "bytes": 9728,
+      "mode": "0o444",
+      "path": "ingest_monica_archive.py",
+      "scope": "reconciliation-tree",
+      "sha256": "a7c65d9c3ce0e31a924e466d2b81d73e6b9e5f8e50316b6698bd6e9404476d07"
+    },
+    {
+      "bytes": 18382,
+      "mode": "0o644",
+      "path": "validate_reconciliation.py",
+      "scope": "reconciliation-tree",
+      "sha256": "6e576e6acf2ac591056fe732ddf8a733624befbb1a45928e80623e45f2f5c51a"
+    },
+    {
+      "bytes": 12379,
+      "mode": "0o444",
+      "path": "verify_monica_evidence.py",
+      "scope": "reconciliation-tree",
+      "sha256": "70a286b2bf02fd8af0ed5f0c9ce4638d11e70f2a459016437029bfacaad95371"
+    },
+    {
+      "bytes": 65649,
+      "mode": "0o664",
+      "path": "../MONICA-001/SOFA-HOT-008-MONICA-001-evidence.gz",
+      "scope": "external-witness-anchor",
+      "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202"
+    },
+    {
+      "bytes": 29395,
+      "mode": "0o444",
+      "path": "../CODEX-001-independent-20261104T162141Z/CODEX-001-REPORT.json",
+      "scope": "external-witness-anchor",
+      "sha256": "3cebb8b7fff60a5344e91f02c531dcbfe23455a83b518630acdc7c007ec33229"
+    },
+    {
+      "bytes": 5208,
+      "mode": "0o444",
+      "path": "../CODEX-001-independent-20261104T162141Z/SHA256SUMS.txt",
+      "scope": "external-witness-anchor",
+      "sha256": "d366cb26e1f876f36a0b592205bd62e949f10c927ac61800a2f15cbc2d08b3c9"
+    },
+    {
+      "bytes": 215330,
+      "mode": "0o444",
+      "path": "../CODEX-001/CODEX-001-REPORT.json",
+      "scope": "external-witness-anchor",
+      "sha256": "f9c61410ac238a0c54f8b8803bf2954df83b585c137d454574b39a15f6bbfcb2"
+    },
+    {
+      "bytes": 11512,
+      "mode": "0o444",
+      "path": "../CODEX-001/SHA256SUMS.txt",
+      "scope": "external-witness-anchor",
+      "sha256": "f18515a2ea9163f74351eba7fb303362a3305e92f7470e6a8da5517fe08a85fc"
+    },
+    {
+      "bytes": 19994,
+      "mode": "0o444",
+      "path": "../CODEX-001/ARTIFACTS.json",
+      "scope": "external-witness-anchor",
+      "sha256": "fc3ae8ee7c0dedccac45a6834d9d96f12072c687983e9d51cfb639036e6c0eee"
+    }
+  ],
+  "exclusions": [
+    {
+      "path": "FINAL-FILE-INVENTORY.json",
+      "reason": "self-reference avoided; covered by SHA256SUMS.txt"
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "reason": "checksum ledger self-reference avoided"
+    }
+  ],
+  "hash_algorithm": "SHA-256",
+  "schema": "SOFA-HOT-008-FINAL-FILE-INVENTORY-v1",
+  "verification_command": "cd /home/trent/SOFA-HOT-008/RECONCILIATION && sha256sum -c SHA256SUMS.txt"
+}

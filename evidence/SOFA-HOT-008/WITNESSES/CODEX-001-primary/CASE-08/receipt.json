@@ -1,0 +1,325 @@
+{
+  "case": "CASE-08",
+  "checks": [
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "original_repeated_429_hits_bound",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "continue_starves_existing_poll",
+      "passed": true
+    },
+    {
+      "actual": [
+        900.0
+      ],
+      "classification": "EXECUTED",
+      "expected": [
+        900.0
+      ],
+      "name": "retry_after_ignored_for_fixed_900",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "classification": "EXECUTED",
+      "expected": 6,
+      "name": "original_has_no_retry_ceiling",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "original_repeated_503_also_unbounded",
+      "passed": true
+    },
+    {
+      "actual": "success",
+      "classification": "EXECUTED",
+      "expected": "success",
+      "name": "original_pending_then_success",
+      "passed": true
+    },
+    {
+      "actual": "error",
+      "classification": "EXECUTED",
+      "expected": "error",
+      "name": "original_records_error_terminal",
+      "passed": true
+    },
+    {
+      "actual": "mystery",
+      "classification": "EXECUTED",
+      "expected": "mystery",
+      "name": "original_records_unknown_as_terminal",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "classification": "EXECUTED",
+      "expected": [],
+      "name": "original_missing_job_id_silently_drops_url",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "classification": "EXECUTED",
+      "expected": 1,
+      "name": "original_missing_job_id_submitted_once",
+      "passed": true
+    },
+    {
+      "actual": 429,
+      "classification": "EXECUTED",
+      "expected": 429,
+      "name": "original_poll_429_unhandled",
+      "passed": true
+    },
+    {
+      "actual": 2,
+      "classification": "EXECUTED",
+      "expected": 2,
+      "name": "original_duplicate_submissions",
+      "passed": true
+    },
+    {
+      "actual": 2,
+      "classification": "EXECUTED",
+      "expected": 2,
+      "name": "original_duplicate_results",
+      "passed": true
+    },
+    {
+      "actual": 4950,
+      "classification": "EXECUTED",
+      "expected": 4950,
+      "name": "pop0_shift_cost_n100",
+      "passed": true
+    },
+    {
+      "actual": 19900,
+      "classification": "EXECUTED",
+      "expected": 19900,
+      "name": "pop0_shift_cost_n200",
+      "passed": true
+    },
+    {
+      "actual": 4.02,
+      "classification": "EXECUTED",
+      "expected": 4.02,
+      "name": "doubling_queue_is_quadratic",
+      "passed": true
+    },
+    {
+      "actual": "succeeded",
+      "classification": "EXECUTED",
+      "expected": "succeeded",
+      "name": "reference_polls_existing_during_submit_backoff",
+      "passed": true
+    },
+    {
+      "actual": "submit_http_429_ceiling",
+      "classification": "EXECUTED",
+      "expected": "submit_http_429_ceiling",
+      "name": "reference_429_retry_ceiling",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "classification": "EXECUTED",
+      "expected": 1,
+      "name": "reference_existing_poll_count",
+      "passed": true
+    },
+    {
+      "actual": "submit_http_503_ceiling",
+      "classification": "EXECUTED",
+      "expected": "submit_http_503_ceiling",
+      "name": "reference_503_retry_ceiling",
+      "passed": true
+    },
+    {
+      "actual": "missing_job_id_ceiling",
+      "classification": "EXECUTED",
+      "expected": "missing_job_id_ceiling",
+      "name": "reference_missing_job_id_ceiling",
+      "passed": true
+    },
+    {
+      "actual": "succeeded",
+      "classification": "EXECUTED",
+      "expected": "succeeded",
+      "name": "reference_pending_then_success",
+      "passed": true
+    },
+    {
+      "actual": "remote_error",
+      "classification": "EXECUTED",
+      "expected": "remote_error",
+      "name": "reference_error_explicit_failure",
+      "passed": true
+    },
+    {
+      "actual": "unknown_status",
+      "classification": "EXECUTED",
+      "expected": "unknown_status",
+      "name": "reference_unknown_explicit_failure",
+      "passed": true
+    },
+    {
+      "actual": "succeeded",
+      "classification": "EXECUTED",
+      "expected": "succeeded",
+      "name": "reference_poll_retry_after_eventually_succeeds",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "reference_poll_retry_after_honored",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "classification": "EXECUTED",
+      "expected": 1,
+      "name": "reference_deduplicates_input",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "classification": "EXECUTED",
+      "expected": 1,
+      "name": "reference_deduplicates_submissions",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "reference_always_passes_if_not_archived_within",
+      "passed": true
+    }
+  ],
+  "command": "uv run --no-project --offline --no-managed-python python test_case_08.py --receipt receipt.json",
+  "conclusion": {
+    "classification": "CONFIRMED_DEFECT",
+    "defect": "On repeated submit 429/503, continue stays inside the fill loop and repeatedly retries the front URL, so existing in-flight jobs are never polled. Retry-After, retry ceilings, missing job IDs, poll errors, unknown states, deduplication, and O(1) queue operations are absent.",
+    "minimal_correction": "Use deque plus explicit task states/deadlines; poll due work before submits; honor bounded Retry-After-aware retries; treat missing/unknown states explicitly; deduplicate inputs."
+  },
+  "evidence": {
+    "front_list_shift_costs": {
+      "100": 4950,
+      "200": 19900
+    },
+    "original_repeated_429": {
+      "inflight": {
+        "job-existing": "existing"
+      },
+      "operations": 6,
+      "poll_count": 0,
+      "queue": [
+        "blocked"
+      ],
+      "sleeps": [
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0,
+        900.0
+      ],
+      "submit_count": 6
+    },
+    "original_status_results": {
+      "error": [
+        {
+          "status": {
+            "message": "synthetic",
+            "status": "error"
+          },
+          "url": "error"
+        }
+      ],
+      "pending_success": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "pending_success"
+        }
+      ],
+      "unknown": [
+        {
+          "status": {
+            "status": "mystery"
+          },
+          "url": "unknown"
+        }
+      ]
+    },
+    "reference_fairness": {
+      "poll_calls": [
+        "job-existing"
+      ],
+      "sleeps": [
+        15.0,
+        15.0,
+        30.0
+      ],
+      "tasks": {
+        "blocked": {
+          "detail": "submit_http_429_ceiling",
+          "poll_errors": 0,
+          "state": "failed",
+          "submit_attempts": 3,
+          "transitions": [
+            "queued",
+            "submitting",
+            "retry_wait",
+            "queued",
+            "submitting",
+            "retry_wait",
+            "queued",
+            "submitting",
+            "failed"
+          ]
+        },
+        "existing": {
+          "detail": "success",
+          "poll_errors": 0,
+          "state": "succeeded",
+          "submit_attempts": 1,
+          "transitions": [
+            "queued",
+            "submitting",
+            "inflight",
+            "succeeded"
+          ]
+        }
+      }
+    }
+  },
+  "external_claims": {
+    "account_shared_budget": "UNSUPPORTED",
+    "actual_quota_or_retry_window": "NOT_TESTED",
+    "if_not_archived_within_budget_effect": "NOT_TESTED",
+    "low_single_digit_concurrency": "UNSUPPORTED"
+  },
+  "external_services": "none; deterministic fake API and fake clock only",
+  "finished_utc": "2026-11-04T16:37:04.264769+00:00",
+  "process_exit_code": 0,
+  "real_sleep_seconds": 0,
+  "seed": 26051108,
+  "source_author": "Agent McAgentFace",
+  "source_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+  "started_utc": "2026-11-04T16:37:04.262014+00:00"
+}

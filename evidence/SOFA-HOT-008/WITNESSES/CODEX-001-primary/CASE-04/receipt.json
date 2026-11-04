@@ -1,0 +1,302 @@
+{
+  "case": "CASE-04",
+  "checks": [
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "original_parser_status_403_is_not_numeric",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "original_parser_never_reaches_regeneration_403",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "original_parser_status_404_is_not_numeric",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "original_parser_never_reaches_regeneration_404",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "original_parser_status_429_is_not_numeric",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "original_parser_never_reaches_regeneration_429",
+      "passed": true
+    },
+    {
+      "actual": "application/x-www-form-urlencoded",
+      "classification": "EXECUTED",
+      "expected": "application/x-www-form-urlencoded",
+      "name": "original_request_content_type_is_not_json",
+      "passed": true
+    },
+    {
+      "actual": "MilosCronBot/1.0",
+      "classification": "EXECUTED",
+      "expected": "MilosCronBot/1.0",
+      "name": "original_user_agent_present",
+      "passed": true
+    },
+    {
+      "actual": "2",
+      "classification": "EXECUTED",
+      "expected": "2",
+      "name": "unquoted_webhook_word_splits",
+      "passed": true
+    },
+    {
+      "actual": "1",
+      "classification": "EXECUTED",
+      "expected": "1",
+      "name": "quoted_webhook_is_one_argument",
+      "passed": true
+    },
+    {
+      "actual": "http://invalid.test/hook?wait",
+      "classification": "EXECUTED",
+      "expected": "http://invalid.test/hook?wait",
+      "name": "cut_f2_truncates_query_value",
+      "passed": true
+    },
+    {
+      "actual": "status=403 attempts=1 delays= action=forbidden_no_retry_no_rotation content_type=application/json",
+      "classification": "EXECUTED",
+      "expected": "status=403 attempts=1 delays= action=forbidden_no_retry_no_rotation content_type=application/json",
+      "name": "corrected_policy_403",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "corrected_exit_403",
+      "passed": true
+    },
+    {
+      "actual": "status=404 attempts=1 delays= action=not_found_no_retry content_type=application/json",
+      "classification": "EXECUTED",
+      "expected": "status=404 attempts=1 delays= action=not_found_no_retry content_type=application/json",
+      "name": "corrected_policy_404",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "corrected_exit_404",
+      "passed": true
+    },
+    {
+      "actual": "status=429 attempts=3 delays=7,7 action=retry_exhausted content_type=application/json",
+      "classification": "EXECUTED",
+      "expected": "status=429 attempts=3 delays=7,7 action=retry_exhausted content_type=application/json",
+      "name": "corrected_policy_429",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "corrected_exit_429",
+      "passed": true
+    },
+    {
+      "actual": "status=204 attempts=2 delays=7 action=success content_type=application/json",
+      "classification": "EXECUTED",
+      "expected": "status=204 attempts=2 delays=7 action=success content_type=application/json",
+      "name": "corrected_policy_sequence429",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "corrected_exit_sequence429",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "corrected_requests_use_json_content_type",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "INFERRED",
+      "expected": true,
+      "name": "reply_conflates_rate_limit_with_403",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "INFERRED",
+      "expected": true,
+      "name": "reply_recommends_rotation_without_causal_evidence",
+      "passed": true
+    }
+  ],
+  "command": "uv run --no-project --offline --no-managed-python python test_case_04.py --receipt receipt.json",
+  "conclusion": {
+    "classification": "CONFIRMED_DEFECT",
+    "defect": "tr converts the response into one line, so tail returns body plus status and the numeric test fails. The reply also conflates 403 with 429 and recommends rotation without evidence.",
+    "minimal_correction": "Quote the URL; preserve body, headers, and status separately; send JSON Content-Type; treat 429/503 with bounded Retry-After-aware retry and treat 403/404 as non-retry diagnostics without automatic rotation."
+  },
+  "curl_version": {
+    "command": [
+      "curl",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "curl 8.18.0 (x86_64-pc-linux-gnu) libcurl/8.18.0 OpenSSL/3.5.5 zlib/1.3.1 brotli/1.2.0 zstd/1.5.7 libidn2/2.3.8 libpsl/0.21.2 libssh2/1.11.1 nghttp2/1.68.0 librtmp/2.3 mit-krb5/1.22.1 OpenLDAP/2.6.10\nRelease-Date: 2026-01-07, security patched: 8.18.0-1ubuntu2.8\nProtocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns ldap ldaps mqtt pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp ws wss\nFeatures: alt-svc AsynchDNS brotli GSS-API HSTS HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM PSL SPNEGO SSL threadsafe TLS-SRP UnixSockets zstd\n"
+  },
+  "external_services": "none; loopback fixture only",
+  "finished_utc": "2026-11-04T16:39:21.507471+00:00",
+  "limitations": "Synthetic HTTP status semantics do not establish Discord's actual cause for any 403.",
+  "process_exit_code": 0,
+  "reply_attribution": [
+    {
+      "author": "Kai",
+      "id": "2a4e49eb-2b62-4ca3-8575-4ffa97e4bd88"
+    },
+    {
+      "author": "Milo Humanizer",
+      "id": "f0fe3b78-0122-4a92-bbe8-f82802926099"
+    }
+  ],
+  "runs": [
+    {
+      "command": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/original_posted.sh"
+      ],
+      "exit_code": 0,
+      "fixture": "403",
+      "stderr": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/original_posted.sh: line 6: [: {\"message\":\"synthetic forbidden\"} 403 : integer expected\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/original_posted.sh"
+      ],
+      "exit_code": 0,
+      "fixture": "404",
+      "stderr": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/original_posted.sh: line 6: [: {\"message\":\"synthetic not found\"} 404 : integer expected\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/original_posted.sh"
+      ],
+      "exit_code": 0,
+      "fixture": "429",
+      "stderr": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/original_posted.sh: line 6: [: {\"retry_after\":7} 429 : integer expected\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "WEBHOOK=\"http://invalid.test/hook two\"; set -- $WEBHOOK; printf \"%s\" \"$#\""
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "2"
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "WEBHOOK=\"http://invalid.test/hook two\"; set -- \"$WEBHOOK\"; printf \"%s\" \"$#\""
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "1"
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "printf '%s\\n' 'WEBHOOK_URL=http://invalid.test/hook?wait=true' | cut -d= -f2"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "http://invalid.test/hook?wait\n"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/corrected.sh",
+        "http://127.0.0.1:32947/403",
+        "/tmp/codex001-case04-mbp3nvh9/payload.json"
+      ],
+      "exit_code": 0,
+      "fixture": "corrected-403",
+      "stderr": "",
+      "stdout": "status=403 attempts=1 delays= action=forbidden_no_retry_no_rotation content_type=application/json\n"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/corrected.sh",
+        "http://127.0.0.1:32947/404",
+        "/tmp/codex001-case04-mbp3nvh9/payload.json"
+      ],
+      "exit_code": 0,
+      "fixture": "corrected-404",
+      "stderr": "",
+      "stdout": "status=404 attempts=1 delays= action=not_found_no_retry content_type=application/json\n"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/corrected.sh",
+        "http://127.0.0.1:32947/429",
+        "/tmp/codex001-case04-mbp3nvh9/payload.json"
+      ],
+      "exit_code": 0,
+      "fixture": "corrected-429",
+      "stderr": "",
+      "stdout": "status=429 attempts=3 delays=7,7 action=retry_exhausted content_type=application/json\n"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-04/corrected.sh",
+        "http://127.0.0.1:32947/sequence429",
+        "/tmp/codex001-case04-mbp3nvh9/payload.json"
+      ],
+      "exit_code": 0,
+      "fixture": "corrected-sequence429",
+      "stderr": "",
+      "stdout": "status=204 attempts=2 delays=7 action=success content_type=application/json\n"
+    }
+  ],
+  "seed": 26051108,
+  "source_author": "Milo Humanizer",
+  "source_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+  "started_utc": "2026-11-04T16:39:20.840824+00:00"
+}

@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "actual": {
+        "accepted": true,
+        "repr": "__main__.Fixed[int, ...]",
+        "runtime_type": "typing._GenericAlias"
+      },
+      "expected": {
+        "accepted": true
+      },
+      "name": "typevartuple_runtime_accepts_ellipsis",
+      "passed": true
+    },
+    {
+      "actual": {
+        "accepted": false,
+        "exception_type": "TypeError",
+        "message": "Too many arguments for <class '__main__.Foo'>; actual 2, expected 1"
+      },
+      "expected": {
+        "accepted": false,
+        "exception_type": "TypeError"
+      },
+      "name": "single_typevar_runtime_rejects_two_arguments",
+      "passed": true
+    },
+    {
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "name": "single_typevar_exception_is_typeerror",
+      "passed": true
+    }
+  ],
+  "command": "uv run --no-project --offline --no-managed-python python typevartuple_runtime.py --receipt receipt.json",
+  "experiment_id": "CODEX-RECONCILIATION-TEST-CASE-06-TYPEVARTUPLE",
+  "finished_at_utc": "2026-11-04T17:03:26.343076+00:00",
+  "implementation": "CPython",
+  "process_exit_code": 0,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "reconciliation": {
+    "interpretation": "CPython runtime accepts Ellipsis inside a TypeVarTuple argument pack but rejects two arguments for a one-TypeVar generic. This does not establish Pyright acceptance or refute a checker-specific rejection claim.",
+    "monica_observation_reproduced": true
+  },
+  "scope": "CPython runtime only; no Pyright inference",
+  "started_at_utc": "2026-11-04T17:03:26.343018+00:00",
+  "status": "PASS"
+}

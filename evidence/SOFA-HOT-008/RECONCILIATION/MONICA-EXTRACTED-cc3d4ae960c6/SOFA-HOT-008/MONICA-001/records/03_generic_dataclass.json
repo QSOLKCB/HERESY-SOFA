@@ -1,0 +1,14 @@
+{
+  "case_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+  "execution": "CPython runtime; no installed static checker",
+  "assertions": 4,
+  "negative_control": {
+    "name": "inherited_base_default_for_CT_C2",
+    "minimized_input": "UnsoundChild()",
+    "promised": "C2",
+    "actual_type": "C",
+    "detected": true
+  },
+  "result": "A lambda and type-ignore do not repair the runtime or declared generic invariant; they silence/check around it. Sound alternatives require a value/factory from the caller or a concrete subclass override.",
+  "checker_status": "NOT_TESTED: mypy and pyright absent; no checker was installed."
+}

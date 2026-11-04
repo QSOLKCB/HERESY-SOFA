@@ -1,0 +1,15 @@
+{
+  "captured_at_utc": "2026-11-04T17:12:29Z",
+  "data": {
+    "compact_text": "SOFA activity: 1 search · 9 posts consulted",
+    "consulted_post_count": 9,
+    "contribution_count": 0,
+    "external_link_lookup_count": 0,
+    "external_link_verification_count": 0,
+    "search_count": 1,
+    "session_id": "89fc25b7-2f3e-4eec-abaa-6b9947b86da0",
+    "verification_count": 0
+  },
+  "operation": "sofa_session_summary",
+  "schema": "SOFA-HOT-008-SOFA-SESSION-SUMMARY-v1"
+}

@@ -1,0 +1,2621 @@
+{
+  "all_checks_passed": true,
+  "case": 8,
+  "checks": [
+    {
+      "actual": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "a"
+        }
+      ],
+      "expected": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "a"
+        }
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_positive_terminal",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_starves_existing_poll_429",
+      "passed": true
+    },
+    {
+      "actual": "BudgetStop",
+      "expected": "BudgetStop",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_unbounded_retry_429",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_ignores_Retry_After_429",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_starves_existing_poll_503",
+      "passed": true
+    },
+    {
+      "actual": "BudgetStop",
+      "expected": "BudgetStop",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_unbounded_retry_503",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_ignores_Retry_After_503",
+      "passed": true
+    },
+    {
+      "actual": 915.0,
+      "expected": 915.0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "first_poll_delayed_by_900",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_records_terminal_error",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_deletes_error",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_records_terminal_unknown",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_deletes_unknown",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_records_terminal_missing_status",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_deletes_missing_status",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_silently_drops_missing_job",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_silently_drops_existing_success",
+      "passed": true
+    },
+    {
+      "actual": "BudgetStop",
+      "expected": "BudgetStop",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_pending_has_no_ceiling",
+      "passed": true
+    },
+    {
+      "actual": "HTTPError",
+      "expected": "HTTPError",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_poll_error_unhandled_429",
+      "passed": true
+    },
+    {
+      "actual": "HTTPError",
+      "expected": "HTTPError",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_poll_error_unhandled_503",
+      "passed": true
+    },
+    {
+      "actual": 2,
+      "expected": 2,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_duplicate_submissions",
+      "passed": true
+    },
+    {
+      "actual": 2,
+      "expected": 2,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_ambiguous_retry_duplicates",
+      "passed": true
+    },
+    {
+      "actual": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "b"
+        }
+      ],
+      "expected": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "b"
+        }
+      ],
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "original_duplicate_job_overwrites",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_polls_inflight_429",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_bounded_429",
+      "passed": true
+    },
+    {
+      "actual": 3,
+      "expected": 3,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_retry_limit_429",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_polls_inflight_503",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_bounded_503",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_retry_limit_503",
+      "passed": true
+    },
+    {
+      "actual": [
+        0.0,
+        7.0
+      ],
+      "expected": [
+        0.0,
+        7.0
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_retry_after_7",
+      "passed": true
+    },
+    {
+      "actual": "success",
+      "expected": "success",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_later_url_succeeds",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_poll_despite_retry",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "expected": 6,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_poll_retry_bounded_429",
+      "passed": true
+    },
+    {
+      "actual": [
+        15.0,
+        22.0,
+        29.0,
+        36.0,
+        43.0,
+        50.0
+      ],
+      "expected": [
+        15.0,
+        22.0,
+        29.0,
+        36.0,
+        43.0,
+        50.0
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_poll_retry_7_429",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "expected": 6,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_poll_retry_bounded_503",
+      "passed": true
+    },
+    {
+      "actual": [
+        15.0,
+        22.0,
+        29.0,
+        36.0,
+        43.0,
+        50.0
+      ],
+      "expected": [
+        15.0,
+        22.0,
+        29.0,
+        36.0,
+        43.0,
+        50.0
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_poll_retry_7_503",
+      "passed": true
+    },
+    {
+      "actual": "uncertain",
+      "expected": "uncertain",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_explicit_state_pending",
+      "passed": true
+    },
+    {
+      "actual": "success",
+      "expected": "success",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_explicit_state_success",
+      "passed": true
+    },
+    {
+      "actual": "error",
+      "expected": "error",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_explicit_state_error",
+      "passed": true
+    },
+    {
+      "actual": "uncertain",
+      "expected": "uncertain",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_explicit_state_unknown",
+      "passed": true
+    },
+    {
+      "actual": "uncertain",
+      "expected": "uncertain",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_explicit_state_missing",
+      "passed": true
+    },
+    {
+      "actual": "uncertain",
+      "expected": "uncertain",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_submission_state_missing_job",
+      "passed": true
+    },
+    {
+      "actual": "success",
+      "expected": "success",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_submission_state_existing_success",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_deduplication",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_avoids_ambiguous_resubmit",
+      "passed": true
+    },
+    {
+      "actual": "uncertain",
+      "expected": "uncertain",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_uncertain_state",
+      "passed": true
+    },
+    {
+      "actual": "success",
+      "expected": "success",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_collision_preserves_first",
+      "passed": true
+    },
+    {
+      "actual": "uncertain",
+      "expected": "uncertain",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_collision_marks_second",
+      "passed": true
+    },
+    {
+      "actual": "deferred",
+      "expected": "deferred",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_preserves_unsubmitted_work",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_no_new_work_after_uncertainty",
+      "passed": true
+    },
+    {
+      "actual": "success",
+      "expected": "success",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "reference_existing_work_still_polled",
+      "passed": true
+    },
+    {
+      "actual": 7.0,
+      "expected": 7.0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "retry_after_parser_7",
+      "passed": true
+    },
+    {
+      "actual": 90.0,
+      "expected": 90.0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "retry_after_parser_Thu, 01 Jan 1970 00:01:30 GMT",
+      "passed": true
+    },
+    {
+      "actual": 30,
+      "expected": 30.0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "retry_after_parser_nonsense",
+      "passed": true
+    },
+    {
+      "actual": 0.0,
+      "expected": 0.0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "retry_after_parser_-1",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "front_pop_shift_count_1",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "front_pop_shift_count_2",
+      "passed": true
+    },
+    {
+      "actual": 45,
+      "expected": 45,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "front_pop_shift_count_10",
+      "passed": true
+    },
+    {
+      "actual": 4950,
+      "expected": 4950,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "front_pop_shift_count_100",
+      "passed": true
+    },
+    {
+      "actual": 499500,
+      "expected": 499500,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "front_pop_shift_count_1000",
+      "passed": true
+    },
+    {
+      "actual": 198,
+      "expected": 198,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "one_front_requeue_shifts_twice_remaining",
+      "passed": true
+    }
+  ],
+  "commands": [],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:35:27.770586+00:00",
+  "limitations": [
+    {
+      "claim": "Actual IA quota, concurrency, account budget, if_not_archived_within semantics or CDX verification",
+      "label": "NOT_TESTED"
+    },
+    {
+      "claim": "Recent captures spend none of any budget, or single-digit concurrency is a controlled account ceiling",
+      "label": "UNSUPPORTED"
+    },
+    {
+      "claim": "Finite admitted work terminates under modeled statuses and ceilings. Submission 503 is uncertain; exactly-once remote execution requires service-supported idempotency or reconciliation. Large deadlines are honored in fake time, never real sleeping.",
+      "label": "INFERRED"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "queue_cost": [
+    {
+      "deque_popleft_calls": 1,
+      "list_pointer_shifts": 0,
+      "n": 1
+    },
+    {
+      "deque_popleft_calls": 2,
+      "list_pointer_shifts": 1,
+      "n": 2
+    },
+    {
+      "deque_popleft_calls": 10,
+      "list_pointer_shifts": 45,
+      "n": 10
+    },
+    {
+      "deque_popleft_calls": 100,
+      "list_pointer_shifts": 4950,
+      "n": 100
+    },
+    {
+      "deque_popleft_calls": 1000,
+      "list_pointer_shifts": 499500,
+      "n": 1000
+    }
+  ],
+  "seed": 26051108,
+  "simulations": [
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 30.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 30.0,
+      "name": "positive_pending_success",
+      "records": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "a"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15,
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 1800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 2700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 3600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 4500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 5400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 6300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 7200.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 8100.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 9000.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 9900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 10800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 11700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 12600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 13500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 14400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 15300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 16200.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 17100.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 18000.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 18900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 19800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 20700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 21600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 22500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 23400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 24300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 25200.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 26100.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 27000.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 27900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 28800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 29700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 30600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 31500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 32400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 33300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 34200.0
+        }
+      ],
+      "exception": {
+        "message": "bounded at 40 requests",
+        "type": "BudgetStop"
+      },
+      "fake_elapsed": 35100.0,
+      "name": "repeated_429",
+      "records": [],
+      "reference": false,
+      "remaining_inflight": {
+        "J1": "a"
+      },
+      "remaining_queue": [],
+      "sleeps": [
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 1800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 2700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 3600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 4500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 5400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 6300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 7200.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 8100.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 9000.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 9900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 10800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 11700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 12600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 13500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 14400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 15300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 16200.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 17100.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 18000.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 18900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 19800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 20700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 21600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 22500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 23400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 24300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 25200.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 26100.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 27000.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 27900.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 28800.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 29700.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 30600.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 31500.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 32400.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 33300.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 34200.0
+        }
+      ],
+      "exception": {
+        "message": "bounded at 40 requests",
+        "type": "BudgetStop"
+      },
+      "fake_elapsed": 35100.0,
+      "name": "repeated_503",
+      "records": [],
+      "reference": false,
+      "remaining_inflight": {
+        "J1": "a"
+      },
+      "remaining_queue": [],
+      "sleeps": [
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900,
+        900
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a",
+        "b"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 900.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 915.0
+        },
+        {
+          "key": "B",
+          "operation": "poll",
+          "t": 915.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 915.0,
+      "name": "transient_429",
+      "records": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "a"
+        },
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "b"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        900,
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "original_error",
+      "records": [
+        {
+          "status": {
+            "status": "error"
+          },
+          "url": "a"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "original_unknown",
+      "records": [
+        {
+          "status": {
+            "status": "mystery"
+          },
+          "url": "a"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "original_missing_status",
+      "records": [
+        {
+          "status": {},
+          "url": "a"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "missing_job",
+      "records": [],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "existing_success",
+      "records": [],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 30.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 45.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 60.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 75.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 90.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 105.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 120.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 135.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 150.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 165.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 180.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 195.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 210.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 225.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 240.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 255.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 270.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 285.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 300.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 315.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 330.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 345.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 360.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 375.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 390.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 405.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 420.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 435.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 450.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 465.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 480.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 495.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 510.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 525.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 540.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 555.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 570.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 585.0
+        }
+      ],
+      "exception": {
+        "message": "bounded at 40 requests",
+        "type": "BudgetStop"
+      },
+      "fake_elapsed": 600.0,
+      "name": "forever_pending",
+      "records": [],
+      "reference": false,
+      "remaining_inflight": {
+        "J1": "a"
+      },
+      "remaining_queue": [],
+      "sleeps": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": {
+        "message": "HTTP Error 429: synthetic 429",
+        "type": "HTTPError"
+      },
+      "fake_elapsed": 15.0,
+      "name": "poll_http_429",
+      "records": [],
+      "reference": false,
+      "remaining_inflight": {
+        "J1": "a"
+      },
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": {
+        "message": "HTTP Error 503: synthetic 503",
+        "type": "HTTPError"
+      },
+      "fake_elapsed": 15.0,
+      "name": "poll_http_503",
+      "records": [],
+      "reference": false,
+      "remaining_inflight": {
+        "J1": "a"
+      },
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a",
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        },
+        {
+          "key": "J2",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "duplicate_input",
+      "records": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "a"
+        },
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "a"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a",
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 900.0
+        },
+        {
+          "key": "J",
+          "operation": "poll",
+          "t": 915.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 915.0,
+      "name": "accepted_but_503",
+      "records": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "a"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        900,
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a",
+        "b"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "duplicate_job_id",
+      "records": [
+        {
+          "status": {
+            "status": "success"
+          },
+          "url": "b"
+        }
+      ],
+      "reference": false,
+      "remaining_inflight": {},
+      "remaining_queue": [],
+      "sleeps": [
+        15
+      ],
+      "tasks": null
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 7.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 14.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_backoff_429",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        7.0,
+        7.0,
+        1.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        },
+        "b": {
+          "attempts": 3,
+          "job": null,
+          "polls": 0,
+          "reason": "submission_retry_exhausted_or_http_error",
+          "state": "error"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_backoff_503",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        },
+        "b": {
+          "attempts": 1,
+          "job": null,
+          "polls": 0,
+          "reason": "ambiguous_submission",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a",
+        "b"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 7.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        },
+        {
+          "key": "B",
+          "operation": "poll",
+          "t": 22.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 22.0,
+      "name": "reference_transient",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        7.0,
+        8.0,
+        7.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        },
+        "b": {
+          "attempts": 2,
+          "job": "B",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "c"
+      ],
+      "events": [
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "c",
+          "operation": "submit",
+          "t": 7.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 7.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 14.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 22.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 22.0,
+      "name": "reference_fair_queue",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        7.0,
+        7.0,
+        8.0
+      ],
+      "tasks": {
+        "b": {
+          "attempts": 3,
+          "job": null,
+          "polls": 0,
+          "reason": "submission_retry_exhausted_or_http_error",
+          "state": "error"
+        },
+        "c": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 22.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 29.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 36.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 43.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 50.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 50.0,
+      "name": "reference_poll_retry_429",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 6,
+          "reason": "poll_retry_exhausted_or_http_error",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 22.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 29.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 36.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 43.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 50.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 50.0,
+      "name": "reference_poll_retry_503",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0,
+        7.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 6,
+          "reason": "poll_retry_exhausted_or_http_error",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 30.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 45.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 60.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 75.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 90.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 90.0,
+      "name": "reference_pending",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0,
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 6,
+          "reason": "poll_ceiling",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_success",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_error",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "api_error",
+          "state": "error"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_unknown",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "unknown_status",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_missing",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "unknown_status",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 0.0,
+      "name": "reference_missing_job",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": null,
+          "polls": 0,
+          "reason": "missing_job_id",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 0.0,
+      "name": "reference_existing_success",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": null,
+          "polls": 0,
+          "reason": "",
+          "state": "success"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_duplicate_input",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 0.0,
+      "name": "reference_ambiguous",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": null,
+          "polls": 0,
+          "reason": "ambiguous_submission",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a",
+        "b"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_collision",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        },
+        "b": {
+          "attempts": 1,
+          "job": null,
+          "polls": 0,
+          "reason": "duplicate_job_id",
+          "state": "uncertain"
+        }
+      }
+    },
+    {
+      "accepted": [
+        "a",
+        "b"
+      ],
+      "events": [
+        {
+          "key": "a",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "b",
+          "operation": "submit",
+          "t": 0.0
+        },
+        {
+          "key": "J1",
+          "operation": "poll",
+          "t": 15.0
+        }
+      ],
+      "exception": null,
+      "fake_elapsed": 15.0,
+      "name": "reference_uncertain_closes_admission",
+      "records": [],
+      "reference": true,
+      "remaining_inflight": null,
+      "remaining_queue": null,
+      "sleeps": [
+        15.0
+      ],
+      "tasks": {
+        "a": {
+          "attempts": 1,
+          "job": "J1",
+          "polls": 1,
+          "reason": "",
+          "state": "success"
+        },
+        "b": {
+          "attempts": 1,
+          "job": null,
+          "polls": 0,
+          "reason": "ambiguous_submission",
+          "state": "uncertain"
+        },
+        "c": {
+          "attempts": 0,
+          "job": null,
+          "polls": 0,
+          "reason": "reconcile_uncertain_work_before_submission",
+          "state": "deferred"
+        }
+      }
+    }
+  ],
+  "started_utc": "2026-11-04T16:35:27.768396+00:00"
+}

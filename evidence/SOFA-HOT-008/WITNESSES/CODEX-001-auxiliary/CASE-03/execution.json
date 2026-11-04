@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "--python",
+    "/usr/bin/python3",
+    "python",
+    "-B",
+    "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03/test.py"
+  ],
+  "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+  "started_utc": "2026-11-04T16:29:37.536606+00:00",
+  "finished_utc": "2026-11-04T16:29:43.855891+00:00",
+  "exit_code": 0,
+  "stdout": "<class '<run_path>.C'> <class '<run_path>.C2'>\n{\"case\": 3, \"checks\": 18, \"all_checks_passed\": true}\n",
+  "stderr": ""
+}

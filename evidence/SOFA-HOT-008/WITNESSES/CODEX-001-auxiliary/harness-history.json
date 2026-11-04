@@ -1,0 +1,9 @@
+{
+  "rule": "No source was edited while tests were running. Earlier failing harness versions and command outputs are preserved in CASE-XX/attempts/01/.",
+  "corrections": [
+    {"case":2,"cause":"Examiner's initial reference injector compared a synthetic string status to integers before validating type","fix":"Validate status type before redirect comparison; rerun response-boundary negative control","scope":"Harness/reference defect, not evidence against a source implementation"},
+    {"case":4,"cause":"Harness expected Bash diagnostic 'integer expression expected'; installed Bash emits 'integer expected'","fix":"Accept both exact diagnostic spellings; original shell behavior unchanged","scope":"Expectation correction, not a changed experiment"},
+    {"case":8,"cause":"Harness referenced block 01.py but the source's first fence is a text log and Python code is block 02.py","fix":"Use preserved Python block 02","scope":"Path correction before first successful simulation"},
+    {"case":8,"cause":"Review of the first successful reference found that poll exhaustion freed tracked capacity even though remote completion would be uncertain","fix":"Classify exhausted or unknown polls as uncertain; defer new submissions for reconciliation while continuing existing polls","scope":"Reference hardening; prior successful reference and receipts preserved under attempts/02; original loop is unchanged"}
+  ]
+}

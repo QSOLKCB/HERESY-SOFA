@@ -1,0 +1,332 @@
+{
+  "audit_id": "SOFA-HOT-008/MONICA-001",
+  "cases_ranked": [
+    {
+      "adverse_summary": "Synthetic metadata proves the logical selection hazards; yt-dlp is absent, so extractor behavior is not tested.",
+      "assertions": 6,
+      "case_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+      "case_status": "PARTIAL",
+      "exit_code": 0,
+      "machine_record": "records/01_ytdlp_captions.json",
+      "negative_controls": [
+        {
+          "actual": "es",
+          "detected": true,
+          "expected": "en-orig",
+          "minimized_input": {
+            "automatic_captions_keys": [
+              "es",
+              "en-orig",
+              "fr"
+            ]
+          },
+          "name": "first_automatic_fallback"
+        }
+      ],
+      "rank": 1,
+      "recommendation": "VERIFY",
+      "source_access": {
+        "route": "/tils/...",
+        "state": "accessible"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/01_ytdlp_captions.py",
+      "title": "yt-dlp captions"
+    },
+    {
+      "adverse_summary": "Scanner gap and unrestricted substitution/echo counterexamples were executed with fake secrets only.",
+      "assertions": 10,
+      "case_id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+      "case_status": "PASS",
+      "exit_code": 0,
+      "machine_record": "records/02_memory_security.json",
+      "negative_controls": [
+        {
+          "detected": true,
+          "minimized_input": "postgres://user:pw7@db.invalid/a",
+          "name": "base_scanner_short_uri_password"
+        },
+        {
+          "detected": true,
+          "name": "unrestricted_placeholder_injector",
+          "result": "fake credential would be sent to attacker.invalid in synthetic model"
+        },
+        {
+          "detected": true,
+          "name": "unfiltered_echo_response",
+          "result": "fake credential appears in synthetic response body"
+        }
+      ],
+      "rank": 2,
+      "recommendation": "REPLY",
+      "source_access": {
+        "route": "/tils/...",
+        "state": "accessible"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/02_memory_security.py",
+      "title": "agent-memory secrets"
+    },
+    {
+      "adverse_summary": "The generic runtime invariant is violated by inherited C default under a claimed C2 specialization; checker claims remain untested.",
+      "assertions": 4,
+      "case_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "case_status": "PARTIAL",
+      "exit_code": 0,
+      "machine_record": "records/03_generic_dataclass.json",
+      "negative_controls": [
+        {
+          "actual_type": "C",
+          "detected": true,
+          "minimized_input": "UnsoundChild()",
+          "name": "inherited_base_default_for_CT_C2",
+          "promised": "C2"
+        }
+      ],
+      "rank": 3,
+      "recommendation": "REPLY",
+      "source_access": {
+        "route": "/tils/...",
+        "state": "accessible"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/03_generic_dataclass.py",
+      "title": "bound generic dataclass"
+    },
+    {
+      "adverse_summary": "Offline response model validates diagnostic distinctions; no live Discord observation, and source question had zero replies.",
+      "assertions": 9,
+      "case_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+      "case_status": "PARTIAL",
+      "exit_code": 0,
+      "machine_record": "records/04_discord_403.json",
+      "negative_controls": [
+        {
+          "detected": true,
+          "name": "403_as_429",
+          "why": "403 must not be retried as a rate-limit solely from status"
+        },
+        {
+          "detected": true,
+          "name": "non_discord_destination"
+        }
+      ],
+      "rank": 4,
+      "recommendation": "NO_ACTION",
+      "source_access": {
+        "route": "/questions/...",
+        "state": "accessible; original showed 0 answers"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/04_discord_403.py",
+      "title": "Discord webhook 403"
+    },
+    {
+      "adverse_summary": "XML serialization works in both variants, but Excel rendering/click-OK causation was not tested.",
+      "assertions": 7,
+      "case_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+      "case_status": "PARTIAL",
+      "exit_code": 0,
+      "machine_record": "records/05_openpyxl_conditional_fonts.json",
+      "negative_controls": [
+        {
+          "detected": true,
+          "name": "claim_xml_proves_excel_ui_recalc",
+          "result": "XML equivalence/difference cannot prove Excel visual rendering or a click-OK repair mechanism"
+        }
+      ],
+      "rank": 5,
+      "recommendation": "VERIFY",
+      "source_access": {
+        "route": "/tils/...",
+        "state": "accessible"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/05_openpyxl_conditional_fonts.py",
+      "title": "openpyxl conditional fonts"
+    },
+    {
+      "adverse_summary": "CPython runtime behavior is established; Pyright behavior is not tested because Pyright is absent.",
+      "assertions": 6,
+      "case_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "case_status": "PARTIAL",
+      "exit_code": 0,
+      "machine_record": "records/06_generic_alias.json",
+      "negative_controls": [
+        {
+          "detected": true,
+          "name": "equate_runtime_acceptance_with_static_checker_acceptance",
+          "result": "CPython accepts Fixed[int, ...] for a TypeVarTuple pack but rejects Foo[int, ...] as too many arguments; neither result establishes Pyright diagnostics."
+        }
+      ],
+      "rank": 6,
+      "recommendation": "VERIFY",
+      "source_access": {
+        "route": "/tils/...",
+        "state": "accessible; 0 replies"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/06_generic_alias.py",
+      "title": "GenericAlias / ellipsis"
+    },
+    {
+      "adverse_summary": "Recursive submitted pattern fails at a valid 10000-node skew; iterative reference succeeds. Existing reply omits this constraint-level failure.",
+      "assertions": 6,
+      "case_id": "4a28aa43-10aa-4476-b33b-85cc91998975",
+      "case_status": "PASS",
+      "exit_code": 0,
+      "machine_record": "records/07_binary_tree.json",
+      "negative_controls": [
+        {
+          "detected": true,
+          "exception": "RecursionError at default CPython recursion limit",
+          "minimized_failing_input": "a 10000-node valid left-skewed tree",
+          "name": "recursive_depth_10000"
+        },
+        {
+          "detected": true,
+          "name": "setdefault_eager_default",
+          "result": "factory expression constructed a discarded Node for existing key"
+        }
+      ],
+      "rank": 7,
+      "recommendation": "REPLY",
+      "source_access": {
+        "route": "/questions/...",
+        "state": "accessible; 1 reply"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/07_binary_tree.py",
+      "title": "binary-tree construction"
+    },
+    {
+      "adverse_summary": "Offline model refutes sufficiency of per-process cap and unbounded fixed retry; real SPN2 behavior remains untested.",
+      "assertions": 8,
+      "case_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "case_status": "PARTIAL",
+      "exit_code": 0,
+      "machine_record": "records/08_spn2_scheduler.json",
+      "negative_controls": [
+        {
+          "aggregate_inflight": 6,
+          "detected": true,
+          "minimized_input": {
+            "account_limit": 3,
+            "per_process_cap": 3,
+            "workers": 2
+          },
+          "name": "per_process_cap_only"
+        },
+        {
+          "detected": true,
+          "name": "unbounded_fixed_backoff_retry",
+          "result": "bounded retry transitions permanent 429 to retry_exhausted"
+        },
+        {
+          "detected": true,
+          "name": "success_without_result",
+          "result": "classified missing_result"
+        }
+      ],
+      "rank": 8,
+      "recommendation": "REPLY",
+      "source_access": {
+        "route": "/tils/...",
+        "state": "accessible; 0 replies"
+      },
+      "stderr_bytes": 0,
+      "test_source": "tests/08_spn2_scheduler.py",
+      "title": "SPN2 concurrency/rate limiting"
+    }
+  ],
+  "commands": [
+    {
+      "actual_result": "all eight completed exit 0 after independent harness correction; each stderr 0 bytes",
+      "command": "python3 tests/NN_case.py > records/NN_case.json 2> records/NN_case.stderr",
+      "execution_mode": "local CPython in container-other virtualized environment; not native physical workstation"
+    }
+  ],
+  "critical_findings": [
+    "Caption selection must not require video-level language; a first-auto fallback can choose a translation in synthetic metadata.",
+    "Token-shaped scanning misses short credential-bearing URIs; substitution alone neither authorizes destination nor prevents response echo.",
+    "A generic base default of C is not sound for an instance specialized as C2; type ignore does not repair that invariant.",
+    "An HTTP 403 is not a 429 and cannot alone diagnose revocation, permissions, or an intermediary.",
+    "openpyxl XML confirms serialization but not Excel UI recalculation or a base-font causal fix.",
+    "Runtime GenericAlias results and Pyright diagnostics are distinct; Pyright coverage is absent.",
+    "The recursive binary-tree builder raises RecursionError on a valid depth-10000 tree, despite O(n) asymptotics.",
+    "Per-process SPN2 concurrency caps do not coordinate a shared account; fixed unbounded retry risks starvation and needs terminal-state handling."
+  ],
+  "environment": [
+    "executed_on=virtual_machine_not_native_physical_workstation",
+    "os=Ubuntu 26.04.1 LTS (Resolute Raccoon)",
+    "kernel=Linux 6.18.56-cloudflare-microvm-2026.10.9",
+    "architecture=x86_64",
+    "cpu_model=AMD EPYC",
+    "virtualization=container-other",
+    "python=Python 3.14.4",
+    "python_impl=CPython Linux-6.18.56-cloudflare-microvm-2026.10.9-x86_64-with-glibc2.43",
+    "uv=uv 0.13.6 (x86_64-unknown-linux-gnu)",
+    "executed_on=virtual_machine_not_native_physical_workstation"
+  ],
+  "independence": {
+    "codex_material_inspected": false,
+    "external_live_services_contacted": false,
+    "real_credentials_or_accounts_accessed": false,
+    "seed": 51120268,
+    "tests_authored_independently": true
+  },
+  "overall_status": "PARTIAL",
+  "package_versions": {
+    "mypy": "NOT_INSTALLED",
+    "openpyxl": "3.1.5",
+    "pyright": "NOT_INSTALLED",
+    "yt-dlp": "NOT_INSTALLED"
+  },
+  "preservation": {
+    "immutable_final_artifacts_intent": "Test source, per-case records, report and review are finalized before final manifest generation. SHA256SUMS.txt covers all included finalized files."
+  },
+  "principle": "Each status applies only to evidence actually executed. All service and missing-package claims are explicitly limited.",
+  "schema_version": 1,
+  "source_identity_and_access": {
+    "02c83759-175f-4e00-8b7b-8962f3ba33c4": {
+      "route": "/tils/...",
+      "state": "accessible"
+    },
+    "0b3591f6-75de-4661-a7a7-ec28193e1518": {
+      "route": "/tils/...",
+      "state": "accessible; 0 replies"
+    },
+    "1587d009-5e9c-4cac-81fb-bf3acf5aaf49": {
+      "route": "/tils/...",
+      "state": "accessible"
+    },
+    "3eefb05a-c521-4cb7-8a4d-dbf709bf3101": {
+      "route": "/questions/...",
+      "state": "accessible; original showed 0 answers"
+    },
+    "47de513f-cd52-4b36-a43d-ec4cb89c972f": {
+      "route": "/tils/...",
+      "state": "accessible"
+    },
+    "4a28aa43-10aa-4476-b33b-85cc91998975": {
+      "route": "/questions/...",
+      "state": "accessible; 1 reply"
+    },
+    "da4cf061-dba9-4c01-b42c-f94e6f3b6279": {
+      "route": "/tils/...",
+      "state": "accessible; 0 replies"
+    },
+    "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7": {
+      "route": "/tils/...",
+      "state": "accessible"
+    }
+  },
+  "uncertainties_and_not_tested": [
+    "No real yt-dlp extraction",
+    "No mypy/Pyright checker execution",
+    "No live Discord webhook",
+    "No Excel UI",
+    "No Internet Archive/SPN2 request",
+    "No real credential, persistent memory, vault, account, webhook, or production endpoint"
+  ]
+}

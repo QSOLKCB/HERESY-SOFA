@@ -1,0 +1,43 @@
+{
+  "validated_at_utc": "2026-11-04T16:46:50.361657+00:00",
+  "source_snapshots": 8,
+  "source_replies": 11,
+  "verbatim_fences_checked": 14,
+  "primary_case_exits": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0
+  },
+  "json_files_parsed": 56,
+  "python_files_parsed": 54,
+  "missing_required_artifacts": [],
+  "checks": [
+    "Every original and reply has attributed claims",
+    "All current primary and supplemental controls passed",
+    "Original code fences match captured source bodies",
+    "Reproduction wrapper completed successfully",
+    "CASE-05 zero-execution skip is explicit; no missing dependency interpreted as an implementation defect",
+    "Generated fake credential value absent from CASE-02 JSON logs"
+  ],
+  "repository_boundary": {
+    "argv": [
+      "git",
+      "-C",
+      "/home/trent/SOFA-HOT-008/CODEX-001",
+      "rev-parse",
+      "--show-toplevel"
+    ],
+    "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+    "started_utc": "2026-11-04T16:46:50.394599+00:00",
+    "finished_utc": "2026-11-04T16:46:50.396041+00:00",
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  "seal_policy": "No content writes after hashes are finalized; regular files 0444 and directories 0555. This is not a storage-level immutable flag."
+}

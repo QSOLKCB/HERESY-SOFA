@@ -1,0 +1,401 @@
+{
+  "alternate_codex_package": {
+    "artifact_manifest": {
+      "bytes": 19994,
+      "mode": "0o444",
+      "mtime_ns": 1793810810402913120,
+      "path": "ARTIFACTS.json",
+      "sha256": "fc3ae8ee7c0dedccac45a6834d9d96f12072c687983e9d51cfb639036e6c0eee"
+    },
+    "assembled_at_utc": "2026-11-04T16:46:50.297470+00:00",
+    "execution_summary": {
+      "all_completed_primary_checks_passed": true,
+      "finite_state_scenarios": 1512,
+      "openpyxl_execution_skipped": true,
+      "passing_checks_mean": "Expected observations matched, including intentional counterexamples; not a blanket endorsement of sources",
+      "primary_checks": 239,
+      "supplemental_shell_mime_checks": 38
+    },
+    "ledger": {
+      "bytes": 11512,
+      "mode": "0o444",
+      "mtime_ns": 1793810810403007630,
+      "path": "SHA256SUMS.txt",
+      "sha256": "f18515a2ea9163f74351eba7fb303362a3305e92f7470e6a8da5517fe08a85fc"
+    },
+    "ledger_entry_count": 121,
+    "ledger_verification": "PASS",
+    "manifest_entry_count": 120,
+    "manifest_seal_metadata": {
+      "inventory_bytes": 19994,
+      "inventory_hash": "Recorded in SHA256SUMS.txt",
+      "ledger_bytes": 11512,
+      "ledger_hash": "Returned in final response/tool finalization output",
+      "payload_files": 120,
+      "self_reference_note": "An integrity ledger cannot contain its own digest. The inventory does not recursively hash itself or the ledger."
+    },
+    "manifest_verification": "PASS",
+    "preliminary_history_refs": [
+      "harness-history.json",
+      "finalization-attempts/01-receipt.json"
+    ],
+    "report": {
+      "bytes": 215330,
+      "mode": "0o444",
+      "mtime_ns": 1793810810298514567,
+      "path": "CODEX-001-REPORT.json",
+      "sha256": "f9c61410ac238a0c54f8b8803bf2954df83b585c137d454574b39a15f6bbfcb2"
+    },
+    "review": {
+      "bytes": 20999,
+      "mode": "0o444",
+      "mtime_ns": 1793810810113478681,
+      "path": "CODEX-001-REVIEW.md",
+      "sha256": "df76b436ae8f27d6d68ffec6d6f6a3b2c2025b6bf28ef05e559088d744316500"
+    },
+    "root": "/home/trent/SOFA-HOT-008/CODEX-001",
+    "validation": {
+      "checks": [
+        "Every original and reply has attributed claims",
+        "All current primary and supplemental controls passed",
+        "Original code fences match captured source bodies",
+        "Reproduction wrapper completed successfully",
+        "CASE-05 zero-execution skip is explicit; no missing dependency interpreted as an implementation defect",
+        "Generated fake credential value absent from CASE-02 JSON logs"
+      ],
+      "json_files_parsed": 56,
+      "missing_required_artifacts": [],
+      "primary_case_exits": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "python_files_parsed": 54,
+      "repository_boundary": {
+        "argv": [
+          "git",
+          "-C",
+          "/home/trent/SOFA-HOT-008/CODEX-001",
+          "rev-parse",
+          "--show-toplevel"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+        "exit_code": 128,
+        "finished_utc": "2026-11-04T16:46:50.396041+00:00",
+        "started_utc": "2026-11-04T16:46:50.394599+00:00",
+        "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+        "stdout": ""
+      },
+      "seal_policy": "No content writes after hashes are finalized; regular files 0444 and directories 0555. This is not a storage-level immutable flag.",
+      "source_replies": 11,
+      "source_snapshots": 8,
+      "validated_at_utc": "2026-11-04T16:46:50.361657+00:00",
+      "verbatim_fences_checked": 14
+    }
+  },
+  "baseline_status": "FROZEN_BEFORE_MONICA_INSPECTION",
+  "created_at_utc": "2026-11-04T16:56:59.147927+00:00",
+  "determination": {
+    "alternate": "CODEX-001",
+    "alternate_treatment": "Separately finalized concurrent Codex package. Integrity-verified and retained as auxiliary Codex evidence, not mislabeled as Monica or as a preliminary failure.",
+    "ambiguity_disclosed": true,
+    "primary_for_reconciliation": "CODEX-001-independent-20261104T162141Z",
+    "primary_reason": "This is the read-only package explicitly cited as the completed evidence package in the prior Codex handoff; its report records the actual package path and finalization time.",
+    "state": "TWO_FINALIZED_CODEX_PACKAGES"
+  },
+  "independence_boundary": {
+    "alternate_self_declaration": {
+      "monicas_code_used": false,
+      "monicas_reports_read": false,
+      "other_agent_findings_consulted": false,
+      "post_content_treated_as_untrusted": true,
+      "sofa_posts_read": 8,
+      "sofa_replies_read": 11,
+      "verification_trails_excluded": true
+    },
+    "cryptographic_limit": "This establishes the custodian's ordered workflow and pre-existing witness timestamps; it cannot prove what unrelated external processes may have read.",
+    "monica_archive_discovered_before_this_record": false,
+    "monica_archive_members_listed_before_this_record": false,
+    "monica_findings_read_before_this_record": false,
+    "primary_self_declaration": {
+      "foreign_canonical_package_hashed": false,
+      "monica_artifacts_read": false,
+      "monica_code_used": false,
+      "note": "The requested canonical directory appeared with foreign files during the run. Only names/sizes/timestamps were listed to diagnose the collision; no file contents were read. This package was independently staged in the sibling path recorded below."
+    },
+    "procedural_basis": "No command in this reconciliation session addressed MONICA-001 before this baseline writer. The primary report also self-declares Monica reports/code unused."
+  },
+  "primary": {
+    "actual_environment": {
+      "architecture": "x86_64",
+      "cpu": "AMD Ryzen 9 5950X 16-Core Processor; 32 logical CPUs",
+      "cpython": "3.14.4 (GCC 15.2.0)",
+      "dependencies": {
+        "mypy": "1.19.1",
+        "openpyxl": null,
+        "pyright": null,
+        "yt-dlp": "2026.3.17"
+      },
+      "detail": "environment.json",
+      "kernel": "Linux 7.0.0-42-generic #42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:06:44 UTC 2026",
+      "uv": "0.12.1 (x86_64-unknown-linux-gnu)"
+    },
+    "all_final_receipts_exit_zero": true,
+    "all_final_receipts_have_no_failed_checks": true,
+    "command_log": {
+      "bytes": 5099,
+      "mode": "0o444",
+      "mtime_ns": 1793810893294480081,
+      "path": "COMMAND-LOG.json",
+      "sha256": "f1ac2dfc0365f085173428710aff417289dc56333008172a22475eb238ab6806"
+    },
+    "environment": {
+      "bytes": 10665,
+      "mode": "0o444",
+      "mtime_ns": 1793810458952972570,
+      "path": "environment.json",
+      "sha256": "fbe3c76558aff7a8fb27e4ac3da1d8e9252985bf1dc83d114393a429a8f5831d"
+    },
+    "execution_receipts": [
+      {
+        "bytes": 4873,
+        "case": "CASE-01",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:37:04.265793+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810224265923486,
+        "path": "CASE-01/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "84ed7e2519ddd42a100d4a8b0d14f0bdda0ba5dcc812385cce971e5230c7c326",
+        "started_utc": "2026-11-04T16:37:04.256830+00:00"
+      },
+      {
+        "bytes": 4295,
+        "case": "CASE-02",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:38:44.305223+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810324305414731,
+        "path": "CASE-02/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "4341aac6db1ba14e89b02e55f2a5164e68a5fc40c94787829f0ded46af508b65",
+        "started_utc": "2026-11-04T16:38:43.295820+00:00"
+      },
+      {
+        "bytes": 4636,
+        "case": "CASE-03",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:39:29.963808+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810369963945166,
+        "path": "CASE-03/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "c78bc6df7cb53b5b126bb45100f4780cb0d0fa74e1b8425a9852ca80dff9158e",
+        "started_utc": "2026-11-04T16:39:28.073964+00:00"
+      },
+      {
+        "bytes": 10080,
+        "case": "CASE-04",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:39:21.507471+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810361507663900,
+        "path": "CASE-04/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "c9c0f1f5077521e9205157d3d43fc51f401fbcbe9e91899cbb87408c403c696c",
+        "started_utc": "2026-11-04T16:39:20.840824+00:00"
+      },
+      {
+        "bytes": 2462,
+        "case": "CASE-05",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:37:04.262982+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810224263055844,
+        "path": "CASE-05/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "ef4c4f032490212fe129984178a588c0b4cd1d2d513a2d9b8cae7c9908a536de",
+        "started_utc": "2026-11-04T16:37:04.262663+00:00"
+      },
+      {
+        "bytes": 5688,
+        "case": "CASE-06",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:39:28.230199+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810368230322517,
+        "path": "CASE-06/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "0cf23d4456a03e04592b6d1b2548dbea8e95f0d8778ed6b5451c741cfdfbe92e",
+        "started_utc": "2026-11-04T16:39:28.071570+00:00"
+      },
+      {
+        "bytes": 25451,
+        "case": "CASE-07",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:39:28.104747+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810368104945891,
+        "path": "CASE-07/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "a69fff9d46bc86cd36d7a63d323da1e6d2ec4a01e65a92cd16a5b9449831cc72",
+        "started_utc": "2026-11-04T16:39:28.064725+00:00"
+      },
+      {
+        "bytes": 8173,
+        "case": "CASE-08",
+        "failed_checks": [],
+        "finished_utc": "2026-11-04T16:37:04.264769+00:00",
+        "mode": "0o444",
+        "mtime_ns": 1793810224264903365,
+        "path": "CASE-08/receipt.json",
+        "process_exit_code": 0,
+        "sha256": "e8c6a645bec714b3530dc3284a1f227a398ac1cb7db0c2b735e6112f612dfe23",
+        "started_utc": "2026-11-04T16:37:04.262014+00:00"
+      }
+    ],
+    "ledger": {
+      "bytes": 5208,
+      "mode": "0o444",
+      "mtime_ns": 1793810932983703559,
+      "path": "SHA256SUMS.txt",
+      "sha256": "d366cb26e1f876f36a0b592205bd62e949f10c927ac61800a2f15cbc2d08b3c9"
+    },
+    "ledger_entry_count": 53,
+    "ledger_verification": "PASS",
+    "preliminary_runs_separated": {
+      "final_exit_codes": {
+        "CASE-01": 0,
+        "CASE-02": 0,
+        "CASE-03": 0,
+        "CASE-04": 0,
+        "CASE-05": 0,
+        "CASE-06": 0,
+        "CASE-07": 0,
+        "CASE-08": 0
+      },
+      "first_parallel_run": {
+        "command_template": "uv run --no-project --offline --no-managed-python python test_case_NN.py --receipt receipt.json",
+        "phase": "first-parallel-run",
+        "results": {
+          "CASE-01": {
+            "exit_code": 0,
+            "result": "12/12 checks passed"
+          },
+          "CASE-02": {
+            "error": "PermissionError: [Errno 1] Operation not permitted while creating a 127.0.0.1 socket inside the workspace sandbox",
+            "exit_code": 1
+          },
+          "CASE-03": {
+            "error": "examiner expectation used return-value rather than the observed mypy assignment error code",
+            "exit_code": 1
+          },
+          "CASE-04": {
+            "error": "PermissionError: [Errno 1] Operation not permitted while creating a 127.0.0.1 socket inside the workspace sandbox",
+            "exit_code": 1
+          },
+          "CASE-05": {
+            "exit_code": 0,
+            "result": "semantic/AST controls passed; openpyxl and Excel NOT_TESTED"
+          },
+          "CASE-06": {
+            "error": "examiner expected ImportError, but CPython 3.14 exports typing.GenericAlias; actual failure is TypeError at subscripting",
+            "exit_code": 1
+          },
+          "CASE-07": {
+            "error": "examiner re-probed the recursion threshold at a different call-stack depth",
+            "exit_code": 1
+          },
+          "CASE-08": {
+            "exit_code": 0,
+            "result": "29/29 checks passed"
+          }
+        },
+        "sandbox_stderr_for_non_escalated_uv_runs": "Failed to create stream fd: Operation not permitted (three lines); the Python tests still ran unless they opened sockets."
+      },
+      "source": "COMMAND-LOG.json"
+    },
+    "raw_environment_capture_utc": "2026-11-04T16:40:58.952481+00:00",
+    "report": {
+      "bytes": 29395,
+      "mode": "0o444",
+      "mtime_ns": 1793810902262480232,
+      "path": "CODEX-001-REPORT.json",
+      "sha256": "3cebb8b7fff60a5344e91f02c531dcbfe23455a83b518630acdc7c007ec33229"
+    },
+    "report_finalized_utc": "2026-11-04T16:48:17.455877472+00:00",
+    "review": {
+      "bytes": 8668,
+      "mode": "0o444",
+      "mtime_ns": 1793810824770478928,
+      "path": "CODEX-001-REVIEW.md",
+      "sha256": "5aae7e5ec963c6a8fe34e9377397d35d9fc2c883d0c79352a98cf512af0cb54a"
+    },
+    "root": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z",
+    "source_snapshots": [
+      {
+        "bytes": 802,
+        "mode": "0o444",
+        "mtime_ns": 1793809585607542509,
+        "path": "CASE-01/source.json",
+        "sha256": "a46df910049a08903b7a433d19b3d623cc431e1f187ab5d91f790a7fe636af52"
+      },
+      {
+        "bytes": 1537,
+        "mode": "0o444",
+        "mtime_ns": 1793809675179530337,
+        "path": "CASE-02/source.json",
+        "sha256": "dc9980baf454105845b156508ca5c11879498b88bc6296d690aa7957c29ea501"
+      },
+      {
+        "bytes": 808,
+        "mode": "0o444",
+        "mtime_ns": 1793809741273521355,
+        "path": "CASE-03/source.json",
+        "sha256": "a4af4fdc37f1c7dbdcf30bcd623afd4acaee8983afa8ac5e0bcd0437b9f7b003"
+      },
+      {
+        "bytes": 1040,
+        "mode": "0o444",
+        "mtime_ns": 1793809839071508153,
+        "path": "CASE-04/source.json",
+        "sha256": "e21976b804144123aed300353cbd253cd61c468b52d2830606b54916fc318bef"
+      },
+      {
+        "bytes": 884,
+        "mode": "0o444",
+        "mtime_ns": 1793809891513503364,
+        "path": "CASE-05/source.json",
+        "sha256": "950516c42581700a641bf32b6c9ad97bbe2624da76926e567c07c042842aea34"
+      },
+      {
+        "bytes": 917,
+        "mode": "0o444",
+        "mtime_ns": 1793809954348497625,
+        "path": "CASE-06/source.json",
+        "sha256": "5c02ad07f88d77b44efd619ed0c739fbd3a7fb3800e2ae3cfe74000003fffb8e"
+      },
+      {
+        "bytes": 1005,
+        "mode": "0o444",
+        "mtime_ns": 1793810032473490491,
+        "path": "CASE-07/source.json",
+        "sha256": "adf477f11215e5db29a006c4b5e7564c6ae6aa4bb3e7018970c9fb96f8cf23a7"
+      },
+      {
+        "bytes": 881,
+        "mode": "0o444",
+        "mtime_ns": 1793810215134478338,
+        "path": "CASE-08/source.json",
+        "sha256": "192ef53ed3bff329d12669e07384c3245d9820e23340bf6152aa90b271af0445"
+      }
+    ]
+  },
+  "purpose": "Freeze Codex witness identity before any Monica archive discovery or consultation.",
+  "schema": "SOFA-HOT-008-CODEX-BASELINE-v1"
+}

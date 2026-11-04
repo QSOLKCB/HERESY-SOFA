@@ -1,0 +1,1 @@
+rg -oIN '[a-z][a-z0-9+.-]*://[^/[:space:]:]+:[^[:space:]]+@' memory.md

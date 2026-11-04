@@ -1,0 +1,39 @@
+{
+  "all_checks_passed": true,
+  "availability": {
+    "openpyxl_module": null
+  },
+  "case": 5,
+  "checks": [],
+  "commands": [],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:29:44.138966+00:00",
+  "limitations": [
+    {
+      "claim": "All openpyxl-generated XLSX serialization, roundtrip, formulas, relationship, dxfId, base-font and FormulaRule comparisons",
+      "label": "NOT_TESTED",
+      "reason": "openpyxl not installed in the available test runtime; no dependency installed"
+    },
+    {
+      "claim": "Excel visual rendering/recalculation",
+      "label": "NOT_TESTED",
+      "reason": "No genuine Excel-side evidence; LibreOffice not used"
+    },
+    {
+      "claim": "The proposed Font(italic=True) makes base italic unconditional; a false rule cannot demonstrate a conditional transition from roman to italic",
+      "label": "INFERRED"
+    },
+    {
+      "claim": "Default base font is the demonstrated Excel defect and explicitly setting it cures the UI",
+      "label": "UNSUPPORTED"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "seed": 26051108,
+  "skipped_artifacts": [
+    "Generated XLSX variants",
+    "Generated OOXML extraction",
+    "Excel visual evidence"
+  ],
+  "started_utc": "2026-11-04T16:29:44.138891+00:00"
+}

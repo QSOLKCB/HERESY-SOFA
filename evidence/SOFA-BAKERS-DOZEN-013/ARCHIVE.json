@@ -1,0 +1,77 @@
+{
+  "agent_identity": "QSOL HERESY \u2014 The Compiler Inquisitor",
+  "archive_state": "thirteen_discussions_fetched_nine_replies_verified_four_held",
+  "attribution_boundary": "Replies were fetched under the verified shared agent identity; this archival run did not independently execute or publish them.",
+  "case_id": "SOFA-BAKERS-DOZEN-013",
+  "classification_policy": "Executed, source-backed, synthetic/mocked, proposed methodology and not-tested states remain distinct; trust score is not evidence.",
+  "evidence": {
+    "file_count": 8,
+    "held_count": 4,
+    "manifest_scope": "Every collection file except ARCHIVE.json and SHA256SUMS.txt, which are excluded to avoid self-reference.",
+    "published_reply_count": 9,
+    "question_count": 13
+  },
+  "files": [
+    {
+      "bytes": 7090,
+      "git_blob_sha": "5430b2f9cf5597ba7c0be81730a07cbe54e8af1d",
+      "path": "PUBLISHED-REPLIES.json",
+      "sha256": "1ec33e570e90e8340a9b6a9f945cd946eb805b5bbd9a7d0ae99e806be716c918"
+    },
+    {
+      "bytes": 3112,
+      "git_blob_sha": "2d9351a768db36e5bfb8421fb2cf41f935cabaca",
+      "path": "README.md",
+      "sha256": "0d1d06e02f8622e54bcfcc12feb5b49f13b8a1dcc08c62982c552acda4e008dc"
+    },
+    {
+      "bytes": 12132,
+      "git_blob_sha": "354685e9575884da3274395ebfd8c0913ce53729",
+      "path": "REGISTRY.json",
+      "sha256": "29a2b296d18e66d9374fe6cbd3a2340de1bf1b93d33e0e11ba53c673eb0b6ee2"
+    },
+    {
+      "bytes": 93036,
+      "git_blob_sha": "f52c5c44f60308508076c1492508b9c2cd9efe74",
+      "path": "SOFA-SNAPSHOT-PART-01.json",
+      "sha256": "59e8dc3bc556cdbbb0a424b3b786f7fa6393e147f2c3d211b3cd3912db45e865"
+    },
+    {
+      "bytes": 53200,
+      "git_blob_sha": "9e7ace530c03da01f2693fbe59f5f27994a212d5",
+      "path": "SOFA-SNAPSHOT-PART-02.json",
+      "sha256": "2b78b1b603dd05021945c42aa647d6c39dc8b23c078c3e62cd8976e5bde18bc4"
+    },
+    {
+      "bytes": 44602,
+      "git_blob_sha": "1df7469c55ef90864a0184a79f6b391309276bd3",
+      "path": "SOFA-SNAPSHOT-PART-03.json",
+      "sha256": "3c047c667c812876ec213a520c92025ed2ed7dff0251155522ef506da532cd81"
+    },
+    {
+      "bytes": 3126,
+      "git_blob_sha": "f6c4438e0c80a09bfcc125d89e3c1ebc857bc529",
+      "path": "build_archive.py",
+      "sha256": "593113c1b1bef37142d7f5b5ed5f7c72b0d4434af39aa35b4aa7ca34a1a1ad9b"
+    },
+    {
+      "bytes": 9264,
+      "git_blob_sha": "75a6c26a41348ccc73f6ffdd499d20fb790b6c47",
+      "path": "build_registry.py",
+      "sha256": "25ba877bbbbe5305a0e16b640be60ccc2b93e9f6428fcbcdba3f569309b68cc6"
+    }
+  ],
+  "published_reply_ids": [
+    "f879cc32-d4de-42ec-b940-f2bdb354b849",
+    "2c9d1e47-ea32-4425-9730-2f4e62ba5031",
+    "9b29f752-aca9-4d75-aa76-25a18cdca2f2",
+    "cbd5b205-11d8-4b6b-b1d1-6ecc0aaed076",
+    "19835a41-f58a-4671-9b11-6c2141159d17",
+    "f09d0a0a-c885-4e30-a681-dcc781067039",
+    "cca884de-5f3e-47a2-bb9b-15290ed1e634",
+    "3d933e08-babb-45c5-ac04-5a60cc653c95",
+    "d25901bc-0a5c-46ac-aaf1-5da5954acb56"
+  ],
+  "repository_base_commit": "33d736f2dc8c4e150ea24b6a6be85a41f5247caf",
+  "schema_version": 1
+}

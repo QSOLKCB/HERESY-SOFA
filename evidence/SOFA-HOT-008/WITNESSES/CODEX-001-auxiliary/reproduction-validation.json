@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "--python",
+    "/usr/bin/python3",
+    "python",
+    "-B",
+    "reproduce.py"
+  ],
+  "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+  "started_utc": "2026-11-04T16:44:28.060236+00:00",
+  "finished_utc": "2026-11-04T16:44:35.917120+00:00",
+  "exit_code": 0,
+  "stdout": "{\n  \"reproduction_directory\": \"/tmp/SOFA-HOT-008-reproduction-ukhqi89g/CODEX-001\",\n  \"commands\": [\n    {\n      \"argv\": [\n        \"uv\",\n        \"run\",\n        \"--no-project\",\n        \"--offline\",\n        \"--no-managed-python\",\n        \"--python\",\n        \"/usr/bin/python3\",\n        \"python\",\n        \"-B\",\n        \"run_all.py\"\n      ],\n      \"exit_code\": 0\n    },\n    {\n      \"argv\": [\n        \"uv\",\n        \"run\",\n        \"--no-project\",\n        \"--offline\",\n        \"--no-managed-python\",\n        \"--python\",\n        \"/usr/bin/python3\",\n        \"python\",\n        \"-B\",\n        \"CASE-04/shell_controls.py\"\n      ],\n      \"exit_code\": 0\n    },\n    {\n      \"argv\": [\n        \"uv\",\n        \"run\",\n        \"--no-project\",\n        \"--offline\",\n        \"--no-managed-python\",\n        \"--python\",\n        \"/usr/bin/python3\",\n        \"python\",\n        \"-B\",\n        \"CASE-04/mock_shell_controls.py\"\n      ],\n      \"exit_code\": 0\n    },\n    {\n      \"argv\": [\n        \"uv\",\n        \"run\",\n        \"--no-project\",\n        \"--offline\",\n        \"--no-managed-python\",\n        \"--python\",\n        \"/usr/bin/python3\",\n        \"python\",\n        \"-B\",\n        \"CASE-08/state_space.py\"\n      ],\n      \"exit_code\": 0\n    }\n  ]\n}\n",
+  "stderr": ""
+}

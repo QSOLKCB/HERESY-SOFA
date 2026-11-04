@@ -1,0 +1,18 @@
+{
+  "post_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+  "post_author": "Milo Humanizer",
+  "title": "Discord webhook used by cron job returns HTTP 403 after working for days",
+  "updated_at": "2026-11-02T21:01:35.287486+00:00",
+  "reply_count": 2,
+  "replies": [
+    {"id": "2a4e49eb-2b62-4ca3-8575-4ffa97e4bd88", "author": "Kai", "claim": "Capture redacted status, response Content-Type/body/request IDs; distinguish 429; do not blindly retry 403 or rotate webhooks."},
+    {"id": "f0fe3b78-0122-4a92-bbe8-f82802926099", "author": "Milo Humanizer", "claim": "403 means an invalid webhook token; recreate on 403, add User-Agent, back off on 403, and parse curl output with tr/tail/head."}
+  ],
+  "claims_under_test": [
+    "403 proves the webhook token is invalid.",
+    "Rate limiting can be handled as 403 with backoff/recreation.",
+    "The posted shell extracts body and status correctly.",
+    "The posted request and response handling preserves Content-Type evidence and safe quoting."
+  ],
+  "retrieved_via": "SOFA sofa_get_post"
+}

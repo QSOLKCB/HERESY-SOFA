@@ -1,0 +1,315 @@
+{
+  "started_utc": "2026-11-04T16:33:45.145074+00:00",
+  "commands": [
+    {
+      "argv": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-04/corrected.sh"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "started_utc": "2026-11-04T16:33:45.145390+00:00",
+      "finished_utc": "2026-11-04T16:33:45.169042+00:00",
+      "exit_code": 0,
+      "stdout": "STATUS=403\nACTION=investigate\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-04/corrected.sh"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "started_utc": "2026-11-04T16:33:45.169223+00:00",
+      "finished_utc": "2026-11-04T16:33:45.192143+00:00",
+      "exit_code": 0,
+      "stdout": "STATUS=403\nACTION=investigate\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-04/corrected.sh"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "started_utc": "2026-11-04T16:33:45.192301+00:00",
+      "finished_utc": "2026-11-04T16:33:45.215532+00:00",
+      "exit_code": 0,
+      "stdout": "STATUS=404\nACTION=investigate\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-04/corrected.sh"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "started_utc": "2026-11-04T16:33:45.215684+00:00",
+      "finished_utc": "2026-11-04T16:33:45.238388+00:00",
+      "exit_code": 0,
+      "stdout": "STATUS=429\nACTION=rate_limit\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-04/corrected.sh"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "started_utc": "2026-11-04T16:33:45.238545+00:00",
+      "finished_utc": "2026-11-04T16:33:45.262298+00:00",
+      "exit_code": 0,
+      "stdout": "STATUS=204\nACTION=success\n",
+      "stderr": ""
+    }
+  ],
+  "checks": [
+    {
+      "name": "403_application/json_exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_application/json_status",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_application/json_action",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_application/json_URL_preserved",
+      "actual": "http://127.0.0.1:8800/mock?x=a=b",
+      "expected": "http://127.0.0.1:8800/mock?x=a=b",
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_application/json_JSON_header",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_application/json_payload_path_quoted",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_application/json_separate_body_and_header_files",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_text/html_exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_text/html_status",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_text/html_action",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_text/html_URL_preserved",
+      "actual": "http://127.0.0.1:8800/mock?x=a=b",
+      "expected": "http://127.0.0.1:8800/mock?x=a=b",
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_text/html_JSON_header",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_text/html_payload_path_quoted",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "403_text/html_separate_body_and_header_files",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "404_application/json_exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "404_application/json_status",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "404_application/json_action",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "404_application/json_URL_preserved",
+      "actual": "http://127.0.0.1:8800/mock?x=a=b",
+      "expected": "http://127.0.0.1:8800/mock?x=a=b",
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "404_application/json_JSON_header",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "404_application/json_payload_path_quoted",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "404_application/json_separate_body_and_header_files",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "429_application/json_exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "429_application/json_status",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "429_application/json_action",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "429_application/json_URL_preserved",
+      "actual": "http://127.0.0.1:8800/mock?x=a=b",
+      "expected": "http://127.0.0.1:8800/mock?x=a=b",
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "429_application/json_JSON_header",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "429_application/json_payload_path_quoted",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "429_application/json_separate_body_and_header_files",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "204_text/plain_exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "204_text/plain_status",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "204_text/plain_action",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "204_text/plain_URL_preserved",
+      "actual": "http://127.0.0.1:8800/mock?x=a=b",
+      "expected": "http://127.0.0.1:8800/mock?x=a=b",
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "204_text/plain_JSON_header",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "204_text/plain_payload_path_quoted",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "204_text/plain_separate_body_and_header_files",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "label": "EXECUTED"
+    }
+  ],
+  "transport": "mocked curl; no sockets",
+  "finished_utc": "2026-11-04T16:33:45.262488+00:00",
+  "all_checks_passed": true
+}

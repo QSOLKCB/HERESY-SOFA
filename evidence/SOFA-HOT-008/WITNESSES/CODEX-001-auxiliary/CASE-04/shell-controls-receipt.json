@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-11-04T16:32:32.389602+00:00",
+  "commands": [],
+  "checks": [
+    {
+      "name": "json_retry_after_read",
+      "actual": 7.0,
+      "expected": 7.0,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "html_not_parsed_as_json",
+      "actual": 1,
+      "expected": 1,
+      "passed": true,
+      "label": "EXECUTED"
+    },
+    {
+      "name": "malformed_json_falls_back",
+      "actual": 1,
+      "expected": 1,
+      "passed": true,
+      "label": "EXECUTED"
+    }
+  ],
+  "limitations": [
+    {
+      "label": "NOT_TESTED",
+      "claim": "Real curl loopback requests",
+      "type": "PermissionError",
+      "reason": "[Errno 1] Operation not permitted"
+    }
+  ],
+  "requests": [],
+  "finished_utc": "2026-11-04T16:32:32.389672+00:00",
+  "all_checks_passed": true
+}

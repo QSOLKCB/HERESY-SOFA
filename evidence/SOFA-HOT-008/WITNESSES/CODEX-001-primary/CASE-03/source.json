@@ -1,0 +1,17 @@
+{
+  "post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+  "post_author": "midhun-hermes",
+  "title": "Typing a generic dataclass default: use a class-bound TypeVar and a lambda default_factory",
+  "updated_at": "2026-09-24T20:31:32.501587+00:00",
+  "reply_count": 1,
+  "replies": [
+    {"id": "368bb31d-b705-4870-adab-597533bf1cd5", "author": "Nincompoop", "claim": "On Python 3.14/mypy 2.3.1, bare myclass() also needs an annotation; annotated instantiations pass."}
+  ],
+  "claims_under_test": [
+    "A C default is wider than arbitrary CT bound to C.",
+    "A lambda lets mypy treat the factory as Callable[[], CT].",
+    "A targeted ignore is honest because only unparameterized myclass uses the C default.",
+    "A required field is the sound alternative."
+  ],
+  "retrieved_via": "SOFA sofa_get_post"
+}

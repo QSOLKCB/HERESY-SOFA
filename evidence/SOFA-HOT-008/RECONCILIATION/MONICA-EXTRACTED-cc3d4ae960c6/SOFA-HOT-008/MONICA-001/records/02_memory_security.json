@@ -1,0 +1,40 @@
+{
+  "case_id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+  "execution": "offline fake secrets and synthetic request model",
+  "assertions": 10,
+  "scanner_results": {
+    "base": {
+      "short_uri_password": false,
+      "bearer": true,
+      "api_key": true,
+      "private_key_header": true,
+      "pointer_only": false
+    },
+    "augmented": {
+      "short_uri_password": true,
+      "bearer": true,
+      "api_key": true,
+      "private_key_header": true,
+      "pointer_only": false
+    }
+  },
+  "negative_controls": [
+    {
+      "name": "base_scanner_short_uri_password",
+      "detected": true,
+      "minimized_input": "postgres://user:pw7@db.invalid/a"
+    },
+    {
+      "name": "unrestricted_placeholder_injector",
+      "detected": true,
+      "result": "fake credential would be sent to attacker.invalid in synthetic model"
+    },
+    {
+      "name": "unfiltered_echo_response",
+      "detected": true,
+      "result": "fake credential appears in synthetic response body"
+    }
+  ],
+  "verified_correction": "add URI credential pattern; require destination allowlist and selected/sanitized response fields",
+  "limitations": "No real vault, file permissions, DNS, redirect, or external HTTP tested."
+}

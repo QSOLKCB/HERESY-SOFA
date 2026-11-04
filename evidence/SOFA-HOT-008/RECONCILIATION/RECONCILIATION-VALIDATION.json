@@ -1,0 +1,493 @@
+{
+  "checks": [
+    {
+      "name": "required_artifacts_present",
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "codex_primary_report_identity",
+      "observed": {
+        "bytes": 29395,
+        "path": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CODEX-001-REPORT.json",
+        "sha256": "3cebb8b7fff60a5344e91f02c531dcbfe23455a83b518630acdc7c007ec33229"
+      },
+      "passed": true
+    },
+    {
+      "name": "codex_primary_ledger_identity",
+      "observed": {
+        "bytes": 5208,
+        "path": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/SHA256SUMS.txt",
+        "sha256": "d366cb26e1f876f36a0b592205bd62e949f10c927ac61800a2f15cbc2d08b3c9"
+      },
+      "passed": true
+    },
+    {
+      "name": "codex_primary_ledger_recorded_pass",
+      "observed": "PASS",
+      "passed": true
+    },
+    {
+      "name": "codex_auxiliary_report_identity",
+      "observed": {
+        "bytes": 215330,
+        "path": "/home/trent/SOFA-HOT-008/CODEX-001/CODEX-001-REPORT.json",
+        "sha256": "f9c61410ac238a0c54f8b8803bf2954df83b585c137d454574b39a15f6bbfcb2"
+      },
+      "passed": true
+    },
+    {
+      "name": "codex_auxiliary_ledger_identity",
+      "observed": {
+        "bytes": 11512,
+        "path": "/home/trent/SOFA-HOT-008/CODEX-001/SHA256SUMS.txt",
+        "sha256": "f18515a2ea9163f74351eba7fb303362a3305e92f7470e6a8da5517fe08a85fc"
+      },
+      "passed": true
+    },
+    {
+      "name": "codex_auxiliary_ledger_recorded_pass",
+      "observed": "PASS",
+      "passed": true
+    },
+    {
+      "name": "codex_primary_receipts_zero",
+      "passed": true
+    },
+    {
+      "name": "baseline_precedes_monica_inspection",
+      "observed": "FROZEN_BEFORE_MONICA_INSPECTION",
+      "passed": true
+    },
+    {
+      "name": "monica_archive_byte_identity",
+      "observed": {
+        "bytes": 65649,
+        "mode": "0o664",
+        "mtime_ns": 1793810164192481068,
+        "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202"
+      },
+      "passed": true
+    },
+    {
+      "name": "monica_integrity_verdict",
+      "observed": "PASS_WITH_NONSTANDARD_LEDGER_FORMAT",
+      "passed": true
+    },
+    {
+      "name": "monica_archive_member_safety",
+      "observed": {
+        "absolute_paths": "PASS",
+        "declared_regular_bytes": 412375,
+        "devices": "PASS_NONE_PRESENT",
+        "dotdot_traversal": "PASS",
+        "duplicate_normalized_paths": "PASS",
+        "fifos": "PASS_NONE_PRESENT",
+        "hardlinks": "PASS_NONE_PRESENT",
+        "member_count": 43,
+        "regular_file_count": 39,
+        "symlinks": "PASS_NONE_PRESENT",
+        "unexpected_types": "PASS_NONE_PRESENT"
+      },
+      "passed": true
+    },
+    {
+      "name": "monica_extracted_files_match_inventory",
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "sofa_snapshot_eight_sources",
+      "observed": [
+        "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+        "0b3591f6-75de-4661-a7a7-ec28193e1518",
+        "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+        "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+        "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+        "4a28aa43-10aa-4476-b33b-85cc91998975",
+        "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+        "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7"
+      ],
+      "passed": true
+    },
+    {
+      "name": "sofa_reply_counts_consistent",
+      "passed": true
+    },
+    {
+      "name": "claim_ledger_schema",
+      "observed": {
+        "fields": [
+          "Case ID",
+          "Original post ID",
+          "Original author",
+          "Original body SHA-256",
+          "Current reply identities",
+          "Exact disputed claim",
+          "Codex evidence reference",
+          "Codex evidence kind",
+          "Monica evidence reference",
+          "Monica evidence kind",
+          "Reconciliation status",
+          "Minimum counterexample",
+          "Corrected behavior",
+          "Known limitations",
+          "Publication recommendation"
+        ],
+        "rows": 37
+      },
+      "passed": true
+    },
+    {
+      "name": "claim_ledger_source_attribution",
+      "passed": true
+    },
+    {
+      "name": "claim_status_vocabulary",
+      "observed": [
+        "CONFIRMED_BY_BOTH",
+        "CONFIRMED_BY_ONE",
+        "CONTRADICTED",
+        "INSUFFICIENT_EVIDENCE",
+        "NO_DEFECT"
+      ],
+      "passed": true
+    },
+    {
+      "name": "observed_vs_inferred_columns_populated",
+      "passed": true
+    },
+    {
+      "name": "eight_case_classifications",
+      "observed": {
+        "01": "INSUFFICIENT_EVIDENCE",
+        "02": "CONFIRMED_BY_BOTH",
+        "03": "CONFIRMED_BY_BOTH",
+        "04": "CONFIRMED_BY_ONE",
+        "05": "INSUFFICIENT_EVIDENCE",
+        "06": "CONFIRMED_BY_ONE",
+        "07": "CONFIRMED_BY_BOTH",
+        "08": "CONFIRMED_BY_ONE"
+      },
+      "passed": true
+    },
+    {
+      "name": "eight_case_publication_actions",
+      "observed": {
+        "01": "NEEDS_MORE_EVIDENCE",
+        "02": "NO_ACTION",
+        "03": "REPLY",
+        "04": "REPLY",
+        "05": "REPLY",
+        "06": "REPLY",
+        "07": "NO_ACTION",
+        "08": "REPLY"
+      },
+      "passed": true
+    },
+    {
+      "name": "report_claim_ledger_identity",
+      "observed": {
+        "bytes": 26008,
+        "path": "SOFA-HOT-008-CLAIM-LEDGER.csv",
+        "sha256": "4ac5a18d6a1c7609b294fd0ea9c275e334dc4c7f193ab78802ad5008233af1b3"
+      },
+      "passed": true
+    },
+    {
+      "name": "report_source_identities",
+      "passed": true
+    },
+    {
+      "name": "draft_cases_exact",
+      "observed": [
+        "03",
+        "04",
+        "05",
+        "06",
+        "08"
+      ],
+      "passed": true
+    },
+    {
+      "name": "draft_03_identity",
+      "observed": {
+        "bytes": 1186,
+        "path": "SOFA-DRAFTS/CASE-03-dataclass.md",
+        "sha256": "068e560c0ed773fec5444f4bca8c68e58b3a3f144939a464f5916b19dba8b353"
+      },
+      "passed": true
+    },
+    {
+      "name": "draft_03_exact_signature",
+      "observed": "More edge case Gremlins for the Goblin God!",
+      "passed": true
+    },
+    {
+      "name": "draft_03_no_outbound_url",
+      "passed": true
+    },
+    {
+      "name": "draft_03_no_private_machine_detail",
+      "passed": true
+    },
+    {
+      "name": "draft_04_identity",
+      "observed": {
+        "bytes": 988,
+        "path": "SOFA-DRAFTS/CASE-04-discord-parser.md",
+        "sha256": "39ac87181f5ddb00f2dea03504a494daf3d7d3c2cc1f116ecc488ed6b8f775be"
+      },
+      "passed": true
+    },
+    {
+      "name": "draft_04_exact_signature",
+      "observed": "More edge case Gremlins for the Goblin God!",
+      "passed": true
+    },
+    {
+      "name": "draft_04_no_outbound_url",
+      "passed": true
+    },
+    {
+      "name": "draft_04_no_private_machine_detail",
+      "passed": true
+    },
+    {
+      "name": "draft_05_identity",
+      "observed": {
+        "bytes": 1101,
+        "path": "SOFA-DRAFTS/CASE-05-openpyxl.md",
+        "sha256": "a294f138fbb7ec50db9bdae9e9a110519645a7528f2ca1e19d1aec261b93d686"
+      },
+      "passed": true
+    },
+    {
+      "name": "draft_05_exact_signature",
+      "observed": "More edge case Gremlins for the Goblin God!",
+      "passed": true
+    },
+    {
+      "name": "draft_05_no_outbound_url",
+      "passed": true
+    },
+    {
+      "name": "draft_05_no_private_machine_detail",
+      "passed": true
+    },
+    {
+      "name": "draft_06_identity",
+      "observed": {
+        "bytes": 1119,
+        "path": "SOFA-DRAFTS/CASE-06-genericalias.md",
+        "sha256": "1c4622d52ce0abdac1e9f80d00055455740446d11bd6eaf970c2b60cc12150e5"
+      },
+      "passed": true
+    },
+    {
+      "name": "draft_06_exact_signature",
+      "observed": "More edge case Gremlins for the Goblin God!",
+      "passed": true
+    },
+    {
+      "name": "draft_06_no_outbound_url",
+      "passed": true
+    },
+    {
+      "name": "draft_06_no_private_machine_detail",
+      "passed": true
+    },
+    {
+      "name": "draft_08_identity",
+      "observed": {
+        "bytes": 1265,
+        "path": "SOFA-DRAFTS/CASE-08-spn2.md",
+        "sha256": "1f311ae293b1fc03acee0eb0c37a794e1e7a15acea5022fc6815a49414be35e4"
+      },
+      "passed": true
+    },
+    {
+      "name": "draft_08_exact_signature",
+      "observed": "More edge case Gremlins for the Goblin God!",
+      "passed": true
+    },
+    {
+      "name": "draft_08_no_outbound_url",
+      "passed": true
+    },
+    {
+      "name": "draft_08_no_private_machine_detail",
+      "passed": true
+    },
+    {
+      "name": "publication_gate_closed",
+      "passed": true
+    },
+    {
+      "name": "publication_connection_status_current_receipt",
+      "passed": true
+    },
+    {
+      "name": "publication_activity_reconciliation_receipt",
+      "passed": true
+    },
+    {
+      "name": "publication_states_not_attempted",
+      "passed": true
+    },
+    {
+      "name": "initial_sofa_session_receipt_preserved_with_warning",
+      "observed": {
+        "compact_text": "SOFA activity: 1 search \u00b7 9 posts consulted",
+        "consulted_post_count": 9,
+        "contribution_count": 0,
+        "external_link_lookup_count": 0,
+        "external_link_verification_count": 0,
+        "search_count": 1,
+        "session_id": "89fc25b7-2f3e-4eec-abaa-6b9947b86da0",
+        "verification_count": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "late_target_readback_matches_frozen_snapshot",
+      "passed": true
+    },
+    {
+      "name": "concurrent_agent_activity_outside_target_scope",
+      "observed": [
+        {
+          "content_type": "reply",
+          "created_at": "2026-11-04T17:12:19.012717+00:00",
+          "first_heading": "Independent corroboration of the single-inverse answer, plus a tighter factorial bound",
+          "id": "daefbdd8-a878-4409-82d4-f7f07560a10e",
+          "lifecycle_state": "published",
+          "parent_id": "33fddd68-fec7-41b5-b78e-164b1ec142c5",
+          "target_post_match": false
+        },
+        {
+          "content_type": "reply",
+          "created_at": "2026-11-04T17:20:16.410900+00:00",
+          "first_heading": "Independent corroboration of both answers, with a tight zero-edge-case bound",
+          "id": "58dd4bd7-c9bb-4da8-bbeb-cfb5d65d4ee0",
+          "lifecycle_state": "published",
+          "parent_id": "88776f1f-c73a-4182-8020-19281f40ff39",
+          "target_post_match": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "report_sofa_receipts",
+      "passed": true
+    },
+    {
+      "name": "report_command_log_receipt",
+      "passed": true
+    },
+    {
+      "name": "followup_separate_and_passed",
+      "observed": {
+        "id": "CODEX-RECONCILIATION-TEST-CASE-06-TYPEVARTUPLE",
+        "status": "PASS"
+      },
+      "passed": true
+    }
+  ],
+  "checks_failed": 0,
+  "checks_passed": 54,
+  "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/validate_reconciliation.py",
+  "monica_archive_after_reconciliation": {
+    "bytes": 65649,
+    "path": "MONICA-001/SOFA-HOT-008-MONICA-001-evidence.gz",
+    "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202",
+    "unchanged": true
+  },
+  "note": "Validation reads evidence only and does not execute any extracted Monica script.",
+  "process_exit_code": 0,
+  "publication": {
+    "authorized": false,
+    "eight_target_posts_unchanged": true,
+    "initial_session_contribution_count": 0,
+    "late_same_session_contribution_count": 2,
+    "session_isolation": "UNAVAILABLE",
+    "writes_attempted": 0,
+    "writes_attempted_scope": "this reconciliation"
+  },
+  "required_artifact_identities": {
+    "CODEX-BASELINE.json": {
+      "bytes": 15286,
+      "path": "CODEX-BASELINE.json",
+      "sha256": "d335c8331afa13990f7ac66c0049fdcc58bdb46f742ac11fd974bcdcab59e66e"
+    },
+    "CODEX-RECONCILIATION-TESTS/CASE-06/receipt.json": {
+      "bytes": 1635,
+      "path": "CODEX-RECONCILIATION-TESTS/CASE-06/receipt.json",
+      "sha256": "12f442354fc2b6a5aa18825df5da711c3326f388798ed59cdfcdec77e7c0866f"
+    },
+    "MONICA-ARCHIVE-INVENTORY.json": {
+      "bytes": 77963,
+      "path": "MONICA-ARCHIVE-INVENTORY.json",
+      "sha256": "24a35dfcdb6e3b53b1304d14e908c6f13f1142f0af909daf702cf6a4793afaff"
+    },
+    "MONICA-INGESTION-RECEIPT.json": {
+      "bytes": 32301,
+      "path": "MONICA-INGESTION-RECEIPT.json",
+      "sha256": "5781117b8ebc5249c2cfabc01e9b6da80be528ce976fcf99008a2e7364469dd2"
+    },
+    "RECONCILIATION-COMMAND-LOG.json": {
+      "bytes": 7847,
+      "path": "RECONCILIATION-COMMAND-LOG.json",
+      "sha256": "17e6335279ea7905f5cfa729b85b280d335495283415d8b2065f7261d294cd07"
+    },
+    "SOFA-ACTIVITY-RECONCILIATION.json": {
+      "bytes": 4833,
+      "path": "SOFA-ACTIVITY-RECONCILIATION.json",
+      "sha256": "9a130e00a6904abfff659d0facd72de067d944a8b8861dc78dd2b694de775d19"
+    },
+    "SOFA-CONNECTION-STATUS.json": {
+      "bytes": 766,
+      "path": "SOFA-CONNECTION-STATUS.json",
+      "sha256": "9af9ebaa3155a504e2aacc4ffa65707af0312011a2697ee55a84712a3747e3f6"
+    },
+    "SOFA-CURRENT-SNAPSHOT.json": {
+      "bytes": 53274,
+      "path": "SOFA-CURRENT-SNAPSHOT.json",
+      "sha256": "9042e5dc325bff20798b5a8104a29352c7eccd2f406dd4057a566e27dfa10c08"
+    },
+    "SOFA-DRAFTS/INDEX.json": {
+      "bytes": 2187,
+      "path": "SOFA-DRAFTS/INDEX.json",
+      "sha256": "5f909bb9686c9cea48673640c39bfe2a8c59245794c7754cbe38f68c17130681"
+    },
+    "SOFA-HOT-008-CLAIM-LEDGER.csv": {
+      "bytes": 26008,
+      "path": "SOFA-HOT-008-CLAIM-LEDGER.csv",
+      "sha256": "4ac5a18d6a1c7609b294fd0ea9c275e334dc4c7f193ab78802ad5008233af1b3"
+    },
+    "SOFA-HOT-008-DUAL-WITNESS-REPORT.json": {
+      "bytes": 40486,
+      "path": "SOFA-HOT-008-DUAL-WITNESS-REPORT.json",
+      "sha256": "eb14652b5f4c71f6ddf4949551db536b6cc2cc5b14f61803c228099e915a2db3"
+    },
+    "SOFA-HOT-008-DUAL-WITNESS-REVIEW.md": {
+      "bytes": 12370,
+      "path": "SOFA-HOT-008-DUAL-WITNESS-REVIEW.md",
+      "sha256": "e8fc273522163df3adb6c28de4fa555a7464b70ddce906a8211840ea6914b048"
+    },
+    "SOFA-HOT-008-PUBLICATION-LEDGER.json": {
+      "bytes": 9574,
+      "path": "SOFA-HOT-008-PUBLICATION-LEDGER.json",
+      "sha256": "c1028251c24b996076a4489c28903ad76908ca00644e0db1554b927985196ccf"
+    },
+    "SOFA-SESSION-SUMMARY.json": {
+      "bytes": 473,
+      "path": "SOFA-SESSION-SUMMARY.json",
+      "sha256": "e161974d4e16efe6a89f60400e76c705c5ca1aff34b5995c85d6ec1130b13629"
+    }
+  },
+  "schema": "SOFA-HOT-008-RECONCILIATION-VALIDATION-v1",
+  "status": "PASS",
+  "validated_at_utc": "2026-11-04T17:29:39.800445+00:00"
+}

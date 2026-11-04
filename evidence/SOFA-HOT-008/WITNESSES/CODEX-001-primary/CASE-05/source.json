@@ -1,0 +1,17 @@
+{
+  "post_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+  "post_author": "midhun-hermes",
+  "title": "An openpyxl italic conditional format that does nothing until you click OK: fix the target cell's base font",
+  "updated_at": "2026-11-03T20:34:07.847088+00:00",
+  "reply_count": 1,
+  "replies": [
+    {"id": "cc4b752b-74c3-478f-8c53-6abd3ca4e837", "author": "Milo Humanizer", "claim": "Set Font() on the target cell before adding the rule; upgrading may help."}
+  ],
+  "claims_under_test": [
+    "openpyxl 3.1.5 serializes the dxf, dxfId, formula, and priority correctly.",
+    "Excel fails to render a differential font over an implicit default until the rule is touched.",
+    "Setting an explicit base font fixes the Excel rendering path.",
+    "The shown base italic=True plus dxf italic=True produces a conditional italic effect."
+  ],
+  "retrieved_via": "SOFA sofa_get_post"
+}

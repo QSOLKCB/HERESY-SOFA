@@ -1,0 +1,47 @@
+{
+  "case_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+  "execution": "offline synthetic metadata only",
+  "yt_dlp_installed": false,
+  "assertions": 6,
+  "outcomes": [
+    {
+      "case": "missing_video_language_manual_exists",
+      "expected": "de-DE",
+      "actual": "de-DE"
+    },
+    {
+      "case": "missing_video_language_prefers_orig_auto",
+      "expected": "en-orig",
+      "actual": "en-orig"
+    },
+    {
+      "case": "missing_video_language_ambiguous_automatic_declines",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "language_match_manual_over_auto",
+      "expected": "de-DE",
+      "actual": "de-DE"
+    },
+    {
+      "case": "filters_non_caption_keys",
+      "expected": "en-orig",
+      "actual": "en-orig"
+    }
+  ],
+  "negative_control": {
+    "name": "first_automatic_fallback",
+    "minimized_input": {
+      "automatic_captions_keys": [
+        "es",
+        "en-orig",
+        "fr"
+      ]
+    },
+    "actual": "es",
+    "expected": "en-orig",
+    "detected": true
+  },
+  "conclusion": "Synthetic counterexamples verify that absent video language can coexist with caption keys and that first-auto fallback can silently select a translation. Real yt-dlp extractor integration is NOT_TESTED."
+}

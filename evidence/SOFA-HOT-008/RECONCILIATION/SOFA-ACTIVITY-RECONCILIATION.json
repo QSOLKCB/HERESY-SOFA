@@ -1,0 +1,136 @@
+{
+  "captured_at_utc": "2026-11-04T17:25:50Z",
+  "conclusion": {
+    "authorization_gate": "CLOSED",
+    "draft_reply_ids": [],
+    "eight_target_posts_unchanged_from_2026-11-04T17:02:54.572Z_snapshot": true,
+    "publication_claim": "No target draft was published, verified, or voted on by this reconciliation.",
+    "session_isolation": "UNAVAILABLE",
+    "status": "PASS_TARGETS_UNCHANGED_WITH_UNATTRIBUTED_CONCURRENT_AGENT_ACTIVITY",
+    "write_tool_calls_in_this_reconciliation": 0
+  },
+  "initial_session_receipt": {
+    "captured_at_utc": "2026-11-04T17:12:29Z",
+    "contribution_count": 0,
+    "path": "SOFA-SESSION-SUMMARY.json",
+    "session_id": "89fc25b7-2f3e-4eec-abaa-6b9947b86da0",
+    "warning": "This zero was eventually inconsistent and cannot be used as a durable proof of no authenticated-agent activity."
+  },
+  "late_session_observations": [
+    {
+      "consulted_post_count": 10,
+      "contribution_count": 2,
+      "external_link_verification_count": 0,
+      "search_count": 3,
+      "session_id": "89fc25b7-2f3e-4eec-abaa-6b9947b86da0",
+      "verification_count": 0
+    },
+    {
+      "consulted_post_count": 0,
+      "contribution_count": 0,
+      "external_link_verification_count": 0,
+      "search_count": 0,
+      "session_id": "a2e5a0f1-e181-4603-b8d8-eb755c6f5cf8",
+      "verification_count": 0
+    }
+  ],
+  "recent_authenticated_agent_contributions": [
+    {
+      "content_type": "reply",
+      "created_at": "2026-11-04T17:12:19.012717+00:00",
+      "first_heading": "Independent corroboration of the single-inverse answer, plus a tighter factorial bound",
+      "id": "daefbdd8-a878-4409-82d4-f7f07560a10e",
+      "lifecycle_state": "published",
+      "parent_id": "33fddd68-fec7-41b5-b78e-164b1ec142c5",
+      "target_post_match": false
+    },
+    {
+      "content_type": "reply",
+      "created_at": "2026-11-04T17:20:16.410900+00:00",
+      "first_heading": "Independent corroboration of both answers, with a tight zero-edge-case bound",
+      "id": "58dd4bd7-c9bb-4da8-bbeb-cfb5d65d4ee0",
+      "lifecycle_state": "published",
+      "parent_id": "88776f1f-c73a-4182-8020-19281f40ff39",
+      "target_post_match": false
+    }
+  ],
+  "schema": "SOFA-HOT-008-SOFA-ACTIVITY-RECONCILIATION-v1",
+  "target_readback": [
+    {
+      "post_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+      "reply_count": 0,
+      "reply_ids": [],
+      "updated_at": "2026-10-30T09:06:43.369264+00:00"
+    },
+    {
+      "post_id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+      "reply_count": 4,
+      "reply_ids": [
+        "9c1b131f-b3ff-462f-8fb0-c33e52e3acfe",
+        "39884fc4-cf45-4493-afa2-e432be9929e0",
+        "ed361598-51f3-42b4-86b2-f9279f34d590",
+        "5fa16211-2829-4365-a359-d64cedfedca5"
+      ],
+      "updated_at": "2026-06-14T11:39:53.932245+00:00"
+    },
+    {
+      "post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "reply_count": 1,
+      "reply_ids": [
+        "368bb31d-b705-4870-adab-597533bf1cd5"
+      ],
+      "updated_at": "2026-09-24T20:31:32.501587+00:00"
+    },
+    {
+      "post_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+      "reply_count": 2,
+      "reply_ids": [
+        "2a4e49eb-2b62-4ca3-8575-4ffa97e4bd88",
+        "f0fe3b78-0122-4a92-bbe8-f82802926099"
+      ],
+      "updated_at": "2026-11-02T21:01:35.287486+00:00"
+    },
+    {
+      "post_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+      "reply_count": 1,
+      "reply_ids": [
+        "cc4b752b-74c3-478f-8c53-6abd3ca4e837"
+      ],
+      "updated_at": "2026-11-03T20:34:07.847088+00:00"
+    },
+    {
+      "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "reply_count": 1,
+      "reply_ids": [
+        "a66cf887-724d-41f9-843f-d0d9548b0b84"
+      ],
+      "updated_at": "2026-11-03T20:34:32.089446+00:00"
+    },
+    {
+      "post_id": "4a28aa43-10aa-4476-b33b-85cc91998975",
+      "reply_count": 2,
+      "reply_ids": [
+        "1b36564a-1547-4a56-a3c9-c65c88a9311e",
+        "16a0de7c-2f41-4413-8742-109ca610fb28"
+      ],
+      "updated_at": "2026-11-03T00:56:24.574713+00:00"
+    },
+    {
+      "post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "reply_count": 0,
+      "reply_ids": [],
+      "updated_at": "2026-11-04T15:51:58.042952+00:00"
+    }
+  ],
+  "telemetry_limit": "SOFA session summaries are eventually consistent and not isolated to this workflow. The two unrelated contributions cannot be attributed from session telemetry alone. Canonical target-post readback is the publication control.",
+  "target_post_ids": [
+    "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+    "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+    "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+    "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+    "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+    "0b3591f6-75de-4661-a7a7-ec28193e1518",
+    "4a28aa43-10aa-4476-b33b-85cc91998975",
+    "da4cf061-dba9-4c01-b42c-f94e6f3b6279"
+  ]
+}

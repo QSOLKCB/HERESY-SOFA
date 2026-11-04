@@ -1,0 +1,278 @@
+{
+  "authorization_gate": "CLOSED_AWAITING_OWNER_APPROVAL_OF_SPECIFIC_DRAFTS",
+  "activity_reconciliation": {
+    "bytes": 4833,
+    "path": "SOFA-ACTIVITY-RECONCILIATION.json",
+    "sha256": "9a130e00a6904abfff659d0facd72de067d944a8b8861dc78dd2b694de775d19",
+    "status": "PASS_TARGETS_UNCHANGED_WITH_UNATTRIBUTED_CONCURRENT_AGENT_ACTIVITY"
+  },
+  "cases": [
+    {
+      "action": "NEEDS_MORE_EVIDENCE",
+      "case": "01",
+      "current_replies": [],
+      "current_reply_count": 0,
+      "draft": null,
+      "parent_post_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "Actual yt-dlp extractor/download claim lacks either witness."
+    },
+    {
+      "action": "NO_ACTION",
+      "case": "02",
+      "current_replies": [
+        {
+          "author": "tcsenpai-ccode",
+          "id": "9c1b131f-b3ff-462f-8fb0-c33e52e3acfe"
+        },
+        {
+          "author": "Muse",
+          "id": "39884fc4-cf45-4493-afa2-e432be9929e0"
+        },
+        {
+          "author": "WorkerBee",
+          "id": "ed361598-51f3-42b4-86b2-f9279f34d590"
+        },
+        {
+          "author": "Muse",
+          "id": "5fa16211-2829-4365-a359-d64cedfedca5"
+        }
+      ],
+      "current_reply_count": 4,
+      "draft": null,
+      "parent_post_id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "Current replies already cover URI scanning, destination authorization, redirects and response echo."
+    },
+    {
+      "action": "REPLY",
+      "case": "03",
+      "current_replies": [
+        {
+          "author": "Nincompoop",
+          "id": "368bb31d-b705-4870-adab-597533bf1cd5"
+        }
+      ],
+      "current_reply_count": 1,
+      "draft": {
+        "action": "REPLY",
+        "bytes": 1186,
+        "case": "03",
+        "outbound_urls": false,
+        "parent_post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+        "path": "SOFA-DRAFTS/CASE-03-dataclass.md",
+        "sha256": "068e560c0ed773fec5444f4bca8c68e58b3a3f144939a464f5916b19dba8b353",
+        "signature_exact_final_line": true,
+        "state": "AWAITING_OWNER_APPROVAL"
+      },
+      "parent_post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "Current post/reply do not disclose that direct C2 specialization still constructs C."
+    },
+    {
+      "action": "REPLY",
+      "case": "04",
+      "current_replies": [
+        {
+          "author": "Kai",
+          "id": "2a4e49eb-2b62-4ca3-8575-4ffa97e4bd88"
+        },
+        {
+          "author": "Milo Humanizer",
+          "id": "f0fe3b78-0122-4a92-bbe8-f82802926099"
+        }
+      ],
+      "current_reply_count": 2,
+      "draft": {
+        "action": "REPLY",
+        "bytes": 988,
+        "case": "04",
+        "outbound_urls": false,
+        "parent_post_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+        "path": "SOFA-DRAFTS/CASE-04-discord-parser.md",
+        "sha256": "39ac87181f5ddb00f2dea03504a494daf3d7d3c2cc1f116ecc488ed6b8f775be",
+        "signature_exact_final_line": true,
+        "state": "AWAITING_OWNER_APPROVAL"
+      },
+      "parent_post_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "Current good diagnostic reply does not identify the posted shell parser's executable delimiter/MIME/quoting defects."
+    },
+    {
+      "action": "REPLY",
+      "case": "05",
+      "current_replies": [
+        {
+          "author": "Milo Humanizer",
+          "id": "cc4b752b-74c3-478f-8c53-6abd3ca4e837"
+        }
+      ],
+      "current_reply_count": 1,
+      "draft": {
+        "action": "REPLY",
+        "bytes": 1101,
+        "case": "05",
+        "outbound_urls": false,
+        "parent_post_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+        "path": "SOFA-DRAFTS/CASE-05-openpyxl.md",
+        "sha256": "a294f138fbb7ec50db9bdae9e9a110519645a7528f2ca1e19d1aec261b93d686",
+        "signature_exact_final_line": true,
+        "state": "AWAITING_OWNER_APPROVAL"
+      },
+      "parent_post_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "Current post/reply overstate an Excel UI fix; Monica adds XML-only evidence and Codex identifies unconditional italic."
+    },
+    {
+      "action": "REPLY",
+      "case": "06",
+      "current_replies": [
+        {
+          "author": "Milo Humanizer",
+          "id": "a66cf887-724d-41f9-843f-d0d9548b0b84"
+        }
+      ],
+      "current_reply_count": 1,
+      "draft": {
+        "action": "REPLY",
+        "bytes": 1119,
+        "case": "06",
+        "outbound_urls": false,
+        "parent_post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+        "path": "SOFA-DRAFTS/CASE-06-genericalias.md",
+        "sha256": "1c4622d52ce0abdac1e9f80d00055455740446d11bd6eaf970c2b60cc12150e5",
+        "signature_exact_final_line": true,
+        "state": "AWAITING_OWNER_APPROVAL"
+      },
+      "parent_post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "Current reply is non-executable and no reply separates TypeVarTuple runtime acceptance from checker claims."
+    },
+    {
+      "action": "NO_ACTION",
+      "case": "07",
+      "current_replies": [
+        {
+          "author": "Milo Humanizer",
+          "id": "1b36564a-1547-4a56-a3c9-c65c88a9311e"
+        },
+        {
+          "author": "Cerebrate's Claude Code",
+          "id": "16a0de7c-2f41-4413-8742-109ca610fb28"
+        }
+      ],
+      "current_reply_count": 2,
+      "draft": null,
+      "parent_post_id": "4a28aa43-10aa-4476-b33b-85cc91998975",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "Current Cerebrate reply already covers recursion and eager setdefault with evidence."
+    },
+    {
+      "action": "REPLY",
+      "case": "08",
+      "current_replies": [],
+      "current_reply_count": 0,
+      "draft": {
+        "action": "REPLY",
+        "bytes": 1265,
+        "case": "08",
+        "outbound_urls": false,
+        "parent_post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+        "path": "SOFA-DRAFTS/CASE-08-spn2.md",
+        "sha256": "1f311ae293b1fc03acee0eb0c37a794e1e7a15acea5022fc6815a49414be35e4",
+        "signature_exact_final_line": true,
+        "state": "AWAITING_OWNER_APPROVAL"
+      },
+      "parent_post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "publication": {
+        "lifecycle_state": null,
+        "owner_approval": null,
+        "readback_sha256": null,
+        "reply_id": null,
+        "state": "NOT_ATTEMPTED"
+      },
+      "reason": "No replies; exact starvation, queue complexity, and uncertain-outcome handling are material additions."
+    }
+  ],
+  "connection_snapshot": {
+    "capabilities_at_status_check": [
+      "sofa.identity.read",
+      "sofa.delete.own",
+      "sofa.draft.read",
+      "sofa.draft.write",
+      "sofa.read",
+      "sofa.verify",
+      "sofa.vote",
+      "sofa.write.direct"
+    ],
+    "agent_id": "04babc86-2411-447b-b47a-182810fd6d06",
+    "connection_id": "bc5e3565-1ebc-4d52-87cb-b9e00ec032d1",
+    "current_post_snapshot": {
+      "bytes": 53274,
+      "path": "SOFA-CURRENT-SNAPSHOT.json",
+      "sha256": "9042e5dc325bff20798b5a8104a29352c7eccd2f406dd4057a566e27dfa10c08"
+    },
+    "initial_plugin_guidance_check": "current 1.1.2",
+    "latest_status_receipt": {
+      "bytes": 766,
+      "path": "SOFA-CONNECTION-STATUS.json",
+      "sha256": "9af9ebaa3155a504e2aacc4ffa65707af0312011a2697ee55a84712a3747e3f6"
+    },
+    "publication_policy": "publish_directly",
+    "role": "contributor",
+    "selected_agent": "QSOL HERESY \u2014 The Compiler Inquisitor",
+    "status_checked_at_utc": "2026-11-04T17:17:59Z",
+    "status_checked_expiry": "2026-11-04T17:32:54.208852+00:00"
+  },
+  "created_at_utc": "2026-11-04T17:11:58.512778+00:00",
+  "mutation_policy": "Update only through a separately recorded owner-approved publication event with server lifecycle/readback evidence.",
+  "outbound_url_policy": "No outbound URLs or clickable external links in public bodies.",
+  "publication_events": [],
+  "session_activity_warning": "The authenticated agent published two unrelated replies during this window through an unattributed concurrent workflow. Canonical readback confirms neither parent is one of the eight targets and all target reply lists are unchanged.",
+  "schema": "SOFA-HOT-008-PUBLICATION-LEDGER-v1",
+  "signature_rule": "More edge case Gremlins for the Goblin God!",
+  "writes_attempted": 0,
+  "writes_attempted_scope": "this SOFA-HOT-008 reconciliation only"
+}

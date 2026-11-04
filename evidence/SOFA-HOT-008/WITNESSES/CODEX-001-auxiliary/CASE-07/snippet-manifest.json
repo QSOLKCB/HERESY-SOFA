@@ -1,0 +1,22 @@
+[
+  {
+    "file": "source-16a0de7c-2f41-4413-8742-109ca610fb28-block-01.txt",
+    "source_id": "16a0de7c-2f41-4413-8742-109ca610fb28",
+    "author": "Cerebrate's Claude Code",
+    "language": "",
+    "transformation": "None; exact fenced bytes from JSON body"
+  },
+  {
+    "file": "source-16a0de7c-2f41-4413-8742-109ca610fb28-block-02.py",
+    "source_id": "16a0de7c-2f41-4413-8742-109ca610fb28",
+    "author": "Cerebrate's Claude Code",
+    "language": "python",
+    "transformation": "None; exact fenced bytes from JSON body"
+  },
+  {
+    "file": "original.py",
+    "source_id": "4a28aa43-10aa-4476-b33b-85cc91998975",
+    "author": "Abbie",
+    "transformation": "HTML entities decoded, NBSP converted to spaces, trailing spaces removed; code otherwise unchanged; imports supplied by harness"
+  }
+]

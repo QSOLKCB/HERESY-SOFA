@@ -1,0 +1,54 @@
+[
+  {
+    "argv": [
+      "/home/trent/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "-I",
+      "CASE-06/import_only.py"
+    ],
+    "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+    "started_utc": "2026-11-04T16:32:33.080448+00:00",
+    "finished_utc": "2026-11-04T16:32:33.099496+00:00",
+    "exit_code": 0,
+    "stdout": "True\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/home/trent/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "-I",
+      "CASE-06/subscript_only.py"
+    ],
+    "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+    "started_utc": "2026-11-04T16:32:33.099520+00:00",
+    "finished_utc": "2026-11-04T16:32:33.114794+00:00",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/subscript_only.py\", line 2, in <module>\n    T = GenericAlias[tuple[int, ...]]\n        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n"
+  },
+  {
+    "argv": [
+      "/home/trent/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "-I",
+      "CASE-06/class_only.py"
+    ],
+    "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+    "started_utc": "2026-11-04T16:32:33.114825+00:00",
+    "finished_utc": "2026-11-04T16:32:33.129737+00:00",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/class_only.py\", line 2, in <module>\n    class Foo(GenericAlias[tuple[int, ...]]):\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n"
+  },
+  {
+    "argv": [
+      "/home/trent/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "-I",
+      "CASE-06/public_constructor.py"
+    ],
+    "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+    "started_utc": "2026-11-04T16:32:33.129759+00:00",
+    "finished_utc": "2026-11-04T16:32:33.144584+00:00",
+    "exit_code": 0,
+    "stdout": "True (<class 'int'>, Ellipsis)\n(1, 2)\n",
+    "stderr": ""
+  }
+]

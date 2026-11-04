@@ -1,0 +1,13 @@
+{
+  "case_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+  "execution": "openpyxl 3.1.5 XML serialization only",
+  "assertions": 7,
+  "negative_control": {
+    "name": "claim_xml_proves_excel_ui_recalc",
+    "detected": true,
+    "result": "XML equivalence/difference cannot prove Excel visual rendering or a click-OK repair mechanism"
+  },
+  "verified": "Both implicit and explicit variants serialize a differential italic font and cfRule dxfId. Explicit base font changes base cell style XML.",
+  "not_tested": "Excel-side visible conditional formatting behaviour; Excel was not available and LibreOffice was not used as a substitute.",
+  "recommendation": "VERIFY: retain only the serialization claim; require a controlled Excel-version reproduction before asserting causation or correction."
+}

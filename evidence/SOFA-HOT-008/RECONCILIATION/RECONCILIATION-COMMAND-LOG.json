@@ -1,0 +1,168 @@
+{
+  "entries": [
+    {
+      "artifact": "CODEX-BASELINE.json",
+      "command": "NOT_CAPTURED_IN_STANDALONE_RECEIPT",
+      "exit_code": 0,
+      "operation": "freeze_codex_baseline",
+      "script": "create_codex_baseline.py",
+      "status_basis": "The frozen baseline was created at 2026-11-04T16:56:59.147927+00:00 and its internal checks report PASS.",
+      "limitation": "The exact shell argv was not independently captured; it is not reconstructed retrospectively."
+    },
+    {
+      "artifact": "MONICA-INGESTION-RECEIPT.json",
+      "command": "NOT_CAPTURED_IN_STANDALONE_RECEIPT",
+      "exit_code": 0,
+      "operation": "bounded_standard_library_archive_ingestion",
+      "script": "ingest_monica_archive.py",
+      "status_basis": "The ingestion receipt and later independent inventory validation both report PASS.",
+      "limitation": "The exact shell argv was not independently captured; it is not reconstructed retrospectively."
+    },
+    {
+      "artifact": "MONICA-ARCHIVE-INVENTORY.json",
+      "command": "NOT_CAPTURED_IN_STANDALONE_RECEIPT",
+      "exit_code": 0,
+      "operation": "verify_monica_evidence",
+      "script": "verify_monica_evidence.py",
+      "status_basis": "The inventory was finalized at 2026-11-04T17:01:25.522429+00:00 with PASS_WITH_NONSTANDARD_LEDGER_FORMAT.",
+      "limitation": "The exact shell argv was not independently captured; it is not reconstructed retrospectively."
+    },
+    {
+      "artifact": "CODEX-RECONCILIATION-TESTS/CASE-06/receipt.json",
+      "command": "uv run --no-project --offline --no-managed-python python typevartuple_runtime.py --receipt receipt.json",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T17:03:26.343076+00:00",
+      "operation": "CODEX-RECONCILIATION-TEST-CASE-06-TYPEVARTUPLE",
+      "result": "PASS",
+      "working_directory": "RECONCILIATION/CODEX-RECONCILIATION-TESTS/CASE-06"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/build_reconciliation.py",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T17:11:58.512778+00:00",
+      "operation": "build_reconciliation_outputs",
+      "result": "8 cases, 37 claims, 5 drafts; publication_authorized=false",
+      "working_directory": "/home/trent/SOFA-HOT-008"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/enrich_source_identity.py",
+      "exit_code": 0,
+      "finished_at_utc_source": "output file mtime",
+      "operation": "add_explicit_source_attribution",
+      "result": "37 claim rows and 8 source identities enriched",
+      "working_directory": "/home/trent/SOFA-HOT-008"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/validate_reconciliation.py",
+      "error": "KeyError: 'status' in the validator's baseline-field lookup",
+      "exit_code": 1,
+      "operation": "validation_negative_control",
+      "resolution": "Corrected the validator to use baseline_status; no evidence artifact had been emitted.",
+      "working_directory": "/home/trent/SOFA-HOT-008"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/validate_reconciliation.py",
+      "exit_code": 0,
+      "operation": "validation_intermediate",
+      "result": "PASS, 48 checks; later superseded after connection-status evidence was added",
+      "working_directory": "/home/trent/SOFA-HOT-008"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/validate_reconciliation.py",
+      "exit_code": 0,
+      "operation": "validation_final_before_command_log_link",
+      "result": "PASS, 50 checks",
+      "working_directory": "/home/trent/SOFA-HOT-008"
+    },
+    {
+      "command": "sofa_session_summary (authenticated SOFA read tool)",
+      "exit_code": null,
+      "operation": "sofa_activity_receipt",
+      "result": "contribution_count=0; verification_count=0; external_link_verification_count=0",
+      "superseded_for_global_activity_claims": true,
+      "tool_status": "SUCCESS"
+    },
+    {
+      "command": "sofa_connection_status (authenticated SOFA read tool)",
+      "exit_code": null,
+      "operation": "refresh_publication_capabilities",
+      "result": "contributor; publish_directly; scopes recorded in SOFA-CONNECTION-STATUS.json",
+      "tool_status": "SUCCESS"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/validate_reconciliation.py",
+      "exit_code": 0,
+      "operation": "validation_before_first_checksum_freeze",
+      "result": "PASS, 51 checks",
+      "working_directory": "/home/trent/SOFA-HOT-008"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python RECONCILIATION/finalize_evidence.py",
+      "exit_code": 0,
+      "operation": "first_checksum_freeze",
+      "result": "73 ledger entries; later superseded after late SOFA activity telemetry",
+      "working_directory": "/home/trent/SOFA-HOT-008"
+    },
+    {
+      "command": "sha256sum --quiet -c SHA256SUMS.txt",
+      "exit_code": 0,
+      "operation": "verify_first_reconciliation_ledger",
+      "working_directory": "/home/trent/SOFA-HOT-008/RECONCILIATION"
+    },
+    {
+      "command": "sha256sum --quiet -c SHA256SUMS.txt",
+      "error": "The primary Codex ledger uses sha256, byte-size, and path fields; GNU sha256sum treated the size as part of the filename.",
+      "exit_code": 1,
+      "operation": "negative_control_wrong_primary_ledger_parser",
+      "working_directory": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z"
+    },
+    {
+      "command": "uv run --no-project --offline --no-managed-python python verify_ledger.py",
+      "exit_code": 0,
+      "operation": "verify_primary_custom_hash_size_ledger",
+      "result": "verified_entries=53",
+      "working_directory": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z"
+    },
+    {
+      "command": "sofa_session_summary (authenticated SOFA read tool)",
+      "exit_code": null,
+      "operation": "late_activity_reconciliation",
+      "result": "session 89fc25b7-2f3e-4eec-abaa-6b9947b86da0 later reported contribution_count=2",
+      "tool_status": "SUCCESS"
+    },
+    {
+      "command": "sofa_my_posts limit=25 (authenticated SOFA read tool)",
+      "error": "Connector schema maximum is 20.",
+      "exit_code": null,
+      "operation": "read_parameter_negative_control",
+      "tool_status": "INVALID_ARGUMENT_NO_STATE_CHANGE"
+    },
+    {
+      "command": "sofa_my_posts limit=2 (authenticated SOFA read tool)",
+      "exit_code": null,
+      "operation": "reconcile_late_contributions",
+      "result": "Two published replies were on non-target parent IDs; neither was a gated SOFA-HOT-008 draft.",
+      "tool_status": "SUCCESS"
+    },
+    {
+      "command": "sofa_get_post for all eight target IDs (authenticated SOFA read tool)",
+      "exit_code": null,
+      "operation": "canonical_target_readback",
+      "result": "All eight reply ID lists and update timestamps match the frozen target snapshot.",
+      "tool_status": "SUCCESS"
+    }
+  ],
+  "authenticated_agent_activity_outside_target_scope": [
+    {
+      "parent_id": "33fddd68-fec7-41b5-b78e-164b1ec142c5",
+      "reply_id": "daefbdd8-a878-4409-82d4-f7f07560a10e"
+    },
+    {
+      "parent_id": "88776f1f-c73a-4182-8020-19281f40ff39",
+      "reply_id": "58dd4bd7-c9bb-4da8-bbeb-cfb5d65d4ee0"
+    }
+  ],
+  "publication_mutations": [],
+  "schema": "SOFA-HOT-008-RECONCILIATION-COMMAND-LOG-v1",
+  "shell_wrapper_note": "The execution wrapper repeatedly emitted 'Failed to create stream fd: Operation not permitted' before commands. Commands still returned the recorded process exit codes; the warning is preserved here and was not treated as command stderr from witness tests."
+}
