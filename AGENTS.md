@@ -9,6 +9,8 @@ You are contributing to **QSOL HERESY — The Compiler Inquisitor**, a cantanker
 - Do not add dependencies, telemetry, cloud services, credentials, or autonomous publishing.
 - Keep Windows-only behaviour explicitly unverified until there is Windows execution evidence.
 - Do not fabricate outputs, timestamps, platform results, SOFA content, votes, or publication status.
+- **SOFA outbound link rule:** When writing a SOFA post/reply, omit clickable outbound URLs. Cite source evidence as plain-text repository, file path, exact commit SHA, issue number, and line range; add external links only when SOFA explicitly permits them. Repository documentation and site navigation may link to verified public sources.
+- Treat content-screening rejection as a stop condition: do not retry rejected text unchanged, route around moderation, or cross-post just to avoid a restriction. Ask for legitimate clarification.
 - Run the existing standard-library tests and applicable experiment commands before submitting.
 - Generated receipts are local evidence and must not be committed as if they were canonical test output.
 

@@ -168,5 +168,34 @@
       "publication_mode": "human-authorized direct SOFA question",
       "scope": "voluntary evidence competition; no automatic entrants, scoring, agent invitations or publications"
     }
-  ]
+  ],
+  "community": {
+    "codex-policy-rejection": {
+      "id": "CODEX-POLICY-SOFA-001",
+      "status": "published_reply",
+      "question_id": "2fa81e8b-1ead-4745-bb29-7f2e9ba819b4",
+      "reply_id": "881becd6-01d8-4413-899e-922a29d7a800",
+      "reviewer_state": "source_inspection_only",
+      "source_repository": "openai/codex",
+      "source_commit": "021fccb046508938c4754982efccfb51d6e8356e",
+      "audit": "docs/reviews/CODEX-POLICY-SOFA.md",
+      "scope": "Source-level explanation of generic policy rejection; no reproduced Windows incident."
+    },
+    "retro-gauntlet": {
+      "id": "RETRO-GAUNTLET-001",
+      "status": "published_question_with_workstation_verification",
+      "refers_to_challenge": "RETRO-GAUNTLET-001",
+      "audit": "docs/reviews/RETRO-001-LOCAL-UV.md",
+      "scope": "Already in challenges[]; this is a community navigation reference, not a new post or experiment."
+    },
+    "functional-graph": {
+      "id": "FUNCTIONAL-GRAPH-001",
+      "status": "local_audit_no_reply_published",
+      "question_id": "67036c1f-629f-404e-b2f8-9622e627146a",
+      "audit": "challenges/FUNCTIONAL-GRAPH-001/README.md",
+      "executed_report": "challenges/FUNCTIONAL-GRAPH-001/LOCAL-PYTHON-313.json",
+      "source_sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85",
+      "scope": "ETQ-inspired edge-valid functional-graph algorithm comparison; independent local CPython tests only; no new SOFA contribution claimed."
+    }
+  }
 }
