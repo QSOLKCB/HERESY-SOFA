@@ -128,7 +128,8 @@ def screen(report: Any) -> dict[str, Any]:
         probe = actual.get("device_probe")
         if not isinstance(probe, dict):
             probe = {}
-        require(probe.get("device_count_status") == 0 and _integer(probe.get("device_count"))
+        require(_integer(probe.get("device_count_status")) and probe["device_count_status"] == 0
+                and _integer(probe.get("device_count"))
                 and probe["device_count"] >= 1, "device preflight did not pass")
 
         commands = report.get("commands")
@@ -174,13 +175,20 @@ def screen(report: Any) -> dict[str, Any]:
             sync = observation.get("synchronize_status")
             if mode == "control":
                 require(
-                    trial.get("exit_code") == 0 and launch == 0 and sync == 0,
+                    _integer(trial.get("exit_code")) and trial["exit_code"] == 0
+                    and _integer(launch) and launch == 0
+                    and _integer(sync) and sync == 0,
                     "control must return launch 0, sync 0, and exit 0",
                 )
             elif mode == "fault":
-                require(trial.get("exit_code") == 10 and (
-                    launch == CUDA_ERROR_ASSERT or sync == CUDA_ERROR_ASSERT
-                ), "fault must return exit 10 and exact error 710")
+                require(
+                    _integer(trial.get("exit_code")) and trial["exit_code"] == 10
+                    and (
+                        (_integer(launch) and launch == CUDA_ERROR_ASSERT)
+                        or (_integer(sync) and sync == CUDA_ERROR_ASSERT)
+                    ),
+                    "fault must return exit 10 and exact error 710",
+                )
                 if sync == CUDA_ERROR_ASSERT:
                     saw_sync = True
                 if launch == CUDA_ERROR_ASSERT:
