@@ -1,0 +1,1774 @@
+{
+  "assertion_count": 41,
+  "assertions": [
+    {
+      "actual": 4,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 4,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C1-repeated-submits"
+    },
+    {
+      "actual": 0,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 0,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C1-zero-polls"
+    },
+    {
+      "actual": 3600.0,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 3600,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C1-virtual-backoff"
+    },
+    {
+      "actual": "ceiling_inside_capacity_loop",
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "ceiling_inside_capacity_loop",
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C1-stuck-inside-capacity-loop"
+    },
+    {
+      "actual": {
+        "polls": 0,
+        "submits": 2
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "polls": 0,
+        "submits": 2
+      },
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C1-minimal-trace"
+    },
+    {
+      "actual": {
+        "attempt": 1,
+        "job_id": "existing-job",
+        "operation": "poll",
+        "step": 1,
+        "task_id": "existing",
+        "time": 0.0
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "poll",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-poll-first"
+    },
+    {
+      "actual": [
+        0.0,
+        37.0
+      ],
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": [
+        0,
+        37
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-retry-after"
+    },
+    {
+      "actual": "VERIFIED",
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "VERIFIED",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-existing-progress"
+    },
+    {
+      "actual": "VERIFIED",
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "VERIFIED",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-queued-progress"
+    },
+    {
+      "actual": false,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": false,
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-no-step-ceiling"
+    },
+    {
+      "actual": {
+        "action_order": true,
+        "final_states": true,
+        "poll_times": true,
+        "submit_times": true,
+        "verify_times": true
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "action_order": true,
+        "final_states": true,
+        "poll_times": true,
+        "submit_times": true,
+        "verify_times": true
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-independent-oracle"
+    },
+    {
+      "actual": 3,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 3,
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-permanent-refusal-bounded"
+    },
+    {
+      "actual": "FAILED_PERMANENT",
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "FAILED_PERMANENT",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-no-eventual-success-claim"
+    },
+    {
+      "actual": {
+        "delayed": 1,
+        "ready": 1
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "both <= 1",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-bounded-queue"
+    },
+    {
+      "actual": 1,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 1,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C3-no-blind-resubmit"
+    },
+    {
+      "actual": {
+        "reconcile": 2,
+        "state": "VERIFIED"
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "reconcile": 2,
+        "state": "VERIFIED"
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C3-reconciled"
+    },
+    {
+      "actual": {
+        "manual": true,
+        "state": "UNCERTAIN_ACCEPTANCE",
+        "submits": 1
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "manual": true,
+        "state": "UNCERTAIN_ACCEPTANCE",
+        "submits": 1
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C3-bounded-manual-path"
+    },
+    {
+      "actual": {
+        "history": [
+          "input_admitted",
+          "submit_started",
+          "protocol_invalid_missing_job_id_acceptance_unknown",
+          "reconciliation_no_job"
+        ],
+        "manual": true,
+        "state": "UNCERTAIN_ACCEPTANCE"
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "protocol-invalid, uncertain, manual",
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C4-missing-id-ambiguous"
+    },
+    {
+      "actual": {
+        "reconcile": 0,
+        "state": "FAILED_PERMANENT"
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "reconcile": 0,
+        "state": "FAILED_PERMANENT"
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C4-explicit-rejection"
+    },
+    {
+      "actual": {
+        "manual": true,
+        "state": "SUCCEEDED_UNVERIFIED"
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "manual": true,
+        "state": "SUCCEEDED_UNVERIFIED"
+      },
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C5-success-not-durable-proof"
+    },
+    {
+      "actual": {
+        "attempts": 2,
+        "state": "VERIFIED"
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "attempts": 2,
+        "state": "VERIFIED"
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C5-eventual-index"
+    },
+    {
+      "actual": {
+        "final": "VERIFIED",
+        "history": [
+          "QUEUED",
+          "SUBMITTING",
+          "ACCEPTED",
+          "FAILED_RETRYABLE",
+          "SUCCEEDED_UNVERIFIED",
+          "VERIFIED"
+        ]
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "final": "VERIFIED",
+        "history_contains": "FAILED_RETRYABLE"
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-unknown-status-explicit-retry"
+    },
+    {
+      "actual": 2,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 2,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C6-independent-limits-exceed-account"
+    },
+    {
+      "actual": [
+        "ACQUIRED",
+        "WAIT",
+        "ACQUIRED",
+        0
+      ],
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": [
+        "ACQUIRED",
+        "WAIT",
+        "ACQUIRED",
+        0
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C6-coordinated-admission"
+    },
+    {
+      "actual": [
+        "ACQUIRED",
+        "WAIT",
+        "ACQUIRED"
+      ],
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": [
+        "ACQUIRED",
+        "WAIT",
+        "ACQUIRED"
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C6-partial-worker-failure-lease"
+    },
+    {
+      "actual": [
+        "ACQUIRED",
+        "DUPLICATE"
+      ],
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": [
+        "ACQUIRED",
+        "DUPLICATE"
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C6-duplicate-input-suppression"
+    },
+    {
+      "actual": 28,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 28,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C7-list-shifts-8"
+    },
+    {
+      "actual": {
+        "operations": 8,
+        "shifts": 0
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "operations": 8,
+        "shifts": 0
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deque-operations-8"
+    },
+    {
+      "actual": {
+        "fixed_checks": 64,
+        "heap_ops": 16
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "fixed_checks": 64,
+        "heap_ops": 16
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deadline-count-8"
+    },
+    {
+      "actual": 496,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 496,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C7-list-shifts-32"
+    },
+    {
+      "actual": {
+        "operations": 32,
+        "shifts": 0
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "operations": 32,
+        "shifts": 0
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deque-operations-32"
+    },
+    {
+      "actual": {
+        "fixed_checks": 1024,
+        "heap_ops": 64
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "fixed_checks": 1024,
+        "heap_ops": 64
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deadline-count-32"
+    },
+    {
+      "actual": 8128,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 8128,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C7-list-shifts-128"
+    },
+    {
+      "actual": {
+        "operations": 128,
+        "shifts": 0
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "operations": 128,
+        "shifts": 0
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deque-operations-128"
+    },
+    {
+      "actual": {
+        "fixed_checks": 16384,
+        "heap_ops": 256
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "fixed_checks": 16384,
+        "heap_ops": 256
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deadline-count-128"
+    },
+    {
+      "actual": 130816,
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": 130816,
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C7-list-shifts-512"
+    },
+    {
+      "actual": {
+        "operations": 512,
+        "shifts": 0
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "operations": 512,
+        "shifts": 0
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deque-operations-512"
+    },
+    {
+      "actual": {
+        "fixed_checks": 262144,
+        "heap_ops": 1024
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "fixed_checks": 262144,
+        "heap_ops": 1024
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-deadline-count-512"
+    },
+    {
+      "actual": {
+        "backlog": 512,
+        "deque_element_shifts": 0,
+        "deque_front_operations": 512,
+        "fixed_tick_deadline_checks": 262144,
+        "heap_comparisons": 7443,
+        "heap_pushes_plus_pops": 1024,
+        "list_element_shifts": 130816,
+        "list_front_operations": 512
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "instrumented quadratic counts exceed heap comparisons",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C7-not-wall-clock-only"
+    },
+    {
+      "actual": [
+        "ACCEPTED",
+        "FAILED_PERMANENT",
+        "FAILED_RETRYABLE",
+        "PENDING",
+        "QUEUED",
+        "SUBMITTING",
+        "SUCCEEDED_UNVERIFIED",
+        "UNCERTAIN_ACCEPTANCE",
+        "VERIFIED"
+      ],
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": [
+        "ACCEPTED",
+        "FAILED_PERMANENT",
+        "FAILED_RETRYABLE",
+        "PENDING",
+        "QUEUED",
+        "SUBMITTING",
+        "SUCCEEDED_UNVERIFIED",
+        "UNCERTAIN_ACCEPTANCE",
+        "VERIFIED"
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C-all-required-states-represented"
+    },
+    {
+      "actual": {
+        "combinations": 16,
+        "poll_due_combinations": 8
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "combinations": 16,
+        "poll_due_combinations": 8
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C-exhaustive-small-state-space"
+    }
+  ],
+  "campaign": "LOCAL-VERIFY-001",
+  "experiment": "SPN2-SCHEDULER",
+  "failed_assertion_count": 0,
+  "limitations": [
+    "The fake API does not establish Internet Archive quotas, account limits, retry windows, or idempotency.",
+    "A synthetic index lookup models verification logic but is not a live CDX/archive-index query.",
+    "The shared-account model demonstrates coordination properties only under its declared synthetic quota."
+  ],
+  "live_service_claims": false,
+  "negative_control_count": 13,
+  "network_access": false,
+  "python": "3.14.4",
+  "real_sleep": false,
+  "represented_states": [
+    "ACCEPTED",
+    "FAILED_PERMANENT",
+    "FAILED_RETRYABLE",
+    "PENDING",
+    "QUEUED",
+    "SUBMITTING",
+    "SUCCEEDED_UNVERIFIED",
+    "UNCERTAIN_ACCEPTANCE",
+    "VERIFIED"
+  ],
+  "scenarios": {
+    "C1_broken_posted_loop": {
+      "api_calls": [
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "queued"
+        },
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 900.0,
+          "url": "queued"
+        },
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 1800.0,
+          "url": "queued"
+        },
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 2700.0,
+          "url": "queued"
+        }
+      ],
+      "capacity_iterations": 4,
+      "inflight": {
+        "existing-job": "existing"
+      },
+      "minimum_counterexample": {
+        "capacity_iterations": 2,
+        "inflight": {
+          "j": "existing"
+        },
+        "polling_attempts": 0,
+        "queue": [
+          "q"
+        ],
+        "queue_front_shift_cost": 0,
+        "stop_reason": "ceiling_inside_capacity_loop",
+        "submission_attempts": 2,
+        "virtual_elapsed": 2.0
+      },
+      "polling_attempts": 0,
+      "queue": [
+        "queued"
+      ],
+      "queue_front_shift_cost": 0,
+      "stop_reason": "ceiling_inside_capacity_loop",
+      "submission_attempts": 4,
+      "virtual_elapsed": 3600.0
+    },
+    "C2_fair_scheduler_and_oracle": {
+      "actions": [
+        {
+          "attempt": 1,
+          "job_id": "existing-job",
+          "operation": "poll",
+          "step": 1,
+          "task_id": "existing",
+          "time": 0.0
+        },
+        {
+          "attempt": 1,
+          "operation": "submit",
+          "step": 2,
+          "task_id": "queued",
+          "time": 0.0
+        },
+        {
+          "attempt": 2,
+          "job_id": "existing-job",
+          "operation": "poll",
+          "step": 3,
+          "task_id": "existing",
+          "time": 15.0
+        },
+        {
+          "attempt": 1,
+          "operation": "verify",
+          "step": 4,
+          "task_id": "existing",
+          "time": 15.0
+        },
+        {
+          "attempt": 2,
+          "operation": "submit",
+          "step": 5,
+          "task_id": "queued",
+          "time": 37.0
+        },
+        {
+          "attempt": 1,
+          "job_id": "queued-job",
+          "operation": "poll",
+          "step": 6,
+          "task_id": "queued",
+          "time": 37.0
+        },
+        {
+          "attempt": 1,
+          "operation": "verify",
+          "step": 7,
+          "task_id": "queued",
+          "time": 37.0
+        }
+      ],
+      "api_calls": [
+        {
+          "job_id": "existing-job",
+          "operation": "poll",
+          "status": "pending",
+          "time": 0.0
+        },
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/queued"
+        },
+        {
+          "job_id": "existing-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 15.0
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 15.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/existing"
+        },
+        {
+          "kind": "accepted",
+          "operation": "submit",
+          "time": 37.0,
+          "url": "https://example.invalid/queued"
+        },
+        {
+          "job_id": "queued-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 37.0
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 37.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/queued"
+        }
+      ],
+      "max_delayed_length": 1,
+      "max_ready_length": 1,
+      "oracle": {
+        "action_order": [
+          "0:poll:existing",
+          "0:submit:queued",
+          "15:poll:existing",
+          "15:verify:existing",
+          "37:submit:queued",
+          "37:poll:queued",
+          "37:verify:queued"
+        ],
+        "agreement": {
+          "action_order": true,
+          "final_states": true,
+          "poll_times": true,
+          "submit_times": true,
+          "verify_times": true
+        },
+        "final_states": {
+          "existing": "VERIFIED",
+          "queued": "VERIFIED"
+        },
+        "poll_times": [
+          [
+            "existing",
+            0
+          ],
+          [
+            "existing",
+            15
+          ],
+          [
+            "queued",
+            37
+          ]
+        ],
+        "submit_times": [
+          0,
+          37
+        ],
+        "verify_times": [
+          [
+            "existing",
+            15
+          ],
+          [
+            "queued",
+            37
+          ]
+        ]
+      },
+      "steps": 7,
+      "stopped_by_ceiling": false,
+      "tasks": {
+        "existing": {
+          "history": [
+            {
+              "reason": "existing_inflight",
+              "state": "ACCEPTED",
+              "time": 0.0
+            },
+            {
+              "reason": "poll_scheduled",
+              "state": "PENDING",
+              "time": 0.0
+            },
+            {
+              "reason": "server_pending",
+              "state": "PENDING",
+              "time": 0.0
+            },
+            {
+              "reason": "server_success_requires_index_check",
+              "state": "SUCCEEDED_UNVERIFIED",
+              "time": 15.0
+            },
+            {
+              "reason": "capture_found_in_independent_index",
+              "state": "VERIFIED",
+              "time": 15.0
+            }
+          ],
+          "job_id": "existing-job",
+          "manual_intervention": false,
+          "poll_attempts": 2,
+          "reason": "capture_found_in_independent_index",
+          "reconcile_attempts": 0,
+          "state": "VERIFIED",
+          "submit_attempts": 0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/existing",
+          "verify_attempts": 1
+        },
+        "queued": {
+          "history": [
+            {
+              "reason": "input_admitted",
+              "state": "QUEUED",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 0.0
+            },
+            {
+              "reason": "http_429_retry_after_37",
+              "state": "FAILED_RETRYABLE",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_deadline_due",
+              "state": "QUEUED",
+              "time": 37.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 37.0
+            },
+            {
+              "reason": "job_id_received",
+              "state": "ACCEPTED",
+              "time": 37.0
+            },
+            {
+              "reason": "server_success_requires_index_check",
+              "state": "SUCCEEDED_UNVERIFIED",
+              "time": 37.0
+            },
+            {
+              "reason": "capture_found_in_independent_index",
+              "state": "VERIFIED",
+              "time": 37.0
+            }
+          ],
+          "job_id": "queued-job",
+          "manual_intervention": false,
+          "poll_attempts": 1,
+          "reason": "capture_found_in_independent_index",
+          "reconcile_attempts": 0,
+          "state": "VERIFIED",
+          "submit_attempts": 2,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/queued",
+          "verify_attempts": 1
+        }
+      },
+      "virtual_elapsed": 37.0
+    },
+    "C2_permanent_refusal": {
+      "actions": [
+        {
+          "attempt": 1,
+          "operation": "submit",
+          "step": 1,
+          "task_id": "refused",
+          "time": 0.0
+        },
+        {
+          "attempt": 2,
+          "operation": "submit",
+          "step": 2,
+          "task_id": "refused",
+          "time": 5.0
+        },
+        {
+          "attempt": 3,
+          "operation": "submit",
+          "step": 3,
+          "task_id": "refused",
+          "time": 10.0
+        }
+      ],
+      "api_calls": [
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/refused"
+        },
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 5.0,
+          "url": "https://example.invalid/refused"
+        },
+        {
+          "kind": "http_429",
+          "operation": "submit",
+          "time": 10.0,
+          "url": "https://example.invalid/refused"
+        }
+      ],
+      "max_delayed_length": 1,
+      "max_ready_length": 1,
+      "steps": 3,
+      "stopped_by_ceiling": false,
+      "tasks": {
+        "refused": {
+          "history": [
+            {
+              "reason": "input_admitted",
+              "state": "QUEUED",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 0.0
+            },
+            {
+              "reason": "http_429_retry_after_5",
+              "state": "FAILED_RETRYABLE",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_deadline_due",
+              "state": "QUEUED",
+              "time": 5.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 5.0
+            },
+            {
+              "reason": "http_429_retry_after_5",
+              "state": "FAILED_RETRYABLE",
+              "time": 5.0
+            },
+            {
+              "reason": "submit_deadline_due",
+              "state": "QUEUED",
+              "time": 10.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 10.0
+            },
+            {
+              "reason": "submit_retry_ceiling_429",
+              "state": "FAILED_PERMANENT",
+              "time": 10.0
+            }
+          ],
+          "job_id": null,
+          "manual_intervention": false,
+          "poll_attempts": 0,
+          "reason": "submit_retry_ceiling_429",
+          "reconcile_attempts": 0,
+          "state": "FAILED_PERMANENT",
+          "submit_attempts": 3,
+          "timestamp": null,
+          "url": "https://example.invalid/refused",
+          "verify_attempts": 0
+        }
+      },
+      "virtual_elapsed": 10.0
+    },
+    "C2_unknown_status": {
+      "actions": [
+        {
+          "attempt": 1,
+          "operation": "submit",
+          "step": 1,
+          "task_id": "unknown",
+          "time": 0.0
+        },
+        {
+          "attempt": 1,
+          "job_id": "unknown-job",
+          "operation": "poll",
+          "step": 2,
+          "task_id": "unknown",
+          "time": 0.0
+        },
+        {
+          "attempt": 2,
+          "job_id": "unknown-job",
+          "operation": "poll",
+          "step": 3,
+          "task_id": "unknown",
+          "time": 7.0
+        },
+        {
+          "attempt": 1,
+          "operation": "verify",
+          "step": 4,
+          "task_id": "unknown",
+          "time": 7.0
+        }
+      ],
+      "api_calls": [
+        {
+          "kind": "accepted",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/unknown-status"
+        },
+        {
+          "job_id": "unknown-job",
+          "operation": "poll",
+          "status": "mystery",
+          "time": 0.0
+        },
+        {
+          "job_id": "unknown-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 7.0
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 7.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/unknown-status"
+        }
+      ],
+      "max_delayed_length": 0,
+      "max_ready_length": 1,
+      "steps": 4,
+      "stopped_by_ceiling": false,
+      "tasks": {
+        "unknown": {
+          "history": [
+            {
+              "reason": "input_admitted",
+              "state": "QUEUED",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 0.0
+            },
+            {
+              "reason": "job_id_received",
+              "state": "ACCEPTED",
+              "time": 0.0
+            },
+            {
+              "reason": "unknown_status_'mystery'",
+              "state": "FAILED_RETRYABLE",
+              "time": 0.0
+            },
+            {
+              "reason": "server_success_requires_index_check",
+              "state": "SUCCEEDED_UNVERIFIED",
+              "time": 7.0
+            },
+            {
+              "reason": "capture_found_in_independent_index",
+              "state": "VERIFIED",
+              "time": 7.0
+            }
+          ],
+          "job_id": "unknown-job",
+          "manual_intervention": false,
+          "poll_attempts": 2,
+          "reason": "capture_found_in_independent_index",
+          "reconcile_attempts": 0,
+          "state": "VERIFIED",
+          "submit_attempts": 1,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/unknown-status",
+          "verify_attempts": 1
+        }
+      },
+      "virtual_elapsed": 7.0
+    },
+    "C3_lost_acceptance": {
+      "actions": [
+        {
+          "attempt": 1,
+          "operation": "submit",
+          "step": 1,
+          "task_id": "lost",
+          "time": 0.0
+        },
+        {
+          "attempt": 1,
+          "operation": "reconcile",
+          "step": 2,
+          "task_id": "lost",
+          "time": 5.0
+        },
+        {
+          "attempt": 2,
+          "operation": "reconcile",
+          "step": 3,
+          "task_id": "lost",
+          "time": 10.0
+        },
+        {
+          "attempt": 1,
+          "job_id": "lost-job",
+          "operation": "poll",
+          "step": 4,
+          "task_id": "lost",
+          "time": 10.0
+        },
+        {
+          "attempt": 1,
+          "operation": "verify",
+          "step": 5,
+          "task_id": "lost",
+          "time": 10.0
+        }
+      ],
+      "api_calls": [
+        {
+          "kind": "http_503",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/lost"
+        },
+        {
+          "job_id": null,
+          "operation": "reconcile",
+          "time": 5.0,
+          "url": "https://example.invalid/lost"
+        },
+        {
+          "job_id": "lost-job",
+          "operation": "reconcile",
+          "time": 10.0,
+          "url": "https://example.invalid/lost"
+        },
+        {
+          "job_id": "lost-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 10.0
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 10.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/lost"
+        }
+      ],
+      "max_delayed_length": 0,
+      "max_ready_length": 1,
+      "steps": 5,
+      "stopped_by_ceiling": false,
+      "tasks": {
+        "lost": {
+          "history": [
+            {
+              "reason": "input_admitted",
+              "state": "QUEUED",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 0.0
+            },
+            {
+              "reason": "http_503_acceptance_unknown",
+              "state": "UNCERTAIN_ACCEPTANCE",
+              "time": 0.0
+            },
+            {
+              "reason": "reconciliation_no_job",
+              "state": "UNCERTAIN_ACCEPTANCE",
+              "time": 5.0
+            },
+            {
+              "reason": "reconciliation_found_job",
+              "state": "ACCEPTED",
+              "time": 10.0
+            },
+            {
+              "reason": "server_success_requires_index_check",
+              "state": "SUCCEEDED_UNVERIFIED",
+              "time": 10.0
+            },
+            {
+              "reason": "capture_found_in_independent_index",
+              "state": "VERIFIED",
+              "time": 10.0
+            }
+          ],
+          "job_id": "lost-job",
+          "manual_intervention": false,
+          "poll_attempts": 1,
+          "reason": "capture_found_in_independent_index",
+          "reconcile_attempts": 2,
+          "state": "VERIFIED",
+          "submit_attempts": 1,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/lost",
+          "verify_attempts": 1
+        }
+      },
+      "unresolved_api_calls": [
+        {
+          "kind": "http_503",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/unresolved"
+        },
+        {
+          "job_id": null,
+          "operation": "reconcile",
+          "time": 5.0,
+          "url": "https://example.invalid/unresolved"
+        },
+        {
+          "job_id": null,
+          "operation": "reconcile",
+          "time": 10.0,
+          "url": "https://example.invalid/unresolved"
+        }
+      ],
+      "unresolved_control": {
+        "actions": [
+          {
+            "attempt": 1,
+            "operation": "submit",
+            "step": 1,
+            "task_id": "unresolved",
+            "time": 0.0
+          },
+          {
+            "attempt": 1,
+            "operation": "reconcile",
+            "step": 2,
+            "task_id": "unresolved",
+            "time": 5.0
+          },
+          {
+            "attempt": 2,
+            "operation": "reconcile",
+            "step": 3,
+            "task_id": "unresolved",
+            "time": 10.0
+          }
+        ],
+        "max_delayed_length": 0,
+        "max_ready_length": 1,
+        "steps": 3,
+        "stopped_by_ceiling": false,
+        "tasks": {
+          "unresolved": {
+            "history": [
+              {
+                "reason": "input_admitted",
+                "state": "QUEUED",
+                "time": 0.0
+              },
+              {
+                "reason": "submit_started",
+                "state": "SUBMITTING",
+                "time": 0.0
+              },
+              {
+                "reason": "http_503_acceptance_unknown",
+                "state": "UNCERTAIN_ACCEPTANCE",
+                "time": 0.0
+              },
+              {
+                "reason": "reconciliation_no_job",
+                "state": "UNCERTAIN_ACCEPTANCE",
+                "time": 5.0
+              },
+              {
+                "reason": "reconciliation_no_job",
+                "state": "UNCERTAIN_ACCEPTANCE",
+                "time": 10.0
+              }
+            ],
+            "job_id": null,
+            "manual_intervention": true,
+            "poll_attempts": 0,
+            "reason": "reconciliation_no_job",
+            "reconcile_attempts": 2,
+            "state": "UNCERTAIN_ACCEPTANCE",
+            "submit_attempts": 1,
+            "timestamp": null,
+            "url": "https://example.invalid/unresolved",
+            "verify_attempts": 0
+          }
+        },
+        "virtual_elapsed": 10.0
+      },
+      "virtual_elapsed": 10.0
+    },
+    "C4_missing_job_id": {
+      "ambiguous": {
+        "actions": [
+          {
+            "attempt": 1,
+            "operation": "submit",
+            "step": 1,
+            "task_id": "ambiguous",
+            "time": 0.0
+          },
+          {
+            "attempt": 1,
+            "operation": "reconcile",
+            "step": 2,
+            "task_id": "ambiguous",
+            "time": 30.0
+          }
+        ],
+        "max_delayed_length": 0,
+        "max_ready_length": 1,
+        "steps": 2,
+        "stopped_by_ceiling": false,
+        "tasks": {
+          "ambiguous": {
+            "history": [
+              {
+                "reason": "input_admitted",
+                "state": "QUEUED",
+                "time": 0.0
+              },
+              {
+                "reason": "submit_started",
+                "state": "SUBMITTING",
+                "time": 0.0
+              },
+              {
+                "reason": "protocol_invalid_missing_job_id_acceptance_unknown",
+                "state": "UNCERTAIN_ACCEPTANCE",
+                "time": 0.0
+              },
+              {
+                "reason": "reconciliation_no_job",
+                "state": "UNCERTAIN_ACCEPTANCE",
+                "time": 30.0
+              }
+            ],
+            "job_id": null,
+            "manual_intervention": true,
+            "poll_attempts": 0,
+            "reason": "reconciliation_no_job",
+            "reconcile_attempts": 1,
+            "state": "UNCERTAIN_ACCEPTANCE",
+            "submit_attempts": 1,
+            "timestamp": null,
+            "url": "https://example.invalid/missing-ambiguous",
+            "verify_attempts": 0
+          }
+        },
+        "virtual_elapsed": 30.0
+      },
+      "ambiguous_api_calls": [
+        {
+          "kind": "missing_job_id",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/missing-ambiguous"
+        },
+        {
+          "job_id": null,
+          "operation": "reconcile",
+          "time": 30.0,
+          "url": "https://example.invalid/missing-ambiguous"
+        }
+      ],
+      "explicit_rejection": {
+        "actions": [
+          {
+            "attempt": 1,
+            "operation": "submit",
+            "step": 1,
+            "task_id": "rejected",
+            "time": 0.0
+          }
+        ],
+        "max_delayed_length": 0,
+        "max_ready_length": 1,
+        "steps": 1,
+        "stopped_by_ceiling": false,
+        "tasks": {
+          "rejected": {
+            "history": [
+              {
+                "reason": "input_admitted",
+                "state": "QUEUED",
+                "time": 0.0
+              },
+              {
+                "reason": "submit_started",
+                "state": "SUBMITTING",
+                "time": 0.0
+              },
+              {
+                "reason": "protocol_invalid_missing_job_id_explicit_rejection",
+                "state": "FAILED_PERMANENT",
+                "time": 0.0
+              }
+            ],
+            "job_id": null,
+            "manual_intervention": false,
+            "poll_attempts": 0,
+            "reason": "protocol_invalid_missing_job_id_explicit_rejection",
+            "reconcile_attempts": 0,
+            "state": "FAILED_PERMANENT",
+            "submit_attempts": 1,
+            "timestamp": null,
+            "url": "https://example.invalid/missing-rejected",
+            "verify_attempts": 0
+          }
+        },
+        "virtual_elapsed": 0.0
+      },
+      "explicit_rejection_api_calls": [
+        {
+          "kind": "missing_job_id",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/missing-rejected"
+        }
+      ]
+    },
+    "C5_capture_verification": {
+      "delayed_index": {
+        "actions": [
+          {
+            "attempt": 1,
+            "operation": "submit",
+            "step": 1,
+            "task_id": "delayed",
+            "time": 0.0
+          },
+          {
+            "attempt": 1,
+            "job_id": "delayed-job",
+            "operation": "poll",
+            "step": 2,
+            "task_id": "delayed",
+            "time": 0.0
+          },
+          {
+            "attempt": 1,
+            "operation": "verify",
+            "step": 3,
+            "task_id": "delayed",
+            "time": 0.0
+          },
+          {
+            "attempt": 2,
+            "operation": "verify",
+            "step": 4,
+            "task_id": "delayed",
+            "time": 20.0
+          }
+        ],
+        "max_delayed_length": 0,
+        "max_ready_length": 1,
+        "steps": 4,
+        "stopped_by_ceiling": false,
+        "tasks": {
+          "delayed": {
+            "history": [
+              {
+                "reason": "input_admitted",
+                "state": "QUEUED",
+                "time": 0.0
+              },
+              {
+                "reason": "submit_started",
+                "state": "SUBMITTING",
+                "time": 0.0
+              },
+              {
+                "reason": "job_id_received",
+                "state": "ACCEPTED",
+                "time": 0.0
+              },
+              {
+                "reason": "server_success_requires_index_check",
+                "state": "SUCCEEDED_UNVERIFIED",
+                "time": 0.0
+              },
+              {
+                "reason": "capture_not_yet_in_index",
+                "state": "SUCCEEDED_UNVERIFIED",
+                "time": 0.0
+              },
+              {
+                "reason": "capture_found_in_independent_index",
+                "state": "VERIFIED",
+                "time": 20.0
+              }
+            ],
+            "job_id": "delayed-job",
+            "manual_intervention": false,
+            "poll_attempts": 1,
+            "reason": "capture_found_in_independent_index",
+            "reconcile_attempts": 0,
+            "state": "VERIFIED",
+            "submit_attempts": 1,
+            "timestamp": "20261105000000",
+            "url": "https://example.invalid/index-delayed",
+            "verify_attempts": 2
+          }
+        },
+        "virtual_elapsed": 20.0
+      },
+      "delayed_index_api_calls": [
+        {
+          "kind": "accepted",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/index-delayed"
+        },
+        {
+          "job_id": "delayed-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 0.0
+        },
+        {
+          "found": false,
+          "operation": "lookup",
+          "time": 0.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/index-delayed"
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 20.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/index-delayed"
+        }
+      ],
+      "index_absent": {
+        "actions": [
+          {
+            "attempt": 1,
+            "operation": "submit",
+            "step": 1,
+            "task_id": "absent",
+            "time": 0.0
+          },
+          {
+            "attempt": 1,
+            "job_id": "absent-job",
+            "operation": "poll",
+            "step": 2,
+            "task_id": "absent",
+            "time": 0.0
+          },
+          {
+            "attempt": 1,
+            "operation": "verify",
+            "step": 3,
+            "task_id": "absent",
+            "time": 0.0
+          },
+          {
+            "attempt": 2,
+            "operation": "verify",
+            "step": 4,
+            "task_id": "absent",
+            "time": 20.0
+          }
+        ],
+        "max_delayed_length": 0,
+        "max_ready_length": 1,
+        "steps": 4,
+        "stopped_by_ceiling": false,
+        "tasks": {
+          "absent": {
+            "history": [
+              {
+                "reason": "input_admitted",
+                "state": "QUEUED",
+                "time": 0.0
+              },
+              {
+                "reason": "submit_started",
+                "state": "SUBMITTING",
+                "time": 0.0
+              },
+              {
+                "reason": "job_id_received",
+                "state": "ACCEPTED",
+                "time": 0.0
+              },
+              {
+                "reason": "server_success_requires_index_check",
+                "state": "SUCCEEDED_UNVERIFIED",
+                "time": 0.0
+              },
+              {
+                "reason": "capture_not_yet_in_index",
+                "state": "SUCCEEDED_UNVERIFIED",
+                "time": 0.0
+              },
+              {
+                "reason": "capture_not_yet_in_index",
+                "state": "SUCCEEDED_UNVERIFIED",
+                "time": 20.0
+              }
+            ],
+            "job_id": "absent-job",
+            "manual_intervention": true,
+            "poll_attempts": 1,
+            "reason": "capture_not_yet_in_index",
+            "reconcile_attempts": 0,
+            "state": "SUCCEEDED_UNVERIFIED",
+            "submit_attempts": 1,
+            "timestamp": "20261105000000",
+            "url": "https://example.invalid/index-absent",
+            "verify_attempts": 2
+          }
+        },
+        "virtual_elapsed": 20.0
+      },
+      "index_absent_api_calls": [
+        {
+          "kind": "accepted",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/index-absent"
+        },
+        {
+          "job_id": "absent-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 0.0
+        },
+        {
+          "found": false,
+          "operation": "lookup",
+          "time": 0.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/index-absent"
+        },
+        {
+          "found": false,
+          "operation": "lookup",
+          "time": 20.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/index-absent"
+        }
+      ]
+    },
+    "C6_shared_account": {
+      "coordinated": {
+        "account_rejections": 0,
+        "second_job": "shared-2",
+        "second_token_present": true,
+        "states": [
+          "ACQUIRED",
+          "WAIT",
+          "ACQUIRED"
+        ]
+      },
+      "model_boundary": "Synthetic shared quota; not evidence of Internet Archive limits.",
+      "partial_failure": {
+        "lease_recovered": true,
+        "states": [
+          "ACQUIRED",
+          "WAIT",
+          "ACQUIRED"
+        ]
+      },
+      "seeded_duplicate_fixture": {
+        "dispositions": [
+          {
+            "disposition": "ACQUIRED",
+            "url": "https://example.invalid/b"
+          },
+          {
+            "disposition": "ACQUIRED",
+            "url": "https://example.invalid/c"
+          },
+          {
+            "disposition": "ACQUIRED",
+            "url": "https://example.invalid/dup"
+          },
+          {
+            "disposition": "DUPLICATE",
+            "url": "https://example.invalid/dup"
+          }
+        ],
+        "order": [
+          "https://example.invalid/b",
+          "https://example.invalid/c",
+          "https://example.invalid/dup",
+          "https://example.invalid/dup"
+        ],
+        "seed": 26051105
+      },
+      "uncoordinated": {
+        "account_rejections": 2,
+        "first_job": "shared-1",
+        "local_limits": {
+          "worker-a": 1,
+          "worker-b": 1
+        },
+        "retry_collisions": [
+          {
+            "status": 429,
+            "time": 0
+          },
+          {
+            "status": 429,
+            "time": 10
+          }
+        ],
+        "synthetic_account_limit": 1
+      }
+    },
+    "C7_operation_counts": [
+      {
+        "backlog": 8,
+        "deque_element_shifts": 0,
+        "deque_front_operations": 8,
+        "fixed_tick_deadline_checks": 64,
+        "heap_comparisons": 27,
+        "heap_pushes_plus_pops": 16,
+        "list_element_shifts": 28,
+        "list_front_operations": 8
+      },
+      {
+        "backlog": 32,
+        "deque_element_shifts": 0,
+        "deque_front_operations": 32,
+        "fixed_tick_deadline_checks": 1024,
+        "heap_comparisons": 219,
+        "heap_pushes_plus_pops": 64,
+        "list_element_shifts": 496,
+        "list_front_operations": 32
+      },
+      {
+        "backlog": 128,
+        "deque_element_shifts": 0,
+        "deque_front_operations": 128,
+        "fixed_tick_deadline_checks": 16384,
+        "heap_comparisons": 1359,
+        "heap_pushes_plus_pops": 256,
+        "list_element_shifts": 8128,
+        "list_front_operations": 128
+      },
+      {
+        "backlog": 512,
+        "deque_element_shifts": 0,
+        "deque_front_operations": 512,
+        "fixed_tick_deadline_checks": 262144,
+        "heap_comparisons": 7443,
+        "heap_pushes_plus_pops": 1024,
+        "list_element_shifts": 130816,
+        "list_front_operations": 512
+      }
+    ],
+    "exhaustive_priority_oracle": {
+      "combinations": 16,
+      "poll_due_combinations": 8
+    }
+  },
+  "schema_version": "1.0",
+  "seed": 26051105
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/generic_alias_verbatim.py", line 4, in <module>
+    T = GenericAlias[tuple[int, ...]]
+        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: type 'types.GenericAlias' is not subscriptable

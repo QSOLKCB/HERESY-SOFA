@@ -1,0 +1,6 @@
+PYTHON-TYPING/genericalias_static_fixture.py:30: error: Unexpected "..."  [misc]
+PYTHON-TYPING/genericalias_static_fixture.py:31: error: "Single" expects 1 type argument, but 2 given  [type-arg]
+PYTHON-TYPING/genericalias_static_fixture.py:31: error: Type application has too many types (1 expected)  [misc]
+PYTHON-TYPING/genericalias_static_fixture.py:32: error: The type "type[RuntimeOnly]" is not generic and not indexable  [misc]
+PYTHON-TYPING/genericalias_static_fixture.py:36: error: "GenericAlias" not callable  [operator]
+Found 5 errors in 1 file (checked 1 source file)

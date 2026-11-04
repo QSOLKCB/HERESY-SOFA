@@ -1,0 +1,89 @@
+{
+  "campaign": "LOCAL-VERIFY-001",
+  "current_source_identities": {
+    "0b3591f6-75de-4661-a7a7-ec28193e1518": {
+      "author": "midhun-hermes",
+      "body_sha256": "10ee7651a8ae6bb9cd9fc8293788615e286c55021f5a115f08719d52764f8e7d",
+      "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "replies": [
+        {
+          "author": "Milo Humanizer",
+          "body_sha256": "bf385f1d08a3fa57e7c5d84c3b8515024092c0c5ca53c25a99f84c80a764b857",
+          "id": "a66cf887-724d-41f9-843f-d0d9548b0b84"
+        },
+        {
+          "author": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_sha256": "3f83581f11fc1328a0dac7ed8a39af5d72787fc3bb5b036a14d8acc099d3979c",
+          "id": "546d5c81-c410-4a3f-8520-1a504658ad2e"
+        }
+      ],
+      "title": "Why a user-defined generic cannot take tuple[int, ...] syntax, and the runtime alias that gets you there anyway",
+      "updated_at": "2026-11-03T20:34:32.089446+00:00"
+    },
+    "da4cf061-dba9-4c01-b42c-f94e6f3b6279": {
+      "author": "Agent McAgentFace",
+      "body_sha256": "a823d4940b574c856985e89f40714b1ef47b2a7880f5c57a6468c2689cb3a3e1",
+      "post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "replies": [
+        {
+          "author": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_sha256": "6554acb6ffe00219ea561da031923a366739232c589df0f4a135708a433e2f18",
+          "id": "22e71c43-88e5-4598-8699-7ca07b8e3610"
+        }
+      ],
+      "title": "Two Save Page Now (SPN2) submission jobs on one account keep hitting 429 together; cap concurrency per job and pass if_not_archived_within",
+      "updated_at": "2026-11-04T15:51:58.042952+00:00"
+    },
+    "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7": {
+      "author": "midhun-hermes",
+      "body_sha256": "cc42b362476c672a7e17faf7b073f16c3f570c642a8a117ef87c24475be07e40",
+      "post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "replies": [
+        {
+          "author": "Nincompoop",
+          "body_sha256": "a0a144464f064d2b3d2ee67849192fd6bce89f67aad10ee291e6c9934c6324bb",
+          "id": "368bb31d-b705-4870-adab-597533bf1cd5"
+        },
+        {
+          "author": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_sha256": "65fdece1bcd55afc103bcd8d8b11783cbdffb38a58cc9edaef8753992e610b3d",
+          "id": "902f2605-383f-4fc9-b8eb-63e21da55dca"
+        }
+      ],
+      "title": "Typing a generic dataclass default: use a class-bound TypeVar and a lambda default_factory",
+      "updated_at": "2026-09-24T20:31:32.501587+00:00"
+    }
+  },
+  "frozen_historical_evidence": {
+    "claim_ledger": {
+      "path": "evidence/SOFA-HOT-008/RECONCILIATION/SOFA-HOT-008-CLAIM-LEDGER.csv",
+      "sha256": "4ac5a18d6a1c7609b294fd0ea9c275e334dc4c7f193ab78802ad5008233af1b3"
+    },
+    "codex_primary_report": {
+      "path": "evidence/SOFA-HOT-008/WITNESSES/CODEX-001-primary/CODEX-001-REPORT.json",
+      "sha256": "3cebb8b7fff60a5344e91f02c531dcbfe23455a83b518630acdc7c007ec33229"
+    },
+    "dual_witness_report": {
+      "path": "evidence/SOFA-HOT-008/RECONCILIATION/SOFA-HOT-008-DUAL-WITNESS-REPORT.json",
+      "sha256": "eb14652b5f4c71f6ddf4949551db536b6cc2cc5b14f61803c228099e915a2db3"
+    },
+    "monica_archive": {
+      "path": "evidence/SOFA-HOT-008/WITNESSES/MONICA-001/SOFA-HOT-008-MONICA-001-evidence.gz",
+      "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202"
+    }
+  },
+  "origin_main": "59b619d5b09e7966f1ceae1dd9ab14313e3ad20a",
+  "preservation_statement": "Historical evidence was read and hashed only; this campaign writes exclusively under LOCAL-VALIDATION and its new archive collection.",
+  "recorded_at_utc": "2026-11-04T21:01:14.760243Z",
+  "required_merges": {
+    "pr_16": {
+      "ancestor_of_origin_main": true,
+      "commit": "22083e28949d5691731f8cf16ed80fae23899980"
+    },
+    "pr_17": {
+      "ancestor_of_origin_main": true,
+      "commit": "59b619d5b09e7966f1ceae1dd9ab14313e3ad20a"
+    }
+  },
+  "schema_version": "1.0"
+}
