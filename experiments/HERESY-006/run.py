@@ -35,7 +35,7 @@ WORKER_TIMEOUT_SECONDS = 30.0
 MODULARITY_TOLERANCE = 1e-12
 MAX_DIAGNOSTIC_CHARS = 1200
 MAX_DIAGNOSTIC_RESULTS = len(FIXTURES) * len(SEED_SWEEP)
-MAX_DIAGNOSTIC_LIST_ITEMS = 64
+MAX_DIAGNOSTIC_LIST_ITEMS = 16
 CLAIMS = (
     "fixed_seed_identical_construction_reproducible",
     "partition_varies_across_random_seeds",
