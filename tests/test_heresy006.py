@@ -1,6 +1,7 @@
 """HERESY-006 matrix integrity and false-green regression tests."""
 from __future__ import annotations
 
+import copy
 import importlib.util
 import json
 import platform
@@ -62,6 +63,12 @@ class Heresy006Tests(unittest.TestCase):
             },
         }
 
+    def assert_worker_rejected(self, record):
+        self.assertFalse(self.runner.validate_worker(
+            record, expected_networkx="test-version",
+            expected_python=platform.python_version(),
+        )[0])
+
     def test_partition_canonicalization_uses_membership_not_return_order(self):
         left = self.runner.canonical_partition([{4, 3}, {2, 0, 1}])
         right = self.runner.canonical_partition([{1, 0, 2}, {3, 4}])
@@ -87,25 +94,65 @@ class Heresy006Tests(unittest.TestCase):
         wrong_order = json.loads(json.dumps(valid))
         wrong_order["output"]["results"][0]["insertion_order"] = "reversed"
         mutations.append(wrong_order)
-        lying_coverage = json.loads(json.dumps(valid))
-        lying_coverage["output"]["results"][0]["partition"] = [[0]]
-        lying_coverage["output"]["results"][0]["community_sizes"] = [1]
-        mutations.append(lying_coverage)
         wrong_topology = json.loads(json.dumps(valid))
         wrong_topology["output"]["results"][0]["topology_sha256"] = "0" * 64
         mutations.append(wrong_topology)
         wrong_version = json.loads(json.dumps(valid))
         wrong_version["output"]["networkx_version"] = "wrong-version"
         mutations.append(wrong_version)
-        wrong_hash_seed = json.loads(json.dumps(valid))
-        wrong_hash_seed["output"]["hash_seed"] = "42"
-        mutations.append(wrong_hash_seed)
         for mutation in mutations:
             with self.subTest(mutation=mutation):
-                self.assertFalse(self.runner.validate_worker(
-                    mutation, expected_networkx="test-version",
-                    expected_python=platform.python_version(),
-                )[0])
+                self.assert_worker_rejected(mutation)
+
+    def test_forged_success_booleans_cannot_hide_missing_or_duplicate_nodes(self):
+        omitted = copy.deepcopy(self.valid_worker())
+        omitted_result = omitted["output"]["results"][0]
+        omitted_result["partition"] = [[0]]
+        omitted_result["community_count"] = 1
+        omitted_result["community_sizes"] = [1]
+        self.assertTrue(omitted_result["covers_nodes_exactly_once"])
+        self.assertTrue(omitted_result["modularity_consistent"])
+        self.assert_worker_rejected(omitted)
+
+        duplicated = copy.deepcopy(self.valid_worker())
+        duplicated_result = duplicated["output"]["results"][0]
+        nodes = duplicated_result["partition"][0]
+        duplicated_result["partition"] = [[nodes[0]], nodes]
+        duplicated_result["community_count"] = 2
+        duplicated_result["community_sizes"] = [1, len(nodes)]
+        self.assert_worker_rejected(duplicated)
+
+    def test_self_consistent_alternate_graph_forgery_is_rejected(self):
+        alternate_graph = copy.deepcopy(self.valid_worker())
+        fixture = self.runner.FIXTURES[0]
+        nodes, edges = self.runner._fixture_spec(fixture)
+        forged_edges = list(edges) + [(0, 5, 0.75)]
+        forged = alternate_graph["output"]["results"][0]
+        forged["topology_sha256"] = self.runner._topology_spec_sha256(nodes, forged_edges)
+        # One community has modularity zero on both the expected and forged
+        # graph, so the forged graph/partition/score are internally coherent.
+        forged["partition"] = [nodes]
+        forged["community_count"] = 1
+        forged["community_sizes"] = [len(nodes)]
+        forged["modularity"] = 0.0
+        forged["modularity_recomputed"] = 0.0
+        self.assert_worker_rejected(alternate_graph)
+
+    def test_identity_substitution_is_rejected_against_parent_invocation(self):
+        for key, value in (("scenario", "seed_sweep"), ("hash_seed", "42")):
+            substituted = copy.deepcopy(self.valid_worker())
+            substituted["output"][key] = value
+            with self.subTest(key=key, value=value):
+                self.assert_worker_rejected(substituted)
+
+    def test_nonfinite_modularity_is_rejected_before_tolerance(self):
+        for nonfinite in (float("nan"), float("inf"), float("-inf")):
+            forged = copy.deepcopy(self.valid_worker())
+            forged_result = forged["output"]["results"][0]
+            forged_result["modularity"] = nonfinite
+            forged_result["modularity_recomputed"] = nonfinite
+            with self.subTest(nonfinite=nonfinite):
+                self.assert_worker_rejected(forged)
 
     def test_failed_controls_cannot_confirm_or_claim_reproducibility(self):
         actual = {

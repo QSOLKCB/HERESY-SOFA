@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 import platform
 import subprocess
@@ -363,6 +364,8 @@ def validate_worker(
             and not isinstance(modularity, bool)
             and isinstance(recomputed, (int, float))
             and not isinstance(recomputed, bool)
+            and math.isfinite(modularity)
+            and math.isfinite(recomputed)
             and abs(modularity - recomputed) <= MODULARITY_TOLERANCE
         )
         if (
@@ -450,6 +453,7 @@ def _base_report(command: list[str]) -> dict[str, Any]:
         "limitations": [
             "Louvain is a heuristic; a different valid partition is not by itself a NetworkX bug or contract violation.",
             "The tested fixtures, seeds, insertion orders, interpreter, and NetworkX version do not establish behavior for other configurations.",
+            "PYTHONHASHSEED is fixed when the worker interpreter starts; the parent controls its environment and verifies the reported value, but that does not prove the algorithm causally used the hash seed.",
             "No upstream contract violation is claimed without a separately reviewed specification boundary.",
         ],
     }

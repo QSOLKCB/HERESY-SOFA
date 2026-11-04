@@ -16,7 +16,9 @@ The original claim map labelled fixed-seed reproducibility `executed` unconditio
 
 ### P2 — independently validate worker provenance and result fields
 
-The original parent did not independently validate all scenario, hash-seed, version, partition, count/size, topology, and modularity fields. Corrected: all are checked against the command configuration, parent runtime, deterministic fixture spec, and raw canonical partition. Negative controls cover wrong versions, hash seeds, topology, order, coverage, modularity, exit status, malformed output, and timeout.
+The original parent did not independently validate all scenario, hash-seed, version, partition, count/size, topology, and modularity fields. Corrected: all are checked against the command configuration, parent runtime, deterministic fixture spec, and raw canonical partition. Negative controls cover omitted and duplicated nodes despite forged success booleans; a self-consistent alternate graph/partition/modularity tuple; wrong scenario, version, hash seed, topology and order; non-finite or inconsistent modularity; exit failure; malformed output; and timeout.
+
+The hash-seed check is explicitly bounded: `PYTHONHASHSEED` is fixed at interpreter startup, so matching the parent-controlled environment and worker report verifies launch configuration but cannot independently prove internal causal use by Louvain.
 
 ## Areas with no findings
 

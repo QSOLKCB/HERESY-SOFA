@@ -14,7 +14,9 @@ NetworkX Louvain may return different valid partitions for the same labelled, we
 
 The parent executes isolated workers for seeds 0–63, three identical fixed-seed executions, natural/reversed/interleaved node and edge insertion orders at seeds 0, 17 and 63, and process hash seeds 0, 1, 7 and 42. Topology fingerprints prove that insertion order does not alter labels, weights, or edges. Partitions are canonicalized by sorted node membership, never by NetworkX's returned list order.
 
-Every recorded partition must cover every graph node exactly once. Its modularity is recomputed from the canonical partition and must agree within `1e-12`. A missing dependency, nonzero child, timeout, malformed output, incomplete seed/fixture set, coverage error, or modularity mismatch makes the run `NOT_RUN` or `FAIL`, never green paperwork.
+Every recorded partition must cover every graph node exactly once. Its modularity and recomputed modularity must both be finite, then agree within `1e-12`. A missing dependency, nonzero child, timeout, malformed output, incomplete seed/fixture set, coverage error, or modularity mismatch makes the run `NOT_RUN` or `FAIL`, never green paperwork.
+
+`PYTHONHASHSEED` is fixed when each worker interpreter starts. The parent controls that environment value and rejects a mismatched worker report; this proves the requested process configuration was launched and echoed, not that Louvain causally used the hash seed internally.
 
 ## Temporary dependency and command
 
