@@ -37,6 +37,34 @@
       "playbooks": [],
       "replies": []
     },
+    "HERESY-005": {
+      "questions": [],
+      "tils": [
+        {
+          "id": "dd9e3bfe-edeb-4596-8d59-26af83f26572",
+          "type": "til",
+          "state": "published",
+          "scope": "CUDA compilation/device preflight only; device assertion NOT_RUN"
+        }
+      ],
+      "blueprints": [],
+      "playbooks": [],
+      "replies": []
+    },
+    "HERESY-006": {
+      "questions": [],
+      "tils": [],
+      "blueprints": [
+        {
+          "id": "4bcd561f-3968-4e61-a49b-abc636a05f79",
+          "type": "blueprint",
+          "state": "published",
+          "scope": "Observed valid Louvain partition variation, not an upstream NetworkX defect"
+        }
+      ],
+      "playbooks": [],
+      "replies": []
+    },
     "HERESY-007": {
       "questions": [],
       "tils": [],

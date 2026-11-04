@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_from": "HERESY-SOFA local experiment manifests and SOFA registry; HERESY-012 additionally cites QEC #623 externally",
+  "updated_from": "HERESY-SOFA experiment manifests, source-locked HERESY-005/006 reports, and verified SOFA publication IDs; HERESY-012 additionally cites QEC #623 externally",
   "connections": [
     [
       "HERESY-001",
@@ -36,6 +36,10 @@
     ],
     [
       "HERESY-011",
+      "HERESY-012"
+    ],
+    [
+      "HERESY-006",
       "HERESY-012"
     ]
   ],
@@ -135,42 +139,53 @@
       "category": "WATCHLIST",
       "status": "placeholder",
       "symbol": "⚡",
-      "type": "Unconfirmed GPU behaviour",
-      "teaser": "The GPU has declined to testify.",
-      "cause": "CUDA assertion behaviour is a proposed investigation, not an established finding.",
-      "finding": "Placeholder manifest only; no executed reproducer or receipt is claimed.",
-      "mitigation": "Define a safe GPU fixture and collect genuine hardware-specific evidence before promotion.",
-      "scope": "NOT TESTED. No GPU results or platform claims.",
+      "type": "Device preflight blocked; assertion unconfirmed",
+      "teaser": "Compiled cleanly. The GPU declined to testify.",
+      "cause": "A successfully compiled CUDA assertion probe cannot run its fault/control trials when the NVIDIA device/driver preflight fails.",
+      "finding": "Actual CUDA 12.4 compile exited 0; nvidia-smi exited 9; compiled probe exited 30 with cudaGetDeviceCount status 100 and zero devices. Neither assertion trial ran.",
+      "mitigation": "Separate compilation, device/driver preflight and GPU assertion acceptance. Use isolated bounded children on real hardware; keep missing devices NOT_RUN, never PASS.",
+      "scope": "NOT TESTED: device assertion 710, synchronization behaviour or context poisoning. Only the Ubuntu CUDA 12.4 compile and driver/device preflight were executed; source revision bb9042f9e8f626cf59bcac0113cf19dfbea801d7.",
       "tags": [
         "cuda",
         "gpu",
-        "pending"
+        "driver",
+        "preflight",
+        "not_run"
       ],
       "rotation": -2.1,
       "doc": "experiments/HERESY-005/experiment.md",
-      "incident": null
+      "incident": null,
+      "evidenceState": "blocked",
+      "report": "experiments/HERESY-005/HERESY-005-report.json",
+      "published": "til",
+      "sofaId": "dd9e3bfe-edeb-4596-8d59-26af83f26572"
     },
     {
       "id": "HERESY-006",
       "name": "The Louvain Shape-Shifter",
       "formal": "NetworkX Louvain instability",
-      "category": "WATCHLIST",
+      "category": "GRAPH",
       "status": "placeholder",
       "symbol": "◇",
-      "type": "Unconfirmed graph behaviour",
-      "teaser": "The communities remain at large.",
-      "cause": "Proposed instability investigation awaiting a bounded fixture and verified observations.",
-      "finding": "Placeholder only; no executed reproduction or receipt is claimed.",
-      "mitigation": "Pin graph/data and library versions, control seeds, and define measurable graph outcomes.",
-      "scope": "NOT TESTED. No reproducibility claim.",
+      "type": "Valid stochastic partition variation",
+      "teaser": "42 valid partitions. One cycle. Zero upstream convictions.",
+      "cause": "Louvain's heuristic can return different valid partitions of the same labelled topology when the random seed or graph insertion order changes.",
+      "finding": "240 measured configurations (NetworkX 3.5, CPython 3.14.4): 42 canonical partitions on the 16-node cycle; all source-run records passed coverage and reported modularity checks, fixed repeats reproduced, no hash-seed variation observed. Later independent modularity-oracle hardening passed separate CI.",
+      "mitigation": "Use a seed/order matrix, canonical membership, topology hashes, independent parent modularity calculation and fail-closed controls. Report sensitivity without claiming a NetworkX contract violation.",
+      "scope": "OBSERVED in the pinned NetworkX 3.5 matrix at source revision 1f4e568373764396aa6bd580d2e1cc30e0742c49. No NetworkX bug established. Later parent-oracle CI was separate; manifest stays placeholder so optional NetworkX is excluded from run-all.",
       "tags": [
         "networkx",
         "louvain",
-        "pending"
+        "modularity",
+        "reproducibility"
       ],
       "rotation": 1.3,
       "doc": "experiments/HERESY-006/experiment.md",
-      "incident": null
+      "incident": null,
+      "evidenceState": "observed",
+      "report": "experiments/HERESY-006/HERESY-006-report.json",
+      "published": "blueprint",
+      "sofaId": "4bcd561f-3968-4e61-a49b-abc636a05f79"
     },
     {
       "id": "HERESY-007",
