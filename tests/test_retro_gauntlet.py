@@ -1,6 +1,7 @@
 """Dependency-free controls for RETRO-001. No external network or production paths."""
 from __future__ import annotations
 
+import ast
 import importlib.util
 import json
 import os
@@ -43,6 +44,16 @@ class RetroGauntletTests(unittest.TestCase):
         self.assertEqual(self.report["two_frames_decoded"], 2)
         self.assertTrue(self.report["oversized_frame_rejected"])
         self.assertTrue(self.report["truncated_frame_eof_rejected"])
+
+    def test_optimized_python_does_not_disable_invariants(self):
+        module_ast = ast.parse(RUNNER.read_text(encoding="utf-8"))
+        self.assertFalse(any(isinstance(node, ast.Assert) for node in ast.walk(module_ast)))
+        optimized = subprocess.run(
+            [sys.executable, "-O", str(RUNNER)],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=8, check=False,
+        )
+        self.assertEqual(optimized.returncode, 0, optimized.stderr)
+        self.assertEqual(json.loads(optimized.stdout), self.report)
 
     def test_cli_emits_same_machine_readable_observations(self):
         finished = subprocess.run(

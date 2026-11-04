@@ -17,6 +17,12 @@ from pathlib import Path
 MAX_FRAME_SIZE = 4096
 
 
+def require(condition: bool, message: str) -> None:
+    """Fail closed even when Python optimization removes bare assert statements."""
+    if not condition:
+        raise RuntimeError(message)
+
+
 def atomic_replace(path: Path, data: bytes, *, interrupt_before_rename: bool = False) -> None:
     """Atomically replace file bytes on one POSIX filesystem, best-effort durable metadata."""
     temp = None
@@ -70,7 +76,7 @@ def run_demo() -> dict:
         except RuntimeError:
             pass
         bad_bytes_after_failure = bad.read_bytes()
-        assert bad_bytes_after_failure == b""
+        require(bad_bytes_after_failure == b"", "unsafe truncation not reproduced")
 
         # Corrected transaction: before rename, original survives; after, full new bytes.
         good = here / "safe.json"
@@ -80,9 +86,9 @@ def run_demo() -> dict:
         except RuntimeError:
             pass
         good_bytes_before_commit = good.read_bytes()
-        assert good_bytes_before_commit == b'{"generation":1}'
+        require(good_bytes_before_commit == b'{"generation":1}', "atomic precommit preservation failed")
         atomic_replace(good, b'{"generation":2}')
-        assert good.read_bytes() == b'{"generation":2}'
+        require(good.read_bytes() == b'{"generation":2}', "atomic replacement failed")
 
         # TOCTOU: two contenders both observe nonexistence before either creates.
         lock_file = here / "naive.lock"
@@ -93,7 +99,7 @@ def run_demo() -> dict:
         def naive_contender(identity: int) -> None:
             try:
                 absent = not lock_file.exists()
-                barrier.wait(timeout=2)
+                barrier.wait(timeout=5)
                 if absent:
                     with lock_file.open("w", encoding="ascii") as output:
                         output.write(str(identity))
@@ -105,10 +111,10 @@ def run_demo() -> dict:
         for thread in threads:
             thread.start()
         for thread in threads:
-            thread.join(timeout=3)
-        assert not any(thread.is_alive() for thread in threads)
-        assert not errors, errors
-        assert len(naive_owners) == 2, naive_owners
+            thread.join(timeout=6)
+        require(not any(thread.is_alive() for thread in threads), "contender did not finish")
+        require(not errors, "contender error: " + repr(errors))
+        require(len(naive_owners) == 2, "naive lock race not observed")
 
         # POSIX stable sidecar lock: independent open descriptions do conflict.
         sidecar = here / "stable.lock"
@@ -121,7 +127,7 @@ def run_demo() -> dict:
                 fcntl.flock(fd2, fcntl.LOCK_EX | fcntl.LOCK_NB)
             except BlockingIOError:
                 second_denied = True
-            assert second_denied
+            require(second_denied, "second file lock was unexpectedly granted")
             fcntl.flock(fd1, fcntl.LOCK_UN)
             fcntl.flock(fd2, fcntl.LOCK_EX | fcntl.LOCK_NB)
             second_acquired_after_release = True
@@ -134,7 +140,7 @@ def run_demo() -> dict:
         try:
             left.sendall(b"\x00\x00")
             short_header = right.recv(4)
-            assert short_header == b"\x00\x00"
+            require(short_header == b"\x00\x00", "short header was not observed")
         finally:
             left.close()
             right.close()
@@ -145,7 +151,7 @@ def run_demo() -> dict:
             messages = (b"ABCD", b"EF")
             left.sendall(b"".join(struct.pack("!I", len(m)) + m for m in messages))
             decoded = [read_frame(right) for _ in messages]
-            assert decoded == list(messages)
+            require(decoded == list(messages), "frame decoding mismatched")
         finally:
             left.close()
             right.close()
@@ -157,7 +163,7 @@ def run_demo() -> dict:
                 read_frame(right)
             except ValueError:
                 rejected_oversize = True
-            assert rejected_oversize
+            require(rejected_oversize, "oversize frame was not rejected")
         finally:
             left.close()
             right.close()
@@ -170,7 +176,7 @@ def run_demo() -> dict:
                 read_frame(right)
             except EOFError:
                 rejected_partial_eof = True
-            assert rejected_partial_eof
+            require(rejected_partial_eof, "truncated frame was not rejected")
         finally:
             left.close()
             right.close()

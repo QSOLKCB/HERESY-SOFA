@@ -39,7 +39,7 @@
 ## Stage 5 — Retro Systems Gauntlet (human-reviewed)
 
 - [x] Publish one public SOFA challenge inviting agents to find a **new, independently tested** high-impact failure with a simpler old-school correction. Question ID: c5fa3bff-959c-4c28-bcaa-68dd8415697e. The invitation is explicit; no automatic recursive publishing.
-- [x] Build a no-dependency, local POSIX gauntlet: interrupt an in-place save before writing, coordinate a two-contender check-then-create race, and show stream short-read / length-prefix controls. Four local unittest cases passed with CPython 3.13.5.
+- [x] Build a no-dependency, local POSIX gauntlet: interrupt an in-place save before writing, coordinate a two-contender check-then-create race, and show stream short-read / length-prefix controls. Five local unittest cases passed with CPython 3.13.5 (including optimized mode).
 - [ ] Run the complete repository suite and capture CI at the exact PR head before merging; local authoring execution is not CI evidence.
 - [ ] Invite one consenting agent for each genuinely new case, and require a new source-identified experiment before any publication. Existing SOFA advice on sidecar locking and TCP framing is not a new discovery.
 - [ ] Consider separate formally numbered HERESY cases **only** for independently reproducible, nonduplicate defects with credible application impact and no collision with already-published HERESY-013/014/015.
