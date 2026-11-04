@@ -48,3 +48,20 @@ An agent participating through the public SOFA question should:
 **Teaching objective:** understand old-fashioned system invariants and where they suffice, while acknowledging where complexity solves a real distributed, security or scale requirement.
 
 The compiler is innocent. The operator is required to supply a receipt.
+
+## Independently verified local UV run (4 November 2026)
+
+The operator supplied a sanitized [workstation verification report](../../evidence/RETRO-GAUNTLET-001/RETRO-001-LOCAL-UV-REPORT.json), executed on Ubuntu 26.04.1 / Linux 7.0.0-42-generic x86_64 with CPython 3.14.4 and uv 0.12.1. The **byte-exact** report SHA-256 is:
+
+`8933631a60676f427407a2f6c431defc8f07480642d1903dbb4ed32ad7c160f2`
+
+The report records **6/6 targeted tests**, **74 passed and 1 optional NetworkX skip out of 75 full-suite tests**, **10/10 run-all** and **10/10 verify-all** checks. All three bounded failure classes and corrected controls matched expected observations. Under optimized Python, a deliberately no-op `os.replace` mutation exited 1 with `RuntimeError: atomic replacement failed`. The worktree was clean after existing ignored receipts were restored byte-for-byte.
+
+The report is pinned to **merged** source `5e3825f93885579f086f8d3650f07cd64b530632`. The three source-file SHA-256 values were independently checked against that exact Git commit; all matched. The report's original raw file was checked for its SHA-256 and copied byte-for-byte; it is **not** a current HEAD receipt or proof of re-execution at this documentation update.
+
+No new packages or interpreters were installed. The report documents a **fresh uv-managed environment** using the already-installed Python interpreter, with offline execution. Git fetch/pull were separate authorized network commands. Initial managed sandbox restrictions on DNS and local sockets are disclosed; authorized reruns succeeded and are the canonical workstation observations.
+
+The [SOFA challenge](https://agents.stackoverflow.com/questions/c5fa3bff-959c-4c28-bcaa-68dd8415697e) has a [published local verification reply](../../sofa/manifest.json) (reply ID `b607d7f6-ce7d-43d1-9a32-2cb23317e28d`); publication does not trigger further automatic posting.
+
+For review boundaries and exact provenance, see [the local UV evidence audit](../../docs/reviews/RETRO-001-LOCAL-UV.md).
+

@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "report_id": "RETRO-001-LOCAL-UV",
+  "report_filename": "RETRO-001-LOCAL-UV-REPORT.json",
+  "sanitized": true,
+  "completed_at_utc": "2026-11-04T10:52:15Z",
+  "overall_status": "pass",
+  "verdict": "RETRO-GAUNTLET-001 passed independently on the operator's Linux workstation using a fresh uv virtual environment and the already-installed Python interpreter. All six targeted tests, the complete repository suite, both harness checks, the optimized challenge, and the optimized no-op atomic-rename negative control produced the required outcomes.",
+  "path_substitutions": {
+    "<HOME>": "operator home directory",
+    "<REPO>": "selected local QSOLKCB/HERESY-SOFA clone",
+    "<VENV_ROOT>": "unique bounded directory created by mktemp under /tmp"
+  },
+  "scope_and_constraints": {
+    "repository": "QSOLKCB/HERESY-SOFA",
+    "challenge": "RETRO-GAUNTLET-001",
+    "requested_source_baseline": "5e3825f93885579f086f8d3650f07cd64b530632",
+    "uv_required": true,
+    "pip_used": false,
+    "docker_used": false,
+    "nodejs_used": false,
+    "cloud_service_used": false,
+    "new_runtime_dependencies_installed": false,
+    "new_python_interpreter_downloaded": false,
+    "network_load_tests_performed": false,
+    "network_access": "Only git fetch and git pull used outbound network access. Every uv run used --offline.",
+    "production_files_accessed": false
+  },
+  "source": {
+    "branch": "main",
+    "pre_update_head": "9f43450e4166574b63c93469241451a22c9fd6a9",
+    "pre_update_dirty_tree_status": "clean",
+    "fetch_result": "origin/main advanced from 9f43450 to 5e3825f",
+    "pull_result": "fast-forward only from 9f43450 to 5e3825f",
+    "head": "5e3825f93885579f086f8d3650f07cd64b530632",
+    "origin_main": "5e3825f93885579f086f8d3650f07cd64b530632",
+    "main_vs_origin_main_left_right_count": [
+      0,
+      0
+    ],
+    "final_dirty_tree_status": "clean",
+    "baseline_match": true
+  },
+  "environment": {
+    "operating_system": "Ubuntu 26.04.1 LTS",
+    "kernel": "Linux 7.0.0-42-generic",
+    "architecture": "x86_64",
+    "uv": "uv 0.12.1 (x86_64-unknown-linux-gnu)",
+    "system_python_command": "/usr/bin/python3",
+    "system_python_version": "Python 3.14.4",
+    "uv_interpreter": "<VENV_ROOT>/venv/bin/python",
+    "uv_interpreter_implementation": "CPython",
+    "uv_interpreter_version": "3.14.4",
+    "uv_interpreter_compiler": "GCC 15.2.0",
+    "venv_creation": {
+      "fresh": true,
+      "outside_repository": true,
+      "bounded_temp_path": true,
+      "python_argument": "$(command -v python3)",
+      "no_python_downloads": true
+    }
+  },
+  "expected_and_actual": {
+    "challenge_observations": {
+      "expected": {
+        "atomic_full_replacement_committed": true,
+        "atomic_precommit_original_preserved": true,
+        "naive_lock_owners": 2,
+        "oversized_frame_rejected": true,
+        "recv_header_bytes_after_two_bytes_sent": 2,
+        "stable_lock_reacquired_after_release": true,
+        "stable_lock_second_contender_denied": true,
+        "truncated_frame_eof_rejected": true,
+        "two_frames_decoded": 2,
+        "unsafe_in_place_bytes_after_injected_failure": 0
+      },
+      "actual": {
+        "atomic_full_replacement_committed": true,
+        "atomic_precommit_original_preserved": true,
+        "naive_lock_owners": 2,
+        "oversized_frame_rejected": true,
+        "recv_header_bytes_after_two_bytes_sent": 2,
+        "stable_lock_reacquired_after_release": true,
+        "stable_lock_second_contender_denied": true,
+        "truncated_frame_eof_rejected": true,
+        "two_frames_decoded": 2,
+        "unsafe_in_place_bytes_after_injected_failure": 0
+      },
+      "match": true
+    },
+    "targeted_tests": {
+      "expected": "6 passed, 0 failed, including optimized Python and no-op rename mutation",
+      "actual": "6 passed, 0 failed, 0 errors, 0 skipped",
+      "reported_runtime_seconds": 0.421,
+      "match": true
+    },
+    "complete_regression_suite": {
+      "expected": "suite exits zero",
+      "actual": "75 tests run; 74 passed; 1 skipped; 0 failed; 0 errors",
+      "reported_runtime_seconds": 4.874,
+      "match": true
+    },
+    "harness_run_all": {
+      "expected": "all implemented experiments execute successfully",
+      "actual": "10 of 10 implemented experiments executed with child exit 0; command exit 0",
+      "experiment_ids": [
+        "HERESY-001",
+        "HERESY-002",
+        "HERESY-003",
+        "HERESY-004",
+        "HERESY-007",
+        "HERESY-008",
+        "HERESY-009",
+        "HERESY-010",
+        "HERESY-011",
+        "HERESY-012"
+      ],
+      "match": true
+    },
+    "harness_verify_all": {
+      "expected": "all fresh receipts and source evidence hashes verify",
+      "actual": "10 of 10 fresh receipts and evidence sets verified; command exit 0",
+      "match": true
+    },
+    "optimized_challenge": {
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "observations_equal_normal_run": true,
+      "match": true
+    },
+    "optimized_noop_atomic_rename_mutation": {
+      "expected": "nonzero child exit containing atomic replacement failed",
+      "actual_exit_code": 1,
+      "actual_terminal_exception": "RuntimeError: atomic replacement failed",
+      "match": true
+    }
+  },
+  "experimental_failure_classes": [
+    {
+      "name": "interrupted_in_place_save_vs_atomic_replacement",
+      "classification": "executed",
+      "status": "pass",
+      "broken_baseline_actual": "An injected failure immediately after opening the in-place binary writer left 0 previous-content bytes.",
+      "corrected_control_actual": "An injected failure before os.replace preserved generation 1, and a successful atomic replacement committed generation 2.",
+      "evidence_fields": {
+        "unsafe_in_place_bytes_after_injected_failure": 0,
+        "atomic_precommit_original_preserved": true,
+        "atomic_full_replacement_committed": true
+      }
+    },
+    {
+      "name": "naive_check_then_create_vs_stable_flock",
+      "classification": "executed",
+      "status": "pass",
+      "broken_baseline_actual": "Two barrier-synchronized contenders both observed absence and both reported ownership.",
+      "corrected_control_actual": "A stable sidecar flock denied the second independent open description while held and allowed it after release.",
+      "evidence_fields": {
+        "naive_lock_owners": 2,
+        "stable_lock_second_contender_denied": true,
+        "stable_lock_reacquired_after_release": true
+      }
+    },
+    {
+      "name": "short_stream_reads_vs_length_prefixed_framing",
+      "classification": "executed",
+      "status": "pass",
+      "broken_baseline_actual": "recv(4) returned 2 bytes when only 2 header bytes had been sent.",
+      "corrected_control_actual": "The exact-read, 4-byte network-order length framing decoded two complete frames, rejected a 4097-byte announced frame against the 4096-byte cap, and rejected truncated EOF.",
+      "evidence_fields": {
+        "recv_header_bytes_after_two_bytes_sent": 2,
+        "two_frames_decoded": 2,
+        "oversized_frame_rejected": true,
+        "truncated_frame_eof_rejected": true
+      }
+    }
+  ],
+  "tests": {
+    "failures": [],
+    "errors": [],
+    "skips": [
+      {
+        "suite": "complete_regression_suite",
+        "test": "test_heresy006.Heresy006Tests.test_fixture_topology_is_equivalent_across_insertion_orders",
+        "reason": "NetworkX is optional",
+        "classification": "unsupported",
+        "dependency_action": "Not installed, in accordance with the no-new-runtime-dependencies constraint."
+      }
+    ],
+    "targeted_test_names": [
+      "test_cli_emits_same_machine_readable_observations",
+      "test_inplace_write_failure_and_atomic_replacement",
+      "test_optimized_mutation_must_reject_noop_atomic_replace",
+      "test_optimized_python_does_not_disable_invariants",
+      "test_stream_recv_is_short_and_framing_handles_multiple_messages",
+      "test_two_contenders_bypass_exists_lock_but_sidecar_flock_excludes"
+    ]
+  },
+  "classification": {
+    "executed": [
+      "Source fetch and fast-forward-only pull to the requested commit",
+      "Fresh uv venv creation with the already-installed /usr/bin/python3 and --no-python-downloads",
+      "Normal RETRO-GAUNTLET-001 run",
+      "Six targeted unit tests",
+      "Complete repository unit-test discovery",
+      "Harness run-all and verify-all for all 10 implemented experiments",
+      "Optimized-Python RETRO-GAUNTLET-001 run",
+      "Optimized-Python no-op os.replace mutation negative control",
+      "Final clean-tree and pre-existing ignored-receipt restoration checks"
+    ],
+    "inferred": [
+      "No pip, Docker, Node.js, or cloud command was invoked, based on the command ledger.",
+      "No new interpreter or runtime package was downloaded: uv venv used /usr/bin/python3 with --no-python-downloads, and all uv runs were --offline.",
+      "No tracked repository artifact was changed by verification: final porcelain status was empty."
+    ],
+    "not_tested": [
+      "Power-loss or kernel-crash durability",
+      "NFS or other network filesystem atomicity and flock semantics",
+      "Metadata or ACL preservation",
+      "Failure after rename or during directory fsync",
+      "Separate-process flock contention, hostile directory entries, noncooperating writers, or distributed locking",
+      "Real network congestion, TLS, authentication, slow-client deadlines, or connection-wide resource limits",
+      "Production application behavior, exploitability, or vulnerability severity",
+      "Performance, throughput, or latency benchmarking",
+      "Network-load behavior"
+    ],
+    "unsupported": [
+      "The optional NetworkX-dependent HERESY-006 topology-equivalence test was skipped because NetworkX was not installed and new dependencies were prohibited.",
+      "Claims beyond the local POSIX/Linux, same-filesystem, advisory-lock, socketpair scope are unsupported by this run."
+    ]
+  },
+  "sha256": {
+    "algorithm": "SHA-256",
+    "source_evidence": {
+      "challenges/RETRO-GAUNTLET-001/run.py": "0accd4a560eba48a9cc3594e8cc82ac5631c2cf262112af4ade60553740da614",
+      "tests/test_retro_gauntlet.py": "f8f3aed7e30b0f5d6e3cf3020973a5730c844a1bf7823676e0231f9d93de33cf",
+      "challenges/RETRO-GAUNTLET-001/README.md": "ef3c49b31c6fe00ae2791b2aaa90730bc4534612785d1864bb4490b89abf2366"
+    },
+    "normal_and_optimized_challenge_stdout_with_trailing_newline": "f2cc145aa5de43d1ca14c7d938840cb13b3705400679bb0003a089c3ae4671ad",
+    "fresh_harness_receipts": {
+      "HERESY-001.json": "bbfb96794c7c7fc12753da6dca90182bb2c8a487628f21a9825e3175d29476f6",
+      "HERESY-002.json": "25e39b676b568eed008ba31464684f4f1f8b78aa4b32e0a2a5df039b0c58af31",
+      "HERESY-003.json": "6f91543d71b1860cae0e53ae1504326b65cc93c03ff31980a81e7f4689a893ab",
+      "HERESY-004.json": "b65b95be061ba6e4a44e7ca978e8d751b03df6192bc04e2852af91a713639d62",
+      "HERESY-007.json": "dfbeef51f606c97430ec91d5ba2cd8b71f87a5028b146a1058252bd7f17a330e",
+      "HERESY-008.json": "2c17faeff1093621cd859ec8d6e35bd56674edc39a6d9680ce70446915bd5ed7",
+      "HERESY-009.json": "2108145cbb0f60b72f7e802097cd41df3b5d18ea4bd16536fd5b777e091258be",
+      "HERESY-010.json": "2d15ef62180b3c802cfd39a73d52ada4b19bbebc0a24cf3e1eb8fb8f661b2fe2",
+      "HERESY-011.json": "6676331c95cb7b4febb939ecbeb72fd8dee8ac936cee6fde6049780754f94576",
+      "HERESY-012.json": "7c706d8eeb5f20605828fc66d076f24506fd5a896bfcc43f9204126055b6acbe"
+    },
+    "restored_preexisting_ignored_receipts": {
+      "HERESY-001.json": "582e1d718975ca2328702bf74ee5024519550f607028d70ffcaab259106c996a",
+      "HERESY-002.json": "b95ec6582e456cec358a4a22d053877216f541b5cab740e2bbe9a97251c374aa",
+      "HERESY-003.json": "cc59a55006320cda6dddbfb398cc1b5b1f639b11c931a82a29df6885a2c5a6ee",
+      "HERESY-004.json": "d4857706bdff89c38cb22661b6af80a85f995a5aa614cc4d8027abb9c4a74e8e"
+    }
+  },
+  "workspace_integrity": {
+    "tracked_or_untracked_porcelain_after_verification": [],
+    "preexisting_ignored_receipts_preserved": true,
+    "preexisting_receipt_hashes_equal_before_and_after": true,
+    "fresh_harness_receipts_archived_outside_repository": true,
+    "fresh_harness_receipt_location": "<VENV_ROOT>/run-generated",
+    "venv_location": "<VENV_ROOT>/venv",
+    "temporary_artifacts_policy": "Bounded under /tmp and retained for local inspection until normal temporary-directory cleanup.",
+    "report_location": "<HOME>/RETRO-001-LOCAL-UV-REPORT.json",
+    "repository_code_edits": false,
+    "fix_pr_required": false
+  },
+  "execution_notes": [
+    "The managed command sandbox denied outbound DNS for the first git fetch and pull attempts; each identical command succeeded after explicit network authorization.",
+    "The managed syscall sandbox denied socket.sendall in the first challenge attempt with PermissionError. The identical offline command succeeded outside that sandbox, which is the relevant workstation result.",
+    "A login-shell startup component emitted 'Failed to create stream fd: Operation not permitted' before early preflight commands. Canonical verification commands were rerun without login-shell startup; command outcomes were unchanged.",
+    "The two sandbox-policy failures are environment controls, not source defects, and are retained in the command ledger.",
+    "No merge, deploy, SOFA publication, vulnerability claim, or fix was performed."
+  ],
+  "command_log_scope": "Material source-update, environment, challenge, test, harness, hash, and workspace-preservation commands. Commands are exact except for the documented path substitutions.",
+  "command_log": [
+    {
+      "command": "git rev-parse HEAD",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "9f43450e4166574b63c93469241451a22c9fd6a9 (pre-update)"
+    },
+    {
+      "command": "git status --short",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "empty output; clean pre-update worktree"
+    },
+    {
+      "command": "git fetch origin",
+      "cwd": "<REPO>",
+      "attempt": "managed-network-sandbox",
+      "exit_code": 128,
+      "result": "DNS denied by sandbox: Could not resolve host github.com"
+    },
+    {
+      "command": "git fetch origin",
+      "cwd": "<REPO>",
+      "attempt": "authorized-network-retry",
+      "exit_code": 0,
+      "result": "origin/main advanced 9f43450..5e3825f"
+    },
+    {
+      "command": "git pull --ff-only",
+      "cwd": "<REPO>",
+      "attempt": "managed-network-sandbox",
+      "exit_code": 1,
+      "result": "DNS denied by sandbox: Could not resolve host github.com"
+    },
+    {
+      "command": "git pull --ff-only",
+      "cwd": "<REPO>",
+      "attempt": "authorized-network-retry",
+      "exit_code": 0,
+      "result": "fast-forward 9f43450..5e3825f"
+    },
+    {
+      "command": "uv --version",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "uv 0.12.1 (x86_64-unknown-linux-gnu)"
+    },
+    {
+      "command": "python3 --version",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "Python 3.14.4"
+    },
+    {
+      "command": "command -v python3",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "/usr/bin/python3"
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "5e3825f93885579f086f8d3650f07cd64b530632"
+    },
+    {
+      "command": "git status --short",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "command": "uname -srm",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "Linux 7.0.0-42-generic x86_64"
+    },
+    {
+      "command": "sh -c '. /etc/os-release && printf \"%s\\n\" \"$PRETTY_NAME\"'",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "Ubuntu 26.04.1 LTS"
+    },
+    {
+      "command": "mktemp -d /tmp/retro-gauntlet-001.XXXXXXXX",
+      "cwd": "<HOME>",
+      "exit_code": 0,
+      "stdout": "<VENV_ROOT>"
+    },
+    {
+      "command": "uv venv <VENV_ROOT>/venv --python \"$(command -v python3)\" --no-python-downloads",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Used CPython 3.14.4 at /usr/bin/python3 and created a fresh venv"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python challenges/RETRO-GAUNTLET-001/run.py",
+      "cwd": "<REPO>",
+      "attempt": "managed-syscall-sandbox",
+      "exit_code": 1,
+      "result": "Sandbox denied socket.sendall with PermissionError: Operation not permitted"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python challenges/RETRO-GAUNTLET-001/run.py",
+      "cwd": "<REPO>",
+      "attempt": "authorized-local-workstation-retry",
+      "exit_code": 0,
+      "result": "Challenge observations exactly matched expected values"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python -m unittest discover -s tests -p 'test_retro_gauntlet.py' -v",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Ran 6 tests in 0.421s; OK"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python -m unittest discover -s tests -v",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Ran 75 tests in 4.874s; OK (skipped=1)"
+    },
+    {
+      "command": "mv receipts/generated <VENV_ROOT>/preexisting-generated",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Preserved the existing ignored operator receipts before harness execution"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python -m harness run-all",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "10 implemented experiments executed; every child exit was 0"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python -m harness verify-all",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "10 receipts and evidence sets verified"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python -O challenges/RETRO-GAUNTLET-001/run.py",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Optimized observations exactly matched the normal run"
+    },
+    {
+      "command": "uv run --no-project --offline --python <VENV_ROOT>/venv/bin/python -- python -O -c 'import importlib.util\nfrom unittest import mock\np = \"challenges/RETRO-GAUNTLET-001/run.py\"\nspec = importlib.util.spec_from_file_location(\"retro_mutation\", p)\nmodule = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(module)\nwith mock.patch.object(module.os, \"replace\", lambda *args: None):\n    module.run_demo()'",
+      "cwd": "<REPO>",
+      "exit_code": 1,
+      "expected_nonzero": true,
+      "result": "RuntimeError: atomic replacement failed"
+    },
+    {
+      "command": "sha256sum challenges/RETRO-GAUNTLET-001/run.py tests/test_retro_gauntlet.py challenges/RETRO-GAUNTLET-001/README.md",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Hashes recorded in sha256.source_evidence"
+    },
+    {
+      "command": "sha256sum receipts/generated/HERESY-001.json receipts/generated/HERESY-002.json receipts/generated/HERESY-003.json receipts/generated/HERESY-004.json receipts/generated/HERESY-007.json receipts/generated/HERESY-008.json receipts/generated/HERESY-009.json receipts/generated/HERESY-010.json receipts/generated/HERESY-011.json receipts/generated/HERESY-012.json",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Hashes recorded in sha256.fresh_harness_receipts"
+    },
+    {
+      "command": "mv receipts/generated <VENV_ROOT>/run-generated",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Archived fresh harness receipts outside the repository"
+    },
+    {
+      "command": "mv <VENV_ROOT>/preexisting-generated receipts/generated",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "Restored pre-existing ignored operator receipts"
+    },
+    {
+      "command": "sha256sum receipts/generated/HERESY-001.json receipts/generated/HERESY-002.json receipts/generated/HERESY-003.json receipts/generated/HERESY-004.json",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "result": "All four hashes matched their pre-harness values"
+    },
+    {
+      "command": "git rev-parse origin/main",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "5e3825f93885579f086f8d3650f07cd64b530632"
+    },
+    {
+      "command": "git rev-list --left-right --count main...origin/main",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": "0\t0"
+    },
+    {
+      "command": "git status --porcelain=v1 --untracked-files=all",
+      "cwd": "<REPO>",
+      "exit_code": 0,
+      "stdout": ""
+    }
+  ]
+}

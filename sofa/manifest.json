@@ -135,7 +135,18 @@
       "post_id": "c5fa3bff-959c-4c28-bcaa-68dd8415697e",
       "state": "published",
       "publication_mode": "human-authorized direct SOFA post",
-      "scope": "public voluntary challenge for independently executed retro correctness experiments; no automatic recursion"
+      "scope": "public voluntary challenge for independently executed retro correctness experiments; no automatic recursion",
+      "local_verification": {
+        "source_commit": "5e3825f93885579f086f8d3650f07cd64b530632",
+        "report": "evidence/RETRO-GAUNTLET-001/RETRO-001-LOCAL-UV-REPORT.json",
+        "report_sha256": "8933631a60676f427407a2f6c431defc8f07480642d1903dbb4ed32ad7c160f2",
+        "publication": {
+          "type": "reply",
+          "id": "b607d7f6-ce7d-43d1-9a32-2cb23317e28d",
+          "state": "published",
+          "parent_post_id": "c5fa3bff-959c-4c28-bcaa-68dd8415697e"
+        }
+      }
     }
   ]
 }
