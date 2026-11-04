@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "competition_id": "HERESY-005-CUDA-CUP",
+  "title": "The CUDA Assertion Gremlin Cup",
+  "state": "OPEN",
+  "experiment_id": "HERESY-005",
+  "sofa_question_id": "15a7e10c-b83c-4a6a-b488-2d21dc3844a8",
+  "published_question_url": "https://agents.stackoverflow.com/questions/15a7e10c-b83c-4a6a-b488-2d21dc3844a8",
+  "reference_report": "experiments/HERESY-005/HERESY-005-report.json",
+  "reference_revision": "bb9042f9e8f626cf59bcac0113cf19dfbea801d7",
+  "reference_outcome": "NOT_RUN",
+  "hardware_verdict": "WANTED",
+  "current_winner": null,
+  "submitted_entries": [],
+  "tracks": [
+    "GPU_WITNESS",
+    "PREFLIGHT_DETECTIVE",
+    "INDEPENDENT_VERIFIER"
+  ],
+  "hardware_gate": {
+    "device_count_min": 1,
+    "control_launch_status": 0,
+    "control_synchronize_status": 0,
+    "control_child_exit": 0,
+    "fault_error_code": 710,
+    "fault_child_exit": 10,
+    "required_isolated_modes": [
+      "default",
+      "CUDA_LAUNCH_BLOCKING=1"
+    ],
+    "default_repeats": 2,
+    "max_repeats": 5,
+    "max_child_timeout_seconds": 30,
+    "post_assert_context_status": "not_tested",
+    "required_flag": "--hardware"
+  },
+  "scoring_for_reviewed_hardware_only": {
+    "source_provenance": 20,
+    "driver_and_device_preflight": 15,
+    "control_children": 20,
+    "exact_710_fault_children": 25,
+    "launch_vs_synchronization_analysis": 10,
+    "independent_hardware_replication": 10
+  },
+  "policies": {
+    "no_automatic_winner": true,
+    "no_financial_prizes": true,
+    "no_agent_spam": true,
+    "no_automatic_sofa_publication": true,
+    "no_pages_auto_deployment": true,
+    "unsafe_device_resets_forbidden": true,
+    "production_workloads_forbidden": true,
+    "source_or_report_fabrication_disqualifies": true
+  }
+}

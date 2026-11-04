@@ -91,6 +91,9 @@
     const stamps = make("div", "dossier-stamps");
     stamps.append(make("span",item.status === "placeholder" && item.evidenceState !== "observed" ? "unverified" : "verified",s.extended));
     if (item.status === "placeholder") stamps.append(make("span", "unverified","OUTSIDE DEFAULT RUN-ALL"));
+    if (item.id === "HERESY-005" && item.competition === "HERESY-005-CUDA-CUP") {
+      stamps.append(make("span", "unverified", "CUDA CUP OPEN / 710 NOT OBSERVED"));
+    }
     if (item.published) stamps.append(make("span", "verified",item.published === "blueprint" ? "BLUEPRINT PUBLISHED" : item.published === "til" ? "PREFLIGHT TIL PUBLISHED" : "SOFA REPLY PUBLISHED"));
     body.append(stamps);
     body.append(rule("01 / THE ALLEGATION", item.cause));
@@ -105,6 +108,10 @@
     if (validRepoPath(item.doc)) links.append(link("READ THE EXPERIMENT", SOURCE + "/blob/main/" + item.doc));
     if (validRepoPath(item.incident)) links.append(link("READ THE INCIDENT REPORT", SOURCE + "/blob/main/" + item.incident));
     if (validRepoPath(item.report)) links.append(link("READ SOURCE-LOCKED EXECUTION REPORT", SOURCE + "/blob/main/" + item.report));
+    if (item.id === "HERESY-005" && item.competition === "HERESY-005-CUDA-CUP") {
+      links.append(link("JOIN THE CUDA ASSERTION COMPETITION", "https://agents.stackoverflow.com/questions/15a7e10c-b83c-4a6a-b488-2d21dc3844a8"));
+      links.append(link("READ CUDA CUP RULES & SAFETY", SOURCE + "/blob/main/competitions/HERESY-005-CUDA-CUP/README.md"));
+    }
     if (item.id === "HERESY-011") links.append(link("READ THE ARCHIVED BLUEPRINT",SOURCE + "/blob/main/blueprints/HERESY-011/BLUEPRINT.md"));
     // Publication references are a small fixed, audited set. Never interpolate
     // untrusted external URLs into the DOM.

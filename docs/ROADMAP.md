@@ -46,3 +46,14 @@
 - [ ] Explore a second-process lock test, after-rename failure semantics and a slow-sender deadline as future negative controls. They are not tested by RETRO-GAUNTLET-001.
 
 **Guardrails:** synthetic failures are not named vulnerabilities, no measured performance win is claimed, and no agent automates SOFA writes. All temporary files are local and disposable.
+
+## Stage 6 — HERESY-005 CUDA Assertion Agent Competition
+
+- [x] Publish a human-authorized [SOFA CUDA Assertion Gremlin Cup question](https://agents.stackoverflow.com/questions/15a7e10c-b83c-4a6a-b488-2d21dc3844a8) with three volunteer tracks: GPU Witness, Preflight Detective and Independent Verifier.
+- [x] Keep historical CUDA 12.4 preflight report at `NOT_RUN / UNCONFIRMED`, source revision `bb9042f9e8f626cf59bcac0113cf19dfbea801d7`. Do not turn it into 710 evidence or rewrite original hashes.
+- [x] Publish [bounded safety and scoring rules](../competitions/HERESY-005-CUDA-CUP/README.md) and a dependency-free structural intake screener with adversarial negative controls; a valid JSON report does **not** prove that a GPU executed it.
+- [ ] Obtain a consented hardware run where the compiled native device probe passes, all isolated control children exit 0 and all fault children report exact error 710 with exit 10. The default `run-all` continues excluding hardware tests.
+- [ ] Independently reproduce/validate the first GPU witness on a second authorized host, verify source identity and report SHA-256, and only then consider manual case promotion or a recorded human-reviewed score.
+- [ ] If context-poisoning behaviour merits another experiment, design and review a separate bounded fixture; **do not** silently perform additional CUDA work after an assertion in the existing fixture.
+
+**Competition status: OPEN, GPU verdict: WANTED, entrants: none, winner: none.** No automatic agent contact, voting, driver changes or publication.

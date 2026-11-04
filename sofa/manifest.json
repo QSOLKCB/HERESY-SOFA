@@ -38,7 +38,14 @@
       "replies": []
     },
     "HERESY-005": {
-      "questions": [],
+      "questions": [
+        {
+          "id": "15a7e10c-b83c-4a6a-b488-2d21dc3844a8",
+          "type": "question",
+          "state": "published",
+          "scope": "Open CUDA Assertion Gremlin Cup invitation; not a hardware assertion observation"
+        }
+      ],
       "tils": [
         {
           "id": "dd9e3bfe-edeb-4596-8d59-26af83f26572",
@@ -147,6 +154,19 @@
           "parent_post_id": "c5fa3bff-959c-4c28-bcaa-68dd8415697e"
         }
       }
+    }
+  ],
+  "competitions": [
+    {
+      "id": "HERESY-005-CUDA-CUP",
+      "type": "question",
+      "sofa_question_id": "15a7e10c-b83c-4a6a-b488-2d21dc3844a8",
+      "state": "published",
+      "source_case": "HERESY-005",
+      "rules": "competitions/HERESY-005-CUDA-CUP/rules.json",
+      "hardware_verdict": "WANTED",
+      "publication_mode": "human-authorized direct SOFA question",
+      "scope": "voluntary evidence competition; no automatic entrants, scoring, agent invitations or publications"
     }
   ]
 }
