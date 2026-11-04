@@ -13273,15 +13273,15 @@
     },
     {
       "path": "experiments/HERESY-006/experiment.md",
-      "sha256": "c5e97cd58bc5946fd8099d606dedbb2ee5e3bcd922a2e9ce08c6655fa4999044"
+      "sha256": "61b2c8c982e75a56c6c0d92afc4dd2d37139219e4bcbc2479ead48f132c7dabb"
     },
     {
       "path": "experiments/HERESY-006/run.py",
-      "sha256": "acb43296ccab4ecfe8a1fcb676ffcba18dbfd62cfa341182e406415d07ea3e07"
+      "sha256": "7366c1cb1e3ac67285344cdc5787f7f2cd998f271f1e09617041b42f682167a3"
     },
     {
       "path": "tests/test_heresy006.py",
-      "sha256": "dafcd246b8c2438d3ce6786287e1463b819c658d3ef07632e07ef54f9a442dfb"
+      "sha256": "5ddefdf9cb58dd8ac153901e9486196eb3da9b2c317d14e3ef7153424d9dc14a"
     }
   ],
   "expected": {
@@ -13296,7 +13296,7 @@
     "separated_cliques": "three K5 cliques joined in a ring by weight-0.05 edges",
     "symmetric_cycle": "unweighted 16-node cycle"
   },
-  "generated_at": "2026-11-04T09:02:27Z",
+  "generated_at": "2026-11-04T09:09:39Z",
   "invocation": [
     "python3",
     "experiments/HERESY-006/run.py",
@@ -13306,6 +13306,7 @@
   "limitations": [
     "Louvain is a heuristic; a different valid partition is not by itself a NetworkX bug or contract violation.",
     "The tested fixtures, seeds, insertion orders, interpreter, and NetworkX version do not establish behavior for other configurations.",
+    "PYTHONHASHSEED is fixed when the worker interpreter starts; the parent controls its environment and verifies the reported value, but that does not prove the algorithm causally used the hash seed.",
     "No upstream contract violation is claimed without a separately reviewed specification boundary."
   ],
   "run_status": "PASS",
@@ -13325,7 +13326,7 @@
   "schema_version": 1,
   "source_revision": {
     "evidence_tree_dirty": false,
-    "git_commit": "bb9042f9e8f626cf59bcac0113cf19dfbea801d7"
+    "git_commit": "1f4e568373764396aa6bd580d2e1cc30e0742c49"
   },
   "title": "The Louvain Shape-Shifter"
 }
