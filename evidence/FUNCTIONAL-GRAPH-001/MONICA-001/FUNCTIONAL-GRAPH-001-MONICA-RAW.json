@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "input_family": "functional digraph; one directed edge per node; no self-loops",
+  "oracle": "independent per-start visited-set traversal",
+  "source_sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85",
+  "python_version": "3.14.4",
+  "platform": "Linux-6.18.56-cloudflare-microvm-2026.10.9-x86_64-with-glibc2.43",
+  "examples_assertions": 25,
+  "exhaustive_graphs_n2_to_n6": 16739,
+  "random_graphs_seed1703": 20000,
+  "benchmark_n": 100000,
+  "benchmark_repeats": 3,
+  "benchmarks": [
+    {
+      "shape": "random",
+      "implementation": "signed_edge_walk",
+      "median_seconds": 0.030131,
+      "peak_extra_bytes": 3965712
+    },
+    {
+      "shape": "random",
+      "implementation": "etq_edge_walk",
+      "median_seconds": 0.031717,
+      "peak_extra_bytes": 4065649
+    },
+    {
+      "shape": "random",
+      "implementation": "indegree_peel",
+      "median_seconds": 0.03109,
+      "peak_extra_bytes": 6745680
+    },
+    {
+      "shape": "random",
+      "implementation": "sofa_path_index",
+      "median_seconds": 0.027268,
+      "peak_extra_bytes": 4765800
+    },
+    {
+      "shape": "random",
+      "implementation": "reverse_graph",
+      "median_seconds": 0.176619,
+      "peak_extra_bytes": 45678360
+    },
+    {
+      "shape": "big_cycle",
+      "implementation": "signed_edge_walk",
+      "median_seconds": 0.00667,
+      "peak_extra_bytes": 2401352
+    },
+    {
+      "shape": "big_cycle",
+      "implementation": "etq_edge_walk",
+      "median_seconds": 0.012261,
+      "peak_extra_bytes": 1701337
+    },
+    {
+      "shape": "big_cycle",
+      "implementation": "indegree_peel",
+      "median_seconds": 0.012469,
+      "peak_extra_bytes": 1601488
+    },
+    {
+      "shape": "big_cycle",
+      "implementation": "sofa_path_index",
+      "median_seconds": 0.00711,
+      "peak_extra_bytes": 3201440
+    },
+    {
+      "shape": "big_cycle",
+      "implementation": "reverse_graph",
+      "median_seconds": 0.079099,
+      "peak_extra_bytes": 57040008
+    },
+    {
+      "shape": "long_chain",
+      "implementation": "signed_edge_walk",
+      "median_seconds": 0.009932,
+      "peak_extra_bytes": 4793264
+    },
+    {
+      "shape": "long_chain",
+      "implementation": "etq_edge_walk",
+      "median_seconds": 0.012603,
+      "peak_extra_bytes": 4092217
+    },
+    {
+      "shape": "long_chain",
+      "implementation": "indegree_peel",
+      "median_seconds": 0.018792,
+      "peak_extra_bytes": 5594160
+    },
+    {
+      "shape": "long_chain",
+      "implementation": "sofa_path_index",
+      "median_seconds": 0.009945,
+      "peak_extra_bytes": 5593352
+    },
+    {
+      "shape": "long_chain",
+      "implementation": "reverse_graph",
+      "median_seconds": 0.076885,
+      "peak_extra_bytes": 53066208
+    },
+    {
+      "shape": "star_2cycle",
+      "implementation": "signed_edge_walk",
+      "median_seconds": 0.020287,
+      "peak_extra_bytes": 800576
+    },
+    {
+      "shape": "star_2cycle",
+      "implementation": "etq_edge_walk",
+      "median_seconds": 0.0172,
+      "peak_extra_bytes": 900497
+    },
+    {
+      "shape": "star_2cycle",
+      "implementation": "indegree_peel",
+      "median_seconds": 0.019476,
+      "peak_extra_bytes": 5602608
+    },
+    {
+      "shape": "star_2cycle",
+      "implementation": "sofa_path_index",
+      "median_seconds": 0.018866,
+      "peak_extra_bytes": 1600664
+    },
+    {
+      "shape": "star_2cycle",
+      "implementation": "reverse_graph",
+      "median_seconds": 0.077822,
+      "peak_extra_bytes": 48161640
+    }
+  ],
+  "limits": "single local CPython workstation; timings are environment-sensitive; tracemalloc excludes input allocation and process RSS; no SOFA/LeetCode judge execution"
+}

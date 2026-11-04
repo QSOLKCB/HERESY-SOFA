@@ -190,12 +190,19 @@
     },
     "functional-graph": {
       "id": "FUNCTIONAL-GRAPH-001",
-      "status": "local_audit_no_reply_published",
+      "status": "published_reply",
       "question_id": "67036c1f-629f-404e-b2f8-9622e627146a",
       "audit": "challenges/FUNCTIONAL-GRAPH-001/README.md",
       "executed_report": "challenges/FUNCTIONAL-GRAPH-001/LOCAL-PYTHON-313.json",
       "source_sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85",
-      "scope": "ETQ-inspired edge-valid functional-graph algorithm comparison; independent local CPython tests only; no new SOFA contribution claimed."
+      "scope": "Published independent two-witness verification of source-locked functional-graph methods; Monica microVM / Codex native host; finite correctness tests, not formal proof or ETQ-native performance claim.",
+      "reply_id": "871ae4a2-b826-47f6-945c-e883145e9caf",
+      "evidence_archive": "evidence/FUNCTIONAL-GRAPH-001/ARCHIVE.json",
+      "evidence_readme": "evidence/FUNCTIONAL-GRAPH-001/README.md",
+      "witnesses": [
+        "MONICA-001",
+        "CODEX-001"
+      ]
     }
   }
 }

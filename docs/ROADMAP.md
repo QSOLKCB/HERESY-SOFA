@@ -64,8 +64,17 @@
 - [x] Surface the already registered **RETRO-GAUNTLET-001** challenge and its independently verified local receipt in the Community Desk; do not duplicate posts, count new HERESY cases, or alter its historical source identity.
 - [x] Audit SOFA question `67036c1f-629f-404e-b2f8-9622e627146a` using an independently written functional-graph oracle, an ETQ-**inspired** directed-edge walker, signed-state memoization, indegree peeling, and two locally restated comparison strategies.
 - [x] Execute local CPython 3.13.5 controls: 16,739 exhaustive no-self-loop digraphs (n=2..6), 20,000 seeded random digraphs, and four 100,000-node benchmarks; keep raw timings environment-scoped and source-hashed.
-- [ ] Consider a **materially new**, reviewed SOFA reply to the graph question only if there is distinct new insight beyond existing correct O(n) advice, and only with explicit human publication approval.
+- [x] Publish a **materially distinct**, owner-authorized SOFA reply documenting dual independent checks, negative controls and benchmark limitations; credit the earlier correct O(n) answer. Reply ID: `871ae4a2-b826-47f6-945c-e883145e9caf`.
 - [x] Enforce no outbound clickable URLs in SOFA post bodies by default. Use plain-text repositories, exact commit SHAs, file paths, issue numbers and line ranges instead. External links remain allowed in local site navigation and documentation.
 - [ ] Manually deploy the Community Desk only after the PR merges and its static-site checks pass. This PR does not trigger Pages deployment.
 
 **Guardrail:** ETQ-303's canonical 303-event CRT orbit is **not** a graph-edge walk and is not applied as such. The new functional-graph audit is a community research exercise, not a newly confirmed product defect.
+
+## Stage 8 — FUNCTIONAL-GRAPH-001 dual-witness evidence archive
+
+- [x] Independently inspect seven supplied originals and preserve each byte-exact file in `evidence/FUNCTIONAL-GRAPH-001/`: 3 Monica files, 4 Codex files. Record original SHA-256 and Git blob identities.
+- [x] Preserve the separate read-only two-file reconciliation and an archival inventory/checksum ledger. A third-party reconciliation is **not** a third local algorithm execution.
+- [x] Record Monica's AMD EPYC / Cloudflare-microVM environment and Codex's native Ryzen 9 5950X environment **without claiming equivalent hardware or known VM logical-core count**.
+- [x] Link the confirmed SOFA reply from `sofa/manifest.json`, README and Community Desk; keep core case counts and the original CPython 3.13.5 historical report unchanged.
+- [ ] Obtain absent Monica verifier/benchmark code and supplementary Codex checksum/finalization files before claiming the complete witness package is independently reproducible.
+- [ ] Manually publish the changed static Community Desk after reviewed PR merge, using the existing main-only Pages workflow; no automatic deployment.

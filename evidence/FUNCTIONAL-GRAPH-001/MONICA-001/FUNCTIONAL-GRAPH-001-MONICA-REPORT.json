@@ -1,0 +1,883 @@
+{
+  "canonical_test_results": {
+    "passed": true,
+    "runner_benchmark_n": 100000,
+    "runner_benchmark_records": 20,
+    "runner_benchmark_repeats": 3,
+    "runner_benchmarks": [
+      {
+        "implementation": "signed_edge_walk",
+        "median_seconds": 0.030131,
+        "peak_extra_bytes": 3965712,
+        "shape": "random"
+      },
+      {
+        "implementation": "etq_edge_walk",
+        "median_seconds": 0.031717,
+        "peak_extra_bytes": 4065649,
+        "shape": "random"
+      },
+      {
+        "implementation": "indegree_peel",
+        "median_seconds": 0.03109,
+        "peak_extra_bytes": 6745680,
+        "shape": "random"
+      },
+      {
+        "implementation": "sofa_path_index",
+        "median_seconds": 0.027268,
+        "peak_extra_bytes": 4765800,
+        "shape": "random"
+      },
+      {
+        "implementation": "reverse_graph",
+        "median_seconds": 0.176619,
+        "peak_extra_bytes": 45678360,
+        "shape": "random"
+      },
+      {
+        "implementation": "signed_edge_walk",
+        "median_seconds": 0.00667,
+        "peak_extra_bytes": 2401352,
+        "shape": "big_cycle"
+      },
+      {
+        "implementation": "etq_edge_walk",
+        "median_seconds": 0.012261,
+        "peak_extra_bytes": 1701337,
+        "shape": "big_cycle"
+      },
+      {
+        "implementation": "indegree_peel",
+        "median_seconds": 0.012469,
+        "peak_extra_bytes": 1601488,
+        "shape": "big_cycle"
+      },
+      {
+        "implementation": "sofa_path_index",
+        "median_seconds": 0.00711,
+        "peak_extra_bytes": 3201440,
+        "shape": "big_cycle"
+      },
+      {
+        "implementation": "reverse_graph",
+        "median_seconds": 0.079099,
+        "peak_extra_bytes": 57040008,
+        "shape": "big_cycle"
+      },
+      {
+        "implementation": "signed_edge_walk",
+        "median_seconds": 0.009932,
+        "peak_extra_bytes": 4793264,
+        "shape": "long_chain"
+      },
+      {
+        "implementation": "etq_edge_walk",
+        "median_seconds": 0.012603,
+        "peak_extra_bytes": 4092217,
+        "shape": "long_chain"
+      },
+      {
+        "implementation": "indegree_peel",
+        "median_seconds": 0.018792,
+        "peak_extra_bytes": 5594160,
+        "shape": "long_chain"
+      },
+      {
+        "implementation": "sofa_path_index",
+        "median_seconds": 0.009945,
+        "peak_extra_bytes": 5593352,
+        "shape": "long_chain"
+      },
+      {
+        "implementation": "reverse_graph",
+        "median_seconds": 0.076885,
+        "peak_extra_bytes": 53066208,
+        "shape": "long_chain"
+      },
+      {
+        "implementation": "signed_edge_walk",
+        "median_seconds": 0.020287,
+        "peak_extra_bytes": 800576,
+        "shape": "star_2cycle"
+      },
+      {
+        "implementation": "etq_edge_walk",
+        "median_seconds": 0.0172,
+        "peak_extra_bytes": 900497,
+        "shape": "star_2cycle"
+      },
+      {
+        "implementation": "indegree_peel",
+        "median_seconds": 0.019476,
+        "peak_extra_bytes": 5602608,
+        "shape": "star_2cycle"
+      },
+      {
+        "implementation": "sofa_path_index",
+        "median_seconds": 0.018866,
+        "peak_extra_bytes": 1600664,
+        "shape": "star_2cycle"
+      },
+      {
+        "implementation": "reverse_graph",
+        "median_seconds": 0.077822,
+        "peak_extra_bytes": 48161640,
+        "shape": "star_2cycle"
+      }
+    ],
+    "runner_examples_assertions": 25,
+    "runner_exhaustive_graphs_n2_to_n6": 16739,
+    "runner_seed": 1703,
+    "runner_seeded_random_graphs": 20000,
+    "runner_status": "PASS",
+    "tests_run": 7
+  },
+  "commands_executed": [
+    {
+      "actual_exit_code": 0,
+      "command": "uv run --no-project --offline --no-managed-python --python 3.14.4 python -m unittest discover -s tests -p 'test_functional_graph.py' -v",
+      "label": "canonical_unittest",
+      "observed_result": "7 tests ran; OK",
+      "stderr": "test_deterministic_random_cross_check (test_functional_graph.FunctionalGraphTests.test_deterministic_random_cross_check) ... ok\ntest_etq_edge_identity_and_scoped_method (test_functional_graph.FunctionalGraphTests.test_etq_edge_identity_and_scoped_method) ... ok\ntest_exhaustive_functional_graphs_without_self_loops (test_functional_graph.FunctionalGraphTests.test_exhaustive_functional_graphs_without_self_loops) ... ok\ntest_given_and_adversarial_examples (test_functional_graph.FunctionalGraphTests.test_given_and_adversarial_examples) ... ok\ntest_historical_local_evidence_source_identity (test_functional_graph.FunctionalGraphTests.test_historical_local_evidence_source_identity) ... ok\ntest_long_chain_and_cycle_at_constraint_limit (test_functional_graph.FunctionalGraphTests.test_long_chain_and_cycle_at_constraint_limit) ... ok\ntest_no_scalar_answer_from_global_reachability (test_functional_graph.FunctionalGraphTests.test_no_scalar_answer_from_global_reachability) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.406s\n\nOK\n",
+      "stdout": "",
+      "working_directory": "/workspace/fg_audit_repo"
+    },
+    {
+      "actual_exit_code": 0,
+      "command": "uv run --no-project --offline --no-managed-python --python 3.14.4 python challenges/FUNCTIONAL-GRAPH-001/run.py --benchmark > FUNCTIONAL-GRAPH-001-MONICA-RAW.json",
+      "label": "canonical_runner",
+      "stderr": "",
+      "stdout_preserved_verbatim_as": "FUNCTIONAL-GRAPH-001-MONICA-RAW.json",
+      "working_directory": "/workspace/fg_audit_repo"
+    },
+    {
+      "actual_exit_code": 0,
+      "command": "uv run --no-project --offline --no-managed-python --python 3.14.4 python independent_verify.py > independent_verify.json",
+      "label": "independent_oracle_harness",
+      "stderr": "",
+      "working_directory": "/workspace/fg_audit_evidence"
+    },
+    {
+      "actual_exit_code": 0,
+      "command": "uv run --no-project --offline --no-managed-python --python 3.14.4 python independent_benchmark.py > independent_benchmark.json",
+      "label": "independent_benchmark_harness",
+      "stderr": "",
+      "working_directory": "/workspace/fg_audit_evidence"
+    }
+  ],
+  "complexity_assessment": {
+    "edge_walk": {
+      "auxiliary_space": "O(n) including answer, state bytearray, and temporary path; excluding input",
+      "reason": "Each node is entered once, and each directed cycle is separately traversed once.",
+      "worst_case_time": "O(n)"
+    },
+    "indegree_peel": {
+      "auxiliary_space": "O(n) including answer, indegree array, queue, and removed order; excluding input",
+      "reason": "Each edge contributes a constant number of degree and queue operations; residual cycles are labeled once.",
+      "worst_case_time": "O(n)"
+    },
+    "path_index": {
+      "auxiliary_space": "O(n) including answer, state, and temporary path; excluding input",
+      "path_index_reason": "Same aggregate disjoint-path argument as signed_walk; a single path.index call may be linear in that path but not quadratic across the full outer traversal.",
+      "worst_case_time": "O(n)"
+    },
+    "reverse_graph": {
+      "auxiliary_space": "O(n) including answer, reverse-parent structure, seen/solved sets, queues, and per-walk position map; excluding input",
+      "reason": "The functional graph has n edges, and reverse propagation solves each node once.",
+      "worst_case_time": "O(n)"
+    },
+    "signed_walk": {
+      "auxiliary_space": "O(n) including output answer and O(longest path) temporary path; excluding input",
+      "path_index_reason": "path.index(v) runs only when that globally disjoint current path closes a cycle. The total length scanned by all such calls is at most n, because each node is appended to a current path once before it is finalized.",
+      "worst_case_time": "O(n)"
+    }
+  },
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "AMD EPYC",
+    "execution_mode": "authorized local Linux workstation; offline after repository acquisition; no virtual environment manually created; standard library only",
+    "kernel": "Linux 6.18.56-cloudflare-microvm-2026.10.9",
+    "os": "Ubuntu 26.04.1 LTS (Resolute Raccoon)",
+    "python": "CPython 3.14.4",
+    "uv": "uv 0.13.6 (x86_64-unknown-linux-gnu)"
+  },
+  "etq_claim_boundary": {
+    "claims_not_established": [
+      "quantum-computing advantage",
+      "E8 advantage",
+      "ETQ-native performance advantage",
+      "performance superiority across machines/interpreters/workloads",
+      "correctness outside the stated functional-digraph constraints"
+    ],
+    "etq_inspired_traversal_discipline_only": "The evidence supports an adjacency-respecting signed-state walk as an implementation discipline; it does not establish that the method is a canonical ETQ algorithm.",
+    "graph_theoretic_correctness_established_within_tested_constraints": true,
+    "implementation_efficiency_measured_on_this_machine_only": true,
+    "observed_directed_transition": "signed_walk executes v = edges[v] at run.py line 40 after appending the current vertex; all audited traversal is over the supplied functional-graph adjacency.",
+    "observed_scope_statement": "run.py lines 24-30 explicitly state that the ETQ-303 303-event CRT orbit is deliberately not used; README.md lines 48-50 separately says it is not an adjacency walk."
+  },
+  "executed_evidence_vs_inference": {
+    "executed_evidence": [
+      "exact commit and SHA-256 match",
+      "7 canonical tests passed",
+      "canonical runner reported 25 example assertions, 16739 exhaustive graphs, 20000 seed-1703 random graphs, and 20 benchmark records",
+      "independent oracle compared five algorithms on 36749 small graphs and 183745 algorithm comparisons with zero mismatch",
+      "four 100000-node boundary shapes were checked, with five algorithms agreeing for each",
+      "three intentionally incorrect controls were rejected",
+      "20 independent performance/allocation records contain three timing samples each"
+    ],
+    "inference": [
+      "All five implementations are correct within the exercised functional-digraph constraints.",
+      "signed_walk and path_index remain O(n) in aggregate despite path.index.",
+      "Readability and allocation observations are comparative judgments tied to this implementation and workload set, not formal optimality results."
+    ]
+  },
+  "historical_comparison_cpython_3135": {
+    "contradictory_findings": [],
+    "correctness_and_configuration_agreement": {
+      "same_benchmark_shape_and_repetition_counts": true,
+      "same_example_assertions": true,
+      "same_exhaustive_count": true,
+      "same_random_count": true,
+      "same_source_sha256": true,
+      "same_status_pass": true
+    },
+    "current_python": "3.14.4",
+    "historical_file": "challenges/FUNCTIONAL-GRAPH-001/LOCAL-PYTHON-313.json",
+    "historical_python": "3.13.5",
+    "timing_interpretation": "Raw CPython 3.13.5 and 3.14.4 timings are recorded but are not treated as regression or improvement evidence because hardware and runtime controls across reports are insufficient for that causal claim."
+  },
+  "independent_benchmarks": {
+    "harness": "independent_benchmark.py",
+    "n": 100000,
+    "random_seed": 981723,
+    "records": [
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "signed_walk",
+        "median_seconds": 0.025009174999979678,
+        "shape": "seeded_random",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.019922401999991735,
+          0.025191838999973015,
+          0.025009174999979678
+        ],
+        "tracemalloc_current_bytes_after_call": 2309648,
+        "tracemalloc_peak_bytes_during_call": 2309728
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "edge_walk",
+        "median_seconds": 0.02448373600000764,
+        "shape": "seeded_random",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.02448373600000764,
+          0.024045928999981925,
+          0.024747181999998702
+        ],
+        "tracemalloc_current_bytes_after_call": 2309560,
+        "tracemalloc_peak_bytes_during_call": 2409649
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "indegree_peel",
+        "median_seconds": 0.033326243999994176,
+        "shape": "seeded_random",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.036480135999994445,
+          0.033326243999994176,
+          0.03225119100000029
+        ],
+        "tracemalloc_current_bytes_after_call": 2312872,
+        "tracemalloc_peak_bytes_during_call": 5090448
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "path_index",
+        "median_seconds": 0.02214026999999419,
+        "shape": "seeded_random",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.01967309799999839,
+          0.022188833000001296,
+          0.02214026999999419
+        ],
+        "tracemalloc_current_bytes_after_call": 2309736,
+        "tracemalloc_peak_bytes_during_call": 3109816
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "reverse_graph",
+        "median_seconds": 0.1451761959999942,
+        "shape": "seeded_random",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.1451761959999942,
+          0.1383684919999837,
+          0.1675462310000171
+        ],
+        "tracemalloc_current_bytes_after_call": 2330344,
+        "tracemalloc_peak_bytes_during_call": 44035960
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "signed_walk",
+        "median_seconds": 0.007009336999999505,
+        "shape": "one_large_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.007009336999999505,
+          0.007214204000007385,
+          0.006804028999994216
+        ],
+        "tracemalloc_current_bytes_after_call": 800528,
+        "tracemalloc_peak_bytes_during_call": 2401352
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "edge_walk",
+        "median_seconds": 0.018209452000007786,
+        "shape": "one_large_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.017931054000001723,
+          0.01830960199998799,
+          0.018209452000007786
+        ],
+        "tracemalloc_current_bytes_after_call": 800384,
+        "tracemalloc_peak_bytes_during_call": 1701337
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "indegree_peel",
+        "median_seconds": 0.012782850000007784,
+        "shape": "one_large_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.012782850000007784,
+          0.011940055999986043,
+          0.013696119999991652
+        ],
+        "tracemalloc_current_bytes_after_call": 800680,
+        "tracemalloc_peak_bytes_during_call": 1601488
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "path_index",
+        "median_seconds": 0.0072929020000174205,
+        "shape": "one_large_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.0072929020000174205,
+          0.0074003230000130316,
+          0.007284379999987323
+        ],
+        "tracemalloc_current_bytes_after_call": 800616,
+        "tracemalloc_peak_bytes_during_call": 3201440
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "reverse_graph",
+        "median_seconds": 0.08183577800002695,
+        "shape": "one_large_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.08728087899999082,
+          0.08183577800002695,
+          0.0788765890000036
+        ],
+        "tracemalloc_current_bytes_after_call": 931848,
+        "tracemalloc_peak_bytes_during_call": 57040008
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "signed_walk",
+        "median_seconds": 0.009335316999994347,
+        "shape": "long_chain_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.008857900000009522,
+          0.00959526700000879,
+          0.009335316999994347
+        ],
+        "tracemalloc_current_bytes_after_call": 3992336,
+        "tracemalloc_peak_bytes_during_call": 4793264
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "edge_walk",
+        "median_seconds": 0.012246915999980956,
+        "shape": "long_chain_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.010350609999989047,
+          0.012518102000001363,
+          0.012246915999980956
+        ],
+        "tracemalloc_current_bytes_after_call": 3992160,
+        "tracemalloc_peak_bytes_during_call": 4092217
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "indegree_peel",
+        "median_seconds": 0.01944524699999306,
+        "shape": "long_chain_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.018902040999989822,
+          0.01944524699999306,
+          0.019604925999999523
+        ],
+        "tracemalloc_current_bytes_after_call": 3992424,
+        "tracemalloc_peak_bytes_during_call": 5594160
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "path_index",
+        "median_seconds": 0.010251081000006934,
+        "shape": "long_chain_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.008086964000000307,
+          0.010251081000006934,
+          0.011160504999992327
+        ],
+        "tracemalloc_current_bytes_after_call": 3992424,
+        "tracemalloc_peak_bytes_during_call": 5593352
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "reverse_graph",
+        "median_seconds": 0.07705154999999309,
+        "shape": "long_chain_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.0748880339999971,
+          0.07705154999999309,
+          0.07871046900001488
+        ],
+        "tracemalloc_current_bytes_after_call": 3995752,
+        "tracemalloc_peak_bytes_during_call": 53066208
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "signed_walk",
+        "median_seconds": 0.017751605000000836,
+        "shape": "star_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.017486166999987063,
+          0.017751605000000836,
+          0.019947729999984176
+        ],
+        "tracemalloc_current_bytes_after_call": 800496,
+        "tracemalloc_peak_bytes_during_call": 800576
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "edge_walk",
+        "median_seconds": 0.017642211000008956,
+        "shape": "star_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.019182041000021854,
+          0.017642211000008956,
+          0.01599166399998353
+        ],
+        "tracemalloc_current_bytes_after_call": 800408,
+        "tracemalloc_peak_bytes_during_call": 900497
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "indegree_peel",
+        "median_seconds": 0.01852055800000585,
+        "shape": "star_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.01852055800000585,
+          0.020960048999995706,
+          0.018503643000002512
+        ],
+        "tracemalloc_current_bytes_after_call": 803752,
+        "tracemalloc_peak_bytes_during_call": 5602608
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "path_index",
+        "median_seconds": 0.01812099899998998,
+        "shape": "star_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.01682551499999363,
+          0.01863965700002268,
+          0.01812099899998998
+        ],
+        "tracemalloc_current_bytes_after_call": 800584,
+        "tracemalloc_peak_bytes_during_call": 1600664
+      },
+      {
+        "all_timed_outputs_match_indegree_peel": true,
+        "allocation_measurement_note": "Measured in a separate run after gc.collect(); tracemalloc measures Python-traced allocations only, not input allocation or total process RSS.",
+        "allocation_output_matches_indegree_peel": true,
+        "implementation": "reverse_graph",
+        "median_seconds": 0.08760454500000492,
+        "shape": "star_two_cycle",
+        "timing_repetitions": 3,
+        "timing_samples_seconds": [
+          0.07301461399998743,
+          0.08869261699999242,
+          0.08760454500000492
+        ],
+        "tracemalloc_current_bytes_after_call": 931816,
+        "tracemalloc_peak_bytes_during_call": 48161640
+      }
+    ],
+    "timing_and_allocation_runs_separate": true,
+    "timing_clock": "time.perf_counter",
+    "timing_repetitions_per_shape_algorithm": 3,
+    "warmup_timings_included": false
+  },
+  "independent_oracle_results": {
+    "additional_deterministic_random_graphs": 20000,
+    "algorithms_tested": [
+      "signed_walk",
+      "edge_walk",
+      "indegree_peel",
+      "path_index",
+      "reverse_graph"
+    ],
+    "boundary_size_graphs": [
+      {
+        "algorithms_agree": true,
+        "case": "boundary_big_cycle_100000",
+        "expectation_method": "independently derived structural expected array",
+        "n": 100000,
+        "results": {
+          "edge_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "indegree_peel": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "path_index": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "reverse_graph": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "signed_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          }
+        }
+      },
+      {
+        "algorithms_agree": true,
+        "case": "boundary_long_chain_100000",
+        "expectation_method": "independently derived structural expected array",
+        "n": 100000,
+        "results": {
+          "edge_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "indegree_peel": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "path_index": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "reverse_graph": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "signed_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          }
+        }
+      },
+      {
+        "algorithms_agree": true,
+        "case": "boundary_star_two_cycle_100000",
+        "expectation_method": "independently derived structural expected array",
+        "n": 100000,
+        "results": {
+          "edge_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "indegree_peel": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "path_index": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "reverse_graph": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "signed_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          }
+        }
+      },
+      {
+        "algorithms_agree": true,
+        "case": "boundary_seeded_random_100000",
+        "expectation_method": "cross_implementation_with_signed_walk_anchor; no per-start brute-force at n=100000",
+        "n": 100000,
+        "results": {
+          "edge_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "indegree_peel": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "path_index": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "reverse_graph": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          },
+          "signed_walk": {
+            "matches_expected_or_anchor": true,
+            "output_length": 100000
+          }
+        }
+      }
+    ],
+    "exhaustive_no_self_loop_graphs_n2_to_n6": 16739,
+    "harness": "independent_verify.py",
+    "independent_oracle_method": "for each start, follow edges until first repeated node using a fresh local position map; return the number of distinct nodes encountered",
+    "mismatches": [],
+    "negative_controls": [
+      {
+        "actual": 4,
+        "control": "global_visited_scalar",
+        "edges": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "expected": [
+          3,
+          3,
+          3,
+          4
+        ],
+        "verification_rejected": true
+      },
+      {
+        "actual": [
+          4,
+          3,
+          3,
+          4
+        ],
+        "control": "corrupt_one_element",
+        "edges": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "expected": [
+          3,
+          3,
+          3,
+          4
+        ],
+        "verification_rejected": true
+      },
+      {
+        "actual": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "control": "wrong_cycle_length",
+        "edges": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "expected": [
+          3,
+          3,
+          3,
+          4
+        ],
+        "verification_rejected": true
+      }
+    ],
+    "oracle_uses_repository_oracle": false,
+    "random_seed": 981723,
+    "small_graph_algorithm_comparisons": 183745,
+    "small_graphs_total": 36749,
+    "special_adversarial_cases": 5,
+    "status": "PASS",
+    "supplied_example_cases": 5
+  },
+  "mismatches_or_exceptions": {
+    "canonical_mismatches": [],
+    "harness_correction_note": "An initial independently authored boundary expectation for the long chain had an off-by-one length error. It was detected because all five implementations disagreed with the expectation; the expectation was corrected and the harness rerun. No canonical source or test changed.",
+    "independent_mismatches": [],
+    "unexpected_exceptions": []
+  },
+  "negative_control_outcomes": [
+    {
+      "actual": 4,
+      "control": "global_visited_scalar",
+      "edges": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "expected": [
+        3,
+        3,
+        3,
+        4
+      ],
+      "verification_rejected": true
+    },
+    {
+      "actual": [
+        4,
+        3,
+        3,
+        4
+      ],
+      "control": "corrupt_one_element",
+      "edges": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "expected": [
+        3,
+        3,
+        3,
+        4
+      ],
+      "verification_rejected": true
+    },
+    {
+      "actual": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "control": "wrong_cycle_length",
+      "edges": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "expected": [
+        3,
+        3,
+        3,
+        4
+      ],
+      "verification_rejected": true
+    }
+  ],
+  "observed_limitations": [
+    "The independent brute-force per-start oracle was used for small graphs only; the 100000-node random case used cross-implementation agreement, while three structured 100000-node cases used independently derived arrays.",
+    "Exhaustion was limited to no-self-loop functional graphs with n=2 through n=6, matching the requested input family; it is evidence rather than proof for all valid n.",
+    "Timing is a local measurement with three repetitions per implementation and shape; it is not a universal winner claim.",
+    "tracemalloc peak values exclude input construction and do not measure total process RSS.",
+    "No external online judge, SOFA posting, pull request, repository modification, or network execution was performed after acquisition."
+  ],
+  "schema_version": 1,
+  "scope_and_integrity": {
+    "canonical_source_modified": false,
+    "canonical_tests_modified": false,
+    "checked_out_commit": "42af1d99d736802214ed61ffe950e6ad809b1aee",
+    "evidence_directory_outside_tracked_repository": "/workspace/fg_audit_evidence",
+    "expected_source_sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85",
+    "observed_source_sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85",
+    "repository": "https://github.com/QSOLKCB/HERESY-SOFA",
+    "repository_clean_after_execution": true,
+    "required_commit": "42af1d99d736802214ed61ffe950e6ad809b1aee",
+    "source_file": "challenges/FUNCTIONAL-GRAPH-001/run.py",
+    "source_hash_matches": true
+  },
+  "verdict_definition": "PASS means all required executed correctness gates and negative controls passed in this isolated verification; it is not a universal proof or a claim of cross-machine performance superiority.",
+  "verification_gates": {
+    "canonical_runner_exit_zero": true,
+    "canonical_runner_status_pass": true,
+    "canonical_tests_exit_zero": true,
+    "exact_commit": true,
+    "expected_canonical_coverage": true,
+    "independent_benchmark_all_outputs_match": true,
+    "independent_oracle_status_pass": true,
+    "negative_controls_rejected": true,
+    "repository_unchanged": true,
+    "source_hash_match": true
+  },
+  "verification_status": "PASS"
+}

@@ -1,0 +1,154 @@
+{
+  "document_type": "FUNCTIONAL-GRAPH-001 dual-witness evidence reconciliation",
+  "date_local": "2026-11-05",
+  "scope": "Static audit of seven user-uploaded files. Did not execute either agent's benchmark or observe original hardware.",
+  "source": {
+    "repository": "QSOLKCB/HERESY-SOFA",
+    "commit": "42af1d99d736802214ed61ffe950e6ad809b1aee",
+    "file": "challenges/FUNCTIONAL-GRAPH-001/run.py",
+    "sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85"
+  },
+  "uploaded_files": [
+    {
+      "file": "FUNCTIONAL-GRAPH-001-MONICA-RAW.json",
+      "bytes": 3752,
+      "sha256": "4be4fb07ecf7c026f3115b7108c0faa49977216b1367bd98d36a4ee2761506ff",
+      "status": "MATCH"
+    },
+    {
+      "file": "FUNCTIONAL-GRAPH-001-MONICA-REPORT.json",
+      "bytes": 34693,
+      "sha256": "743671cd5a0dc634d115c8187541ed564c53cb70d61663031bff022f35f2d085",
+      "status": "MATCH"
+    },
+    {
+      "file": "FUNCTIONAL-GRAPH-001-MONICA-REVIEW.md",
+      "bytes": 12768,
+      "sha256": "996d469b5b5e4548a246a360d19fb2d36e51047ecfad453cdbc076dffcd0ab7d",
+      "status": "MATCH"
+    },
+    {
+      "file": "FUNCTIONAL-GRAPH-001-CODEX-RAW.json",
+      "bytes": 3736,
+      "sha256": "4706e8510b470a6cb8bc8c9a79d427dab609ad44a4ae114aaf002ddb135e9a18",
+      "status": "MATCH"
+    },
+    {
+      "file": "FUNCTIONAL-GRAPH-001-CODEX-ORACLE.py",
+      "bytes": 27068,
+      "sha256": "9350de789364f3fd59f5289241163e34df3e8f0c4b4ef2ccfc0d780b8820e76a",
+      "status": "MATCH"
+    },
+    {
+      "file": "FUNCTIONAL-GRAPH-001-CODEX-REPORT.json",
+      "bytes": 110350,
+      "sha256": "f8981551c5ac4c15045ca4c292fe2e91255c998abc97e06f5f7da9a027de0615",
+      "status": "MATCH"
+    },
+    {
+      "file": "FUNCTIONAL-GRAPH-001-CODEX-REVIEW.md",
+      "bytes": 17675,
+      "sha256": "9aa2ac9adf4c3ed34dc9c6ef07e0f6fa25f3e76a07fa6db4d1577778478d9952",
+      "status": "MATCH"
+    }
+  ],
+  "witness_coverage": {
+    "monica": {
+      "reported_verdict": "PASS",
+      "canonical_tests": 7,
+      "independent_graph_instances": 36749,
+      "candidate_comparisons": 183745,
+      "negative_controls_rejected": 3,
+      "execution_platform_label": "Linux-6.18.56-cloudflare-microvm-2026.10.9, AMD EPYC",
+      "independent_seed": 981723
+    },
+    "codex": {
+      "reported_verdict": "PASS",
+      "canonical_tests": 7,
+      "independent_graph_instances": 46897,
+      "candidate_comparisons": 234485,
+      "negative_controls_rejected": 4,
+      "execution_platform_label": "Linux 7.0.0-42-generic, AMD Ryzen 9 5950X",
+      "independent_seed": 26051103
+    }
+  },
+  "internal_consistency_checks": {
+    "seven_files_declared_sha256_and_size_match": true,
+    "both_raw_benchmark_tables_match_report": true,
+    "independent_benchmark_sample_medians_match": true,
+    "test_comparison_counts_arithmetically_match": true,
+    "negative_controls_recorded_as_rejected": true,
+    "five_codex_candidate_verdicts_pass": true,
+    "three_of_four_shared_shapes_same_timing_winner": true,
+    "four_of_four_shared_shapes_same_memory_winner": true
+  },
+  "cross_platform_benchmarks": [
+    {
+      "shape": "Random",
+      "monica_time_winner": "path_index",
+      "monica_time_s": 0.02214026999999419,
+      "codex_time_winner": "signed_walk",
+      "codex_time_s": 0.015610163998644566,
+      "monica_memory_winner": "signed_walk",
+      "monica_memory_bytes": 2309728,
+      "codex_memory_winner": "signed_walk",
+      "codex_memory_bytes": 2354432
+    },
+    {
+      "shape": "Big cycle",
+      "monica_time_winner": "signed_walk",
+      "monica_time_s": 0.007009336999999505,
+      "codex_time_winner": "signed_walk",
+      "codex_time_s": 0.004958240999258123,
+      "monica_memory_winner": "indegree_peel",
+      "monica_memory_bytes": 1601488,
+      "codex_memory_winner": "indegree_peel",
+      "codex_memory_bytes": 1601488
+    },
+    {
+      "shape": "Long chain",
+      "monica_time_winner": "signed_walk",
+      "monica_time_s": 0.009335316999994347,
+      "codex_time_winner": "signed_walk",
+      "codex_time_s": 0.00621756100008497,
+      "monica_memory_winner": "edge_walk",
+      "monica_memory_bytes": 4092217,
+      "codex_memory_winner": "edge_walk",
+      "codex_memory_bytes": 4092281
+    },
+    {
+      "shape": "Star into 2-cycle",
+      "monica_time_winner": "edge_walk",
+      "monica_time_s": 0.017642211000008956,
+      "codex_time_winner": "edge_walk",
+      "codex_time_s": 0.0130001630022889,
+      "monica_memory_winner": "signed_walk",
+      "monica_memory_bytes": 800576,
+      "codex_memory_winner": "signed_walk",
+      "codex_memory_bytes": 800640
+    }
+  ],
+  "issues": [
+    {
+      "id": "P01",
+      "severity": "provenance",
+      "finding": "Monica report labels execution as local workstation but Linux kernel string explicitly identifies a Cloudflare microVM, with an AMD EPYC CPU. Do not call this a native physical-local-machine replication without further proof; classify as virtualized/remote-appearing environment."
+    },
+    {
+      "id": "P02",
+      "severity": "documentation",
+      "finding": "Monica REVIEW.md memory table (lines 64-69) has four headers and five data columns, mixing fastest time and lowest allocation; repair in a separate derived editorial document while preserving witness bytes."
+    },
+    {
+      "id": "P03",
+      "severity": "verification-limit",
+      "finding": "Monica independent_verify.py and independent_benchmark.py were not supplied with the seven uploads; Codex's SHA256SUMS.txt and other 23 manifest-backed supplemental artifacts were not supplied. Their original claims are reported, not independently rehashed here."
+    },
+    {
+      "id": "P04",
+      "severity": "scope",
+      "finding": "No original tool execution is reproduced by this static audit, no independent full-code rerun occurred in this runtime, and no SOFA or LeetCode online-judge run is asserted."
+    }
+  ],
+  "recommendation": "Archive hashes and source-pinned witnesses after provenance correction; only then submit a narrowly scoped human-approved SOFA evidence reply, without external links and without universal performance/ETQ/E8 claims."
+}

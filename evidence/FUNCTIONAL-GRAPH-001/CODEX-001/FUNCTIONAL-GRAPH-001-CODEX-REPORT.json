@@ -1,0 +1,3002 @@
+{
+  "audit_id": "QSOL-IMC/FUNCTIONAL-GRAPH-001/CODEX-001",
+  "canonical_raw": {
+    "bytes": 3736,
+    "filename": "FUNCTIONAL-GRAPH-001-CODEX-RAW.json",
+    "sha256": "4706e8510b470a6cb8bc8c9a79d427dab609ad44a4ae114aaf002ddb135e9a18"
+  },
+  "canonical_tests": {
+    "exit_code": 0,
+    "runner_exit_code": 0,
+    "runner_result": {
+      "benchmark_n": 100000,
+      "benchmark_repeats": 3,
+      "benchmarks": [
+        {
+          "implementation": "signed_edge_walk",
+          "median_seconds": 0.016874,
+          "peak_extra_bytes": 3965712,
+          "shape": "random"
+        },
+        {
+          "implementation": "etq_edge_walk",
+          "median_seconds": 0.016618,
+          "peak_extra_bytes": 4065649,
+          "shape": "random"
+        },
+        {
+          "implementation": "indegree_peel",
+          "median_seconds": 0.021394,
+          "peak_extra_bytes": 6745680,
+          "shape": "random"
+        },
+        {
+          "implementation": "sofa_path_index",
+          "median_seconds": 0.01824,
+          "peak_extra_bytes": 4765800,
+          "shape": "random"
+        },
+        {
+          "implementation": "reverse_graph",
+          "median_seconds": 0.084838,
+          "peak_extra_bytes": 45678360,
+          "shape": "random"
+        },
+        {
+          "implementation": "signed_edge_walk",
+          "median_seconds": 0.004868,
+          "peak_extra_bytes": 2401352,
+          "shape": "big_cycle"
+        },
+        {
+          "implementation": "etq_edge_walk",
+          "median_seconds": 0.009722,
+          "peak_extra_bytes": 1701337,
+          "shape": "big_cycle"
+        },
+        {
+          "implementation": "indegree_peel",
+          "median_seconds": 0.010088,
+          "peak_extra_bytes": 1601488,
+          "shape": "big_cycle"
+        },
+        {
+          "implementation": "sofa_path_index",
+          "median_seconds": 0.005294,
+          "peak_extra_bytes": 3201440,
+          "shape": "big_cycle"
+        },
+        {
+          "implementation": "reverse_graph",
+          "median_seconds": 0.055778,
+          "peak_extra_bytes": 57040008,
+          "shape": "big_cycle"
+        },
+        {
+          "implementation": "signed_edge_walk",
+          "median_seconds": 0.006466,
+          "peak_extra_bytes": 4793264,
+          "shape": "long_chain"
+        },
+        {
+          "implementation": "etq_edge_walk",
+          "median_seconds": 0.009365,
+          "peak_extra_bytes": 4092217,
+          "shape": "long_chain"
+        },
+        {
+          "implementation": "indegree_peel",
+          "median_seconds": 0.013443,
+          "peak_extra_bytes": 5594160,
+          "shape": "long_chain"
+        },
+        {
+          "implementation": "sofa_path_index",
+          "median_seconds": 0.007339,
+          "peak_extra_bytes": 5593352,
+          "shape": "long_chain"
+        },
+        {
+          "implementation": "reverse_graph",
+          "median_seconds": 0.056009,
+          "peak_extra_bytes": 53066208,
+          "shape": "long_chain"
+        },
+        {
+          "implementation": "signed_edge_walk",
+          "median_seconds": 0.014229,
+          "peak_extra_bytes": 800576,
+          "shape": "star_2cycle"
+        },
+        {
+          "implementation": "etq_edge_walk",
+          "median_seconds": 0.012763,
+          "peak_extra_bytes": 900497,
+          "shape": "star_2cycle"
+        },
+        {
+          "implementation": "indegree_peel",
+          "median_seconds": 0.014317,
+          "peak_extra_bytes": 5602608,
+          "shape": "star_2cycle"
+        },
+        {
+          "implementation": "sofa_path_index",
+          "median_seconds": 0.014258,
+          "peak_extra_bytes": 1600664,
+          "shape": "star_2cycle"
+        },
+        {
+          "implementation": "reverse_graph",
+          "median_seconds": 0.054889,
+          "peak_extra_bytes": 48161640,
+          "shape": "star_2cycle"
+        }
+      ],
+      "examples_assertions": 25,
+      "exhaustive_graphs_n2_to_n6": 16739,
+      "input_family": "functional digraph; one directed edge per node; no self-loops",
+      "limits": "single local CPython workstation; timings are environment-sensitive; tracemalloc excludes input allocation and process RSS; no SOFA/LeetCode judge execution",
+      "oracle": "independent per-start visited-set traversal",
+      "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.43",
+      "python_version": "3.14.4",
+      "random_graphs_seed1703": 20000,
+      "schema_version": 1,
+      "source_sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85",
+      "status": "PASS"
+    },
+    "stderr": "test_deterministic_random_cross_check (test_functional_graph.FunctionalGraphTests.test_deterministic_random_cross_check) ... ok\ntest_etq_edge_identity_and_scoped_method (test_functional_graph.FunctionalGraphTests.test_etq_edge_identity_and_scoped_method) ... ok\ntest_exhaustive_functional_graphs_without_self_loops (test_functional_graph.FunctionalGraphTests.test_exhaustive_functional_graphs_without_self_loops) ... ok\ntest_given_and_adversarial_examples (test_functional_graph.FunctionalGraphTests.test_given_and_adversarial_examples) ... ok\ntest_historical_local_evidence_source_identity (test_functional_graph.FunctionalGraphTests.test_historical_local_evidence_source_identity) ... ok\ntest_long_chain_and_cycle_at_constraint_limit (test_functional_graph.FunctionalGraphTests.test_long_chain_and_cycle_at_constraint_limit) ... ok\ntest_no_scalar_answer_from_global_reachability (test_functional_graph.FunctionalGraphTests.test_no_scalar_answer_from_global_reachability) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.319s\n\nOK\n",
+    "stdout": "",
+    "unittest_tests_run": 7
+  },
+  "canonical_to_requested_names": {
+    "etq_edge_walk": "edge_walk",
+    "indegree_peel": "indegree_peel",
+    "reverse_graph": "reverse_graph",
+    "signed_edge_walk": "signed_walk",
+    "sofa_path_index": "path_index"
+  },
+  "claim_status": "executed",
+  "commands": [
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--offline",
+        "--no-managed-python",
+        "--python",
+        "3.14.4",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_functional_graph.py",
+        "-v"
+      ],
+      "cwd": "<DETACHED_WORKTREE>",
+      "elapsed_seconds": 0.37588936100291903,
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "0"
+      },
+      "exit_code": 0,
+      "label": "canonical-unittest",
+      "native_execution": true,
+      "started_utc": "2026-11-04T14:07:07.838726+00:00",
+      "stderr": "canonical-unittest.stderr.txt",
+      "stdout": "canonical-unittest.stdout.txt"
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--offline",
+        "--no-managed-python",
+        "--python",
+        "3.14.4",
+        "python",
+        "challenges/FUNCTIONAL-GRAPH-001/run.py",
+        "--benchmark"
+      ],
+      "cwd": "<DETACHED_WORKTREE>",
+      "elapsed_seconds": 4.856992651999462,
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "0"
+      },
+      "exit_code": 0,
+      "label": "canonical-runner",
+      "native_execution": true,
+      "started_utc": "2026-11-04T14:07:08.214855+00:00",
+      "stderr": "canonical-runner.stderr.txt",
+      "stdout": "FUNCTIONAL-GRAPH-001-CODEX-RAW.json"
+    },
+    {
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--offline",
+        "--no-managed-python",
+        "--python",
+        "3.14.4",
+        "python",
+        "../native-evidence/FUNCTIONAL-GRAPH-001-CODEX-ORACLE.py",
+        "--source",
+        ".",
+        "--output",
+        "../native-evidence"
+      ],
+      "cwd": "<DETACHED_WORKTREE>",
+      "elapsed_seconds": 16.94816054200055,
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONHASHSEED": "0"
+      },
+      "exit_code": 0,
+      "label": "independent",
+      "native_execution": true,
+      "started_utc": "2026-11-04T14:07:13.072056+00:00",
+      "stderr": "independent.stderr.txt",
+      "stdout": "independent.stdout.txt"
+    }
+  ],
+  "etq_boundary": {
+    "at_least_one_coordinate_preserved": 0,
+    "both_coordinates_change": 303,
+    "claim_status": "executed",
+    "conclusion": "Every Cartesian-product edge preserves one coordinate. All 303 consecutive CRT address transitions change both, so none can be a Cartesian-product graph edge under these coordinates. This is an address-level check, not execution or validation of an upstream canonical ETQ bundle.",
+    "conclusion_status": "inferred",
+    "independent_address_expression": "(i % 101, i % 3), i=0..302; successor wraps modulo 303",
+    "inspected_sources": [
+      {
+        "commit": "255794c166f70b535c3a1a8f8a6609882e9b8f17",
+        "excerpts": [
+          {
+            "first_line": 67,
+            "last_line": 89,
+            "lines": [
+              "def edge_walk(neighbors):",
+              "    \"\"\"Closed DFS walk with a fixed neighbor ranking; every move is an edge.",
+              "",
+              "    This visits all vertices, including backtracking. It is not the donor's",
+              "    303-step CRT event orbit, which is not generally an adjacency walk.",
+              "    \"\"\"",
+              "    ordered = tuple(tuple(sorted(row, key=lambda v: ((u*1103+v*1999+u*v*83)%65521,v)))",
+              "                    for u,row in enumerate(neighbors))",
+              "    seen, route, stack = {0}, [0], [(0,iter(ordered[0]))]",
+              "    while stack:",
+              "        node, candidates = stack[-1]",
+              "        target = next((v for v in candidates if v not in seen), None)",
+              "        if target is None:",
+              "            stack.pop()",
+              "            if stack:",
+              "                route.append(stack[-1][0])",
+              "        else:",
+              "            seen.add(target)",
+              "            route.append(target)",
+              "            stack.append((target,iter(ordered[target])))",
+              "    if len(seen) != len(neighbors) or route[-1] != route[0]:",
+              "        raise RenderError('ETQ graph walk is not connected and closed')",
+              "    return tuple(route[:-1])"
+            ]
+          },
+          {
+            "first_line": 114,
+            "last_line": 128,
+            "lines": [
+              "    edges = tuple((a,b) for a,b in combinations(range(101),2) if dot(selected[a],selected[b]) == 4)",
+              "    degrees = tuple(sum(a==i or b==i for a,b in edges) for i in range(101))",
+              "    lifted = tuple((3*a+f,3*b+f) for f in range(3) for a,b in edges)",
+              "    lifted += tuple((3*i+a,3*i+b) for i in range(101) for a,b in ((0,1),(1,2),(2,0)))",
+              "    rows = [set() for _ in range(303)]",
+              "    for a,b in lifted:",
+              "        rows[a].add(b)",
+              "        rows[b].add(a)",
+              "    neighbors = tuple(tuple(sorted(row)) for row in rows)",
+              "    if (len(roots),len(fixed),len(cycles),len(selected),len(edges),sum(degrees),",
+              "        min(degrees),max(degrees),len(lifted)) != (240,12,76,101,1687,3374,22,55,5364):",
+              "        raise RenderError('ETQ finite graph fixtures failed')",
+              "    walk = edge_walk(neighbors)",
+              "    if len(walk) != 604 or any(b not in neighbors[a] for a,b in zip(walk,walk[1:]+walk[:1])):",
+              "        raise RenderError('ETQ walk failed its edge invariant')"
+            ]
+          }
+        ],
+        "file": "a2v/etq.py",
+        "repository": "QSOLKCB/Audio-To-Video",
+        "source_sha256": "a290bc59caa4265ec9c40b7a76dc94f381ab9394dfdf0961eb149a9658aaa1d6"
+      },
+      {
+        "commit": "f575e2b4db2d71bfe63a8cf8af99fc3c16b9974f",
+        "excerpts": [
+          {
+            "first_line": 123,
+            "last_line": 164,
+            "lines": [
+              "def etq_address(n: int) -> dict[str, int | str]:",
+              "    \"\"\"An ETQ-303-inspired address projection; NOT an ETQ canonical event receipt.\"\"\"",
+              "    if type(n) is not int or not 0 <= n < 303:",
+              "        raise ValueError(\"event index must be an integer in [0, 302]\")",
+              "    site = n % 101",
+              "    fibre = n % 3",
+              "    return {",
+              "        \"sequenceIndex\": n,",
+              "        \"siteIndex\": site,",
+              "        \"fibreLabel\": fibre,",
+              "        \"tensorIndex\": 3 * site + fibre,",
+              "        \"phaseExponent\": PHASE_EXPONENTS[fibre],",
+              "        \"phaseSymbol\": PHASE_SYMBOLS[fibre],",
+              "    }",
+              "",
+              "",
+              "def inverse_etq_address(site: int, fibre: int) -> int:",
+              "    if type(site) is not int or type(fibre) is not int or not 0 <= site < 101 or not 0 <= fibre < 3:",
+              "        raise ValueError(\"invalid CRT coordinate\")",
+              "    return site + 101 * ((2 * (fibre - (site % 3))) % 3)",
+              "",
+              "",
+              "def run_walk(adjacency: dict[str, tuple[str, ...]] | None = None) -> tuple[dict, ...]:",
+              "    \"\"\"Choose only actual Tanner edges by a deterministic 303-event schedule.\"\"\"",
+              "    graph = build_tanner() if adjacency is None else adjacency",
+              "    tanner_metrics(graph)",
+              "    current = \"q:00\"",
+              "    if current not in graph:",
+              "        raise ValueError(\"missing start vertex q:00\")",
+              "    steps = []",
+              "    for n in range(303):",
+              "        event = etq_address(n)",
+              "        choices = tuple(sorted(graph[current]))",
+              "        if not choices:",
+              "            raise ValueError(\"isolated vertex in walk\")",
+              "        idx = (event[\"siteIndex\"] + event[\"fibreLabel\"]) % len(choices)",
+              "        target = choices[idx]",
+              "        if current not in graph[target]:",
+              "            raise AssertionError(\"non-edge walk step\")",
+              "        steps.append({\"event\": event, \"from\": current, \"to\": target, \"neighborOrdinal\": idx})",
+              "        current = target",
+              "    return tuple(steps)"
+            ]
+          }
+        ],
+        "file": "edgewalk/core.py",
+        "repository": "QSOLKCB/EDGEWALK",
+        "source_sha256": "94d96287b134d279df846e226cb037413525266549d0bc5698099dd5824619c8"
+      },
+      {
+        "commit": "f575e2b4db2d71bfe63a8cf8af99fc3c16b9974f",
+        "excerpts": [
+          {
+            "first_line": 1,
+            "last_line": 5,
+            "lines": [
+              "\"\"\"Read-only, receipt-pinned adapter for official ETQ-303 v3.0.0 bundles.",
+              "",
+              "This module never downloads or modifies upstream files. The CRT event sequence",
+              "is emphatically NOT a walk in the Cartesian-product graph.",
+              "\"\"\""
+            ]
+          },
+          {
+            "first_line": 157,
+            "last_line": 166,
+            "lines": [
+              "        _integer_field(event.get(\"nextSequenceIndex\"), (n + 1) % 303, \"next sequence\")",
+              "        _integer_field(event.get(\"nextTensorIndex\"), etq_address((n + 1) % 303)[\"tensorIndex\"],",
+              "                       \"next tensor\")",
+              "    _require(_domain_hash(domains.get(\"events\", \"\"), events) == det.get(\"eventsSha256\"),",
+              "             \"event array semantic receipt\")",
+              "",
+              "    nodes = graph.get(\"nodes\")",
+              "    edges = graph.get(\"edges\")",
+              "    _integer_field(graph.get(\"vertexCount\"), 303, \"vertex count\")",
+              "    _integer_field(graph.get(\"edgeCount\"), 5364, \"edge count\")"
+            ]
+          },
+          {
+            "first_line": 194,
+            "last_line": 222,
+            "lines": [
+              "        degree[target] += 1",
+              "        neighbors[str(source)].add(str(target))",
+              "        neighbors[str(target)].add(str(source))",
+              "    _require(min(degree) == 24 and max(degree) == 57, \"degree bounds\")",
+              "    _require(graph.get(\"connected\") is True, \"graph connected flag\")",
+              "    _require(all(type(node.get(\"liftedDegree\")) is int",
+              "                 and node[\"liftedDegree\"] == degree[i]",
+              "                 for i, node in enumerate(nodes)), \"node degrees\")",
+              "    visited = {\"0\"}",
+              "    queue = [\"0\"]",
+              "    for vertex in queue:",
+              "        for other in neighbors[vertex]:",
+              "            if other not in visited:",
+              "                visited.add(other)",
+              "                queue.append(other)",
+              "    _require(len(visited) == 303, \"graph connectivity\")",
+              "    return ETQBundle(",
+              "        adjacency={v: tuple(sorted(row, key=int)) for v, row in neighbors.items()},",
+              "        events=tuple(events),",
+              "        artifact_sha256={name: hashes[name] for name in names},",
+              "        event_document_receipt=ETQ_EVENT_SHA,",
+              "        graph_edges_receipt=ETQ_EDGES_SHA,",
+              "    )"
+            ]
+          }
+        ],
+        "file": "edgewalk/etq.py",
+        "repository": "QSOLKCB/EDGEWALK",
+        "source_sha256": "bc87173caed73314195ca8dd5b022fd24dc38ecc269992770192009a81a1e016"
+      }
+    ],
+    "transition_count": 303,
+    "unique_addresses": 303
+  },
+  "evidence_status": "PASS",
+  "exceptions": [],
+  "execution_environment": {
+    "MemAvailable": "24256360 kB",
+    "MemTotal": "31689252 kB",
+    "SwapTotal": "15844348 kB",
+    "architecture": "x86_64",
+    "captured_utc": "2026-11-04T14:07:07.807406+00:00",
+    "container_probe": {
+      "argv": [
+        "systemd-detect-virt",
+        "--container"
+      ],
+      "exit_code": 1,
+      "stderr": "",
+      "stdout": "none\n"
+    },
+    "cpu": {
+      "cache size": "512 KB",
+      "cpu cores": "16",
+      "cpu family": "25",
+      "microcode": "0xa201213",
+      "model": "33",
+      "model name": "AMD Ryzen 9 5950X 16-Core Processor",
+      "siblings": "32",
+      "stepping": "2",
+      "vendor_id": "AuthenticAMD"
+    },
+    "cpu0_scaling_governor": "performance",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "environment_overrides": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0"
+    },
+    "git": {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "git version 2.53.0\n"
+    },
+    "kernel": "7.0.0-42-generic",
+    "load_average": [
+      0.744140625,
+      0.65869140625,
+      0.6396484375
+    ],
+    "logical_cpus": 32,
+    "native_execution": true,
+    "os_release": {
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "LOGO": "ubuntu-logo",
+      "NAME": "Ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "UBUNTU_CODENAME": "resolute",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "VERSION_ID": "26.04"
+    },
+    "preliminary_run_note": "A completed tool-sandbox run was preserved separately and excluded from this native audit. Its native_execution flag was an erroneous initial assumption, contradicted by its captured container-other probe. These native receipts supersede that assumption without rewriting the old files.",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "python_build_options": {
+      "Py_DEBUG": 0,
+      "Py_ENABLE_SHARED": 1,
+      "Py_GIL_DISABLED": 0,
+      "WITH_PYMALLOC": 1
+    },
+    "python_executable": "/usr/bin/python3.14",
+    "python_executable_sha256": "52e0a13e60a981d8c4b6478be2ba5176f69da07948a056bf49cf6f077e30cb41",
+    "python_implementation": "CPython",
+    "python_resolution": {
+      "argv": [
+        "uv",
+        "python",
+        "find",
+        "--offline",
+        "--no-managed-python",
+        "3.14.4"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/usr/bin/python3.14\n"
+    },
+    "time_note": "Actual host UTC clock used. The conversation date is not substituted for measurement time.",
+    "uv": {
+      "argv": [
+        "uv",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "uv 0.12.1 (x86_64-unknown-linux-gnu)\n"
+    },
+    "virtualization_probe": {
+      "argv": [
+        "systemd-detect-virt"
+      ],
+      "exit_code": 1,
+      "stderr": "",
+      "stdout": "none\n"
+    }
+  },
+  "final_verdict": {
+    "edge_walk": "PASS",
+    "indegree_peel": "PASS",
+    "path_index": "PASS",
+    "reverse_graph": "PASS",
+    "signed_walk": "PASS"
+  },
+  "independence": {
+    "canonical_oracle_body_displayed_to_auditor": false,
+    "canonical_oracle_imported_by_independent_verifier": false,
+    "historical_benchmark_compared": false,
+    "monica_consulted": false,
+    "readme_and_historical_json": "Hash/size only by auditor; mandatory unittest historical integrity check is disclosed separately."
+  },
+  "independent_execution": {
+    "audit": "FUNCTIONAL-GRAPH-001/CODEX-001",
+    "benchmarks": {
+      "clock": {
+        "adjustable": false,
+        "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+        "monotonic": true,
+        "resolution": 1e-09
+      },
+      "final_gc_enabled": true,
+      "gc_policy": "Full gc.collect before each call, outside timing. Cyclic GC disabled only during measured calls and restored. Warmups also disable GC. Memory calls retain normal GC after full collection.",
+      "gc_thresholds": [
+        2000,
+        10,
+        0
+      ],
+      "hash_seed": "0",
+      "initial_gc_enabled": true,
+      "load_average_after": [
+        0.96240234375,
+        0.71875,
+        0.66015625
+      ],
+      "load_average_before": [
+        0.86376953125,
+        0.68701171875,
+        0.64892578125
+      ],
+      "measured_calls": 200,
+      "memory_calls": 40,
+      "memory_policy": "Separate call per algorithm/shape after timing. tracemalloc starts after input/expected allocation and gc.collect; stop immediately after candidate return. Peak includes returned output, excludes preallocated input/expectation. Not RSS.",
+      "n": 100000,
+      "order_policy": "Seeded shuffled shape order; each shape has seeded shuffled algorithm base order, rotated across 5 rounds so each algorithm occupies each timing position once. Sequential, one process.",
+      "records": [
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "de63a1522e17354ab3f2ceac2e3b20dd662d8c89a2db4411c7968dc2e44fb702",
+          "input_sha256": "014dc9da52bf912612b9042daf5f80f6f33edb737ae5f40e7f6f85942d9f2841",
+          "max_seconds": 0.008662382002512459,
+          "median_absolute_deviation_seconds": 0.00010684000153560191,
+          "median_seconds": 0.008360422001715051,
+          "min_seconds": 0.008253582000179449,
+          "samples_seconds": [
+            0.008253582000179449,
+            0.008662382002512459,
+            0.00832076200094889,
+            0.008360422001715051,
+            0.00849299200126552
+          ],
+          "shape": "mixed_disconnected_cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 800824,
+          "tracemalloc_retained_bytes": 800608
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "de63a1522e17354ab3f2ceac2e3b20dd662d8c89a2db4411c7968dc2e44fb702",
+          "input_sha256": "014dc9da52bf912612b9042daf5f80f6f33edb737ae5f40e7f6f85942d9f2841",
+          "max_seconds": 0.011647071998595493,
+          "median_absolute_deviation_seconds": 9.022000085678883e-05,
+          "median_seconds": 0.011040023000532528,
+          "min_seconds": 0.01089276300263009,
+          "samples_seconds": [
+            0.01094980299967574,
+            0.011040023000532528,
+            0.011122932999569457,
+            0.011647071998595493,
+            0.01089276300263009
+          ],
+          "shape": "mixed_disconnected_cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 900689,
+          "tracemalloc_retained_bytes": 800504
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "de63a1522e17354ab3f2ceac2e3b20dd662d8c89a2db4411c7968dc2e44fb702",
+          "input_sha256": "014dc9da52bf912612b9042daf5f80f6f33edb737ae5f40e7f6f85942d9f2841",
+          "max_seconds": 0.010567893001280027,
+          "median_absolute_deviation_seconds": 0.00023105100262910128,
+          "median_seconds": 0.009969481998268748,
+          "min_seconds": 0.009408091998921009,
+          "samples_seconds": [
+            0.010200533000897849,
+            0.009969481998268748,
+            0.009818922000704333,
+            0.010567893001280027,
+            0.009408091998921009
+          ],
+          "shape": "mixed_disconnected_cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 1601456,
+          "tracemalloc_retained_bytes": 800648
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "de63a1522e17354ab3f2ceac2e3b20dd662d8c89a2db4411c7968dc2e44fb702",
+          "input_sha256": "014dc9da52bf912612b9042daf5f80f6f33edb737ae5f40e7f6f85942d9f2841",
+          "max_seconds": 0.008986701999674551,
+          "median_absolute_deviation_seconds": 0.000145929996506311,
+          "median_seconds": 0.008770501997787505,
+          "min_seconds": 0.008610412001871737,
+          "samples_seconds": [
+            0.008610412001871737,
+            0.008986701999674551,
+            0.008795402001851471,
+            0.008624572001281194,
+            0.008770501997787505
+          ],
+          "shape": "mixed_disconnected_cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 1600864,
+          "tracemalloc_retained_bytes": 800648
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "de63a1522e17354ab3f2ceac2e3b20dd662d8c89a2db4411c7968dc2e44fb702",
+          "input_sha256": "014dc9da52bf912612b9042daf5f80f6f33edb737ae5f40e7f6f85942d9f2841",
+          "max_seconds": 0.050583061998622725,
+          "median_absolute_deviation_seconds": 0.00020588000188581645,
+          "median_seconds": 0.04979434200140531,
+          "min_seconds": 0.0487905519985361,
+          "samples_seconds": [
+            0.049588461999519495,
+            0.0487905519985361,
+            0.050583061998622725,
+            0.04979434200140531,
+            0.0499083620015881
+          ],
+          "shape": "mixed_disconnected_cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 41772328,
+          "tracemalloc_retained_bytes": 804520
+        },
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "54fd5b96fdfd280e362f745df0958d31695f64b01afcb6b2d29873713404b66c",
+          "input_sha256": "54a55fcc137a0273b97f32ef99e4af539663569c318970829d558a8abefd4557",
+          "max_seconds": 0.006691832000797149,
+          "median_absolute_deviation_seconds": 0.00032454000029247254,
+          "median_seconds": 0.00621756100008497,
+          "min_seconds": 0.0057766209974943195,
+          "samples_seconds": [
+            0.0057766209974943195,
+            0.00621756100008497,
+            0.005893020999792498,
+            0.006691832000797149,
+            0.00634051199813257
+          ],
+          "shape": "long_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 4793328,
+          "tracemalloc_retained_bytes": 3992400
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "54fd5b96fdfd280e362f745df0958d31695f64b01afcb6b2d29873713404b66c",
+          "input_sha256": "54a55fcc137a0273b97f32ef99e4af539663569c318970829d558a8abefd4557",
+          "max_seconds": 0.009199273001286201,
+          "median_absolute_deviation_seconds": 0.0001006499987852294,
+          "median_seconds": 0.008773432000452885,
+          "min_seconds": 0.008672782001667656,
+          "samples_seconds": [
+            0.009199273001286201,
+            0.008672782001667656,
+            0.009020821999001782,
+            0.008673971999087371,
+            0.008773432000452885
+          ],
+          "shape": "long_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 4092281,
+          "tracemalloc_retained_bytes": 3992224
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "54fd5b96fdfd280e362f745df0958d31695f64b01afcb6b2d29873713404b66c",
+          "input_sha256": "54a55fcc137a0273b97f32ef99e4af539663569c318970829d558a8abefd4557",
+          "max_seconds": 0.017127404997154372,
+          "median_absolute_deviation_seconds": 0.0001709200005279854,
+          "median_seconds": 0.012325212999712676,
+          "min_seconds": 0.01215429299918469,
+          "samples_seconds": [
+            0.012612082999112317,
+            0.012273123000341002,
+            0.01215429299918469,
+            0.017127404997154372,
+            0.012325212999712676
+          ],
+          "shape": "long_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 5594160,
+          "tracemalloc_retained_bytes": 3992424
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "54fd5b96fdfd280e362f745df0958d31695f64b01afcb6b2d29873713404b66c",
+          "input_sha256": "54a55fcc137a0273b97f32ef99e4af539663569c318970829d558a8abefd4557",
+          "max_seconds": 0.006844221999926958,
+          "median_absolute_deviation_seconds": 9.907999992719851e-05,
+          "median_seconds": 0.00654174200099078,
+          "min_seconds": 0.006336910999380052,
+          "samples_seconds": [
+            0.006476910999481333,
+            0.006336910999380052,
+            0.006844221999926958,
+            0.006640822000917979,
+            0.00654174200099078
+          ],
+          "shape": "long_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 5593416,
+          "tracemalloc_retained_bytes": 3992488
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "54fd5b96fdfd280e362f745df0958d31695f64b01afcb6b2d29873713404b66c",
+          "input_sha256": "54a55fcc137a0273b97f32ef99e4af539663569c318970829d558a8abefd4557",
+          "max_seconds": 0.04704868100088788,
+          "median_absolute_deviation_seconds": 0.0009999800022342242,
+          "median_seconds": 0.04604870099865366,
+          "min_seconds": 0.043989481000608066,
+          "samples_seconds": [
+            0.04640205100076855,
+            0.04467546099840547,
+            0.043989481000608066,
+            0.04704868100088788,
+            0.04604870099865366
+          ],
+          "shape": "long_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 53066208,
+          "tracemalloc_retained_bytes": 3995752
+        },
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "89a0576b626f03b62df1e46f079e69716ba9170929cff377183da05ee0a5eaee",
+          "input_sha256": "0357621c932bf33b577409d33faa3d20ecf975a7402b2c6cefe9c075d597f11d",
+          "max_seconds": 0.017150204999779817,
+          "median_absolute_deviation_seconds": 0.0007606999970448669,
+          "median_seconds": 0.015610163998644566,
+          "min_seconds": 0.0148494640015997,
+          "samples_seconds": [
+            0.0148494640015997,
+            0.015058753000630531,
+            0.01683262400183594,
+            0.017150204999779817,
+            0.015610163998644566
+          ],
+          "shape": "random",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 2354432,
+          "tracemalloc_retained_bytes": 2354352
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "89a0576b626f03b62df1e46f079e69716ba9170929cff377183da05ee0a5eaee",
+          "input_sha256": "0357621c932bf33b577409d33faa3d20ecf975a7402b2c6cefe9c075d597f11d",
+          "max_seconds": 0.019295554000564152,
+          "median_absolute_deviation_seconds": 0.0001958899993041996,
+          "median_seconds": 0.017024003998812987,
+          "min_seconds": 0.016828113999508787,
+          "samples_seconds": [
+            0.016828113999508787,
+            0.019295554000564152,
+            0.017785574000299675,
+            0.01683993400001782,
+            0.017024003998812987
+          ],
+          "shape": "random",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 2454353,
+          "tracemalloc_retained_bytes": 2354264
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "89a0576b626f03b62df1e46f079e69716ba9170929cff377183da05ee0a5eaee",
+          "input_sha256": "0357621c932bf33b577409d33faa3d20ecf975a7402b2c6cefe9c075d597f11d",
+          "max_seconds": 0.022107215998403262,
+          "median_absolute_deviation_seconds": 0.0006017209998390172,
+          "median_seconds": 0.021505494998564245,
+          "min_seconds": 0.019983894999313634,
+          "samples_seconds": [
+            0.019983894999313634,
+            0.02025695500196889,
+            0.021721294997405494,
+            0.022107215998403262,
+            0.021505494998564245
+          ],
+          "shape": "random",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 5134960,
+          "tracemalloc_retained_bytes": 2357512
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "89a0576b626f03b62df1e46f079e69716ba9170929cff377183da05ee0a5eaee",
+          "input_sha256": "0357621c932bf33b577409d33faa3d20ecf975a7402b2c6cefe9c075d597f11d",
+          "max_seconds": 0.02033037499859347,
+          "median_absolute_deviation_seconds": 0.0008934010002121795,
+          "median_seconds": 0.01633715400021174,
+          "min_seconds": 0.015389593998406781,
+          "samples_seconds": [
+            0.01544375299999956,
+            0.01633715400021174,
+            0.015389593998406781,
+            0.01661127400075202,
+            0.02033037499859347
+          ],
+          "shape": "random",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 3154520,
+          "tracemalloc_retained_bytes": 2354440
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "89a0576b626f03b62df1e46f079e69716ba9170929cff377183da05ee0a5eaee",
+          "input_sha256": "0357621c932bf33b577409d33faa3d20ecf975a7402b2c6cefe9c075d597f11d",
+          "max_seconds": 0.08435923100114451,
+          "median_absolute_deviation_seconds": 0.003192381002008915,
+          "median_seconds": 0.08116684999913559,
+          "min_seconds": 0.06768353699953877,
+          "samples_seconds": [
+            0.06768353699953877,
+            0.07200655699853087,
+            0.08116684999913559,
+            0.08435923100114451,
+            0.0815866199991433
+          ],
+          "shape": "random",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 44056456,
+          "tracemalloc_retained_bytes": 2372232
+        },
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "a339a877179b684d8e0abeaa8b2051841311dc8f2b6b9af0a03a0ed0faa53e3e",
+          "input_sha256": "1871f2e6b7790a7195cd85b016bf8d433d48701397e7130e030972ba4600f1c8",
+          "max_seconds": 0.016002754000510322,
+          "median_absolute_deviation_seconds": 0.00011144000018248335,
+          "median_seconds": 0.01589131400032784,
+          "min_seconds": 0.015490382997086272,
+          "samples_seconds": [
+            0.015702754000813002,
+            0.016002754000510322,
+            0.01589131400032784,
+            0.015965133999998216,
+            0.015490382997086272
+          ],
+          "shape": "merging_branches",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 3992416,
+          "tracemalloc_retained_bytes": 3992336
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "a339a877179b684d8e0abeaa8b2051841311dc8f2b6b9af0a03a0ed0faa53e3e",
+          "input_sha256": "1871f2e6b7790a7195cd85b016bf8d433d48701397e7130e030972ba4600f1c8",
+          "max_seconds": 0.014008933001605328,
+          "median_absolute_deviation_seconds": 0.00016121000226121396,
+          "median_seconds": 0.013847722999344114,
+          "min_seconds": 0.01355933399827336,
+          "samples_seconds": [
+            0.01355933399827336,
+            0.013847722999344114,
+            0.013871324001229368,
+            0.014008933001605328,
+            0.01365679299851763
+          ],
+          "shape": "merging_branches",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 4092337,
+          "tracemalloc_retained_bytes": 3992248
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "a339a877179b684d8e0abeaa8b2051841311dc8f2b6b9af0a03a0ed0faa53e3e",
+          "input_sha256": "1871f2e6b7790a7195cd85b016bf8d433d48701397e7130e030972ba4600f1c8",
+          "max_seconds": 0.015026123001007363,
+          "median_absolute_deviation_seconds": 6.347900125547312e-05,
+          "median_seconds": 0.014280983999924501,
+          "min_seconds": 0.014105312999163289,
+          "samples_seconds": [
+            0.014105312999163289,
+            0.014344463001179975,
+            0.014280983999924501,
+            0.014240093001717469,
+            0.015026123001007363
+          ],
+          "shape": "merging_branches",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 7202608,
+          "tracemalloc_retained_bytes": 3995560
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "a339a877179b684d8e0abeaa8b2051841311dc8f2b6b9af0a03a0ed0faa53e3e",
+          "input_sha256": "1871f2e6b7790a7195cd85b016bf8d433d48701397e7130e030972ba4600f1c8",
+          "max_seconds": 0.016074274000857258,
+          "median_absolute_deviation_seconds": 4.015100057586096e-05,
+          "median_seconds": 0.01578684299965971,
+          "min_seconds": 0.015692244000092614,
+          "samples_seconds": [
+            0.01578684299965971,
+            0.016074274000857258,
+            0.015826994000235572,
+            0.015692244000092614,
+            0.015779494002345018
+          ],
+          "shape": "merging_branches",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 4792504,
+          "tracemalloc_retained_bytes": 3992424
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "a339a877179b684d8e0abeaa8b2051841311dc8f2b6b9af0a03a0ed0faa53e3e",
+          "input_sha256": "1871f2e6b7790a7195cd85b016bf8d433d48701397e7130e030972ba4600f1c8",
+          "max_seconds": 0.0474463820028177,
+          "median_absolute_deviation_seconds": 0.0003716489991347771,
+          "median_seconds": 0.04663633100062725,
+          "min_seconds": 0.046264682001492474,
+          "samples_seconds": [
+            0.04653443099959986,
+            0.046264682001492474,
+            0.0474463820028177,
+            0.04663633100062725,
+            0.04711752100047306
+          ],
+          "shape": "merging_branches",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 49256296,
+          "tracemalloc_retained_bytes": 4123624
+        },
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "5167c2828ea3213c962b582d9d207e3503995b26152bc6c828b6b4408bbdbb76",
+          "input_sha256": "3101a33fba575d7d72f9194928d43bd0f26d599e6ac58c5ad7a12b272f938133",
+          "max_seconds": 0.014477462998911506,
+          "median_absolute_deviation_seconds": 0.00025782000011531636,
+          "median_seconds": 0.013816683000186458,
+          "min_seconds": 0.013510373002645792,
+          "samples_seconds": [
+            0.014477462998911506,
+            0.013816683000186458,
+            0.013558863000071142,
+            0.013510373002645792,
+            0.013897562999773072
+          ],
+          "shape": "star_2cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 800640,
+          "tracemalloc_retained_bytes": 800560
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "5167c2828ea3213c962b582d9d207e3503995b26152bc6c828b6b4408bbdbb76",
+          "input_sha256": "3101a33fba575d7d72f9194928d43bd0f26d599e6ac58c5ad7a12b272f938133",
+          "max_seconds": 0.013229103999037761,
+          "median_absolute_deviation_seconds": 0.00022894099674886093,
+          "median_seconds": 0.0130001630022889,
+          "min_seconds": 0.012549262999527855,
+          "samples_seconds": [
+            0.0130001630022889,
+            0.012549262999527855,
+            0.012651444001676282,
+            0.013040023000939982,
+            0.013229103999037761
+          ],
+          "shape": "star_2cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 900561,
+          "tracemalloc_retained_bytes": 800472
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "5167c2828ea3213c962b582d9d207e3503995b26152bc6c828b6b4408bbdbb76",
+          "input_sha256": "3101a33fba575d7d72f9194928d43bd0f26d599e6ac58c5ad7a12b272f938133",
+          "max_seconds": 0.014584752996597672,
+          "median_absolute_deviation_seconds": 6.267099888646044e-05,
+          "median_seconds": 0.014380173997778911,
+          "min_seconds": 0.014247033999708947,
+          "samples_seconds": [
+            0.014584752996597672,
+            0.01431750299889245,
+            0.014380173997778911,
+            0.0143908329991973,
+            0.014247033999708947
+          ],
+          "shape": "star_2cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 5602608,
+          "tracemalloc_retained_bytes": 803752
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "5167c2828ea3213c962b582d9d207e3503995b26152bc6c828b6b4408bbdbb76",
+          "input_sha256": "3101a33fba575d7d72f9194928d43bd0f26d599e6ac58c5ad7a12b272f938133",
+          "max_seconds": 0.014292832998762606,
+          "median_absolute_deviation_seconds": 0.00014389899661182426,
+          "median_seconds": 0.014148934002150781,
+          "min_seconds": 0.013946523002232425,
+          "samples_seconds": [
+            0.014276334000896895,
+            0.01399820299775456,
+            0.014148934002150781,
+            0.013946523002232425,
+            0.014292832998762606
+          ],
+          "shape": "star_2cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 1600728,
+          "tracemalloc_retained_bytes": 800648
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "5167c2828ea3213c962b582d9d207e3503995b26152bc6c828b6b4408bbdbb76",
+          "input_sha256": "3101a33fba575d7d72f9194928d43bd0f26d599e6ac58c5ad7a12b272f938133",
+          "max_seconds": 0.045168401000410086,
+          "median_absolute_deviation_seconds": 4.973000250174664e-05,
+          "median_seconds": 0.044457520998548716,
+          "min_seconds": 0.044329331001790706,
+          "samples_seconds": [
+            0.04450725100105046,
+            0.044329331001790706,
+            0.044457520998548716,
+            0.044419960999221075,
+            0.045168401000410086
+          ],
+          "shape": "star_2cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 48161640,
+          "tracemalloc_retained_bytes": 931816
+        },
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "0d2e83c9db03fc705e5a0b460678bca6f5c7797b00cd147416fd2732461368b3",
+          "input_sha256": "8a37f1c75f698efc49438e6e3e5778a40609d02bfeaecd261090ea161ba1bbe3",
+          "max_seconds": 0.005246111999440473,
+          "median_absolute_deviation_seconds": 0.00014122999709798023,
+          "median_seconds": 0.004958240999258123,
+          "min_seconds": 0.0047568310001224745,
+          "samples_seconds": [
+            0.005246111999440473,
+            0.004817011002160143,
+            0.004963700997905107,
+            0.004958240999258123,
+            0.0047568310001224745
+          ],
+          "shape": "big_cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 2401416,
+          "tracemalloc_retained_bytes": 800592
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "0d2e83c9db03fc705e5a0b460678bca6f5c7797b00cd147416fd2732461368b3",
+          "input_sha256": "8a37f1c75f698efc49438e6e3e5778a40609d02bfeaecd261090ea161ba1bbe3",
+          "max_seconds": 0.009844272997725056,
+          "median_absolute_deviation_seconds": 0.00010756000119727105,
+          "median_seconds": 0.009573401999659836,
+          "min_seconds": 0.009432692000700627,
+          "samples_seconds": [
+            0.009680962000857107,
+            0.009510683001280995,
+            0.009432692000700627,
+            0.009844272997725056,
+            0.009573401999659836
+          ],
+          "shape": "big_cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 1701401,
+          "tracemalloc_retained_bytes": 800448
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "0d2e83c9db03fc705e5a0b460678bca6f5c7797b00cd147416fd2732461368b3",
+          "input_sha256": "8a37f1c75f698efc49438e6e3e5778a40609d02bfeaecd261090ea161ba1bbe3",
+          "max_seconds": 0.011220583000977058,
+          "median_absolute_deviation_seconds": 0.0001938800014613662,
+          "median_seconds": 0.008869162000337383,
+          "min_seconds": 0.00822437199894921,
+          "samples_seconds": [
+            0.008869162000337383,
+            0.00822437199894921,
+            0.011220583000977058,
+            0.009063042001798749,
+            0.008750082000915427
+          ],
+          "shape": "big_cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 1601488,
+          "tracemalloc_retained_bytes": 800680
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "0d2e83c9db03fc705e5a0b460678bca6f5c7797b00cd147416fd2732461368b3",
+          "input_sha256": "8a37f1c75f698efc49438e6e3e5778a40609d02bfeaecd261090ea161ba1bbe3",
+          "max_seconds": 0.005761051997978939,
+          "median_absolute_deviation_seconds": 0.00014273000124376267,
+          "median_seconds": 0.005339922001439845,
+          "min_seconds": 0.004740950997074833,
+          "samples_seconds": [
+            0.005339922001439845,
+            0.004740950997074833,
+            0.005761051997978939,
+            0.005404750998422969,
+            0.0051971920001960825
+          ],
+          "shape": "big_cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 3201504,
+          "tracemalloc_retained_bytes": 800680
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "0d2e83c9db03fc705e5a0b460678bca6f5c7797b00cd147416fd2732461368b3",
+          "input_sha256": "8a37f1c75f698efc49438e6e3e5778a40609d02bfeaecd261090ea161ba1bbe3",
+          "max_seconds": 0.05145088200151804,
+          "median_absolute_deviation_seconds": 0.00018219100093119778,
+          "median_seconds": 0.0473359919997165,
+          "min_seconds": 0.0471538009987853,
+          "samples_seconds": [
+            0.0471538009987853,
+            0.04785196100056055,
+            0.05145088200151804,
+            0.0473359919997165,
+            0.047179612000036286
+          ],
+          "shape": "big_cycle",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 57040008,
+          "tracemalloc_retained_bytes": 931848
+        },
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "3d71425a40ff00badb0169dbb5357576fc59890126ad929185d1e206d6aede5d",
+          "input_sha256": "4091084b6454b34e49dd0759ab123207416f99b192fc44d4a9df3856a57ad2ad",
+          "max_seconds": 0.015521463999903062,
+          "median_absolute_deviation_seconds": 8.344999878318049e-05,
+          "median_seconds": 0.015339233999839053,
+          "min_seconds": 0.015184892999968724,
+          "samples_seconds": [
+            0.015184892999968724,
+            0.015421893000166165,
+            0.015255784001055872,
+            0.015521463999903062,
+            0.015339233999839053
+          ],
+          "shape": "reverse_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 3992416,
+          "tracemalloc_retained_bytes": 3992336
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "3d71425a40ff00badb0169dbb5357576fc59890126ad929185d1e206d6aede5d",
+          "input_sha256": "4091084b6454b34e49dd0759ab123207416f99b192fc44d4a9df3856a57ad2ad",
+          "max_seconds": 0.013654473001224687,
+          "median_absolute_deviation_seconds": 6.70810004521627e-05,
+          "median_seconds": 0.013518854000722058,
+          "min_seconds": 0.013402953998593148,
+          "samples_seconds": [
+            0.013402953998593148,
+            0.013451773000269895,
+            0.013567974001489347,
+            0.013654473001224687,
+            0.013518854000722058
+          ],
+          "shape": "reverse_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 4092337,
+          "tracemalloc_retained_bytes": 3992248
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "3d71425a40ff00badb0169dbb5357576fc59890126ad929185d1e206d6aede5d",
+          "input_sha256": "4091084b6454b34e49dd0759ab123207416f99b192fc44d4a9df3856a57ad2ad",
+          "max_seconds": 0.012642523997783428,
+          "median_absolute_deviation_seconds": 0.00012279000293347053,
+          "median_seconds": 0.012512533001427073,
+          "min_seconds": 0.012259473998710746,
+          "samples_seconds": [
+            0.012612132999493042,
+            0.012259473998710746,
+            0.012389742998493602,
+            0.012512533001427073,
+            0.012642523997783428
+          ],
+          "shape": "reverse_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 5594192,
+          "tracemalloc_retained_bytes": 3992456
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "3d71425a40ff00badb0169dbb5357576fc59890126ad929185d1e206d6aede5d",
+          "input_sha256": "4091084b6454b34e49dd0759ab123207416f99b192fc44d4a9df3856a57ad2ad",
+          "max_seconds": 0.016043563999119215,
+          "median_absolute_deviation_seconds": 4.721000004792586e-05,
+          "median_seconds": 0.015339024001150392,
+          "min_seconds": 0.015233983998768963,
+          "samples_seconds": [
+            0.015339024001150392,
+            0.015291814001102466,
+            0.015233983998768963,
+            0.015357973999925889,
+            0.016043563999119215
+          ],
+          "shape": "reverse_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 4792504,
+          "tracemalloc_retained_bytes": 3992424
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "3d71425a40ff00badb0169dbb5357576fc59890126ad929185d1e206d6aede5d",
+          "input_sha256": "4091084b6454b34e49dd0759ab123207416f99b192fc44d4a9df3856a57ad2ad",
+          "max_seconds": 0.046893711001757765,
+          "median_absolute_deviation_seconds": 0.0004613700039044488,
+          "median_seconds": 0.04446026100049494,
+          "min_seconds": 0.04399889099659049,
+          "samples_seconds": [
+            0.04446026100049494,
+            0.04399889099659049,
+            0.046893711001757765,
+            0.044365091001964174,
+            0.04519129099935526
+          ],
+          "shape": "reverse_chain",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 47022824,
+          "tracemalloc_retained_bytes": 3995752
+        },
+        {
+          "algorithm": "signed_walk",
+          "expected_sha256": "7b00c32a027e3ac5b93bf6704d15a338730d2556781d53f4c2a2ede5a7ec9567",
+          "input_sha256": "b73aee17757fb6d74f32a8c21b500b15fea7490e2e5b77ed68978e351e682ec1",
+          "max_seconds": 0.01449035300174728,
+          "median_absolute_deviation_seconds": 0.00013078100164420903,
+          "median_seconds": 0.014289162998466054,
+          "min_seconds": 0.014078363001317484,
+          "samples_seconds": [
+            0.014078363001317484,
+            0.014270752999436809,
+            0.014289162998466054,
+            0.014419944000110263,
+            0.01449035300174728
+          ],
+          "shape": "many_2cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 800608,
+          "tracemalloc_retained_bytes": 800560
+        },
+        {
+          "algorithm": "edge_walk",
+          "expected_sha256": "7b00c32a027e3ac5b93bf6704d15a338730d2556781d53f4c2a2ede5a7ec9567",
+          "input_sha256": "b73aee17757fb6d74f32a8c21b500b15fea7490e2e5b77ed68978e351e682ec1",
+          "max_seconds": 0.011757252999814227,
+          "median_absolute_deviation_seconds": 1.2520002201199532e-05,
+          "median_seconds": 0.011679353003273718,
+          "min_seconds": 0.011665452999295667,
+          "samples_seconds": [
+            0.011679353003273718,
+            0.011757252999814227,
+            0.011691622999933315,
+            0.011666833001072519,
+            0.011665452999295667
+          ],
+          "shape": "many_2cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 900593,
+          "tracemalloc_retained_bytes": 800504
+        },
+        {
+          "algorithm": "indegree_peel",
+          "expected_sha256": "7b00c32a027e3ac5b93bf6704d15a338730d2556781d53f4c2a2ede5a7ec9567",
+          "input_sha256": "b73aee17757fb6d74f32a8c21b500b15fea7490e2e5b77ed68978e351e682ec1",
+          "max_seconds": 0.009349493000627263,
+          "median_absolute_deviation_seconds": 6.24999993306119e-05,
+          "median_seconds": 0.00928699300129665,
+          "min_seconds": 0.00872455200078548,
+          "samples_seconds": [
+            0.00872455200078548,
+            0.009298611999838613,
+            0.008984072002931498,
+            0.009349493000627263,
+            0.00928699300129665
+          ],
+          "shape": "many_2cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 1601456,
+          "tracemalloc_retained_bytes": 800648
+        },
+        {
+          "algorithm": "path_index",
+          "expected_sha256": "7b00c32a027e3ac5b93bf6704d15a338730d2556781d53f4c2a2ede5a7ec9567",
+          "input_sha256": "b73aee17757fb6d74f32a8c21b500b15fea7490e2e5b77ed68978e351e682ec1",
+          "max_seconds": 0.01463616299952264,
+          "median_absolute_deviation_seconds": 2.108899934682995e-05,
+          "median_seconds": 0.014311162998637883,
+          "min_seconds": 0.014274963999923784,
+          "samples_seconds": [
+            0.014274963999923784,
+            0.014290073999291053,
+            0.014311162998637883,
+            0.01431332300126087,
+            0.01463616299952264
+          ],
+          "shape": "many_2cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 1600696,
+          "tracemalloc_retained_bytes": 800648
+        },
+        {
+          "algorithm": "reverse_graph",
+          "expected_sha256": "7b00c32a027e3ac5b93bf6704d15a338730d2556781d53f4c2a2ede5a7ec9567",
+          "input_sha256": "b73aee17757fb6d74f32a8c21b500b15fea7490e2e5b77ed68978e351e682ec1",
+          "max_seconds": 0.053334263000579085,
+          "median_absolute_deviation_seconds": 0.0003705199997057207,
+          "median_seconds": 0.05214419299954898,
+          "min_seconds": 0.05177367299984326,
+          "samples_seconds": [
+            0.05206283300140058,
+            0.05329750300006708,
+            0.05177367299984326,
+            0.053334263000579085,
+            0.05214419299954898
+          ],
+          "shape": "many_2cycles",
+          "tracemalloc_baseline_current_bytes": 0,
+          "tracemalloc_peak_bytes": 42576888,
+          "tracemalloc_retained_bytes": 803944
+        }
+      ],
+      "repetitions": 5,
+      "schedule": [
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "path_index",
+            "signed_walk",
+            "edge_walk",
+            "indegree_peel"
+          ],
+          "round": 1,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "signed_walk",
+            "edge_walk",
+            "indegree_peel",
+            "reverse_graph"
+          ],
+          "round": 2,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "edge_walk",
+            "indegree_peel",
+            "reverse_graph",
+            "path_index"
+          ],
+          "round": 3,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "indegree_peel",
+            "reverse_graph",
+            "path_index",
+            "signed_walk"
+          ],
+          "round": 4,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "reverse_graph",
+            "path_index",
+            "signed_walk",
+            "edge_walk"
+          ],
+          "round": 5,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph",
+            "path_index"
+          ],
+          "round": 1,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph",
+            "path_index",
+            "indegree_peel"
+          ],
+          "round": 2,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "reverse_graph",
+            "path_index",
+            "indegree_peel",
+            "edge_walk"
+          ],
+          "round": 3,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "path_index",
+            "indegree_peel",
+            "edge_walk",
+            "signed_walk"
+          ],
+          "round": 4,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "indegree_peel",
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph"
+          ],
+          "round": 5,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "indegree_peel",
+            "reverse_graph",
+            "path_index",
+            "edge_walk"
+          ],
+          "round": 1,
+          "shape": "random"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "reverse_graph",
+            "path_index",
+            "edge_walk",
+            "signed_walk"
+          ],
+          "round": 2,
+          "shape": "random"
+        },
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "path_index",
+            "edge_walk",
+            "signed_walk",
+            "indegree_peel"
+          ],
+          "round": 3,
+          "shape": "random"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "edge_walk",
+            "signed_walk",
+            "indegree_peel",
+            "reverse_graph"
+          ],
+          "round": 4,
+          "shape": "random"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "signed_walk",
+            "indegree_peel",
+            "reverse_graph",
+            "path_index"
+          ],
+          "round": 5,
+          "shape": "random"
+        },
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "path_index",
+            "indegree_peel",
+            "signed_walk",
+            "edge_walk"
+          ],
+          "round": 1,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "indegree_peel",
+            "signed_walk",
+            "edge_walk",
+            "reverse_graph"
+          ],
+          "round": 2,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "signed_walk",
+            "edge_walk",
+            "reverse_graph",
+            "path_index"
+          ],
+          "round": 3,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "edge_walk",
+            "reverse_graph",
+            "path_index",
+            "indegree_peel"
+          ],
+          "round": 4,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "reverse_graph",
+            "path_index",
+            "indegree_peel",
+            "signed_walk"
+          ],
+          "round": 5,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "edge_walk",
+            "path_index",
+            "signed_walk",
+            "reverse_graph"
+          ],
+          "round": 1,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "path_index",
+            "signed_walk",
+            "reverse_graph",
+            "indegree_peel"
+          ],
+          "round": 2,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "signed_walk",
+            "reverse_graph",
+            "indegree_peel",
+            "edge_walk"
+          ],
+          "round": 3,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "reverse_graph",
+            "indegree_peel",
+            "edge_walk",
+            "path_index"
+          ],
+          "round": 4,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "indegree_peel",
+            "edge_walk",
+            "path_index",
+            "signed_walk"
+          ],
+          "round": 5,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "path_index",
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph"
+          ],
+          "round": 1,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph",
+            "indegree_peel"
+          ],
+          "round": 2,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph",
+            "indegree_peel",
+            "path_index"
+          ],
+          "round": 3,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "reverse_graph",
+            "indegree_peel",
+            "path_index",
+            "edge_walk"
+          ],
+          "round": 4,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "indegree_peel",
+            "path_index",
+            "edge_walk",
+            "signed_walk"
+          ],
+          "round": 5,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "reverse_graph",
+            "path_index",
+            "edge_walk",
+            "indegree_peel"
+          ],
+          "round": 1,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "path_index",
+            "edge_walk",
+            "indegree_peel",
+            "signed_walk"
+          ],
+          "round": 2,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "edge_walk",
+            "indegree_peel",
+            "signed_walk",
+            "reverse_graph"
+          ],
+          "round": 3,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "indegree_peel",
+            "signed_walk",
+            "reverse_graph",
+            "path_index"
+          ],
+          "round": 4,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "signed_walk",
+            "reverse_graph",
+            "path_index",
+            "edge_walk"
+          ],
+          "round": 5,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm_order": [
+            "indegree_peel",
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph",
+            "path_index"
+          ],
+          "round": 1,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm_order": [
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph",
+            "path_index",
+            "indegree_peel"
+          ],
+          "round": 2,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm_order": [
+            "signed_walk",
+            "reverse_graph",
+            "path_index",
+            "indegree_peel",
+            "edge_walk"
+          ],
+          "round": 3,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm_order": [
+            "reverse_graph",
+            "path_index",
+            "indegree_peel",
+            "edge_walk",
+            "signed_walk"
+          ],
+          "round": 4,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm_order": [
+            "path_index",
+            "indegree_peel",
+            "edge_walk",
+            "signed_walk",
+            "reverse_graph"
+          ],
+          "round": 5,
+          "shape": "many_2cycles"
+        }
+      ],
+      "shape_order": [
+        "mixed_disconnected_cycles",
+        "long_chain",
+        "random",
+        "merging_branches",
+        "star_2cycle",
+        "big_cycle",
+        "reverse_chain",
+        "many_2cycles"
+      ],
+      "uncertainty": "Single native workstation session; no affinity/governor changes; background activity, frequency, cache, allocator and thermal effects remain. Five samples are descriptive, not a confidence interval. Balanced order mitigates position bias but does not eliminate carry-over effects.",
+      "warmups": [
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.050626033000298776,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.008698982001078548,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.008812121999653755,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.011244132001593243,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.009952162999979919,
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.013042932998359902,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.008770943000854459,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.006142410999018466,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.0469727720010269,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.006530282000312582,
+          "shape": "long_chain"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.014769282999623101,
+          "shape": "random"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.020580795000569196,
+          "shape": "random"
+        },
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.09646728299776441,
+          "shape": "random"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.016017613997973967,
+          "shape": "random"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.015420553998410469,
+          "shape": "random"
+        },
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.047104080997087294,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.015604333999363007,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.014417423000850249,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.0157187939985306,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.013418892998743104,
+          "shape": "merging_branches"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.014501674002531217,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.012719963000563439,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.01417542299896013,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.014045674000954023,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.04499302000112948,
+          "shape": "star_2cycle"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.009457322001253488,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.004681900998548372,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.009614883001631824,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.005072380998171866,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.05000116199880722,
+          "shape": "big_cycle"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.01586776399926748,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.0451760510004533,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.015516114002821269,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.01364281299902359,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.01276889300061157,
+          "shape": "reverse_chain"
+        },
+        {
+          "algorithm": "indegree_peel",
+          "measured_sample": false,
+          "seconds": 0.009044001999427564,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm": "edge_walk",
+          "measured_sample": false,
+          "seconds": 0.011573212999792304,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm": "signed_walk",
+          "measured_sample": false,
+          "seconds": 0.014440923001529882,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm": "reverse_graph",
+          "measured_sample": false,
+          "seconds": 0.05457924399888725,
+          "shape": "many_2cycles"
+        },
+        {
+          "algorithm": "path_index",
+          "measured_sample": false,
+          "seconds": 0.014491173002170399,
+          "shape": "many_2cycles"
+        }
+      ],
+      "warmups_per_algorithm_shape": 1
+    },
+    "coverage": {
+      "binary_lifting_small_oracle_checks": 1070,
+      "boundary_graphs": [
+        {
+          "expected_method": "One cycle contains all n nodes; every answer is n.",
+          "expected_sha256": "0d2e83c9db03fc705e5a0b460678bca6f5c7797b00cd147416fd2732461368b3",
+          "input_sha256": "8a37f1c75f698efc49438e6e3e5778a40609d02bfeaecd261090ea161ba1bbe3",
+          "n": 100000,
+          "relabelled_expected_sha256": "0d2e83c9db03fc705e5a0b460678bca6f5c7797b00cd147416fd2732461368b3",
+          "relabelled_input_sha256": "aa6dfaf404c6e23b62133f993927581a628275aa3dd26fc169a8f8a8db96f78e",
+          "shape": "big_cycle"
+        },
+        {
+          "expected_method": "Nodes 0..n-3 have distance n-2-i to a 2-cycle; distance + 2.",
+          "expected_sha256": "54fd5b96fdfd280e362f745df0958d31695f64b01afcb6b2d29873713404b66c",
+          "input_sha256": "54a55fcc137a0273b97f32ef99e4af539663569c318970829d558a8abefd4557",
+          "n": 100000,
+          "relabelled_expected_sha256": "8bb7133d323720d1a3e6401da44d2d27259bf444f7611a68eec166770aca4bc0",
+          "relabelled_input_sha256": "3945d897e41911f11e852f3790ab10e50e96ffaca199f7b893c8a76c8f9c6a45",
+          "shape": "long_chain"
+        },
+        {
+          "expected_method": "Cycle nodes 0 and 1 have 2; every leaf has 1+2.",
+          "expected_sha256": "5167c2828ea3213c962b582d9d207e3503995b26152bc6c828b6b4408bbdbb76",
+          "input_sha256": "3101a33fba575d7d72f9194928d43bd0f26d599e6ac58c5ad7a12b272f938133",
+          "n": 100000,
+          "relabelled_expected_sha256": "47e37244dc5221d80ecbebf5ac4dc6dc0f5f633055a3b84ec5943c4506c69f1b",
+          "relabelled_input_sha256": "b552ce1c09c85c2c2a02e66855dfc1c78c9dbd6cec1051cdbf8e4b9e198b2a81",
+          "shape": "star_2cycle"
+        },
+        {
+          "expected_method": "Cycle 0<->1 is solved first; node i>=2 has distance i-1, answer i+1.",
+          "expected_sha256": "3d71425a40ff00badb0169dbb5357576fc59890126ad929185d1e206d6aede5d",
+          "input_sha256": "4091084b6454b34e49dd0759ab123207416f99b192fc44d4a9df3856a57ad2ad",
+          "n": 100000,
+          "relabelled_expected_sha256": "265f31fa83326aebf461729c40e49ac1e94448e6d895aad2a3e89aad6244e096",
+          "relabelled_input_sha256": "297c13c90df920e7ab3505efdff0277322cb12c3df9ccde40dabeb9ced7f8a11",
+          "shape": "reverse_chain"
+        },
+        {
+          "expected_method": "Disjoint 2-cycles; an odd final vertex is a tail into the first cycle.",
+          "expected_sha256": "7b00c32a027e3ac5b93bf6704d15a338730d2556781d53f4c2a2ede5a7ec9567",
+          "input_sha256": "b73aee17757fb6d74f32a8c21b500b15fea7490e2e5b77ed68978e351e682ec1",
+          "n": 100000,
+          "relabelled_expected_sha256": "7b00c32a027e3ac5b93bf6704d15a338730d2556781d53f4c2a2ede5a7ec9567",
+          "relabelled_input_sha256": "37bdd274f48d8daf05e1bd2bb5718517632f2d8dad1768302688ef961b166678",
+          "shape": "many_2cycles"
+        },
+        {
+          "expected_method": "Repeated disjoint cycles of lengths 2,3,5,7,11; final truncated cycle or 1-node tail.",
+          "expected_sha256": "de63a1522e17354ab3f2ceac2e3b20dd662d8c89a2db4411c7968dc2e44fb702",
+          "input_sha256": "014dc9da52bf912612b9042daf5f80f6f33edb737ae5f40e7f6f85942d9f2841",
+          "n": 100000,
+          "relabelled_expected_sha256": "16fe585207ef3a5defda217a1d02203e522d9b8446b2d22a322978af982d383e",
+          "relabelled_input_sha256": "d996598bcaf2d8e7ed6cc4a0e6863e833ae15abec5550d0221f39db16def9b13",
+          "shape": "mixed_disconnected_cycles"
+        },
+        {
+          "expected_method": "Shared descending trunk reaches cycle 0<->1; leaves all enter its last vertex.",
+          "expected_sha256": "a339a877179b684d8e0abeaa8b2051841311dc8f2b6b9af0a03a0ed0faa53e3e",
+          "input_sha256": "1871f2e6b7790a7195cd85b016bf8d433d48701397e7130e030972ba4600f1c8",
+          "n": 100000,
+          "relabelled_expected_sha256": "4cf1383675fed0543fd58fa36f8906f6f8caa521f3c8377c73acc49ce26d2293",
+          "relabelled_input_sha256": "7186ccdf1bbf8a93ceab638576f1f70c72be917f75f42b6981624a150334c07f",
+          "shape": "merging_branches"
+        },
+        {
+          "expected_method": "Independent binary lifting O(n log n) reference; no large brute-force walk.",
+          "expected_sha256": "89a0576b626f03b62df1e46f079e69716ba9170929cff377183da05ee0a5eaee",
+          "input_sha256": "0357621c932bf33b577409d33faa3d20ecf975a7402b2c6cefe9c075d597f11d",
+          "n": 100000,
+          "relabelled_expected_sha256": "46f380fe0f7fa942db0beb50b32b7adc3aa32bd112d11c65bbfb1b4ce37f7c28",
+          "relabelled_input_sha256": "328fd06c5a026896de0a4fa0ac28d771a2f920a52204dd1fe64d78d575db1278",
+          "shape": "random"
+        }
+      ],
+      "exhaustive_by_n": {
+        "2": 1,
+        "3": 8,
+        "4": 81,
+        "5": 1024,
+        "6": 15625
+      },
+      "formulas": {
+        "big_cycle": "One cycle contains all n nodes; every answer is n.",
+        "long_chain": "Nodes 0..n-3 have distance n-2-i to a 2-cycle; distance + 2.",
+        "many_2cycles": "Disjoint 2-cycles; an odd final vertex is a tail into the first cycle.",
+        "merging_branches": "Shared descending trunk reaches cycle 0<->1; leaves all enter its last vertex.",
+        "mixed_disconnected_cycles": "Repeated disjoint cycles of lengths 2,3,5,7,11; final truncated cycle or 1-node tail.",
+        "reverse_chain": "Cycle 0<->1 is solved first; node i>=2 has distance i-1, answer i+1.",
+        "star_2cycle": "Cycle nodes 0 and 1 have 2; every leaf has 1+2."
+      },
+      "large_quadratic_oracle_executed": false,
+      "large_random_reference_seconds": 0.23813755800074432,
+      "random_generator": "uniform n=2..40; per-edge uniform rejection sampling of self-loops",
+      "random_n_histogram": {
+        "10": 750,
+        "11": 757,
+        "12": 730,
+        "13": 769,
+        "14": 716,
+        "15": 751,
+        "16": 783,
+        "17": 780,
+        "18": 802,
+        "19": 801,
+        "2": 748,
+        "20": 783,
+        "21": 788,
+        "22": 816,
+        "23": 764,
+        "24": 752,
+        "25": 770,
+        "26": 786,
+        "27": 778,
+        "28": 755,
+        "29": 772,
+        "3": 723,
+        "30": 782,
+        "31": 766,
+        "32": 795,
+        "33": 766,
+        "34": 758,
+        "35": 745,
+        "36": 762,
+        "37": 828,
+        "38": 781,
+        "39": 780,
+        "4": 799,
+        "40": 739,
+        "5": 759,
+        "6": 740,
+        "7": 763,
+        "8": 776,
+        "9": 787
+      },
+      "random_seed": 26051103,
+      "small_formula_checks": 70
+    },
+    "exceptions": [],
+    "finished_utc": "2026-11-04T14:07:29.997276+00:00",
+    "limitations": [
+      "Finite tests do not constitute a formal proof.",
+      "Only valid no-self-loop functional graphs are in scope.",
+      "No RSS measurement; tracemalloc measures traced Python allocations only.",
+      "No canonical ETQ bundle or quantum/E8 performance tested.",
+      "No Windows or external judge execution."
+    ],
+    "negative_controls": [
+      {
+        "actual": 4,
+        "edges": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "expected": [
+          3,
+          3,
+          3,
+          4
+        ],
+        "expected_rejection": "output_not_per_node_array",
+        "id": "NC-01",
+        "implementation": "nc_scalar",
+        "minimization": "Minimum node count; exhaustive no-self-loop search in ascending n.",
+        "minimized_actual": 2,
+        "minimized_edges": [
+          1,
+          0
+        ],
+        "minimized_expected": [
+          2,
+          2
+        ],
+        "observed_rejection": "output_not_per_node_array",
+        "rejected_as_expected": true,
+        "reproduction": "Run this program with --controls-only --source <DETACHED_WORKTREE> --output <NEW_DIRECTORY>.",
+        "seed": 26051103
+      },
+      {
+        "actual": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "differing_indices": [
+          0,
+          1,
+          2
+        ],
+        "edges": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "expected": [
+          3,
+          3,
+          3,
+          4
+        ],
+        "expected_rejection": "per_node_value_mismatch",
+        "id": "NC-02",
+        "implementation": "nc_cycle_corruption",
+        "minimization": "Minimum node count; exhaustive no-self-loop search in ascending n.",
+        "minimized_actual": [
+          3,
+          3
+        ],
+        "minimized_edges": [
+          1,
+          0
+        ],
+        "minimized_expected": [
+          2,
+          2
+        ],
+        "observed_rejection": "per_node_value_mismatch",
+        "rejected_as_expected": true,
+        "reproduction": "Run this program with --controls-only --source <DETACHED_WORKTREE> --output <NEW_DIRECTORY>.",
+        "seed": 26051103
+      },
+      {
+        "actual": [
+          3,
+          3,
+          4,
+          4
+        ],
+        "differing_indices": [
+          2
+        ],
+        "edges": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "exactly_one_modified": true,
+        "expected": [
+          3,
+          3,
+          3,
+          4
+        ],
+        "expected_rejection": "per_node_value_mismatch",
+        "id": "NC-03",
+        "implementation": "nc_answer_corruption",
+        "minimization": "Minimum node count; exhaustive no-self-loop search in ascending n.",
+        "minimized_actual": [
+          2,
+          3
+        ],
+        "minimized_edges": [
+          1,
+          0
+        ],
+        "minimized_expected": [
+          2,
+          2
+        ],
+        "observed_rejection": "per_node_value_mismatch",
+        "rejected_as_expected": true,
+        "reproduction": "Run this program with --controls-only --source <DETACHED_WORKTREE> --output <NEW_DIRECTORY>.",
+        "seed": 26051103
+      },
+      {
+        "actual": [
+          3,
+          0,
+          0,
+          1
+        ],
+        "differing_indices": [
+          1,
+          2,
+          3
+        ],
+        "edges": [
+          1,
+          2,
+          0,
+          0
+        ],
+        "expected": [
+          3,
+          3,
+          3,
+          4
+        ],
+        "expected_rejection": "per_node_value_mismatch",
+        "id": "NC-04",
+        "implementation": "nc_state_confusion",
+        "minimization": "Minimum node count; exhaustive no-self-loop search in ascending n.",
+        "minimized_actual": [
+          2,
+          0
+        ],
+        "minimized_edges": [
+          1,
+          0
+        ],
+        "minimized_expected": [
+          2,
+          2
+        ],
+        "observed_rejection": "per_node_value_mismatch",
+        "rejected_as_expected": true,
+        "reproduction": "Run this program with --controls-only --source <DETACHED_WORKTREE> --output <NEW_DIRECTORY>.",
+        "seed": 26051103
+      }
+    ],
+    "oracle_results": {
+      "candidate_comparisons": {
+        "edge_walk": 46897,
+        "indegree_peel": 46897,
+        "path_index": 46897,
+        "reverse_graph": 46897,
+        "signed_walk": 46897
+      },
+      "graph_stream_sha256": {
+        "boundary_100000": "4756a34c1cc6c5e4b9c19e69bf797af2947d022345bc9f68e6fd7a986ddf33b4",
+        "boundary_100000_relabelled": "45aef4a6d4d11da2de4f7939d072496bc3cce130c0f3227d64130736452c3772",
+        "exhaustive": "8d2b7504d655f8f3da8be5c1c8c8b987c3c09dcc800c0da76b709f3393fc0c52",
+        "independent_random": "797ce7904fd0bd4a28f1bd5713d055ff9277b5d5dddeadc05ae41fe01a554c62",
+        "small_adversarial": "0b6894612f02a984d61f976fda69902d055dd4be376a2d20047be11950b3d5c0",
+        "small_adversarial_relabelled": "76b500d106dc2624e205ae3982ee1de02cb653906fa2bf0b5e4a07573103df3f",
+        "supplied_examples": "e701b31d73e4921555142fc7095b6fec6698c1772be60593fc765eac8b23a723"
+      },
+      "graphs_by_category": {
+        "boundary_100000": 8,
+        "boundary_100000_relabelled": 8,
+        "exhaustive": 16739,
+        "independent_random": 30000,
+        "small_adversarial": 70,
+        "small_adversarial_relabelled": 70,
+        "supplied_examples": 2
+      },
+      "mismatches": [],
+      "total_candidate_comparisons": 234485,
+      "total_graphs": 46897
+    },
+    "python_implementation": "CPython",
+    "python_version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "schema_version": 1,
+    "seed": 26051103,
+    "source": {
+      "candidate_loading": "Unchanged AST function definitions only; canonical oracle not imported.",
+      "commit": "42af1d99d736802214ed61ffe950e6ad809b1aee",
+      "detached": true,
+      "functions": {
+        "edge_walk": {
+          "first_line": 52,
+          "last_line": 82,
+          "source_segment_sha256": "d7712cd59472bf6fbc4e85f7c3e91b862469adfe3726444d00cec6075138e91b"
+        },
+        "indegree_peel": {
+          "first_line": 85,
+          "last_line": 115,
+          "source_segment_sha256": "dee7067adc9704445d7a794f6da732c6915368b50c42f0a8a60fc376329bf654"
+        },
+        "path_index": {
+          "first_line": 118,
+          "last_line": 142,
+          "source_segment_sha256": "ce2cdf80d9ec4b9b5cce82d0ad2ddcaf44ae613ba9ced4c9e0eed02da6edeb77"
+        },
+        "reverse_graph": {
+          "first_line": 145,
+          "last_line": 177,
+          "source_segment_sha256": "2505c9eeac27c7c106b384a9435274bd6de3fb517f07349aa5f80ed4b5594b86"
+        },
+        "signed_walk": {
+          "first_line": 24,
+          "last_line": 49,
+          "source_segment_sha256": "be1afdfbd1f80f2086ae4990b40984c33662363105b4805050f6035fc977e058"
+        }
+      },
+      "sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85"
+    },
+    "source_rechecked_after": true,
+    "started_utc": "2026-11-04T14:07:13.132776+00:00",
+    "status": "PASS",
+    "verifier_sha256": "9350de789364f3fd59f5289241163e34df3e8f0c4b4ef2ccfc0d780b8820e76a"
+  },
+  "independent_verifier": {
+    "bytes": 27068,
+    "filename": "FUNCTIONAL-GRAPH-001-CODEX-ORACLE.py",
+    "sha256": "9350de789364f3fd59f5289241163e34df3e8f0c4b4ef2ccfc0d780b8820e76a"
+  },
+  "limitations": [
+    "Finite tests do not constitute a formal proof.",
+    "Only valid no-self-loop functional graphs are in scope.",
+    "No RSS measurement; tracemalloc measures traced Python allocations only.",
+    "No canonical ETQ bundle or quantum/E8 performance tested.",
+    "No Windows or external judge execution.",
+    "No formal proof assistant was run; mathematical/source arguments are inferred.",
+    "Reverse-graph hashing complexity is conditional; no tight adversarial CPython dense-integer hash bound proved.",
+    "Small benchmark differences can be timing noise; five samples describe one session, not confidence intervals.",
+    "Benchmark functions were already exercised by correctness tests before the separately identified warmups; this is warm steady-state performance.",
+    "The independent random shape uses seed 26051103 and rejection sampling, so it matches the canonical random graph family, not the seed1703 canonical input array.",
+    "Canonical benchmark protocol is preserved verbatim, with its own three repetitions and GC behavior. Independent timings disable cyclic GC during each call and are not pooled with canonical timing values.",
+    "Sampled/generated case counts include repeats; only the exhaustive set is asserted unique.",
+    "No external judge, SOFA service, Monica evidence or historical benchmark conclusions consulted.",
+    "The mandated committed regression test automatically reads historical evidence fields for integrity; no historical timing values were inspected or used for this independent conclusion.",
+    "An earlier sandbox run is retained outside this distributable package, excluded from final performance and pass/fail evidence. Native repetition completed after a none/none container/VM probe.",
+    "Only named environment variables are captured. No usernames, hostname, credentials or absolute private workspace paths are distributed."
+  ],
+  "mathematical_review": {
+    "challenges": {
+      "active_state_leak": "Earlier active paths are entirely resolved before the next outer iteration; state is also local to each function call.",
+      "component_count_reuse": "Solved successor counts are reused only when the actual edge reaches that successor. Distinct disconnected cycles are independently seeded; branch merges reuse the correct shared suffix.",
+      "memory_growth": "Linear live graph storage with large Python-object constants in reverse_graph. No superlinear graph-sized container construction is present; RSS was not measured.",
+      "premature_cycle_length": "Lengths are assigned only after an active-path repeat or a complete lap on the peeled residual cycle. Indegree peeling establishes that its residual lap cannot enter a tail.",
+      "quadratic_path_index": "Rejected by aggregate disjoint-path accounting; no empirical timing inference is needed.",
+      "recursion": "All five implementations are iterative; no recursive candidate calls. Actual boundary executions completed."
+    },
+    "common_invariant": "A forward walk follows edges[v] until a previously encountered vertex. The first repeat on its own active path closes a simple directed cycle. Every cycle node reaches exactly its L cycle vertices. A non-cycle node cannot reappear among its successor reachable vertices, so A[v]=1+A[edges[v]]. A cycle node must be seeded with L before this tail recurrence is used.",
+    "edge_walk": {
+      "aggregate_argument": "Discovery and popping each process every node once; additional cycle laps traverse mutually disjoint cycles once in total.",
+      "auxiliary_space_excluding_output": "Theta(n): bytearray plus path",
+      "correctness": "Three explicit states separate unseen/current/solved. The active encounter is on the current path. A real-edge lap from that vertex counts the closed cycle; popping the path through the encounter vertex resolves exactly that cycle. Remaining tail nodes pop in reverse dependency order. Every active node becomes state 2 before another start.",
+      "including_output": "Theta(n)",
+      "lines": [
+        52,
+        82
+      ],
+      "worst_case_time": "Theta(n) aggregate under word-RAM/list amortization"
+    },
+    "indegree_peel": {
+      "aggregate_argument": "One edge count/decrement per vertex; each vertex queued/removed at most once. Residual cycles are traversed twice in total, then each removed vertex once.",
+      "auxiliary_space_excluding_output": "Theta(n): degree array, removed order and queue",
+      "correctness": "Removing indegree-zero nodes cannot remove a cycle vertex. Every non-cycle vertex is eventually removed; the residual functional digraph consists only of disjoint cycles. Count a full forward cycle lap, seed all cycle nodes, then process removed vertices backwards so their successor is solved.",
+      "including_output": "Theta(n)",
+      "lines": [
+        85,
+        115
+      ],
+      "worst_case_time": "Theta(n) under word-RAM/list amortization"
+    },
+    "model": "Inferred source proof under valid finite functional digraphs with dense integer labels, no self-loops, and word-RAM O(1) arithmetic/index operations. Counts and indices fit O(log n)-bit words. This is not a machine-checked formal proof.",
+    "path_index": {
+      "aggregate_argument": "path.index scans only the current newly discovered path, at most once. Even if it scans almost all of a long chain, no later path can contain those solved vertices. Sum of all scans, slices, deletions and finalizations is O(n).",
+      "auxiliary_space_excluding_output": "Theta(n): state array, path and cycle slice",
+      "correctness": "Uses explicit 0/1/2 state with the same current-path and solved-successor invariants as signed_walk. Every cycle suffix and reversed tail prefix is marked solved within the same outer iteration.",
+      "including_output": "Theta(n)",
+      "lines": [
+        118,
+        142
+      ],
+      "worst_case_time": "Theta(n) aggregate under word-RAM/list amortization"
+    },
+    "reverse_graph": {
+      "aggregate_argument": "n predecessor entries, at most n discoveries across all local pos tables, at most n solved/enqueued vertices and n reverse arcs examined. There are n outer starts, including O(1) empty paths. The implementation uses hashed containers, so the strict deterministic array-access guarantee of the other four does not transfer without a hash-cost assumption.",
+      "auxiliary_space_excluding_output": "Theta(n): predecessor containers, seen, solved, queue, path and pos",
+      "correctness": "parents[v] contains exactly original predecessors u with edges[u]=v. Discovery follows forward edges. Local pos distinguishes a newly closed cycle from a previously seen component. Seed every cycle vertex before reverse propagation; solved blocks all repeat enqueues, including cycle-to-cycle increments. Reverse propagation is predecessor dynamic programming, not a claimed forward walk. seen and solved serve different roles: a reverse-solved tail can later be forward-seen once, without incorrect reseeding or count reuse.",
+      "including_output": "Theta(n)",
+      "lines": [
+        145,
+        177
+      ],
+      "worst_case_time": "Theta(n) graph/hash operations; expected/amortized Theta(n) runtime with O(1) hash operations. Conservative O(n^2) runtime upper bound if individual Python dict/set operations degrade to O(n); tight worst case in the restricted dense-integer domain is not established here."
+    },
+    "signed_walk": {
+      "aggregate_argument": "Each node is appended and finalized once. At most one path.index per newly built path; paths are disjoint in newly discovered vertices, so sum of scan lengths <= n. Cycle slices/deletions and reverse-prefix passes also total O(n). Dynamic-array allocation and occasional resizing do not multiply this bound.",
+      "auxiliary_space_excluding_output": "O(n) path and temporary cycle slice; worst-case Theta(n)",
+      "correctness": "0 means unseen, -1 active, positive solved. All path nodes are new. A -1 encounter must belong to this path because earlier iterations resolve every active node. The cycle suffix receives its exact length; reversed prefix then has a solved successor at each assignment. No -1 survives an outer iteration.",
+      "including_output": "Theta(n)",
+      "lines": [
+        24,
+        49
+      ],
+      "worst_case_time": "Theta(n) aggregate under word-RAM/list amortization"
+    }
+  },
+  "mismatches": [],
+  "new_bugs": [],
+  "performance_summary": {
+    "interpretation": "Signed wins 4/8 timing medians, edge walk 2/8, indegree peel 2/8. Signed has minimum traced peak on 6/8 shapes; indegree peel on big_cycle; edge walk on long_chain. Edge walk has the lowest maximum traced peak over this tested workload set. No universal winner or cross-version performance claim.",
+    "memory_winners": {
+      "big_cycle": "indegree_peel",
+      "long_chain": "edge_walk",
+      "many_2cycles": "signed_walk",
+      "merging_branches": "signed_walk",
+      "mixed_disconnected_cycles": "signed_walk",
+      "random": "signed_walk",
+      "reverse_chain": "signed_walk",
+      "star_2cycle": "signed_walk"
+    },
+    "peak_ranges_bytes": {
+      "edge_walk": {
+        "maximum": 4092337,
+        "minimum": 900561
+      },
+      "indegree_peel": {
+        "maximum": 7202608,
+        "minimum": 1601456
+      },
+      "path_index": {
+        "maximum": 5593416,
+        "minimum": 1600696
+      },
+      "reverse_graph": {
+        "maximum": 57040008,
+        "minimum": 41772328
+      },
+      "signed_walk": {
+        "maximum": 4793328,
+        "minimum": 800608
+      }
+    },
+    "timing_winners": {
+      "big_cycle": "signed_walk",
+      "long_chain": "signed_walk",
+      "many_2cycles": "indegree_peel",
+      "merging_branches": "edge_walk",
+      "mixed_disconnected_cycles": "signed_walk",
+      "random": "signed_walk",
+      "reverse_chain": "indegree_peel",
+      "star_2cycle": "edge_walk"
+    }
+  },
+  "readability_judgment": {
+    "choice": "indegree_peel",
+    "claim_status": "inferred",
+    "reason": "The three phases make cycle isolation and successor dependency explicit without overloaded signs. This is an auditor preference, not a measured human-factors result."
+  },
+  "reproduction": {
+    "environment": "Installed CPython 3.14.4 selected by uv --python 3.14.4 (resolved /usr/bin/python3.14); no downloads/installs, no project/dependencies, native host.",
+    "finalization": "FINALIZATION.json records four required file sizes and hashes. SHA256SUMS.txt covers every distributable artifact except itself. No covered file is rewritten after checksum creation.",
+    "independent_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=0 uv run --no-project --offline --no-managed-python --python 3.14.4 python <EVIDENCE>/FUNCTIONAL-GRAPH-001-CODEX-ORACLE.py --source <DETACHED_WORKTREE> --output <NEW_DIRECTORY>",
+    "output_policy": "Exclusive-create; do not overwrite prior evidence. Hashes identify exact emitted bytes, timing values vary on replay.",
+    "source": "Use a separate detached worktree at the exact commit; verify run.py SHA before execution."
+  },
+  "schema_version": 1,
+  "sofa_recommendation": {
+    "claim_status": "inferred",
+    "distinct_contribution_justified": true,
+    "publication_performed": false,
+    "reference_rule": "Any eventual SOFA text must use plain-text repository, exact commit, paths and line references, without clickable outbound links.",
+    "scope": "Independent adversarial verification receipt: source pin, separate oracle/RNG, negative controls, boundary checks and workload-specific measurements. Not a novel algorithm or ETQ/quantum/E8 advantage."
+  },
+  "source": {
+    "commit": "42af1d99d736802214ed61ffe950e6ad809b1aee",
+    "detached": true,
+    "files": {
+      "challenges/FUNCTIONAL-GRAPH-001/LOCAL-PYTHON-313.json": {
+        "bytes": 3725,
+        "sha256": "5e07994d82ef2a4412b83bc0d34cb943d88c6997d0545e828057b715798371bc"
+      },
+      "challenges/FUNCTIONAL-GRAPH-001/README.md": {
+        "bytes": 6521,
+        "sha256": "ac05fc7a7e888d4a2d2b927071cd39ddb9f0e52570530c4a433b99f15521340c"
+      },
+      "challenges/FUNCTIONAL-GRAPH-001/run.py": {
+        "bytes": 9639,
+        "sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85"
+      },
+      "tests/test_functional_graph.py": {
+        "bytes": 4452,
+        "sha256": "4854a4ee864df74129c3d77f98458b750a1010d82235003e6a8f25eab18b5321"
+      }
+    },
+    "final_integrity": {
+      "detached_checkout_head": {
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "42af1d99d736802214ed61ffe950e6ad809b1aee\n"
+      },
+      "detached_checkout_status": {
+        "args": [
+          "status",
+          "--porcelain=v1"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "locked_files_after": {
+        "challenges/FUNCTIONAL-GRAPH-001/LOCAL-PYTHON-313.json": {
+          "bytes": 3725,
+          "sha256": "5e07994d82ef2a4412b83bc0d34cb943d88c6997d0545e828057b715798371bc"
+        },
+        "challenges/FUNCTIONAL-GRAPH-001/README.md": {
+          "bytes": 6521,
+          "sha256": "ac05fc7a7e888d4a2d2b927071cd39ddb9f0e52570530c4a433b99f15521340c"
+        },
+        "challenges/FUNCTIONAL-GRAPH-001/run.py": {
+          "bytes": 9639,
+          "sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85"
+        },
+        "tests/test_functional_graph.py": {
+          "bytes": 4452,
+          "sha256": "4854a4ee864df74129c3d77f98458b750a1010d82235003e6a8f25eab18b5321"
+        }
+      },
+      "locked_files_unchanged": true,
+      "original_checkout_head": {
+        "args": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "5e3825f93885579f086f8d3650f07cd64b530632\n"
+      },
+      "original_checkout_status": {
+        "args": [
+          "status",
+          "--porcelain=v1"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "original_checkout_unchanged": true,
+      "tracked_diff": {
+        "args": [
+          "diff",
+          "--exit-code",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "matches": true,
+    "original_checkout_head": "5e3825f93885579f086f8d3650f07cd64b530632",
+    "original_checkout_status_before": "",
+    "repository": "QSOLKCB/HERESY-SOFA",
+    "run_py_sha256": "84ff9073190b28e766df5be53dd43c833ae6e45bd0be6901704c95dd63d3ba85",
+    "worktree_creation_exit_code": 0
+  },
+  "static_source_audit": {
+    "claim_status": "executed_static_AST_inspection",
+    "functions": {
+      "edge_walk": {
+        "direct_edge_assignments": [
+          {
+            "line": 65,
+            "source": "v = edges[v]"
+          },
+          {
+            "line": 68,
+            "source": "u = edges[v]"
+          },
+          {
+            "line": 71,
+            "source": "u = edges[u]"
+          }
+        ],
+        "direct_self_recursion": false,
+        "lines": [
+          52,
+          82
+        ],
+        "named_calls": [
+          "bytearray",
+          "len",
+          "range"
+        ],
+        "path_index_calls": []
+      },
+      "indegree_peel": {
+        "direct_edge_assignments": [
+          {
+            "line": 96,
+            "source": "u = edges[v]"
+          },
+          {
+            "line": 105,
+            "source": "v = edges[start]"
+          },
+          {
+            "line": 107,
+            "source": "v = edges[v]"
+          },
+          {
+            "line": 112,
+            "source": "v = edges[v]"
+          }
+        ],
+        "direct_self_recursion": false,
+        "lines": [
+          85,
+          115
+        ],
+        "named_calls": [
+          "deque",
+          "enumerate",
+          "len",
+          "range",
+          "reversed"
+        ],
+        "path_index_calls": []
+      },
+      "path_index": {
+        "direct_edge_assignments": [
+          {
+            "line": 131,
+            "source": "v = edges[v]"
+          }
+        ],
+        "direct_self_recursion": false,
+        "lines": [
+          118,
+          142
+        ],
+        "named_calls": [
+          "len",
+          "range",
+          "reversed"
+        ],
+        "path_index_calls": [
+          {
+            "line": 133,
+            "source": "path.index(v)"
+          }
+        ]
+      },
+      "reverse_graph": {
+        "direct_edge_assignments": [
+          {
+            "line": 163,
+            "source": "v = edges[v]"
+          }
+        ],
+        "direct_self_recursion": false,
+        "lines": [
+          145,
+          177
+        ],
+        "named_calls": [
+          "defaultdict",
+          "deque",
+          "enumerate",
+          "len",
+          "range",
+          "set"
+        ],
+        "path_index_calls": []
+      },
+      "signed_walk": {
+        "direct_edge_assignments": [
+          {
+            "line": 40,
+            "source": "v = edges[v]"
+          }
+        ],
+        "direct_self_recursion": false,
+        "lines": [
+          24,
+          49
+        ],
+        "named_calls": [
+          "len",
+          "range",
+          "reversed"
+        ],
+        "path_index_calls": [
+          {
+            "line": 42,
+            "source": "path.index(v)"
+          }
+        ]
+      }
+    },
+    "scope": "Lists assignment-level direct edge reads and direct recursion; proof discussion also examines answer lookups, reverse adjacency construction and iteration."
+  },
+  "supplemental_artifacts": [
+    {
+      "bytes": 27068,
+      "filename": "FUNCTIONAL-GRAPH-001-CODEX-ORACLE.py",
+      "sha256": "9350de789364f3fd59f5289241163e34df3e8f0c4b4ef2ccfc0d780b8820e76a"
+    },
+    {
+      "bytes": 3736,
+      "filename": "FUNCTIONAL-GRAPH-001-CODEX-RAW.json",
+      "sha256": "4706e8510b470a6cb8bc8c9a79d427dab609ad44a4ae114aaf002ddb135e9a18"
+    },
+    {
+      "bytes": 605,
+      "filename": "canonical-runner-receipt.json",
+      "sha256": "e1ef386552a8e345db4d30d8040ff1949ea204646b68bd93b8e8cea6163a46c1"
+    },
+    {
+      "bytes": 0,
+      "filename": "canonical-runner.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 657,
+      "filename": "canonical-unittest-receipt.json",
+      "sha256": "005d1e9a08b092fa0ddea1658b8d25a7d48b51794e50a46ef47cdb5b0939b49b"
+    },
+    {
+      "bytes": 1078,
+      "filename": "canonical-unittest.stderr.txt",
+      "sha256": "1df97d88887b77905d7d9c057c5e72b35a18f3e677c51aa37f69a939bece2870"
+    },
+    {
+      "bytes": 0,
+      "filename": "canonical-unittest.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3199,
+      "filename": "environment.json",
+      "sha256": "aea4d21b02da2ab72fd4b8944e5c98cb4226f57b881523a695fe1b8c54ff0b30"
+    },
+    {
+      "bytes": 9323,
+      "filename": "etq-boundary.json",
+      "sha256": "95a361ad5aac682a8a05188c94595eaf01b97c1e1ef4b22e47bca5ba2bde9d8a"
+    },
+    {
+      "bytes": 3262,
+      "filename": "etq-source-references.json",
+      "sha256": "a2f446e8ed1d2f85592c5cd2e2c412bed0452929db418d0e23e0026c204e994b"
+    },
+    {
+      "bytes": 5113,
+      "filename": "execute-native.py",
+      "sha256": "8bc53bcca99ffbdc1f75119f5d1f16d3dc1e99095e99ab36f859dfbdab52a589"
+    },
+    {
+      "bytes": 647,
+      "filename": "independent-receipt.json",
+      "sha256": "56e361e8d552cf6bdad942fe1ef90bfd7d47e0fd0b8da56c72cb4d358c8bf77b"
+    },
+    {
+      "bytes": 63486,
+      "filename": "independent-results.json",
+      "sha256": "45243895e022ed7d88dd620ca768824889cec28c12facacf1d8ff44f8be26b81"
+    },
+    {
+      "bytes": 0,
+      "filename": "independent.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 573,
+      "filename": "independent.stdout.txt",
+      "sha256": "03d9d2084dde60a06d5e6b4d9cb9a0a9df4cacfe3668c61665bb186bbe512aaf"
+    },
+    {
+      "bytes": 997,
+      "filename": "source-baseline.json",
+      "sha256": "070ee0232ebc2cc49318faaa00f1405d40b99ae9139fc6e050d445afb8fe54f2"
+    },
+    {
+      "bytes": 1575,
+      "filename": "source-final-check.json",
+      "sha256": "806b3d4c907da4e997909c78747d4870329f68f4ae9cfaf1d4d67c8cf0fe82fa"
+    },
+    {
+      "bytes": 314,
+      "filename": "source-identity.json",
+      "sha256": "32c7ed6969af0d1882bd391d58fe57b6561151585e2590f03a73eb0ab1765786"
+    },
+    {
+      "bytes": 2657,
+      "filename": "source-structural-audit.json",
+      "sha256": "e1881cd659af77a5e3e1515917b330d368bd1348edf1caf1531c9805a7d86de1"
+    }
+  ]
+}
