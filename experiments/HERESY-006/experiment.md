@@ -16,6 +16,8 @@ The parent executes isolated workers for seeds 0–63, three identical fixed-see
 
 Every recorded partition must cover every graph node exactly once. Its modularity and recomputed modularity must both be finite, then agree within `1e-12`. A missing dependency, nonzero child, timeout, malformed output, incomplete seed/fixture set, coverage error, or modularity mismatch makes the run `NOT_RUN` or `FAIL`, never green paperwork.
 
+Failed worker records retain **bounded, sanitized** stderr and an allowlisted structural observation (including canonical partition members and the reported modularity), with explicit truncation when necessary. Arbitrary worker keys, local paths, credentials and raw diagnostic streams are not published. A broken fixed-seed repeat or failed separated-clique control now forces top-level `FAIL` and a nonzero exit, even if every individual worker record is structurally valid.
+
 `PYTHONHASHSEED` is fixed when each worker interpreter starts. The parent controls that environment value and rejects a mismatched worker report; this proves the requested process configuration was launched and echoed, not that Louvain causally used the hash seed internally.
 
 ## Temporary dependency and command
@@ -41,3 +43,5 @@ sha256sum experiments/HERESY-006/{experiment.json,experiment.md,run.py}
 ```
 
 The report is not a harness receipt or a SOFA publication. Raw `receipts/generated/` output remains local and uncommitted.
+
+**Historical evidence boundary:** The committed 240-configuration `HERESY-006-report.json` records the executed source at `1f4e568373764396aa6bd580d2e1cc30e0742c49`. Later fail-closed diagnostic changes do not retroactively re-run that matrix or change its original evidence hashes. Re-run the current code in an approved NetworkX environment to create a new report bound to the new source revision; keep the earlier report's provenance unchanged.
