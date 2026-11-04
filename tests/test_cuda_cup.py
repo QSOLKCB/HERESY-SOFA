@@ -37,8 +37,25 @@ class CudaCupTests(unittest.TestCase):
         report["conclusion"] = "CONFIRMED"
         report["runtime"]["gpu_model"] = "synthetic_gpu_not_hardware"
         report["runtime"]["device_count"] = 1
+        report["runtime"]["compute_capability"] = "0.0"
+        probe = {
+            "driver_status": 0, "runtime_status": 0,
+            "device_count_status": 0, "device_count": 1,
+            "properties_status": 0,
+            "driver_version": report["runtime"]["cuda_driver_version"],
+            "runtime_version": report["runtime"]["cuda_runtime_version"],
+            "gpu_name": report["runtime"]["gpu_model"],
+            "compute_capability": report["runtime"]["compute_capability"],
+        }
+        probe_command = next(
+            record for record in report["commands"] if "--probe" in record["command"]
+        )
+        probe_command.update(
+            exit_code=0, timed_out=False,
+            observation=copy.deepcopy(probe), stdout=json.dumps(probe),
+        )
         report["actual"] = {
-            "device_probe": {"device_count_status": 0, "device_count": 1},
+            "device_probe": probe,
             "all_required_observations_accepted": True,
             "fault_reported_as_710": True,
             "observed_at_synchronization_in_at_least_one_trial": True,
@@ -123,6 +140,88 @@ class CudaCupTests(unittest.TestCase):
                 else:
                     bad["actual"]["device_probe"]["device_count_status"] = False
                 self.assertEqual(self.screener.screen(bad)["screening"], "REJECTED")
+
+    def test_extreme_or_invalid_repeats_fail_before_matrix_allocation(self):
+        candidate = self._synthetic_candidate()
+        for raw in ("1000000000000", "0", "-1", "six"):
+            with self.subTest(raw_repeats=raw):
+                bad = copy.deepcopy(candidate)
+                index = bad["invocation"].index("--repeats") + 1
+                bad["invocation"][index] = raw
+                screened = self.screener.screen(bad)
+                self.assertEqual(screened["screening"], "REJECTED")
+                self.assertIn("repeats outside bounded range", screened["errors"])
+                self.assertFalse(screened["verified_hardware"])
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "huge-repeats.json"
+            bad = copy.deepcopy(candidate)
+            bad["invocation"][-1] = "1000000000000"
+            path.write_text(json.dumps(bad), encoding="utf-8")
+            result = subprocess.run(
+                [sys.executable, str(CUP / "screen.py"), str(path)],
+                capture_output=True, text=True, timeout=4, check=False,
+            )
+            self.assertEqual(result.returncode, 1, result.stderr)
+            self.assertEqual(json.loads(result.stdout)["screening"], "REJECTED")
+            self.assertNotIn("Traceback", result.stderr)
+
+    def test_malformed_argv_yields_machine_readable_rejection(self):
+        candidate = self._synthetic_candidate()
+        for command in (None, 7, False, {"argv": []}, ["nvcc", None], ["nvcc", 123]):
+            with self.subTest(command=command), tempfile.TemporaryDirectory() as directory:
+                bad = copy.deepcopy(candidate)
+                compile_record = next(
+                    item for item in bad["commands"]
+                    if "assertion.cu" in item["command"]
+                )
+                compile_record["command"] = command
+                path = Path(directory) / "malformed-argv.json"
+                path.write_text(json.dumps(bad), encoding="utf-8")
+                result = subprocess.run(
+                    [sys.executable, str(CUP / "screen.py"), str(path)],
+                    capture_output=True, text=True, timeout=4, check=False,
+                )
+                self.assertEqual(result.returncode, 1, result.stderr)
+                self.assertEqual(json.loads(result.stdout)["screening"], "REJECTED")
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_recorded_probe_must_succeed_and_match_probe_observation(self):
+        candidate = self._synthetic_candidate()
+        mutations = (
+            "timeout", "exit_error", "reported_driver_error", "reported_runtime_error",
+            "reported_properties_error", "observation_mismatch", "stdout_mismatch",
+            "runtime_version_mismatch", "missing_probe",
+        )
+        for mutation in mutations:
+            with self.subTest(mutation=mutation):
+                bad = copy.deepcopy(candidate)
+                record = next(
+                    item for item in bad["commands"] if "--probe" in item["command"]
+                )
+                if mutation == "timeout":
+                    record["timed_out"] = True
+                    record["exit_code"] = 124
+                elif mutation == "exit_error":
+                    record["exit_code"] = 31
+                elif mutation == "reported_driver_error":
+                    bad["actual"]["device_probe"]["driver_status"] = 1
+                elif mutation == "reported_runtime_error":
+                    bad["actual"]["device_probe"]["runtime_status"] = 1
+                elif mutation == "reported_properties_error":
+                    bad["actual"]["device_probe"]["properties_status"] = 1
+                elif mutation == "observation_mismatch":
+                    record["observation"]["device_count"] = 2
+                elif mutation == "stdout_mismatch":
+                    record["stdout"] = "{}"
+                elif mutation == "runtime_version_mismatch":
+                    bad["runtime"]["cuda_runtime_version"] += 1
+                elif mutation == "missing_probe":
+                    bad["commands"].remove(record)
+                screened = self.screener.screen(bad)
+                self.assertEqual(screened["screening"], "REJECTED")
+                self.assertFalse(screened["verified_hardware"])
+                self.assertTrue(screened["errors"])
 
     def test_post_assert_context_claim_rejected(self):
         bad = self._synthetic_candidate()

@@ -112,9 +112,17 @@ def screen(report: Any) -> dict[str, Any]:
         require("--hardware" in invocation, "missing explicit hardware opt-in")
         try:
             repeats = int(invocation[invocation.index("--repeats") + 1])
-        except (ValueError, IndexError):
-            repeats = -1
-        require(1 <= repeats <= MAX_REPEATS, "repeats outside bounded range")
+        except (ValueError, IndexError, TypeError):
+            repeats = 0
+        if not 1 <= repeats <= MAX_REPEATS:
+            # Reject before the untrusted value can reach range() or allocation.
+            return {
+                "competition_id": COMPETITION_ID,
+                "screening": "REJECTED",
+                "verified_hardware": False,
+                "errors": [*errors, "repeats outside bounded range"],
+                "note": "Invalid bounded trial matrix; no hardware verdict or score.",
+            }
 
         runtime = report.get("runtime")
         if not isinstance(runtime, dict):
@@ -128,19 +136,83 @@ def screen(report: Any) -> dict[str, Any]:
         probe = actual.get("device_probe")
         if not isinstance(probe, dict):
             probe = {}
-        require(_integer(probe.get("device_count_status")) and probe["device_count_status"] == 0
-                and _integer(probe.get("device_count"))
-                and probe["device_count"] >= 1, "device preflight did not pass")
+        require(
+            _integer(probe.get("device_count_status")) and probe["device_count_status"] == 0
+            and _integer(probe.get("device_count")) and probe["device_count"] >= 1,
+            "device preflight did not pass",
+        )
+        for status_field in ("driver_status", "runtime_status", "properties_status"):
+            require(
+                _integer(probe.get(status_field)) and probe[status_field] == 0,
+                "device preflight " + status_field + " did not pass",
+            )
+        for probe_field, runtime_field in (
+            ("device_count", "device_count"),
+            ("driver_version", "cuda_driver_version"),
+            ("runtime_version", "cuda_runtime_version"),
+        ):
+            require(
+                _integer(probe.get(probe_field))
+                and _integer(runtime.get(runtime_field))
+                and probe[probe_field] == runtime[runtime_field],
+                "device probe and runtime " + probe_field + " disagree",
+            )
+        for probe_field, runtime_field in (
+            ("gpu_name", "gpu_model"),
+            ("compute_capability", "compute_capability"),
+        ):
+            require(
+                isinstance(probe.get(probe_field), str)
+                and bool(probe[probe_field].strip())
+                and probe[probe_field] == runtime.get(runtime_field),
+                "device probe and runtime " + probe_field + " disagree",
+            )
 
         commands = report.get("commands")
+        if not isinstance(commands, list):
+            errors.append("commands must be a list")
+            commands = []
+        valid_commands = []
+        for item in commands:
+            argv = item.get("command") if isinstance(item, dict) else None
+            if not isinstance(argv, list) or not all(isinstance(arg, str) for arg in argv):
+                errors.append("malformed command argv")
+                continue
+            valid_commands.append(item)
         require(
-            isinstance(commands, list) and any(
-                isinstance(item, dict) and "assertion.cu" in item.get("command", [])
-                and item.get("exit_code") == 0 and item.get("timed_out") is False
-                for item in commands
+            any(
+                "assertion.cu" in item["command"]
+                and _integer(item.get("exit_code")) and item["exit_code"] == 0
+                and item.get("timed_out") is False
+                for item in valid_commands
             ),
             "missing successful compilation record",
         )
+
+        probe_records = [
+            item for item in valid_commands if "--probe" in item["command"]
+        ]
+        require(len(probe_records) == 1, "expected exactly one recorded device probe")
+        if len(probe_records) == 1:
+            probe_record = probe_records[0]
+            require(
+                _integer(probe_record.get("exit_code")) and probe_record["exit_code"] == 0
+                and probe_record.get("timed_out") is False,
+                "recorded device probe failed or timed out",
+            )
+            require(
+                isinstance(probe_record.get("observation"), dict)
+                and probe_record["observation"] == probe,
+                "recorded device probe disagrees with actual.device_probe",
+            )
+            try:
+                probe_stdout = json.loads(probe_record.get("stdout"))
+            except (TypeError, ValueError):
+                probe_stdout = None
+            require(
+                isinstance(probe_stdout, dict) and probe_stdout == probe,
+                "device probe stdout disagrees with recorded observation",
+            )
 
         trials = actual.get("trials")
         if not isinstance(trials, list):
