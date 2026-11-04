@@ -190,6 +190,98 @@ class Heresy006Tests(unittest.TestCase):
             self.assertEqual(report["conclusion"], "UNCONFIRMED")
             self.assertTrue(all(value == "not_tested" for value in report["claims"].values()))
 
+
+    def test_failed_worker_report_keeps_sanitized_counterexample(self):
+        original = self.valid_worker()["output"]
+        original["results"][0]["partition"] = [[0], [0]]
+        original["results"][0]["unexpected_private_field"] = "do-not-export-this-value"
+        original["unexpected_private_field"] = "do-not-export-this-value"
+
+        def failed_worker(scenario, order, seeds, hash_seed, repeat=None, timeout=None):
+            return {
+                "scenario": scenario, "insertion_order": order,
+                "seeds": list(seeds), "hash_seed": hash_seed,
+                "repeat": repeat, "command": ["python3", "worker"],
+                "exit_code": 9, "timed_out": False,
+                "stderr": (
+                    'File "/home/example/private/run.py", line 12\n'
+                    'ValueError: token=sensitive@example.com\n'
+                ),
+                "output": copy.deepcopy(original),
+            }
+
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "failed.json"
+            dependency = {"command": ["python3"], "exit_code": 0, "version": "test-version", "stderr": ""}
+            with mock.patch.object(self.runner, "_dependency_probe", return_value=dependency), \
+                 mock.patch.object(self.runner, "run_worker_process", side_effect=failed_worker):
+                exit_code = self.runner.run_experiment(Namespace(output=output, timeout=1.0))
+            report = json.loads(output.read_text(encoding="utf-8"))
+
+        self.assertEqual(exit_code, 1)
+        self.assertEqual(report["run_status"], "FAIL")
+        self.assertEqual(report["conclusion"], "UNCONFIRMED")
+        failures = report["actual"]["failed_worker_diagnostics"]
+        self.assertTrue(failures)
+        self.assertEqual(failures[0]["exit_code"], 9)
+        self.assertEqual(failures[0]["observation"]["results"][0]["partition"], [[0], [0]])
+        self.assertIn("ValueError", failures[0]["stderr_excerpt"])
+        self.assertIn("<path>", failures[0]["stderr_excerpt"])
+        text = json.dumps(report, sort_keys=True)
+        for secret in ("/home/example", "sensitive@example.com", "do-not-export-this-value"):
+            self.assertNotIn(secret, text)
+
+    def test_malformed_worker_stdout_is_bounded_and_redacted(self):
+        record = {
+            "scenario": "fixed_repeat", "insertion_order": "natural",
+            "hash_seed": 0, "repeat": 0, "exit_code": 1,
+            "timed_out": False, "validation": "malformed JSON",
+            "stderr": "RuntimeError: password=very-secret",
+            "stdout": '/tmp/private/path token=not-public ' + "A" * 10000,
+            "output": None,
+        }
+        evidence = self.runner._failed_worker_diagnostic(record)
+        self.assertIn("<path>", evidence["malformed_stdout_excerpt"])
+        self.assertNotIn("not-public", json.dumps(evidence))
+        self.assertNotIn("very-secret", json.dumps(evidence))
+        self.assertIn("<truncated>", evidence["malformed_stdout_excerpt"])
+        self.assertLessEqual(len(evidence["malformed_stdout_excerpt"]), self.runner.MAX_DIAGNOSTIC_CHARS + 11)
+
+    def test_failed_controls_make_top_level_experiment_nonzero(self):
+        actual = {
+            "fixed_seed_reproducible": True,
+            "variation_across_seeds": {fixture: True for fixture in self.runner.FIXTURES},
+            "variation_across_construction_order": {fixture: False for fixture in self.runner.FIXTURES},
+            "variation_across_process_hash_seed": {fixture: False for fixture in self.runner.FIXTURES},
+            "all_partitions_cover_nodes_once_and_modularity_is_consistent": True,
+            "stability_control_passed": True,
+        }
+
+        def nominal_worker(scenario, order, seeds, hash_seed, repeat=None, timeout=None):
+            return {
+                "scenario": scenario, "insertion_order": order,
+                "seeds": list(seeds), "hash_seed": hash_seed,
+                "repeat": repeat, "command": ["python3", "worker"],
+                "exit_code": 0, "timed_out": False,
+                "stderr": "", "output": {},
+            }
+
+        dependency = {"command": ["python3"], "exit_code": 0, "version": "test-version", "stderr": ""}
+        for failed_control in ("fixed_seed_reproducible", "stability_control_passed"):
+            with self.subTest(failed_control=failed_control), tempfile.TemporaryDirectory() as directory:
+                failing = copy.deepcopy(actual)
+                failing[failed_control] = False
+                output = Path(directory) / "report.json"
+                with mock.patch.object(self.runner, "_dependency_probe", return_value=dependency), \
+                     mock.patch.object(self.runner, "run_worker_process", side_effect=nominal_worker), \
+                     mock.patch.object(self.runner, "validate_worker", return_value=(True, "validated")), \
+                     mock.patch.object(self.runner, "_summarize", return_value=failing):
+                    exit_code = self.runner.run_experiment(Namespace(output=output, timeout=1.0))
+                report = json.loads(output.read_text(encoding="utf-8"))
+                self.assertEqual(exit_code, 1)
+                self.assertEqual(report["run_status"], "FAIL")
+                self.assertEqual(report["conclusion"], "UNCONFIRMED")
+
     @unittest.skipUnless(importlib.util.find_spec("networkx"), "NetworkX is optional")
     def test_fixture_topology_is_equivalent_across_insertion_orders(self):
         import networkx as nx
