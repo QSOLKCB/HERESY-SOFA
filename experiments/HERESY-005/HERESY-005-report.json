@@ -1,0 +1,162 @@
+{
+  "actual": {
+    "reason": "no working NVIDIA CUDA device/driver was available to the compiled probe"
+  },
+  "child_exit_codes": [
+    {
+      "exit_code": 30,
+      "role": "device_probe",
+      "timed_out": false
+    }
+  ],
+  "claims": {
+    "device_assert_can_surface_at_synchronization": "not_tested",
+    "device_assert_reported_as_cudaErrorAssert_710": "not_tested",
+    "post_assert_context_rejects_further_work": "not_tested"
+  },
+  "commands": [
+    {
+      "command": [
+        "nvcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2024 NVIDIA Corporation\nBuilt on Thu_Mar_28_02:18:24_PDT_2024\nCuda compilation tools, release 12.4, V12.4.131\nBuild cuda_12.4.r12.4/compiler.34097967_0\n",
+      "timed_out": false
+    },
+    {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,compute_cap",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 9,
+      "stderr": "",
+      "stdout": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.\n\n",
+      "timed_out": false
+    },
+    {
+      "command": [
+        "nvcc",
+        "--list-gpu-code"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "sm_50\nsm_52\nsm_53\nsm_60\nsm_61\nsm_62\nsm_70\nsm_72\nsm_75\nsm_80\nsm_86\nsm_87\nsm_89\nsm_90\n",
+      "timed_out": false
+    },
+    {
+      "command": [
+        "nvcc",
+        "-std=c++17",
+        "-lineinfo",
+        "assertion.cu",
+        "-o",
+        "assertion"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "",
+      "timed_out": false
+    },
+    {
+      "command": [
+        "<temporary>/assertion",
+        "--probe"
+      ],
+      "exit_code": 30,
+      "observation": {
+        "device_count": 0,
+        "device_count_status": 100,
+        "driver_status": 0,
+        "driver_version": 13020,
+        "runtime_status": 0,
+        "runtime_version": 12040
+      },
+      "stderr": "",
+      "stdout": "{\"driver_status\":0,\"runtime_status\":0,\"device_count_status\":100,\"device_count\":0,\"driver_version\":13020,\"runtime_version\":12040}\n",
+      "timed_out": false
+    }
+  ],
+  "conclusion": "UNCONFIRMED",
+  "evidence": [
+    {
+      "path": "experiments/HERESY-005/experiment.json",
+      "sha256": "02d614fe422a43e32839744067353a2b328302a7a05a341ea3c124e5a903557e"
+    },
+    {
+      "path": "experiments/HERESY-005/experiment.md",
+      "sha256": "0c92feb0b20052ed3116477bb42ba323b0695bb7cb6b8b561298c6079710d211"
+    },
+    {
+      "path": "experiments/HERESY-005/run.py",
+      "sha256": "093ef3c2fe60b4448977c5301a3604e1b35ec1ee9e2d29e386de2519cfa67e1b"
+    },
+    {
+      "path": "experiments/HERESY-005/assertion.cu",
+      "sha256": "eebee7c81e1e0e045792ec96c36b08c414890a6f54ee23b8647c30cfc07a40f1"
+    },
+    {
+      "path": "tests/test_heresy005.py",
+      "sha256": "c5e28cbba1de36ff38a723075cf37cfcaf38e9f0eabe17b90d737b8ce2bdef5b"
+    }
+  ],
+  "expected": {
+    "control": "launch status 0, synchronization status 0, child exit 0",
+    "fault": "exactly one device assert; cudaErrorAssert (710) at launch-status query or synchronization; child exit 10",
+    "safety": "no CUDA call after observing cudaErrorAssert; parent timeout terminates a stuck child"
+  },
+  "experiment_id": "HERESY-005",
+  "generated_at": "2026-11-04T09:02:26Z",
+  "invocation": [
+    "python3",
+    "experiments/HERESY-005/run.py",
+    "--hardware",
+    "--output",
+    "HERESY-005-report.json",
+    "--repeats",
+    "2"
+  ],
+  "limitations": [
+    "No out-of-bounds write, reset, driver manipulation, stress loop, or persistent kernel is used.",
+    "Continued CUDA work after a device assert is deliberately not attempted; context poisoning remains not_tested by this experiment.",
+    "One workstation cannot establish behavior for other GPUs, drivers, runtimes, or toolchains."
+  ],
+  "run_status": "NOT_RUN",
+  "runtime": {
+    "compute_capability": null,
+    "cuda_driver_version": 13020,
+    "cuda_runtime_version": 12040,
+    "device_count": 0,
+    "gpu_model": null,
+    "kernel": "7.0.0-42-generic",
+    "machine": "x86_64",
+    "nvcc_supported_gpu_code": [
+      "sm_50",
+      "sm_52",
+      "sm_53",
+      "sm_60",
+      "sm_61",
+      "sm_62",
+      "sm_70",
+      "sm_72",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_87",
+      "sm_89",
+      "sm_90"
+    ],
+    "nvcc_version_output": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2024 NVIDIA Corporation\nBuilt on Thu_Mar_28_02:18:24_PDT_2024\nCuda compilation tools, release 12.4, V12.4.131\nBuild cuda_12.4.r12.4/compiler.34097967_0",
+    "nvidia_smi_output": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.",
+    "os": "Ubuntu 26.04.1 LTS",
+    "python": "3.14.4"
+  },
+  "schema_version": 1,
+  "source_revision": {
+    "evidence_tree_dirty": false,
+    "git_commit": "bb9042f9e8f626cf59bcac0113cf19dfbea801d7"
+  },
+  "title": "The CUDA Apparition"
+}
