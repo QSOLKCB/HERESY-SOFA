@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "checker_matrix": "CHECKER-MATRIX.csv",
+    "claim_ledger": "CLAIM-LEDGER.csv",
+    "negative_controls": "NEGATIVE-CONTROLS.json",
+    "open_issues": "OPEN-ISSUES.md",
+    "review": "REVIEW.md",
+    "runtime_matrix": "RUNTIME-MATRIX.csv"
+  },
+  "baseline_ref": "BASELINE.json",
+  "campaign": "LOCAL-VERIFY-002",
+  "coverage": {
+    "mypy_1.19.1": "EXECUTED_NATIVE",
+    "mypy_2.3.1": "NOT_TESTED",
+    "pyright_1.1.414": "NOT_TESTED"
+  },
+  "environment_ref": "ENVIRONMENT.json",
+  "execution": {
+    "checker_fresh_process_commands": 56,
+    "deterministic": true,
+    "executed_checker_rows": 28,
+    "failed_harness_checks": 0,
+    "failed_negative_controls": 0,
+    "fixture_count": 14,
+    "harness_checks": 195,
+    "negative_controls": 11,
+    "receipt": "RAW/EXECUTION.json",
+    "receipt_sha256": "9d7ddaa607eb10192fae4fa83d122464fa4fd20cae12d38b98d6f01e132c335b",
+    "runtime_fresh_process_commands": 112,
+    "runtime_rows": 56
+  },
+  "failed_and_skipped": {
+    "not_tested": [
+      "mypy 2.3.1: absent from uv cache and no download authorized",
+      "Pyright 1.1.414: no verified executable/cache artifact; npm and wrapper bootstrap prohibited"
+    ],
+    "preflight_failure_classification": "Harness false positive caused by matching pyright inside copyright; corrected with boundary matching.",
+    "preserved_preflight_failure": "RAW/PREFLIGHT-FAILURE-20261104T215119Z.json"
+  },
+  "generated_at_utc": "2026-11-04T22:02:10.425129Z",
+  "limitations": [
+    "Mypy 1.19.1 results do not establish mypy 2.3.1 behavior.",
+    "Mypy results do not establish Pyright behavior.",
+    "Runtime acceptance does not establish static-checker acceptance.",
+    "Checker acceptance after a suppression does not establish runtime type safety.",
+    "Only the four already-installed CPython versions were executed."
+  ],
+  "result_summary": {
+    "bare_generic_instance": "mypy 1.19.1 also reports [var-annotated] on the verbatim posted a = myclass()",
+    "custom_class_getitem": "Runtime interception confirmed; mypy 1.19.1 use site rejected; Pyright NOT_TESTED",
+    "generic_alias_constructor": "Runtime-correct but mypy 1.19.1 reports [operator] when the alias is called",
+    "generic_alias_reply": "CONFIRMED_DEFECT across CPython 3.11.15, 3.12.13, 3.13.14 and 3.14.4",
+    "generic_dataclass": "Targeted ignore leaves MyClass[C2] constructing C on four CPython versions",
+    "sound_dataclass_designs": "Required field, typed caller factory and concrete override pass mypy 1.19.1 default/strict and construct C2",
+    "typevartuple_ellipsis": "Runtime accepted on four CPython versions; mypy 1.19.1 rejected [misc]; Pyright NOT_TESTED"
+  },
+  "safety": {
+    "downloads": false,
+    "historical_evidence_modified": false,
+    "network_access_during_matrix": false,
+    "npm_invoked": false,
+    "npx_invoked": false,
+    "sofa_mutations": false
+  },
+  "schema_version": "1.0",
+  "source_commit": "ddccc1214b7a5d5942c6755ffa4da2c144d0f6ad",
+  "source_identity_ref": "SOURCE-IDENTITY.json"
+}

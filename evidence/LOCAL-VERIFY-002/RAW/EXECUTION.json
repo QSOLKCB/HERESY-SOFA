@@ -1,0 +1,1155 @@
+{
+  "campaign": "LOCAL-VERIFY-002",
+  "check_count": 195,
+  "checks": [
+    {
+      "id": "TOOL-mypy-version-exit",
+      "passed": true
+    },
+    {
+      "id": "TOOL-mypy-version-exact",
+      "passed": true
+    },
+    {
+      "id": "TOOL-mypy-1.19.1-uvx-cache-miss-system-package-retained",
+      "passed": true
+    },
+    {
+      "id": "TOOL-mypy-2.3.1-cache-miss",
+      "passed": true
+    },
+    {
+      "id": "TOOL-mypy-2.3.1-no-download",
+      "passed": true
+    },
+    {
+      "id": "TOOL-pyright-unavailable",
+      "passed": true
+    },
+    {
+      "id": "TOOL-pyright-bounded-cache-search-empty",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-GA01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-GA01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-GA02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-GA02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-default-GA03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-GA03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-GA04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-GA04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-GA05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-GA05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-GA06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-GA06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-DC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-DC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-DC02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-DC02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-default-DC03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-DC03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-default-DC04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-DC04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-default-DC05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-DC05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-default-DC06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-DC06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-DC07-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-DC07-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-default-NC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-default-NC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-GA01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-GA01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-GA02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-GA02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-strict-GA03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-GA03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-GA04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-GA04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-GA05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-GA05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-GA06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-GA06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-DC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-DC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-DC02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-DC02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-strict-DC03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-DC03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-strict-DC04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-DC04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-strict-DC05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-DC05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "MYPY-strict-DC06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-DC06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-DC07-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-DC07-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "MYPY-strict-NC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "MYPY-strict-NC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "fixture": "GA06",
+      "id": "NC-static-excess-arguments",
+      "passed": true
+    },
+    {
+      "fixture": "GA05",
+      "id": "NC-static-literal-ellipsis",
+      "passed": true
+    },
+    {
+      "fixture": "DC02",
+      "id": "NC-static-unsound-factory",
+      "passed": true
+    },
+    {
+      "fixture": "NC01",
+      "id": "NC-static-wrong-assertion",
+      "passed": true
+    },
+    {
+      "fixture": "GA06",
+      "id": "NC-harness-changed-exit",
+      "passed": true
+    },
+    {
+      "fixture": "NC01",
+      "id": "NC-harness-changed-diagnostic",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.14.4-version-exit",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.14.4-version-exact",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.13.14-version-exit",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.13.14-version-exact",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.12.13-version-exit",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.12.13-version-exact",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.11.15-version-exit",
+      "passed": true
+    },
+    {
+      "id": "PYTHON-3.11.15-version-exact",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.14.4-GA01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-GA01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-GA02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-GA02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-GA03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-GA03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-GA04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-GA04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-GA05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-GA05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.14.4-GA06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-GA06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-DC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-DC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-DC02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-DC02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-DC03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-DC03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-DC04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-DC04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-DC05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-DC05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-DC06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-DC06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-DC07-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-DC07-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.14.4-NC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.14.4-NC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.13.14-GA01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-GA01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-GA02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-GA02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-GA03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-GA03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-GA04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-GA04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-GA05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-GA05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.13.14-GA06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-GA06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-DC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-DC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-DC02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-DC02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-DC03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-DC03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-DC04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-DC04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-DC05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-DC05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-DC06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-DC06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-DC07-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-DC07-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.13.14-NC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.13.14-NC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.12.13-GA01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-GA01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-GA02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-GA02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-GA03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-GA03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-GA04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-GA04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-GA05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-GA05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.12.13-GA06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-GA06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-DC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-DC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-DC02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-DC02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-DC03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-DC03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-DC04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-DC04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-DC05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-DC05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-DC06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-DC06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-DC07-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-DC07-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.12.13-NC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.12.13-NC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.11.15-GA01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-GA01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-GA02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-GA02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-GA03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-GA03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-GA04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-GA04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-GA05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-GA05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "id": "RUNTIME-3.11.15-GA06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-GA06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-DC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-DC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-DC02-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-DC02-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-DC03-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-DC03-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-DC04-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-DC04-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-DC05-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-DC05-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-DC06-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-DC06-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-DC07-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-DC07-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "id": "RUNTIME-3.11.15-NC01-expected-exit",
+      "passed": true
+    },
+    {
+      "id": "RUNTIME-3.11.15-NC01-fresh-process-determinism",
+      "passed": true
+    },
+    {
+      "fixture": "GA01",
+      "id": "NC-runtime-verbatim-genericalias",
+      "passed": true
+    },
+    {
+      "fixture": "GA06",
+      "id": "NC-runtime-ordinary-generic-arity",
+      "passed": true
+    },
+    {
+      "fixture": "GA02",
+      "id": "NC-runtime-genericalias-non-enforcement",
+      "passed": true
+    },
+    {
+      "fixture": "DC03",
+      "id": "NC-runtime-suppressed-factory-defect",
+      "passed": true
+    },
+    {
+      "fixture": "GA05",
+      "id": "NC-runtime-ellipsis-metadata",
+      "passed": true
+    },
+    {
+      "id": "SOURCE-inventory-unchanged-during-execution",
+      "passed": true
+    }
+  ],
+  "downloads": false,
+  "failed_check_count": 0,
+  "failed_negative_control_count": 0,
+  "finished_at_utc": "2026-11-04T21:54:21.616268Z",
+  "fixture_count": 14,
+  "mypy_executed_result_rows": 28,
+  "mypy_fresh_process_command_count": 56,
+  "negative_control_count": 11,
+  "network_access": false,
+  "npm_invoked": false,
+  "orchestrator": {
+    "bytes": 28469,
+    "invocation": [
+      "uv",
+      "run",
+      "--no-project",
+      "--offline",
+      "--no-managed-python",
+      "python",
+      "RUNNER/run_matrix.py"
+    ],
+    "path": "RUNNER/run_matrix.py",
+    "python": "3.14.4",
+    "sha256": "13e6ed5d9c1c7e608e54e88f9132b4adf23c97cc8eb7ba43859304d2053149f3"
+  },
+  "raw_files": [
+    {
+      "bytes": 11310,
+      "path": "RAW/tool-inventory.json",
+      "sha256": "13be994aaed337b791cbc8df4a86180f3bd3d8ccc1aa74de091f367870b1499f"
+    },
+    {
+      "bytes": 6682,
+      "path": "RAW/fixture-inventory.json",
+      "sha256": "e96bdf688005a180474019606f9e75990f4f29ed846b78255a81a9d8b0117869"
+    },
+    {
+      "bytes": 28458,
+      "path": "RAW/mypy-1.19.1-default-run-1.json",
+      "sha256": "8985e48b7a1e1e6dfb85e22fe16971ce7f8b06954df18435d5664ddd3a4a72e9"
+    },
+    {
+      "bytes": 28458,
+      "path": "RAW/mypy-1.19.1-default-run-2.json",
+      "sha256": "7b72799d331b4850c0e9399f5a4c42b697256751ba2a60134516889006930614"
+    },
+    {
+      "bytes": 28682,
+      "path": "RAW/mypy-1.19.1-strict-run-1.json",
+      "sha256": "efb0bad0fa6aa7bd01ee7831138697b24ff8a33b14e14df467a2679494c8dbaf"
+    },
+    {
+      "bytes": 28682,
+      "path": "RAW/mypy-1.19.1-strict-run-2.json",
+      "sha256": "d54da969b5b94959d5869655ae89622e965c03ea3d08c5026abdebb5b9c21ed5"
+    },
+    {
+      "bytes": 15897,
+      "path": "RAW/runtime-3.14.4-run-1.json",
+      "sha256": "20b9038ebb508549c07d958cb52f5dc26df1f9cb87c0ebb1b67e4ba6c903023c"
+    },
+    {
+      "bytes": 15897,
+      "path": "RAW/runtime-3.14.4-run-2.json",
+      "sha256": "b4878e01583342ea0f733367367c28ec0a7ad8dded883e02860248aad80b42de"
+    },
+    {
+      "bytes": 16894,
+      "path": "RAW/runtime-3.13.14-run-1.json",
+      "sha256": "d5493e23369eb56fcd500200b85047c2107711e4dbc6667f8f89ed8b7693b2d1"
+    },
+    {
+      "bytes": 16894,
+      "path": "RAW/runtime-3.13.14-run-2.json",
+      "sha256": "9e3628bab61d61c63cd3f6a895350b89aa1b02529ac0bffd29d2b37aec6f5429"
+    },
+    {
+      "bytes": 16750,
+      "path": "RAW/runtime-3.12.13-run-1.json",
+      "sha256": "939c6293736707c55be88d2c5c1fe9db297246b170db7595b6e5dd9260b5683c"
+    },
+    {
+      "bytes": 16750,
+      "path": "RAW/runtime-3.12.13-run-2.json",
+      "sha256": "7cb35d708d17edb5af728e0c41769f288ba6f7295504e961c36677ea80d6dbab"
+    },
+    {
+      "bytes": 16745,
+      "path": "RAW/runtime-3.11.15-run-1.json",
+      "sha256": "34d6162bdc539372d69d933bdef03fcc2fadf2428f5c7f6bbf35905a30292abd"
+    },
+    {
+      "bytes": 16745,
+      "path": "RAW/runtime-3.11.15-run-2.json",
+      "sha256": "0f6c97841f02b0f8f25bed82f9d5b523f605a15d3eae1bb37b0b4ecbdf4cfac6"
+    },
+    {
+      "bytes": 2229,
+      "path": "NEGATIVE-CONTROLS.json",
+      "sha256": "9805a6789f6abb08c79ff229c62e977e2bba13264008e802d788e63de3e6c12b"
+    },
+    {
+      "bytes": 5427,
+      "path": "RAW/determinism.json",
+      "sha256": "9a0c8ba5f101593bc13f2ad8881778c8b066f5c0af0c72d6d92d3ee32fbfd033"
+    }
+  ],
+  "runtime_fresh_process_command_count": 112,
+  "runtime_result_rows": 56,
+  "schema_version": "1.0",
+  "seed": 26051105,
+  "source_inventory": [
+    {
+      "bytes": 583,
+      "path": "FIXTURES/DC01-original-posted-dataclass.py",
+      "sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c"
+    },
+    {
+      "bytes": 635,
+      "path": "FIXTURES/DC02-unsuppressed-default.py",
+      "sha256": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611"
+    },
+    {
+      "bytes": 681,
+      "path": "FIXTURES/DC03-targeted-ignore.py",
+      "sha256": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645"
+    },
+    {
+      "bytes": 531,
+      "path": "FIXTURES/DC04-required-field.py",
+      "sha256": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9"
+    },
+    {
+      "bytes": 666,
+      "path": "FIXTURES/DC05-caller-factory.py",
+      "sha256": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f"
+    },
+    {
+      "bytes": 625,
+      "path": "FIXTURES/DC06-concrete-subclass-factory.py",
+      "sha256": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc"
+    },
+    {
+      "bytes": 798,
+      "path": "FIXTURES/DC07-bare-versus-annotated.py",
+      "sha256": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171"
+    },
+    {
+      "bytes": 431,
+      "path": "FIXTURES/GA01-original-genericalias-reply.py",
+      "sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5"
+    },
+    {
+      "bytes": 630,
+      "path": "FIXTURES/GA02-types-genericalias-constructor.py",
+      "sha256": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60"
+    },
+    {
+      "bytes": 1107,
+      "path": "FIXTURES/GA03-custom-class-getitem-source.py",
+      "sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c"
+    },
+    {
+      "bytes": 1323,
+      "path": "FIXTURES/GA04-custom-class-getitem-use.py",
+      "sha256": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff"
+    },
+    {
+      "bytes": 834,
+      "path": "FIXTURES/GA05-typevartuple-ellipsis.py",
+      "sha256": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb"
+    },
+    {
+      "bytes": 213,
+      "path": "FIXTURES/GA06-ordinary-generic-excess.py",
+      "sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458"
+    },
+    {
+      "bytes": 429,
+      "path": "FIXTURES/NC01-incorrect-type-assertion.py",
+      "sha256": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8"
+    },
+    {
+      "bytes": 28469,
+      "path": "RUNNER/run_matrix.py",
+      "sha256": "13e6ed5d9c1c7e608e54e88f9132b4adf23c97cc8eb7ba43859304d2053149f3"
+    }
+  ],
+  "source_inventory_unchanged": true,
+  "started_at_utc": "2026-11-04T21:53:39.191832Z"
+}

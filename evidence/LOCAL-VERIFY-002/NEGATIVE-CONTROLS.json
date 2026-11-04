@@ -1,0 +1,90 @@
+{
+  "campaign": "LOCAL-VERIFY-002",
+  "control_count": 11,
+  "controls": [
+    {
+      "actual_codes": [
+        "type-arg"
+      ],
+      "expected": "mypy diagnostic code type-arg",
+      "fixture": "GA06",
+      "id": "NC-static-excess-arguments",
+      "passed": true
+    },
+    {
+      "actual_codes": [
+        "misc"
+      ],
+      "expected": "mypy diagnostic code misc",
+      "fixture": "GA05",
+      "id": "NC-static-literal-ellipsis",
+      "passed": true
+    },
+    {
+      "actual_codes": [
+        "assignment"
+      ],
+      "expected": "mypy diagnostic code assignment",
+      "fixture": "DC02",
+      "id": "NC-static-unsound-factory",
+      "passed": true
+    },
+    {
+      "actual_codes": [
+        "assert-type"
+      ],
+      "expected": "mypy diagnostic code assert-type",
+      "fixture": "NC01",
+      "id": "NC-static-wrong-assertion",
+      "passed": true
+    },
+    {
+      "actual_exit": 1,
+      "expected": "deliberately wrong expected exit 0 is detected",
+      "fixture": "GA06",
+      "id": "NC-harness-changed-exit",
+      "passed": true
+    },
+    {
+      "actual_codes": [
+        "assert-type"
+      ],
+      "expected": "changed diagnostic code assert-typo does not match",
+      "fixture": "NC01",
+      "id": "NC-harness-changed-diagnostic",
+      "passed": true
+    },
+    {
+      "expected": "TypeError before class declaration",
+      "fixture": "GA01",
+      "id": "NC-runtime-verbatim-genericalias",
+      "passed": true
+    },
+    {
+      "expected": "TypeError for excess ordinary generic arguments",
+      "fixture": "GA06",
+      "id": "NC-runtime-ordinary-generic-arity",
+      "passed": true
+    },
+    {
+      "expected": "metadata does not enforce tuple elements",
+      "fixture": "GA02",
+      "id": "NC-runtime-genericalias-non-enforcement",
+      "passed": true
+    },
+    {
+      "expected": "suppression leaves C where C2 is declared",
+      "fixture": "DC03",
+      "id": "NC-runtime-suppressed-factory-defect",
+      "passed": true
+    },
+    {
+      "expected": "CPython accepts literal ellipsis metadata",
+      "fixture": "GA05",
+      "id": "NC-runtime-ellipsis-metadata",
+      "passed": true
+    }
+  ],
+  "failed_control_count": 0,
+  "schema_version": "1.0"
+}

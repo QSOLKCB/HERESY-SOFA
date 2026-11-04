@@ -1,0 +1,32 @@
+{
+  "campaign": "LOCAL-VERIFY-002",
+  "classification": "HARNESS_PREFLIGHT_FAILURE",
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "python",
+    "RUNNER/run_matrix.py"
+  ],
+  "exit_code": 1,
+  "failed_check": "TOOL-pyright-bounded-cache-search-empty",
+  "failure_observed_at_utc": "2026-11-04T21:51:19.420468Z",
+  "finding": "The first bounded name matcher used an unanchored pyright substring and therefore matched ordinary filenames containing copyright. This was a harness false positive, not an installed Pyright artifact.",
+  "false_positive_paths": [
+    "$HOME/.cache/uv/archive-v0/KkIl5mS7f1QaiZEb/sklearn/svm/src/liblinear/COPYRIGHT",
+    "$HOME/.cache/uv/archive-v0/WWpp4GgfppmMtisC/scripts/add_copyrights.py",
+    "/usr/lib/python3/dist-packages/debian/__pycache__/copyright.cpython-314.pyc",
+    "/usr/lib/python3/dist-packages/debian/copyright.py",
+    "/usr/lib/rust-1.93/share/cargo/scripts/guess-crate-copyright"
+  ],
+  "network_access": false,
+  "npm_invoked": false,
+  "runner_bytes": 28193,
+  "runner_sha256": "19c2bdac813dff33fae05642d43f31d0366dc47c645dde3019cbed786f5948fc",
+  "schema_version": "1.0",
+  "stderr_tail": "AssertionError: TOOL-pyright-bounded-cache-search-empty: {}",
+  "tool_inventory_bytes": 8511,
+  "tool_inventory_sha256": "f4f70ad1817371a2ce9fa47a540dcd9f69061232503c35bdabddf25fd4a41725"
+}
