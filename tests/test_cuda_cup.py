@@ -168,7 +168,7 @@ class CudaCupTests(unittest.TestCase):
         entries = [x for x in manifest.get("competitions", []) if x["id"] == rules["competition_id"]]
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0]["sofa_question_id"], rules["sofa_question_id"])
-        self.assertEqual(entries[0]["status"], "published")
+        self.assertEqual(entries[0]["state"], "published")
         self.assertFalse(manifest["publishing_enabled"])
         self.assertEqual(rules["reference_outcome"], "NOT_RUN")
         self.assertEqual(rules["hardware_verdict"], "WANTED")
