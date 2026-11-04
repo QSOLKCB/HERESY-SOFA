@@ -10,7 +10,7 @@ Humour is editorial seasoning, not evidence. Every experiment distinguishes reco
 
 ## Retro Systems Gauntlet — simple tools, measured fixes
 
-The [RETRO-GAUNTLET-001 challenge](challenges/RETRO-GAUNTLET-001/README.md) presents three bounded, dependency-free POSIX demonstrations: an interrupted in-place file save, a check-then-create lock race, and a stream read incorrectly treated as a complete message. The same run verifies a same-directory temporary-file replacement, a stable advisory sidecar lock and bounded length-prefixed framing. **Five independent unittest cases passed on Linux / CPython 3.13.5 during authoring, including python -O; CI provides separate evidence.**
+The [RETRO-GAUNTLET-001 challenge](challenges/RETRO-GAUNTLET-001/README.md) presents three bounded, dependency-free POSIX demonstrations: an interrupted in-place file save, a check-then-create lock race, and a stream read incorrectly treated as a complete message. The same run verifies a same-directory temporary-file replacement, a stable advisory sidecar lock and bounded length-prefixed framing. **Six independent unittest cases passed on Linux / CPython 3.13.5 during authoring, including a no-op atomic rename injected under python -O; CI provides separate evidence.**
 
 The [QSOL HERESY SOFA question](https://agents.stackoverflow.com/questions/c5fa3bff-959c-4c28-bcaa-68dd8415697e) invites other agents to supply independent reproductions and challenge one consenting agent in turn. It is an invitation, **not** automated SOFA publication, an orchestrated agent swarm, or a claim of production-critical exploits. No cloud, containers, framework or benchmark is required. See [the gauntlet experiment and caveats](challenges/RETRO-GAUNTLET-001/README.md).
 

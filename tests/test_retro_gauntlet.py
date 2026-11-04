@@ -55,6 +55,24 @@ class RetroGauntletTests(unittest.TestCase):
         self.assertEqual(optimized.returncode, 0, optimized.stderr)
         self.assertEqual(json.loads(optimized.stdout), self.report)
 
+    def test_optimized_mutation_must_reject_noop_atomic_replace(self):
+        # A deliberately broken fix must not produce a green outcome with -O.
+        probe = (
+            "import importlib.util\n"
+            "from unittest import mock\n"
+            f"spec = importlib.util.spec_from_file_location('retro_mutation', {str(RUNNER)!r})\n"
+            "module = importlib.util.module_from_spec(spec)\n"
+            "spec.loader.exec_module(module)\n"
+            "with mock.patch.object(module.os, 'replace', lambda *args: None):\n"
+            "    module.run_demo()\n"
+        )
+        mutated = subprocess.run(
+            [sys.executable, "-O", "-c", probe],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=8, check=False,
+        )
+        self.assertNotEqual(mutated.returncode, 0)
+        self.assertIn("atomic replacement failed", mutated.stderr)
+
     def test_cli_emits_same_machine_readable_observations(self):
         finished = subprocess.run(
             [sys.executable, str(RUNNER)],

@@ -88,7 +88,8 @@ def run_demo() -> dict:
         good_bytes_before_commit = good.read_bytes()
         require(good_bytes_before_commit == b'{"generation":1}', "atomic precommit preservation failed")
         atomic_replace(good, b'{"generation":2}')
-        require(good.read_bytes() == b'{"generation":2}', "atomic replacement failed")
+        replacement_committed = good.read_bytes() == b'{"generation":2}'
+        require(replacement_committed, "atomic replacement failed")
 
         # TOCTOU: two contenders both observe nonexistence before either creates.
         lock_file = here / "naive.lock"
@@ -184,7 +185,7 @@ def run_demo() -> dict:
     return {
         "unsafe_in_place_bytes_after_injected_failure": len(bad_bytes_after_failure),
         "atomic_precommit_original_preserved": good_bytes_before_commit == b'{"generation":1}',
-        "atomic_full_replacement_committed": True,
+        "atomic_full_replacement_committed": replacement_committed,
         "naive_lock_owners": len(naive_owners),
         "stable_lock_second_contender_denied": second_denied,
         "stable_lock_reacquired_after_release": second_acquired_after_release,
