@@ -111,6 +111,19 @@ class CudaCupTests(unittest.TestCase):
                     bad["actual"]["trials"][0]["timed_out"] = True
                 self.assertEqual(self.screener.screen(bad)["screening"], "REJECTED")
 
+    def test_boolean_zero_cannot_fake_cuda_success(self):
+        candidate = self._synthetic_candidate()
+        for mutation in ("control_launch", "control_exit", "probe_status"):
+            with self.subTest(mutation=mutation):
+                bad = copy.deepcopy(candidate)
+                if mutation == "control_launch":
+                    bad["actual"]["trials"][0]["observation"]["launch_status"] = False
+                elif mutation == "control_exit":
+                    bad["actual"]["trials"][0]["exit_code"] = False
+                else:
+                    bad["actual"]["device_probe"]["device_count_status"] = False
+                self.assertEqual(self.screener.screen(bad)["screening"], "REJECTED")
+
     def test_post_assert_context_claim_rejected(self):
         bad = self._synthetic_candidate()
         bad["claims"]["post_assert_context_rejects_further_work"] = "executed"
