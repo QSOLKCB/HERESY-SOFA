@@ -146,16 +146,28 @@ def _build_graph(nx: Any, fixture: str, order: str) -> Any:
     return graph
 
 
-def _topology_sha256(graph: Any) -> str:
+def _topology_spec_sha256(
+    nodes: Iterable[int], edges: Iterable[tuple[int, int, float]],
+) -> str:
     topology = {
-        "nodes": sorted(graph.nodes()),
+        "nodes": sorted(nodes),
         "edges": sorted(
-            (min(left, right), max(left, right), float(data.get("weight", 1.0)))
-            for left, right, data in graph.edges(data=True)
+            (min(left, right), max(left, right), float(weight))
+            for left, right, weight in edges
         ),
     }
     encoded = json.dumps(topology, separators=(",", ":"), sort_keys=True).encode("utf-8")
     return _sha256_bytes(encoded)
+
+
+def _topology_sha256(graph: Any) -> str:
+    return _topology_spec_sha256(
+        graph.nodes(),
+        (
+            (left, right, float(data.get("weight", 1.0)))
+            for left, right, data in graph.edges(data=True)
+        ),
+    )
 
 
 def canonical_partition(communities: Iterable[Iterable[int]]) -> list[list[int]]:
@@ -284,7 +296,12 @@ def run_worker_process(
     )
 
 
-def validate_worker(record: dict[str, Any]) -> tuple[bool, str]:
+def validate_worker(
+    record: dict[str, Any],
+    *,
+    expected_networkx: str | None = None,
+    expected_python: str | None = None,
+) -> tuple[bool, str]:
     """Reject timeout, failure, malformed output, or an incorrect observation."""
     if record.get("timed_out"):
         return False, "worker timed out"
@@ -293,6 +310,18 @@ def validate_worker(record: dict[str, Any]) -> tuple[bool, str]:
     output = record.get("output")
     if not isinstance(output, dict) or not isinstance(output.get("results"), list):
         return False, "worker did not return a JSON result list"
+    if (
+        output.get("scenario") != record.get("scenario")
+        or output.get("hash_seed") != str(record.get("hash_seed"))
+    ):
+        return False, "worker scenario or process hash seed did not match its command"
+    if (
+        not isinstance(output.get("networkx_version"), str)
+        or not isinstance(output.get("python"), str)
+        or (expected_networkx is not None and output["networkx_version"] != expected_networkx)
+        or (expected_python is not None and output["python"] != expected_python)
+    ):
+        return False, "worker runtime versions did not match the parent environment"
     expected_count = len(FIXTURES) * len(record.get("seeds", ()))
     if len(output["results"]) != expected_count:
         return False, "worker result count did not match its configuration"
@@ -305,10 +334,46 @@ def validate_worker(record: dict[str, Any]) -> tuple[bool, str]:
     for result in output["results"]:
         if not isinstance(result, dict):
             return False, "worker result was not an object"
-        actual.add((result.get("fixture"), result.get("seed")))
+        fixture = result.get("fixture")
+        actual.add((fixture, result.get("seed")))
         if result.get("insertion_order") != record.get("insertion_order"):
             return False, "worker insertion order did not match its command"
-        if not result.get("covers_nodes_exactly_once") or not result.get("modularity_consistent"):
+        if fixture not in FIXTURES:
+            return False, "worker returned an unknown fixture"
+        nodes, edges = _fixture_spec(fixture)
+        partition = result.get("partition")
+        if (
+            not isinstance(partition, list)
+            or not all(isinstance(group, list) and group for group in partition)
+            or canonical_partition(partition) != partition
+        ):
+            return False, "worker partition was not canonical and nonempty"
+        flattened = [node for group in partition for node in group]
+        coverage_is_valid = (
+            all(type(node) is int for node in flattened)
+            and
+            sorted(flattened) == sorted(nodes)
+            and len(flattened) == len(set(flattened))
+        )
+        expected_sizes = sorted(len(group) for group in partition)
+        modularity = result.get("modularity")
+        recomputed = result.get("modularity_recomputed")
+        modularity_is_valid = (
+            isinstance(modularity, (int, float))
+            and not isinstance(modularity, bool)
+            and isinstance(recomputed, (int, float))
+            and not isinstance(recomputed, bool)
+            and abs(modularity - recomputed) <= MODULARITY_TOLERANCE
+        )
+        if (
+            not coverage_is_valid
+            or result.get("community_count") != len(partition)
+            or result.get("community_sizes") != expected_sizes
+            or result.get("topology_sha256") != _topology_spec_sha256(nodes, edges)
+            or not modularity_is_valid
+            or not result.get("covers_nodes_exactly_once")
+            or not result.get("modularity_consistent")
+        ):
             return False, "partition coverage or modularity check failed"
     if actual != expected:
         return False, "worker fixture/seed coverage was incomplete"
@@ -500,6 +565,30 @@ def _summarize(records: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def classify_claims(actual: dict[str, Any]) -> dict[str, str]:
+    return {
+        CLAIMS[0]: "executed" if actual["fixed_seed_reproducible"] else "unsupported",
+        CLAIMS[1]: "executed" if any(actual["variation_across_seeds"].values()) else "unsupported",
+        CLAIMS[2]: "executed" if any(actual["variation_across_construction_order"].values()) else "unsupported",
+        CLAIMS[3]: "executed" if any(actual["variation_across_process_hash_seed"].values()) else "unsupported",
+        CLAIMS[4]: "executed" if actual["all_partitions_cover_nodes_once_and_modularity_is_consistent"] else "unsupported",
+        CLAIMS[5]: "unsupported",
+    }
+
+
+def hypothesis_confirmed(actual: dict[str, Any]) -> bool:
+    divergence = (
+        any(actual["variation_across_seeds"].values())
+        or any(actual["variation_across_construction_order"].values())
+    )
+    return (
+        divergence
+        and actual["fixed_seed_reproducible"]
+        and actual["stability_control_passed"]
+        and actual["all_partitions_cover_nodes_once_and_modularity_is_consistent"]
+    )
+
+
 def run_experiment(args: argparse.Namespace) -> int:
     report = _base_report(["python3", "experiments/HERESY-006/run.py", "--output", args.output.name])
     dependency = _dependency_probe()
@@ -529,7 +618,11 @@ def run_experiment(args: argparse.Namespace) -> int:
 
     validations = []
     for record in records:
-        accepted, reason = validate_worker(record)
+        accepted, reason = validate_worker(
+            record,
+            expected_networkx=dependency["version"],
+            expected_python=platform.python_version(),
+        )
         record["accepted"] = accepted
         record["validation"] = reason
         validations.append(accepted)
@@ -572,13 +665,8 @@ def run_experiment(args: argparse.Namespace) -> int:
 
     actual = _summarize(records)
     report["actual"] = actual
-    report["claims"][CLAIMS[0]] = "executed"
-    report["claims"][CLAIMS[1]] = "executed" if any(actual["variation_across_seeds"].values()) else "unsupported"
-    report["claims"][CLAIMS[2]] = "executed" if any(actual["variation_across_construction_order"].values()) else "unsupported"
-    report["claims"][CLAIMS[3]] = "executed" if any(actual["variation_across_process_hash_seed"].values()) else "unsupported"
-    report["claims"][CLAIMS[4]] = "executed"
-    report["claims"][CLAIMS[5]] = "unsupported"
-    hypothesis_observed = any(actual["variation_across_seeds"].values()) or any(actual["variation_across_construction_order"].values())
+    report["claims"] = classify_claims(actual)
+    hypothesis_observed = hypothesis_confirmed(actual)
     report["run_status"] = "PASS"
     report["conclusion"] = "CONFIRMED" if hypothesis_observed else "UNCONFIRMED"
     _write_report(args.output, report)

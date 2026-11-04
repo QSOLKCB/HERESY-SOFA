@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import platform
 import tempfile
 import unittest
 from argparse import Namespace
@@ -30,11 +31,17 @@ class Heresy006Tests(unittest.TestCase):
     def valid_worker(self):
         results = []
         for fixture in self.runner.FIXTURES:
+            nodes, edges = self.runner._fixture_spec(fixture)
             results.append({
                 "fixture": fixture,
                 "seed": 17,
                 "insertion_order": "natural",
-                "partition": [[0]],
+                "topology_sha256": self.runner._topology_spec_sha256(nodes, edges),
+                "partition": [nodes],
+                "community_count": 1,
+                "community_sizes": [len(nodes)],
+                "modularity": 0.0,
+                "modularity_recomputed": 0.0,
                 "covers_nodes_exactly_once": True,
                 "modularity_consistent": True,
             })
@@ -46,7 +53,13 @@ class Heresy006Tests(unittest.TestCase):
             "repeat": 0,
             "exit_code": 0,
             "timed_out": False,
-            "output": {"results": results},
+            "output": {
+                "networkx_version": "test-version",
+                "python": platform.python_version(),
+                "scenario": "fixed_repeat",
+                "hash_seed": "0",
+                "results": results,
+            },
         }
 
     def test_partition_canonicalization_uses_membership_not_return_order(self):
@@ -57,7 +70,10 @@ class Heresy006Tests(unittest.TestCase):
 
     def test_worker_failure_timeout_and_wrong_observation_fail_closed(self):
         valid = self.valid_worker()
-        self.assertTrue(self.runner.validate_worker(valid)[0])
+        self.assertTrue(self.runner.validate_worker(
+            valid, expected_networkx="test-version",
+            expected_python=platform.python_version(),
+        )[0])
 
         mutations = [
             dict(valid, exit_code=9),
@@ -71,9 +87,44 @@ class Heresy006Tests(unittest.TestCase):
         wrong_order = json.loads(json.dumps(valid))
         wrong_order["output"]["results"][0]["insertion_order"] = "reversed"
         mutations.append(wrong_order)
+        lying_coverage = json.loads(json.dumps(valid))
+        lying_coverage["output"]["results"][0]["partition"] = [[0]]
+        lying_coverage["output"]["results"][0]["community_sizes"] = [1]
+        mutations.append(lying_coverage)
+        wrong_topology = json.loads(json.dumps(valid))
+        wrong_topology["output"]["results"][0]["topology_sha256"] = "0" * 64
+        mutations.append(wrong_topology)
+        wrong_version = json.loads(json.dumps(valid))
+        wrong_version["output"]["networkx_version"] = "wrong-version"
+        mutations.append(wrong_version)
+        wrong_hash_seed = json.loads(json.dumps(valid))
+        wrong_hash_seed["output"]["hash_seed"] = "42"
+        mutations.append(wrong_hash_seed)
         for mutation in mutations:
             with self.subTest(mutation=mutation):
-                self.assertFalse(self.runner.validate_worker(mutation)[0])
+                self.assertFalse(self.runner.validate_worker(
+                    mutation, expected_networkx="test-version",
+                    expected_python=platform.python_version(),
+                )[0])
+
+    def test_failed_controls_cannot_confirm_or_claim_reproducibility(self):
+        actual = {
+            "fixed_seed_reproducible": False,
+            "variation_across_seeds": {fixture: True for fixture in self.runner.FIXTURES},
+            "variation_across_construction_order": {fixture: True for fixture in self.runner.FIXTURES},
+            "variation_across_process_hash_seed": {fixture: False for fixture in self.runner.FIXTURES},
+            "all_partitions_cover_nodes_once_and_modularity_is_consistent": True,
+            "stability_control_passed": True,
+        }
+        claims = self.runner.classify_claims(actual)
+        self.assertEqual(
+            claims["fixed_seed_identical_construction_reproducible"],
+            "unsupported",
+        )
+        self.assertFalse(self.runner.hypothesis_confirmed(actual))
+        actual["fixed_seed_reproducible"] = True
+        actual["stability_control_passed"] = False
+        self.assertFalse(self.runner.hypothesis_confirmed(actual))
 
     def test_missing_dependency_report_is_not_run_and_nonzero(self):
         with tempfile.TemporaryDirectory() as directory:
