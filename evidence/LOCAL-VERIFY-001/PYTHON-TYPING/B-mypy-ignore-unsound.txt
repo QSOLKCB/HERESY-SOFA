@@ -1,0 +1,2 @@
+PYTHON-TYPING/dataclass_unsound_fixture.py:26: note: Revealed type is "dataclass_unsound_fixture.C2"
+Success: no issues found in 1 source file

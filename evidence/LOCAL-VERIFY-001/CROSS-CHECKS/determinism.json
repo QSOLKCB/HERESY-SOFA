@@ -1,0 +1,75 @@
+{
+  "campaign": "LOCAL-VERIFY-001",
+  "checked_at_utc": "2026-11-04T21:09:16.483053Z",
+  "fresh_process_pairs": {
+    "python_typing_runtime": {
+      "byte_identical": true,
+      "run_1_stdout_sha256": "6a2dbd1483c15d487b7b9e4df936f5c8c0af597fe81943308e48014cae20fa77",
+      "run_2_stdout_sha256": "6a2dbd1483c15d487b7b9e4df936f5c8c0af597fe81943308e48014cae20fa77"
+    },
+    "spn2_scheduler": {
+      "byte_identical": true,
+      "run_1_stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef",
+      "run_2_stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef"
+    }
+  },
+  "schema_version": "1.0",
+  "source_inventory": [
+    {
+      "bytes": 11847,
+      "path": "CROSS-CHECKS/run_campaign.py",
+      "sha256": "856b494e6a8c5683b98a6dce11a416b52c70fd0b103131f923b65f0af443ef63"
+    },
+    {
+      "bytes": 374,
+      "path": "PYTHON-TYPING/dataclass_mismatch_fixture.py",
+      "sha256": "d67b5c64f5987176992eea695227cfae7fa588485440623c329825e55b68edcf"
+    },
+    {
+      "bytes": 790,
+      "path": "PYTHON-TYPING/dataclass_sound_fixture.py",
+      "sha256": "910cbd4dc3ce47ecc08862c3ec72f993326d02520575c227f233fb4e28903a94"
+    },
+    {
+      "bytes": 437,
+      "path": "PYTHON-TYPING/dataclass_unsound_fixture.py",
+      "sha256": "8733f1151f0e4067c9f9c5570b82c7f85af690233d66628e8715a8f0024e5ca0"
+    },
+    {
+      "bytes": 431,
+      "path": "PYTHON-TYPING/generic_alias_verbatim.py",
+      "sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5"
+    },
+    {
+      "bytes": 1041,
+      "path": "PYTHON-TYPING/genericalias_static_fixture.py",
+      "sha256": "4aaf6e5383059f6b74f03b425fb32c41036dcd791e2189ee7813b956fc5a6df7"
+    },
+    {
+      "bytes": 291,
+      "path": "PYTHON-TYPING/genericalias_static_positive.py",
+      "sha256": "a25eb6a066300d9f0d282447bf23922f14339097093bd176e8668309b1828966"
+    },
+    {
+      "bytes": 8386,
+      "path": "PYTHON-TYPING/runtime_investigation.py",
+      "sha256": "fc6eb71895b50b3e414d23370a5c097977b83f8eb1475b790d1075ac96ee1593"
+    },
+    {
+      "bytes": 3893,
+      "path": "SPN2-SCHEDULER/reference_model.py",
+      "sha256": "636a910add69936a7ddc210f66fbf9aa35500e0894bb0f717ddb9c64bb800f43"
+    },
+    {
+      "bytes": 29933,
+      "path": "SPN2-SCHEDULER/run_spn2_investigation.py",
+      "sha256": "157d1a6273bed8b7c63360a7f8fe4105468a42be39259f5e6349e907badf6fbb"
+    },
+    {
+      "bytes": 25978,
+      "path": "SPN2-SCHEDULER/scheduler_models.py",
+      "sha256": "9931abc11f2e73c181e7aaf57477a1113e0704a6220c6d2c21cbf7f221d74a59"
+    }
+  ],
+  "source_unchanged": true
+}

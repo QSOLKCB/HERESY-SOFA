@@ -1,0 +1,277 @@
+{
+  "assertion_count": 18,
+  "assertions": [
+    {
+      "actual": "<class 'tuple'>",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "tuple",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "A2-origin"
+    },
+    {
+      "actual": [
+        "<class 'int'>",
+        "Ellipsis"
+      ],
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": [
+        "<class 'int'>",
+        "Ellipsis"
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "A2-args"
+    },
+    {
+      "actual": "tuple[int, ...]",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "tuple[int, ...]",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "A2-repr"
+    },
+    {
+      "actual": [
+        1,
+        "not-an-int"
+      ],
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": [
+        1,
+        "not-an-int"
+      ],
+      "negative_control": true,
+      "passed": true,
+      "test_id": "A2-no-runtime-enforcement"
+    },
+    {
+      "actual": [
+        "int"
+      ],
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": [
+        "int"
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "A3-single"
+    },
+    {
+      "actual": [
+        "int",
+        "str"
+      ],
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": [
+        "int",
+        "str"
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "A3-heterogeneous"
+    },
+    {
+      "actual": [
+        "int",
+        "int",
+        "int"
+      ],
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": [
+        "int",
+        "int",
+        "int"
+      ],
+      "negative_control": false,
+      "passed": true,
+      "test_id": "A3-repeated"
+    },
+    {
+      "actual": [
+        "int",
+        "Ellipsis"
+      ],
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": [
+        "int",
+        "Ellipsis"
+      ],
+      "negative_control": true,
+      "passed": true,
+      "test_id": "A3-literal-ellipsis"
+    },
+    {
+      "actual": [
+        "Ellipsis"
+      ],
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": [
+        "Ellipsis"
+      ],
+      "negative_control": true,
+      "passed": true,
+      "test_id": "A3-ellipsis-only"
+    },
+    {
+      "actual": "TypeError",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "TypeError",
+      "negative_control": true,
+      "passed": true,
+      "test_id": "A5-single-too-many"
+    },
+    {
+      "actual": "(<class 'int'>, Ellipsis)",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "(int, Ellipsis)",
+      "negative_control": true,
+      "passed": true,
+      "test_id": "A5-class-getitem-runs"
+    },
+    {
+      "actual": "None",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "no typing origin",
+      "negative_control": true,
+      "passed": true,
+      "test_id": "A5-class-getitem-not-typing-alias"
+    },
+    {
+      "actual": "C",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "C",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "B-default-C"
+    },
+    {
+      "actual": "C",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "not C2",
+      "negative_control": true,
+      "passed": true,
+      "test_id": "B-default-C2-violates-parameter"
+    },
+    {
+      "actual": "C2",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "C2",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "B-child-override"
+    },
+    {
+      "actual": "C2",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "C2",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "B-required-field"
+    },
+    {
+      "actual": "C2",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "C2",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "B-caller-factory"
+    },
+    {
+      "actual": "C2",
+      "evidence_class": "EXECUTED_NATIVE",
+      "expected": "C2",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "B-concrete-override"
+    }
+  ],
+  "campaign": "LOCAL-VERIFY-001",
+  "failed_assertion_count": 0,
+  "implementation": "CPython",
+  "negative_control_count": 7,
+  "observations": {
+    "custom_class_getitem": {
+      "params_repr": "(<class 'int'>, Ellipsis)",
+      "returned_class": "RuntimeOnly",
+      "typing_args": [],
+      "typing_origin": "None"
+    },
+    "generic_alias_unchecked_value": [
+      1,
+      "not-an-int"
+    ],
+    "posted_dataclass_defaults": {
+      "myclass[C2]": "C",
+      "myclass[C]": "C",
+      "myclass_child": "C2"
+    },
+    "single_too_many_args": {
+      "exception_type": "TypeError",
+      "message": "Too many arguments for <class '__main__.Single'>; actual 2, expected 1"
+    },
+    "sound_dataclass_designs": {
+      "caller_factory": "C2",
+      "concrete_override": "C2",
+      "required_field": "C2"
+    },
+    "types_generic_alias": {
+      "args_repr": [
+        "<class 'int'>",
+        "Ellipsis"
+      ],
+      "origin_repr": "<class 'tuple'>",
+      "repr": "tuple[int, ...]",
+      "runtime_type": "types.GenericAlias"
+    },
+    "typevartuple_runtime_forms": {
+      "ellipsis_only": {
+        "args_repr": [
+          "Ellipsis"
+        ],
+        "origin_repr": "<class '__main__.Packed'>",
+        "repr": "__main__.Packed[...]",
+        "runtime_type": "typing._GenericAlias"
+      },
+      "heterogeneous": {
+        "args_repr": [
+          "<class 'int'>",
+          "<class 'str'>"
+        ],
+        "origin_repr": "<class '__main__.Packed'>",
+        "repr": "__main__.Packed[int, str]",
+        "runtime_type": "typing._GenericAlias"
+      },
+      "literal_ellipsis": {
+        "args_repr": [
+          "<class 'int'>",
+          "Ellipsis"
+        ],
+        "origin_repr": "<class '__main__.Packed'>",
+        "repr": "__main__.Packed[int, ...]",
+        "runtime_type": "typing._GenericAlias"
+      },
+      "repeated": {
+        "args_repr": [
+          "<class 'int'>",
+          "<class 'int'>",
+          "<class 'int'>"
+        ],
+        "origin_repr": "<class '__main__.Packed'>",
+        "repr": "__main__.Packed[int, int, int]",
+        "runtime_type": "typing._GenericAlias"
+      },
+      "single": {
+        "args_repr": [
+          "<class 'int'>"
+        ],
+        "origin_repr": "<class '__main__.Packed'>",
+        "repr": "__main__.Packed[int]",
+        "runtime_type": "typing._GenericAlias"
+      }
+    }
+  },
+  "python": "3.14.4",
+  "schema_version": "1.0",
+  "seed": 26051105
+}

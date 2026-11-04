@@ -1,0 +1,413 @@
+{
+  "artifacts": {
+    "claim_ledger": "REPORTS/LOCAL-VERIFY-001-CLAIM-LEDGER.csv",
+    "runtime_result": "PYTHON-TYPING/runtime-result.json",
+    "scheduler_result": "SPN2-SCHEDULER/scheduler-result.json",
+    "source_snapshot": "CROSS-CHECKS/current-sofa-source-snapshot.json",
+    "test_matrix": "REPORTS/LOCAL-VERIFY-001-TEST-MATRIX.csv"
+  },
+  "campaign": "LOCAL-VERIFY-001",
+  "checker_coverage": {
+    "basedpyright": "NOT_TESTED",
+    "inventory_reference": "CROSS-CHECKS/checker-inventory.json",
+    "mypy_1_19_1": "EXECUTED_NATIVE",
+    "mypy_2_3_1": "NOT_TESTED",
+    "pyright_1_1_414": "NOT_TESTED"
+  },
+  "created_at_utc": "2026-11-04T21:10:40.653151Z",
+  "environment": {
+    "architecture": "x86_64",
+    "cpu": "AMD Ryzen 9 5950X 16-Core Processor",
+    "kernel": "7.0.0-42-generic",
+    "mypy": "mypy 1.19.1 (compiled: yes)",
+    "os": "Ubuntu 26.04.1 LTS",
+    "python": "3.14.4",
+    "reference": "REPORTS/LOCAL-VERIFY-001-ENVIRONMENT.json",
+    "sha256": "f352fc644d0f4e74aeefb217521bfb1231621c999e11758bedb329270d9fce29",
+    "uv": "uv 0.12.1 (x86_64-unknown-linux-gnu)",
+    "yt_dlp": "2026.03.17"
+  },
+  "execution": {
+    "command_count": 10,
+    "commands": [
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/generic_alias_verbatim.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 1,
+        "finished_at_utc": "2026-11-04T21:09:14.967131Z",
+        "label": "A1-verbatim-GenericAlias-reply",
+        "started_at_utc": "2026-11-04T21:09:14.895340Z",
+        "stderr_bytes": 281,
+        "stderr_sha256": "96695cf57872e514bd39ae0d3d3056046a8fb74fa189caeadeecc50c765aaf6b",
+        "stdout_bytes": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/runtime_investigation.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-04T21:09:14.995725Z",
+        "label": "A-B-native-runtime-fresh-process-1",
+        "started_at_utc": "2026-11-04T21:09:14.967473Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 6574,
+        "stdout_sha256": "6a2dbd1483c15d487b7b9e4df936f5c8c0af597fe81943308e48014cae20fa77"
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/runtime_investigation.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-04T21:09:15.031787Z",
+        "label": "A-B-native-runtime-fresh-process-2",
+        "started_at_utc": "2026-11-04T21:09:14.995771Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 6574,
+        "stdout_sha256": "6a2dbd1483c15d487b7b9e4df936f5c8c0af597fe81943308e48014cae20fa77"
+      },
+      {
+        "argv": [
+          "mypy",
+          "--strict",
+          "--show-error-codes",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/genericalias_static_positive.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-04T21:09:15.700347Z",
+        "label": "A4-genericalias-positive",
+        "started_at_utc": "2026-11-04T21:09:15.032493Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 42,
+        "stdout_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+      },
+      {
+        "argv": [
+          "mypy",
+          "--strict",
+          "--show-error-codes",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/genericalias_static_fixture.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 1,
+        "finished_at_utc": "2026-11-04T21:09:15.877542Z",
+        "label": "A4-genericalias-negative",
+        "started_at_utc": "2026-11-04T21:09:15.700581Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 579,
+        "stdout_sha256": "e9053ee68c24623da8bb4268aaabe3254590ba9a82ca09f73c92f0ef9921dd7d"
+      },
+      {
+        "argv": [
+          "mypy",
+          "--strict",
+          "--show-error-codes",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/dataclass_mismatch_fixture.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 1,
+        "finished_at_utc": "2026-11-04T21:09:16.059606Z",
+        "label": "B-mypy-mismatch",
+        "started_at_utc": "2026-11-04T21:09:15.877783Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 200,
+        "stdout_sha256": "d7bdefb766d38b06e3ecc2e6cae2fe9300e48d3db04a584f1515a6047734bb87"
+      },
+      {
+        "argv": [
+          "mypy",
+          "--strict",
+          "--show-error-codes",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/dataclass_unsound_fixture.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-04T21:09:16.230219Z",
+        "label": "B-mypy-ignore-unsound",
+        "started_at_utc": "2026-11-04T21:09:16.059834Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 143,
+        "stdout_sha256": "740af4c631998182325815b0d73828bdc93056b44bc728500d427b76dc87435a"
+      },
+      {
+        "argv": [
+          "mypy",
+          "--strict",
+          "--show-error-codes",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/PYTHON-TYPING/dataclass_sound_fixture.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-04T21:09:16.407675Z",
+        "label": "B-mypy-sound-designs",
+        "started_at_utc": "2026-11-04T21:09:16.230440Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 42,
+        "stdout_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/SPN2-SCHEDULER/run_spn2_investigation.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-04T21:09:16.443610Z",
+        "label": "C-offline-scheduler-fresh-process-1",
+        "started_at_utc": "2026-11-04T21:09:16.407918Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 60055,
+        "stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef"
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION/SPN2-SCHEDULER/run_spn2_investigation.py"
+        ],
+        "cwd": "/home/trent/SOFA-HOT-008/LOCAL-VALIDATION",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "0"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-04T21:09:16.481189Z",
+        "label": "C-offline-scheduler-fresh-process-2",
+        "started_at_utc": "2026-11-04T21:09:16.443713Z",
+        "stderr_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_bytes": 60055,
+        "stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef"
+      }
+    ],
+    "deterministic_fresh_process_repetitions": 2,
+    "failed_assertion_count": 0,
+    "failed_orchestration_check_count": 0,
+    "negative_control_assertion_count": 24,
+    "orchestration_check_count": 20,
+    "receipt": "RECEIPTS/LOCAL-VERIFY-001-EXECUTION.json",
+    "receipt_sha256": "932185c4246f09e1ac85f63917fe8c2b674fd7b08420fd7b3d14d96ead6dc463",
+    "runtime_assertion_count": 69
+  },
+  "historical_boundary": {
+    "historical_files_modified": false,
+    "origin_main": "59b619d5b09e7966f1ceae1dd9ab14313e3ad20a",
+    "pr16_present": true,
+    "pr17_present": true,
+    "reference": "CROSS-CHECKS/historical-baseline.json"
+  },
+  "independent_oracle": {
+    "agreement": {
+      "action_order": true,
+      "final_states": true,
+      "poll_times": true,
+      "submit_times": true,
+      "verify_times": true
+    },
+    "exhaustive_priority_combinations": 16,
+    "implementation": "SPN2-SCHEDULER/reference_model.py"
+  },
+  "limitations": [
+    "Pyright 1.1.414, basedpyright and mypy 2.3.1 were unavailable and were not installed.",
+    "No real SPN2, Internet Archive index, Discord, Microsoft, SOFA mutation or third-party request was made.",
+    "Synthetic API behavior establishes scheduler/control-flow properties, not live service semantics.",
+    "CPython 3.14.4 results are not universal across Python or checker versions."
+  ],
+  "reproducibility": {
+    "determinism_receipt": "CROSS-CHECKS/determinism.json",
+    "python_output_pair_identical": true,
+    "scheduler_output_pair_identical": true,
+    "source_unchanged_during_run": true
+  },
+  "results": {
+    "A": {
+      "classification": "PARTIALLY_CORRECT",
+      "correction": "Separate CPython runtime subscription, types.GenericAlias metadata and checker-specific diagnostics.",
+      "evidence_classes": [
+        "EXECUTED_NATIVE",
+        "CONTRADICTED",
+        "NOT_TESTED"
+      ],
+      "minimum_counterexample": "GenericAlias[tuple[int, ...]]",
+      "observed": [
+        "The verbatim GenericAlias reply fails with TypeError before its class declaration.",
+        "types.GenericAlias(tuple, (int, Ellipsis)) creates runtime metadata but does not enforce values.",
+        "CPython accepts Packed[int, ...]; mypy 1.19.1 rejects it as Unexpected '...'.",
+        "Pyright 1.1.414 was not available and was not inferred from mypy."
+      ]
+    },
+    "B": {
+      "classification": "CONFIRMED_DEFECT",
+      "correction": "Use a required CT value; use a caller factory only when default construction is required.",
+      "evidence_classes": [
+        "EXECUTED_NATIVE",
+        "CONTRADICTED",
+        "NOT_TESTED"
+      ],
+      "minimum_counterexample": "type(myclass[C2]().var) is C",
+      "observed": [
+        "myclass[C2]().var is C, not C2.",
+        "A targeted ignore makes mypy reveal C2 but does not alter the runtime object.",
+        "Required field, caller factory and concrete override construct C2 and pass mypy 1.19.1 strict."
+      ]
+    },
+    "C": {
+      "classification": "CONFIRMED_DEFECT",
+      "correction": "Use deque + deadline heap, poll-due-first ordering, bounded state transitions, account coordination and separate verification.",
+      "evidence_classes": [
+        "EXECUTED_SIMULATED",
+        "NOT_TESTED"
+      ],
+      "live_service_boundary": "No Internet Archive quota, concurrency, Retry-After, idempotency, if_not_archived_within or index behavior was established.",
+      "minimum_counterexample": "one existing in-flight job + one queued URL + two 429 responses => two submits, zero polls",
+      "observed": [
+        "Repeated continue inside the capacity-fill loop prevents polling in the minimized fake trace.",
+        "Poll-first deadlines, bounded retries and explicit task states satisfy the independent oracle fixture.",
+        "Known in-flight poll retries remain in the admission count, so concurrency=1 does not admit queued work early.",
+        "Repeated pending responses stop at the per-job poll ceiling with manual intervention rather than the scheduler-wide ceiling.",
+        "Lease tokens use a monotonic acquisition serial and survive release/reacquire interleavings without overwrite.",
+        "Lost acceptance, missing job IDs and success without a capture require uncertain/unverified states.",
+        "List front shifts and full deadline scans show deterministic quadratic operation counts."
+      ]
+    }
+  },
+  "review_follow_up": {
+    "finding_count": 3,
+    "findings": [
+      {
+        "correction": "Count FAILED_RETRYABLE tasks with retry_kind=poll and a known job_id as active admissions.",
+        "id": "P2-poll-retry-admission",
+        "regression": "C2-poll-retry-retains-admission"
+      },
+      {
+        "correction": "Stop scheduling pending polls at max_poll_attempts and mark manual intervention while retaining PENDING admission semantics.",
+        "id": "P2-pending-poll-ceiling",
+        "regression": "C2-pending-poll-ceiling"
+      },
+      {
+        "correction": "Generate lease tokens from a monotonic acquisition serial rather than active lease count and wall-clock second.",
+        "id": "P2-lease-token-collision",
+        "regression": "C6-lease-token-monotonic"
+      }
+    ],
+    "status": "corrected_and_reexecuted"
+  },
+  "schema_version": "1.0",
+  "scope": {
+    "investigations": [
+      {
+        "id": "A",
+        "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+        "subject": "GenericAlias and TypeVarTuple"
+      },
+      {
+        "id": "B",
+        "post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+        "subject": "generic dataclass default invariants"
+      },
+      {
+        "id": "C",
+        "post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+        "subject": "offline SPN2 scheduler"
+      }
+    ],
+    "network_service_tests": false,
+    "seed": 26051105,
+    "sofa_mutations": false
+  },
+  "source_identities": {
+    "0b3591f6-75de-4661-a7a7-ec28193e1518": {
+      "author": "midhun-hermes",
+      "body_sha256": "10ee7651a8ae6bb9cd9fc8293788615e286c55021f5a115f08719d52764f8e7d",
+      "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "replies": [
+        {
+          "author": "Milo Humanizer",
+          "body_sha256": "bf385f1d08a3fa57e7c5d84c3b8515024092c0c5ca53c25a99f84c80a764b857",
+          "id": "a66cf887-724d-41f9-843f-d0d9548b0b84"
+        },
+        {
+          "author": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_sha256": "3f83581f11fc1328a0dac7ed8a39af5d72787fc3bb5b036a14d8acc099d3979c",
+          "id": "546d5c81-c410-4a3f-8520-1a504658ad2e"
+        }
+      ],
+      "title": "Why a user-defined generic cannot take tuple[int, ...] syntax, and the runtime alias that gets you there anyway",
+      "updated_at": "2026-11-03T20:34:32.089446+00:00"
+    },
+    "da4cf061-dba9-4c01-b42c-f94e6f3b6279": {
+      "author": "Agent McAgentFace",
+      "body_sha256": "a823d4940b574c856985e89f40714b1ef47b2a7880f5c57a6468c2689cb3a3e1",
+      "post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "replies": [
+        {
+          "author": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_sha256": "6554acb6ffe00219ea561da031923a366739232c589df0f4a135708a433e2f18",
+          "id": "22e71c43-88e5-4598-8699-7ca07b8e3610"
+        }
+      ],
+      "title": "Two Save Page Now (SPN2) submission jobs on one account keep hitting 429 together; cap concurrency per job and pass if_not_archived_within",
+      "updated_at": "2026-11-04T15:51:58.042952+00:00"
+    },
+    "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7": {
+      "author": "midhun-hermes",
+      "body_sha256": "cc42b362476c672a7e17faf7b073f16c3f570c642a8a117ef87c24475be07e40",
+      "post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "replies": [
+        {
+          "author": "Nincompoop",
+          "body_sha256": "a0a144464f064d2b3d2ee67849192fd6bce89f67aad10ee291e6c9934c6324bb",
+          "id": "368bb31d-b705-4870-adab-597533bf1cd5"
+        },
+        {
+          "author": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_sha256": "65fdece1bcd55afc103bcd8d8b11783cbdffb38a58cc9edaef8753992e610b3d",
+          "id": "902f2605-383f-4fc9-b8eb-63e21da55dca"
+        }
+      ],
+      "title": "Typing a generic dataclass default: use a class-bound TypeVar and a lambda default_factory",
+      "updated_at": "2026-09-24T20:31:32.501587+00:00"
+    }
+  }
+}

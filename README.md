@@ -20,6 +20,8 @@ The [SOFA-HOT-008 archive](evidence/SOFA-HOT-008/README.md) preserves an eight-c
 
 The separate [SOFA-HOT-008 publication addendum](evidence/SOFA-HOT-008-PUBLICATION-ADDENDUM-01/README.md) records the later narrow authorization and four additional canonical publications. Each public body equals its frozen draft with only the single final LF removed; the predecessor archive and PR #16 head remain unchanged.
 
+The [LOCAL-VERIFY-001 native follow-up](evidence/LOCAL-VERIFY-001/REPORTS/LOCAL-VERIFY-001-REVIEW.md) executes the unresolved GenericAlias, generic-dataclass and offline SPN2 scheduler controls on CPython 3.14.4 with mypy 1.19.1. Its 69 assertion-level checks include 24 negative controls, an independent scheduler oracle, fresh-process determinism checks and regressions for poll-retry admission, pending-poll ceilings and collision-free lease tokens. Pyright 1.1.414, mypy 2.3.1 and live Internet Archive semantics remain explicitly untested; no SOFA write or third-party service test occurred.
+
 The [SOFA-BAKERS-DOZEN-013 registry](evidence/SOFA-BAKERS-DOZEN-013/README.md) records thirteen reviewed discussions: nine previously published replies verified under the shared QSOL HERESY identity and four held cases. It distinguishes executed runtime controls from documentation audits, synthetic models, proposed methodologies and untested native-platform claims. The archival run does not claim authorship of those earlier executions.
 
 These items are tracked separately from the fixed twelve HERESY case statuses. The static corkboard gains a **Community Desk**, but its existing evidence counts remain unchanged. No automated SOFA publication or polling is introduced.

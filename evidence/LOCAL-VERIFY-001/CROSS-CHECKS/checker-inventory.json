@@ -1,0 +1,48 @@
+{
+  "bounded_cache_search": {
+    "matches": [],
+    "name_targets": [
+      "basedpyright",
+      "pyright"
+    ],
+    "roots": [
+      "/home/trent/.cache",
+      "/home/trent/.local"
+    ],
+    "version_fragments": [
+      "mypy-2.3.1",
+      "pyright-1.1.414"
+    ]
+  },
+  "campaign": "LOCAL-VERIFY-001",
+  "coverage": {
+    "basedpyright": "NOT_TESTED",
+    "mypy_1.19.1": "EXECUTED_NATIVE",
+    "mypy_2.3.1": "NOT_TESTED",
+    "pyright_1.1.414": "NOT_TESTED"
+  },
+  "executables": {
+    "basedpyright": null,
+    "mypy": "/usr/bin/mypy",
+    "pyright": null
+  },
+  "installation_performed": false,
+  "node_or_npm_invoked": false,
+  "recorded_at_utc": "2026-11-04T20:51:03.465832Z",
+  "schema_version": "1.0",
+  "source": {
+    "bytes": 2662,
+    "path": "CROSS-CHECKS/checker_inventory.py",
+    "sha256": "4bdc8a771d9c1d29801e58547ab5d9dcba8452602f2d9bf3063191962c74ce80"
+  },
+  "uv_tool_list": {
+    "argv": [
+      "uv",
+      "tool",
+      "list"
+    ],
+    "exit_code": 0,
+    "stderr": "No tools installed\n",
+    "stdout": ""
+  }
+}

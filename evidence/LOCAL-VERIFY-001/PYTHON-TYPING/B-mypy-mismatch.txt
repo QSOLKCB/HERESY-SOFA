@@ -1,0 +1,2 @@
+PYTHON-TYPING/dataclass_mismatch_fixture.py:22: error: Incompatible types in assignment (expression has type "C", variable has type "CT")  [assignment]
+Found 1 error in 1 file (checked 1 source file)
