@@ -282,6 +282,35 @@ class Heresy006Tests(unittest.TestCase):
                 self.assertEqual(report["run_status"], "FAIL")
                 self.assertEqual(report["conclusion"], "UNCONFIRMED")
 
+    def test_parent_modularity_oracle_rejects_colluding_worker_scores(self):
+        forged = copy.deepcopy(self.valid_worker())
+        result = forged["output"]["results"][0]
+        result["partition"] = [list(range(5)), list(range(5, 10)), list(range(10, 15))]
+        result["community_count"] = 3
+        result["community_sizes"] = [5, 5, 5]
+        result["modularity"] = 0.0
+        result["modularity_recomputed"] = 0.0
+        self.assert_worker_rejected(forged)
+
+    def test_parent_modularity_oracle_matches_fixed_controls(self):
+        cases = (
+            ("separated_cliques", [list(range(5)), list(range(5, 10)), list(range(10, 15))], 0.661691542288557),
+            ("symmetric_cycle", [list(range(4)), list(range(4, 8)), list(range(8, 12)), list(range(12, 16))], 0.5),
+            ("bridge_node", [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11], [12, 13]], 0.5546372819100093),
+        )
+        for fixture, partition, expected in cases:
+            nodes, edges = self.runner._fixture_spec(fixture)
+            with self.subTest(fixture=fixture):
+                self.assertAlmostEqual(self.runner._spec_modularity(nodes, edges, partition), expected, places=12)
+
+    def test_noninteger_partition_and_seed_fail_closed(self):
+        wrong_partition = copy.deepcopy(self.valid_worker())
+        wrong_partition["output"]["results"][0]["partition"] = [[0, "1"]]
+        self.assert_worker_rejected(wrong_partition)
+        wrong_seed = copy.deepcopy(self.valid_worker())
+        wrong_seed["output"]["results"][0]["seed"] = ["17"]
+        self.assert_worker_rejected(wrong_seed)
+
     @unittest.skipUnless(importlib.util.find_spec("networkx"), "NetworkX is optional")
     def test_fixture_topology_is_equivalent_across_insertion_orders(self):
         import networkx as nx
