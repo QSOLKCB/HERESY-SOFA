@@ -10,7 +10,7 @@ Humour is editorial seasoning, not evidence. Every experiment distinguishes reco
 
 ## The Gremlin Files — interactive corkboard
 
-The [static evidence corkboard](site/README.md) presents all twelve HERESY case files as pinned notes with **Canvas red-thread connections**, search, status filters and clickable dossiers. It distinguishes ten bounded reproductions from two untested candidates and links the four confirmed SOFA contributions. The `site/` directory contains plain HTML, CSS, JavaScript and a versioned case catalogue, with no build step or telemetry.
+The [static evidence corkboard](site/README.md) presents twelve HERESY case files as pinned notes with **Canvas red-thread connections**, search, status filters and clickable dossiers. It distinguishes ten default-harness reproductions from **one source-locked Louvain observation** and **one CUDA assertion investigation blocked at device preflight**; six case-linked SOFA contributions are recorded. Neither optional experiment has been added to default `run-all`. The `site/` directory contains plain HTML, CSS, JavaScript and a versioned case catalogue, with no build step or telemetry.
 
 **GitHub Pages:** after merging the reviewed site PR, select **Source: GitHub Actions** in [Settings → Pages](https://github.com/QSOLKCB/HERESY-SOFA/settings/pages). The workflow `HERESY Corkboard — static Pages` publishes the site. [Local preview and evidence rules](site/README.md).
 
@@ -35,8 +35,8 @@ Receipts are written to `receipts/generated/` and are intentionally not committe
 | HERESY-002 | The stdin Custody Battle | Executable on Linux with Bash |
 | HERESY-003 | Schrödinger's SQLite Backup | Executable on Linux |
 | HERESY-004 | Windows Batch File Line-Ending Tribunal | Linux byte-level reproduction; `cmd.exe` not tested |
-| HERESY-005 | CUDA assertion behaviour | Placeholder; not tested |
-| HERESY-006 | NetworkX Louvain instability | Placeholder; not tested |
+| [HERESY-005](experiments/HERESY-005/experiment.md) | CUDA assertion behaviour — The CUDA Apparition | **Placeholder in harness;** CUDA 12.4 compiled and preflight ran, but no usable device/driver (assertions NOT_RUN). [SOFA TIL](https://agents.stackoverflow.com/tils/dd9e3bfe-edeb-4596-8d59-26af83f26572) |
+| [HERESY-006](experiments/HERESY-006/experiment.md) | NetworkX Louvain instability — The Louvain Shape-Shifter | **Placeholder in harness;** standalone NetworkX 3.5 matrix PASS, 240 configurations, 42 cycle partitions; variation confirmed, no library bug. [SOFA Blueprint](https://agents.stackoverflow.com/blueprints/4bcd561f-3968-4e61-a49b-abc636a05f79) |
 | [HERESY-007](experiments/HERESY-007/experiment.md) | The Ancestor That Refused to Die — Git diff3 | Executed Git merge with verified correction |
 | [HERESY-008](experiments/HERESY-008/experiment.md) | The Git Identity Crisis — PEBKAC / Layer 8 / ID-10-T | Executable on Linux with Git; Windows batch untested |
 | [HERESY-009](experiments/HERESY-009/experiment.md) | SQLite Double-Delivery Department | SQLite WAL deterministic two-connection reproduction |
@@ -92,3 +92,11 @@ python3 -m unittest discover -s tests -p 'test_chaos_pilot.py' -v
 ```
 
 **No cloud services, paid calls, credential access, SOFA submissions, production scans or auto-merges are introduced by this pilot.**
+
+## HERESY-005 / HERESY-006 — reviewed investigation records
+
+- **CUDA:** the [source-locked 005 report](experiments/HERESY-005/HERESY-005-report.json) ties executed compilation and device preflight to `bb9042f9e8f626cf59bcac0113cf19dfbea801d7`. `nvcc` 12.4 compiled successfully; the probe returned `device_count_status=100`, with zero devices. No assertion trial ran: **`NOT_RUN / UNCONFIRMED`**. Its [SOFA TIL](https://agents.stackoverflow.com/tils/dd9e3bfe-edeb-4596-8d59-26af83f26572) discusses only this preflight boundary.
+- **Louvain:** the [source-locked 006 report](experiments/HERESY-006/HERESY-006-report.json) ties the executed **240 configurations** to `1f4e568373764396aa6bd580d2e1cc30e0742c49` (CPython 3.14.4, NetworkX 3.5). The 16-node cycle produced **42 valid canonical partitions** across seed and insertion-order variants; fixed repeats were identical. This is **observed heuristic sensitivity, not an upstream NetworkX bug**. The separate later pure-Python parent-modularity oracle was tested by CI and is **not retroactively part of that source-locked 240-run matrix**. See the [published SOFA Blueprint](https://agents.stackoverflow.com/blueprints/4bcd561f-3968-4e61-a49b-abc636a05f79).
+- **Harness remains dependency-free:** both `experiment.json` manifests still say `placeholder` with `entrypoint: null`. That is a runner eligibility state, independent of whether a separate manually invoked experiment gathered valid evidence. No default `run-all` execution or SOFA auto-publishing was enabled.
+
+Read [the publication and evidence audit](docs/reviews/HERESY-005-006-sofa-corkboard.md) for the exact claim boundaries.

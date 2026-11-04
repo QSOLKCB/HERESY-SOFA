@@ -16,7 +16,7 @@
   const palette = {
     PARSER: "#ac6b37", SHELL: "#8a6650", DATABASE: "#6a8062",
     ENCODING: "#b86b44", GIT: "#607d74", SECURITY: "#a6453d",
-    WATCHLIST: "#82765d"
+    WATCHLIST: "#82765d", GRAPH: "#6d789e"
   };
   const state = {cases: [], connections: [], filter: "all", query: "", lastFocus: null};
 
@@ -38,12 +38,13 @@
     return node;
   }
   function status(caseData) {
-    if (caseData.status === "placeholder") return {short: "WANTED", extended: "NOT TESTED", kind: "wanted", dot: "gray"};
+    if (caseData.status === "placeholder" && caseData.evidenceState === "observed") return {short: "OBSERVED", extended: "VALID VARIATION / NOT AN UPSTREAM BUG", kind: "observed", dot: "green"};
+    if (caseData.status === "placeholder") return {short: "WANTED", extended: "DEVICE ASSERTION NOT TESTED", kind: "wanted", dot: "gray"};
     if (caseData.published) return {short: "SOFA FILED", extended: "REPRODUCER + SOFA", kind: "published", dot: "green"};
     return {short: "CAUGHT", extended: "BOUNDED REPRODUCTION", kind: "captured", dot: ""};
   }
   function addCaseCard(item, index) {
-    const button = make("button", "case-card" + (item.status === "placeholder" ? " is-wanted" : "") + (item.id === "HERESY-011" ? " is-feature" : ""));
+    const button = make("button", "case-card" + (item.status === "placeholder" && item.evidenceState !== "observed" ? " is-wanted" : "") + (item.id === "HERESY-011" ? " is-feature" : ""));
     button.type = "button";
     button.dataset.caseId = item.id;
     button.style.setProperty("--tilt", String(Number(item.rotation) || 0) + "deg");
@@ -88,8 +89,9 @@
     body.append(heading);
     body.append(make("p", "dossier-description", item.teaser));
     const stamps = make("div", "dossier-stamps");
-    stamps.append(make("span",item.status === "placeholder" ? "unverified" : "verified",s.extended));
-    if (item.published) stamps.append(make("span", "verified",item.published === "blueprint" ? "BLUEPRINT PUBLISHED" : "SOFA REPLY PUBLISHED"));
+    stamps.append(make("span",item.status === "placeholder" && item.evidenceState !== "observed" ? "unverified" : "verified",s.extended));
+    if (item.status === "placeholder") stamps.append(make("span", "unverified","OUTSIDE DEFAULT RUN-ALL"));
+    if (item.published) stamps.append(make("span", "verified",item.published === "blueprint" ? "BLUEPRINT PUBLISHED" : item.published === "til" ? "PREFLIGHT TIL PUBLISHED" : "SOFA REPLY PUBLISHED"));
     body.append(stamps);
     body.append(rule("01 / THE ALLEGATION", item.cause));
     body.append(rule("02 / RECORDED EVIDENCE", item.finding));
@@ -102,17 +104,20 @@
     links.setAttribute("aria-label", "Case source links");
     if (validRepoPath(item.doc)) links.append(link("READ THE EXPERIMENT", SOURCE + "/blob/main/" + item.doc));
     if (validRepoPath(item.incident)) links.append(link("READ THE INCIDENT REPORT", SOURCE + "/blob/main/" + item.incident));
+    if (validRepoPath(item.report)) links.append(link("READ SOURCE-LOCKED EXECUTION REPORT", SOURCE + "/blob/main/" + item.report));
     if (item.id === "HERESY-011") links.append(link("READ THE ARCHIVED BLUEPRINT",SOURCE + "/blob/main/blueprints/HERESY-011/BLUEPRINT.md"));
     // Publication references are a small fixed, audited set. Never interpolate
     // untrusted external URLs into the DOM.
     const publications = {
+      "HERESY-005":"https://agents.stackoverflow.com/tils/dd9e3bfe-edeb-4596-8d59-26af83f26572",
+      "HERESY-006":"https://agents.stackoverflow.com/blueprints/4bcd561f-3968-4e61-a49b-abc636a05f79",
       "HERESY-007":"https://agents.stackoverflow.com/tils/44ce169b-068e-45d0-a15d-500166400d24",
       "HERESY-009":"https://agents.stackoverflow.com/tils/7d036b29-2221-43ec-b6c6-748e379bae32",
       "HERESY-010":"https://agents.stackoverflow.com/tils/68be9bd0-2e63-47e3-9a2b-c262f9937942",
       "HERESY-011":"https://agents.stackoverflow.com/blueprints/31f6e754-bf85-4e81-b626-ea17d0d70fb9"
     };
     if (item.published && publications[item.id]) {
-      links.append(link(item.published === "blueprint" ? "OPEN PUBLISHED SOFA BLUEPRINT" : "OPEN SOFA THREAD WITH PUBLISHED REPLY",publications[item.id]));
+      links.append(link(item.published === "blueprint" ? "OPEN PUBLISHED SOFA BLUEPRINT" : item.published === "til" ? "OPEN PUBLISHED SOFA TIL" : "OPEN SOFA THREAD WITH PUBLISHED REPLY",publications[item.id]));
     }
     body.append(links);
     detail.append(body);
@@ -133,7 +138,8 @@
   function matches(item) {
     const filter = state.filter;
     if (filter === "implemented" && item.status !== "implemented") return false;
-    if (filter === "placeholder" && item.status !== "placeholder") return false;
+    if (filter === "placeholder" && (item.status !== "placeholder" || item.evidenceState === "observed")) return false;
+    if (filter === "observed" && item.evidenceState !== "observed") return false;
     if (filter === "published" && !item.published) return false;
     if (!state.query) return true;
     const corpus = [item.id,item.name,item.formal,item.category,item.cause,item.finding,item.mitigation,item.teaser,item.scope,...(item.tags || [])].join(" ").toLowerCase();
@@ -245,10 +251,12 @@
       data.cases.forEach(addCaseCard);
       document.getElementById("stat-total").textContent = String(data.cases.length);
       document.getElementById("stat-captured").textContent = String(data.cases.filter(x=>x.status === "implemented").length);
-      document.getElementById("stat-watch").textContent = String(data.cases.filter(x=>x.status === "placeholder").length);
+      document.getElementById("stat-observed").textContent = String(data.cases.filter(x=>x.evidenceState === "observed").length);
+      document.getElementById("stat-watch").textContent = String(data.cases.filter(x=>x.status === "placeholder" && x.evidenceState !== "observed").length);
       for (const [name,count] of Object.entries({
         all:data.cases.length,implemented:data.cases.filter(x=>x.status === "implemented").length,
-        placeholder:data.cases.filter(x=>x.status === "placeholder").length,
+        placeholder:data.cases.filter(x=>x.status === "placeholder" && x.evidenceState !== "observed").length,
+        observed:data.cases.filter(x=>x.evidenceState === "observed").length,
         published:data.cases.filter(x=>x.published).length
       })) {
         document.getElementById("filter-count-"+name).textContent=String(count);

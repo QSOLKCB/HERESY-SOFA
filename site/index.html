@@ -32,7 +32,7 @@
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-rule"></span> QSOL-IMC / BUREAU OF SOFTWARE ANOMALIES / EST. 2026</div>
           <h1 id="page-title">THE <em>GREMLIN</em><br>FILES<span class="title-period">.</span></h1>
-          <p>Twelve suspects. One corkboard. A growing collection of software absurdities, caught with reproducible experiments and a frankly unreasonable quantity of evidence.</p>
+          <p>Twelve suspects. Ten harness reproductions. One confirmed stochastic observation. One CUDA assertion still wanted. Evidence first; convictions later.</p>
           <div class="hero-actions">
             <a class="primary-link" href="#caseboard">INSPECT THE BOARD <span aria-hidden="true">↓</span></a>
             <a class="secondary-link" href="https://github.com/QSOLKCB/HERESY-SOFA/tree/main/incidents" target="_blank" rel="noopener noreferrer">THE CASE ARCHIVE ↗</a>
@@ -43,9 +43,10 @@
           <div class="stats">
             <div><strong id="stat-total">12</strong><span>CASE FILES</span></div>
             <div><strong id="stat-captured">10</strong><span>REPRODUCERS</span></div>
-            <div><strong id="stat-watch">2</strong><span>ON THE WATCHLIST</span></div>
+            <div><strong id="stat-observed">1</strong><span>OBSERVED</span></div>
+            <div><strong id="stat-watch">1</strong><span>WANTED</span></div>
           </div>
-          <p class="stat-footnote">“Captured” means a bounded reproducible case, not proof across every platform.</p>
+          <p class="stat-footnote">Harness status and scientific evidence are separate. An observed heuristic variation is not a NetworkX bug; CUDA assertion behaviour remains untested.</p>
         </div>
         <span class="hero-index" aria-hidden="true">ARCHIVE // 001—012</span>
       </section>
@@ -62,8 +63,9 @@
           <div class="filter-buttons" aria-label="Filter cases">
             <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">ALL CASES <span id="filter-count-all">12</span></button>
             <button type="button" class="filter" data-filter="implemented" aria-pressed="false">CAUGHT <span id="filter-count-implemented">10</span></button>
-            <button type="button" class="filter" data-filter="placeholder" aria-pressed="false">WANTED <span id="filter-count-placeholder">2</span></button>
-            <button type="button" class="filter" data-filter="published" aria-pressed="false">ON SOFA <span id="filter-count-published">4</span></button>
+            <button type="button" class="filter" data-filter="placeholder" aria-pressed="false">WANTED <span id="filter-count-placeholder">1</span></button>
+            <button type="button" class="filter" data-filter="observed" aria-pressed="false">OBSERVED <span id="filter-count-observed">1</span></button>
+            <button type="button" class="filter" data-filter="published" aria-pressed="false">ON SOFA <span id="filter-count-published">6</span></button>
           </div>
           <label class="search-label"><span aria-hidden="true">⌕</span><span class="sr-only">Search cases</span><input id="case-search" type="search" placeholder="SEARCH THE EVIDENCE..." autocomplete="off" spellcheck="false"></label>
         </div>

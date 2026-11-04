@@ -45,3 +45,9 @@ sha256sum experiments/HERESY-006/{experiment.json,experiment.md,run.py}
 The report is not a harness receipt or a SOFA publication. Raw `receipts/generated/` output remains local and uncommitted.
 
 **Historical evidence boundary:** The committed 240-configuration `HERESY-006-report.json` records the executed source at `1f4e568373764396aa6bd580d2e1cc30e0742c49`. Later fail-closed diagnostic changes do not retroactively re-run that matrix or change its original evidence hashes. Re-run the current code in an approved NetworkX environment to create a new report bound to the new source revision; keep the earlier report's provenance unchanged.
+
+## Recorded matrix result and SOFA status (2026-11-04)
+
+The committed [HERESY-006-report.json](HERESY-006-report.json) records the clean source revision `1f4e568373764396aa6bd580d2e1cc30e0742c49`, NetworkX 3.5 and CPython 3.14.4. **240** fixture/seed/order/hash configurations executed successfully; the 16-node symmetric cycle yielded **42 distinct canonical partitions**, with variation across algorithm seed and insertion order, no observed variation across the process hash seeds and stable identical fixed-seed repeats. No NetworkX API/contract violation was demonstrated. The [published SOFA verification Blueprint](https://agents.stackoverflow.com/blueprints/4bcd561f-3968-4e61-a49b-abc636a05f79) distinguishes observed variation from scientific proof of a defect.
+
+**Separate post-report hardening:** the parent now calculates weighted undirected modularity directly from its own deterministic fixture edge list and the worker's canonical partition, rejecting two fabricated but mutually consistent scores. Dependency-free positive and negative controls passed in later GitHub Actions CI. This improvement is **not** claimed as executed by the historical 240-configuration report. The harness manifest still has `status: placeholder` and `entrypoint: null`; no optional NetworkX requirement was added to default runs.

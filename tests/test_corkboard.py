@@ -66,8 +66,9 @@ class CorkboardTests(unittest.TestCase):
                 self.assertTrue(entry["scope"])
                 self.assertTrue(entry["tags"])
                 if entry["status"] == "placeholder":
-                    self.assertNotIn("published", entry)
-                    self.assertIn("NOT TESTED", entry["scope"])
+                    self.assertIn(entry["id"], ("HERESY-005", "HERESY-006"))
+                    self.assertIn(entry.get("evidenceState"), ("blocked", "observed"))
+                    self.assertTrue((ROOT / entry["report"]).is_file())
 
     def test_contributions_only_claim_verified_manifest_publications(self):
         manifest = json.loads((ROOT / "sofa" / "manifest.json").read_text())
@@ -76,7 +77,7 @@ class CorkboardTests(unittest.TestCase):
                 published = entry.get("published")
                 if not published:
                     continue
-                group = "blueprints" if published == "blueprint" else "replies"
+                group = {"blueprint": "blueprints", "reply": "replies", "til": "tils"}[published]
                 matching = manifest["experiments"][entry["id"]][group]
                 self.assertTrue(any(
                     x["id"] == entry["sofaId"] and x["state"] == "published"
@@ -84,7 +85,51 @@ class CorkboardTests(unittest.TestCase):
                 ))
         self.assertEqual(sum(e["status"] == "implemented" for e in CASES["cases"]), 10)
         self.assertEqual(sum(e["status"] == "placeholder" for e in CASES["cases"]), 2)
-        self.assertEqual(sum(bool(e.get("published")) for e in CASES["cases"]), 4)
+        self.assertEqual(sum(bool(e.get("published")) for e in CASES["cases"]), 6)
+        self.assertEqual(sum(e.get("evidenceState") == "observed" for e in CASES["cases"]), 1)
+        self.assertEqual(sum(e.get("evidenceState") == "blocked" for e in CASES["cases"]), 1)
+
+    def test_cuda_and_louvain_evidence_are_distinct_from_harness_lifecycle(self):
+        cases = {entry["id"]: entry for entry in CASES["cases"]}
+        cuda = json.loads((ROOT / cases["HERESY-005"]["report"]).read_text())
+        louvain = json.loads((ROOT / cases["HERESY-006"]["report"]).read_text())
+        cuda_manifest = json.loads(
+            (ROOT / "experiments/HERESY-005/experiment.json").read_text()
+        )
+        louvain_manifest = json.loads(
+            (ROOT / "experiments/HERESY-006/experiment.json").read_text()
+        )
+        self.assertEqual(cuda_manifest["status"], "placeholder")
+        self.assertEqual(louvain_manifest["status"], "placeholder")
+        self.assertIsNone(cuda_manifest["entrypoint"])
+        self.assertIsNone(louvain_manifest["entrypoint"])
+        self.assertEqual(cuda["run_status"], "NOT_RUN")
+        self.assertEqual(cuda["conclusion"], "UNCONFIRMED")
+        self.assertEqual(cuda["runtime"]["device_count"], 0)
+        self.assertEqual(cuda["source_revision"]["git_commit"], "bb9042f9e8f626cf59bcac0113cf19dfbea801d7")
+        self.assertTrue(all(x == "not_tested" for x in cuda["claims"].values()))
+        self.assertIn("NOT TESTED", cases["HERESY-005"]["scope"])
+        self.assertEqual(louvain["run_status"], "PASS")
+        self.assertEqual(louvain["conclusion"], "CONFIRMED")
+        self.assertEqual(louvain["source_revision"]["git_commit"], "1f4e568373764396aa6bd580d2e1cc30e0742c49")
+        self.assertEqual(len(louvain["actual"]["results"]), 240)
+        self.assertEqual(louvain["actual"]["fixture_summaries"]["symmetric_cycle"]["unique_partition_count"], 42)
+        self.assertTrue(louvain["actual"]["fixed_seed_reproducible"])
+        self.assertEqual(louvain["claims"]["networkx_contract_violation"], "unsupported")
+        self.assertEqual(cases["HERESY-006"]["evidenceState"], "observed")
+        self.assertFalse(cases["HERESY-005"]["status"] == "implemented")
+        self.assertFalse(cases["HERESY-006"]["status"] == "implemented")
+
+    def test_corkboard_renders_observation_and_preflight_boundaries(self):
+        html = (SITE / "index.html").read_text()
+        js = (SITE / "app.js").read_text()
+        self.assertIn('data-filter="observed"', html)
+        self.assertIn('id="stat-observed"', html)
+        self.assertIn('caseData.evidenceState === "observed"', js)
+        self.assertIn('x.evidenceState === "observed"', js)
+        self.assertIn('validRepoPath(item.report)', js)
+        self.assertIn("dd9e3bfe-edeb-4596-8d59-26af83f26572", js)
+        self.assertIn("4bcd561f-3968-4e61-a49b-abc636a05f79", js)
 
     def test_heresy012_is_an_independent_reproduction_not_a_sofa_publication(self):
         entry = next(case for case in CASES["cases"] if case["id"] == "HERESY-012")

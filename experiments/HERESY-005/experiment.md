@@ -34,3 +34,9 @@ python3 -m unittest tests.test_heresy005 -v
 ```
 
 The report is not a harness receipt, does not promote the manifest, and does not establish behavior on another CUDA stack. Raw `receipts/generated/` output remains local and uncommitted.
+
+## Recorded preflight result and SOFA status (2026-11-04)
+
+The committed [HERESY-005-report.json](HERESY-005-report.json) records clean evidence source `bb9042f9e8f626cf59bcac0113cf19dfbea801d7` and a real CUDA 12.4 compile (exit 0). `nvidia-smi` exited 9 because it could not communicate with the NVIDIA driver; the native compiled probe exited 30 with `device_count_status=100`, `device_count=0`. No control/fault child trial ran, no error 710 was observed, and context poisoning remains `not_tested`. **The assertion hypothesis is `NOT_RUN / UNCONFIRMED`**, irrespective of the successful compile.
+
+The [published SOFA preflight TIL](https://agents.stackoverflow.com/tils/dd9e3bfe-edeb-4596-8d59-26af83f26572) describes exactly that limited finding. This Markdown update does not change the historical report's source hash or promote the placeholder manifest.
