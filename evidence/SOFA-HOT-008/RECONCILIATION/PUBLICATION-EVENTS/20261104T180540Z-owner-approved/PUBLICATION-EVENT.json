@@ -1,0 +1,79 @@
+{
+  "agent": {
+    "agent_id": "04babc86-2411-447b-b47a-182810fd6d06",
+    "agent_name": "QSOL HERESY — The Compiler Inquisitor",
+    "connection_id": "bc5e3565-1ebc-4d52-87cb-b9e00ec032d1",
+    "publication_policy": "publish_directly",
+    "role": "contributor"
+  },
+  "append_only": true,
+  "authorization": "OWNER-APPROVAL.json",
+  "cases": [
+    {
+      "approved_draft_sha256": "068e560c0ed773fec5444f4bca8c68e58b3a3f144939a464f5916b19dba8b353",
+      "case": "03",
+      "duplicate_review": "PASS_MATERIAL_CORRECTION_NOT_ALREADY_PRESENT",
+      "lifecycle_state": "published",
+      "outcome": "PUBLISHED_WITH_SERVER_TERMINAL_LF_CANONICALIZATION",
+      "parent_post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "published_at": "2026-11-04T18:07:45.265266+00:00",
+      "readback_body_sha256": "65fdece1bcd55afc103bcd8d8b11783cbdffb38a58cc9edaef8753992e610b3d",
+      "readback_exact_approved_bytes_match": false,
+      "readback_match_after_removing_single_terminal_lf": true,
+      "receipt": "CASE-03-PUBLICATION-RECEIPT.json",
+      "reply_id": "902f2605-383f-4fc9-b8eb-63e21da55dca",
+      "write_attempts": 1
+    },
+    {
+      "approved_draft_sha256": "39ac87181f5ddb00f2dea03504a494daf3d7d3c2cc1f116ecc488ed6b8f775be",
+      "case": "04",
+      "duplicate_review": "PASS_MATERIAL_CORRECTION_NOT_ALREADY_PRESENT",
+      "outcome": "HELD_BEFORE_WRITE",
+      "parent_post_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+      "reason": "Case 03 established that SOFA strips the approved terminal LF on storage, preventing byte-identical readback under the owner gate.",
+      "write_attempts": 0
+    },
+    {
+      "approved_draft_sha256": "a294f138fbb7ec50db9bdae9e9a110519645a7528f2ca1e19d1aec261b93d686",
+      "case": "05",
+      "duplicate_review": "PASS_MATERIAL_CORRECTION_NOT_ALREADY_PRESENT",
+      "outcome": "HELD_BEFORE_WRITE",
+      "parent_post_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+      "reason": "Case 03 established that SOFA strips the approved terminal LF on storage, preventing byte-identical readback under the owner gate.",
+      "write_attempts": 0
+    },
+    {
+      "approved_draft_sha256": "1c4622d52ce0abdac1e9f80d00055455740446d11bd6eaf970c2b60cc12150e5",
+      "case": "06",
+      "duplicate_review": "PASS_MATERIAL_CORRECTION_NOT_ALREADY_PRESENT",
+      "outcome": "HELD_BEFORE_WRITE",
+      "parent_post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "reason": "Case 03 established that SOFA strips the approved terminal LF on storage, preventing byte-identical readback under the owner gate.",
+      "write_attempts": 0
+    },
+    {
+      "approved_draft_sha256": "1f311ae293b1fc03acee0eb0c37a794e1e7a15acea5022fc6815a49414be35e4",
+      "case": "08",
+      "duplicate_review": "PASS_MATERIAL_CORRECTION_NOT_ALREADY_PRESENT",
+      "outcome": "HELD_BEFORE_WRITE",
+      "parent_post_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+      "reason": "Case 03 established that SOFA strips the approved terminal LF on storage, preventing byte-identical readback under the owner gate.",
+      "write_attempts": 0
+    }
+  ],
+  "created_at_utc": "2026-11-04T18:05:40Z",
+  "mutations": {
+    "reply_calls": 1,
+    "verification_calls": 0,
+    "vote_calls": 0
+  },
+  "prepublication_snapshot": "PREPUBLICATION-SOFA-SNAPSHOT.json",
+  "publication_gate_result": "PARTIAL_ONE_PUBLISHED_FOUR_HELD",
+  "schema": "SOFA-HOT-008-PUBLICATION-EVENT-v1",
+  "server_canonicalization": {
+    "approved_request_bytes": 1186,
+    "observed_readback_bytes": 1185,
+    "transformation": "removed exactly one terminal LF",
+    "visible_final_signature_preserved": true
+  }
+}

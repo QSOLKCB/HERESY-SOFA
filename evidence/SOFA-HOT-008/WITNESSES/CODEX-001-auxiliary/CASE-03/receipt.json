@@ -1,0 +1,347 @@
+{
+  "all_checks_passed": true,
+  "case": 3,
+  "checks": [
+    {
+      "actual": "C",
+      "expected": "C",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "unparameterized_default",
+      "passed": true
+    },
+    {
+      "actual": "C2",
+      "expected": "C2",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "subclass_override",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "parameterized_default_is_C2",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "parameterized_explicit_value_is_C2",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "factory_allocates_separate_instances",
+      "passed": true
+    },
+    {
+      "actual": "C2",
+      "expected": "C2",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "explicit_factory_C2",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "required_field_omission_rejected",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "minimal_counterexample_exit",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "minimal_counterexample_assertion",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "mypy_default_source-fa8ac823-1616-4df3-9f73-feaa8b5b4bf7-block-01.py",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "mypy_default_annotated_ignore.py",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "mypy_default_lambda_no_ignore.py",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "mypy_default_direct_factory.py",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "mypy_default_corrected.py",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "mypy_default_wrong_required.py",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "mypy_default_ignored_counterexample.py",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "mypy_strict_annotated_ignore.py",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "mypy_strict_corrected.py",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03/source-fa8ac823-1616-4df3-9f73-feaa8b5b4bf7-block-01.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:37.617212+00:00",
+      "started_utc": "2026-11-04T16:29:37.593765+00:00",
+      "stderr": "",
+      "stdout": "<class '__main__.C'> <class '__main__.C2'>\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03/ignored_counterexample.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:37.689892+00:00",
+      "started_utc": "2026-11-04T16:29:37.620633+00:00",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-03/ignored_counterexample.py\", line 28, in <module>\n    assert isinstance(a.var, C2), \"typed C2 field actually contains C\"\n           ~~~~~~~~~~^^^^^^^^^^^\nAssertionError: typed C2 field actually contains C\n",
+      "stdout": "<class '__main__.C'> <class '__main__.C2'>\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "source-fa8ac823-1616-4df3-9f73-feaa8b5b4bf7-block-01.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:38.443677+00:00",
+      "started_utc": "2026-11-04T16:29:37.696718+00:00",
+      "stderr": "",
+      "stdout": "source-fa8ac823-1616-4df3-9f73-feaa8b5b4bf7-block-01.py:24: error: Need type annotation for \"a\"  [var-annotated]\nFound 1 error in 1 file (checked 1 source file)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "annotated_ignore.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:39.109447+00:00",
+      "started_utc": "2026-11-04T16:29:38.443696+00:00",
+      "stderr": "",
+      "stdout": "Success: no issues found in 1 source file\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "lambda_no_ignore.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:39.794791+00:00",
+      "started_utc": "2026-11-04T16:29:39.109466+00:00",
+      "stderr": "",
+      "stdout": "lambda_no_ignore.py:18: error: Incompatible types in assignment (expression has type \"C\", variable has type \"CT\")  [assignment]\nFound 1 error in 1 file (checked 1 source file)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "direct_factory.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:40.475363+00:00",
+      "started_utc": "2026-11-04T16:29:39.794810+00:00",
+      "stderr": "",
+      "stdout": "direct_factory.py:18: error: Incompatible types in assignment (expression has type \"C\", variable has type \"CT\")  [assignment]\nFound 1 error in 1 file (checked 1 source file)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "corrected.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:41.142427+00:00",
+      "started_utc": "2026-11-04T16:29:40.475381+00:00",
+      "stderr": "",
+      "stdout": "Success: no issues found in 1 source file\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "wrong_required.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:41.816729+00:00",
+      "started_utc": "2026-11-04T16:29:41.142445+00:00",
+      "stderr": "",
+      "stdout": "wrong_required.py:2: error: Argument 1 to \"Box\" has incompatible type \"C\"; expected \"C2\"  [arg-type]\nFound 1 error in 1 file (checked 1 source file)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "ignored_counterexample.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:42.488871+00:00",
+      "started_utc": "2026-11-04T16:29:41.816747+00:00",
+      "stderr": "",
+      "stdout": "Success: no issues found in 1 source file\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--strict",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "annotated_ignore.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:43.171070+00:00",
+      "started_utc": "2026-11-04T16:29:42.488891+00:00",
+      "stderr": "",
+      "stdout": "Success: no issues found in 1 source file\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "mypy",
+        "--strict",
+        "--no-incremental",
+        "--cache-dir",
+        "/tmp/codex008-mypy-5drrtdkj",
+        "corrected.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001/CASE-03",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:43.844294+00:00",
+      "started_utc": "2026-11-04T16:29:43.171089+00:00",
+      "stderr": "",
+      "stdout": "Success: no issues found in 1 source file\n"
+    }
+  ],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:29:43.846617+00:00",
+  "limitations": [
+    {
+      "claim": "Nincompoop exact mypy 2.3.1 / Python 3.14 combination; installed mypy is a different version",
+      "label": "NOT_TESTED"
+    }
+  ],
+  "mypy_version": "1.19.1",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "required_field_exception": {
+    "message": "Box.__init__() missing 1 required positional argument: 'var'",
+    "type": "TypeError"
+  },
+  "seed": 26051108,
+  "started_utc": "2026-11-04T16:29:37.593741+00:00"
+}

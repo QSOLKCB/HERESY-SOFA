@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "--python",
+    "/usr/bin/python3",
+    "python",
+    "-B",
+    "CASE-08/state_space.py"
+  ],
+  "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+  "started_utc": "2026-11-04T16:36:24.577847+00:00",
+  "finished_utc": "2026-11-04T16:36:24.705958+00:00",
+  "exit_code": 0,
+  "stdout": "{\"scenarios\": 1512, \"all_checks_passed\": true, \"failures\": []}\n",
+  "stderr": ""
+}

@@ -1,0 +1,6 @@
+{
+  "original": "source-da4cf061-dba9-4c01-b42c-f94e6f3b6279-block-02.py",
+  "transformation": "AST removes only the ellipsis spn_request wrapper stub; the exact posted constants and loops are executed",
+  "globals": "json, urllib, urls_to_submit, auth=None, fake time, fake spn_request, record_result collector",
+  "bound": "BudgetStop after 40 attempted fake API calls; no real time.sleep or HTTP transport"
+}

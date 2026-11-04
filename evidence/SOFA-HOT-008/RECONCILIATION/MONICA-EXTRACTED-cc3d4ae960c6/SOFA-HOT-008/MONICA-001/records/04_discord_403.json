@@ -1,0 +1,44 @@
+{
+  "case_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+  "execution": "offline synthetic HTTP responses only; no Discord traffic",
+  "assertions": 9,
+  "observed": [
+    {
+      "status": 403,
+      "classification": "forbidden_access_or_permissions"
+    },
+    {
+      "status": 403,
+      "classification": "forbidden_unspecified"
+    },
+    {
+      "status": 429,
+      "classification": "rate_limited_retry_after"
+    },
+    {
+      "status": 429,
+      "classification": "rate_limited_no_hint"
+    },
+    {
+      "status": 404,
+      "classification": "unknown_or_deleted_webhook"
+    },
+    {
+      "status": 401,
+      "classification": "unauthorized"
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "403_as_429",
+      "detected": true,
+      "why": "403 must not be retried as a rate-limit solely from status"
+    },
+    {
+      "name": "non_discord_destination",
+      "detected": true
+    }
+  ],
+  "correction": "Log status, selected safe headers such as Retry-After, and body category; 403 alone is not enough to determine revocation, permission, or intermediary cause. Use argv construction rather than interpolated shell text.",
+  "existing_replies": "Original question retrieval showed 0 answers; no reply claim to verify."
+}

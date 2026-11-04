@@ -1,0 +1,297 @@
+{
+  "all_checks_passed": true,
+  "case": 2,
+  "checks": [
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "token_heuristic_token",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "token_heuristic_short_uri_password",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "token_heuristic_long_path",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "token_heuristic_compact_uuid",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "token_heuristic_hyphenated_uuid",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "token_heuristic_pointer",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "token_heuristic_pointer_long_path",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "token_heuristic_public_key_marker",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "uri_regex_short_uri_password",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "uri_regex_pointer",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "uri_regex_long_path",
+      "passed": true
+    },
+    {
+      "actual": 384,
+      "expected": 384,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "disposable_file_mode",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "reloaded_raw_context_contains_fake",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "pointer_context_does_not_contain_fake",
+      "passed": true
+    },
+    {
+      "actual": 403,
+      "expected": 403,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "unsubstituted_surrogate_rejected",
+      "passed": true
+    },
+    {
+      "actual": 200,
+      "expected": 200,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "substitution_alone_authenticates",
+      "passed": true
+    },
+    {
+      "actual": 200,
+      "expected": 200,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "substitution_alone_sends_to_other_destination",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "substitution_alone_echoes_credential",
+      "passed": true
+    },
+    {
+      "actual": {
+        "ok": true,
+        "status": 200
+      },
+      "expected": {
+        "ok": true,
+        "status": 200
+      },
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "bounded_approved_request",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "bounded_response_has_no_fake",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "bounded_denies_origin",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "bounded_denies_path",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "bounded_denies_method",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "bounded_denies_userinfo",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "bounded_denies_query",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "bounded_refuses_redirect",
+      "passed": true
+    },
+    {
+      "actual": {
+        "ok": false,
+        "status": 502
+      },
+      "expected": {
+        "ok": false,
+        "status": 502
+      },
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "response_types_prevent_selected_field_echo",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "rg",
+        "-oIN",
+        "[a-z][a-z0-9+.-]*://[^/[:space:]:]+:[^[:space:]]+@",
+        "/tmp/codex008-fakes-7zaied91/short_uri_password.txt"
+      ],
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:30:33.702029+00:00",
+      "started_utc": "2026-11-04T16:30:33.699760+00:00",
+      "stderr": "",
+      "stdout": "REDACTED synthetic match; values intentionally never logged",
+      "stdout_bytes": 20
+    },
+    {
+      "argv": [
+        "rg",
+        "-oIN",
+        "[a-z][a-z0-9+.-]*://[^/[:space:]:]+:[^[:space:]]+@",
+        "/tmp/codex008-fakes-7zaied91/pointer.txt"
+      ],
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:30:33.704227+00:00",
+      "started_utc": "2026-11-04T16:30:33.702064+00:00",
+      "stderr": "",
+      "stdout": "REDACTED synthetic match; values intentionally never logged",
+      "stdout_bytes": 0
+    },
+    {
+      "argv": [
+        "rg",
+        "-oIN",
+        "[a-z][a-z0-9+.-]*://[^/[:space:]:]+:[^[:space:]]+@",
+        "/tmp/codex008-fakes-7zaied91/long_path.txt"
+      ],
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:30:33.706316+00:00",
+      "started_utc": "2026-11-04T16:30:33.704245+00:00",
+      "stderr": "",
+      "stdout": "REDACTED synthetic match; values intentionally never logged",
+      "stdout_bytes": 0
+    }
+  ],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:30:33.706765+00:00",
+  "limitations": [
+    {
+      "claim": "Muse's actual adapters, production environment, redirects, DNS, TLS, real memory and real credentials",
+      "label": "NOT_TESTED"
+    },
+    {
+      "claim": "No finite pattern set proves absence of secrets; prefixes/suffixes and pointer targets also require context-sensitive review. Permission bits are not a model-context boundary.",
+      "label": "INFERRED"
+    },
+    {
+      "claim": "Only synthetic in-process transports, generated fake credentials and disposable files were used.",
+      "label": "EXECUTED"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "seed": 26051108,
+  "started_utc": "2026-11-04T16:30:33.699198+00:00"
+}

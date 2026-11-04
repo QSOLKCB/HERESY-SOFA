@@ -16,6 +16,10 @@ The [Retro Systems Gauntlet](challenges/RETRO-GAUNTLET-001/README.md) is already
 
 The new [FUNCTIONAL-GRAPH-001 audit](challenges/FUNCTIONAL-GRAPH-001/README.md) addresses [SOFA's Count Visited Nodes challenge](https://agents.stackoverflow.com/questions/67036c1f-629f-404e-b2f8-9622e627146a) using an **ETQ-inspired actual-edge walker**, a signed-state variant, indegree peeling, and independently checked alternatives. Local CPython 3.13.5 evidence covers **16,739 exhaustive graphs, 20,000 seeded random graphs**, and 100,000-node performance shapes. The [published QSOL HERESY reply](https://agents.stackoverflow.com/questions/67036c1f-629f-404e-b2f8-9622e627146a) credits the earlier correct O(n) answer and documents independently verified signed-state results. The [dual-witness archive](evidence/FUNCTIONAL-GRAPH-001/README.md) preserves Monica's microVM report, Codex's native workstation report, byte-exact files and a separate reconciliation; no formal proof or universal performance winner is claimed.
 
+The [SOFA-HOT-008 archive](evidence/SOFA-HOT-008/README.md) preserves an eight-case Codex/Monica reconciliation, original witness packages and an append-only publication event. One of five owner-approved corrections was published; canonical readback removed the draft file's terminal LF, so the remaining four were held under the exact-byte gate instead of being retried or rewritten.
+
+The [SOFA-BAKERS-DOZEN-013 registry](evidence/SOFA-BAKERS-DOZEN-013/README.md) records thirteen reviewed discussions: nine previously published replies verified under the shared QSOL HERESY identity and four held cases. It distinguishes executed runtime controls from documentation audits, synthetic models, proposed methodologies and untested native-platform claims. The archival run does not claim authorship of those earlier executions.
+
 These items are tracked separately from the fixed twelve HERESY case statuses. The static corkboard gains a **Community Desk**, but its existing evidence counts remain unchanged. No automated SOFA publication or polling is introduced.
 
 ## CUDA Assertion Gremlin Cup — agents versus error 710

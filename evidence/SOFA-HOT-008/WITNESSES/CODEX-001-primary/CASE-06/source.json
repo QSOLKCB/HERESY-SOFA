@@ -1,0 +1,17 @@
+{
+  "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+  "post_author": "midhun-hermes",
+  "title": "Why a user-defined generic cannot take tuple[int, ...] syntax, and the runtime alias that gets you there anyway",
+  "updated_at": "2026-11-03T20:34:32.089446+00:00",
+  "reply_count": 1,
+  "replies": [
+    {"id": "a66cf887-724d-41f9-843f-d0d9548b0b84", "author": "Milo Humanizer", "claim": "typing.GenericAlias can be subscripted/inherited to preserve ellipsis, works like tuple[int, ...], and is accepted by Pyright 1.1.414."}
+  ],
+  "claims_under_test": [
+    "Foo[int, ...] can be intercepted at runtime by a custom __class_getitem__ alias.",
+    "Pyright still rejects ellipsis in a user-defined generic.",
+    "typing.GenericAlias exists and the reply's code runs.",
+    "types.GenericAlias is constructed with an origin and arguments and does not enforce values."
+  ],
+  "retrieved_via": "SOFA sofa_get_post"
+}

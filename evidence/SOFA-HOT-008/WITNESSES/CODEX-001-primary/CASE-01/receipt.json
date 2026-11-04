@@ -1,0 +1,187 @@
+{
+  "case": "CASE-01",
+  "checks": [
+    {
+      "actual": {
+        "language": "de-DE",
+        "reason": "sole-manual",
+        "source": "manual"
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": "de-DE",
+        "reason": "sole-manual",
+        "source": "manual"
+      },
+      "name": "missing_language_sole_uploaded",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": "en-orig",
+        "reason": "sole-original-asr",
+        "source": "automatic"
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": "en-orig",
+        "reason": "sole-original-asr",
+        "source": "automatic"
+      },
+      "name": "missing_language_original_asr",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": "fr",
+        "reason": "sole-automatic",
+        "source": "automatic"
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": "fr",
+        "reason": "sole-automatic",
+        "source": "automatic"
+      },
+      "name": "missing_language_sole_auto",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": null,
+        "reason": "no-safe-unique-choice",
+        "source": null
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": null,
+        "reason": "no-safe-unique-choice",
+        "source": null
+      },
+      "name": "translated_map_abstains",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": null,
+        "reason": "no-safe-unique-choice",
+        "source": null
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": null,
+        "reason": "no-safe-unique-choice",
+        "source": null
+      },
+      "name": "non_caption_entries_ignored",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": "en-US",
+        "reason": "known-language",
+        "source": "manual"
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": "en-US",
+        "reason": "known-language",
+        "source": "manual"
+      },
+      "name": "known_exact_manual_precedes_auto",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": "de-DE",
+        "reason": "known-language",
+        "source": "manual"
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": "de-DE",
+        "reason": "known-language",
+        "source": "manual"
+      },
+      "name": "known_base_unique",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": null,
+        "reason": "no-unique-language-match",
+        "source": null
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": null,
+        "reason": "no-unique-language-match",
+        "source": null
+      },
+      "name": "known_base_ambiguous_abstains",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": "es-MX",
+        "reason": "known-language",
+        "source": "manual"
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": "es-MX",
+        "reason": "known-language",
+        "source": "manual"
+      },
+      "name": "unique_audio_language_used",
+      "passed": true
+    },
+    {
+      "actual": {
+        "language": null,
+        "reason": "no-safe-unique-choice",
+        "source": null
+      },
+      "classification": "EXECUTED",
+      "expected": {
+        "language": null,
+        "reason": "no-safe-unique-choice",
+        "source": null
+      },
+      "name": "multiple_audio_languages_abstain",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "smallest_tie_counterexample_literal_policy",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "corrected_tie_is_order_independent",
+      "passed": true
+    }
+  ],
+  "command": "uv run --no-project --offline --no-managed-python python test_case_01.py --receipt receipt.json",
+  "conclusion": {
+    "classification": "PARTIALLY_CORRECT",
+    "defect": "Multiple uploaded or same-base tracks have no tie rule; choosing the first mapping key is insertion-order dependent.",
+    "executed": "The fallback order works for unique synthetic metadata choices.",
+    "minimal_correction": "Require a unique candidate at each tier or accept an explicit caller preference; otherwise abstain."
+  },
+  "finished_utc": "2026-11-04T16:37:04.265793+00:00",
+  "process_exit_code": 0,
+  "remote_download": {
+    "classification": "NOT_TESTED",
+    "reason": "External subtitle download was prohibited."
+  },
+  "seed": 26051108,
+  "source_author": "My_Junie",
+  "source_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+  "started_utc": "2026-11-04T16:37:04.256830+00:00",
+  "yt_dlp_version": "2026.3.17"
+}

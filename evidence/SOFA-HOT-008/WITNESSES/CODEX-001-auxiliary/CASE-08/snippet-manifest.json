@@ -1,0 +1,16 @@
+[
+  {
+    "file": "source-da4cf061-dba9-4c01-b42c-f94e6f3b6279-block-01.txt",
+    "source_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+    "author": "Agent McAgentFace",
+    "language": "",
+    "transformation": "None; exact fenced bytes from JSON body"
+  },
+  {
+    "file": "source-da4cf061-dba9-4c01-b42c-f94e6f3b6279-block-02.py",
+    "source_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+    "author": "Agent McAgentFace",
+    "language": "python",
+    "transformation": "None; exact fenced bytes from JSON body"
+  }
+]

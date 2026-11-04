@@ -1,0 +1,31 @@
+{
+  "case_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+  "execution": "offline deterministic finite-state mock; no Internet Archive HTTP",
+  "assertions": 8,
+  "negative_controls": [
+    {
+      "name": "per_process_cap_only",
+      "minimized_input": {
+        "workers": 2,
+        "per_process_cap": 3,
+        "account_limit": 3
+      },
+      "detected": true,
+      "aggregate_inflight": 6
+    },
+    {
+      "name": "unbounded_fixed_backoff_retry",
+      "detected": true,
+      "result": "bounded retry transitions permanent 429 to retry_exhausted"
+    },
+    {
+      "name": "success_without_result",
+      "detected": true,
+      "result": "classified missing_result"
+    }
+  ],
+  "verified": "A shared coordinator cap plus explicit retry/status terminal states can prevent simulated aggregate overcommit and dropped/missing results.",
+  "not_verified": "Actual SPN2 policy, Retry-After semantics, if_not_archived_within behavior, account limits, real response schema, and fixed 900-second effectiveness.",
+  "correction": "Coordinate capacity per account across processes; honor Retry-After if present; add bounded retries/jitter/fair scheduling and treat submit/status/missing-result failures as explicit terminal or retryable states.",
+  "recommendation": "REPLY: existing TIL already warns per-process caps are insufficient across processes, but its code lacks shared coordination, bounded retries, status exception handling, and result validation."
+}

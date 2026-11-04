@@ -1,0 +1,43 @@
+{
+  "case_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+  "execution": "CPython runtime only",
+  "assertions": 6,
+  "runtime_records": [
+    {
+      "expression": "tuple[int, ...]",
+      "ok": true,
+      "type": "types.GenericAlias",
+      "repr": "tuple[int, ...]"
+    },
+    {
+      "expression": "Fixed[int, str]",
+      "ok": true,
+      "type": "typing._GenericAlias",
+      "repr": "__main__.Fixed[int, str]"
+    },
+    {
+      "expression": "Fixed[int, ...]",
+      "ok": true,
+      "type": "typing._GenericAlias",
+      "repr": "__main__.Fixed[int, ...]"
+    },
+    {
+      "expression": "Foo[int, ...]",
+      "ok": false,
+      "exception_type": "TypeError",
+      "message": "Too many arguments for <class '__main__.Foo'>; actual 2, expected 1"
+    }
+  ],
+  "negative_control": {
+    "name": "equate_runtime_acceptance_with_static_checker_acceptance",
+    "detected": true,
+    "result": "CPython accepts Fixed[int, ...] for a TypeVarTuple pack but rejects Foo[int, ...] as too many arguments; neither result establishes Pyright diagnostics."
+  },
+  "distinctions": {
+    "types_GenericAlias": "tuple[int, ...] is a types.GenericAlias",
+    "typing_GenericAlias": "not imported as a stable public runtime contract in this test",
+    "custom_runtime_alias": "NOT_TESTED: post implementation was not copied; its claimed checker behavior cannot be established at runtime"
+  },
+  "pyright_status": "NOT_TESTED: pyright package/CLI absent; no installation performed.",
+  "recommendation": "VERIFY: runtime shows a TypeVarTuple pack accepts Ellipsis in CPython, while an ordinary one-parameter generic does not. Pyright diagnostics remain NOT_TESTED."
+}

@@ -1,0 +1,267 @@
+{
+  "all_checks_passed": true,
+  "case": 6,
+  "checks": [
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "reply_verbatim_exit",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "import_only.py_exit",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "subscript_only.py_exit",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "subscript_only.py_TypeError",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "expected": 1,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "class_only.py_exit",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "class_only.py_TypeError",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "public_constructor.py_exit",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "constructor_origin",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "constructor_args",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "ordinary_class_not_alias",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        2,
+        3
+      ],
+      "expected": [
+        1,
+        2,
+        3
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "custom_homogeneous_positive",
+      "passed": true
+    },
+    {
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "wrong_homogeneous",
+      "passed": true
+    },
+    {
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "arity",
+      "passed": true
+    },
+    {
+      "actual": "IndexError",
+      "expected": "IndexError",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "empty_subscription",
+      "passed": true
+    },
+    {
+      "actual": [
+        "x",
+        1
+      ],
+      "expected": [
+        "x",
+        1
+      ],
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "custom_heterogeneous_wrong_types_accepted",
+      "passed": true
+    },
+    {
+      "actual": "Foo[int, ...]",
+      "expected": "Foo[int, ...]",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "custom_repr",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "custom_parameters_hold_concrete_args",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/source-a66cf887-724d-41f9-843f-d0d9548b0b84-block-01.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:44.275633+00:00",
+      "started_utc": "2026-11-04T16:29:44.205118+00:00",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/source-a66cf887-724d-41f9-843f-d0d9548b0b84-block-01.py\", line 4, in <module>\n    T = GenericAlias[tuple[int, ...]]\n        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/import_only.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:44.289712+00:00",
+      "started_utc": "2026-11-04T16:29:44.275769+00:00",
+      "stderr": "",
+      "stdout": "True\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/subscript_only.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:44.357281+00:00",
+      "started_utc": "2026-11-04T16:29:44.289814+00:00",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/subscript_only.py\", line 2, in <module>\n    T = GenericAlias[tuple[int, ...]]\n        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/class_only.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 1,
+      "finished_utc": "2026-11-04T16:29:44.424272+00:00",
+      "started_utc": "2026-11-04T16:29:44.357393+00:00",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/class_only.py\", line 2, in <module>\n    class Foo(GenericAlias[tuple[int, ...]]):\n              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/public_constructor.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:44.438354+00:00",
+      "started_utc": "2026-11-04T16:29:44.424395+00:00",
+      "stderr": "",
+      "stdout": "True (<class 'int'>, Ellipsis)\n(1, 2)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/trent/SOFA-HOT-008/CODEX-001/CASE-06/corrected.py"
+      ],
+      "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:29:44.452167+00:00",
+      "started_utc": "2026-11-04T16:29:44.439402+00:00",
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "exceptions": [
+    {
+      "message": "expected all int",
+      "test": "wrong_homogeneous",
+      "type": "TypeError"
+    },
+    {
+      "message": "expected 2 values",
+      "test": "arity",
+      "type": "TypeError"
+    },
+    {
+      "message": "tuple index out of range",
+      "test": "empty_subscription",
+      "type": "IndexError"
+    }
+  ],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:29:44.452176+00:00",
+  "limitations": [
+    {
+      "claim": "All Pyright diagnostics, inference and 1.1.414 claims",
+      "label": "NOT_TESTED",
+      "reason": "No Pyright executable/module installed; Node/NPM not invoked"
+    },
+    {
+      "claim": "Assigning instance __parameters__ makes Pyright infer this alias, or the proposed GenericAlias subscript keeps static checking clean",
+      "label": "UNSUPPORTED"
+    },
+    {
+      "claim": "Use the public types.GenericAlias(origin,args) constructor for runtime metadata only; prefer separate Fixed/Variadic classes for a checker-oriented API, pending checker validation.",
+      "label": "INFERRED"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "seed": 26051108,
+  "started_utc": "2026-11-04T16:29:44.205093+00:00"
+}

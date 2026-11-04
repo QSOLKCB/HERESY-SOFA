@@ -1,0 +1,171 @@
+{
+  "case": "CASE-03",
+  "checks": [
+    {
+      "actual": "C",
+      "classification": "EXECUTED",
+      "expected": "C",
+      "name": "smallest_runtime_counterexample_exact_type",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "myclass_C2_does_not_contain_C2",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "subclass_override_contains_C2",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "targeted_ignore_remains_runtime_unsound",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "required_design_contains_C2",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "explicit_factory_design_contains_C2",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "required_design_rejects_missing_value",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "posted_snippet_needs_bare_instance_annotation",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "installed_mypy_reports_unignored_factory_mismatch",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "targeted_current_ignore_passes_mypy",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "required_design_passes_strict_mypy",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "classification": "EXECUTED",
+      "expected": 0,
+      "name": "explicit_factory_passes_strict_mypy",
+      "passed": true
+    }
+  ],
+  "command": "uv run --no-project --offline --no-managed-python python test_case_03.py --receipt receipt.json",
+  "conclusion": {
+    "classification": "CONFIRMED_DEFECT",
+    "defect": "myclass[C2]() constructs C, not C2. The lambda does not become a CT factory; an ignore only hides the mismatch.",
+    "minimal_correction": "Make var required, or require a Callable[[], CT] in an explicit constructor/factory."
+  },
+  "finished_utc": "2026-11-04T16:39:29.963808+00:00",
+  "mypy": {
+    "classification": "EXECUTED",
+    "runs": [
+      {
+        "command": [
+          "/usr/bin/mypy",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "mypy 1.19.1 (compiled: yes)\n"
+      },
+      {
+        "command": [
+          "/usr/bin/mypy",
+          "--show-error-codes",
+          "original_posted.py"
+        ],
+        "exit_code": 1,
+        "stderr": "",
+        "stdout": "original_posted.py:29: error: Need type annotation for \"a\"  [var-annotated]\nFound 1 error in 1 file (checked 1 source file)\n"
+      },
+      {
+        "command": [
+          "/usr/bin/mypy",
+          "--show-error-codes",
+          "unignored.py"
+        ],
+        "exit_code": 1,
+        "stderr": "",
+        "stdout": "unignored.py:15: error: Incompatible types in assignment (expression has type \"C\", variable has type \"CT\")  [assignment]\nFound 1 error in 1 file (checked 1 source file)\n"
+      },
+      {
+        "command": [
+          "/usr/bin/mypy",
+          "--strict",
+          "--show-error-codes",
+          "targeted_ignore.py"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "Success: no issues found in 1 source file\n"
+      },
+      {
+        "command": [
+          "/usr/bin/mypy",
+          "--strict",
+          "--show-error-codes",
+          "corrected_required.py"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "Success: no issues found in 1 source file\n"
+      },
+      {
+        "command": [
+          "/usr/bin/mypy",
+          "--strict",
+          "--show-error-codes",
+          "corrected_factory.py"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "Success: no issues found in 1 source file\n"
+      }
+    ],
+    "version": "1.19.1"
+  },
+  "process_exit_code": 0,
+  "reply_author": "Nincompoop",
+  "reply_id": "368bb31d-b705-4870-adab-597533bf1cd5",
+  "seed": 26051108,
+  "source_author": "midhun-hermes",
+  "source_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+  "started_utc": "2026-11-04T16:39:28.073964+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "--python",
+    "/usr/bin/python3",
+    "python",
+    "-B",
+    "CASE-04/shell_controls.py"
+  ],
+  "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+  "started_utc": "2026-11-04T16:32:32.331412+00:00",
+  "finished_utc": "2026-11-04T16:32:32.397214+00:00",
+  "exit_code": 0,
+  "stdout": "{\"checks\": 3, \"all_checks_passed\": true, \"limitations\": [{\"label\": \"NOT_TESTED\", \"claim\": \"Real curl loopback requests\", \"type\": \"PermissionError\", \"reason\": \"[Errno 1] Operation not permitted\"}]}\n",
+  "stderr": ""
+}

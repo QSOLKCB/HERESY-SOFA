@@ -1,0 +1,2141 @@
+{
+  "archive": {
+    "bytes": 65649,
+    "gzip_integrity": {
+      "status": "PASS",
+      "uncompressed_bytes": 450560,
+      "uncompressed_sha256": "83992c3b400a3f35949be73c67d8408ef64762010f56b6218297a1c805740344"
+    },
+    "kind": "gzip_compressed_posix_tar",
+    "original_filename": "MONICA-001/SOFA-HOT-008-MONICA-001-evidence.gz",
+    "post_verification_identity": {
+      "bytes": 65649,
+      "mode": "0o664",
+      "mtime_ns": 1793810164192481068,
+      "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202"
+    },
+    "sha256": "cc3d4ae960c6c5afb91ba5d9b3b4be1aae90a49d185931a65d41e858e7e28202",
+    "unchanged_after_full_verification": true,
+    "unchanged_before_after_ingestion": true
+  },
+  "archive_safety": {
+    "absolute_paths": "PASS",
+    "declared_regular_bytes": 412375,
+    "devices": "PASS_NONE_PRESENT",
+    "dotdot_traversal": "PASS",
+    "duplicate_normalized_paths": "PASS",
+    "fifos": "PASS_NONE_PRESENT",
+    "hardlinks": "PASS_NONE_PRESENT",
+    "member_count": 43,
+    "regular_file_count": 39,
+    "symlinks": "PASS_NONE_PRESENT",
+    "unexpected_types": "PASS_NONE_PRESENT"
+  },
+  "artifact_presence": {
+    "environment": {
+      "bytes": 427,
+      "path": "environment.txt",
+      "sha256": "5c87c045bd5690598835b0c5c97a259fd19c25acdbc2dcc41199534bc9f3f938",
+      "status": "SUPPLIED"
+    },
+    "exitcode_records": {
+      "count": 8,
+      "status": "SUPPLIED"
+    },
+    "ledger": {
+      "bytes": 3880,
+      "path": "SHA256SUMS.txt",
+      "sha256": "bb9d6bed1975866358eac8e18325d4f6fff921cf40935af809b8449a4c3ac092",
+      "status": "SUPPLIED"
+    },
+    "machine_records": {
+      "count": 8,
+      "status": "SUPPLIED"
+    },
+    "package_install_command_receipts": "NOT_SUPPLIED",
+    "per_case_exact_argv": "NOT_SUPPLIED",
+    "per_case_execution_timestamps": "NOT_SUPPLIED",
+    "raw_source_snapshots": {
+      "by_post_id": {
+        "02c83759-175f-4e00-8b7b-8962f3ba33c4": "SUPPLIED",
+        "0b3591f6-75de-4661-a7a7-ec28193e1518": "NOT_SUPPLIED",
+        "1587d009-5e9c-4cac-81fb-bf3acf5aaf49": "NOT_SUPPLIED",
+        "3eefb05a-c521-4cb7-8a4d-dbf709bf3101": "NOT_SUPPLIED",
+        "47de513f-cd52-4b36-a43d-ec4cb89c972f": "NOT_SUPPLIED",
+        "4a28aa43-10aa-4476-b33b-85cc91998975": "NOT_SUPPLIED",
+        "da4cf061-dba9-4c01-b42c-f94e6f3b6279": "NOT_SUPPLIED",
+        "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7": "SUPPLIED"
+      },
+      "count": 2,
+      "files": [
+        {
+          "bytes": 120270,
+          "path": "sources/generic-dataclass-til.html",
+          "sha256": "77219145926c1641040b039ccd55513db199ebb27092099a4abf607c4423662c"
+        },
+        {
+          "bytes": 220787,
+          "path": "sources/memory-security-til.html",
+          "sha256": "487f3c53898b63380413e34d0413111d36362fc80dd36fa47a27e0d9c2d21b16"
+        }
+      ],
+      "status": "PARTIAL"
+    },
+    "raw_stdout": "SUPPLIED_AS_RECORD_JSON",
+    "report": {
+      "bytes": 12097,
+      "path": "MONICA-001-REPORT.json",
+      "sha256": "f1d7d424ccb42b3d5d9e06b05b2d18c8bf99a123ab317731f036ad01c4e485ef",
+      "status": "SUPPLIED"
+    },
+    "review": {
+      "bytes": 7726,
+      "path": "MONICA-001-REVIEW.md",
+      "sha256": "8e1f59f9ae45c840fafebf9459cf712e9dec0be72f5dea13fe96111b97505f62",
+      "status": "SUPPLIED"
+    },
+    "stderr_records": {
+      "count": 8,
+      "status": "SUPPLIED"
+    },
+    "test_sources": {
+      "count": 8,
+      "status": "SUPPLIED"
+    }
+  },
+  "environment": {
+    "declared_execution_platform": "virtual_machine_not_native_physical_workstation",
+    "package_versions": {
+      "mypy": "NOT_INSTALLED",
+      "openpyxl": "3.1.5",
+      "pyright": "NOT_INSTALLED",
+      "yt-dlp": "NOT_INSTALLED"
+    },
+    "raw_lines": [
+      "executed_on=virtual_machine_not_native_physical_workstation",
+      "os=Ubuntu 26.04.1 LTS (Resolute Raccoon)",
+      "kernel=Linux 6.18.56-cloudflare-microvm-2026.10.9",
+      "architecture=x86_64",
+      "cpu_model=AMD EPYC",
+      "virtualization=container-other",
+      "python=Python 3.14.4",
+      "python_impl=CPython Linux-6.18.56-cloudflare-microvm-2026.10.9-x86_64-with-glibc2.43",
+      "uv=uv 0.13.6 (x86_64-unknown-linux-gnu)",
+      "executed_on=virtual_machine_not_native_physical_workstation"
+    ]
+  },
+  "execution_evidence": {
+    "all_exitcodes_zero": true,
+    "all_stderr_empty": true,
+    "provenance_limit": "No per-case execution timestamps or exact argv receipts were supplied; source existence alone was not used as execution proof.",
+    "records": [
+      {
+        "assertions": 6,
+        "case": "01",
+        "case_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "offline synthetic metadata only",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/01_ytdlp_captions.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 1248,
+          "path": "records/01_ytdlp_captions.json",
+          "sha256": "10caaff74e05365f14d3a615a5658ce7282b12b929251bb08b91ebf9c7d99e49"
+        },
+        "record": {
+          "assertions": 6,
+          "case_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+          "conclusion": "Synthetic counterexamples verify that absent video language can coexist with caption keys and that first-auto fallback can silently select a translation. Real yt-dlp extractor integration is NOT_TESTED.",
+          "execution": "offline synthetic metadata only",
+          "negative_control": {
+            "actual": "es",
+            "detected": true,
+            "expected": "en-orig",
+            "minimized_input": {
+              "automatic_captions_keys": [
+                "es",
+                "en-orig",
+                "fr"
+              ]
+            },
+            "name": "first_automatic_fallback"
+          },
+          "outcomes": [
+            {
+              "actual": "de-DE",
+              "case": "missing_video_language_manual_exists",
+              "expected": "de-DE"
+            },
+            {
+              "actual": "en-orig",
+              "case": "missing_video_language_prefers_orig_auto",
+              "expected": "en-orig"
+            },
+            {
+              "actual": null,
+              "case": "missing_video_language_ambiguous_automatic_declines",
+              "expected": null
+            },
+            {
+              "actual": "de-DE",
+              "case": "language_match_manual_over_auto",
+              "expected": "de-DE"
+            },
+            {
+              "actual": "en-orig",
+              "case": "filters_non_caption_keys",
+              "expected": "en-orig"
+            }
+          ],
+          "yt_dlp_installed": false
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/01_ytdlp_captions.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 2990,
+          "path": "tests/01_ytdlp_captions.py",
+          "sha256": "7ba9f80dc1c0a7c391b880e0c5a19b3ee11d2e1284874a9f0e7d565a1dcc1a1d"
+        }
+      },
+      {
+        "assertions": 10,
+        "case": "02",
+        "case_id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "offline fake secrets and synthetic request model",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/02_memory_security.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 1216,
+          "path": "records/02_memory_security.json",
+          "sha256": "b9b5cb0d3b206490cb949f870b68a144bdc2970535e04183961b1766169e1ffa"
+        },
+        "record": {
+          "assertions": 10,
+          "case_id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+          "execution": "offline fake secrets and synthetic request model",
+          "limitations": "No real vault, file permissions, DNS, redirect, or external HTTP tested.",
+          "negative_controls": [
+            {
+              "detected": true,
+              "minimized_input": "postgres://user:pw7@db.invalid/a",
+              "name": "base_scanner_short_uri_password"
+            },
+            {
+              "detected": true,
+              "name": "unrestricted_placeholder_injector",
+              "result": "fake credential would be sent to attacker.invalid in synthetic model"
+            },
+            {
+              "detected": true,
+              "name": "unfiltered_echo_response",
+              "result": "fake credential appears in synthetic response body"
+            }
+          ],
+          "scanner_results": {
+            "augmented": {
+              "api_key": true,
+              "bearer": true,
+              "pointer_only": false,
+              "private_key_header": true,
+              "short_uri_password": true
+            },
+            "base": {
+              "api_key": true,
+              "bearer": true,
+              "pointer_only": false,
+              "private_key_header": true,
+              "short_uri_password": false
+            }
+          },
+          "verified_correction": "add URI credential pattern; require destination allowlist and selected/sanitized response fields"
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/02_memory_security.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 3242,
+          "path": "tests/02_memory_security.py",
+          "sha256": "5e3a3823172e00c0fcb358346291aa59ffa2ba93654798caeeaf9000571a566e"
+        }
+      },
+      {
+        "assertions": 4,
+        "case": "03",
+        "case_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "CPython runtime; no installed static checker",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/03_generic_dataclass.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 628,
+          "path": "records/03_generic_dataclass.json",
+          "sha256": "216356bf25de485cc29344bf1c4471f8364d370cb7620036113558306bfcd2e3"
+        },
+        "record": {
+          "assertions": 4,
+          "case_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+          "checker_status": "NOT_TESTED: mypy and pyright absent; no checker was installed.",
+          "execution": "CPython runtime; no installed static checker",
+          "negative_control": {
+            "actual_type": "C",
+            "detected": true,
+            "minimized_input": "UnsoundChild()",
+            "name": "inherited_base_default_for_CT_C2",
+            "promised": "C2"
+          },
+          "result": "A lambda and type-ignore do not repair the runtime or declared generic invariant; they silence/check around it. Sound alternatives require a value/factory from the caller or a concrete subclass override."
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/03_generic_dataclass.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 1704,
+          "path": "tests/03_generic_dataclass.py",
+          "sha256": "d66a2d7c1fc93eceb2f22819d0728bab1e71e570bcaf3e1960222afc2698a44c"
+        }
+      },
+      {
+        "assertions": 9,
+        "case": "04",
+        "case_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "offline synthetic HTTP responses only; no Discord traffic",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/04_discord_403.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 1249,
+          "path": "records/04_discord_403.json",
+          "sha256": "9a358d52b44885669eafaa7e32c495936577f3be89071349d12aabae4bb1d086"
+        },
+        "record": {
+          "assertions": 9,
+          "case_id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+          "correction": "Log status, selected safe headers such as Retry-After, and body category; 403 alone is not enough to determine revocation, permission, or intermediary cause. Use argv construction rather than interpolated shell text.",
+          "execution": "offline synthetic HTTP responses only; no Discord traffic",
+          "existing_replies": "Original question retrieval showed 0 answers; no reply claim to verify.",
+          "negative_controls": [
+            {
+              "detected": true,
+              "name": "403_as_429",
+              "why": "403 must not be retried as a rate-limit solely from status"
+            },
+            {
+              "detected": true,
+              "name": "non_discord_destination"
+            }
+          ],
+          "observed": [
+            {
+              "classification": "forbidden_access_or_permissions",
+              "status": 403
+            },
+            {
+              "classification": "forbidden_unspecified",
+              "status": 403
+            },
+            {
+              "classification": "rate_limited_retry_after",
+              "status": 429
+            },
+            {
+              "classification": "rate_limited_no_hint",
+              "status": 429
+            },
+            {
+              "classification": "unknown_or_deleted_webhook",
+              "status": 404
+            },
+            {
+              "classification": "unauthorized",
+              "status": 401
+            }
+          ]
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/04_discord_403.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 2990,
+          "path": "tests/04_discord_403.py",
+          "sha256": "624ecc5f64e325190b9de3d9cd4203197fc70fee654c29310a171134b29e968c"
+        }
+      },
+      {
+        "assertions": 7,
+        "case": "05",
+        "case_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "openpyxl 3.1.5 XML serialization only",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/05_openpyxl_conditional_fonts.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 796,
+          "path": "records/05_openpyxl_conditional_fonts.json",
+          "sha256": "b0bc6bcddb75b78773b3c3e5d2f19ae21c64a8aab13707341c883861d68b2bda"
+        },
+        "record": {
+          "assertions": 7,
+          "case_id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+          "execution": "openpyxl 3.1.5 XML serialization only",
+          "negative_control": {
+            "detected": true,
+            "name": "claim_xml_proves_excel_ui_recalc",
+            "result": "XML equivalence/difference cannot prove Excel visual rendering or a click-OK repair mechanism"
+          },
+          "not_tested": "Excel-side visible conditional formatting behaviour; Excel was not available and LibreOffice was not used as a substitute.",
+          "recommendation": "VERIFY: retain only the serialization claim; require a controlled Excel-version reproduction before asserting causation or correction.",
+          "verified": "Both implicit and explicit variants serialize a differential italic font and cfRule dxfId. Explicit base font changes base cell style XML."
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/05_openpyxl_conditional_fonts.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 2214,
+          "path": "tests/05_openpyxl_conditional_fonts.py",
+          "sha256": "c4dfa0c017a9fa04f07f027496b2743bf625d65d7cf2321d730edd8a04b5f407"
+        }
+      },
+      {
+        "assertions": 6,
+        "case": "06",
+        "case_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "CPython runtime only",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/06_generic_alias.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 1661,
+          "path": "records/06_generic_alias.json",
+          "sha256": "5607d158734b8b04e98119841136c689d2ac98d283d191a19aaceb4077ac7ea7"
+        },
+        "record": {
+          "assertions": 6,
+          "case_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+          "distinctions": {
+            "custom_runtime_alias": "NOT_TESTED: post implementation was not copied; its claimed checker behavior cannot be established at runtime",
+            "types_GenericAlias": "tuple[int, ...] is a types.GenericAlias",
+            "typing_GenericAlias": "not imported as a stable public runtime contract in this test"
+          },
+          "execution": "CPython runtime only",
+          "negative_control": {
+            "detected": true,
+            "name": "equate_runtime_acceptance_with_static_checker_acceptance",
+            "result": "CPython accepts Fixed[int, ...] for a TypeVarTuple pack but rejects Foo[int, ...] as too many arguments; neither result establishes Pyright diagnostics."
+          },
+          "pyright_status": "NOT_TESTED: pyright package/CLI absent; no installation performed.",
+          "recommendation": "VERIFY: runtime shows a TypeVarTuple pack accepts Ellipsis in CPython, while an ordinary one-parameter generic does not. Pyright diagnostics remain NOT_TESTED.",
+          "runtime_records": [
+            {
+              "expression": "tuple[int, ...]",
+              "ok": true,
+              "repr": "tuple[int, ...]",
+              "type": "types.GenericAlias"
+            },
+            {
+              "expression": "Fixed[int, str]",
+              "ok": true,
+              "repr": "__main__.Fixed[int, str]",
+              "type": "typing._GenericAlias"
+            },
+            {
+              "expression": "Fixed[int, ...]",
+              "ok": true,
+              "repr": "__main__.Fixed[int, ...]",
+              "type": "typing._GenericAlias"
+            },
+            {
+              "exception_type": "TypeError",
+              "expression": "Foo[int, ...]",
+              "message": "Too many arguments for <class '__main__.Foo'>; actual 2, expected 1",
+              "ok": false
+            }
+          ]
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/06_generic_alias.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 2316,
+          "path": "tests/06_generic_alias.py",
+          "sha256": "cd84496104951ccea720345b2b5b55bcffd6a06459f3fb5f38113b374e67cfbd"
+        }
+      },
+      {
+        "assertions": 6,
+        "case": "07",
+        "case_id": "4a28aa43-10aa-4476-b33b-85cc91998975",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "offline CPython generated valid trees",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/07_binary_tree.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 1496,
+          "path": "records/07_binary_tree.json",
+          "sha256": "5acff2e331bd9f4157511a4cd4d3f1230ca1f0cce36cb7c70cc13a32156c930b"
+        },
+        "record": {
+          "assertions": 6,
+          "case_id": "4a28aa43-10aa-4476-b33b-85cc91998975",
+          "correction": "Build Node instances as descriptions are read with explicit lookup or setdefault only when accepting eager default evaluation; return root iteratively.",
+          "execution": "offline CPython generated valid trees",
+          "existing_reply_assessment": "The reply is correct about asymptotic O(n), but its lazy recursive construction is not robust for the stated 10^4-node skewed constraint.",
+          "negative_controls": [
+            {
+              "detected": true,
+              "exception": "RecursionError at default CPython recursion limit",
+              "minimized_failing_input": "a 10000-node valid left-skewed tree",
+              "name": "recursive_depth_10000"
+            },
+            {
+              "detected": true,
+              "name": "setdefault_eager_default",
+              "result": "factory expression constructed a discarded Node for existing key"
+            }
+          ],
+          "original_examples_preserved": [
+            [
+              [
+                20,
+                15,
+                1
+              ],
+              [
+                20,
+                17,
+                0
+              ],
+              [
+                50,
+                20,
+                1
+              ],
+              [
+                50,
+                80,
+                0
+              ],
+              [
+                80,
+                19,
+                1
+              ]
+            ],
+            [
+              [
+                1,
+                2,
+                1
+              ],
+              [
+                2,
+                3,
+                0
+              ],
+              [
+                3,
+                4,
+                1
+              ]
+            ]
+          ],
+          "seed": 51120268,
+          "verified": "Parent/child mapping and root identification are O(n); iterative node linking avoids recursion-depth failure."
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/07_binary_tree.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 3384,
+          "path": "tests/07_binary_tree.py",
+          "sha256": "b14b1c41f758ce20169b74dce88000bb237f3dd86a9ce6959772d18569df569d"
+        }
+      },
+      {
+        "assertions": 8,
+        "case": "08",
+        "case_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+        "checks": {
+          "assertion_count_matches_report": true,
+          "exitcode_exact_zero": true,
+          "machine_record_matches_report": true,
+          "record_case_id_matches": true,
+          "report_case_present": true,
+          "report_exit_zero": true,
+          "stderr_empty": true,
+          "test_source_matches_report": true
+        },
+        "execution_claim": "offline deterministic finite-state mock; no Internet Archive HTTP",
+        "exitcode": {
+          "bytes": 1,
+          "path": "records/08_spn2_scheduler.exitcode",
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        },
+        "exitcode_value": 0,
+        "machine_record": {
+          "bytes": 1466,
+          "path": "records/08_spn2_scheduler.json",
+          "sha256": "03ff2db4597fee2a88824694b2fd556e633bf088e00c5d4eb22fcd979a574664"
+        },
+        "record": {
+          "assertions": 8,
+          "case_id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+          "correction": "Coordinate capacity per account across processes; honor Retry-After if present; add bounded retries/jitter/fair scheduling and treat submit/status/missing-result failures as explicit terminal or retryable states.",
+          "execution": "offline deterministic finite-state mock; no Internet Archive HTTP",
+          "negative_controls": [
+            {
+              "aggregate_inflight": 6,
+              "detected": true,
+              "minimized_input": {
+                "account_limit": 3,
+                "per_process_cap": 3,
+                "workers": 2
+              },
+              "name": "per_process_cap_only"
+            },
+            {
+              "detected": true,
+              "name": "unbounded_fixed_backoff_retry",
+              "result": "bounded retry transitions permanent 429 to retry_exhausted"
+            },
+            {
+              "detected": true,
+              "name": "success_without_result",
+              "result": "classified missing_result"
+            }
+          ],
+          "not_verified": "Actual SPN2 policy, Retry-After semantics, if_not_archived_within behavior, account limits, real response schema, and fixed 900-second effectiveness.",
+          "recommendation": "REPLY: existing TIL already warns per-process caps are insufficient across processes, but its code lacks shared coordination, bounded retries, status exception handling, and result validation.",
+          "verified": "A shared coordinator cap plus explicit retry/status terminal states can prevent simulated aggregate overcommit and dropped/missing results."
+        },
+        "stderr": {
+          "bytes": 0,
+          "path": "records/08_spn2_scheduler.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "test_source": {
+          "bytes": 4934,
+          "path": "tests/08_spn2_scheduler.py",
+          "sha256": "1e08dcf52e90f912fd8fabc22c1dae7df736104f282beee5779727031efa71be"
+        }
+      }
+    ],
+    "report_generic_command": [
+      {
+        "actual_result": "all eight completed exit 0 after independent harness correction; each stderr 0 bytes",
+        "command": "python3 tests/NN_case.py > records/NN_case.json 2> records/NN_case.stderr",
+        "execution_mode": "local CPython in container-other virtualized environment; not native physical workstation"
+      }
+    ],
+    "status": "SUPPORTED_BY_RECORD_EXITCODE_STDERR_TRIPLETS"
+  },
+  "extracted_files": [
+    {
+      "bytes": 2990,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "sha256": "7ba9f80dc1c0a7c391b880e0c5a19b3ee11d2e1284874a9f0e7d565a1dcc1a1d"
+    },
+    {
+      "bytes": 3242,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "sha256": "5e3a3823172e00c0fcb358346291aa59ffa2ba93654798caeeaf9000571a566e"
+    },
+    {
+      "bytes": 1704,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "sha256": "d66a2d7c1fc93eceb2f22819d0728bab1e71e570bcaf3e1960222afc2698a44c"
+    },
+    {
+      "bytes": 2990,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "sha256": "624ecc5f64e325190b9de3d9cd4203197fc70fee654c29310a171134b29e968c"
+    },
+    {
+      "bytes": 2214,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "sha256": "c4dfa0c017a9fa04f07f027496b2743bf625d65d7cf2321d730edd8a04b5f407"
+    },
+    {
+      "bytes": 2316,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "sha256": "cd84496104951ccea720345b2b5b55bcffd6a06459f3fb5f38113b374e67cfbd"
+    },
+    {
+      "bytes": 3384,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "sha256": "b14b1c41f758ce20169b74dce88000bb237f3dd86a9ce6959772d18569df569d"
+    },
+    {
+      "bytes": 4934,
+      "member_name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "sha256": "1e08dcf52e90f912fd8fabc22c1dae7df736104f282beee5779727031efa71be"
+    },
+    {
+      "bytes": 1248,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "sha256": "10caaff74e05365f14d3a615a5658ce7282b12b929251bb08b91ebf9c7d99e49"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1216,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "sha256": "b9b5cb0d3b206490cb949f870b68a144bdc2970535e04183961b1766169e1ffa"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 628,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "sha256": "216356bf25de485cc29344bf1c4471f8364d370cb7620036113558306bfcd2e3"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1249,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "sha256": "9a358d52b44885669eafaa7e32c495936577f3be89071349d12aabae4bb1d086"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 796,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "sha256": "b0bc6bcddb75b78773b3c3e5d2f19ae21c64a8aab13707341c883861d68b2bda"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1661,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "sha256": "5607d158734b8b04e98119841136c689d2ac98d283d191a19aaceb4077ac7ea7"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1496,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "sha256": "5acff2e331bd9f4157511a4cd4d3f1230ca1f0cce36cb7c70cc13a32156c930b"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 1466,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "sha256": "03ff2db4597fee2a88824694b2fd556e633bf088e00c5d4eb22fcd979a574664"
+    },
+    {
+      "bytes": 0,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1,
+      "member_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "bytes": 220787,
+      "member_name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "sha256": "487f3c53898b63380413e34d0413111d36362fc80dd36fa47a27e0d9c2d21b16"
+    },
+    {
+      "bytes": 120270,
+      "member_name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "sha256": "77219145926c1641040b039ccd55513db199ebb27092099a4abf607c4423662c"
+    },
+    {
+      "bytes": 427,
+      "member_name": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "sha256": "5c87c045bd5690598835b0c5c97a259fd19c25acdbc2dcc41199534bc9f3f938"
+    },
+    {
+      "bytes": 13646,
+      "member_name": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "sha256": "d369e7722ba6c24522eaf0cd6699d75600d603d5a3f2ddc9eace1e5ce214cffa"
+    },
+    {
+      "bytes": 12097,
+      "member_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "sha256": "f1d7d424ccb42b3d5d9e06b05b2d18c8bf99a123ab317731f036ad01c4e485ef"
+    },
+    {
+      "bytes": 7726,
+      "member_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "sha256": "8e1f59f9ae45c840fafebf9459cf712e9dec0be72f5dea13fe96111b97505f62"
+    },
+    {
+      "bytes": 3880,
+      "member_name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "mode_after_extraction": "0o664",
+      "relative_path": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "sha256": "bb9d6bed1975866358eac8e18325d4f6fff921cf40935af809b8449a4c3ac092"
+    }
+  ],
+  "extraction_decisions": [
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001"
+    },
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001/tests"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py"
+    },
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001/records"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode"
+    },
+    {
+      "decision": "SKIP_DIRECTORY_ENTRY",
+      "name": "SOFA-HOT-008/MONICA-001/sources"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/environment.txt"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/build_reports.py"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md"
+    },
+    {
+      "decision": "APPROVE_REGULAR_FILE",
+      "name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt"
+    }
+  ],
+  "extraction_root": "RECONCILIATION/MONICA-EXTRACTED-cc3d4ae960c6",
+  "integrity_verdict": "PASS_WITH_NONSTANDARD_LEDGER_FORMAT",
+  "limits": {
+    "max_gzip_uncompressed_bytes": 67108864,
+    "max_regular_files": 512,
+    "max_single_file_bytes": 33554432,
+    "max_tar_members": 1024,
+    "max_total_regular_bytes": 67108864
+  },
+  "members": [
+    {
+      "gid": 0,
+      "index": 0,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001",
+      "normalized_name": "SOFA-HOT-008/MONICA-001",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 1,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001/tests",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 2,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/01_ytdlp_captions.py",
+      "size": 2990,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 3,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/02_memory_security.py",
+      "size": 3242,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 4,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/03_generic_dataclass.py",
+      "size": 1704,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 5,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/04_discord_403.py",
+      "size": 2990,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 6,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/05_openpyxl_conditional_fonts.py",
+      "size": 2214,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 7,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/06_generic_alias.py",
+      "size": 2316,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 8,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/07_binary_tree.py",
+      "size": 3384,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 9,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/tests/08_spn2_scheduler.py",
+      "size": 4934,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 10,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001/records",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 11,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.json",
+      "size": 1248,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 12,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 13,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/01_ytdlp_captions.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 14,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.json",
+      "size": 1216,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 15,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 16,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/02_memory_security.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 17,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.json",
+      "size": 628,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 18,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 19,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/03_generic_dataclass.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 20,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.json",
+      "size": 1249,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 21,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 22,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/04_discord_403.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 23,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.json",
+      "size": 796,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 24,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 25,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/05_openpyxl_conditional_fonts.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 26,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.json",
+      "size": 1661,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 27,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 28,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/06_generic_alias.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 29,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.json",
+      "size": 1496,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 30,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 31,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/07_binary_tree.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 32,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.json",
+      "size": 1466,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 33,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.stderr",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 34,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/records/08_spn2_scheduler.exitcode",
+      "size": 1,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 35,
+      "kind": "directory",
+      "linkname": "",
+      "mode": "0o755",
+      "name": "SOFA-HOT-008/MONICA-001/sources",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/sources",
+      "size": 0,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 36,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/sources/memory-security-til.html",
+      "size": 220787,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 37,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/sources/generic-dataclass-til.html",
+      "size": 120270,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 38,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/environment.txt",
+      "size": 427,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 39,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/build_reports.py",
+      "size": 13646,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 40,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REPORT.json",
+      "size": 12097,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 41,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/MONICA-001-REVIEW.md",
+      "size": 7726,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "index": 42,
+      "kind": "regular",
+      "linkname": "",
+      "mode": "0o644",
+      "name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "normalized_name": "SOFA-HOT-008/MONICA-001/SHA256SUMS.txt",
+      "size": 3880,
+      "uid": 0
+    }
+  ],
+  "missing_artifacts": [
+    "NOT_SUPPLIED: raw source snapshots for Cases 01 and 04-08",
+    "NOT_SUPPLIED: per-case exact argv and execution timestamps",
+    "NOT_SUPPLIED: package installation/version command receipts",
+    "NOT_SUPPLIED: mypy and Pyright execution",
+    "NOT_SUPPLIED: real yt-dlp extraction, Excel rendering, Discord, or SPN2 observations"
+  ],
+  "protocol_deviations": [
+    {
+      "impact": "Case 07 randomized shuffle used a different seed; deterministic, but not the protocol-mandated seed.",
+      "item": "deterministic_seed",
+      "reported_by_monica": 51120268,
+      "required": 26051108
+    }
+  ],
+  "schema": "SOFA-HOT-008-MONICA-ARCHIVE-INVENTORY-v1",
+  "source_evidence_limit": "Only Cases 02 and 03 include raw HTML snapshots. Reply-count/current-content claims for the other six cannot be reconstructed from the archive alone.",
+  "supplied_ledger": {
+    "covers_every_nonledger_file": true,
+    "entries": [
+      {
+        "actual_bytes": 12097,
+        "actual_sha256": "f1d7d424ccb42b3d5d9e06b05b2d18c8bf99a123ab317731f036ad01c4e485ef",
+        "declared_bytes": 12097,
+        "declared_sha256": "f1d7d424ccb42b3d5d9e06b05b2d18c8bf99a123ab317731f036ad01c4e485ef",
+        "hash_match": true,
+        "path": "MONICA-001-REPORT.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 7726,
+        "actual_sha256": "8e1f59f9ae45c840fafebf9459cf712e9dec0be72f5dea13fe96111b97505f62",
+        "declared_bytes": 7726,
+        "declared_sha256": "8e1f59f9ae45c840fafebf9459cf712e9dec0be72f5dea13fe96111b97505f62",
+        "hash_match": true,
+        "path": "MONICA-001-REVIEW.md",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 13646,
+        "actual_sha256": "d369e7722ba6c24522eaf0cd6699d75600d603d5a3f2ddc9eace1e5ce214cffa",
+        "declared_bytes": 13646,
+        "declared_sha256": "d369e7722ba6c24522eaf0cd6699d75600d603d5a3f2ddc9eace1e5ce214cffa",
+        "hash_match": true,
+        "path": "build_reports.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 427,
+        "actual_sha256": "5c87c045bd5690598835b0c5c97a259fd19c25acdbc2dcc41199534bc9f3f938",
+        "declared_bytes": 427,
+        "declared_sha256": "5c87c045bd5690598835b0c5c97a259fd19c25acdbc2dcc41199534bc9f3f938",
+        "hash_match": true,
+        "path": "environment.txt",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/01_ytdlp_captions.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1248,
+        "actual_sha256": "10caaff74e05365f14d3a615a5658ce7282b12b929251bb08b91ebf9c7d99e49",
+        "declared_bytes": 1248,
+        "declared_sha256": "10caaff74e05365f14d3a615a5658ce7282b12b929251bb08b91ebf9c7d99e49",
+        "hash_match": true,
+        "path": "records/01_ytdlp_captions.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/01_ytdlp_captions.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/02_memory_security.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1216,
+        "actual_sha256": "b9b5cb0d3b206490cb949f870b68a144bdc2970535e04183961b1766169e1ffa",
+        "declared_bytes": 1216,
+        "declared_sha256": "b9b5cb0d3b206490cb949f870b68a144bdc2970535e04183961b1766169e1ffa",
+        "hash_match": true,
+        "path": "records/02_memory_security.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/02_memory_security.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/03_generic_dataclass.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 628,
+        "actual_sha256": "216356bf25de485cc29344bf1c4471f8364d370cb7620036113558306bfcd2e3",
+        "declared_bytes": 628,
+        "declared_sha256": "216356bf25de485cc29344bf1c4471f8364d370cb7620036113558306bfcd2e3",
+        "hash_match": true,
+        "path": "records/03_generic_dataclass.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/03_generic_dataclass.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/04_discord_403.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1249,
+        "actual_sha256": "9a358d52b44885669eafaa7e32c495936577f3be89071349d12aabae4bb1d086",
+        "declared_bytes": 1249,
+        "declared_sha256": "9a358d52b44885669eafaa7e32c495936577f3be89071349d12aabae4bb1d086",
+        "hash_match": true,
+        "path": "records/04_discord_403.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/04_discord_403.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/05_openpyxl_conditional_fonts.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 796,
+        "actual_sha256": "b0bc6bcddb75b78773b3c3e5d2f19ae21c64a8aab13707341c883861d68b2bda",
+        "declared_bytes": 796,
+        "declared_sha256": "b0bc6bcddb75b78773b3c3e5d2f19ae21c64a8aab13707341c883861d68b2bda",
+        "hash_match": true,
+        "path": "records/05_openpyxl_conditional_fonts.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/05_openpyxl_conditional_fonts.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/06_generic_alias.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1661,
+        "actual_sha256": "5607d158734b8b04e98119841136c689d2ac98d283d191a19aaceb4077ac7ea7",
+        "declared_bytes": 1661,
+        "declared_sha256": "5607d158734b8b04e98119841136c689d2ac98d283d191a19aaceb4077ac7ea7",
+        "hash_match": true,
+        "path": "records/06_generic_alias.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/06_generic_alias.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/07_binary_tree.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1496,
+        "actual_sha256": "5acff2e331bd9f4157511a4cd4d3f1230ca1f0cce36cb7c70cc13a32156c930b",
+        "declared_bytes": 1496,
+        "declared_sha256": "5acff2e331bd9f4157511a4cd4d3f1230ca1f0cce36cb7c70cc13a32156c930b",
+        "hash_match": true,
+        "path": "records/07_binary_tree.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/07_binary_tree.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1,
+        "actual_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "declared_bytes": 1,
+        "declared_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "hash_match": true,
+        "path": "records/08_spn2_scheduler.exitcode",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1466,
+        "actual_sha256": "03ff2db4597fee2a88824694b2fd556e633bf088e00c5d4eb22fcd979a574664",
+        "declared_bytes": 1466,
+        "declared_sha256": "03ff2db4597fee2a88824694b2fd556e633bf088e00c5d4eb22fcd979a574664",
+        "hash_match": true,
+        "path": "records/08_spn2_scheduler.json",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 0,
+        "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "declared_bytes": 0,
+        "declared_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "hash_match": true,
+        "path": "records/08_spn2_scheduler.stderr",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 120270,
+        "actual_sha256": "77219145926c1641040b039ccd55513db199ebb27092099a4abf607c4423662c",
+        "declared_bytes": 120270,
+        "declared_sha256": "77219145926c1641040b039ccd55513db199ebb27092099a4abf607c4423662c",
+        "hash_match": true,
+        "path": "sources/generic-dataclass-til.html",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 220787,
+        "actual_sha256": "487f3c53898b63380413e34d0413111d36362fc80dd36fa47a27e0d9c2d21b16",
+        "declared_bytes": 220787,
+        "declared_sha256": "487f3c53898b63380413e34d0413111d36362fc80dd36fa47a27e0d9c2d21b16",
+        "hash_match": true,
+        "path": "sources/memory-security-til.html",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 2990,
+        "actual_sha256": "7ba9f80dc1c0a7c391b880e0c5a19b3ee11d2e1284874a9f0e7d565a1dcc1a1d",
+        "declared_bytes": 2990,
+        "declared_sha256": "7ba9f80dc1c0a7c391b880e0c5a19b3ee11d2e1284874a9f0e7d565a1dcc1a1d",
+        "hash_match": true,
+        "path": "tests/01_ytdlp_captions.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 3242,
+        "actual_sha256": "5e3a3823172e00c0fcb358346291aa59ffa2ba93654798caeeaf9000571a566e",
+        "declared_bytes": 3242,
+        "declared_sha256": "5e3a3823172e00c0fcb358346291aa59ffa2ba93654798caeeaf9000571a566e",
+        "hash_match": true,
+        "path": "tests/02_memory_security.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 1704,
+        "actual_sha256": "d66a2d7c1fc93eceb2f22819d0728bab1e71e570bcaf3e1960222afc2698a44c",
+        "declared_bytes": 1704,
+        "declared_sha256": "d66a2d7c1fc93eceb2f22819d0728bab1e71e570bcaf3e1960222afc2698a44c",
+        "hash_match": true,
+        "path": "tests/03_generic_dataclass.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 2990,
+        "actual_sha256": "624ecc5f64e325190b9de3d9cd4203197fc70fee654c29310a171134b29e968c",
+        "declared_bytes": 2990,
+        "declared_sha256": "624ecc5f64e325190b9de3d9cd4203197fc70fee654c29310a171134b29e968c",
+        "hash_match": true,
+        "path": "tests/04_discord_403.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 2214,
+        "actual_sha256": "c4dfa0c017a9fa04f07f027496b2743bf625d65d7cf2321d730edd8a04b5f407",
+        "declared_bytes": 2214,
+        "declared_sha256": "c4dfa0c017a9fa04f07f027496b2743bf625d65d7cf2321d730edd8a04b5f407",
+        "hash_match": true,
+        "path": "tests/05_openpyxl_conditional_fonts.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 2316,
+        "actual_sha256": "cd84496104951ccea720345b2b5b55bcffd6a06459f3fb5f38113b374e67cfbd",
+        "declared_bytes": 2316,
+        "declared_sha256": "cd84496104951ccea720345b2b5b55bcffd6a06459f3fb5f38113b374e67cfbd",
+        "hash_match": true,
+        "path": "tests/06_generic_alias.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 3384,
+        "actual_sha256": "b14b1c41f758ce20169b74dce88000bb237f3dd86a9ce6959772d18569df569d",
+        "declared_bytes": 3384,
+        "declared_sha256": "b14b1c41f758ce20169b74dce88000bb237f3dd86a9ce6959772d18569df569d",
+        "hash_match": true,
+        "path": "tests/07_binary_tree.py",
+        "size_match": true
+      },
+      {
+        "actual_bytes": 4934,
+        "actual_sha256": "1e08dcf52e90f912fd8fabc22c1dae7df736104f282beee5779727031efa71be",
+        "declared_bytes": 4934,
+        "declared_sha256": "1e08dcf52e90f912fd8fabc22c1dae7df736104f282beee5779727031efa71be",
+        "hash_match": true,
+        "path": "tests/08_spn2_scheduler.py",
+        "size_match": true
+      }
+    ],
+    "entry_count": 38,
+    "format": "sha256<two spaces>path<two spaces>byte_size",
+    "gnu_sha256sum_c_compatible": false,
+    "gnu_sha256sum_c_result": "PARSER_FAILURE_NOT_CONTENT_MISMATCH",
+    "independent_parser_status": "PASS",
+    "path": "SHA256SUMS.txt"
+  },
+  "syntax_validation": {
+    "archive_scripts_executed_by_custodian": false,
+    "json_files": [
+      {
+        "bytes": 12097,
+        "path": "MONICA-001-REPORT.json",
+        "sha256": "f1d7d424ccb42b3d5d9e06b05b2d18c8bf99a123ab317731f036ad01c4e485ef"
+      },
+      {
+        "bytes": 1248,
+        "path": "records/01_ytdlp_captions.json",
+        "sha256": "10caaff74e05365f14d3a615a5658ce7282b12b929251bb08b91ebf9c7d99e49"
+      },
+      {
+        "bytes": 1216,
+        "path": "records/02_memory_security.json",
+        "sha256": "b9b5cb0d3b206490cb949f870b68a144bdc2970535e04183961b1766169e1ffa"
+      },
+      {
+        "bytes": 628,
+        "path": "records/03_generic_dataclass.json",
+        "sha256": "216356bf25de485cc29344bf1c4471f8364d370cb7620036113558306bfcd2e3"
+      },
+      {
+        "bytes": 1249,
+        "path": "records/04_discord_403.json",
+        "sha256": "9a358d52b44885669eafaa7e32c495936577f3be89071349d12aabae4bb1d086"
+      },
+      {
+        "bytes": 796,
+        "path": "records/05_openpyxl_conditional_fonts.json",
+        "sha256": "b0bc6bcddb75b78773b3c3e5d2f19ae21c64a8aab13707341c883861d68b2bda"
+      },
+      {
+        "bytes": 1661,
+        "path": "records/06_generic_alias.json",
+        "sha256": "5607d158734b8b04e98119841136c689d2ac98d283d191a19aaceb4077ac7ea7"
+      },
+      {
+        "bytes": 1496,
+        "path": "records/07_binary_tree.json",
+        "sha256": "5acff2e331bd9f4157511a4cd4d3f1230ca1f0cce36cb7c70cc13a32156c930b"
+      },
+      {
+        "bytes": 1466,
+        "path": "records/08_spn2_scheduler.json",
+        "sha256": "03ff2db4597fee2a88824694b2fd556e633bf088e00c5d4eb22fcd979a574664"
+      }
+    ],
+    "json_status": "PASS",
+    "python_ast_status": "PASS_SOURCE_INSPECTION_ONLY",
+    "python_files": [
+      {
+        "bytes": 2990,
+        "path": "tests/01_ytdlp_captions.py",
+        "sha256": "7ba9f80dc1c0a7c391b880e0c5a19b3ee11d2e1284874a9f0e7d565a1dcc1a1d"
+      },
+      {
+        "bytes": 3242,
+        "path": "tests/02_memory_security.py",
+        "sha256": "5e3a3823172e00c0fcb358346291aa59ffa2ba93654798caeeaf9000571a566e"
+      },
+      {
+        "bytes": 1704,
+        "path": "tests/03_generic_dataclass.py",
+        "sha256": "d66a2d7c1fc93eceb2f22819d0728bab1e71e570bcaf3e1960222afc2698a44c"
+      },
+      {
+        "bytes": 2990,
+        "path": "tests/04_discord_403.py",
+        "sha256": "624ecc5f64e325190b9de3d9cd4203197fc70fee654c29310a171134b29e968c"
+      },
+      {
+        "bytes": 2214,
+        "path": "tests/05_openpyxl_conditional_fonts.py",
+        "sha256": "c4dfa0c017a9fa04f07f027496b2743bf625d65d7cf2321d730edd8a04b5f407"
+      },
+      {
+        "bytes": 2316,
+        "path": "tests/06_generic_alias.py",
+        "sha256": "cd84496104951ccea720345b2b5b55bcffd6a06459f3fb5f38113b374e67cfbd"
+      },
+      {
+        "bytes": 3384,
+        "path": "tests/07_binary_tree.py",
+        "sha256": "b14b1c41f758ce20169b74dce88000bb237f3dd86a9ce6959772d18569df569d"
+      },
+      {
+        "bytes": 4934,
+        "path": "tests/08_spn2_scheduler.py",
+        "sha256": "1e08dcf52e90f912fd8fabc22c1dae7df736104f282beee5779727031efa71be"
+      },
+      {
+        "bytes": 13646,
+        "path": "build_reports.py",
+        "sha256": "d369e7722ba6c24522eaf0cd6699d75600d603d5a3f2ddc9eace1e5ce214cffa"
+      }
+    ]
+  },
+  "verified_at_utc": "2026-11-04T17:01:25.522429+00:00"
+}

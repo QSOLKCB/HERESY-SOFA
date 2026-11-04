@@ -1,0 +1,150 @@
+{
+  "candidate_values_logged": false,
+  "case": "CASE-02",
+  "checks": [
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "synthetic_loader_reinjects_embedded_value",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "pointer_only_memory_excludes_value",
+      "passed": true
+    },
+    {
+      "actual": "0o600",
+      "classification": "EXECUTED",
+      "expected": "0o600",
+      "name": "secret_file_mode",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "posted_patterns_find_token_shape",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "posted_patterns_miss_short_uri",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "refined_patterns_find_short_uri",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "broad_pattern_false_positive_path_uuid",
+      "passed": true
+    },
+    {
+      "actual": {},
+      "classification": "EXECUTED",
+      "expected": {},
+      "name": "refined_patterns_reject_path_uuid",
+      "passed": true
+    },
+    {
+      "actual": {},
+      "classification": "EXECUTED",
+      "expected": {},
+      "name": "pointer_only_refined_scan_clean",
+      "passed": true
+    },
+    {
+      "actual": 403,
+      "classification": "EXECUTED",
+      "expected": 403,
+      "name": "plain_placeholder_rejected",
+      "passed": true
+    },
+    {
+      "actual": 200,
+      "classification": "EXECUTED",
+      "expected": 200,
+      "name": "unrestricted_injector_reaches_wrong_destination",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "unrestricted_response_echoes_value",
+      "passed": true
+    },
+    {
+      "actual": 200,
+      "classification": "EXECUTED",
+      "expected": 200,
+      "name": "bounded_approved_operation_succeeds",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "classification": "EXECUTED",
+      "expected": false,
+      "name": "bounded_response_excludes_value",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "bounded_wrong_destination_rejected_before_send",
+      "passed": true
+    },
+    {
+      "actual": 302,
+      "classification": "EXECUTED",
+      "expected": 302,
+      "name": "automatic_redirect_disabled",
+      "passed": true
+    },
+    {
+      "actual": 1,
+      "classification": "EXECUTED",
+      "expected": 1,
+      "name": "redirect_target_never_received_secret",
+      "passed": true
+    }
+  ],
+  "command": "uv run --no-project --offline --no-managed-python python test_case_02.py --receipt receipt.json",
+  "conclusion": {
+    "classification": "PARTIALLY_CORRECT",
+    "defect": "The original scan misses a short URI password and broad token heuristics false-positive benign paths/UUIDs. Substitution alone leaks to an unauthorized destination and through an echo response.",
+    "executed": "Pointer-only storage excluded the synthetic value; URI augmentation and bounded injection worked.",
+    "minimal_correction": "Keep pointer-only storage, redact scan output, add URI-shape checks, and enforce destination/method/redirect plus response-field boundaries at injection."
+  },
+  "external_services": "none; two loopback HTTP fixtures only",
+  "finished_utc": "2026-11-04T16:38:44.305223+00:00",
+  "limitations": [
+    "Synthetic loader proves a conditional mechanism, not that every agent product auto-loads memory.",
+    "Regex scanning is heuristic and cannot establish absence of secrets.",
+    "TLS, DNS rebinding, real adapters, remote stores, and real credentials were not tested."
+  ],
+  "process_exit_code": 0,
+  "reply_authors": [
+    "tcsenpai-ccode",
+    "Muse",
+    "WorkerBee",
+    "Muse"
+  ],
+  "seed": 26051108,
+  "source_author": "scaffolding",
+  "source_id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+  "started_utc": "2026-11-04T16:38:43.295820+00:00"
+}

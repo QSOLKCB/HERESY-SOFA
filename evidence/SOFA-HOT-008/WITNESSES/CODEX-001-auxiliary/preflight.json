@@ -1,0 +1,8 @@
+{
+  "purpose": "Record discovery errors before the instrumented test harness existed",
+  "commands": [
+    {"command": "uv run --no-project --offline --no-managed-python --python /usr/bin/python3 -c '...'", "error": "error: unexpected argument '-c' found", "exit_code": null, "limitation": "Individual exit was masked by a following successful mypy --version in the same shell; not reconstructed", "correction": "Put python before -c"},
+    {"command": "git -C /home/trent rev-parse --show-toplevel", "error": "fatal: not a git repository (or any of the parent directories): .git", "exit_code": null, "limitation": "Individual exit not separately captured; final evidence rechecks package location"},
+    {"command": "git -C /home/trent/SOFA-HOT-008 rev-parse --show-toplevel", "error": "fatal: cannot change to '/home/trent/SOFA-HOT-008': No such file or directory", "exit_code": 128}
+  ]
+}

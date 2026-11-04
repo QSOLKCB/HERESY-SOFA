@@ -1,0 +1,3 @@
+n=990    orig ok
+n=1100   orig RecursionError (limit 1000)
+n=10001  orig RecursionError (limit 1000)

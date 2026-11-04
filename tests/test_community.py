@@ -39,7 +39,8 @@ class CommunityTests(unittest.TestCase):
         m = self.manifest
         self.assertFalse(m["publishing_enabled"])
         self.assertEqual(set(m["community"]), {
-            "codex-policy-rejection", "retro-gauntlet", "functional-graph"
+            "codex-policy-rejection", "retro-gauntlet", "functional-graph",
+            "sofa-hot-008", "sofa-bakers-dozen-013",
         })
         codex = m["community"]["codex-policy-rejection"]
         self.assertEqual(codex["status"], "published_reply")

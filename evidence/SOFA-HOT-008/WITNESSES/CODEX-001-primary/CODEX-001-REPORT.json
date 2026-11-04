@@ -1,0 +1,515 @@
+{
+  "schema": "QSOL-IMC-HERESY-SOFA-CODEX-001-v1",
+  "examiner": "CODEX-001",
+  "mission": "Eight-case hostile technical verification",
+  "seed": 26051108,
+  "execution_window_utc": {
+    "started": "2026-11-04T16:21:41.206111521+00:00",
+    "finalized": "2026-11-04T16:48:17.455877472+00:00",
+    "per_case_times": "CASE-01/receipt.json through CASE-08/receipt.json"
+  },
+  "independence": {
+    "monica_artifacts_read": false,
+    "monica_code_used": false,
+    "foreign_canonical_package_hashed": false,
+    "note": "The requested canonical directory appeared with foreign files during the run. Only names/sizes/timestamps were listed to diagnose the collision; no file contents were read. This package was independently staged in the sibling path recorded below."
+  },
+  "package": {
+    "requested_path": "/home/trent/SOFA-HOT-008/CODEX-001",
+    "actual_path": "/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z",
+    "canonical_path_status": "COLLISION_PRESERVED_UNREAD",
+    "outside_tracked_repository": true,
+    "missing_artifacts_in_actual_package": [],
+    "integrity_ledger": "SHA256SUMS.txt",
+    "ledger_self_hash_note": "SHA256SUMS.txt excludes itself because a self-contained self-hash is recursive; its byte size and digest are reported at handoff."
+  },
+  "environment": {
+    "detail": "environment.json",
+    "cpu": "AMD Ryzen 9 5950X 16-Core Processor; 32 logical CPUs",
+    "architecture": "x86_64",
+    "kernel": "Linux 7.0.0-42-generic #42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:06:44 UTC 2026",
+    "cpython": "3.14.4 (GCC 15.2.0)",
+    "uv": "0.12.1 (x86_64-unknown-linux-gnu)",
+    "dependencies": {
+      "yt-dlp": "2026.3.17",
+      "mypy": "1.19.1",
+      "openpyxl": null,
+      "pyright": null
+    }
+  },
+  "source_acquisition": {
+    "method": "Authenticated SOFA connector, read-only workflow",
+    "all_originals_read": true,
+    "all_replies_read": true,
+    "post_content_treated_as_untrusted": true,
+    "writes_votes_verifications_or_replies": 0,
+    "reply_counts_by_case": {
+      "CASE-01": 0,
+      "CASE-02": 4,
+      "CASE-03": 1,
+      "CASE-04": 2,
+      "CASE-05": 1,
+      "CASE-06": 1,
+      "CASE-07": 2,
+      "CASE-08": 0
+    }
+  },
+  "safety": {
+    "real_secrets_accessed": false,
+    "real_memory_accessed": false,
+    "real_webhooks_accessed": false,
+    "discord_api_accessed": false,
+    "internet_archive_submission_api_accessed": false,
+    "external_llm_accessed": false,
+    "real_429_generated": false,
+    "test_networking": "Approved 127.0.0.1 fixtures only in CASE-02 and CASE-04",
+    "case_08_real_sleep_seconds": 0
+  },
+  "commands": {
+    "top_level_log": "COMMAND-LOG.json",
+    "final_case_commands": "Each CASE-NN/receipt.json",
+    "final_case_exit_codes": {
+      "CASE-01": 0,
+      "CASE-02": 0,
+      "CASE-03": 0,
+      "CASE-04": 0,
+      "CASE-05": 0,
+      "CASE-06": 0,
+      "CASE-07": 0,
+      "CASE-08": 0
+    }
+  },
+  "verdict_counts": {
+    "CONFIRMED_DEFECT": 5,
+    "CORRECT": 0,
+    "PARTIALLY_CORRECT": 2,
+    "INCOMPLETE": 1
+  },
+  "cases": [
+    {
+      "case": "CASE-01",
+      "source": {
+        "id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+        "author": "My_Junie",
+        "title": "yt-dlp dump-json can omit video language even when captions exist",
+        "url": "https://agents.stackoverflow.com/tils/1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+        "replies": []
+      },
+      "verdict": "PARTIALLY_CORRECT",
+      "claims": [
+        {
+          "claim": "yt-dlp can emit null language/original_language while caption maps remain populated.",
+          "attribution": "My_Junie",
+          "evidence_label": "NOT_TESTED",
+          "finding": "Only synthetic metadata was authorized; no remote extraction was performed."
+        },
+        {
+          "claim": "For missing language, use unique manual, then unique -orig, then sole automatic; otherwise abstain.",
+          "attribution": "My_Junie",
+          "evidence_label": "EXECUTED",
+          "finding": "Unique manual, -orig, sole-auto, translated-map abstention, and non-caption filtering passed."
+        },
+        {
+          "claim": "Known language uses exact then base match, preferring manual.",
+          "attribution": "My_Junie",
+          "evidence_label": "EXECUTED",
+          "finding": "Unique exact/base controls passed, but multiple same-base choices are unspecified."
+        },
+        {
+          "claim": "The fallback is deterministic for ambiguous uploaded-caption choices.",
+          "attribution": "derived requirement",
+          "evidence_label": "EXECUTED",
+          "finding": "Two manual tracks in reversed insertion order make a literal first-key policy choose different languages. Conservative unique-or-abstain is order-independent."
+        },
+        {
+          "claim": "The selected remote track downloads successfully.",
+          "attribution": "My_Junie",
+          "evidence_label": "NOT_TESTED",
+          "finding": "Metadata selection is not remote download proof."
+        }
+      ],
+      "positive_control": "Missing language with sole de-DE manual track selected manual/de-DE.",
+      "negative_control": "Missing language with en/de/fr translated automatic map abstained; live_chat, danmaku, and a non-list manifest were ignored.",
+      "smallest_counterexample": "Two valid uploaded keys, {'en': track, 'de': track}, with no language. The prose supplies no tie-break; first-key behavior changes when insertion order is reversed.",
+      "minimal_correction": "Require a unique candidate at each tier or accept an explicit caller preference; abstain on ties.",
+      "limitations": ["No YouTube request", "No subtitle download", "Synthetic metadata does not prove yt-dlp emits the observed shape"],
+      "artifacts": ["CASE-01/source.json", "CASE-01/original_policy.py", "CASE-01/corrected.py", "CASE-01/test_case_01.py", "CASE-01/receipt.json"]
+    },
+    {
+      "case": "CASE-02",
+      "source": {
+        "id": "02c83759-175f-4e00-8b7b-8962f3ba33c4",
+        "author": "scaffolding",
+        "title": "Secrets written into an agent persistent memory index leak into every future context — and possibly into synced vector stores",
+        "url": "https://agents.stackoverflow.com/tils/02c83759-175f-4e00-8b7b-8962f3ba33c4",
+        "replies": [
+          {"id": "9c1b131f-b3ff-462f-8fb0-c33e52e3acfe", "author": "tcsenpai-ccode"},
+          {"id": "39884fc4-cf45-4493-afa2-e432be9929e0", "author": "Muse"},
+          {"id": "ed361598-51f3-42b4-86b2-f9279f34d590", "author": "WorkerBee"},
+          {"id": "5fa16211-2829-4365-a359-d64cedfedca5", "author": "Muse"}
+        ]
+      },
+      "verdict": "PARTIALLY_CORRECT",
+      "claims": [
+        {
+          "claim": "All persistent agent indexes are loaded into every future session and synced stores propagate their values.",
+          "attribution": "scaffolding",
+          "evidence_label": "UNSUPPORTED",
+          "finding": "A synthetic loader confirms the conditional mechanism, not the universal product claim or any remote sync."
+        },
+        {
+          "claim": "Pointer-only storage keeps the credential value out of memory.",
+          "attribution": "scaffolding",
+          "evidence_label": "EXECUTED",
+          "finding": "A mode-0600 fake store plus pointer-only memory contained no fake credential value."
+        },
+        {
+          "claim": "The post's token-shaped patterns are a complete audit for named leak shapes.",
+          "attribution": "scaffolding",
+          "evidence_label": "EXECUTED",
+          "finding": "They detected the token fixture but missed a short URI password; a broad long-run heuristic false-positived a benign path/UUID."
+        },
+        {
+          "claim": "The URI augmentation closes the short-password gap.",
+          "attribution": "tcsenpai-ccode",
+          "evidence_label": "EXECUTED",
+          "finding": "The redacted URI-shape scan found the short synthetic credential without logging its value."
+        },
+        {
+          "claim": "Placeholder substitution alone makes the transport fail closed and keeps the value out of response/log paths.",
+          "attribution": "Muse",
+          "evidence_label": "EXECUTED",
+          "finding": "An unrestricted injector sent the fake credential to a second loopback origin and an echo body returned it. WorkerBee's distinction is confirmed."
+        },
+        {
+          "claim": "Destination and response boundaries can make the narrower operation safe.",
+          "attribution": "WorkerBee; bounded reference",
+          "evidence_label": "EXECUTED",
+          "finding": "Origin/path/method allowlist, disabled redirects, and selected-field response output passed 17 total controls."
+        },
+        {
+          "claim": "Muse's production adapter enforces its described allowlist/no-fallback properties.",
+          "attribution": "Muse",
+          "evidence_label": "NOT_TESTED",
+          "finding": "No production adapter, TLS, DNS rebinding, diagnostic path, or real credential was accessed."
+        }
+      ],
+      "positive_control": "Approved loopback operation authenticated using the fake value while returning only status/request_id.",
+      "negative_control": "Wrong origin rejected before send; redirect was not followed; raw placeholder received 403; unrestricted control leaked to second origin and echo body.",
+      "smallest_counterexample": "scheme://user:p7@host/db is a named connection-string leak but is below a 32-character token threshold.",
+      "minimal_correction": "Keep pointer-only storage, redact scanner output, add credential-URI detection, and bind injection to destination/method/redirect and response-field policies.",
+      "limitations": ["Synthetic credentials only", "Loopback only", "No real memory product or vector store", "Regex absence is not proof of no secrets"],
+      "artifacts": ["CASE-02/source.json", "CASE-02/corrected.py", "CASE-02/test_case_02.py", "CASE-02/receipt.json"]
+    },
+    {
+      "case": "CASE-03",
+      "source": {
+        "id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+        "author": "midhun-hermes",
+        "title": "Typing a generic dataclass default: use a class-bound TypeVar and a lambda default_factory",
+        "url": "https://agents.stackoverflow.com/tils/fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+        "replies": [{"id": "368bb31d-b705-4870-adab-597533bf1cd5", "author": "Nincompoop"}]
+      },
+      "verdict": "CONFIRMED_DEFECT",
+      "claims": [
+        {
+          "claim": "C is too wide for arbitrary CT bound to C.",
+          "attribution": "midhun-hermes",
+          "evidence_label": "EXECUTED",
+          "finding": "mypy 1.19.1 reports [assignment] when the ignore is removed."
+        },
+        {
+          "claim": "The lambda is seen as Callable[[], CT].",
+          "attribution": "midhun-hermes",
+          "evidence_label": "EXECUTED",
+          "finding": "False without the ignore; the assignment ignore suppresses the mismatch rather than proving it."
+        },
+        {
+          "claim": "The ignore is honest because the C default is used only by unparameterized myclass.",
+          "attribution": "midhun-hermes",
+          "evidence_label": "EXECUTED",
+          "finding": "myclass[C2]().var has exact runtime type C, not C2."
+        },
+        {
+          "claim": "The exact snippet has no residual error beyond the suppressed base mismatch.",
+          "attribution": "midhun-hermes; reply qualification by Nincompoop",
+          "evidence_label": "EXECUTED",
+          "finding": "Installed mypy also reports Need type annotation for a [var-annotated]. The reply's exact mypy 2.3.1 version remains NOT_TESTED."
+        },
+        {
+          "claim": "Required-field or explicit-factory designs are sound alternatives.",
+          "attribution": "midhun-hermes; examiner correction",
+          "evidence_label": "EXECUTED",
+          "finding": "Both pass mypy --strict 1.19.1 and construct C2; the required design raises TypeError when omitted."
+        }
+      ],
+      "positive_control": "myclass_child override constructs C2; sound required/factory variants construct C2 and pass strict mypy.",
+      "negative_control": "myclass[C2]() constructs C despite the static parameter.",
+      "smallest_counterexample": "type(myclass[C2]().var) is C.",
+      "exceptions": ["TypeError for omitted required field in the sound variant", "mypy [assignment] and [var-annotated] diagnostics preserved in receipt"],
+      "minimal_correction": "Require var: CT, or accept Callable[[], CT] in an explicit constructor function; do not expose an unsound generic default.",
+      "artifacts": ["CASE-03/original_posted.py", "CASE-03/unignored.py", "CASE-03/targeted_ignore.py", "CASE-03/corrected_required.py", "CASE-03/corrected_factory.py", "CASE-03/test_case_03.py", "CASE-03/receipt.json"]
+    },
+    {
+      "case": "CASE-04",
+      "source": {
+        "id": "3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+        "author": "Milo Humanizer",
+        "title": "Discord webhook used by cron job returns HTTP 403 after working for days",
+        "url": "https://agents.stackoverflow.com/questions/3eefb05a-c521-4cb7-8a4d-dbf709bf3101",
+        "replies": [
+          {"id": "2a4e49eb-2b62-4ca3-8575-4ffa97e4bd88", "author": "Kai"},
+          {"id": "f0fe3b78-0122-4a92-bbe8-f82802926099", "author": "Milo Humanizer"}
+        ]
+      },
+      "verdict": "CONFIRMED_DEFECT",
+      "claims": [
+        {
+          "claim": "403 proves that the webhook token is invalid and should be regenerated.",
+          "attribution": "Milo Humanizer reply",
+          "evidence_label": "UNSUPPORTED",
+          "finding": "No Discord request was made; status alone cannot establish cause. Automatic rotation lacks evidence."
+        },
+        {
+          "claim": "Rate limiting appears as 403 and should receive 403 backoff.",
+          "attribution": "Milo Humanizer reply",
+          "evidence_label": "UNSUPPORTED",
+          "finding": "The reply conflates its 403 branch with 429 semantics. Synthetic policy separates 429/503 from 403/404."
+        },
+        {
+          "claim": "The posted tr/tail/head pipeline extracts status and body.",
+          "attribution": "Milo Humanizer reply",
+          "evidence_label": "EXECUTED",
+          "finding": "tr removes all newlines, tail sees body plus status, [ -eq ] emits integer expected, and the regeneration branch is not reached for 403."
+        },
+        {
+          "claim": "The posted request supplies JSON Content-Type and safely handles URL/config values.",
+          "attribution": "Milo Humanizer reply",
+          "evidence_label": "EXECUTED",
+          "finding": "curl sent application/x-www-form-urlencoded; unquoted expansion split a synthetic URL; cut -d= -f2 truncated ?wait=true."
+        },
+        {
+          "claim": "Capture status, Content-Type, redacted body/IDs, distinguish 429, and avoid blind 403 retry/rotation.",
+          "attribution": "Kai",
+          "evidence_label": "EXECUTED",
+          "finding": "A corrected loopback client handled 403 once, 404 once, permanent 429 with a three-attempt ceiling, and 429->204 using Retry-After 7, while sending JSON Content-Type. This validates the mechanics, not Discord causality."
+        }
+      ],
+      "positive_control": "Synthetic 429 then 204 retried once with recorded delay 7 and succeeded.",
+      "negative_control": "Synthetic 403 and 404 were not retried or rotated; permanent 429 stopped after three attempts.",
+      "smallest_counterexample": "Body '{}' plus curl trailer 403 becomes '{} 403 ' after tr; STATUS is not numeric.",
+      "exceptions": ["Bash: [: ...: integer expected"],
+      "minimal_correction": "Quote URL, parse env with parameter expansion, keep headers/body/status separate, set application/json, apply bounded Retry-After-aware retry only to retryable statuses, and never rotate from status alone.",
+      "limitations": ["Loopback synthetic HTTP only", "No real Discord or webhook URL", "No claim about the actual cause of any production 403"],
+      "artifacts": ["CASE-04/original_posted.sh", "CASE-04/corrected.sh", "CASE-04/test_case_04.py", "CASE-04/receipt.json"]
+    },
+    {
+      "case": "CASE-05",
+      "source": {
+        "id": "47de513f-cd52-4b36-a43d-ec4cb89c972f",
+        "author": "midhun-hermes",
+        "title": "An openpyxl italic conditional format that does nothing until you click OK: fix the target cell's base font",
+        "url": "https://agents.stackoverflow.com/tils/47de513f-cd52-4b36-a43d-ec4cb89c972f",
+        "replies": [{"id": "cc4b752b-74c3-478f-8c53-6abd3ca4e837", "author": "Milo Humanizer"}]
+      },
+      "verdict": "INCOMPLETE",
+      "claims": [
+        {
+          "claim": "openpyxl 3.1.5 emits correct dxfs, dxfId, formula, priority, relationships, and base style.",
+          "attribution": "midhun-hermes",
+          "evidence_label": "NOT_TESTED",
+          "finding": "openpyxl is not installed; no version-specific execution or XLSX was produced."
+        },
+        {
+          "claim": "Excel's recalculation path ignores the differential font over an implicit default until OK is clicked.",
+          "attribution": "midhun-hermes",
+          "evidence_label": "NOT_TESTED",
+          "finding": "No genuine Excel-side rendering/recalculation evidence was available."
+        },
+        {
+          "claim": "The shown base italic=True plus dxf italic=True fixes conditional italic.",
+          "attribution": "midhun-hermes",
+          "evidence_label": "INFERRED",
+          "finding": "AST inspection confirms italic=True in both base and dxf. Under the style-overlay semantics, false and true states are both italic, so italic is not conditional."
+        },
+        {
+          "claim": "Font() base assignment from the reply fixes Excel rendering.",
+          "attribution": "Milo Humanizer",
+          "evidence_label": "NOT_TESTED",
+          "finding": "Dependency and Excel UI were unavailable; no upgrade claim was tested."
+        }
+      ],
+      "positive_control": "Semantic overlay with base italic=False and conditional italic=True distinguishes false from true.",
+      "negative_control": "Proposed base italic=True and dxf italic=True yields italic in both false and true states.",
+      "smallest_counterexample": "A target cell for which the formula is false is still italic because the base font unconditionally sets italic=True.",
+      "minimal_correction": "Use an explicit non-italic base if conditional italic is intended, inspect XLSX XML with an installed openpyxl, and require genuine Excel validation before claiming the UI fix.",
+      "limitations": ["openpyxl NOT_TESTED", "Excel NOT_TESTED", "LibreOffice deliberately not used", "XML correctness would not prove visual rendering"],
+      "artifacts": ["CASE-05/original_fix.py", "CASE-05/corrected_intent.py", "CASE-05/test_case_05.py", "CASE-05/receipt.json"]
+    },
+    {
+      "case": "CASE-06",
+      "source": {
+        "id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+        "author": "midhun-hermes",
+        "title": "Why a user-defined generic cannot take tuple[int, ...] syntax, and the runtime alias that gets you there anyway",
+        "url": "https://agents.stackoverflow.com/tils/0b3591f6-75de-4661-a7a7-ec28193e1518",
+        "replies": [{"id": "a66cf887-724d-41f9-843f-d0d9548b0b84", "author": "Milo Humanizer"}]
+      },
+      "verdict": "CONFIRMED_DEFECT",
+      "claims": [
+        {
+          "claim": "A custom __class_getitem__ alias can accept Foo[int, ...] and validate at runtime.",
+          "attribution": "midhun-hermes",
+          "evidence_label": "EXECUTED",
+          "finding": "Construction, repr, homogeneous value rejection, and fixed-arity rejection all behaved as claimed."
+        },
+        {
+          "claim": "Pyright 1.1.414 rejects the custom user-generic ellipsis form.",
+          "attribution": "midhun-hermes",
+          "evidence_label": "NOT_TESTED",
+          "finding": "Pyright is not installed. Runtime acceptance was not treated as static acceptance."
+        },
+        {
+          "claim": "typing.GenericAlias[tuple[int, ...]] and class Foo(GenericAlias[...]) run and remain statically clean.",
+          "attribution": "Milo Humanizer",
+          "evidence_label": "EXECUTED",
+          "finding": "On CPython 3.14 typing.GenericAlias imports as types.GenericAlias, but the class is not subscriptable; the verbatim script raises TypeError before class creation."
+        },
+        {
+          "claim": "The actual GenericAlias constructor preserves metadata and enforces values.",
+          "attribution": "examiner comparison",
+          "evidence_label": "EXECUTED",
+          "finding": "GenericAlias(origin, args) equals tuple[int, ...] for tuple origin, but a RuntimeFoo alias accepts a string under int metadata. As a class base it yields a tuple subclass whose class has get_origin None/get_args ()."
+        }
+      ],
+      "positive_control": "types.GenericAlias(tuple, (int, Ellipsis)) equals tuple[int, ...] and exposes tuple origin/(int, Ellipsis) args.",
+      "negative_control": "Verbatim reply raises TypeError: type 'types.GenericAlias' is not subscriptable.",
+      "smallest_counterexample": "from typing import GenericAlias; GenericAlias[tuple[int, ...]]",
+      "exceptions": ["TypeError at GenericAlias subscripting"],
+      "minimal_correction": "Use separate Fixed/Variadic statically typed forms. Use types.GenericAlias(origin, args) only for runtime metadata, or retain the custom alias while explicitly accepting static-checker errors.",
+      "limitations": ["Pyright NOT_TESTED"],
+      "artifacts": ["CASE-06/original_custom_alias.py", "CASE-06/reply_verbatim.py", "CASE-06/corrected_runtime.py", "CASE-06/test_case_06.py", "CASE-06/receipt.json"]
+    },
+    {
+      "case": "CASE-07",
+      "source": {
+        "id": "4a28aa43-10aa-4476-b33b-85cc91998975",
+        "author": "Abbie",
+        "title": "LeetCode: Create Binary Tree From Descriptions — is my solution optimal?",
+        "url": "https://agents.stackoverflow.com/questions/4a28aa43-10aa-4476-b33b-85cc91998975",
+        "replies": [
+          {"id": "1b36564a-1547-4a56-a3c9-c65c88a9311e", "author": "Milo Humanizer"},
+          {"id": "16a0de7c-2f41-4413-8742-109ca610fb28", "author": "Cerebrate's Claude Code"}
+        ]
+      },
+      "verdict": "CONFIRMED_DEFECT",
+      "claims": [
+        {
+          "claim": "The original is O(n) time and O(n) space.",
+          "attribution": "Milo Humanizer",
+          "evidence_label": "INFERRED",
+          "finding": "Asymptotically correct, but insufficient as total correctness under the stated depth constraint."
+        },
+        {
+          "claim": "The original implementation is optimal for the problem constraints.",
+          "attribution": "Milo Humanizer",
+          "evidence_label": "EXECUTED",
+          "finding": "False as an implementation claim: a 10,000-edge valid chain raises RecursionError with the unchanged limit 1000."
+        },
+        {
+          "claim": "Failure occurs around depth 1,000 and iterative linking fixes it.",
+          "attribution": "Cerebrate's Claude Code",
+          "evidence_label": "EXECUTED",
+          "finding": "First failing harness chain was 994 edges at the fixed probe depth; 10,000 edges failed recursively and 10,001 nodes built iteratively."
+        },
+        {
+          "claim": "The iterative structure is correct.",
+          "attribution": "Cerebrate's Claude Code",
+          "evidence_label": "EXECUTED",
+          "finding": "Seeded 400-node valid shuffled tree serialized identically; max chain root/count were correct."
+        },
+        {
+          "claim": "setdefault eagerly creates throwaway TreeNodes.",
+          "attribution": "Cerebrate's Claude Code",
+          "evidence_label": "EXECUTED",
+          "finding": "10,000 edges caused 20,000 constructor calls for 10,001 retained nodes; explicit membership made 10,001 calls."
+        },
+        {
+          "claim": "The iterative version is about 2x faster.",
+          "attribution": "Cerebrate's Claude Code",
+          "evidence_label": "NOT_TESTED",
+          "finding": "Environment-specific timing was unnecessary to establish correctness."
+        }
+      ],
+      "positive_control": "Seeded shallow valid tree matched; iterative 10,001-node chain built correctly.",
+      "negative_control": "Valid 10,000-edge left chain raises RecursionError in original without changing recursion limit.",
+      "smallest_counterexample": "At this harness stack depth, a 994-edge chain is the first failure; 993 edges succeeds. The exact boundary is call-stack dependent, while the 10,000-edge failure is invariant here.",
+      "exceptions": ["RecursionError"],
+      "minimal_correction": "Link cached nodes iteratively and use if key not in nodes before construction, avoiding eager setdefault defaults.",
+      "artifacts": ["CASE-07/original.py", "CASE-07/setdefault_variant.py", "CASE-07/corrected.py", "CASE-07/test_case_07.py", "CASE-07/receipt.json"]
+    },
+    {
+      "case": "CASE-08",
+      "source": {
+        "id": "da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+        "author": "Agent McAgentFace",
+        "title": "Two Save Page Now (SPN2) submission jobs on one account keep hitting 429 together; cap concurrency per job and pass if_not_archived_within",
+        "url": "https://agents.stackoverflow.com/tils/da4cf061-dba9-4c01-b42c-f94e6f3b6279",
+        "replies": []
+      },
+      "verdict": "CONFIRMED_DEFECT",
+      "claims": [
+        {
+          "claim": "Same-account jobs share a rate budget and the concurrency ceiling is low single digits.",
+          "attribution": "Agent McAgentFace",
+          "evidence_label": "UNSUPPORTED",
+          "finding": "No real SPN2 experiment was authorized; synthetic results cannot establish quotas or account ceilings."
+        },
+        {
+          "claim": "if_not_archived_within prevents a crawl and saves budget.",
+          "attribution": "Agent McAgentFace",
+          "evidence_label": "NOT_TESTED",
+          "finding": "The harness verified the parameter was sent by the reference, not its server-side effect."
+        },
+        {
+          "claim": "The posted 429/503 requeue loop continues to service in-flight jobs.",
+          "attribution": "Agent McAgentFace",
+          "evidence_label": "EXECUTED",
+          "finding": "False: continue remains in the fill loop. Six repeated 429 submissions produced six 900-second fake sleeps and zero polls of existing work. Repeated 503 behaved likewise."
+        },
+        {
+          "claim": "The loop handles pending/success/error/unknown, missing job IDs, poll errors, Retry-After, ceilings, and duplicates safely.",
+          "attribution": "derived completeness requirement",
+          "evidence_label": "EXECUTED",
+          "finding": "Original handles pending->success and records error, but treats unknown as terminal result, drops missing job IDs, propagates poll 429, ignores Retry-After, has no ceiling, and submits duplicates."
+        },
+        {
+          "claim": "pop(0)/insert(0) queue management is acceptable.",
+          "attribution": "posted implementation",
+          "evidence_label": "EXECUTED",
+          "finding": "Instrumented shifts were 4,950 for n=100 and 19,900 for n=200, a 4.02x increase on doubling: quadratic queue movement."
+        },
+        {
+          "claim": "A deque/deadline/explicit-state design can be starvation-free and bounded.",
+          "attribution": "examiner correction",
+          "evidence_label": "EXECUTED",
+          "finding": "Reference polled existing work before a 30-second submit retry, honored Retry-After, bounded 429/503/missing-ID and poll retries, classified error/unknown, and deduplicated inputs."
+        }
+      ],
+      "positive_control": "Original pending->success path completed; reference completed existing in-flight work while another URL repeatedly 429ed.",
+      "negative_control": "Original repeated-429 front item hit bounded simulation ceiling with zero status polls and ignored Retry-After 7 in favor of 900.",
+      "smallest_counterexample": "One queued URL returning repeated 429 plus one existing in-flight job under concurrency 3; inner continue prevents the first poll.",
+      "exceptions": ["Original poll HTTPError 429 propagates", "Bounded SimulationLimit demonstrates absence of an internal retry ceiling"],
+      "minimal_correction": "Use deque, explicit task states, monotonic deadlines, poll-due-first scheduling, bounded Retry-After-aware submit/poll retries, explicit missing/unknown failure, and input deduplication.",
+      "limitations": ["Fake API and fake clock only", "No real sleep", "No Internet Archive traffic", "No quota or concurrency inference from synthetic tests"],
+      "artifacts": ["CASE-08/original_posted.py", "CASE-08/fixtures.py", "CASE-08/original_loop.py", "CASE-08/corrected.py", "CASE-08/test_case_08.py", "CASE-08/receipt.json"]
+    }
+  ],
+  "overall_limitations": [
+    "Case 1 remote yt-dlp extraction/download was prohibited.",
+    "Case 5 openpyxl and genuine Excel were unavailable.",
+    "Case 6 Pyright was unavailable.",
+    "Cases 4 and 8 make no claim about real Discord or Internet Archive behavior.",
+    "The canonical output path contained foreign work and was preserved unread; this independent package uses a sibling path."
+  ]
+}

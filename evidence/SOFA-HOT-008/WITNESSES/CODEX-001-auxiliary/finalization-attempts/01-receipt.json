@@ -1,0 +1,23 @@
+{
+  "recorded_at_utc": "2026-11-04T16:46:50.005633+00:00",
+  "argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "--python",
+    "/usr/bin/python3",
+    "python",
+    "-B",
+    "finalize.py"
+  ],
+  "exit_code": 1,
+  "error_type": "IndentationError",
+  "error_message": "unexpected indent",
+  "file": "CASE-01/installed-process_subtitles.py",
+  "line": 1,
+  "cause": "Validator treated an intentionally indented class-method source snapshot as a standalone module",
+  "correction": "Dedent only that snapshot for syntax validation, leaving its recorded source bytes unchanged",
+  "seal_written": false
+}

@@ -1,0 +1,655 @@
+{
+  "all_checks_passed": true,
+  "case": 1,
+  "checks": [
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "missing_language_uploaded",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "missing_language_uploaded_order_de-DE",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en-orig"
+      ],
+      "expected": [
+        "auto",
+        "en-orig"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_before_translations",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en-orig"
+      ],
+      "expected": [
+        "auto",
+        "en-orig"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_before_translations_order_de,en-orig,fr",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en-orig"
+      ],
+      "expected": [
+        "auto",
+        "en-orig"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_before_translations_order_de,fr,en-orig",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en-orig"
+      ],
+      "expected": [
+        "auto",
+        "en-orig"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_before_translations_order_en-orig,de,fr",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en-orig"
+      ],
+      "expected": [
+        "auto",
+        "en-orig"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_before_translations_order_en-orig,fr,de",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en-orig"
+      ],
+      "expected": [
+        "auto",
+        "en-orig"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_before_translations_order_fr,de,en-orig",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en-orig"
+      ],
+      "expected": [
+        "auto",
+        "en-orig"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "original_before_translations_order_fr,en-orig,de",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "de-DE"
+      ],
+      "expected": [
+        "auto",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "single_auto",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "de-DE"
+      ],
+      "expected": [
+        "auto",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "single_auto_order_de-DE",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "translated_map_abstention",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "translated_map_abstention_order_de,en",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "translated_map_abstention_order_en,de",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "ambiguous_uploaded_abstention",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "ambiguous_uploaded_abstention_order_de,en",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "ambiguous_uploaded_abstention_order_en,de",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "ambiguous_originals_abstention",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "ambiguous_originals_abstention_order_de-orig,en-orig",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "ambiguous_originals_abstention_order_en-orig,de-orig",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty_order_live_chat,danmaku,de",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty_order_live_chat,de,danmaku",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty_order_danmaku,live_chat,de",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty_order_danmaku,de,live_chat",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty_order_de,live_chat,danmaku",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty_order_de,danmaku,live_chat",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "en"
+      ],
+      "expected": [
+        "auto",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaption_and_empty_order_en",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "noncaptions_only",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaptions_only_order_live_chat,danmaku",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "noncaptions_only_order_danmaku,live_chat",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_exact_manual",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_exact_manual_order_de-DE",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_exact_manual_order_de-DE",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "de-DE"
+      ],
+      "expected": [
+        "auto",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_exact_before_base",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "de-DE"
+      ],
+      "expected": [
+        "auto",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_exact_before_base_order_de",
+      "passed": true
+    },
+    {
+      "actual": [
+        "auto",
+        "de-DE"
+      ],
+      "expected": [
+        "auto",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_exact_before_base_order_de-DE",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_base_manual",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_base_manual_order_de-DE",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de-DE"
+      ],
+      "expected": [
+        "manual",
+        "de-DE"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_base_manual_order_de-orig",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "known_base_ambiguity",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_base_ambiguity_order_en-GB,en-US",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_base_ambiguity_order_en-US,en-GB",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "known_language_absent",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "known_language_absent_order_en",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de"
+      ],
+      "expected": [
+        "manual",
+        "de"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "audio_language",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de"
+      ],
+      "expected": [
+        "manual",
+        "de"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "audio_language_order_de,en",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "de"
+      ],
+      "expected": [
+        "manual",
+        "de"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "audio_language_order_en,de",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "ambiguous_audio",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "ambiguous_audio_order_de,en",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "ambiguous_audio_order_en,de",
+      "passed": true
+    },
+    {
+      "actual": [
+        "manual",
+        "en"
+      ],
+      "expected": [
+        "manual",
+        "en"
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "explicit_preference_resolves_uploaded_tie",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "language_gate_misses_uploaded_caption",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "installed_selects_manual_without_video_language",
+      "passed": true
+    },
+    {
+      "actual": null,
+      "expected": null,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "installed_no_write_flags_no_selection",
+      "passed": true
+    }
+  ],
+  "commands": [],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:29:37.412029+00:00",
+  "limitations": [
+    {
+      "claim": "Remote extraction/download/conversion and YouTube -orig convention",
+      "label": "NOT_TESTED"
+    },
+    {
+      "claim": "The source supplies a selection policy, not code; tie abstention and caption-format filtering are examiner additions. No original implementation has been disproved.",
+      "label": "INFERRED"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "seed": 26051108,
+  "started_utc": "2026-11-04T16:29:37.222430+00:00",
+  "yt_dlp_version": "2026.03.17"
+}

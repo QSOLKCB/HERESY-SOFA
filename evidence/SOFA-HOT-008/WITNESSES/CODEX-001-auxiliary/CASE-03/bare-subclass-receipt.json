@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-m",
+    "mypy",
+    "--no-incremental",
+    "--cache-dir",
+    "/tmp/codex008-extra-mypy-9lnu4i_f",
+    "CASE-03/bare_subclass.py"
+  ],
+  "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+  "started_utc": "2026-11-04T16:32:32.397561+00:00",
+  "finished_utc": "2026-11-04T16:32:33.078219+00:00",
+  "exit_code": 0,
+  "stdout": "CASE-03/bare_subclass.py:20: note: Revealed type is \"Any\"\nCASE-03/bare_subclass.py:21: note: Revealed type is \"bare_subclass.C\"\nSuccess: no issues found in 1 source file\n",
+  "stderr": ""
+}

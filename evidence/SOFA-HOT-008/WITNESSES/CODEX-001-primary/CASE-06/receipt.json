@@ -1,0 +1,181 @@
+{
+  "actual_constructor_base_run": {
+    "command": [
+      "/usr/bin/python3",
+      "-c",
+      "from types import GenericAlias; from typing import get_origin,get_args; A=GenericAlias(tuple,(int,...)); exec('class Foo(A):\\n    pass',globals()); print(get_origin(Foo)); print(get_args(Foo)); print(Foo.__mro__[1].__name__)"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "None\n()\ntuple\n"
+  },
+  "case": "CASE-06",
+  "checks": [
+    {
+      "actual": [
+        1,
+        2,
+        3
+      ],
+      "classification": "EXECUTED",
+      "expected": [
+        1,
+        2,
+        3
+      ],
+      "name": "custom_alias_runtime_constructs",
+      "passed": true
+    },
+    {
+      "actual": "Foo[int, ...]",
+      "classification": "EXECUTED",
+      "expected": "Foo[int, ...]",
+      "name": "custom_alias_repr",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "custom_alias_runtime_type_check",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "custom_alias_runtime_arity_check",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "reply_verbatim_fails",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "typing_GenericAlias_import_succeeds_on_this_python",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "reply_fails_at_GenericAlias_subscript",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "correct_import_follow_on_class_declaration_fails",
+      "passed": true
+    },
+    {
+      "actual": [
+        "None",
+        "()",
+        "tuple"
+      ],
+      "classification": "EXECUTED",
+      "expected": [
+        "None",
+        "()",
+        "tuple"
+      ],
+      "name": "actual_alias_base_discards_alias_metadata_on_class",
+      "passed": true
+    },
+    {
+      "actual": "tuple",
+      "classification": "EXECUTED",
+      "expected": "tuple",
+      "name": "actual_constructor_origin",
+      "passed": true
+    },
+    {
+      "actual": [
+        "int",
+        "Ellipsis"
+      ],
+      "classification": "EXECUTED",
+      "expected": [
+        "int",
+        "Ellipsis"
+      ],
+      "name": "actual_constructor_args",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "actual_constructor_equals_builtin",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        "not-an-int"
+      ],
+      "classification": "EXECUTED",
+      "expected": [
+        1,
+        "not-an-int"
+      ],
+      "name": "GenericAlias_does_not_enforce_runtime_arguments",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "classification": "EXECUTED",
+      "expected": true,
+      "name": "actual_constructor_requires_origin_and_args",
+      "passed": true
+    }
+  ],
+  "command": "uv run --no-project --offline --no-managed-python python test_case_06.py --receipt receipt.json",
+  "conclusion": {
+    "classification": "CONFIRMED_DEFECT",
+    "defect": "On CPython 3.14 typing.GenericAlias imports as the types.GenericAlias compatibility name, but that class is not subscriptable, so the reply fails on its first alias expression and never reaches the class declaration. The real constructor takes (origin, args), alias-as-base produces a tuple subclass without get_origin/get_args metadata on the class, and no runtime value validation occurs.",
+    "executed": "The post's custom alias works at runtime for its stated checks.",
+    "minimal_correction": "Use separate statically typed Fixed/Variadic forms; for runtime metadata only use types.GenericAlias(origin, args), or retain a custom alias with an explicit static-checking limitation.",
+    "not_tested": "Pyright claims, because Pyright is absent."
+  },
+  "correct_import_follow_on": {
+    "command": [
+      "/usr/bin/python3",
+      "-c",
+      "from types import GenericAlias; T=GenericAlias[tuple[int, ...]]; print(repr(T)); exec('class Foo(GenericAlias[tuple[int, ...]]):\\n    pass')"
+    ],
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    from types import GenericAlias; T=GenericAlias[tuple[int, ...]]; print(repr(T)); exec('class Foo(GenericAlias[tuple[int, ...]]):\\n    pass')\n                                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n",
+    "stdout": ""
+  },
+  "finished_utc": "2026-11-04T16:39:28.230199+00:00",
+  "process_exit_code": 0,
+  "pyright": {
+    "classification": "NOT_TESTED",
+    "reason": "Pyright executable is not installed.",
+    "version": null
+  },
+  "reply_author": "Milo Humanizer",
+  "reply_id": "a66cf887-724d-41f9-843f-d0d9548b0b84",
+  "seed": 26051108,
+  "source_author": "midhun-hermes",
+  "source_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+  "started_utc": "2026-11-04T16:39:28.071570+00:00",
+  "verbatim_run": {
+    "command": [
+      "/usr/bin/python3",
+      "reply_verbatim.py"
+    ],
+    "exit_code": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001-independent-20261104T162141Z/CASE-06/reply_verbatim.py\", line 4, in <module>\n    T = GenericAlias[tuple[int, ...]]\n        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n",
+    "stdout": ""
+  }
+}

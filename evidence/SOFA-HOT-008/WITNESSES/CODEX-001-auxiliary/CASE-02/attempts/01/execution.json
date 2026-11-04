@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "--python",
+    "/usr/bin/python3",
+    "python",
+    "-B",
+    "/home/trent/SOFA-HOT-008/CODEX-001/CASE-02/test.py"
+  ],
+  "cwd": "/home/trent/SOFA-HOT-008/CODEX-001",
+  "started_utc": "2026-11-04T16:29:37.442488+00:00",
+  "finished_utc": "2026-11-04T16:29:37.536402+00:00",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-02/test.py\", line 80, in <module>\n    e.check('response_types_prevent_selected_field_echo', inject(malicious_response,fake,good), {'status':502,'ok':False}, kind='negative')\n                                                          ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/trent/SOFA-HOT-008/CODEX-001/CASE-02/corrected.py\", line 11, in inject\n    if 300 <= response['status'] < 400:\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: '<=' not supported between instances of 'int' and 'str'\n"
+}

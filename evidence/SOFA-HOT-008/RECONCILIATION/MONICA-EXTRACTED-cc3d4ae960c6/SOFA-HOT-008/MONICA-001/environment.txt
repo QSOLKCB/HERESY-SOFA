@@ -1,0 +1,10 @@
+executed_on=virtual_machine_not_native_physical_workstation
+os=Ubuntu 26.04.1 LTS (Resolute Raccoon)
+kernel=Linux 6.18.56-cloudflare-microvm-2026.10.9
+architecture=x86_64
+cpu_model=AMD EPYC
+virtualization=container-other
+python=Python 3.14.4
+python_impl=CPython Linux-6.18.56-cloudflare-microvm-2026.10.9-x86_64-with-glibc2.43
+uv=uv 0.13.6 (x86_64-unknown-linux-gnu)
+executed_on=virtual_machine_not_native_physical_workstation

@@ -1,0 +1,431 @@
+{
+  "all_checks_passed": true,
+  "case": 4,
+  "checks": [
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "body_erased_403_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "nonempty_body_breaks_numeric_status_403_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "403_regeneration_not_reached_403_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "URL_cut_loses_equals_403_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "explicit_json_content_type_missing_403_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "headers_not_captured_403_application/json",
+      "passed": true
+    },
+    {
+      "actual": "investigate",
+      "expected": "investigate",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_status_policy_403_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "body_erased_403_text/html",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "nonempty_body_breaks_numeric_status_403_text/html",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "403_regeneration_not_reached_403_text/html",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "URL_cut_loses_equals_403_text/html",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "explicit_json_content_type_missing_403_text/html",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "headers_not_captured_403_text/html",
+      "passed": true
+    },
+    {
+      "actual": "investigate",
+      "expected": "investigate",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_status_policy_403_text/html",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "body_erased_404_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "nonempty_body_breaks_numeric_status_404_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "403_regeneration_not_reached_404_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "URL_cut_loses_equals_404_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "explicit_json_content_type_missing_404_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "headers_not_captured_404_application/json",
+      "passed": true
+    },
+    {
+      "actual": "investigate",
+      "expected": "investigate",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_status_policy_404_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "body_erased_429_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "nonempty_body_breaks_numeric_status_429_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "403_regeneration_not_reached_429_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "URL_cut_loses_equals_429_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "explicit_json_content_type_missing_429_application/json",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "headers_not_captured_429_application/json",
+      "passed": true
+    },
+    {
+      "actual": "retry",
+      "expected": "retry",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_status_policy_429_application/json",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "body_erased_403_text/plain",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "empty_body_triggers_unjustified_regeneration",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "URL_cut_loses_equals_403_text/plain",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "explicit_json_content_type_missing_403_text/plain",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "headers_not_captured_403_text/plain",
+      "passed": true
+    },
+    {
+      "actual": "investigate",
+      "expected": "investigate",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_status_policy_403_text/plain",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "unquoted_expansion_splits_and_globs",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "no_regeneration_403",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "no_regeneration_404",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "no_regeneration_429",
+      "passed": true
+    },
+    {
+      "actual": 11.0,
+      "expected": 11.0,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "retry_after_honored",
+      "passed": true
+    },
+    {
+      "actual": "stop",
+      "expected": "stop",
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "retry_ceiling",
+      "passed": true
+    },
+    {
+      "actual": "success",
+      "expected": "success",
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "204_success",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "bash",
+        "/tmp/codex008-webhook-2wji0_4t/test.sh"
+      ],
+      "cwd": "/tmp/codex008-webhook-2wji0_4t",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:30:33.797909+00:00",
+      "started_utc": "2026-11-04T16:30:33.767595+00:00",
+      "stderr": "/tmp/codex008-webhook-2wji0_4t/test.sh: line 5: [: {\"message\":\"forbidden\"} 403 : integer expected\n",
+      "stdout": "\nPARSED_STATUS=<{\"message\":\"forbidden\"} 403 >\nPARSED_BODY=<>\n"
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/codex008-webhook-2wji0_4t/test.sh"
+      ],
+      "cwd": "/tmp/codex008-webhook-2wji0_4t",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:30:33.828236+00:00",
+      "started_utc": "2026-11-04T16:30:33.798152+00:00",
+      "stderr": "/tmp/codex008-webhook-2wji0_4t/test.sh: line 5: [: <html>edge denied</html> 403 : integer expected\n",
+      "stdout": "\nPARSED_STATUS=<<html>edge denied</html> 403 >\nPARSED_BODY=<>\n"
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/codex008-webhook-2wji0_4t/test.sh"
+      ],
+      "cwd": "/tmp/codex008-webhook-2wji0_4t",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:30:33.857967+00:00",
+      "started_utc": "2026-11-04T16:30:33.828390+00:00",
+      "stderr": "/tmp/codex008-webhook-2wji0_4t/test.sh: line 5: [: {\"message\":\"unknown webhook\"} 404 : integer expected\n",
+      "stdout": "\nPARSED_STATUS=<{\"message\":\"unknown webhook\"} 404 >\nPARSED_BODY=<>\n"
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/codex008-webhook-2wji0_4t/test.sh"
+      ],
+      "cwd": "/tmp/codex008-webhook-2wji0_4t",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:30:33.887886+00:00",
+      "started_utc": "2026-11-04T16:30:33.858128+00:00",
+      "stderr": "/tmp/codex008-webhook-2wji0_4t/test.sh: line 5: [: {\"retry_after\":2} 429 : integer expected\n",
+      "stdout": "\nPARSED_STATUS=<{\"retry_after\":2} 429 >\nPARSED_BODY=<>\n"
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/codex008-webhook-2wji0_4t/test.sh"
+      ],
+      "cwd": "/tmp/codex008-webhook-2wji0_4t",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:30:33.917562+00:00",
+      "started_utc": "2026-11-04T16:30:33.888097+00:00",
+      "stderr": "",
+      "stdout": "403 detected \u2013 regenerating webhook\n\nPARSED_STATUS=< 403 >\nPARSED_BODY=<>\n"
+    },
+    {
+      "argv": [
+        "bash",
+        "/tmp/codex008-webhook-2wji0_4t/test.sh"
+      ],
+      "cwd": "/tmp/codex008-webhook-2wji0_4t",
+      "exit_code": 0,
+      "finished_utc": "2026-11-04T16:30:33.946324+00:00",
+      "started_utc": "2026-11-04T16:30:33.917764+00:00",
+      "stderr": "",
+      "stdout": "403 detected \u2013 regenerating webhook\n\nPARSED_STATUS=< 403 >\nPARSED_BODY=<>\n"
+    }
+  ],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:30:33.946580+00:00",
+  "limitations": [
+    {
+      "claim": "curl -d without explicit Content-Type uses form encoding; test directly proves the header omission, not a Discord payload response",
+      "label": "INFERRED"
+    },
+    {
+      "claim": "403 alone proves token invalidity, channel rename invalidates token, rate limits generally return 403, or webhook recreation is necessary",
+      "label": "UNSUPPORTED"
+    },
+    {
+      "claim": "Actual Discord causes, current API status semantics, user-agent blocking, permissions, audit events and production shell environment",
+      "label": "NOT_TESTED"
+    },
+    {
+      "claim": "No real URLs or requests; the original snippet was run with only its file path adapted and curl mocked. The snippet contains a regeneration comment, not an implemented regeneration API call.",
+      "label": "EXECUTED"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "seed": 26051108,
+  "started_utc": "2026-11-04T16:30:33.767056+00:00"
+}

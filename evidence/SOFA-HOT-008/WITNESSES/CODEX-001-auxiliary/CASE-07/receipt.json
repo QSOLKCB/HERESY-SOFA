@@ -1,0 +1,328 @@
+{
+  "all_checks_passed": true,
+  "case": 7,
+  "checks": [
+    {
+      "actual": [
+        50,
+        20,
+        80,
+        15,
+        17,
+        19
+      ],
+      "expected": [
+        50,
+        20,
+        80,
+        15,
+        17,
+        19
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "example_0_recursive",
+      "passed": true
+    },
+    {
+      "actual": [
+        50,
+        20,
+        80,
+        15,
+        17,
+        19
+      ],
+      "expected": [
+        50,
+        20,
+        80,
+        15,
+        17,
+        19
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "example_0_posted",
+      "passed": true
+    },
+    {
+      "actual": [
+        50,
+        20,
+        80,
+        15,
+        17,
+        19
+      ],
+      "expected": [
+        50,
+        20,
+        80,
+        15,
+        17,
+        19
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "example_0_corrected",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        2,
+        null,
+        null,
+        3,
+        4
+      ],
+      "expected": [
+        1,
+        2,
+        null,
+        null,
+        3,
+        4
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "example_1_recursive",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        2,
+        null,
+        null,
+        3,
+        4
+      ],
+      "expected": [
+        1,
+        2,
+        null,
+        null,
+        3,
+        4
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "example_1_posted",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        2,
+        null,
+        null,
+        3,
+        4
+      ],
+      "expected": [
+        1,
+        2,
+        null,
+        null,
+        3,
+        4
+      ],
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "example_1_corrected",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "immediately_below_threshold",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "threshold_fails",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "valid_maximum_depth_failure",
+      "passed": true
+    },
+    {
+      "actual": 10001,
+      "expected": 10001,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "posted_max_nodes",
+      "passed": true
+    },
+    {
+      "actual": 20000,
+      "expected": 20000,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "posted_max_allocations",
+      "passed": true
+    },
+    {
+      "actual": 10001,
+      "expected": 10001,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_max_nodes",
+      "passed": true
+    },
+    {
+      "actual": 10001,
+      "expected": 10001,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_max_allocations",
+      "passed": true
+    },
+    {
+      "actual": 4,
+      "expected": 4,
+      "kind": "negative",
+      "label": "EXECUTED",
+      "name": "smallest_setdefault_waste_3_nodes",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "recursive_random_full_structure",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "posted_random_full_structure",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_random_full_structure",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "recursive_uses_recursion",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "posted_uses_recursion",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "corrected_uses_recursion",
+      "passed": true
+    },
+    {
+      "actual": 1000,
+      "expected": 1000,
+      "kind": "positive",
+      "label": "EXECUTED",
+      "name": "recursion_limit_unchanged",
+      "passed": true
+    }
+  ],
+  "commands": [],
+  "executable": "/usr/bin/python3",
+  "finished_utc": "2026-11-04T16:29:44.682903+00:00",
+  "limitations": [
+    {
+      "claim": "LeetCode harness and author exact CPython 3.14.9/timing environment",
+      "label": "NOT_TESTED"
+    },
+    {
+      "claim": "Expected O(n) hash-table behavior; setdefault still O(n) despite discarded objects. Root search is still a scan, and may inspect all descriptions. Timing is workload and environment dependent.",
+      "label": "INFERRED"
+    }
+  ],
+  "maximum_depth_exception": {
+    "message": "maximum recursion depth exceeded",
+    "type": "RecursionError"
+  },
+  "profile_calls": {
+    "corrected": {
+      "build": 1
+    },
+    "posted": {
+      "createBinaryTree": 1
+    },
+    "recursive": {
+      "createBinaryTree": 1,
+      "makeTree": 39
+    }
+  },
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "recursion_limit_before": 1000,
+  "seed": 26051108,
+  "smallest_failing_chain_in_this_call_context": {
+    "edges": 996,
+    "nodes": 997
+  },
+  "started_utc": "2026-11-04T16:29:44.508602+00:00",
+  "timing_ratio_recursive_over_posted": 0.9451218637508629,
+  "timings": {
+    "corrected": {
+      "median_ns": 4565722,
+      "samples_ns": [
+        4450892,
+        4565722,
+        4545942,
+        4870802,
+        5029112
+      ]
+    },
+    "posted": {
+      "median_ns": 7180273,
+      "samples_ns": [
+        6845613,
+        7180273,
+        7669464,
+        7968963,
+        6588873
+      ]
+    },
+    "recursive": {
+      "median_ns": 6786233,
+      "samples_ns": [
+        7085003,
+        7597793,
+        6372893,
+        6370723,
+        6786233
+      ]
+    }
+  }
+}
