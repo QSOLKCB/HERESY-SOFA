@@ -1,0 +1,162 @@
+{
+  "all_pairs_identical": true,
+  "campaign": "LOCAL-VERIFY-002",
+  "mypy_fresh_process_pairs": 28,
+  "runtime_fresh_process_pairs": 56,
+  "schema_version": "1.0",
+  "source_inventory_after": [
+    {
+      "bytes": 583,
+      "path": "FIXTURES/DC01-original-posted-dataclass.py",
+      "sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c"
+    },
+    {
+      "bytes": 635,
+      "path": "FIXTURES/DC02-unsuppressed-default.py",
+      "sha256": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611"
+    },
+    {
+      "bytes": 681,
+      "path": "FIXTURES/DC03-targeted-ignore.py",
+      "sha256": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645"
+    },
+    {
+      "bytes": 531,
+      "path": "FIXTURES/DC04-required-field.py",
+      "sha256": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9"
+    },
+    {
+      "bytes": 666,
+      "path": "FIXTURES/DC05-caller-factory.py",
+      "sha256": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f"
+    },
+    {
+      "bytes": 625,
+      "path": "FIXTURES/DC06-concrete-subclass-factory.py",
+      "sha256": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc"
+    },
+    {
+      "bytes": 798,
+      "path": "FIXTURES/DC07-bare-versus-annotated.py",
+      "sha256": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171"
+    },
+    {
+      "bytes": 431,
+      "path": "FIXTURES/GA01-original-genericalias-reply.py",
+      "sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5"
+    },
+    {
+      "bytes": 630,
+      "path": "FIXTURES/GA02-types-genericalias-constructor.py",
+      "sha256": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60"
+    },
+    {
+      "bytes": 1107,
+      "path": "FIXTURES/GA03-custom-class-getitem-source.py",
+      "sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c"
+    },
+    {
+      "bytes": 1323,
+      "path": "FIXTURES/GA04-custom-class-getitem-use.py",
+      "sha256": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff"
+    },
+    {
+      "bytes": 834,
+      "path": "FIXTURES/GA05-typevartuple-ellipsis.py",
+      "sha256": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb"
+    },
+    {
+      "bytes": 213,
+      "path": "FIXTURES/GA06-ordinary-generic-excess.py",
+      "sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458"
+    },
+    {
+      "bytes": 429,
+      "path": "FIXTURES/NC01-incorrect-type-assertion.py",
+      "sha256": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8"
+    },
+    {
+      "bytes": 28469,
+      "path": "RUNNER/run_matrix.py",
+      "sha256": "13e6ed5d9c1c7e608e54e88f9132b4adf23c97cc8eb7ba43859304d2053149f3"
+    }
+  ],
+  "source_inventory_before": [
+    {
+      "bytes": 583,
+      "path": "FIXTURES/DC01-original-posted-dataclass.py",
+      "sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c"
+    },
+    {
+      "bytes": 635,
+      "path": "FIXTURES/DC02-unsuppressed-default.py",
+      "sha256": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611"
+    },
+    {
+      "bytes": 681,
+      "path": "FIXTURES/DC03-targeted-ignore.py",
+      "sha256": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645"
+    },
+    {
+      "bytes": 531,
+      "path": "FIXTURES/DC04-required-field.py",
+      "sha256": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9"
+    },
+    {
+      "bytes": 666,
+      "path": "FIXTURES/DC05-caller-factory.py",
+      "sha256": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f"
+    },
+    {
+      "bytes": 625,
+      "path": "FIXTURES/DC06-concrete-subclass-factory.py",
+      "sha256": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc"
+    },
+    {
+      "bytes": 798,
+      "path": "FIXTURES/DC07-bare-versus-annotated.py",
+      "sha256": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171"
+    },
+    {
+      "bytes": 431,
+      "path": "FIXTURES/GA01-original-genericalias-reply.py",
+      "sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5"
+    },
+    {
+      "bytes": 630,
+      "path": "FIXTURES/GA02-types-genericalias-constructor.py",
+      "sha256": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60"
+    },
+    {
+      "bytes": 1107,
+      "path": "FIXTURES/GA03-custom-class-getitem-source.py",
+      "sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c"
+    },
+    {
+      "bytes": 1323,
+      "path": "FIXTURES/GA04-custom-class-getitem-use.py",
+      "sha256": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff"
+    },
+    {
+      "bytes": 834,
+      "path": "FIXTURES/GA05-typevartuple-ellipsis.py",
+      "sha256": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb"
+    },
+    {
+      "bytes": 213,
+      "path": "FIXTURES/GA06-ordinary-generic-excess.py",
+      "sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458"
+    },
+    {
+      "bytes": 429,
+      "path": "FIXTURES/NC01-incorrect-type-assertion.py",
+      "sha256": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8"
+    },
+    {
+      "bytes": 28469,
+      "path": "RUNNER/run_matrix.py",
+      "sha256": "13e6ed5d9c1c7e608e54e88f9132b4adf23c97cc8eb7ba43859304d2053149f3"
+    }
+  ],
+  "source_unchanged": true
+}

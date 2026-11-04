@@ -1,0 +1,124 @@
+{
+  "campaign": "LOCAL-VERIFY-002",
+  "collected_at_utc": "2026-11-04T22:02:10.422759Z",
+  "cpu": {
+    "logical_cpu_count": 32,
+    "model": "AMD Ryzen 9 5950X 16-Core Processor"
+  },
+  "execution_window_utc": {
+    "finished": "2026-11-04T21:54:21.616268Z",
+    "started": "2026-11-04T21:53:39.191832Z"
+  },
+  "operating_system": {
+    "architecture": "x86_64",
+    "kernel_release": "7.0.0-42-generic",
+    "kernel_version": "#42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:06:44 UTC 2026",
+    "os_release": {
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "LOGO": "ubuntu-logo",
+      "NAME": "Ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "UBUNTU_CODENAME": "resolute",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "VERSION_ID": "26.04"
+    }
+  },
+  "repository": {
+    "branch": "evidence/local-verify-002-static-checker-matrix",
+    "name": "QSOLKCB/HERESY-SOFA",
+    "required_merges_verified": true,
+    "source_commit": "ddccc1214b7a5d5942c6755ffa4da2c144d0f6ad"
+  },
+  "safety": {
+    "downloads_permitted": false,
+    "npm_invoked": false,
+    "npx_invoked": false,
+    "pyright_wrapper_invoked": false
+  },
+  "schema_version": "1.0",
+  "tools": {
+    "mypy": {
+      "bytes": 231,
+      "debian_package": "mypy\t1.19.1-5build1\tall",
+      "distribution_archive_note": "No Debian package archive was present in the evidence scope; executable hash and installed package identity are recorded.",
+      "distribution_archive_sha256": null,
+      "path": "/usr/bin/mypy",
+      "sha256": "ec11024a87de0027e5efdf2a3b0c34836fd764f92146558ed0f2948c594c4fbb",
+      "version_output": "mypy 1.19.1 (compiled: yes)"
+    },
+    "mypy_2.3.1": {
+      "offline_probe_exit_code": 1,
+      "reason": "Exact distribution absent from uv cache; no download authorized.",
+      "status": "NOT_TESTED"
+    },
+    "node": {
+      "bytes": 121613584,
+      "path": "$HOME/.local/opt/node/bin/node",
+      "resolved_path": "$HOME/.local/opt/node/bin/node",
+      "sha256": "ccacb2d6d87ba6d118b2bffc1ae33747a05cc5fc6b1f1ec4fc1d420b687e952d",
+      "version_output": "v22.18.0"
+    },
+    "pyright_1.1.414": {
+      "basedpyright_executable": null,
+      "bounded_cache_search": {
+        "max_name_search_depth": 7,
+        "max_npm_index_file_bytes": 1000000,
+        "name_matches": [],
+        "name_search_roots": [
+          "$HOME/.cache/uv",
+          "$HOME/.local/opt/node",
+          "/usr/local/lib",
+          "/usr/lib"
+        ],
+        "npm_index_content_matches": [],
+        "npm_index_root": "$HOME/.npm/_cacache/index-v5"
+      },
+      "executable": null,
+      "reason": "No verified executable or cache artifact; npm, npx and wrapper bootstrap were not invoked.",
+      "status": "NOT_TESTED"
+    },
+    "python": {
+      "3.11.15": {
+        "bytes": 21730776,
+        "path": "$HOME/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11",
+        "resolved_path": "$HOME/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11",
+        "sha256": "c0b74b270ea823c760917e64fbde1945e67ba739d97fa716a48a5b69e6505d62",
+        "version_output": "Python 3.11.15"
+      },
+      "3.12.13": {
+        "bytes": 30936528,
+        "path": "$HOME/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/bin/python3.12",
+        "resolved_path": "$HOME/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/bin/python3.12",
+        "sha256": "1e4461092175d186c4bcdb19ee2849a45d6e4d8d1f6a871e45f63418d52a4e35",
+        "version_output": "Python 3.12.13"
+      },
+      "3.13.14": {
+        "bytes": 31362304,
+        "path": "$HOME/.local/share/uv/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13",
+        "resolved_path": "$HOME/.local/share/uv/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13",
+        "sha256": "4ceefc12dbe6f01efa99bf5cf594df33cc8dc45a0ff23c3229e2e955059a374e",
+        "version_output": "Python 3.13.14"
+      },
+      "3.14.4": {
+        "bytes": 7477160,
+        "path": "/usr/bin/python3.14",
+        "resolved_path": "/usr/bin/python3.14",
+        "sha256": "52e0a13e60a981d8c4b6478be2ba5176f69da07948a056bf49cf6f077e30cb41",
+        "version_output": "Python 3.14.4"
+      }
+    },
+    "uv": {
+      "bytes": 56107008,
+      "path": "$HOME/.local/bin/uv",
+      "resolved_path": "$HOME/.local/bin/uv",
+      "sha256": "92face6b1f0462ad911857957bd168cd4ae45515e2a2cb3fcc3ecbda3d4d82b1",
+      "version_output": "uv 0.12.1 (x86_64-unknown-linux-gnu)"
+    }
+  }
+}

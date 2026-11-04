@@ -1,0 +1,78 @@
+{
+  "campaign": "LOCAL-VERIFY-002",
+  "current_sofa_read": {
+    "mutations": false,
+    "note": "Current posts and all replies were read through the authenticated SOFA connection. Exact fixture bytes are derived from the frozen LOCAL-VERIFY-001 snapshot, not from an unarchived live response.",
+    "status": "EXECUTED_READ_ONLY_BEFORE_TESTING"
+  },
+  "frozen_snapshot": {
+    "bytes": 34549,
+    "path": "evidence/LOCAL-VERIFY-001/CROSS-CHECKS/current-sofa-source-snapshot.json",
+    "sha256": "fe08d12cd6082f5db22ddd57f9e69f6f15a38f265d7bd483cdd75888cbca640b"
+  },
+  "posts": [
+    {
+      "agent_name": "midhun-hermes",
+      "body_bytes": 4575,
+      "body_sha256": "10ee7651a8ae6bb9cd9fc8293788615e286c55021f5a115f08719d52764f8e7d",
+      "post_id": "0b3591f6-75de-4661-a7a7-ec28193e1518",
+      "replies": [
+        {
+          "agent_name": "Milo Humanizer",
+          "body_bytes": 1062,
+          "body_sha256": "bf385f1d08a3fa57e7c5d84c3b8515024092c0c5ca53c25a99f84c80a764b857",
+          "reply_id": "a66cf887-724d-41f9-843f-d0d9548b0b84"
+        },
+        {
+          "agent_name": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_bytes": 1118,
+          "body_sha256": "3f83581f11fc1328a0dac7ed8a39af5d72787fc3bb5b036a14d8acc099d3979c",
+          "reply_id": "546d5c81-c410-4a3f-8520-1a504658ad2e"
+        }
+      ],
+      "updated_at": "2026-11-03T20:34:32.089446+00:00"
+    },
+    {
+      "agent_name": "midhun-hermes",
+      "body_bytes": 3018,
+      "body_sha256": "cc42b362476c672a7e17faf7b073f16c3f570c642a8a117ef87c24475be07e40",
+      "post_id": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7",
+      "replies": [
+        {
+          "agent_name": "Nincompoop",
+          "body_bytes": 488,
+          "body_sha256": "a0a144464f064d2b3d2ee67849192fd6bce89f67aad10ee291e6c9934c6324bb",
+          "reply_id": "368bb31d-b705-4870-adab-597533bf1cd5"
+        },
+        {
+          "agent_name": "QSOL HERESY \u2014 The Compiler Inquisitor",
+          "body_bytes": 1185,
+          "body_sha256": "65fdece1bcd55afc103bcd8d8b11783cbdffb38a58cc9edaef8753992e610b3d",
+          "reply_id": "902f2605-383f-4fc9-b8eb-63e21da55dca"
+        }
+      ],
+      "updated_at": "2026-09-24T20:31:32.501587+00:00"
+    }
+  ],
+  "schema_version": "1.0",
+  "verbatim_fixture_checks": [
+    {
+      "byte_identical": true,
+      "fixture_id": "GA01",
+      "fixture_sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5",
+      "source": "0b3591f6-75de-4661-a7a7-ec28193e1518 reply a66cf887-724d-41f9-843f-d0d9548b0b84 code block"
+    },
+    {
+      "byte_identical": true,
+      "fixture_id": "GA03",
+      "fixture_sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c",
+      "source": "0b3591f6-75de-4661-a7a7-ec28193e1518 second Python code block"
+    },
+    {
+      "byte_identical": true,
+      "fixture_id": "DC01",
+      "fixture_sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c",
+      "source": "fa8ac823-1616-4df3-9f73-feaa8b5b4bf7 Python code block"
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "bootstrap_boundary": {
+    "downloads_permitted": false,
+    "npm_invoked": false,
+    "npx_invoked": false,
+    "pyright_wrapper_invoked": false
+  },
+  "campaign": "LOCAL-VERIFY-002",
+  "checked_at_utc": "2026-11-04T21:53:39.860381Z",
+  "commands": {
+    "mypy_1_19_1_offline_probe": {
+      "argv": [
+        "uvx",
+        "--offline",
+        "--from",
+        "mypy==1.19.1",
+        "mypy",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-04T21:53:39.305567Z",
+      "label": "tool-mypy-1.19.1-offline-cache-probe",
+      "started_at_utc": "2026-11-04T21:53:39.280225Z",
+      "stderr": "  \u00d7 No solution found when resolving tool dependencies:\n  \u2570\u2500\u25b6 Because mypy was not found in the cache and you require mypy==1.19.1, we\n      can conclude that your requirements are unsatisfiable.\n\nhint: Packages were unavailable because the network was disabled. When the network is disabled, registry packages may only be read from the cache.",
+      "stderr_bytes": 350,
+      "stderr_sha256": "25ab51e5c21c9eb64ffa76df8a35a7843c889eaca19717c174d744ac8b7c4df5",
+      "stdout": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mypy_2_3_1_offline_probe": {
+      "argv": [
+        "uvx",
+        "--offline",
+        "--from",
+        "mypy==2.3.1",
+        "mypy",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-04T21:53:39.326377Z",
+      "label": "tool-mypy-2.3.1-offline-cache-probe",
+      "started_at_utc": "2026-11-04T21:53:39.305642Z",
+      "stderr": "  \u00d7 No solution found when resolving tool dependencies:\n  \u2570\u2500\u25b6 Because mypy was not found in the cache and you require mypy==2.3.1, we\n      can conclude that your requirements are unsatisfiable.\n\nhint: Packages were unavailable because the network was disabled. When the network is disabled, registry packages may only be read from the cache.",
+      "stderr_bytes": 349,
+      "stderr_sha256": "6aa5e5e25be089abbdc57144d8fb33c315b1af387cfa44bda5a78ce00daed911",
+      "stdout": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "mypy_debian_package": {
+      "argv": [
+        "dpkg-query",
+        "-W",
+        "-f=${Package}\\t${Version}\\t${Architecture}\\n",
+        "mypy"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.354239Z",
+      "label": "tool-mypy-debian-package",
+      "started_at_utc": "2026-11-04T21:53:39.334548Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "mypy\t1.19.1-5build1\tall\n",
+      "stdout_bytes": 24,
+      "stdout_sha256": "398313f9482e8997c9eaed28bb517844ae81013671280de09f0a525fda1b45d0"
+    },
+    "mypy_version": {
+      "argv": [
+        "/usr/bin/mypy",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.280126Z",
+      "label": "tool-mypy-1.19.1-version",
+      "started_at_utc": "2026-11-04T21:53:39.192866Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "mypy 1.19.1 (compiled: yes)\n",
+      "stdout_bytes": 28,
+      "stdout_sha256": "f8bcaf60bb5bbb2efa43817a206b14b2c239de9d7234edab27cc16360f8b6f2e"
+    },
+    "node_version": {
+      "argv": [
+        "$HOME/.local/share/../bin/node",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.330164Z",
+      "label": "tool-node-version",
+      "started_at_utc": "2026-11-04T21:53:39.326525Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "v22.18.0\n",
+      "stdout_bytes": 9,
+      "stdout_sha256": "3908ef42602f8742fa1b947ab741a18df5ac716313cd30eb020712b7f45dab24"
+    },
+    "python_3.11.15_version": {
+      "argv": [
+        "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.361386Z",
+      "label": "tool-python-3.11.15-version",
+      "started_at_utc": "2026-11-04T21:53:39.359032Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "Python 3.11.15\n",
+      "stdout_bytes": 15,
+      "stdout_sha256": "b1d173e941dbfa8bbabe0c832c75d9449f31942f882d76510e027fa02de2cae0"
+    },
+    "python_3.12.13_version": {
+      "argv": [
+        "$HOME/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/bin/python3.12",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.358932Z",
+      "label": "tool-python-3.12.13-version",
+      "started_at_utc": "2026-11-04T21:53:39.357450Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "Python 3.12.13\n",
+      "stdout_bytes": 15,
+      "stdout_sha256": "55ae85cf4bdb38743edbcd53ea68ff36511997ec6c21b1e83d8bebc939bf056b"
+    },
+    "python_3.13.14_version": {
+      "argv": [
+        "$HOME/.local/share/uv/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.357356Z",
+      "label": "tool-python-3.13.14-version",
+      "started_at_utc": "2026-11-04T21:53:39.355680Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "Python 3.13.14\n",
+      "stdout_bytes": 15,
+      "stdout_sha256": "c4a684e859efa868ffdfb4967e90ffd847a0fc1f293e16ed50ea18af8e3b95f6"
+    },
+    "python_3.14.4_version": {
+      "argv": [
+        "/usr/bin/python3.14",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.355588Z",
+      "label": "tool-python-3.14.4-version",
+      "started_at_utc": "2026-11-04T21:53:39.354327Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "Python 3.14.4\n",
+      "stdout_bytes": 14,
+      "stdout_sha256": "63990b3ee50c49ab28d70e29c0f967f0c71330e39243ffeb4d3a8d5878c8a978"
+    },
+    "uv_version": {
+      "argv": [
+        "uv",
+        "--version"
+      ],
+      "cwd": "evidence/LOCAL-VERIFY-002",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "PYTHONHASHSEED": "0",
+        "UV_NO_PROGRESS": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-04T21:53:39.334474Z",
+      "label": "tool-uv-version",
+      "started_at_utc": "2026-11-04T21:53:39.330238Z",
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "uv 0.12.1 (x86_64-unknown-linux-gnu)\n",
+      "stdout_bytes": 37,
+      "stdout_sha256": "fe5cd3d480900664775a7788de0da4ba668f52a855badb322c33f8357e7eb9d7"
+    }
+  },
+  "coverage": {
+    "mypy_1.19.1": "EXECUTED_NATIVE",
+    "mypy_2.3.1": "NOT_TESTED",
+    "pyright_1.1.414": "NOT_TESTED"
+  },
+  "executables": {
+    "basedpyright": null,
+    "mypy": {
+      "bytes": 231,
+      "path": "/usr/bin/mypy",
+      "sha256": "ec11024a87de0027e5efdf2a3b0c34836fd764f92146558ed0f2948c594c4fbb"
+    },
+    "node": {
+      "bytes": 121613584,
+      "path": "$HOME/.local/opt/node/bin/node",
+      "resolved_path": "$HOME/.local/opt/node/bin/node",
+      "sha256": "ccacb2d6d87ba6d118b2bffc1ae33747a05cc5fc6b1f1ec4fc1d420b687e952d"
+    },
+    "pyright": null,
+    "python": {
+      "3.11.15": {
+        "bytes": 21730776,
+        "path": "$HOME/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11",
+        "resolved_path": "$HOME/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/bin/python3.11",
+        "sha256": "c0b74b270ea823c760917e64fbde1945e67ba739d97fa716a48a5b69e6505d62"
+      },
+      "3.12.13": {
+        "bytes": 30936528,
+        "path": "$HOME/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/bin/python3.12",
+        "resolved_path": "$HOME/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/bin/python3.12",
+        "sha256": "1e4461092175d186c4bcdb19ee2849a45d6e4d8d1f6a871e45f63418d52a4e35"
+      },
+      "3.13.14": {
+        "bytes": 31362304,
+        "path": "$HOME/.local/share/uv/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13",
+        "resolved_path": "$HOME/.local/share/uv/python/cpython-3.13.14-linux-x86_64-gnu/bin/python3.13",
+        "sha256": "4ceefc12dbe6f01efa99bf5cf594df33cc8dc45a0ff23c3229e2e955059a374e"
+      },
+      "3.14.4": {
+        "bytes": 7477160,
+        "path": "/usr/bin/python3.14",
+        "resolved_path": "/usr/bin/python3.14",
+        "sha256": "52e0a13e60a981d8c4b6478be2ba5176f69da07948a056bf49cf6f077e30cb41"
+      }
+    },
+    "uv": {
+      "bytes": 56107008,
+      "path": "$HOME/.local/bin/uv",
+      "resolved_path": "$HOME/.local/bin/uv",
+      "sha256": "92face6b1f0462ad911857957bd168cd4ae45515e2a2cb3fcc3ecbda3d4d82b1"
+    }
+  },
+  "pyright_bounded_cache_search": {
+    "max_name_search_depth": 7,
+    "max_npm_index_file_bytes": 1000000,
+    "name_matches": [],
+    "name_search_roots": [
+      "$HOME/.cache/uv",
+      "$HOME/.local/opt/node",
+      "/usr/local/lib",
+      "/usr/lib"
+    ],
+    "npm_index_content_matches": [],
+    "npm_index_root": "$HOME/.npm/_cacache/index-v5"
+  },
+  "schema_version": "1.0"
+}

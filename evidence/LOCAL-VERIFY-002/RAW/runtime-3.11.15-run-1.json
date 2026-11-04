@@ -1,0 +1,394 @@
+[
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/GA01-original-genericalias-reply.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 1,
+    "expected_behavior": "CPython raises before class declaration; static checker rejects the subscript form.",
+    "expected_exit_code": 1,
+    "finished_at_utc": "2026-11-04T21:54:21.058172Z",
+    "fixture_id": "GA01",
+    "fixture_sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5",
+    "label": "runtime-3.11.15-GA01-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.041504Z",
+    "stderr": "Traceback (most recent call last):\n  File \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py\", line 4, in <module>\n    T = GenericAlias[tuple[int, ...]]\n        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\nTypeError: type 'types.GenericAlias' is not subscriptable\n",
+    "stderr_bytes": 283,
+    "stderr_sha256": "1f95d416673acbdbccaeb4cc883c7a25ffd9750ba9c07daf0948a3f2fa490ac9",
+    "stdout": "",
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/GA02-types-genericalias-constructor.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Runtime constructor succeeds without enforcing element values; checker support is measured separately.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.076143Z",
+    "fixture_id": "GA02",
+    "fixture_sha256": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60",
+    "label": "runtime-3.11.15-GA02-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.058245Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"args\": [\"<class 'int'>\", \"Ellipsis\"], \"origin\": \"<class 'tuple'>\", \"repr\": \"tuple[int, ...]\", \"runtime_type\": \"types.GenericAlias\", \"unchecked_value\": [1, \"unchecked\"]}\n",
+    "stdout_bytes": 171,
+    "stdout_sha256": "47f2f336d2f63a23ae55955982509337de26933ab3b24b5dd217bdefeddebb5d"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/GA03-custom-class-getitem-source.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Definitions alone are accepted; use-site behavior requires a separate fixture.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.092978Z",
+    "fixture_id": "GA03",
+    "fixture_sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c",
+    "label": "runtime-3.11.15-GA03-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.076219Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "",
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/GA04-custom-class-getitem-use.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Runtime hook intercepts the subscript; static generic checks reject literal ellipsis and excess arguments.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.111525Z",
+    "fixture_id": "GA04",
+    "fixture_sha256": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff",
+    "label": "runtime-3.11.15-GA04-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.093100Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"alias_args\": [\"<class 'int'>\", \"Ellipsis\"], \"bad_error\": \"element type mismatch\", \"values\": [1, 2, 3]}\n",
+    "stdout_bytes": 105,
+    "stdout_sha256": "3d3f325f688ef4829431f2403cb290bc061615f4f1e8f27d3cefcc04bbd1d60f"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/GA05-typevartuple-ellipsis.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "CPython accepts ellipsis as runtime metadata; mypy 1.19.1 rejects it.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.128925Z",
+    "fixture_id": "GA05",
+    "fixture_sha256": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb",
+    "label": "runtime-3.11.15-GA05-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.111621Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"ellipsis_args\": [\"<class 'int'>\", \"Ellipsis\"], \"ellipsis_only_args\": [\"Ellipsis\"], \"ordinary_args\": [\"<class 'int'>\", \"<class 'str'>\"]}\n",
+    "stdout_bytes": 138,
+    "stdout_sha256": "90a083b4f73287716b9e374644d34597b345c4dec6e9049a74418b01ccf24727"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/GA06-ordinary-generic-excess.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 1,
+    "expected_behavior": "Both CPython and mypy reject two arguments for one TypeVar.",
+    "expected_exit_code": 1,
+    "finished_at_utc": "2026-11-04T21:54:21.146581Z",
+    "fixture_id": "GA06",
+    "fixture_sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458",
+    "label": "runtime-3.11.15-GA06-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.129010Z",
+    "stderr": "Traceback (most recent call last):\n  File \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py\", line 13, in <module>\n    invalid_alias = Single[int, str]\n                    ~~~~~~^^^^^^^^^^\n  File \"$HOME/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/typing.py\", line 379, in inner\n    return func(*args, **kwds)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"$HOME/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/typing.py\", line 1864, in __class_getitem__\n    _check_generic(cls, params, len(cls.__parameters__))\n  File \"$HOME/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/typing.py\", line 293, in _check_generic\n    raise TypeError(f\"Too {'many' if alen > elen else 'few'} arguments for {cls};\"\nTypeError: Too many arguments for <class '__main__.Single'>; actual 2, expected 1\n",
+    "stderr_bytes": 874,
+    "stderr_sha256": "ac9b0f96c873e7b50647494b5ab1eb14d08411faa7bcae1cdbbad83e4220c234",
+    "stdout": "",
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/DC01-original-posted-dataclass.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Runtime prints C/C2; bare generic construction may require an annotation.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.168403Z",
+    "fixture_id": "DC01",
+    "fixture_sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c",
+    "label": "runtime-3.11.15-DC01-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.146691Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "<class '__main__.C'> <class '__main__.C2'>\n",
+    "stdout_bytes": 43,
+    "stdout_sha256": "896f782f4050e1674ef462ad87751ad8897a4e160436ee5379be190386e267b5"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/DC02-unsuppressed-default.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Checker reports assignment mismatch; runtime constructs C for MyClass[C2].",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.191663Z",
+    "fixture_id": "DC02",
+    "fixture_sha256": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611",
+    "label": "runtime-3.11.15-DC02-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.168511Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"declared\": \"MyClass[C2]\", \"runtime_var_type\": \"C\", \"satisfies_C2\": false}\n",
+    "stdout_bytes": 76,
+    "stdout_sha256": "78921dd1392f8b01b13c1ad094df661481037abab706fba7d4b650ab0ed4cd79"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/DC03-targeted-ignore.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Checker reveals C2 after suppression while runtime still constructs C.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.214983Z",
+    "fixture_id": "DC03",
+    "fixture_sha256": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645",
+    "label": "runtime-3.11.15-DC03-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.191758Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"declared\": \"MyClass[C2]\", \"runtime_var_type\": \"C\", \"satisfies_C2\": false}\n",
+    "stdout_bytes": 76,
+    "stdout_sha256": "78921dd1392f8b01b13c1ad094df661481037abab706fba7d4b650ab0ed4cd79"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/DC04-required-field.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Checker and runtime agree on C2.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.237920Z",
+    "fixture_id": "DC04",
+    "fixture_sha256": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9",
+    "label": "runtime-3.11.15-DC04-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.215092Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"runtime_var_type\": \"C2\"}\n",
+    "stdout_bytes": 27,
+    "stdout_sha256": "f2767fe5ceb439deca9a67692921f36b02540bd410979a1170a49037197d72b7"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/DC05-caller-factory.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Checker and runtime agree on C2.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.260463Z",
+    "fixture_id": "DC05",
+    "fixture_sha256": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f",
+    "label": "runtime-3.11.15-DC05-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.238001Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"runtime_var_type\": \"C2\"}\n",
+    "stdout_bytes": 27,
+    "stdout_sha256": "f2767fe5ceb439deca9a67692921f36b02540bd410979a1170a49037197d72b7"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/DC06-concrete-subclass-factory.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Concrete annotation and factory both produce C2.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.283870Z",
+    "fixture_id": "DC06",
+    "fixture_sha256": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc",
+    "label": "runtime-3.11.15-DC06-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.260543Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"runtime_var_type\": \"C2\"}\n",
+    "stdout_bytes": 27,
+    "stdout_sha256": "f2767fe5ceb439deca9a67692921f36b02540bd410979a1170a49037197d72b7"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/DC07-bare-versus-annotated.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Bare construction is rejected; explicit annotations reveal C and C2, but runtime factory always returns C.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.306678Z",
+    "fixture_id": "DC07",
+    "fixture_sha256": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171",
+    "label": "runtime-3.11.15-DC07-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.283952Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"annotated_C\": \"C\", \"annotated_C2\": \"C\", \"bare\": \"C\"}\n",
+    "stdout_bytes": 55,
+    "stdout_sha256": "9f519b6a9183c3a5a25764bc54a7d05bb7f83181236d8bef92f4d7dfd8e87d55"
+  },
+  {
+    "argv": [
+      "$HOME/.local/share/uv/python/cpython-3.11-linux-x86_64-gnu/bin/python3.11",
+      "FIXTURES/NC01-incorrect-type-assertion.py"
+    ],
+    "cwd": "evidence/LOCAL-VERIFY-002",
+    "environment_overrides": {
+      "LC_ALL": "C.UTF-8",
+      "PYTHONHASHSEED": "0",
+      "UV_NO_PROGRESS": "1"
+    },
+    "exit_code": 0,
+    "expected_behavior": "Checker rejects an intentionally wrong exact-type assertion.",
+    "expected_exit_code": 0,
+    "finished_at_utc": "2026-11-04T21:54:21.328494Z",
+    "fixture_id": "NC01",
+    "fixture_sha256": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8",
+    "label": "runtime-3.11.15-NC01-fresh-1",
+    "python_version": "3.11.15",
+    "repeat": 1,
+    "started_at_utc": "2026-11-04T21:54:21.306765Z",
+    "stderr": "",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "C2\n",
+    "stdout_bytes": 3,
+    "stdout_sha256": "5c68dbdd46ed3901b27624425de0dcb8fcf0db0695d160d3e20f4ed056781e96"
+  }
+]
