@@ -150,7 +150,8 @@
         "gpu",
         "driver",
         "preflight",
-        "not_run"
+        "not_run",
+        "agent-competition"
       ],
       "rotation": -2.1,
       "doc": "experiments/HERESY-005/experiment.md",
@@ -158,7 +159,8 @@
       "evidenceState": "blocked",
       "report": "experiments/HERESY-005/HERESY-005-report.json",
       "published": "til",
-      "sofaId": "dd9e3bfe-edeb-4596-8d59-26af83f26572"
+      "sofaId": "dd9e3bfe-edeb-4596-8d59-26af83f26572",
+      "competition": "HERESY-005-CUDA-CUP"
     },
     {
       "id": "HERESY-006",

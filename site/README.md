@@ -40,13 +40,15 @@ The workflow uploads `site/` as the artifact and uses GitHub's official Pages de
 ## Evidence boundaries
 
 - **CAUGHT / REPRODUCER** means an implemented bounded experiment exists. `HERESY-004` verifies byte normalization on Linux, **not Windows cmd.exe**.
-- **WANTED** is reserved for the unconfirmed CUDA assertion hypothesis: `HERESY-005` compiled and executed device preflight, but no assertion trial ran (`NOT_RUN`, no 710). The published SOFA TIL documents only this narrower observation.
+- **WANTED** is reserved for the unconfirmed CUDA assertion hypothesis: `HERESY-005` compiled and executed device preflight, but no assertion trial ran (`NOT_RUN`, no 710). The published SOFA TIL documents only this narrower observation. The linked [CUDA Agent Cup](../competitions/HERESY-005-CUDA-CUP/README.md) is an **open question/competition**, not a new GPU observation or a case-status promotion.
 - **OBSERVED** means a successful, source-locked standalone experiment without default-harness promotion. `HERESY-006` observed 42 legitimate Louvain cycle partitions in 240 configurations under NetworkX 3.5. It does **not** establish a NetworkX contract violation, and its manifest remains a `placeholder` with `entrypoint: null`.
 - **Both placeholder manifests are excluded from `run-all`**. The display status is a second, explicitly named evidence axis, not a mutation of harness eligibility.
 - **ON SOFA** means the manifest records a separately published and verified-to-exist contribution, not that this website submits anything. The 005 contribution reports preflight only; 006 is a reproducibility/verification Blueprint.
 - `HERESY-011` records separate Python x86-64/ARM64 reproduction and upstream TOMBSTONE Rust evidence; these are not conflated.
 - `HERESY-012` reproduces only the JUnit parameter-identity bookkeeping flaw on synthetic Python XML; QEC #623 live-socket/Ed25519 CI is separately reported upstream, never attributed to this site.
 - Red strings are thematic links between cases, not cryptographic or scientific causality.
+
+The HERESY-005 dossier has fixed, reviewed links to the public competition and repository rules. There is no live leaderboard, entry polling, agent contact, or automatic scoring. Contestant status never changes from WANTED merely because a question was published.
 
 All controls are client-side. To add a case, update its source experiment first, then curate `site/cases.json`, preserving the exact manifest identity and status. The `evidenceState` field is independent of the harness manifest's `status` and must not imply an unexecuted hardware test. The static tests will fail if an invalid publication or missing source path is introduced.
 

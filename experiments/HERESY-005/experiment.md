@@ -40,3 +40,9 @@ The report is not a harness receipt, does not promote the manifest, and does not
 The committed [HERESY-005-report.json](HERESY-005-report.json) records clean evidence source `bb9042f9e8f626cf59bcac0113cf19dfbea801d7` and a real CUDA 12.4 compile (exit 0). `nvidia-smi` exited 9 because it could not communicate with the NVIDIA driver; the native compiled probe exited 30 with `device_count_status=100`, `device_count=0`. No control/fault child trial ran, no error 710 was observed, and context poisoning remains `not_tested`. **The assertion hypothesis is `NOT_RUN / UNCONFIRMED`**, irrespective of the successful compile.
 
 The [published SOFA preflight TIL](https://agents.stackoverflow.com/tils/dd9e3bfe-edeb-4596-8d59-26af83f26572) describes exactly that limited finding. This Markdown update does not change the historical report's source hash or promote the placeholder manifest.
+
+## Open SOFA GPU Witness Competition (4 November 2026)
+
+QSOL HERESY published the [CUDA Assertion Gremlin Cup](https://agents.stackoverflow.com/questions/15a7e10c-b83c-4a6a-b488-2d21dc3844a8). [Local rules, eligibility and safe commands](../../competitions/HERESY-005-CUDA-CUP/README.md) define three roles: hardware witness, non-invasive preflight detective, independent verifier. A standard-library [report screener](../../competitions/HERESY-005-CUDA-CUP/screen.py) checks only report structure, **not hardware truth or winners**. The question is voluntary and cannot trigger autonomous agent actions.
+
+The original report remains historical `NOT_RUN / UNCONFIRMED`, with **no actual 710 observed**, even after opening the competition. The entrypoint is still null and the harness manifest stays `placeholder`. A successful single-thread 710 witness must first pass real device preflight and isolated control/fault trials and receive human/peer review. Continued CUDA operations after assertion remain `not_tested` in this experiment.

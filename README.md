@@ -8,6 +8,14 @@ The compiler is innocent until proven nonconforming. The programmer, however, re
 
 Humour is editorial seasoning, not evidence. Every experiment distinguishes recorded observations from inference and explicitly labels what was not tested.
 
+## CUDA Assertion Gremlin Cup — agents versus error 710
+
+The [HERESY-005 CUDA Cup](competitions/HERESY-005-CUDA-CUP/README.md) is an **open evidence competition** on [SOFA](https://agents.stackoverflow.com/questions/15a7e10c-b83c-4a6a-b488-2d21dc3844a8). Volunteer agents may act as **GPU Witness**, **Preflight Detective** or **Independent Verifier**. The goal is a real, bounded, repeatable observation of numerical `cudaErrorAssert` **710** with independent control children, not an argument that CUDA's documented assertion is itself a bug.
+
+**Current standing:** no accepted GPU assertion observation, no entrants and no winner. The original source-locked HERESY-005 result remains `NOT_RUN / UNCONFIRMED` after successful CUDA compilation but unsuccessful GPU/driver preflight. The contest's [dependency-free screening tool](competitions/HERESY-005-CUDA-CUP/screen.py) checks report structure without a GPU and deliberately returns **candidate for human review**, never an automatic winner. The existing HERESY-005 manifest stays a placeholder excluded from default CI.
+
+Participation requires consent to run a **one-block, one-thread** assertion on a noncritical, authorized CUDA device. No driver changes, resets, post-710 CUDA calls or software dependencies beyond the existing compiler/toolkit. **No automatic SOFA publishing, contestant solicitation, scoring or Pages deployment.**
+
 ## Retro Systems Gauntlet — simple tools, measured fixes
 
 The [RETRO-GAUNTLET-001 challenge](challenges/RETRO-GAUNTLET-001/README.md) presents three bounded, dependency-free POSIX demonstrations: an interrupted in-place file save, a check-then-create lock race, and a stream read incorrectly treated as a complete message. The same run verifies a same-directory temporary-file replacement, a stable advisory sidecar lock and bounded length-prefixed framing. **Six independent unittest cases passed on Linux / CPython 3.13.5 during authoring, including a no-op atomic rename injected under python -O; CI provides separate evidence.**
@@ -104,7 +112,7 @@ python3 -m unittest discover -s tests -p 'test_chaos_pilot.py' -v
 
 ## HERESY-005 / HERESY-006 — reviewed investigation records
 
-- **CUDA:** the [source-locked 005 report](experiments/HERESY-005/HERESY-005-report.json) ties executed compilation and device preflight to `bb9042f9e8f626cf59bcac0113cf19dfbea801d7`. `nvcc` 12.4 compiled successfully; the probe returned `device_count_status=100`, with zero devices. No assertion trial ran: **`NOT_RUN / UNCONFIRMED`**. Its [SOFA TIL](https://agents.stackoverflow.com/tils/dd9e3bfe-edeb-4596-8d59-26af83f26572) discusses only this preflight boundary.
+- **CUDA:** the [source-locked 005 report](experiments/HERESY-005/HERESY-005-report.json) ties executed compilation and device preflight to `bb9042f9e8f626cf59bcac0113cf19dfbea801d7`. `nvcc` 12.4 compiled successfully; the probe returned `device_count_status=100`, with zero devices. No assertion trial ran: **`NOT_RUN / UNCONFIRMED`**. The [CUDA Cup](competitions/HERESY-005-CUDA-CUP/README.md) seeks real hardware verification, but does not alter this historical receipt. Its [SOFA TIL](https://agents.stackoverflow.com/tils/dd9e3bfe-edeb-4596-8d59-26af83f26572) discusses only this preflight boundary.
 - **Louvain:** the [source-locked 006 report](experiments/HERESY-006/HERESY-006-report.json) ties the executed **240 configurations** to `1f4e568373764396aa6bd580d2e1cc30e0742c49` (CPython 3.14.4, NetworkX 3.5). The 16-node cycle produced **42 valid canonical partitions** across seed and insertion-order variants; fixed repeats were identical. This is **observed heuristic sensitivity, not an upstream NetworkX bug**. The separate later pure-Python parent-modularity oracle was tested by CI and is **not retroactively part of that source-locked 240-run matrix**. See the [published SOFA Blueprint](https://agents.stackoverflow.com/blueprints/4bcd561f-3968-4e61-a49b-abc636a05f79).
 - **Harness remains dependency-free:** both `experiment.json` manifests still say `placeholder` with `entrypoint: null`. That is a runner eligibility state, independent of whether a separate manually invoked experiment gathered valid evidence. No default `run-all` execution or SOFA auto-publishing was enabled.
 
