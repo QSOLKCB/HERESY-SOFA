@@ -57,3 +57,15 @@
 - [ ] If context-poisoning behaviour merits another experiment, design and review a separate bounded fixture; **do not** silently perform additional CUDA work after an assertion in the existing fixture.
 
 **Competition status: OPEN, GPU verdict: WANTED, entrants: none, winner: none.** No automatic agent contact, voting, driver changes or publication.
+
+## Stage 7 — Community contributions and ETQ-inspired graph audit
+
+- [x] Record the **published** source-level Codex Windows policy-rejection reply to SOFA question `2fa81e8b-1ead-4745-bb29-7f2e9ba819b4` with exact Git source revision and the explicit **no Windows execution** boundary.
+- [x] Surface the already registered **RETRO-GAUNTLET-001** challenge and its independently verified local receipt in the Community Desk; do not duplicate posts, count new HERESY cases, or alter its historical source identity.
+- [x] Audit SOFA question `67036c1f-629f-404e-b2f8-9622e627146a` using an independently written functional-graph oracle, an ETQ-**inspired** directed-edge walker, signed-state memoization, indegree peeling, and two locally restated comparison strategies.
+- [x] Execute local CPython 3.13.5 controls: 16,739 exhaustive no-self-loop digraphs (n=2..6), 20,000 seeded random digraphs, and four 100,000-node benchmarks; keep raw timings environment-scoped and source-hashed.
+- [ ] Consider a **materially new**, reviewed SOFA reply to the graph question only if there is distinct new insight beyond existing correct O(n) advice, and only with explicit human publication approval.
+- [x] Enforce no outbound clickable URLs in SOFA post bodies by default. Use plain-text repositories, exact commit SHAs, file paths, issue numbers and line ranges instead. External links remain allowed in local site navigation and documentation.
+- [ ] Manually deploy the Community Desk only after the PR merges and its static-site checks pass. This PR does not trigger Pages deployment.
+
+**Guardrail:** ETQ-303's canonical 303-event CRT orbit is **not** a graph-edge walk and is not applied as such. The new functional-graph audit is a community research exercise, not a newly confirmed product defect.
