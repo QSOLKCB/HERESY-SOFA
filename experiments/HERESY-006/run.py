@@ -8,6 +8,7 @@ import json
 import math
 import os
 import platform
+import re
 import subprocess
 import sys
 from collections import defaultdict
@@ -32,6 +33,9 @@ HASH_SEEDS = (0, 1, 7, 42)
 FIXED_REPEATS = 3
 WORKER_TIMEOUT_SECONDS = 30.0
 MODULARITY_TOLERANCE = 1e-12
+MAX_DIAGNOSTIC_CHARS = 1200
+MAX_DIAGNOSTIC_RESULTS = len(FIXTURES) * len(SEED_SWEEP)
+MAX_DIAGNOSTIC_LIST_ITEMS = 64
 CLAIMS = (
     "fixed_seed_identical_construction_reproducible",
     "partition_varies_across_random_seeds",
@@ -293,6 +297,8 @@ def run_worker_process(
         exit_code=completed.returncode,
         timed_out=False,
         stderr=completed.stderr,
+        # Retain malformed stdout for bounded, redacted failure diagnostics.
+        stdout=completed.stdout if output is None else "",
         output=output,
     )
 
@@ -381,6 +387,94 @@ def validate_worker(
     if actual != expected:
         return False, "worker fixture/seed coverage was incomplete"
     return True, "all configured results passed integrity checks"
+
+
+
+# Diagnostics cross a public-report boundary. Never copy arbitrary worker
+# dictionaries or unsanitized stderr into an evidence artifact.
+_PUBLIC_FIELDS = frozenset((
+    "networkx_version", "python", "hash_seed", "scenario", "results",
+    "fixture", "insertion_order", "seed", "topology_sha256", "partition",
+    "community_count", "community_sizes", "modularity",
+    "modularity_recomputed", "covers_nodes_exactly_once",
+    "modularity_consistent",
+))
+
+
+def _diagnostic_text(value: Any) -> str:
+    """Keep a bounded diagnostic, removing paths, URLs and credentials."""
+    if not isinstance(value, str):
+        return ""
+    value = re.sub(r"https?://[^\s'\"<>]+", "<url>", value)
+    value = re.sub(r"(?<!\w)(?:[A-Za-z]:[\\/]|/)[^\s'\"<>]+", "<path>", value)
+    value = re.sub(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b", "<email>", value)
+    value = re.sub(
+        r"(?i)\b(?:authorization|password|api[_-]?key|secret|token)\s*[:=]\s*[^\s,;]+",
+        "<credential>", value,
+    )
+    return value[:MAX_DIAGNOSTIC_CHARS] + (
+        "<truncated>" if len(value) > MAX_DIAGNOSTIC_CHARS else ""
+    )
+
+
+def _public_worker_value(value: Any, field: str = "", depth: int = 0) -> Any:
+    """Whitelist bounded structural evidence, never arbitrary worker text."""
+    if depth > 7:
+        return "<depth-limit>"
+    if type(value) is dict:
+        return {
+            key: _public_worker_value(value[key], key, depth + 1)
+            for key in sorted(value)
+            if key in _PUBLIC_FIELDS
+        }
+    if type(value) is list:
+        maximum = MAX_DIAGNOSTIC_RESULTS if field == "results" else MAX_DIAGNOSTIC_LIST_ITEMS
+        items = [_public_worker_value(item, "", depth + 1) for item in value[:maximum]]
+        if len(value) > maximum:
+            items.append({"omitted_items": len(value) - maximum})
+        return items
+    if type(value) is bool or value is None:
+        return value
+    if type(value) is int:
+        return value if abs(value) <= 1_000_000 else "<invalid-integer>"
+    if type(value) is float:
+        return value if math.isfinite(value) else "<nonfinite-number>"
+    if type(value) is str:
+        enums = {
+            "scenario": ("seed_sweep", "fixed_repeat", "construction_order", "process_hash_seed"),
+            "fixture": FIXTURES,
+            "insertion_order": ORDERS,
+        }
+        if field in enums:
+            return value if value in enums[field] else "<unexpected-enum>"
+        if field in ("networkx_version", "python"):
+            return value if re.fullmatch(r"[0-9A-Za-z._-]{1,48}", value) else "<invalid-version>"
+        if field == "hash_seed":
+            return value if re.fullmatch(r"[0-9]{1,10}", value) else "<invalid-hash-seed>"
+        if field == "topology_sha256":
+            return value if re.fullmatch(r"[0-9a-f]{64}", value) else "<invalid-topology-hash>"
+        return "<redacted-string>"
+    return "<unsupported-type>"
+
+
+def _failed_worker_diagnostic(record: dict[str, Any]) -> dict[str, Any]:
+    output = record.get("output")
+    results = output.get("results") if isinstance(output, dict) else None
+    return {
+        "scenario": record["scenario"],
+        "order": record["insertion_order"],
+        "hash_seed": record["hash_seed"],
+        "repeat": record["repeat"],
+        "exit_code": record["exit_code"],
+        "timed_out": record["timed_out"],
+        "validation": record["validation"],
+        "stderr_excerpt": _diagnostic_text(record.get("stderr", "")),
+        "malformed_stdout_excerpt": (
+            _diagnostic_text(record.get("stdout", "")) if output is None else ""
+        ),
+        "result_count": len(results) if isinstance(results, list) else None,
+        "observation": _public_worker_value(output),
+    }
 
 
 def _dependency_probe() -> dict[str, Any]:
@@ -630,13 +724,16 @@ def run_experiment(args: argparse.Namespace) -> int:
         record["accepted"] = accepted
         record["validation"] = reason
         validations.append(accepted)
-        report["commands"].append({
+        command_record = {
             "command": record["command"],
             "scenario": record["scenario"],
             "hash_seed": record["hash_seed"],
             "exit_code": record["exit_code"],
             "timed_out": record["timed_out"],
-        })
+        }
+        if not accepted:
+            command_record["stderr_excerpt"] = _diagnostic_text(record.get("stderr", ""))
+        report["commands"].append(command_record)
         report["child_exit_codes"].append({
             "scenario": record["scenario"],
             "insertion_order": record["insertion_order"],
@@ -661,6 +758,10 @@ def run_experiment(args: argparse.Namespace) -> int:
                 }
                 for record in records
             ],
+            "failed_worker_diagnostics": [
+                _failed_worker_diagnostic(record)
+                for record in records if not record["accepted"]
+            ],
         }
         report["claims"] = {claim: "not_tested" for claim in CLAIMS}
         _write_report(args.output, report)
@@ -670,6 +771,20 @@ def run_experiment(args: argparse.Namespace) -> int:
     actual = _summarize(records)
     report["actual"] = actual
     report["claims"] = classify_claims(actual)
+    # Failed positive controls are a failed experiment, not merely an
+    # unconfirmed hypothesis hidden beneath a PASS status.
+    if not (
+        actual["fixed_seed_reproducible"]
+        and actual["stability_control_passed"]
+        and actual["all_partitions_cover_nodes_once_and_modularity_is_consistent"]
+    ):
+        report["run_status"] = "FAIL"
+        report["conclusion"] = "UNCONFIRMED"
+        report["actual"]["control_validation"] = "fixed-repeat or stability control failed"
+        _write_report(args.output, report)
+        print(json.dumps({"experiment_id": EXPERIMENT_ID, "run_status": "FAIL", "report": args.output.name}, sort_keys=True))
+        return 1
+
     hypothesis_observed = hypothesis_confirmed(actual)
     report["run_status"] = "PASS"
     report["conclusion"] = "CONFIRMED" if hypothesis_observed else "UNCONFIRMED"
