@@ -165,6 +165,38 @@ def _topology_spec_sha256(
     return _sha256_bytes(encoded)
 
 
+def _spec_modularity(
+    nodes: list[int], edges: list[tuple[int, int, float]],
+    partition: list[list[int]],
+) -> float:
+    """Independent, stdlib-only modularity oracle for the fixed undirected fixtures.
+
+    Each fixture has positive total edge weight and no self-loops.  Evaluate
+    Q = sum_c [internal_weight_c / m - (strength_c / (2m))**2], where m
+    counts each undirected edge once.  This is independent of worker-supplied
+    modularity fields and of importing NetworkX in the parent.
+    """
+    membership = {node: index for index, group in enumerate(partition) for node in group}
+    degrees = {node: 0.0 for node in nodes}
+    internal = [0.0] * len(partition)
+    total_weight = 0.0
+    for left, right, weight in edges:
+        total_weight += weight
+        degrees[left] += weight
+        degrees[right] += weight
+        if membership[left] == membership[right]:
+            internal[membership[left]] += weight
+    if total_weight <= 0.0:
+        raise ValueError("fixture must have positive edge weight")
+    strengths = [0.0] * len(partition)
+    for node, degree in degrees.items():
+        strengths[membership[node]] += degree
+    return sum(
+        weight / total_weight - (strength / (2.0 * total_weight)) ** 2
+        for weight, strength in zip(internal, strengths)
+    )
+
+
 def _topology_sha256(graph: Any) -> str:
     return _topology_spec_sha256(
         graph.nodes(),
@@ -342,16 +374,21 @@ def validate_worker(
         if not isinstance(result, dict):
             return False, "worker result was not an object"
         fixture = result.get("fixture")
-        actual.add((fixture, result.get("seed")))
+        seed = result.get("seed")
+        if type(fixture) is not str or fixture not in FIXTURES or type(seed) is not int:
+            return False, "worker fixture or seed was malformed"
+        actual.add((fixture, seed))
         if result.get("insertion_order") != record.get("insertion_order"):
             return False, "worker insertion order did not match its command"
-        if fixture not in FIXTURES:
-            return False, "worker returned an unknown fixture"
         nodes, edges = _fixture_spec(fixture)
         partition = result.get("partition")
         if (
             not isinstance(partition, list)
-            or not all(isinstance(group, list) and group for group in partition)
+            or not all(
+                isinstance(group, list) and group
+                and all(type(node) is int for node in group)
+                for group in partition
+            )
             or canonical_partition(partition) != partition
         ):
             return False, "worker partition was not canonical and nonempty"
@@ -365,6 +402,9 @@ def validate_worker(
         expected_sizes = sorted(len(group) for group in partition)
         modularity = result.get("modularity")
         recomputed = result.get("modularity_recomputed")
+        reference_modularity = (
+            _spec_modularity(nodes, edges, partition) if coverage_is_valid else None
+        )
         modularity_is_valid = (
             isinstance(modularity, (int, float))
             and not isinstance(modularity, bool)
@@ -372,7 +412,11 @@ def validate_worker(
             and not isinstance(recomputed, bool)
             and math.isfinite(modularity)
             and math.isfinite(recomputed)
+            and reference_modularity is not None
+            and math.isfinite(reference_modularity)
             and abs(modularity - recomputed) <= MODULARITY_TOLERANCE
+            and abs(modularity - reference_modularity) <= MODULARITY_TOLERANCE
+            and abs(recomputed - reference_modularity) <= MODULARITY_TOLERANCE
         )
         if (
             not coverage_is_valid
