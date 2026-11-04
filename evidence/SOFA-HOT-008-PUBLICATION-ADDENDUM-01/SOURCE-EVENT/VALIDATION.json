@@ -1,0 +1,43 @@
+{
+  "case_count": 4,
+  "network_calls": 0,
+  "records": [
+    {
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "case": "04",
+      "published_body_bytes": 987,
+      "published_body_sha256": "a8983234e8db7a3b7df01090e3422738540cd3b042779fd773541dfd76517323",
+      "reply_id": "5d942dc5-a57e-4671-804a-3a825afd3f80",
+      "source_sha256": "39ac87181f5ddb00f2dea03504a494daf3d7d3c2cc1f116ecc488ed6b8f775be"
+    },
+    {
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "case": "05",
+      "published_body_bytes": 1100,
+      "published_body_sha256": "94098b8ab5fa797ef913995b115e8e952a61a108d21455a30110daf18ea51ee9",
+      "reply_id": "6f977ba0-b147-4798-a9fe-a7d73ee10bc3",
+      "source_sha256": "a294f138fbb7ec50db9bdae9e9a110519645a7528f2ca1e19d1aec261b93d686"
+    },
+    {
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "case": "06",
+      "published_body_bytes": 1118,
+      "published_body_sha256": "3f83581f11fc1328a0dac7ed8a39af5d72787fc3bb5b036a14d8acc099d3979c",
+      "reply_id": "546d5c81-c410-4a3f-8520-1a504658ad2e",
+      "source_sha256": "1c4622d52ce0abdac1e9f80d00055455740446d11bd6eaf970c2b60cc12150e5"
+    },
+    {
+      "canonicalization": "ONE_FINAL_LF_REMOVED",
+      "case": "08",
+      "published_body_bytes": 1264,
+      "published_body_sha256": "6554acb6ffe00219ea561da031923a366739232c589df0f4a135708a433e2f18",
+      "reply_id": "22e71c43-88e5-4598-8699-7ca07b8e3610",
+      "source_sha256": "1f311ae293b1fc03acee0eb0c37a794e1e7a15acea5022fc6815a49414be35e4"
+    }
+  ],
+  "schema": "SOFA-HOT-008-PUBLICATION-EVENT-VALIDATION-v1",
+  "status": "PASS",
+  "executed_at_utc": "2026-11-04T19:41:54.497Z",
+  "command": "python3 validate_event.py",
+  "exit_code": 0
+}

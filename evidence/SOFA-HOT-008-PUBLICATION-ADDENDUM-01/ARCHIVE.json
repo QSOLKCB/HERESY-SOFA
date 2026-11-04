@@ -1,0 +1,119 @@
+{
+  "archive_state": "four_additional_replies_published_with_authorized_final_lf_removal",
+  "canonicalization": {
+    "authorized": "remove exactly one final LF from an approved draft ending in exactly one LF",
+    "observed": "all four canonical bodies equal their approved draft minus that final LF",
+    "other_differences": 0
+  },
+  "case_id": "SOFA-HOT-008-PUBLICATION-ADDENDUM-01",
+  "evidence": {
+    "file_count": 14,
+    "manifest_scope": "Every addendum file except ARCHIVE.json and SHA256SUMS.txt, excluded to avoid self-reference.",
+    "source_event_executables": "Only validate_event.py was authored and executed by the custodian; no witness executable is present or invoked."
+  },
+  "files": [
+    {
+      "bytes": 3264,
+      "git_blob_sha": "d3eb8cf0c971d02389b4b96bbefa9c911a3644b3",
+      "path": "README.md",
+      "sha256": "55b8752d337cf1e1802c367b934305b429f0c5a22cc7f23424e12877d6c64751"
+    },
+    {
+      "bytes": 3054,
+      "git_blob_sha": "62eaff51438a1d3663c054b528b5e5b56f0a9ded",
+      "path": "SOURCE-EVENT/CASE-04-PUBLICATION-RECEIPT.json",
+      "sha256": "57390f5d54cf1ca40d19907a93ff29542373fa9db22f0ae596382bf091a3b9f2"
+    },
+    {
+      "bytes": 3276,
+      "git_blob_sha": "51d6c9f8bb88bc4dff1c2b94f40ddad1ac332207",
+      "path": "SOURCE-EVENT/CASE-05-PUBLICATION-RECEIPT.json",
+      "sha256": "50266b862fdd95bd5cc1a80c86167f8b6144ed32d692d85278bfbd5bce00bcd9"
+    },
+    {
+      "bytes": 3319,
+      "git_blob_sha": "949d9cc203ac92d648f12ada1e28b3d0f99dec77",
+      "path": "SOURCE-EVENT/CASE-06-PUBLICATION-RECEIPT.json",
+      "sha256": "1eb6c1f5f093a7a16c084ad859784dd27c76793c75c67bf30ef7d57700347885"
+    },
+    {
+      "bytes": 3537,
+      "git_blob_sha": "07310202a71a86488ab518f92e66cc6b5ed935c2",
+      "path": "SOURCE-EVENT/CASE-08-PUBLICATION-RECEIPT.json",
+      "sha256": "074800242c37be0647ac25851c463314c91b8eb85c123f80f70e435a2d19cbe5"
+    },
+    {
+      "bytes": 2613,
+      "git_blob_sha": "62defd5b54e59301317e210b3dc73584088ebe3b",
+      "path": "SOURCE-EVENT/OWNER-AUTHORIZATION.json",
+      "sha256": "9dac5848fc84d8283d082553870d07ddcac2b4f6ed5b5ebc20770037d50f7d57"
+    },
+    {
+      "bytes": 40145,
+      "git_blob_sha": "89eeb417c57fd7a217df014bd309eff8886cfa73",
+      "path": "SOURCE-EVENT/PREPUBLICATION-SOFA-SNAPSHOT.json",
+      "sha256": "e5a733482639a9e68f50abf75de73433ced1d747ecab40846ff5700c158152e4"
+    },
+    {
+      "bytes": 2618,
+      "git_blob_sha": "2af9521c3db7960a4f0d7d118554fbaf7b30390c",
+      "path": "SOURCE-EVENT/PUBLICATION-EVENT.json",
+      "sha256": "0aa576742e8bdb1510a6659cabe8ec1fc828fdd9f69271648472ee1906e6bdda"
+    },
+    {
+      "bytes": 934,
+      "git_blob_sha": "521864409e1eaadd787a4d6723d1e6ef274167a6",
+      "path": "SOURCE-EVENT/SHA256SUMS.txt",
+      "sha256": "6675fad28e04c9416bf636662bbfd170c9d4492d69336584d26742579ce612e6"
+    },
+    {
+      "bytes": 640,
+      "git_blob_sha": "eb6272ba17d877b18d2831cfacb3767987a8dc27",
+      "path": "SOURCE-EVENT/SOFA-SESSION-SUMMARY.json",
+      "sha256": "65bded1f5f4d5b21ce42a138d7847560196226cb411ab67beaca3446f8285d60"
+    },
+    {
+      "bytes": 1715,
+      "git_blob_sha": "825a7db1f5ce125b14037c5231875d687fd524ce",
+      "path": "SOURCE-EVENT/VALIDATION.json",
+      "sha256": "988db0b4d42a10a553446b5ec12661c33a6d114d7ae33fcb995d8c8e7c9c4df2"
+    },
+    {
+      "bytes": 3724,
+      "git_blob_sha": "3422d0c3235414d70a140663891d53f26628a17e",
+      "path": "SOURCE-EVENT/validate_event.py",
+      "sha256": "67974ce3eacfc431f4a0b6573f9549f14a8edaf123d408105e78196be55a3006"
+    },
+    {
+      "bytes": 3191,
+      "git_blob_sha": "036d3f4e233b48604347e70047ff2da14ead634c",
+      "path": "build_archive.py",
+      "sha256": "0ad233bbd66a4e14526259577c761a3268268271e338dc01685c6a42f404a327"
+    },
+    {
+      "bytes": 3708,
+      "git_blob_sha": "64b8250f811db9479bcb7d4675dd6de511e293a6",
+      "path": "validate_addendum.py",
+      "sha256": "e66420b0d7638c4aed59ba792eee08f0b66f11cc552148818ecff6be2e4d3b05"
+    }
+  ],
+  "mutation_boundary": {
+    "automatic_retries": 0,
+    "edit_calls": 0,
+    "merge_performed": false,
+    "pages_deployed": false,
+    "reply_calls": 4,
+    "verification_calls": 0,
+    "vote_calls": 0
+  },
+  "predecessor_archive_sha256": "7386b1dd858330637b92c6bbdcef3bc3330dd4c100d2956ec942ba222f4174c7",
+  "predecessor_head": "bb1eabd27a6606b6c229c32190942bcd9672a261",
+  "predecessor_pr": 16,
+  "published_reply_ids": [
+    "5d942dc5-a57e-4671-804a-3a825afd3f80",
+    "6f977ba0-b147-4798-a9fe-a7d73ee10bc3",
+    "546d5c81-c410-4a3f-8520-1a504658ad2e",
+    "22e71c43-88e5-4598-8699-7ca07b8e3610"
+  ],
+  "schema_version": 1
+}
