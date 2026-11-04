@@ -1,6 +1,6 @@
 {
   "campaign": "LOCAL-VERIFY-001",
-  "checked_at_utc": "2026-11-04T20:49:49.936212Z",
+  "checked_at_utc": "2026-11-04T21:09:16.483053Z",
   "fresh_process_pairs": {
     "python_typing_runtime": {
       "byte_identical": true,
@@ -9,8 +9,8 @@
     },
     "spn2_scheduler": {
       "byte_identical": true,
-      "run_1_stdout_sha256": "c6999d43b69ac31bf1279e155d638efa0c58170e34001242c7702206cc55c917",
-      "run_2_stdout_sha256": "c6999d43b69ac31bf1279e155d638efa0c58170e34001242c7702206cc55c917"
+      "run_1_stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef",
+      "run_2_stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef"
     }
   },
   "schema_version": "1.0",
@@ -61,14 +61,14 @@
       "sha256": "636a910add69936a7ddc210f66fbf9aa35500e0894bb0f717ddb9c64bb800f43"
     },
     {
-      "bytes": 23289,
+      "bytes": 29933,
       "path": "SPN2-SCHEDULER/run_spn2_investigation.py",
-      "sha256": "bdd05a4f2da9980fb4b4cefb264d9d15ca981c7a02344a7b1db08c8228a3e64d"
+      "sha256": "157d1a6273bed8b7c63360a7f8fe4105468a42be39259f5e6349e907badf6fbb"
     },
     {
-      "bytes": 25212,
+      "bytes": 25978,
       "path": "SPN2-SCHEDULER/scheduler_models.py",
-      "sha256": "1cc1a9b6ec4baef99ca264588dcdbf1671331f1402c916d2d385a2143e013708"
+      "sha256": "9931abc11f2e73c181e7aaf57477a1113e0704a6220c6d2c21cbf7f221d74a59"
     }
   ],
   "source_unchanged": true

@@ -113,9 +113,9 @@ def main() -> int:
     assert env["repository"]["pr16_is_ancestor_of_origin_main"] is True
     assert env["repository"]["pr17_is_ancestor_of_origin_main"] is True
     assert runtime["failed_assertion_count"] == 0 and runtime["assertion_count"] == 18
-    assert scheduler["failed_assertion_count"] == 0 and scheduler["assertion_count"] == 41
-    assert execution["total_runtime_assertion_count"] == 59
-    assert execution["total_runtime_negative_control_count"] == 20
+    assert scheduler["failed_assertion_count"] == 0 and scheduler["assertion_count"] == 51
+    assert execution["total_runtime_assertion_count"] == 69
+    assert execution["total_runtime_negative_control_count"] == 24
     assert checker["executables"]["pyright"] is None
     assert checker["executables"]["basedpyright"] is None
     assert checker["bounded_cache_search"]["matches"] == []
@@ -206,6 +206,9 @@ def main() -> int:
         matrix_row("C2.2", "SPN2", "Fixed 900 seconds should override response guidance.", "429 Retry-After=37", "Use response deadline.", "Submits at virtual t=0 and t=37.", False, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C2-retry-after", "Actual IA header behavior untested."),
         matrix_row("C2.3", "SPN2", "Permanent refusal eventually succeeds.", "three 429s, retry ceiling 3", "Bound attempts without claiming success.", "3 attempts then FAILED_PERMANENT; queue bounds <=1.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C2_permanent_refusal", "Synthetic refusal."),
         matrix_row("C2.4", "SPN2", "Unknown status can be treated as completed.", "mystery then success", "Retry poll explicitly.", "FAILED_RETRYABLE appears, then VERIFIED after success+lookup.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C2_unknown_status", "Synthetic protocol."),
+        matrix_row("C2.5", "SPN2", "A known in-flight poll retry can release its admission slot.", "concurrency=1; existing poll 503 then success; one queued task", "Retain the admission until the known job completes.", "Queued submit occurs at t=5 after existing verification, not at t=0.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C2_poll_retry_admission", "Synthetic HTTP response."),
+        matrix_row("C2.6", "SPN2", "Repeated pending responses need no per-job ceiling.", "existing job returns pending twice; max_poll_attempts=2", "Stop polling at the ceiling and require manual intervention.", "Exactly two polls; poll_at cleared; PENDING retained with manual intervention.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C2_pending_poll_ceiling", "Known in-flight work continues to consume an admission slot."),
+        matrix_row("C2.7", "SPN2", "A never-finishing pending job must consume the global action ceiling.", "pending job plus queued neighbor; concurrency=2", "Bound the pending task while unused capacity continues useful work.", "Neighbor reaches VERIFIED; scheduler stops after five actions without its global ceiling.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C2_pending_poll_ceiling", "Synthetic scheduler fixture."),
         matrix_row("C3.1", "SPN2", "A 503 submission is safe to blindly resubmit.", "server accepts but response is 503/lost", "Do not resubmit before reconciliation.", "1 submit, 2 reconciliations, recovered job, VERIFIED.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C3_lost_acceptance", "Does not prove IA can reconcile by URL."),
         matrix_row("C3.2", "SPN2", "Unresolved acceptance can retry forever.", "503 plus two empty reconciliations", "Bound and retain uncertainty.", "UNCERTAIN_ACCEPTANCE + manual intervention; 1 submit.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#unresolved_control", "Manual policy required."),
         matrix_row("C4.1", "SPN2", "HTTP success without job_id is ordinary success.", "200-like pending body without job_id", "Mark protocol-invalid and acceptance-ambiguous.", "UNCERTAIN_ACCEPTANCE after bounded reconciliation.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C4_missing_job_id", "Live schema unverified."),
@@ -216,6 +219,7 @@ def main() -> int:
         matrix_row("C6.2", "SPN2", "Shared admission can prevent modeled collisions.", "lease coordinator limit=1", "Serialize admission.", "WAIT then ACQUIRED; zero account rejections.", False, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#coordinated", "Not proof of real account limit."),
         matrix_row("C6.3", "SPN2", "Worker failure must strand capacity.", "5-second lease, crashed worker", "Recover after lease expiry.", "WAIT at t=1, ACQUIRED at t=6.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#partial_failure", "Lease timing is a design choice."),
         matrix_row("C6.4", "SPN2", "Duplicate URLs need no shared suppression.", "seeded duplicated input", "Admit first, suppress second.", "ACQUIRED then DUPLICATE.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#seeded_duplicate_fixture", "Synthetic coordinator."),
+        matrix_row("C6.5", "SPN2", "Lease tokens may safely depend on active lease count.", "same worker acquires two, releases first, reacquires in same second", "No token collision, overwrite or capacity undercount.", "Three monotonic tokens remain distinct; fourth acquisition waits at limit; releasing token 2 preserves token 3.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#lease_token_interleaving", "In-process synthetic coordinator."),
         matrix_row("C7.1", "SPN2", "list pop(0) scales like deque popleft.", "backlogs 8,32,128,512", "Count element shifts.", "At n=512 list shifted 130816 elements; deque shifted 0.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C7_operation_counts", "Operation counts, not wall-clock timings."),
         matrix_row("C7.2", "SPN2", "Fixed-tick full scans are equivalent to deadline scheduling.", "n deadlines across n ticks", "Count checks versus heap operations/comparisons.", "n=512: 262144 checks vs 1024 heap push/pop and 7443 comparisons.", True, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#C7_operation_counts", "Adversarial deterministic fixture."),
         matrix_row("X1", "Cross-check", "Reference agreement can be inferred from one implementation.", "independent sorted-list oracle", "Compare actions, states and times.", "All five dimensions agree.", False, "PASS", "EXECUTED_SIMULATED", "SPN2-SCHEDULER/scheduler-result.json#oracle", "Agreement is fixture-scoped."),
@@ -477,6 +481,9 @@ def main() -> int:
                 "observed": [
                     "Repeated continue inside the capacity-fill loop prevents polling in the minimized fake trace.",
                     "Poll-first deadlines, bounded retries and explicit task states satisfy the independent oracle fixture.",
+                    "Known in-flight poll retries remain in the admission count, so concurrency=1 does not admit queued work early.",
+                    "Repeated pending responses stop at the per-job poll ceiling with manual intervention rather than the scheduler-wide ceiling.",
+                    "Lease tokens use a monotonic acquisition serial and survive release/reacquire interleavings without overwrite.",
                     "Lost acceptance, missing job IDs and success without a capture require uncertain/unverified states.",
                     "List front shifts and full deadline scans show deterministic quadratic operation counts.",
                 ],
@@ -484,6 +491,27 @@ def main() -> int:
                 "correction": "Use deque + deadline heap, poll-due-first ordering, bounded state transitions, account coordination and separate verification.",
                 "live_service_boundary": "No Internet Archive quota, concurrency, Retry-After, idempotency, if_not_archived_within or index behavior was established.",
             },
+        },
+        "review_follow_up": {
+            "finding_count": 3,
+            "status": "corrected_and_reexecuted",
+            "findings": [
+                {
+                    "id": "P2-poll-retry-admission",
+                    "correction": "Count FAILED_RETRYABLE tasks with retry_kind=poll and a known job_id as active admissions.",
+                    "regression": "C2-poll-retry-retains-admission",
+                },
+                {
+                    "id": "P2-pending-poll-ceiling",
+                    "correction": "Stop scheduling pending polls at max_poll_attempts and mark manual intervention while retaining PENDING admission semantics.",
+                    "regression": "C2-pending-poll-ceiling",
+                },
+                {
+                    "id": "P2-lease-token-collision",
+                    "correction": "Generate lease tokens from a monotonic acquisition serial rather than active lease count and wall-clock second.",
+                    "regression": "C6-lease-token-monotonic",
+                },
+            ],
         },
         "independent_oracle": {
             "implementation": "SPN2-SCHEDULER/reference_model.py",
@@ -518,7 +546,7 @@ def main() -> int:
 **Campaign state:** executed locally; no SOFA publication; no live SPN2 traffic.
 
 **Native scope:** Ubuntu 26.04.1 LTS, Linux 7.0.0-42-generic, x86_64, CPython 3.14.4, mypy 1.19.1.
-**Canonical execution:** 59 assertion-level checks, 20 negative controls, zero failures; each runtime suite repeated in a fresh process with byte-identical output.
+**Canonical execution:** 69 assertion-level checks, 24 negative controls, zero failures; each runtime suite repeated in a fresh process with byte-identical output.
 
 ## Priority findings
 
@@ -533,6 +561,8 @@ def main() -> int:
 5. **Ambiguous and unverified outcomes require separate states.** A fake server that commits a job then loses a 503 response demonstrates why blind resubmission can duplicate work in a generic protocol. The reference scheduler keeps `UNCERTAIN_ACCEPTANCE`, performs bounded reconciliation and never submits that task twice. A `success` response followed by an absent index entry remains `SUCCEEDED_UNVERIFIED`; delayed visibility transitions to `VERIFIED` only after the independent lookup succeeds.
 
 6. **The queue complexity claim has an operation-count proof.** Repeated list-front removals shift `n(n-1)/2` elements: 130,816 at `n=512`. `deque.popleft()` performs 512 front operations and zero element shifts. A fixed-tick deadline scan performs 262,144 checks at the same size; the instrumented heap uses 1,024 push/pop operations and 7,443 comparisons. No wall-clock benchmark is used to infer complexity.
+
+7. **PR review exposed three defects in the first reference scheduler.** Poll-retry tasks were omitted from admission accounting, repeated `pending` responses bypassed the poll ceiling, and lease tokens could collide after release/reacquire in one second. The corrected scheduler counts known poll retries, stops a pending task after two polls with explicit manual intervention in the regression fixture, and issues monotonic lease tokens. Mixed in-flight/queued and lease-interleaving controls now cover all three paths; the full canonical campaign was re-executed after the source changes.
 
 ## Independent-oracle result
 

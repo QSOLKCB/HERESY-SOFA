@@ -58,9 +58,9 @@ def main() -> int:
         "historical_evidence_modified": False,
         "execution": {
             "native_runtime_assertions": 18,
-            "simulated_scheduler_assertions": 41,
-            "total_assertions": 59,
-            "negative_controls": 20,
+            "simulated_scheduler_assertions": 51,
+            "total_assertions": 69,
+            "negative_controls": 24,
             "failed_assertions": 0,
         },
         "checker_scope": {

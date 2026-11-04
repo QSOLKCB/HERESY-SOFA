@@ -66,8 +66,8 @@ class LocalVerifyEvidenceTests(unittest.TestCase):
 
     def test_execution_receipt(self) -> None:
         receipt = load("RECEIPTS/LOCAL-VERIFY-001-EXECUTION.json")
-        self.assertEqual(receipt["total_runtime_assertion_count"], 59)
-        self.assertEqual(receipt["total_runtime_negative_control_count"], 20)
+        self.assertEqual(receipt["total_runtime_assertion_count"], 69)
+        self.assertEqual(receipt["total_runtime_negative_control_count"], 24)
         self.assertEqual(receipt["failed_check_count"], 0)
         self.assertEqual(receipt["check_count"], 20)
         self.assertEqual(len(receipt["commands"]), 10)
@@ -112,8 +112,8 @@ class LocalVerifyEvidenceTests(unittest.TestCase):
 
     def test_scheduler_results_and_oracle(self) -> None:
         result = load("SPN2-SCHEDULER/scheduler-result.json")
-        self.assertEqual(result["assertion_count"], 41)
-        self.assertEqual(result["negative_control_count"], 13)
+        self.assertEqual(result["assertion_count"], 51)
+        self.assertEqual(result["negative_control_count"], 17)
         self.assertEqual(result["failed_assertion_count"], 0)
         self.assertFalse(result["network_access"])
         broken = result["scenarios"]["C1_broken_posted_loop"]
@@ -124,6 +124,18 @@ class LocalVerifyEvidenceTests(unittest.TestCase):
         )
         agreement = result["scenarios"]["C2_fair_scheduler_and_oracle"]["oracle"]["agreement"]
         self.assertTrue(all(agreement.values()))
+        poll_retry = result["scenarios"]["C2_poll_retry_admission"]
+        self.assertEqual(
+            [action["time"] for action in poll_retry["actions"] if action["operation"] == "submit"],
+            [5.0],
+        )
+        pending = result["scenarios"]["C2_pending_poll_ceiling"]["tasks"]["pending-forever"]
+        self.assertEqual(pending["poll_attempts"], 2)
+        self.assertTrue(pending["manual_intervention"])
+        self.assertIsNone(pending["poll_at"])
+        lease = result["scenarios"]["C6_shared_account"]["lease_token_interleaving"]
+        self.assertEqual(len(set(lease["tokens"])), 3)
+        self.assertEqual(lease["states"], ["ACQUIRED", "ACQUIRED", "ACQUIRED", "WAIT"])
         self.assertEqual(
             set(result["represented_states"]),
             {
@@ -136,7 +148,7 @@ class LocalVerifyEvidenceTests(unittest.TestCase):
     def test_matrix_and_claim_ledger(self) -> None:
         with (ROOT / "REPORTS/LOCAL-VERIFY-001-TEST-MATRIX.csv").open(newline="", encoding="utf-8") as stream:
             matrix = list(csv.DictReader(stream))
-        self.assertEqual(len(matrix), 40)
+        self.assertEqual(len(matrix), 44)
         self.assertEqual(sum(row["pass_fail"] == "NOT_TESTED" for row in matrix), 2)
         self.assertTrue(all(row["evidence_class"] in {
             "EXECUTED_NATIVE", "EXECUTED_SIMULATED", "DOCUMENTATION_VERIFIED",

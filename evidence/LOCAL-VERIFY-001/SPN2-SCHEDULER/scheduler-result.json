@@ -1,5 +1,5 @@
 {
-  "assertion_count": 41,
+  "assertion_count": 51,
   "assertions": [
     {
       "actual": 4,
@@ -266,6 +266,96 @@
       "test_id": "C2-unknown-status-explicit-retry"
     },
     {
+      "actual": [
+        5.0
+      ],
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": [
+        5
+      ],
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C2-poll-retry-retains-admission"
+    },
+    {
+      "actual": {
+        "existing_verify_step": 3,
+        "queued_submit_step": 4
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "existing verification precedes queued submit",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-poll-retry-before-next-submit"
+    },
+    {
+      "actual": {
+        "ceiling": false,
+        "existing": "VERIFIED",
+        "queued": "VERIFIED"
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "ceiling": false,
+        "existing": "VERIFIED",
+        "queued": "VERIFIED"
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-poll-retry-mixed-work-completes"
+    },
+    {
+      "actual": {
+        "poll_at": null,
+        "poll_attempts": 2
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "poll_at": null,
+        "poll_attempts": 2
+      },
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C2-pending-poll-ceiling"
+    },
+    {
+      "actual": {
+        "manual": true,
+        "reason": "server_pending_poll_ceiling_manual_intervention",
+        "state": "PENDING"
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "manual": true,
+        "state": "PENDING"
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-pending-manual-intervention"
+    },
+    {
+      "actual": "VERIFIED",
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "VERIFIED",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-pending-neighbor-progress"
+    },
+    {
+      "actual": {
+        "steps": 5,
+        "stopped_by_ceiling": false
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "steps_lt": 20,
+        "stopped_by_ceiling": false
+      },
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C2-pending-does-not-exhaust-global-ceiling"
+    },
+    {
       "actual": 2,
       "evidence_class": "EXECUTED_SIMULATED",
       "expected": 2,
@@ -320,6 +410,54 @@
       "negative_control": false,
       "passed": true,
       "test_id": "C6-duplicate-input-suppression"
+    },
+    {
+      "actual": {
+        "active_leases": 2,
+        "tokens": [
+          "lease-same-worker-1",
+          "lease-same-worker-2",
+          "lease-same-worker-3"
+        ]
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": {
+        "active_leases": 2,
+        "unique_tokens": 3
+      },
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C6-lease-token-monotonic"
+    },
+    {
+      "actual": [
+        "ACQUIRED",
+        "ACQUIRED",
+        "ACQUIRED",
+        "WAIT"
+      ],
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": [
+        "ACQUIRED",
+        "ACQUIRED",
+        "ACQUIRED",
+        "WAIT"
+      ],
+      "negative_control": true,
+      "passed": true,
+      "test_id": "C6-lease-reacquire-preserves-limit"
+    },
+    {
+      "actual": {
+        "remaining_tokens": [
+          "lease-same-worker-3"
+        ]
+      },
+      "evidence_class": "EXECUTED_SIMULATED",
+      "expected": "third lease remains active",
+      "negative_control": false,
+      "passed": true,
+      "test_id": "C6-release-does-not-remove-reacquired-lease"
     },
     {
       "actual": 28,
@@ -534,7 +672,7 @@
     "The shared-account model demonstrates coordination properties only under its declared synthetic quota."
   ],
   "live_service_claims": false,
-  "negative_control_count": 13,
+  "negative_control_count": 17,
   "network_access": false,
   "python": "3.14.4",
   "real_sleep": false,
@@ -790,13 +928,17 @@
           ],
           "job_id": "existing-job",
           "manual_intervention": false,
+          "poll_at": null,
           "poll_attempts": 2,
           "reason": "capture_found_in_independent_index",
+          "reconcile_at": null,
           "reconcile_attempts": 0,
+          "retry_kind": null,
           "state": "VERIFIED",
           "submit_attempts": 0,
           "timestamp": "20261105000000",
           "url": "https://example.invalid/existing",
+          "verify_at": null,
           "verify_attempts": 1
         },
         "queued": {
@@ -844,17 +986,184 @@
           ],
           "job_id": "queued-job",
           "manual_intervention": false,
+          "poll_at": null,
           "poll_attempts": 1,
           "reason": "capture_found_in_independent_index",
+          "reconcile_at": null,
           "reconcile_attempts": 0,
+          "retry_kind": "submit",
           "state": "VERIFIED",
           "submit_attempts": 2,
           "timestamp": "20261105000000",
           "url": "https://example.invalid/queued",
+          "verify_at": null,
           "verify_attempts": 1
         }
       },
       "virtual_elapsed": 37.0
+    },
+    "C2_pending_poll_ceiling": {
+      "actions": [
+        {
+          "attempt": 1,
+          "job_id": "pending-forever-job",
+          "operation": "poll",
+          "step": 1,
+          "task_id": "pending-forever",
+          "time": 0.0
+        },
+        {
+          "attempt": 1,
+          "operation": "submit",
+          "step": 2,
+          "task_id": "pending-neighbor",
+          "time": 0.0
+        },
+        {
+          "attempt": 1,
+          "job_id": "pending-neighbor-job",
+          "operation": "poll",
+          "step": 3,
+          "task_id": "pending-neighbor",
+          "time": 0.0
+        },
+        {
+          "attempt": 1,
+          "operation": "verify",
+          "step": 4,
+          "task_id": "pending-neighbor",
+          "time": 0.0
+        },
+        {
+          "attempt": 2,
+          "job_id": "pending-forever-job",
+          "operation": "poll",
+          "step": 5,
+          "task_id": "pending-forever",
+          "time": 5.0
+        }
+      ],
+      "api_calls": [
+        {
+          "job_id": "pending-forever-job",
+          "operation": "poll",
+          "status": "pending",
+          "time": 0.0
+        },
+        {
+          "kind": "accepted",
+          "operation": "submit",
+          "time": 0.0,
+          "url": "https://example.invalid/pending-neighbor"
+        },
+        {
+          "job_id": "pending-neighbor-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 0.0
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 0.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/pending-neighbor"
+        },
+        {
+          "job_id": "pending-forever-job",
+          "operation": "poll",
+          "status": "pending",
+          "time": 5.0
+        }
+      ],
+      "max_delayed_length": 0,
+      "max_ready_length": 1,
+      "steps": 5,
+      "stopped_by_ceiling": false,
+      "tasks": {
+        "pending-forever": {
+          "history": [
+            {
+              "reason": "existing_inflight",
+              "state": "ACCEPTED",
+              "time": 0.0
+            },
+            {
+              "reason": "poll_scheduled",
+              "state": "PENDING",
+              "time": 0.0
+            },
+            {
+              "reason": "server_pending",
+              "state": "PENDING",
+              "time": 0.0
+            },
+            {
+              "reason": "server_pending_poll_ceiling_manual_intervention",
+              "state": "PENDING",
+              "time": 5.0
+            }
+          ],
+          "job_id": "pending-forever-job",
+          "manual_intervention": true,
+          "poll_at": null,
+          "poll_attempts": 2,
+          "reason": "server_pending_poll_ceiling_manual_intervention",
+          "reconcile_at": null,
+          "reconcile_attempts": 0,
+          "retry_kind": null,
+          "state": "PENDING",
+          "submit_attempts": 0,
+          "timestamp": null,
+          "url": "https://example.invalid/pending-forever",
+          "verify_at": null,
+          "verify_attempts": 0
+        },
+        "pending-neighbor": {
+          "history": [
+            {
+              "reason": "input_admitted",
+              "state": "QUEUED",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 0.0
+            },
+            {
+              "reason": "job_id_received",
+              "state": "ACCEPTED",
+              "time": 0.0
+            },
+            {
+              "reason": "server_success_requires_index_check",
+              "state": "SUCCEEDED_UNVERIFIED",
+              "time": 0.0
+            },
+            {
+              "reason": "capture_found_in_independent_index",
+              "state": "VERIFIED",
+              "time": 0.0
+            }
+          ],
+          "job_id": "pending-neighbor-job",
+          "manual_intervention": false,
+          "poll_at": null,
+          "poll_attempts": 1,
+          "reason": "capture_found_in_independent_index",
+          "reconcile_at": null,
+          "reconcile_attempts": 0,
+          "retry_kind": null,
+          "state": "VERIFIED",
+          "submit_attempts": 1,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/pending-neighbor",
+          "verify_at": null,
+          "verify_attempts": 1
+        }
+      },
+      "virtual_elapsed": 5.0
     },
     "C2_permanent_refusal": {
       "actions": [
@@ -955,17 +1264,203 @@
           ],
           "job_id": null,
           "manual_intervention": false,
+          "poll_at": null,
           "poll_attempts": 0,
           "reason": "submit_retry_ceiling_429",
+          "reconcile_at": null,
           "reconcile_attempts": 0,
+          "retry_kind": "submit",
           "state": "FAILED_PERMANENT",
           "submit_attempts": 3,
           "timestamp": null,
           "url": "https://example.invalid/refused",
+          "verify_at": null,
           "verify_attempts": 0
         }
       },
       "virtual_elapsed": 10.0
+    },
+    "C2_poll_retry_admission": {
+      "actions": [
+        {
+          "attempt": 1,
+          "job_id": "existing-retry-job",
+          "operation": "poll",
+          "step": 1,
+          "task_id": "existing-retry",
+          "time": 0.0
+        },
+        {
+          "attempt": 2,
+          "job_id": "existing-retry-job",
+          "operation": "poll",
+          "step": 2,
+          "task_id": "existing-retry",
+          "time": 5.0
+        },
+        {
+          "attempt": 1,
+          "operation": "verify",
+          "step": 3,
+          "task_id": "existing-retry",
+          "time": 5.0
+        },
+        {
+          "attempt": 1,
+          "operation": "submit",
+          "step": 4,
+          "task_id": "queued-after-retry",
+          "time": 5.0
+        },
+        {
+          "attempt": 1,
+          "job_id": "queued-after-retry-job",
+          "operation": "poll",
+          "step": 5,
+          "task_id": "queued-after-retry",
+          "time": 5.0
+        },
+        {
+          "attempt": 1,
+          "operation": "verify",
+          "step": 6,
+          "task_id": "queued-after-retry",
+          "time": 5.0
+        }
+      ],
+      "api_calls": [
+        {
+          "job_id": "existing-retry-job",
+          "operation": "poll",
+          "status": "http_503",
+          "time": 0.0
+        },
+        {
+          "job_id": "existing-retry-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 5.0
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 5.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/poll-retry-existing"
+        },
+        {
+          "kind": "accepted",
+          "operation": "submit",
+          "time": 5.0,
+          "url": "https://example.invalid/poll-retry-queued"
+        },
+        {
+          "job_id": "queued-after-retry-job",
+          "operation": "poll",
+          "status": "success",
+          "time": 5.0
+        },
+        {
+          "found": true,
+          "operation": "lookup",
+          "time": 5.0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/poll-retry-queued"
+        }
+      ],
+      "max_delayed_length": 0,
+      "max_ready_length": 1,
+      "steps": 6,
+      "stopped_by_ceiling": false,
+      "tasks": {
+        "existing-retry": {
+          "history": [
+            {
+              "reason": "existing_inflight",
+              "state": "ACCEPTED",
+              "time": 0.0
+            },
+            {
+              "reason": "poll_scheduled",
+              "state": "PENDING",
+              "time": 0.0
+            },
+            {
+              "reason": "poll_http_503",
+              "state": "FAILED_RETRYABLE",
+              "time": 0.0
+            },
+            {
+              "reason": "server_success_requires_index_check",
+              "state": "SUCCEEDED_UNVERIFIED",
+              "time": 5.0
+            },
+            {
+              "reason": "capture_found_in_independent_index",
+              "state": "VERIFIED",
+              "time": 5.0
+            }
+          ],
+          "job_id": "existing-retry-job",
+          "manual_intervention": false,
+          "poll_at": null,
+          "poll_attempts": 2,
+          "reason": "capture_found_in_independent_index",
+          "reconcile_at": null,
+          "reconcile_attempts": 0,
+          "retry_kind": "poll",
+          "state": "VERIFIED",
+          "submit_attempts": 0,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/poll-retry-existing",
+          "verify_at": null,
+          "verify_attempts": 1
+        },
+        "queued-after-retry": {
+          "history": [
+            {
+              "reason": "input_admitted",
+              "state": "QUEUED",
+              "time": 0.0
+            },
+            {
+              "reason": "submit_started",
+              "state": "SUBMITTING",
+              "time": 5.0
+            },
+            {
+              "reason": "job_id_received",
+              "state": "ACCEPTED",
+              "time": 5.0
+            },
+            {
+              "reason": "server_success_requires_index_check",
+              "state": "SUCCEEDED_UNVERIFIED",
+              "time": 5.0
+            },
+            {
+              "reason": "capture_found_in_independent_index",
+              "state": "VERIFIED",
+              "time": 5.0
+            }
+          ],
+          "job_id": "queued-after-retry-job",
+          "manual_intervention": false,
+          "poll_at": null,
+          "poll_attempts": 1,
+          "reason": "capture_found_in_independent_index",
+          "reconcile_at": null,
+          "reconcile_attempts": 0,
+          "retry_kind": null,
+          "state": "VERIFIED",
+          "submit_attempts": 1,
+          "timestamp": "20261105000000",
+          "url": "https://example.invalid/poll-retry-queued",
+          "verify_at": null,
+          "verify_attempts": 1
+        }
+      },
+      "virtual_elapsed": 5.0
     },
     "C2_unknown_status": {
       "actions": [
@@ -1067,13 +1562,17 @@
           ],
           "job_id": "unknown-job",
           "manual_intervention": false,
+          "poll_at": null,
           "poll_attempts": 2,
           "reason": "capture_found_in_independent_index",
+          "reconcile_at": null,
           "reconcile_attempts": 0,
+          "retry_kind": "poll",
           "state": "VERIFIED",
           "submit_attempts": 1,
           "timestamp": "20261105000000",
           "url": "https://example.invalid/unknown-status",
+          "verify_at": null,
           "verify_attempts": 1
         }
       },
@@ -1196,13 +1695,17 @@
           ],
           "job_id": "lost-job",
           "manual_intervention": false,
+          "poll_at": null,
           "poll_attempts": 1,
           "reason": "capture_found_in_independent_index",
+          "reconcile_at": null,
           "reconcile_attempts": 2,
+          "retry_kind": null,
           "state": "VERIFIED",
           "submit_attempts": 1,
           "timestamp": "20261105000000",
           "url": "https://example.invalid/lost",
+          "verify_at": null,
           "verify_attempts": 1
         }
       },
@@ -1285,13 +1788,17 @@
             ],
             "job_id": null,
             "manual_intervention": true,
+            "poll_at": null,
             "poll_attempts": 0,
             "reason": "reconciliation_no_job",
+            "reconcile_at": null,
             "reconcile_attempts": 2,
+            "retry_kind": null,
             "state": "UNCERTAIN_ACCEPTANCE",
             "submit_attempts": 1,
             "timestamp": null,
             "url": "https://example.invalid/unresolved",
+            "verify_at": null,
             "verify_attempts": 0
           }
         },
@@ -1347,13 +1854,17 @@
             ],
             "job_id": null,
             "manual_intervention": true,
+            "poll_at": null,
             "poll_attempts": 0,
             "reason": "reconciliation_no_job",
+            "reconcile_at": null,
             "reconcile_attempts": 1,
+            "retry_kind": null,
             "state": "UNCERTAIN_ACCEPTANCE",
             "submit_attempts": 1,
             "timestamp": null,
             "url": "https://example.invalid/missing-ambiguous",
+            "verify_at": null,
             "verify_attempts": 0
           }
         },
@@ -1408,13 +1919,17 @@
             ],
             "job_id": null,
             "manual_intervention": false,
+            "poll_at": null,
             "poll_attempts": 0,
             "reason": "protocol_invalid_missing_job_id_explicit_rejection",
+            "reconcile_at": null,
             "reconcile_attempts": 0,
+            "retry_kind": null,
             "state": "FAILED_PERMANENT",
             "submit_attempts": 1,
             "timestamp": null,
             "url": "https://example.invalid/missing-rejected",
+            "verify_at": null,
             "verify_attempts": 0
           }
         },
@@ -1502,13 +2017,17 @@
             ],
             "job_id": "delayed-job",
             "manual_intervention": false,
+            "poll_at": null,
             "poll_attempts": 1,
             "reason": "capture_found_in_independent_index",
+            "reconcile_at": null,
             "reconcile_attempts": 0,
+            "retry_kind": null,
             "state": "VERIFIED",
             "submit_attempts": 1,
             "timestamp": "20261105000000",
             "url": "https://example.invalid/index-delayed",
+            "verify_at": null,
             "verify_attempts": 2
           }
         },
@@ -1614,13 +2133,17 @@
             ],
             "job_id": "absent-job",
             "manual_intervention": true,
+            "poll_at": null,
             "poll_attempts": 1,
             "reason": "capture_not_yet_in_index",
+            "reconcile_at": null,
             "reconcile_attempts": 0,
+            "retry_kind": null,
             "state": "SUCCEEDED_UNVERIFIED",
             "submit_attempts": 1,
             "timestamp": "20261105000000",
             "url": "https://example.invalid/index-absent",
+            "verify_at": null,
             "verify_attempts": 2
           }
         },
@@ -1664,6 +2187,22 @@
           "ACQUIRED",
           "WAIT",
           "ACQUIRED"
+        ]
+      },
+      "lease_token_interleaving": {
+        "remaining_tokens_after_second_release": [
+          "lease-same-worker-3"
+        ],
+        "states": [
+          "ACQUIRED",
+          "ACQUIRED",
+          "ACQUIRED",
+          "WAIT"
+        ],
+        "tokens": [
+          "lease-same-worker-1",
+          "lease-same-worker-2",
+          "lease-same-worker-3"
         ]
       },
       "model_boundary": "Synthetic shared quota; not evidence of Internet Archive limits.",

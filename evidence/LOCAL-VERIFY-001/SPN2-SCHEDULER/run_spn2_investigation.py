@@ -339,6 +339,116 @@ def scenario_unknown_status(record: Recorder) -> dict[str, Any]:
     return result
 
 
+def scenario_poll_retry_admission(record: Recorder) -> dict[str, Any]:
+    existing_url = "https://example.invalid/poll-retry-existing"
+    queued_url = "https://example.invalid/poll-retry-queued"
+    api = FakeSPN2API(
+        submit={queued_url: [SubmitEvent("accepted", job_id="queued-after-retry-job")]},
+        poll={
+            "existing-retry-job": [
+                PollEvent("http_503", retry_after=5),
+                PollEvent("success", TIMESTAMP),
+            ],
+            "queued-after-retry-job": [PollEvent("success", TIMESTAMP)],
+        },
+        lookup={existing_url: [True], queued_url: [True]},
+    )
+    scheduler = FairScheduler(
+        api,
+        VirtualClock(),
+        concurrency=1,
+        poll_interval=15,
+        max_poll_attempts=3,
+    )
+    scheduler.add_existing("existing-retry", existing_url, "existing-retry-job")
+    scheduler.add_queued("queued-after-retry", queued_url)
+    result = scheduler.run()
+    submit_actions = actions(result, "submit", "queued-after-retry")
+    existing_verify_step = actions(result, "verify", "existing-retry")[0]["step"]
+    queued_submit_step = submit_actions[0]["step"]
+    record.check(
+        "C2-poll-retry-retains-admission",
+        [item["time"] for item in submit_actions] == [5],
+        expected=[5],
+        actual=[item["time"] for item in submit_actions],
+        negative_control=True,
+    )
+    record.check(
+        "C2-poll-retry-before-next-submit",
+        existing_verify_step < queued_submit_step,
+        expected="existing verification precedes queued submit",
+        actual={"existing_verify_step": existing_verify_step, "queued_submit_step": queued_submit_step},
+    )
+    record.check(
+        "C2-poll-retry-mixed-work-completes",
+        result["tasks"]["existing-retry"]["state"] == State.VERIFIED
+        and result["tasks"]["queued-after-retry"]["state"] == State.VERIFIED
+        and not result["stopped_by_ceiling"],
+        expected={"existing": State.VERIFIED, "queued": State.VERIFIED, "ceiling": False},
+        actual={
+            "existing": result["tasks"]["existing-retry"]["state"],
+            "queued": result["tasks"]["queued-after-retry"]["state"],
+            "ceiling": result["stopped_by_ceiling"],
+        },
+    )
+    result["api_calls"] = api.call_log
+    return result
+
+
+def scenario_pending_poll_ceiling(record: Recorder) -> dict[str, Any]:
+    pending_url = "https://example.invalid/pending-forever"
+    queued_url = "https://example.invalid/pending-neighbor"
+    api = FakeSPN2API(
+        submit={queued_url: [SubmitEvent("accepted", job_id="pending-neighbor-job")]},
+        poll={
+            "pending-forever-job": [PollEvent("pending"), PollEvent("pending")],
+            "pending-neighbor-job": [PollEvent("success", TIMESTAMP)],
+        },
+        lookup={queued_url: [True]},
+    )
+    scheduler = FairScheduler(
+        api,
+        VirtualClock(),
+        concurrency=2,
+        poll_interval=5,
+        max_poll_attempts=2,
+    )
+    scheduler.add_existing("pending-forever", pending_url, "pending-forever-job")
+    scheduler.add_queued("pending-neighbor", queued_url)
+    result = scheduler.run(max_steps=20)
+    pending = result["tasks"]["pending-forever"]
+    neighbor = result["tasks"]["pending-neighbor"]
+    record.check(
+        "C2-pending-poll-ceiling",
+        pending["poll_attempts"] == 2 and pending["poll_at"] is None,
+        expected={"poll_attempts": 2, "poll_at": None},
+        actual={"poll_attempts": pending["poll_attempts"], "poll_at": pending["poll_at"]},
+        negative_control=True,
+    )
+    record.check(
+        "C2-pending-manual-intervention",
+        pending["state"] == State.PENDING
+        and pending["manual_intervention"]
+        and pending["reason"] == "server_pending_poll_ceiling_manual_intervention",
+        expected={"state": State.PENDING, "manual": True},
+        actual={"state": pending["state"], "manual": pending["manual_intervention"], "reason": pending["reason"]},
+    )
+    record.check(
+        "C2-pending-neighbor-progress",
+        neighbor["state"] == State.VERIFIED,
+        expected=State.VERIFIED,
+        actual=neighbor["state"],
+    )
+    record.check(
+        "C2-pending-does-not-exhaust-global-ceiling",
+        not result["stopped_by_ceiling"] and result["steps"] < 20,
+        expected={"stopped_by_ceiling": False, "steps_lt": 20},
+        actual={"stopped_by_ceiling": result["stopped_by_ceiling"], "steps": result["steps"]},
+    )
+    result["api_calls"] = api.call_log
+    return result
+
+
 def scenario_shared_account(record: Recorder, rng: random.Random) -> dict[str, Any]:
     uncoordinated = AccountQuota(limit=1)
     job_a = uncoordinated.submit("worker-a", "https://example.invalid/a")
@@ -404,6 +514,39 @@ def scenario_shared_account(record: Recorder, rng: random.Random) -> dict[str, A
         sorted(dup_dispositions) == ["ACQUIRED", "DUPLICATE"],
         expected=["ACQUIRED", "DUPLICATE"], actual=sorted(dup_dispositions),
     )
+
+    collision = AdmissionCoordinator(limit=2, lease_seconds=30)
+    first_state, first_token = collision.acquire("same-worker", "https://example.invalid/lease-a", 0)
+    second_state, second_token = collision.acquire("same-worker", "https://example.invalid/lease-b", 0)
+    assert first_token is not None and second_token is not None
+    collision.release(first_token, retain_url=False)
+    third_state, third_token = collision.acquire("same-worker", "https://example.invalid/lease-c", 0)
+    assert third_token is not None
+    fourth_state, _ = collision.acquire("other-worker", "https://example.invalid/lease-d", 0)
+    record.check(
+        "C6-lease-token-monotonic",
+        len({first_token, second_token, third_token}) == 3
+        and len(collision.leases) == 2,
+        expected={"unique_tokens": 3, "active_leases": 2},
+        actual={"tokens": [first_token, second_token, third_token], "active_leases": len(collision.leases)},
+        negative_control=True,
+    )
+    record.check(
+        "C6-lease-reacquire-preserves-limit",
+        (first_state, second_state, third_state, fourth_state)
+        == ("ACQUIRED", "ACQUIRED", "ACQUIRED", "WAIT"),
+        expected=["ACQUIRED", "ACQUIRED", "ACQUIRED", "WAIT"],
+        actual=[first_state, second_state, third_state, fourth_state],
+        negative_control=True,
+    )
+    collision.release(second_token, retain_url=False)
+    record.check(
+        "C6-release-does-not-remove-reacquired-lease",
+        third_token in collision.leases
+        and collision.leases[third_token][1] == "https://example.invalid/lease-c",
+        expected="third lease remains active",
+        actual={"remaining_tokens": sorted(collision.leases)},
+    )
     return {
         "model_boundary": "Synthetic shared quota; not evidence of Internet Archive limits.",
         "uncoordinated": {
@@ -425,6 +568,11 @@ def scenario_shared_account(record: Recorder, rng: random.Random) -> dict[str, A
         },
         "seeded_duplicate_fixture": {
             "seed": SEED, "order": inputs, "dispositions": dispositions,
+        },
+        "lease_token_interleaving": {
+            "states": [first_state, second_state, third_state, fourth_state],
+            "tokens": [first_token, second_token, third_token],
+            "remaining_tokens_after_second_release": sorted(collision.leases),
         },
     }
 
@@ -486,6 +634,8 @@ def main() -> int:
     scenarios["C4_missing_job_id"] = scenario_missing_job_id(record)
     scenarios["C5_capture_verification"] = scenario_verification(record)
     scenarios["C2_unknown_status"] = scenario_unknown_status(record)
+    scenarios["C2_poll_retry_admission"] = scenario_poll_retry_admission(record)
+    scenarios["C2_pending_poll_ceiling"] = scenario_pending_poll_ceiling(record)
     scenarios["C6_shared_account"] = scenario_shared_account(record, rng)
     scenarios["C7_operation_counts"] = scenario_performance(record)
     scenarios["exhaustive_priority_oracle"] = exhaustive_priority_oracle()

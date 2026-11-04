@@ -14,7 +14,7 @@
     "mypy_2_3_1": "NOT_TESTED",
     "pyright_1_1_414": "NOT_TESTED"
   },
-  "created_at_utc": "2026-11-04T21:01:14.760243Z",
+  "created_at_utc": "2026-11-04T21:10:40.653151Z",
   "environment": {
     "architecture": "x86_64",
     "cpu": "AMD Ryzen 9 5950X 16-Core Processor",
@@ -40,9 +40,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 1,
-        "finished_at_utc": "2026-11-04T20:49:49.368107Z",
+        "finished_at_utc": "2026-11-04T21:09:14.967131Z",
         "label": "A1-verbatim-GenericAlias-reply",
-        "started_at_utc": "2026-11-04T20:49:49.295360Z",
+        "started_at_utc": "2026-11-04T21:09:14.895340Z",
         "stderr_bytes": 281,
         "stderr_sha256": "96695cf57872e514bd39ae0d3d3056046a8fb74fa189caeadeecc50c765aaf6b",
         "stdout_bytes": 0,
@@ -58,9 +58,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 0,
-        "finished_at_utc": "2026-11-04T20:49:49.396860Z",
+        "finished_at_utc": "2026-11-04T21:09:14.995725Z",
         "label": "A-B-native-runtime-fresh-process-1",
-        "started_at_utc": "2026-11-04T20:49:49.368416Z",
+        "started_at_utc": "2026-11-04T21:09:14.967473Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stdout_bytes": 6574,
@@ -76,9 +76,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 0,
-        "finished_at_utc": "2026-11-04T20:49:49.425150Z",
+        "finished_at_utc": "2026-11-04T21:09:15.031787Z",
         "label": "A-B-native-runtime-fresh-process-2",
-        "started_at_utc": "2026-11-04T20:49:49.396900Z",
+        "started_at_utc": "2026-11-04T21:09:14.995771Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stdout_bytes": 6574,
@@ -96,9 +96,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 0,
-        "finished_at_utc": "2026-11-04T20:49:49.512605Z",
+        "finished_at_utc": "2026-11-04T21:09:15.700347Z",
         "label": "A4-genericalias-positive",
-        "started_at_utc": "2026-11-04T20:49:49.425535Z",
+        "started_at_utc": "2026-11-04T21:09:15.032493Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stdout_bytes": 42,
@@ -116,9 +116,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 1,
-        "finished_at_utc": "2026-11-04T20:49:49.600260Z",
+        "finished_at_utc": "2026-11-04T21:09:15.877542Z",
         "label": "A4-genericalias-negative",
-        "started_at_utc": "2026-11-04T20:49:49.512796Z",
+        "started_at_utc": "2026-11-04T21:09:15.700581Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stdout_bytes": 579,
@@ -136,9 +136,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 1,
-        "finished_at_utc": "2026-11-04T20:49:49.687885Z",
+        "finished_at_utc": "2026-11-04T21:09:16.059606Z",
         "label": "B-mypy-mismatch",
-        "started_at_utc": "2026-11-04T20:49:49.600440Z",
+        "started_at_utc": "2026-11-04T21:09:15.877783Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stdout_bytes": 200,
@@ -156,9 +156,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 0,
-        "finished_at_utc": "2026-11-04T20:49:49.777521Z",
+        "finished_at_utc": "2026-11-04T21:09:16.230219Z",
         "label": "B-mypy-ignore-unsound",
-        "started_at_utc": "2026-11-04T20:49:49.688049Z",
+        "started_at_utc": "2026-11-04T21:09:16.059834Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stdout_bytes": 143,
@@ -176,9 +176,9 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 0,
-        "finished_at_utc": "2026-11-04T20:49:49.865940Z",
+        "finished_at_utc": "2026-11-04T21:09:16.407675Z",
         "label": "B-mypy-sound-designs",
-        "started_at_utc": "2026-11-04T20:49:49.777701Z",
+        "started_at_utc": "2026-11-04T21:09:16.230440Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stdout_bytes": 42,
@@ -194,13 +194,13 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 0,
-        "finished_at_utc": "2026-11-04T20:49:49.900722Z",
+        "finished_at_utc": "2026-11-04T21:09:16.443610Z",
         "label": "C-offline-scheduler-fresh-process-1",
-        "started_at_utc": "2026-11-04T20:49:49.866103Z",
+        "started_at_utc": "2026-11-04T21:09:16.407918Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "stdout_bytes": 45588,
-        "stdout_sha256": "c6999d43b69ac31bf1279e155d638efa0c58170e34001242c7702206cc55c917"
+        "stdout_bytes": 60055,
+        "stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef"
       },
       {
         "argv": [
@@ -212,23 +212,23 @@
           "PYTHONHASHSEED": "0"
         },
         "exit_code": 0,
-        "finished_at_utc": "2026-11-04T20:49:49.934624Z",
+        "finished_at_utc": "2026-11-04T21:09:16.481189Z",
         "label": "C-offline-scheduler-fresh-process-2",
-        "started_at_utc": "2026-11-04T20:49:49.900782Z",
+        "started_at_utc": "2026-11-04T21:09:16.443713Z",
         "stderr_bytes": 0,
         "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "stdout_bytes": 45588,
-        "stdout_sha256": "c6999d43b69ac31bf1279e155d638efa0c58170e34001242c7702206cc55c917"
+        "stdout_bytes": 60055,
+        "stdout_sha256": "8b29d897692d963b95eba25d2dba6f330acfb95ece09884f9eff2b0ac122afef"
       }
     ],
     "deterministic_fresh_process_repetitions": 2,
     "failed_assertion_count": 0,
     "failed_orchestration_check_count": 0,
-    "negative_control_assertion_count": 20,
+    "negative_control_assertion_count": 24,
     "orchestration_check_count": 20,
     "receipt": "RECEIPTS/LOCAL-VERIFY-001-EXECUTION.json",
-    "receipt_sha256": "587bc81fc2a64efaf83f073e849684e3c8a5f31820e0d5bffa98125e133a4266",
-    "runtime_assertion_count": 59
+    "receipt_sha256": "932185c4246f09e1ac85f63917fe8c2b674fd7b08420fd7b3d14d96ead6dc463",
+    "runtime_assertion_count": 69
   },
   "historical_boundary": {
     "historical_files_modified": false,
@@ -304,10 +304,34 @@
       "observed": [
         "Repeated continue inside the capacity-fill loop prevents polling in the minimized fake trace.",
         "Poll-first deadlines, bounded retries and explicit task states satisfy the independent oracle fixture.",
+        "Known in-flight poll retries remain in the admission count, so concurrency=1 does not admit queued work early.",
+        "Repeated pending responses stop at the per-job poll ceiling with manual intervention rather than the scheduler-wide ceiling.",
+        "Lease tokens use a monotonic acquisition serial and survive release/reacquire interleavings without overwrite.",
         "Lost acceptance, missing job IDs and success without a capture require uncertain/unverified states.",
         "List front shifts and full deadline scans show deterministic quadratic operation counts."
       ]
     }
+  },
+  "review_follow_up": {
+    "finding_count": 3,
+    "findings": [
+      {
+        "correction": "Count FAILED_RETRYABLE tasks with retry_kind=poll and a known job_id as active admissions.",
+        "id": "P2-poll-retry-admission",
+        "regression": "C2-poll-retry-retains-admission"
+      },
+      {
+        "correction": "Stop scheduling pending polls at max_poll_attempts and mark manual intervention while retaining PENDING admission semantics.",
+        "id": "P2-pending-poll-ceiling",
+        "regression": "C2-pending-poll-ceiling"
+      },
+      {
+        "correction": "Generate lease tokens from a monotonic acquisition serial rather than active lease count and wall-clock second.",
+        "id": "P2-lease-token-collision",
+        "regression": "C6-lease-token-monotonic"
+      }
+    ],
+    "status": "corrected_and_reexecuted"
   },
   "schema_version": "1.0",
   "scope": {

@@ -74,7 +74,7 @@
   },
   "origin_main": "59b619d5b09e7966f1ceae1dd9ab14313e3ad20a",
   "preservation_statement": "Historical evidence was read and hashed only; this campaign writes exclusively under LOCAL-VALIDATION and its new archive collection.",
-  "recorded_at_utc": "2026-11-04T21:01:14.760243Z",
+  "recorded_at_utc": "2026-11-04T21:10:40.653151Z",
   "required_merges": {
     "pr_16": {
       "ancestor_of_origin_main": true,

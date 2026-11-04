@@ -301,7 +301,15 @@ class FairScheduler:
 
     def active_admissions(self) -> int:
         active = {State.ACCEPTED, State.PENDING, State.UNCERTAIN_ACCEPTANCE}
-        return sum(task.state in active for task in self.tasks.values())
+        return sum(
+            task.state in active
+            or (
+                task.state == State.FAILED_RETRYABLE
+                and task.retry_kind == "poll"
+                and task.job_id is not None
+            )
+            for task in self.tasks.values()
+        )
 
     def _update_bounds(self) -> None:
         self.max_ready_length = max(self.max_ready_length, len(self.ready))
@@ -460,6 +468,14 @@ class FairScheduler:
         status = body.get("status")
         if status == "pending":
             task.retry_kind = None
+            if task.poll_attempts >= self.max_poll_attempts:
+                task.manual_intervention = True
+                task.transition(
+                    State.PENDING,
+                    self.clock.now,
+                    "server_pending_poll_ceiling_manual_intervention",
+                )
+                return
             task.transition(State.PENDING, self.clock.now, "server_pending")
             task.poll_at = self.clock.now + self.poll_interval
             return
@@ -523,6 +539,10 @@ class FairScheduler:
             "reconcile_attempts": task.reconcile_attempts,
             "manual_intervention": task.manual_intervention,
             "reason": task.reason,
+            "retry_kind": task.retry_kind,
+            "poll_at": task.poll_at,
+            "verify_at": task.verify_at,
+            "reconcile_at": task.reconcile_at,
             "history": list(task.history),
         }
 
@@ -559,6 +579,7 @@ class AdmissionCoordinator:
         self.lease_seconds = lease_seconds
         self.leases: dict[str, tuple[str, str, float]] = {}
         self.known_urls: set[str] = set()
+        self.acquisition_serial = 0
 
     def _expire(self, now: float) -> None:
         for token, (_, url, deadline) in list(self.leases.items()):
@@ -572,7 +593,8 @@ class AdmissionCoordinator:
             return "DUPLICATE", None
         if len(self.leases) >= self.limit:
             return "WAIT", None
-        token = f"lease-{worker}-{len(self.leases) + 1}-{int(now)}"
+        self.acquisition_serial += 1
+        token = f"lease-{worker}-{self.acquisition_serial}"
         self.leases[token] = (worker, url, now + self.lease_seconds)
         self.known_urls.add(url)
         return "ACQUIRED", token

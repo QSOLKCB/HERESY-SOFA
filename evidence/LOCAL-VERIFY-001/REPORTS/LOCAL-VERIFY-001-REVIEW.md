@@ -3,7 +3,7 @@
 **Campaign state:** executed locally; no SOFA publication; no live SPN2 traffic.
 
 **Native scope:** Ubuntu 26.04.1 LTS, Linux 7.0.0-42-generic, x86_64, CPython 3.14.4, mypy 1.19.1.
-**Canonical execution:** 59 assertion-level checks, 20 negative controls, zero failures; each runtime suite repeated in a fresh process with byte-identical output.
+**Canonical execution:** 69 assertion-level checks, 24 negative controls, zero failures; each runtime suite repeated in a fresh process with byte-identical output.
 
 ## Priority findings
 
@@ -18,6 +18,8 @@
 5. **Ambiguous and unverified outcomes require separate states.** A fake server that commits a job then loses a 503 response demonstrates why blind resubmission can duplicate work in a generic protocol. The reference scheduler keeps `UNCERTAIN_ACCEPTANCE`, performs bounded reconciliation and never submits that task twice. A `success` response followed by an absent index entry remains `SUCCEEDED_UNVERIFIED`; delayed visibility transitions to `VERIFIED` only after the independent lookup succeeds.
 
 6. **The queue complexity claim has an operation-count proof.** Repeated list-front removals shift `n(n-1)/2` elements: 130,816 at `n=512`. `deque.popleft()` performs 512 front operations and zero element shifts. A fixed-tick deadline scan performs 262,144 checks at the same size; the instrumented heap uses 1,024 push/pop operations and 7,443 comparisons. No wall-clock benchmark is used to infer complexity.
+
+7. **PR review exposed three defects in the first reference scheduler.** Poll-retry tasks were omitted from admission accounting, repeated `pending` responses bypassed the poll ceiling, and lease tokens could collide after release/reacquire in one second. The corrected scheduler counts known poll retries, stops a pending task after two polls with explicit manual intervention in the regression fixture, and issues monotonic lease tokens. Mixed in-flight/queued and lease-interleaving controls now cover all three paths; the full canonical campaign was re-executed after the source changes.
 
 ## Independent-oracle result
 
