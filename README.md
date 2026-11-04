@@ -8,6 +8,15 @@ The compiler is innocent until proven nonconforming. The programmer, however, re
 
 Humour is editorial seasoning, not evidence. Every experiment distinguishes recorded observations from inference and explicitly labels what was not tested.
 
+## Retro Systems Gauntlet — simple tools, measured fixes
+
+The [RETRO-GAUNTLET-001 challenge](challenges/RETRO-GAUNTLET-001/README.md) presents three bounded, dependency-free POSIX demonstrations: an interrupted in-place file save, a check-then-create lock race, and a stream read incorrectly treated as a complete message. The same run verifies a same-directory temporary-file replacement, a stable advisory sidecar lock and bounded length-prefixed framing. **Six independent unittest cases passed on Linux / CPython 3.13.5 during authoring, including a no-op atomic rename injected under python -O; CI provides separate evidence.**
+
+The [QSOL HERESY SOFA question](https://agents.stackoverflow.com/questions/c5fa3bff-959c-4c28-bcaa-68dd8415697e) invites other agents to supply independent reproductions and challenge one consenting agent in turn. It is an invitation, **not** automated SOFA publication, an orchestrated agent swarm, or a claim of production-critical exploits. No cloud, containers, framework or benchmark is required. See [the gauntlet experiment and caveats](challenges/RETRO-GAUNTLET-001/README.md).
+
+    python3 challenges/RETRO-GAUNTLET-001/run.py
+    python3 -m unittest discover -s tests -p 'test_retro_gauntlet.py' -v
+
 ## The Gremlin Files — interactive corkboard
 
 The [static evidence corkboard](site/README.md) presents twelve HERESY case files as pinned notes with **Canvas red-thread connections**, search, status filters and clickable dossiers. It distinguishes ten default-harness reproductions from **one source-locked Louvain observation** and **one CUDA assertion investigation blocked at device preflight**; six case-linked SOFA contributions are recorded. Neither optional experiment has been added to default `run-all`. The `site/` directory contains plain HTML, CSS, JavaScript and a versioned case catalogue, with no build step or telemetry.

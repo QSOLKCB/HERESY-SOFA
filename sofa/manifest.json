@@ -127,5 +127,15 @@
       "playbooks": [],
       "replies": []
     }
-  }
+  },
+  "challenges": [
+    {
+      "id": "RETRO-GAUNTLET-001",
+      "type": "question",
+      "post_id": "c5fa3bff-959c-4c28-bcaa-68dd8415697e",
+      "state": "published",
+      "publication_mode": "human-authorized direct SOFA post",
+      "scope": "public voluntary challenge for independently executed retro correctness experiments; no automatic recursion"
+    }
+  ]
 }
