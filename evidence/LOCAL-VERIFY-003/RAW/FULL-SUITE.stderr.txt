@@ -131,6 +131,8 @@ test_negative_controls_and_claim_boundaries (test_local_verify_003.LocalVerify00
 test_no_symlinks_caches_or_private_workstation_identity (test_local_verify_003.LocalVerify003ArchiveTests.test_no_symlinks_caches_or_private_workstation_identity) ... ok
 test_oracle_matrix_and_decisions (test_local_verify_003.LocalVerify003ArchiveTests.test_oracle_matrix_and_decisions) ... ok
 test_preflight_failure_is_preserved (test_local_verify_003.LocalVerify003ArchiveTests.test_preflight_failure_is_preserved) ... ok
+test_report_builder_rejects_failed_inputs_before_writing (test_local_verify_003.LocalVerify003ArchiveTests.test_report_builder_rejects_failed_inputs_before_writing) ... ok
+test_reproduction_runner_does_not_mutate_frozen_archive (test_local_verify_003.LocalVerify003ArchiveTests.test_reproduction_runner_does_not_mutate_frozen_archive) ... ok
 test_required_artifacts (test_local_verify_003.LocalVerify003ArchiveTests.test_required_artifacts) ... ok
 test_source_identity (test_local_verify_003.LocalVerify003ArchiveTests.test_source_identity) ... ok
 test_cli_emits_same_machine_readable_observations (test_retro_gauntlet.RetroGauntletTests.test_cli_emits_same_machine_readable_observations) ... ok
@@ -163,6 +165,6 @@ test_replacing_immediate_with_deferred_cannot_certify_contention (test_three_edg
 test_three_experiments_generate_valid_executed_receipts (test_three_edge_cases.ThreeEdgeCases.test_three_experiments_generate_valid_executed_receipts) ... ok
 
 ----------------------------------------------------------------------
-Ran 162 tests in 5.942s
+Ran 164 tests in 5.968s
 
 OK (skipped=1)

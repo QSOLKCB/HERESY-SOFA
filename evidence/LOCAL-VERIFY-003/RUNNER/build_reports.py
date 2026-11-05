@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -12,6 +13,10 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 POST_ID = "1587d009-5e9c-4cac-81fb-bf3acf5aaf49"
+
+
+class InvalidExecutionEvidence(RuntimeError):
+    """Raised before output when raw execution evidence is failed or inconsistent."""
 
 
 def load(relative: str) -> Any:
@@ -33,6 +38,180 @@ def write_csv(relative: str, fieldnames: list[str], rows: list[dict[str, Any]]) 
     (ROOT / relative).write_text(buffer.getvalue(), encoding="utf-8")
 
 
+def validate_execution_inputs(
+    result: dict[str, Any],
+    execution: dict[str, Any],
+    fixtures: dict[str, Any],
+    repository_validation: dict[str, Any],
+) -> None:
+    """Reject failed or contradictory inputs before any report file is written."""
+
+    errors: list[str] = []
+
+    def require(condition: bool, message: str) -> None:
+        if not condition:
+            errors.append(message)
+
+    assertions = result.get("assertions", {})
+    failures = assertions.get("failures", [])
+    require(isinstance(failures, list), "assertions.failures must be a list")
+    if not isinstance(failures, list):
+        failures = []
+    require(
+        assertions.get("failed_count") == len(failures),
+        "assertions.failed_count does not match assertions.failures",
+    )
+    require(assertions.get("failed_count") == 0, "execution contains failed assertions")
+    require(
+        all(item.get("passed") is False for item in failures),
+        "assertions.failures contains an entry not marked failed",
+    )
+    require(
+        isinstance(assertions.get("count"), int)
+        and isinstance(assertions.get("negative_control_count"), int)
+        and 0 <= assertions.get("negative_control_count", -1) <= assertions.get("count", -1),
+        "assertion counts are invalid",
+    )
+    require(result.get("campaign") == "LOCAL-VERIFY-003", "result campaign identity is invalid")
+    require(
+        result.get("seed") == fixtures.get("seed") == 26051105,
+        "result and fixture seeds do not match the campaign seed",
+    )
+
+    runs = execution.get("runs", [])
+    require(execution.get("successful") is True, "execution receipt is not successful")
+    require(execution.get("parse_errors") == [], "execution receipt contains parse errors")
+    require(len(runs) == 2, "execution receipt must contain exactly two fresh runs")
+    require(
+        execution.get("source_inventory_before") == execution.get("source_inventory_after")
+        and execution.get("source_inventory_unchanged") is True,
+        "source inventory changed during execution",
+    )
+    determinism = execution.get("determinism", {})
+    require(
+        determinism
+        and all(value is True for value in determinism.values()),
+        "fresh-process execution is not deterministic",
+    )
+    serialized_result = json.dumps(
+        result,
+        indent=2,
+        sort_keys=True,
+        ensure_ascii=False,
+    ) + "\n"
+    serialized_digest = hashlib.sha256(serialized_result.encode("utf-8")).hexdigest()
+    for index, run in enumerate(runs, start=1):
+        require(run.get("exit_code") == 0, f"execution run {index} has nonzero exit code")
+        require(run.get("stdout") == serialized_result, f"execution run {index} disagrees with OFFLINE-RESULT")
+        require(
+            run.get("stdout_sha256") == serialized_digest,
+            f"execution run {index} stdout digest is inconsistent",
+        )
+
+    fixture_documents = fixtures.get("fixtures", [])
+    fixture_results = result.get("fixture_results", {})
+    rows = fixture_results.get("results", [])
+    fixture_ids = [item.get("id") for item in fixture_documents]
+    result_ids = [item.get("fixture_id") for item in rows]
+    require(len(fixture_ids) == len(set(fixture_ids)), "fixture IDs are not unique")
+    require(len(result_ids) == len(set(result_ids)), "result fixture IDs are not unique")
+    require(result_ids == fixture_ids, "fixture result order or identity differs from the fixture source")
+    require(
+        fixture_results.get("fixture_count") == len(rows) == len(fixture_documents),
+        "fixture counts do not reconcile",
+    )
+    require(
+        fixture_results.get("permutation_evaluations")
+        == sum(item.get("permutation_count", 0) for item in rows),
+        "permutation evaluation count does not reconcile",
+    )
+    agreement_count = sum(item.get("agreement") is True for item in rows)
+    mismatch_count = sum(item.get("agreement") is False for item in rows)
+    require(fixture_results.get("agreement_count") == agreement_count, "agreement count does not reconcile")
+    require(fixture_results.get("mismatch_count") == mismatch_count, "mismatch count does not reconcile")
+    require(
+        len(fixture_results.get("mismatches", [])) == mismatch_count,
+        "mismatch records do not reconcile",
+    )
+    for item in rows:
+        oracle = item.get("oracle", {})
+        outcomes = oracle.get("outcomes", {})
+        decision = oracle.get("decision")
+        require(decision in {"SELECT", "ABSTAIN"}, f"{item.get('fixture_id')}: invalid oracle decision")
+        require(
+            outcomes.get("SUBTITLE_DOWNLOADED_AND_VERIFIED") == "NOT_TESTED",
+            f"{item.get('fixture_id')}: download boundary is not NOT_TESTED",
+        )
+        if decision == "SELECT":
+            require(outcomes.get("TRACK_SELECTED") is True, f"{item.get('fixture_id')}: selected outcome mismatch")
+            require(bool(oracle.get("origin")) and bool(oracle.get("language")), f"{item.get('fixture_id')}: incomplete selection")
+        elif decision == "ABSTAIN":
+            require(outcomes.get("TRACK_SELECTED") is False, f"{item.get('fixture_id')}: abstention outcome mismatch")
+            require(oracle.get("origin") is None and oracle.get("language") is None, f"{item.get('fixture_id')}: abstention carries a track")
+
+    broken = result.get("broken_controls", {})
+    broken_rows = broken.get("controls", [])
+    require(broken.get("control_count") == len(broken_rows), "broken-control count does not reconcile")
+    require(
+        [item.get("id") for item in broken_rows]
+        == ["B001", "B002", "B003", "B004", "B005", "B006"],
+        "broken-control identities are incomplete or reordered",
+    )
+    require(
+        all(item.get("passed") is True for item in broken_rows),
+        "one or more intentionally broken-selector controls failed",
+    )
+    ytdlp = result.get("yt_dlp_integration", {})
+    ytdlp_rows = ytdlp.get("observations", [])
+    require(
+        [item.get("id") for item in ytdlp_rows]
+        == ["Y001", "Y002", "Y003", "Y004", "Y005", "Y006", "Y007", "Y008", "Y009"],
+        "installed yt-dlp control identities are incomplete or reordered",
+    )
+    require(
+        all(item.get("passed") is True for item in ytdlp_rows),
+        "one or more installed yt-dlp controls failed",
+    )
+    require(ytdlp.get("network_attempt_count") == 0, "yt-dlp controls attempted network access")
+    order_variant_checks = sum(
+        item.get("permutation_count", 0)
+        for item in rows
+        if item.get("permutation_count", 0) > 1
+    )
+    literal_sensitivity_checks = sum(
+        len(item.get("literal_distinct_choices", [])) > 1
+        for item in rows
+    )
+    expected_negative_controls = (
+        order_variant_checks
+        + literal_sensitivity_checks
+        + result.get("seeded_stress", {}).get("reorder_checks", -1)
+        + len(broken_rows)
+        + 6
+    )
+    require(
+        assertions.get("negative_control_count") == expected_negative_controls,
+        "negative-control group counts do not reconcile",
+    )
+    require(
+        repository_validation.get("passed") is True
+        and repository_validation.get("exit_code") == 0,
+        "repository validation receipt is not successful",
+    )
+    require(
+        isinstance(repository_validation.get("tests_run"), int)
+        and repository_validation.get("tests_run", 0) > 0,
+        "repository validation test count is invalid",
+    )
+
+    if errors:
+        details = "\n".join(f"- {message}" for message in errors)
+        raise InvalidExecutionEvidence(
+            "refusing to build success reports from failed or inconsistent evidence:\n"
+            + details
+        )
+
+
 def main() -> int:
     result = load("RAW/OFFLINE-RESULT.json")
     execution = load("RAW/OFFLINE-EXECUTION.json")
@@ -41,7 +220,9 @@ def main() -> int:
     source = load("SOURCE-IDENTITY.json")
     fixtures = load("FIXTURES/metadata-fixtures.json")
     repository_validation = load("RAW/REPOSITORY-VALIDATION.json")
+    validate_execution_inputs(result, execution, fixtures, repository_validation)
     fixture_by_id = {item["id"]: item for item in fixtures["fixtures"]}
+    canonical_pass = result["assertions"]["failed_count"] == 0
 
     matrix_rows: list[dict[str, Any]] = []
     for item in result["fixture_results"]["results"]:
@@ -68,7 +249,7 @@ def main() -> int:
                 "agreement": str(item["agreement"]).lower(),
                 "permutation_count": item["permutation_count"],
                 "evidence_class": "EXECUTED_SYNTHETIC",
-                "pass_fail": "PASS",
+                "pass_fail": "PASS" if canonical_pass else "FAIL",
             }
         )
     write_csv(
@@ -253,39 +434,46 @@ def main() -> int:
         len(item["literal_distinct_choices"]) > 1
         for item in result["fixture_results"]["results"]
     )
+    failed_controls = [
+        item
+        for item in result["assertions"]["failures"]
+        if item.get("negative_control") is True
+    ]
     negative_controls = {
         "campaign": "LOCAL-VERIFY-003",
         "control_count": result["assertions"]["negative_control_count"],
-        "failed_control_count": 0,
+        "failed_control_count": len(failed_controls),
         "groups": [
             {
                 "name": "oracle_caption_map_reordering",
                 "count": order_variant_checks,
-                "passed": True,
+                "passed": canonical_pass and not failed_controls,
                 "reference": "fixture_results.results[].permutation_count",
             },
             {
                 "name": "literal_order_sensitivity_detection",
                 "count": literal_sensitivity_checks,
-                "passed": True,
+                "passed": canonical_pass and not failed_controls,
                 "reference": "F002,F005,F011,F017,F019,F025,F029",
             },
             {
                 "name": "seeded_random_reordering",
                 "count": result["seeded_stress"]["reorder_checks"],
-                "passed": True,
+                "passed": canonical_pass and not failed_controls,
                 "reference": "seed 26051105",
             },
             {
                 "name": "intentionally_broken_selectors",
                 "count": result["broken_controls"]["control_count"],
-                "passed": all(item["passed"] for item in result["broken_controls"]["controls"]),
+                "passed": canonical_pass and all(item["passed"] for item in result["broken_controls"]["controls"]),
                 "reference": "B001-B006",
             },
             {
                 "name": "installed_ytdlp_negative_controls",
                 "count": 6,
-                "passed": True,
+                "passed": canonical_pass and all(
+                    item["passed"] for item in result["yt_dlp_integration"]["observations"]
+                ),
                 "reference": "Y004,Y005,Y007,Y008,Y009,Y010",
             },
         ],
@@ -417,7 +605,11 @@ def main() -> int:
         },
         "validation": {
             "evidence_validator": {"tests": 11, "status": "PASSED"},
-            "targeted_repository_tests": {"tests": 11, "status": "PASSED"},
+            "targeted_repository_tests": {"tests": 13, "status": "PASSED"},
+            "report_builder_input_gate": {
+                "status": "PASSED",
+                "behavior": "rejects failed or internally inconsistent raw evidence before writing reports",
+            },
             "full_repository_suite": {
                 "tests": repository_validation["tests_run"],
                 "skipped": repository_validation["skipped"],
@@ -490,8 +682,10 @@ The claims that real yt-dlp output can exhibit the stated null-language shape, t
 ```sh
 PYTHONDONTWRITEBYTECODE=1 uv run --no-project --offline --no-managed-python python evidence/LOCAL-VERIFY-003/RUNNER/execute.py
 PYTHONDONTWRITEBYTECODE=1 uv run --no-project --offline --no-managed-python python evidence/LOCAL-VERIFY-003/RUNNER/validate.py
-sha256sum -c evidence/LOCAL-VERIFY-003/SHA256SUMS.txt
+(cd evidence/LOCAL-VERIFY-003 && sha256sum -c SHA256SUMS.txt)
 ```
+
+`execute.py` prints paths to disposable receipts in a newly created temporary directory, compares both reproduced results byte-for-byte and semantically with the archived canonical result, and refuses an output directory inside the repository. It does not rewrite `RAW/`. The generation-only report builder rejects failed or internally inconsistent execution input before writing any report.
 
 No SOFA contribution, vote or verification was made, and LOCAL-VERIFY-004 was not started.
 
@@ -546,7 +740,7 @@ Everything below is `NOT_TESTED` in this campaign.
 
 Offline adversarial verification of multilingual caption selection for SOFA TIL `1587d009-5e9c-4cac-81fb-bf3acf5aaf49`.
 
-The archive contains 40 synthetic metadata fixtures, a literal translation of the TIL prose, an independent uniqueness-based oracle, installed yt-dlp 2026.03.17 `process_subtitles` controls, two fresh-process receipts, a claim ledger and integrity validators.
+The archive contains 40 synthetic metadata fixtures, a literal translation of the TIL prose, an independent uniqueness-based oracle, installed yt-dlp 2026.03.17 `process_subtitles` controls, two fresh-process receipts, a claim ledger and integrity validators. The reproduction runner writes disposable receipts outside the repository and compares them with the canonical result without mutating this archive.
 
 The scope is deliberately narrow: no live extractor, video, subtitle download, conversion, credential or SOFA mutation was used. Start with [REVIEW.md](REVIEW.md), then inspect [ORACLE-MATRIX.csv](ORACLE-MATRIX.csv), [CLAIM-LEDGER.csv](CLAIM-LEDGER.csv) and [RAW/OFFLINE-RESULT.json](RAW/OFFLINE-RESULT.json).
 """

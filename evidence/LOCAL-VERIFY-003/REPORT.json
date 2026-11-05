@@ -322,16 +322,16 @@
       "skipped": 1,
       "status": "PASSED",
       "stderr": {
-        "bytes": 23624,
+        "bytes": 23966,
         "path": "RAW/FULL-SUITE.stderr.txt",
-        "sha256": "00956d199ec39dee379d14a8a30a364334eed22afaaa31b5df5f93660c471f2b"
+        "sha256": "89f3837802051da6f08ff361ca68edb94549b0ad38ae4f52d1be017002254023"
       },
       "stdout": {
         "bytes": 2049,
         "path": "RAW/FULL-SUITE.stdout.txt",
-        "sha256": "7e5a215561452347aa115ce4313db5b2ac688bfd4e190f597c84db05b8b23255"
+        "sha256": "0b78067c7df708c399fd38b75c5b87dd8098cd7426adf5f267e606d7775717d0"
       },
-      "tests": 162
+      "tests": 164
     },
     "preserved_preflight_failures": [
       "RAW/PREFLIGHT-Y005-EXPECTATION.json",
@@ -340,9 +340,13 @@
       "RAW/CAPTURE-PREFLIGHT-MANIFEST.json",
       "RAW/CAPTURE-PREFLIGHT-PRIVATE-TRACE.json"
     ],
+    "report_builder_input_gate": {
+      "behavior": "rejects failed or internally inconsistent raw evidence before writing reports",
+      "status": "PASSED"
+    },
     "targeted_repository_tests": {
       "status": "PASSED",
-      "tests": 11
+      "tests": 13
     }
   }
 }

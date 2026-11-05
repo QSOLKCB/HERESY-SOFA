@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Capture two fresh-process executions of the offline matrix."""
+"""Reproduce the offline matrix without mutating the frozen archive."""
 
 from __future__ import annotations
 
+import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -11,6 +12,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 from typing import Any
 
@@ -18,6 +20,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = ROOT.parents[1]
 RAW = ROOT / "RAW"
+CANONICAL_RESULT = RAW / "OFFLINE-RESULT.json"
 COMMAND = [
     "uv",
     "run",
@@ -50,6 +53,65 @@ def source_inventory() -> dict[str, dict[str, Any]]:
     return inventory
 
 
+def parse_args(argv: list[str] | None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run two offline reproductions and write their non-canonical receipts "
+            "outside the repository."
+        )
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        help=(
+            "empty directory outside the repository; when omitted, a new temporary "
+            "directory is created"
+        ),
+    )
+    return parser.parse_args(argv)
+
+
+def prepare_output_directory(requested: Path | None) -> Path:
+    """Return an empty output directory that cannot alter committed evidence."""
+
+    if requested is None:
+        output = Path(tempfile.mkdtemp(prefix="local-verify-003-reproduction-")).resolve()
+    else:
+        output = requested.expanduser().resolve()
+    repository = REPOSITORY.resolve()
+    if output == repository or repository in output.parents:
+        raise ValueError("reproduction output must be outside the repository")
+    if output.exists():
+        if not output.is_dir():
+            raise ValueError(f"reproduction output is not a directory: {output}")
+        if any(output.iterdir()):
+            raise ValueError(f"reproduction output directory is not empty: {output}")
+    else:
+        output.mkdir(parents=True)
+    return output
+
+
+def write_reproduction_outputs(
+    output: Path,
+    receipt: dict[str, Any],
+    parsed: list[dict[str, Any]],
+) -> None:
+    """Write only disposable reproduction output, never canonical archive files."""
+
+    repository = REPOSITORY.resolve()
+    if output == repository or repository in output.parents:
+        raise ValueError("refusing to write reproduction output inside the repository")
+    (output / "OFFLINE-EXECUTION.json").write_text(
+        json.dumps(receipt, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    if parsed:
+        (output / "OFFLINE-RESULT.json").write_text(
+            json.dumps(parsed[0], indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+
 def run_once(index: int, environment: dict[str, str]) -> dict[str, Any]:
     started = now()
     before = time.monotonic_ns()
@@ -79,10 +141,16 @@ def run_once(index: int, environment: dict[str, str]) -> dict[str, Any]:
     }
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
     uv = shutil.which("uv")
     if uv is None:
         raise SystemExit("uv is unavailable")
+    try:
+        output = prepare_output_directory(args.output_dir)
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
     environment = {
         "HOME": os.environ["HOME"],
         "LANG": os.environ.get("LANG", "C.UTF-8"),
@@ -104,6 +172,24 @@ def main() -> int:
         runs[0]["stdout"] == runs[1]["stdout"]
         and runs[0]["stderr"] == runs[1]["stderr"]
     )
+    canonical_bytes = CANONICAL_RESULT.read_bytes()
+    canonical_result = json.loads(canonical_bytes)
+    archive_comparison = {
+        "canonical_result": "RAW/OFFLINE-RESULT.json",
+        "canonical_result_bytes": len(canonical_bytes),
+        "canonical_result_sha256": sha256_bytes(canonical_bytes),
+        "all_run_stdout_byte_identical_to_canonical": (
+            len(runs) == 2
+            and all(item["stdout"].encode("utf-8") == canonical_bytes for item in runs)
+        ),
+        "all_parsed_results_semantically_identical_to_canonical": (
+            len(parsed) == 2 and all(item == canonical_result for item in parsed)
+        ),
+    }
+    archive_matches = (
+        archive_comparison["all_run_stdout_byte_identical_to_canonical"]
+        and archive_comparison["all_parsed_results_semantically_identical_to_canonical"]
+    )
     successful = (
         all(item["exit_code"] == 0 for item in runs)
         and not parse_errors
@@ -111,6 +197,7 @@ def main() -> int:
         and all(item["assertions"]["failed_count"] == 0 for item in parsed)
         and deterministic
         and before == after
+        and archive_matches
     )
     receipt = {
         "campaign": "LOCAL-VERIFY-003",
@@ -129,18 +216,14 @@ def main() -> int:
         "source_inventory_before": before,
         "source_inventory_after": after,
         "source_inventory_unchanged": before == after,
+        "archive_comparison": archive_comparison,
+        "output_policy": "non-canonical receipts outside the repository",
         "successful": successful,
     }
-    RAW.mkdir(parents=True, exist_ok=True)
-    (RAW / "OFFLINE-EXECUTION.json").write_text(
-        json.dumps(receipt, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    write_reproduction_outputs(output, receipt, parsed)
+    print(f"reproduction_receipt={output / 'OFFLINE-EXECUTION.json'}")
     if parsed:
-        (RAW / "OFFLINE-RESULT.json").write_text(
-            json.dumps(parsed[0], indent=2, sort_keys=True, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
+        print(f"reproduction_result={output / 'OFFLINE-RESULT.json'}")
     return 0 if successful else 1
 
 

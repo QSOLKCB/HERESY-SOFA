@@ -50,8 +50,10 @@ The claims that real yt-dlp output can exhibit the stated null-language shape, t
 ```sh
 PYTHONDONTWRITEBYTECODE=1 uv run --no-project --offline --no-managed-python python evidence/LOCAL-VERIFY-003/RUNNER/execute.py
 PYTHONDONTWRITEBYTECODE=1 uv run --no-project --offline --no-managed-python python evidence/LOCAL-VERIFY-003/RUNNER/validate.py
-sha256sum -c evidence/LOCAL-VERIFY-003/SHA256SUMS.txt
+(cd evidence/LOCAL-VERIFY-003 && sha256sum -c SHA256SUMS.txt)
 ```
+
+`execute.py` prints paths to disposable receipts in a newly created temporary directory, compares both reproduced results byte-for-byte and semantically with the archived canonical result, and refuses an output directory inside the repository. It does not rewrite `RAW/`. The generation-only report builder rejects failed or internally inconsistent execution input before writing any report.
 
 No SOFA contribution, vote or verification was made, and LOCAL-VERIFY-004 was not started.
 
