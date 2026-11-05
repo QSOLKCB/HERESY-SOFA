@@ -1,0 +1,64 @@
+{
+  "branch": "evidence/local-verify-002b-checker-completion",
+  "campaign": "LOCAL-VERIFY-002B",
+  "frozen_fixture_inventory": {
+    "bytes": 6682,
+    "path": "evidence/LOCAL-VERIFY-002/RAW/fixture-inventory.json",
+    "sha256": "e96bdf688005a180474019606f9e75990f4f29ed846b78255a81a9d8b0117869"
+  },
+  "frozen_local_verify_002": {
+    "file_count": 47,
+    "inventory_sha256": "08f56f960f0551f42100f794bad57652ebcc8079138efc1307bfb686e4957ed0",
+    "path": "evidence/LOCAL-VERIFY-002",
+    "total_bytes": 487967
+  },
+  "frozen_manifest": {
+    "bytes": 4380,
+    "path": "evidence/LOCAL-VERIFY-002/SHA256SUMS.txt",
+    "sha256": "b29dbcf818041e61508b05ea6cb37af777257d956a97bbffa664caa07c372582"
+  },
+  "frozen_report": {
+    "bytes": 3024,
+    "path": "evidence/LOCAL-VERIFY-002/REPORT.json",
+    "sha256": "70f846f41b6d1da12c1e84b3de403ef631cf30dc8447b7a233cb284d758b5009"
+  },
+  "historical_diff_from_source_commit": [],
+  "historical_evidence_modified": false,
+  "origin_main_at_start": "1ad645e13277a28ba511cad2f6bd2f5d988894d8",
+  "pr_19": {
+    "command": [
+      "gh",
+      "pr",
+      "view",
+      "19",
+      "--repo",
+      "QSOLKCB/HERESY-SOFA",
+      "--json",
+      "number,state,isDraft,mergedAt,mergeCommit,headRefName,headRefOid,baseRefName,url,title"
+    ],
+    "exit_code": 0,
+    "merge_commit_is_ancestor_of_origin_main": true,
+    "origin_main_at_query": "1ad645e13277a28ba511cad2f6bd2f5d988894d8",
+    "queried_at_utc": "2026-11-05T00:43:47Z",
+    "repository_head_at_query": "1ad645e13277a28ba511cad2f6bd2f5d988894d8",
+    "response": {
+      "baseRefName": "main",
+      "headRefName": "evidence/local-verify-002-static-checker-matrix",
+      "headRefOid": "98054e2f4002b63bc724882bd6ee86f45f4fdb28",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "1ad645e13277a28ba511cad2f6bd2f5d988894d8"
+      },
+      "mergedAt": "2026-11-04T22:40:33Z",
+      "number": 19,
+      "state": "MERGED",
+      "title": "LOCAL-VERIFY-002 \u2014 Version-pinned mypy and Pyright adversarial matrix",
+      "url": "https://github.com/QSOLKCB/HERESY-SOFA/pull/19"
+    }
+  },
+  "pr_19_merge_commit_is_source_commit": true,
+  "recorded_at_utc": "2026-11-05T01:00:20.560214Z",
+  "repository": "QSOLKCB/HERESY-SOFA",
+  "schema_version": "1.0",
+  "source_commit": "1ad645e13277a28ba511cad2f6bd2f5d988894d8"
+}

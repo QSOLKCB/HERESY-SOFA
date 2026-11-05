@@ -1,0 +1,112 @@
+{
+  "artifacts": {
+    "checker_matrix": "CHECKER-MATRIX.csv",
+    "claim_ledger": "CLAIM-LEDGER.csv",
+    "negative_controls": "NEGATIVE-CONTROLS.json",
+    "open_issues": "OPEN-ISSUES.md",
+    "review": "REVIEW.md"
+  },
+  "baseline_ref": "BASELINE.json",
+  "campaign": "LOCAL-VERIFY-002B",
+  "coverage": {
+    "mypy_1.19.1": "FROZEN_PRIOR_CHECKER_CONFIRMED",
+    "mypy_2.3.1": "CHECKER_CONFIRMED",
+    "pyright_1.1.414": "CHECKER_CONFIRMED"
+  },
+  "determinism": {
+    "all_semantic_repeat_pairs_identical": true,
+    "pair_count": 56,
+    "pyright_measurement_fields_excluded": [
+      "time",
+      "summary.timeInSec"
+    ],
+    "raw_outputs_preserved": true,
+    "ref": "RAW/determinism.json"
+  },
+  "environment_ref": "ENVIRONMENT.json",
+  "execution": {
+    "all_semantic_repeat_pairs_identical": true,
+    "campaign": "LOCAL-VERIFY-002B",
+    "checker_timeouts": [],
+    "failed_negative_control_count": 0,
+    "finished_at_utc": "2026-11-05T00:43:11.440286Z",
+    "fixture_count": 14,
+    "fresh_process_checker_commands": 112,
+    "matrix_rows": 56,
+    "mypy_matrix_rows": 28,
+    "negative_control_count": 12,
+    "network_access_during_execution": false,
+    "package_manager_invocations_during_execution": false,
+    "pyright_matrix_rows": 28,
+    "schema_version": "1.0",
+    "seed": 26051105,
+    "source_unchanged": true,
+    "started_at_utc": "2026-11-05T00:42:16.687655Z",
+    "version_probe_commands": 4
+  },
+  "fixtures_copied_or_modified": false,
+  "fresh_offline_reproduction": {
+    "result": "PASS",
+    "setup_receipt": "RAW/FRESH-OFFLINE-SETUP.json",
+    "status": "EXECUTED_NATIVE",
+    "targeted_control_receipt": "RAW/FRESH-OFFLINE-REPRODUCTION.json"
+  },
+  "frozen_fixture_source": "evidence/LOCAL-VERIFY-002/FIXTURES",
+  "generated_at_utc": "2026-11-05T01:00:20.639649Z",
+  "limitations": [
+    "This addendum executes static checkers only; runtime findings are cross-referenced from immutable LOCAL-VERIFY-002.",
+    "The results are version-scoped to mypy 2.3.1 and Pyright 1.1.414 with Python target 3.14.",
+    "Pyright standard acceptance is not equivalent to strict acceptance or runtime correctness.",
+    "Pyright output contains nondeterministic wall-clock and duration measurements; semantic repeat comparison excludes only those measurements."
+  ],
+  "minimized_counterexamples": [
+    {
+      "finding": "typing.GenericAlias is unavailable and GenericAlias[...] is rejected.",
+      "id": "GA01",
+      "mypy_rules": "attr-defined;type-arg",
+      "pyright_rules": "reportAttributeAccessIssue"
+    },
+    {
+      "finding": "Packed[int, ...] and Packed[...] are runtime-accepted in prior evidence but statically rejected here.",
+      "id": "GA05",
+      "mypy_rules": "misc",
+      "pyright_rules": "reportInvalidTypeForm"
+    },
+    {
+      "finding": "The ignore makes checkers reveal C2 while prior native execution constructs C.",
+      "id": "DC03",
+      "mypy_default_exit": 0,
+      "pyright_standard_exit": 0
+    }
+  ],
+  "negative_controls": {
+    "count": 12,
+    "failed": 0,
+    "ref": "NEGATIVE-CONTROLS.json"
+  },
+  "package_inventory_ref": "PACKAGE-INVENTORY.json",
+  "pre_finalization_events": [
+    "RAW/MYPY-DEPENDENCY-PREFLIGHT.json",
+    "RAW/PACKAGE-VALIDATOR-PREFLIGHT.json",
+    "RAW/PREFLIGHT-PARSER-CORRECTION.json",
+    "RAW/PRE-SELF-CONTAINED-RUN.json"
+  ],
+  "result_summary": {
+    "dataclass_bare_instance": "mypy 2.3.1 reproduces var-annotated; Pyright standard accepts with Unknown and strict rejects Unknown.",
+    "dataclass_factory_mismatch": "Both reject without suppression; suppression leaves the prior native runtime C-versus-C2 defect.",
+    "mypy_exit_pattern_matches_1_19_1": true,
+    "original_genericalias_reply": "Both checkers reject.",
+    "sound_alternatives": "DC04, DC05 and DC06 pass both modes of both checkers.",
+    "types_genericalias_static_utility": "Both reject calling the runtime alias and infer Any/Unknown for its result.",
+    "typevartuple_literal_ellipsis": "Both reject the tested user-defined Generic[*Ts] forms."
+  },
+  "safety": {
+    "checker_execution_offline": true,
+    "global_installation": false,
+    "historical_evidence_modified": false,
+    "npm_npx_pnpm_invoked": false,
+    "sofa_mutations": false
+  },
+  "schema_version": "1.0",
+  "source_commit": "1ad645e13277a28ba511cad2f6bd2f5d988894d8"
+}

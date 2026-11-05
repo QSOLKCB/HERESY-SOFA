@@ -1,0 +1,130 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "mypy_executable": "<FRESH_WORKSPACE>/mypy-venv/bin/mypy",
+  "node_executable": "<NODE_EXECUTABLE>",
+  "offline": true,
+  "prepared_at_utc": "2026-11-05T00:51:33.379262Z",
+  "pyright_entrypoint": "<FRESH_WORKSPACE>/pyright/package/index.js",
+  "python_executable": "<FRESH_WORKSPACE>/mypy-venv/bin/python",
+  "receipts": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/RUNNER/inspect_packages.py",
+        "--mypy-wheel",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "--mypy-pypi-json",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/METADATA/mypy-2.3.1-pypi.json",
+        "--librt-wheel",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/librt-0.16.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "--librt-pypi-json",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/METADATA/librt-pypi.json",
+        "--ast-serialize-wheel",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "--ast-serialize-pypi-json",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/METADATA/ast-serialize-pypi.json",
+        "--typing-extensions-wheel",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/typing_extensions-4.15.0-py3-none-any.whl",
+        "--typing-extensions-pypi-json",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/METADATA/typing-extensions-4.15.0-pypi.json",
+        "--mypy-extensions-wheel",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/mypy_extensions-1.1.0-py3-none-any.whl",
+        "--mypy-extensions-pypi-json",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/METADATA/mypy-extensions-1.1.0-pypi.json",
+        "--pathspec-wheel",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/pathspec-1.0.4-py3-none-any.whl",
+        "--pathspec-pypi-json",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/METADATA/pathspec-1.0.4-pypi.json",
+        "--pyright-tgz",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/pyright-1.1.414.tgz",
+        "--pyright-registry-json",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/METADATA/pyright-1.1.414-registry.json",
+        "--extract-pyright",
+        "<FRESH_WORKSPACE>/pyright",
+        "--output",
+        "<FRESH_WORKSPACE>/package-inspection.json"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:51:32.828241Z",
+      "started_at_utc": "2026-11-05T00:51:31.520724Z",
+      "stderr": "",
+      "stdout": "{\"decision\": \"ACCEPTED\", \"mypy_members\": 1569, \"mypy_sha256\": \"8e036f06b41630f4c8a1d48f9ac6aa26acc65f8be089973f5519da643318f03f\", \"pyright_members\": 5423, \"pyright_sha256\": \"bf5f473f6167c0d14175492c3263d783b4489a6956e1c06c18e15228e3a3fa42\"}\n"
+    },
+    {
+      "argv": [
+        "<UV_EXECUTABLE>",
+        "venv",
+        "--offline",
+        "--python",
+        "/usr/bin/python3.14",
+        "<FRESH_WORKSPACE>/mypy-venv"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:51:32.850995Z",
+      "started_at_utc": "2026-11-05T00:51:32.828282Z",
+      "stderr": "Using CPython 3.14.4 interpreter at: /usr/bin/python3.14\nCreating virtual environment at: <FRESH_WORKSPACE>/mypy-venv\nActivate with: source <FRESH_WORKSPACE>/mypy-venv/bin/activate\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "<UV_EXECUTABLE>",
+        "pip",
+        "install",
+        "--offline",
+        "--no-deps",
+        "--python",
+        "<FRESH_WORKSPACE>/mypy-venv/bin/python",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/librt-0.16.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/typing_extensions-4.15.0-py3-none-any.whl",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/mypy_extensions-1.1.0-py3-none-any.whl",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/pathspec-1.0.4-py3-none-any.whl"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:51:33.126224Z",
+      "started_at_utc": "2026-11-05T00:51:32.851053Z",
+      "stderr": "Using Python 3.14.4 environment at: <FRESH_WORKSPACE>/mypy-venv\nResolved 6 packages in 3ms\nPrepared 6 packages in 98ms\nwarning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.\n         If the cache and target directories are on different filesystems, hardlinking may not be supported.\n         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.\nInstalled 6 packages in 116ms\n + ast-serialize==0.13.1 (from file://<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl)\n + librt==0.16.0 (from file://<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/librt-0.16.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)\n + mypy==2.3.1 (from file://<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl)\n + mypy-extensions==1.1.0 (from file://<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/mypy_extensions-1.1.0-py3-none-any.whl)\n + pathspec==1.0.4 (from file://<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/pathspec-1.0.4-py3-none-any.whl)\n + typing-extensions==4.15.0 (from file://<REPOSITORY>/evidence/LOCAL-VERIFY-002B/PACKAGES/typing_extensions-4.15.0-py3-none-any.whl)\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "<UV_EXECUTABLE>",
+        "pip",
+        "check",
+        "--python",
+        "<FRESH_WORKSPACE>/mypy-venv/bin/python"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:51:33.155021Z",
+      "started_at_utc": "2026-11-05T00:51:33.126266Z",
+      "stderr": "Using Python 3.14.4 environment at: <FRESH_WORKSPACE>/mypy-venv\nChecked 6 packages in 0.40ms\nAll installed packages are compatible\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "<FRESH_WORKSPACE>/mypy-venv/bin/mypy",
+        "--version"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:51:33.271199Z",
+      "started_at_utc": "2026-11-05T00:51:33.155041Z",
+      "stderr": "",
+      "stdout": "mypy 2.3.1 (compiled: yes)\n"
+    },
+    {
+      "argv": [
+        "<NODE_EXECUTABLE>",
+        "<FRESH_WORKSPACE>/pyright/package/index.js",
+        "--version"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:51:33.379247Z",
+      "started_at_utc": "2026-11-05T00:51:33.271236Z",
+      "stderr": "",
+      "stdout": "pyright 1.1.414\n"
+    }
+  ],
+  "schema_version": "1.0",
+  "target": "<FRESH_WORKSPACE>"
+}

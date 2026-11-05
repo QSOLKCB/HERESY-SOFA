@@ -1,0 +1,128 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "control_count": 12,
+  "controls": [
+    {
+      "actual_exit_code": 1,
+      "checker": "mypy",
+      "control": "ordinary Generic[T] excess arity",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "GA06",
+      "mode": "default",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "mypy",
+      "control": "ordinary Generic[T] excess arity",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "GA06",
+      "mode": "strict",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "pyright",
+      "control": "ordinary Generic[T] excess arity",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "GA06",
+      "mode": "standard",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "pyright",
+      "control": "ordinary Generic[T] excess arity",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "GA06",
+      "mode": "strict",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "mypy",
+      "control": "deliberately wrong assert_type",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "NC01",
+      "mode": "default",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "mypy",
+      "control": "deliberately wrong assert_type",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "NC01",
+      "mode": "strict",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "pyright",
+      "control": "deliberately wrong assert_type",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "NC01",
+      "mode": "standard",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "pyright",
+      "control": "deliberately wrong assert_type",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "NC01",
+      "mode": "strict",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "mypy",
+      "control": "unsuppressed bound-TypeVar factory mismatch",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "DC02",
+      "mode": "default",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "mypy",
+      "control": "unsuppressed bound-TypeVar factory mismatch",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "DC02",
+      "mode": "strict",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "pyright",
+      "control": "unsuppressed bound-TypeVar factory mismatch",
+      "error_diagnostic_count": 1,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "DC02",
+      "mode": "standard",
+      "passed": true
+    },
+    {
+      "actual_exit_code": 1,
+      "checker": "pyright",
+      "control": "unsuppressed bound-TypeVar factory mismatch",
+      "error_diagnostic_count": 2,
+      "expected": "checker rejects with at least one error",
+      "fixture_id": "DC02",
+      "mode": "strict",
+      "passed": true
+    }
+  ],
+  "failed_control_count": 0,
+  "schema_version": "1.0"
+}

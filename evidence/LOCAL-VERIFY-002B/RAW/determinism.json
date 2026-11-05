@@ -1,0 +1,488 @@
+{
+  "all_semantic_repeat_pairs_identical": true,
+  "campaign": "LOCAL-VERIFY-002B",
+  "pairs": [
+    {
+      "checker": "mypy",
+      "fixture_id": "GA01",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA02",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA03",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA04",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA05",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA06",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC01",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC02",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC03",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC04",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC05",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC06",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC07",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "NC01",
+      "mode": "default",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA01",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA02",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA03",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA04",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA05",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "GA06",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC01",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC02",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC03",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC04",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC05",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC06",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "DC07",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "mypy",
+      "fixture_id": "NC01",
+      "mode": "strict",
+      "note": "Exact normalized output comparison.",
+      "raw_stdout_identical": true,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA01",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA02",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA03",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA04",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA05",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA06",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC01",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC02",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC03",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC04",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC05",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC06",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC07",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "NC01",
+      "mode": "standard",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA01",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA02",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA03",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA04",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA05",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "GA06",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC01",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC02",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC03",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC04",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC05",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC06",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "DC07",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    },
+    {
+      "checker": "pyright",
+      "fixture_id": "NC01",
+      "mode": "strict",
+      "note": "Pyright embeds wall-clock and duration fields in JSON; semantic comparison excludes only those two measurement fields.",
+      "raw_stdout_identical": false,
+      "semantic_output_identical": true
+    }
+  ],
+  "schema_version": "1.0",
+  "source_after": {
+    "DC01": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c",
+    "DC02": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611",
+    "DC03": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645",
+    "DC04": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9",
+    "DC05": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f",
+    "DC06": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc",
+    "DC07": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171",
+    "GA01": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5",
+    "GA02": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60",
+    "GA03": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c",
+    "GA04": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff",
+    "GA05": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb",
+    "GA06": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458",
+    "NC01": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8"
+  },
+  "source_before": {
+    "DC01": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c",
+    "DC02": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611",
+    "DC03": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645",
+    "DC04": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9",
+    "DC05": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f",
+    "DC06": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc",
+    "DC07": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171",
+    "GA01": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5",
+    "GA02": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60",
+    "GA03": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c",
+    "GA04": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff",
+    "GA05": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb",
+    "GA06": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458",
+    "NC01": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8"
+  },
+  "source_unchanged": true
+}

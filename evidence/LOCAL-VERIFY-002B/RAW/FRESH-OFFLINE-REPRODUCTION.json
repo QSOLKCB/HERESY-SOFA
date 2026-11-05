@@ -1,0 +1,29 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "recorded_at_utc": "2026-11-05T00:51:49Z",
+  "classification": "EXECUTED_NATIVE",
+  "preparation_receipt": {
+    "path": "RAW/FRESH-OFFLINE-SETUP.json",
+    "sha256": "5831558144442a740d56352b53218d22cbfdc37c0ec324fc361af69e6f22e5e0"
+  },
+  "preparation_result": {
+    "exit_code": 0,
+    "mypy_version": "mypy 2.3.1 (compiled: yes)",
+    "pyright_version": "pyright 1.1.414",
+    "uv_pip_check": "All installed packages are compatible",
+    "network": false,
+    "npm_npx_pnpm": false
+  },
+  "targeted_negative_control": {
+    "fixture": "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py",
+    "fixture_sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458",
+    "mypy_exit_code": 1,
+    "mypy_rule": "type-arg",
+    "mypy_observed": "Single expects 1 type argument, but 2 given",
+    "pyright_exit_code": 1,
+    "pyright_rule": "reportInvalidTypeArguments",
+    "pyright_observed": "Too many type arguments provided for Single; expected 1 but received 2"
+  },
+  "result": "PASS",
+  "limitation": "The targeted command output was observed in the controlling shell; the setup receipt contains exact preparation commands and timestamps. Full matrix commands are preserved separately in RAW checker receipts."
+}

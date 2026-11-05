@@ -1,0 +1,17 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "classification": "DEPENDENCY_PREFLIGHT_FAILURE",
+  "event_time_utc": "NOT_CAPTURED",
+  "command": [
+    "UV_OFFLINE=1",
+    "uv venv --offline --python /usr/bin/python3.14 --system-site-packages <ACQUISITION_ROOT>/venvs/mypy-2.3.1",
+    "UV_OFFLINE=1 uv pip install --offline --no-deps --python <ACQUISITION_ROOT>/venvs/mypy-2.3.1/bin/python <ACQUISITION_ROOT>/downloads/mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+    "<ACQUISITION_ROOT>/venvs/mypy-2.3.1/bin/mypy --version"
+  ],
+  "exit_code": 1,
+  "observed_error": "ValueError: API version conflict for librt.internal, expected 1 or newer, found 0 (hint: upgrade librt)",
+  "cause": "The system-site-packages environment exposed librt 0.7.3, below mypy 2.3.1's declared librt>=0.13.0 requirement; ast-serialize was also absent.",
+  "checker_fixture_executed": false,
+  "resolution": "Acquired, archive-validated and installed exact librt 0.16.0 and ast-serialize 0.13.1 wheels into the isolated venv. No global installation occurred.",
+  "timestamp_limitation": "The preflight command's UTC timestamp was not captured; no timestamp is inferred from filesystem metadata."
+}
