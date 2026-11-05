@@ -1,0 +1,2357 @@
+{
+  "assertions": {
+    "count": 816,
+    "failed_count": 0,
+    "failures": [],
+    "negative_control_count": 709
+  },
+  "broken_controls": {
+    "control_count": 6,
+    "controls": [
+      {
+        "broken": [
+          "automatic",
+          "es"
+        ],
+        "id": "B001",
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "en-orig",
+              "es"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": "en-orig",
+          "language_resolution": "no_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_original_automatic"
+        },
+        "passed": true
+      },
+      {
+        "first": [
+          "automatic",
+          "es"
+        ],
+        "id": "B002",
+        "passed": true,
+        "reversed": [
+          "automatic",
+          "en-orig"
+        ]
+      },
+      {
+        "broken": [
+          "manual",
+          "de"
+        ],
+        "id": "B003",
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de",
+              "en"
+            ]
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_manual_without_language"
+        },
+        "passed": true
+      },
+      {
+        "broken": [
+          "manual",
+          "de"
+        ],
+        "id": "B004",
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "en"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": "en",
+          "language_resolution": "no_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "single_automatic_without_language"
+        },
+        "passed": true
+      },
+      {
+        "gate_result": false,
+        "id": "B005",
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de-DE"
+            ]
+          },
+          "hints": [],
+          "language": "de-DE",
+          "language_resolution": "no_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_manual_without_language"
+        },
+        "passed": true
+      },
+      {
+        "broken": [
+          "automatic",
+          "fr"
+        ],
+        "id": "B006",
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [
+              "en",
+              "fr"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_automatic_without_language"
+        },
+        "passed": true
+      }
+    ]
+  },
+  "campaign": "LOCAL-VERIFY-003",
+  "fixture_results": {
+    "agreement_count": 26,
+    "fixture_count": 40,
+    "minimum_counterexamples": [
+      {
+        "category": "ambiguous_manual",
+        "fixture_id": "F002",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_manual_without_language"
+        }
+      },
+      {
+        "category": "ambiguous_original_asr",
+        "fixture_id": "F005",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-orig",
+          "origin": "automatic",
+          "reason": "first_original_automatic_without_language"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_original_automatic"
+        }
+      },
+      {
+        "category": "ambiguous_base_match",
+        "fixture_id": "F011",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en-GB",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_manual_base"
+        }
+      },
+      {
+        "category": "contradictory_hints",
+        "fixture_id": "F015",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "conflicting_metadata_hints"
+        }
+      },
+      {
+        "category": "malformed_track",
+        "fixture_id": "F023",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "automatic",
+          "reason": "single_automatic_without_language"
+        }
+      }
+    ],
+    "mismatch_count": 14,
+    "mismatches": [
+      {
+        "category": "ambiguous_manual",
+        "fixture_id": "F002",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_manual_without_language"
+        }
+      },
+      {
+        "category": "ambiguous_original_asr",
+        "fixture_id": "F005",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-orig",
+          "origin": "automatic",
+          "reason": "first_original_automatic_without_language"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_original_automatic"
+        }
+      },
+      {
+        "category": "ambiguous_base_match",
+        "fixture_id": "F011",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en-GB",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_manual_base"
+        }
+      },
+      {
+        "category": "contradictory_hints",
+        "fixture_id": "F015",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "conflicting_metadata_hints"
+        }
+      },
+      {
+        "category": "ambiguous_audio_hints",
+        "fixture_id": "F017",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_audio_hints"
+        }
+      },
+      {
+        "category": "region_base_ambiguity",
+        "fixture_id": "F019",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "pt-PT",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_manual_base"
+        }
+      },
+      {
+        "category": "malformed_track",
+        "fixture_id": "F023",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "automatic",
+          "reason": "single_automatic_without_language"
+        }
+      },
+      {
+        "category": "duplicate_normalized_language",
+        "fixture_id": "F025",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en-US",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_manual_exact"
+        }
+      },
+      {
+        "category": "malformed_manual_and_translations",
+        "fixture_id": "F027",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_automatic_without_language"
+        }
+      },
+      {
+        "category": "script_ambiguity",
+        "fixture_id": "F029",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "zh-Hant",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "ambiguous_manual_base"
+        }
+      },
+      {
+        "category": "malformed_exact_manual",
+        "fixture_id": "F030",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "oracle": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "automatic",
+          "reason": "automatic_exact"
+        }
+      },
+      {
+        "category": "blank_language_key",
+        "fixture_id": "F031",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "   ",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "automatic",
+          "reason": "single_automatic_without_language"
+        }
+      },
+      {
+        "category": "invalid_preference",
+        "fixture_id": "F037",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "oracle": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "invalid_explicit_preference"
+        }
+      },
+      {
+        "category": "manual_auto_same_key_validity",
+        "fixture_id": "F039",
+        "interpretation": "The TIL supplies no code; this mismatch is against the preserved examiner literal translation and identifies an underspecified rule.",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "oracle": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "automatic",
+          "reason": "automatic_exact"
+        }
+      }
+    ],
+    "permutation_evaluations": 73,
+    "results": [
+      {
+        "agreement": true,
+        "category": "missing_language_manual",
+        "description": "Missing video language with one usable uploaded caption.",
+        "fixture_id": "F001",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-DE",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de-DE"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de-DE"
+            ]
+          },
+          "hints": [],
+          "language": "de-DE",
+          "language_resolution": "no_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_manual_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "ambiguous_manual",
+        "description": "Two uploaded languages and no language evidence cannot be resolved safely.",
+        "fixture_id": "F002",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ],
+          [
+            "SELECT",
+            "manual",
+            "en"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de",
+              "en"
+            ]
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_manual_without_language"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "manual_precedence",
+        "description": "A unique manual caption outranks an original-language automatic caption when language is missing.",
+        "fixture_id": "F003",
+        "literal": {
+          "decision": "SELECT",
+          "language": "fr",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "fr"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "en-orig"
+            ],
+            "manual": [
+              "fr"
+            ]
+          },
+          "hints": [],
+          "language": "fr",
+          "language_resolution": "no_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_manual_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "original_asr_precedence",
+        "description": "A unique -orig automatic key outranks translated automatic keys.",
+        "fixture_id": "F004",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en-orig",
+          "origin": "automatic",
+          "reason": "first_original_automatic_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "automatic",
+            "en-orig"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "de",
+              "en-orig",
+              "fr"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": "en-orig",
+          "language_resolution": "no_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_original_automatic"
+        },
+        "permutation_count": 6
+      },
+      {
+        "agreement": false,
+        "category": "ambiguous_original_asr",
+        "description": "Two -orig automatic keys are equally ranked.",
+        "fixture_id": "F005",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-orig",
+          "origin": "automatic",
+          "reason": "first_original_automatic_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "automatic",
+            "de-orig"
+          ],
+          [
+            "SELECT",
+            "automatic",
+            "en-orig"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [
+              "de-orig",
+              "en-orig"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_original_automatic"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "single_automatic",
+        "description": "Exactly one remaining automatic language is selectable.",
+        "fixture_id": "F006",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-DE",
+          "origin": "automatic",
+          "reason": "single_automatic_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "automatic",
+            "de-DE"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "de-DE"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": "de-DE",
+          "language_resolution": "no_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "single_automatic_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "translated_map",
+        "description": "Several automatic languages without -orig require abstention.",
+        "fixture_id": "F007",
+        "literal": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "automatic_not_unique_or_absent"
+        },
+        "literal_distinct_choices": [
+          [
+            "ABSTAIN",
+            null,
+            null
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [
+              "de",
+              "en",
+              "fr"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_automatic_without_language"
+        },
+        "permutation_count": 6
+      },
+      {
+        "agreement": true,
+        "category": "exact_manual_precedence",
+        "description": "Manual wins when manual and automatic tracks have the same exact key.",
+        "fixture_id": "F008",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-DE",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de-DE"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "de-DE"
+            ],
+            "manual": [
+              "de-DE"
+            ]
+          },
+          "hints": [
+            {
+              "language": "de-DE",
+              "source": "language"
+            }
+          ],
+          "language": "de-DE",
+          "language_resolution": "metadata_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_exact"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "exact_before_base",
+        "description": "An exact automatic match outranks a base-language manual match.",
+        "fixture_id": "F009",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-DE",
+          "origin": "automatic",
+          "reason": "first_automatic_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "automatic",
+            "de-DE"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "de-DE"
+            ],
+            "manual": [
+              "de"
+            ]
+          },
+          "hints": [
+            {
+              "language": "de-DE",
+              "source": "language"
+            }
+          ],
+          "language": "de-DE",
+          "language_resolution": "metadata_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "automatic_exact"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "base_manual_precedence",
+        "description": "Manual wins within the base-language tier.",
+        "fixture_id": "F010",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-DE",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de-DE"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "de-orig"
+            ],
+            "manual": [
+              "de-DE"
+            ]
+          },
+          "hints": [
+            {
+              "language": "de-AT",
+              "source": "language"
+            }
+          ],
+          "language": "de-DE",
+          "language_resolution": "metadata_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_base"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "ambiguous_base_match",
+        "description": "Two manual region variants are tied at the best base-language tier.",
+        "fixture_id": "F011",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en-GB",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "en-GB"
+          ],
+          [
+            "SELECT",
+            "manual",
+            "en-US"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "en-GB",
+              "en-US"
+            ]
+          },
+          "hints": [
+            {
+              "language": "en-AU",
+              "source": "language"
+            }
+          ],
+          "language": null,
+          "language_resolution": "metadata_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_manual_base"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "language_unavailable",
+        "description": "A known video language that has no matching caption does not justify another language.",
+        "fixture_id": "F012",
+        "literal": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "target_language_unavailable"
+        },
+        "literal_distinct_choices": [
+          [
+            "ABSTAIN",
+            null,
+            null
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "en"
+            ]
+          },
+          "hints": [
+            {
+              "language": "fr",
+              "source": "language"
+            }
+          ],
+          "language": null,
+          "language_resolution": "metadata_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "target_language_unavailable"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "explicit_preference",
+        "description": "An explicit available preference overrides a different metadata language.",
+        "fixture_id": "F013",
+        "literal": {
+          "decision": "SELECT",
+          "language": "es",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "es"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de",
+              "es"
+            ]
+          },
+          "hints": [
+            {
+              "language": "es",
+              "source": "preferred"
+            }
+          ],
+          "language": "es",
+          "language_resolution": "explicit_preference",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_exact"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "unavailable_preference",
+        "description": "An explicit nonexistent preference must not silently fall back to the video language.",
+        "fixture_id": "F014",
+        "literal": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "target_language_unavailable"
+        },
+        "literal_distinct_choices": [
+          [
+            "ABSTAIN",
+            null,
+            null
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de"
+            ]
+          },
+          "hints": [
+            {
+              "language": "zz",
+              "source": "preferred"
+            }
+          ],
+          "language": null,
+          "language_resolution": "explicit_preference",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "preferred_language_unavailable"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "contradictory_hints",
+        "description": "Different-base language and original_language hints are contradictory.",
+        "fixture_id": "F015",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "en"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de",
+              "en"
+            ]
+          },
+          "hints": [
+            {
+              "language": "en",
+              "source": "language"
+            },
+            {
+              "language": "de",
+              "source": "original_language"
+            }
+          ],
+          "language": null,
+          "language_resolution": "conflicting_metadata_hints",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "conflicting_metadata_hints"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "unique_audio_hint",
+        "description": "A unique audio language can drive a unique base-language match.",
+        "fixture_id": "F016",
+        "literal": {
+          "decision": "SELECT",
+          "language": "pt-PT",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "pt-PT"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "pt-PT"
+            ]
+          },
+          "hints": [
+            {
+              "language": "pt-BR",
+              "source": "audio_format"
+            },
+            {
+              "language": "pt-BR",
+              "source": "audio_format"
+            }
+          ],
+          "language": "pt-PT",
+          "language_resolution": "unique_audio_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_base"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "ambiguous_audio_hints",
+        "description": "Two audio languages do not resolve a caption language.",
+        "fixture_id": "F017",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ],
+          [
+            "SELECT",
+            "manual",
+            "en"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de",
+              "en"
+            ]
+          },
+          "hints": [
+            {
+              "language": "en",
+              "source": "audio_format"
+            },
+            {
+              "language": "de",
+              "source": "audio_format"
+            }
+          ],
+          "language": null,
+          "language_resolution": "ambiguous_audio_hints",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_audio_hints"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "region_exact",
+        "description": "An exact regional key wins over another key sharing the base language.",
+        "fixture_id": "F018",
+        "literal": {
+          "decision": "SELECT",
+          "language": "pt-BR",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "pt-BR"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "pt-BR",
+              "pt-PT"
+            ]
+          },
+          "hints": [
+            {
+              "language": "pt-BR",
+              "source": "language"
+            }
+          ],
+          "language": "pt-BR",
+          "language_resolution": "metadata_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_exact"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": false,
+        "category": "region_base_ambiguity",
+        "description": "Two non-exact regional variants remain tied on base language.",
+        "fixture_id": "F019",
+        "literal": {
+          "decision": "SELECT",
+          "language": "pt-PT",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "pt-AO"
+          ],
+          [
+            "SELECT",
+            "manual",
+            "pt-PT"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "pt-AO",
+              "pt-PT"
+            ]
+          },
+          "hints": [
+            {
+              "language": "pt-BR",
+              "source": "language"
+            }
+          ],
+          "language": null,
+          "language_resolution": "metadata_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_manual_base"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "case_normalization",
+        "description": "Language matching is case-insensitive while preserving the exact selected key.",
+        "fixture_id": "F020",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en-US",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "en-US"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "en-US"
+            ]
+          },
+          "hints": [
+            {
+              "language": "EN-us",
+              "source": "language"
+            }
+          ],
+          "language": "en-US",
+          "language_resolution": "metadata_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_exact"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "noncaption_filtering",
+        "description": "live_chat and danmaku are excluded when a real caption exists.",
+        "fixture_id": "F021",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de"
+            ]
+          },
+          "hints": [],
+          "language": "de",
+          "language_resolution": "no_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_manual_without_language"
+        },
+        "permutation_count": 6
+      },
+      {
+        "agreement": true,
+        "category": "noncaptions_only",
+        "description": "Non-caption entries alone do not make caption metadata available.",
+        "fixture_id": "F022",
+        "literal": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "automatic_not_unique_or_absent"
+        },
+        "literal_distinct_choices": [
+          [
+            "ABSTAIN",
+            null,
+            null
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": false,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "no_eligible_tracks"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": false,
+        "category": "malformed_track",
+        "description": "An empty manual track must not outrank one usable automatic track.",
+        "fixture_id": "F023",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "en"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": "en",
+          "language_resolution": "no_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "single_automatic_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "malformed_maps",
+        "description": "Non-mapping caption containers provide no usable tracks.",
+        "fixture_id": "F024",
+        "literal": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "automatic_not_unique_or_absent"
+        },
+        "literal_distinct_choices": [
+          [
+            "ABSTAIN",
+            null,
+            null
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": false,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "no_eligible_tracks"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "duplicate_normalized_language",
+        "description": "Two raw keys that normalize to the same exact language are still distinct tied candidates.",
+        "fixture_id": "F025",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en-US",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "EN-us"
+          ],
+          [
+            "SELECT",
+            "manual",
+            "en-US"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "EN-us",
+              "en-US"
+            ]
+          },
+          "hints": [
+            {
+              "language": "en-US",
+              "source": "language"
+            }
+          ],
+          "language": null,
+          "language_resolution": "metadata_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_manual_exact"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "deceptive_translation_labels",
+        "description": "A format label containing Original does not replace the -orig key signal.",
+        "fixture_id": "F026",
+        "literal": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "automatic_not_unique_or_absent"
+        },
+        "literal_distinct_choices": [
+          [
+            "ABSTAIN",
+            null,
+            null
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [
+              "en",
+              "fr"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_automatic_without_language"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": false,
+        "category": "malformed_manual_and_translations",
+        "description": "Malformed manual metadata cannot resolve an ambiguous translated map.",
+        "fixture_id": "F027",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [
+              "en",
+              "fr"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "no_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_automatic_without_language"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": true,
+        "category": "script_region_base",
+        "description": "A single zh base-language candidate is deterministic despite script and region subtags.",
+        "fixture_id": "F028",
+        "literal": {
+          "decision": "SELECT",
+          "language": "zh-Hant",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "zh-Hant"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "zh-Hant"
+            ]
+          },
+          "hints": [
+            {
+              "language": "zh-Hant-TW",
+              "source": "language"
+            }
+          ],
+          "language": "zh-Hant",
+          "language_resolution": "metadata_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_base"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "script_ambiguity",
+        "description": "Hant and Hans variants tie under the stated base-language rule.",
+        "fixture_id": "F029",
+        "literal": {
+          "decision": "SELECT",
+          "language": "zh-Hant",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "zh-Hans"
+          ],
+          [
+            "SELECT",
+            "manual",
+            "zh-Hant"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "zh-Hans",
+              "zh-Hant"
+            ]
+          },
+          "hints": [
+            {
+              "language": "zh-TW",
+              "source": "language"
+            }
+          ],
+          "language": null,
+          "language_resolution": "metadata_language_hint",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "ambiguous_manual_base"
+        },
+        "permutation_count": 2
+      },
+      {
+        "agreement": false,
+        "category": "malformed_exact_manual",
+        "description": "An unusable exact manual entry does not outrank a usable exact automatic entry.",
+        "fixture_id": "F030",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "de"
+            ],
+            "manual": []
+          },
+          "hints": [
+            {
+              "language": "de",
+              "source": "language"
+            }
+          ],
+          "language": "de",
+          "language_resolution": "metadata_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "automatic_exact"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "blank_language_key",
+        "description": "A blank manual key is ignored.",
+        "fixture_id": "F031",
+        "literal": {
+          "decision": "SELECT",
+          "language": "   ",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "   "
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "en"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": "en",
+          "language_resolution": "no_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "single_automatic_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "mixed_format_entries",
+        "description": "One usable inline-data format makes a track eligible despite malformed siblings.",
+        "fixture_id": "F032",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de"
+            ]
+          },
+          "hints": [],
+          "language": "de",
+          "language_resolution": "no_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_manual_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "original_language_hint",
+        "description": "original_language is used when language is absent.",
+        "fixture_id": "F033",
+        "literal": {
+          "decision": "SELECT",
+          "language": "it",
+          "origin": "manual",
+          "reason": "first_manual_base"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "it"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "it"
+            ]
+          },
+          "hints": [
+            {
+              "language": "it-IT",
+              "source": "original_language"
+            }
+          ],
+          "language": "it",
+          "language_resolution": "metadata_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "manual_base"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "all_language_fields_missing",
+        "description": "Null language fields and language-free formats do not hide a unique manual caption.",
+        "fixture_id": "F034",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de-DE",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de-DE"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de-DE"
+            ]
+          },
+          "hints": [],
+          "language": "de-DE",
+          "language_resolution": "no_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_manual_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "same_base_hints",
+        "description": "Same-base metadata hints are not contradictory; exact still outranks base.",
+        "fixture_id": "F035",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "automatic",
+          "reason": "first_automatic_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "automatic",
+            "en"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "en"
+            ],
+            "manual": [
+              "en-US"
+            ]
+          },
+          "hints": [
+            {
+              "language": "en",
+              "source": "language"
+            },
+            {
+              "language": "en-US",
+              "source": "original_language"
+            }
+          ],
+          "language": "en",
+          "language_resolution": "metadata_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "automatic_exact"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "malformed_top_level",
+        "description": "A non-object metadata value is rejected.",
+        "fixture_id": "F036",
+        "literal": {
+          "decision": "ABSTAIN",
+          "language": null,
+          "origin": null,
+          "reason": "metadata_not_mapping"
+        },
+        "literal_distinct_choices": [
+          [
+            "ABSTAIN",
+            null,
+            null
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": []
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "metadata_not_mapping",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": false,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "metadata_not_mapping"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "invalid_preference",
+        "description": "An explicitly supplied blank preference is invalid rather than silently ignored.",
+        "fixture_id": "F037",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "ABSTAIN",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de"
+            ]
+          },
+          "hints": [],
+          "language": null,
+          "language_resolution": "invalid_explicit_preference",
+          "origin": null,
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": false
+          },
+          "reason": "invalid_explicit_preference"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "blank_metadata_hint",
+        "description": "Whitespace-only metadata language is treated as missing.",
+        "fixture_id": "F038",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "manual",
+          "reason": "first_manual_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [],
+            "manual": [
+              "de"
+            ]
+          },
+          "hints": [],
+          "language": "de",
+          "language_resolution": "no_language_hint",
+          "origin": "manual",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "unique_manual_without_language"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": false,
+        "category": "manual_auto_same_key_validity",
+        "description": "Manual precedence applies only to a usable manual entry.",
+        "fixture_id": "F039",
+        "literal": {
+          "decision": "SELECT",
+          "language": "en",
+          "origin": "manual",
+          "reason": "first_manual_exact"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "manual",
+            "en"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "en"
+            ],
+            "manual": []
+          },
+          "hints": [
+            {
+              "language": "en",
+              "source": "language"
+            }
+          ],
+          "language": "en",
+          "language_resolution": "metadata_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "automatic_exact"
+        },
+        "permutation_count": 1
+      },
+      {
+        "agreement": true,
+        "category": "automatic_noncaption_filtering",
+        "description": "Automatic non-caption entries do not make the real automatic track ambiguous.",
+        "fixture_id": "F040",
+        "literal": {
+          "decision": "SELECT",
+          "language": "de",
+          "origin": "automatic",
+          "reason": "single_automatic_without_language"
+        },
+        "literal_distinct_choices": [
+          [
+            "SELECT",
+            "automatic",
+            "de"
+          ]
+        ],
+        "oracle": {
+          "decision": "SELECT",
+          "eligible": {
+            "automatic": [
+              "de"
+            ],
+            "manual": []
+          },
+          "hints": [],
+          "language": "de",
+          "language_resolution": "no_language_hint",
+          "origin": "automatic",
+          "outcomes": {
+            "METADATA_AVAILABLE": true,
+            "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED",
+            "TRACK_SELECTED": true
+          },
+          "reason": "single_automatic_without_language"
+        },
+        "permutation_count": 6
+      }
+    ]
+  },
+  "fixture_source": {
+    "path": "FIXTURES/metadata-fixtures.json",
+    "sha256": "1ad97e9e4c093da6dea6c048e6893740000ae172898c9f4d57f6c6e62775f7ee"
+  },
+  "outcome_boundaries": {
+    "METADATA_AVAILABLE": "Executed against synthetic metadata validation.",
+    "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED; no live URL was authorized.",
+    "TRACK_SELECTED": "Executed against synthetic metadata and local process_subtitles controls."
+  },
+  "seed": 26051105,
+  "seeded_stress": {
+    "abstained": 70,
+    "case_count": 128,
+    "reorder_checks": 640,
+    "seed": 26051105,
+    "selected": 58
+  },
+  "source_hashes": {
+    "broken_first_key.py": "3af347ac7f6fb32136e6b0798b363a2fbb57e9c8a6783db683d9e4b6a1b19a85",
+    "policy_literal.py": "0b66879a801f4b0fedecaca4a9eeebf26dc4477c83c569b47b2acedfd0885b05",
+    "reference_oracle.py": "2f3658881b6f7c8afe2877df84c966b261c99723b73662c4b931d9733d168095",
+    "run_offline_matrix.py": "337617ee5b80a2613db9498c80d0daf7dfcb0126d5c046e56c95b0f823647b92"
+  },
+  "yt_dlp_integration": {
+    "evidence_class": "EXECUTED_NATIVE_OFFLINE",
+    "network_attempt_count": 0,
+    "not_proved": [
+      "extractor output",
+      "YouTube -orig semantics",
+      "remote subtitle availability",
+      "subtitle download",
+      "subtitle conversion"
+    ],
+    "observations": [
+      {
+        "id": "Y001",
+        "messages": [
+          {
+            "level": "debug",
+            "message": "[info] Y001: Downloading subtitles: de-DE"
+          }
+        ],
+        "passed": true,
+        "selected": {
+          "de-DE": {
+            "ext": "vtt",
+            "url": "https://captions.invalid/Y001-manual"
+          }
+        }
+      },
+      {
+        "id": "Y002",
+        "messages": [
+          {
+            "level": "debug",
+            "message": "[info] Y002: Downloading subtitles: de-DE"
+          }
+        ],
+        "passed": true,
+        "selected": {
+          "de-DE": {
+            "ext": "vtt",
+            "url": "https://captions.invalid/Y002-manual"
+          }
+        }
+      },
+      {
+        "id": "Y003",
+        "messages": [
+          {
+            "level": "debug",
+            "message": "[info] Y003: Downloading subtitles: en-orig"
+          }
+        ],
+        "passed": true,
+        "selected": {
+          "en-orig": {
+            "ext": "vtt",
+            "url": "https://captions.invalid/Y003-auto"
+          }
+        }
+      },
+      {
+        "id": "Y004",
+        "messages": [],
+        "passed": true,
+        "selected": null
+      },
+      {
+        "id": "Y005",
+        "messages": [],
+        "passed": true,
+        "selected": {}
+      },
+      {
+        "id": "Y006",
+        "passed": true,
+        "selected_languages": [
+          "en",
+          "en"
+        ]
+      },
+      {
+        "id": "Y007",
+        "passed": true,
+        "selected_languages": [
+          "de",
+          "fr"
+        ]
+      },
+      {
+        "id": "Y008",
+        "passed": true,
+        "selected_languages": [
+          "de-DE",
+          "de-DE"
+        ]
+      },
+      {
+        "exception": {
+          "message": "list index out of range",
+          "type": "IndexError"
+        },
+        "id": "Y009",
+        "passed": true
+      }
+    ],
+    "scope": "YoutubeDL.process_subtitles with synthetic dictionaries only",
+    "version": "2026.03.17"
+  }
+}

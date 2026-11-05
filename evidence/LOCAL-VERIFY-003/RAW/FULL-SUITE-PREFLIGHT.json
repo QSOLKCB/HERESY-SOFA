@@ -1,0 +1,40 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "classification": "REPOSITORY_TEST_PREFLIGHT_FAILURE",
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "exit_code": 1,
+  "summary": {
+    "tests_run": 156,
+    "failures": 1,
+    "errors": 1,
+    "skipped": 1
+  },
+  "findings": [
+    {
+      "test": "test_local_verify_002b.LocalVerify002BArchiveTests.test_required_artifacts_and_boundary",
+      "cause": "The frozen phase-002B validator encoded the then-true temporal assertion that LOCAL-VERIFY-003 did not exist.",
+      "correction": "Leave the frozen validator byte-identical; override only the repository wrapper with current separation checks that require 003 and continue to forbid 004."
+    },
+    {
+      "test": "test_retro_gauntlet.RetroGauntletTests.setUpClass",
+      "cause": "The managed sandbox denied a local socketpair send with PermissionError errno 1.",
+      "correction": "Rerun the unchanged full suite outside the managed sandbox with offline arguments; do not weaken the RETRO test."
+    }
+  ],
+  "network_access": false,
+  "historical_evidence_modified": false,
+  "result_scope": "Superseded repository preflight; selector experiment assertions remained green."
+}

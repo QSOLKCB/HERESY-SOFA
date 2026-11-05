@@ -1,0 +1,84 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "cpu": {
+    "logical_cpu_count": 32,
+    "model": "AMD Ryzen 9 5950X 16-Core Processor"
+  },
+  "operating_system": {
+    "architecture": "x86_64",
+    "kernel_release": "7.0.0-42-generic",
+    "os_release": {
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "LOGO": "ubuntu-logo",
+      "NAME": "Ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "UBUNTU_CODENAME": "resolute",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "VERSION_ID": "26.04"
+    }
+  },
+  "python": {
+    "executable": "/usr/bin/python3",
+    "module_probe": {
+      "distribution_version": "2026.3.17",
+      "executable": "/usr/bin/python3",
+      "module": "/usr/lib/python3/dist-packages/yt_dlp/__init__.py",
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "yt_dlp_version": "2026.03.17"
+    },
+    "version_output": "Python 3.14.4"
+  },
+  "recorded_at_utc": "2026-11-05T01:45:58.856929Z",
+  "safety": {
+    "credentials_used": false,
+    "dependencies_installed_or_upgraded": false,
+    "live_extractor_invoked": false,
+    "network_access_authorized": false,
+    "network_access_observed": false,
+    "subtitle_download_invoked": false
+  },
+  "uv": {
+    "bytes": 56107008,
+    "executable": "$HOME/.local/bin/uv",
+    "sha256": "92face6b1f0462ad911857957bd168cd4ae45515e2a2cb3fcc3ecbda3d4d82b1",
+    "version_output": "uv 0.12.1 (x86_64-unknown-linux-gnu)"
+  },
+  "yt_dlp": {
+    "critical_file_identities": [
+      {
+        "bytes": 206,
+        "path": "/usr/bin/yt-dlp",
+        "sha256": "efc2960e57e96dc67f5f16d911965cc18ab8a36dd3d9050a8d3fba1cd9e9f93c"
+      },
+      {
+        "bytes": 374,
+        "path": "/usr/lib/python3/dist-packages/yt_dlp/version.py",
+        "sha256": "8f926763fe7a596b7578cd53cc0dd350d3b387f5e3e2fe008f28057f99c6f054"
+      },
+      {
+        "bytes": 216827,
+        "path": "/usr/lib/python3/dist-packages/yt_dlp/YoutubeDL.py",
+        "sha256": "41be50edf210ad2795275ea42084abaa5467ac9978c09347b3013286877033ad"
+      },
+      {
+        "bytes": 47897,
+        "path": "/usr/lib/python3/dist-packages/yt_dlp/__init__.py",
+        "sha256": "3728abd2a56e92ff7ea5d7d1b473d59b71033980efc1ad405c73885fda11d29b"
+      }
+    ],
+    "distribution": "yt-dlp\t2026.03.17-1\tall\tinstall ok installed",
+    "executable": "/usr/bin/yt-dlp",
+    "package_tree": {
+      "aggregate_sha256": "8af638fe37f77aa19c92de79ab458a76635216d63405dc42cb749888b9144eee",
+      "file_count": 1132,
+      "root": "/usr/lib/python3/dist-packages/yt_dlp"
+    },
+    "version_output": "2026.03.17"
+  }
+}

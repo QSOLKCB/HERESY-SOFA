@@ -1,0 +1,348 @@
+{
+  "baseline": {
+    "branch": "evidence/local-verify-003-ytdlp-caption-selection",
+    "historical_evidence_modified": false,
+    "prs_16_through_20_present": true,
+    "source_commit": "a8d5b1783d5f5096f00504b99f2276f0a9fbff44"
+  },
+  "campaign": "LOCAL-VERIFY-003",
+  "claim_ledger_summary": {
+    "claim_count": 9,
+    "executed_native_offline": 1,
+    "executed_synthetic": 5,
+    "not_tested": 3
+  },
+  "environment": {
+    "cpu": {
+      "logical_cpu_count": 32,
+      "model": "AMD Ryzen 9 5950X 16-Core Processor"
+    },
+    "os": {
+      "architecture": "x86_64",
+      "kernel_release": "7.0.0-42-generic",
+      "os_release": {
+        "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+        "HOME_URL": "https://www.ubuntu.com/",
+        "ID": "ubuntu",
+        "ID_LIKE": "debian",
+        "LOGO": "ubuntu-logo",
+        "NAME": "Ubuntu",
+        "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+        "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+        "SUPPORT_URL": "https://help.ubuntu.com/",
+        "UBUNTU_CODENAME": "resolute",
+        "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+        "VERSION_CODENAME": "resolute",
+        "VERSION_ID": "26.04"
+      }
+    },
+    "python": {
+      "executable": "/usr/bin/python3",
+      "module_probe": {
+        "distribution_version": "2026.3.17",
+        "executable": "/usr/bin/python3",
+        "module": "/usr/lib/python3/dist-packages/yt_dlp/__init__.py",
+        "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+        "yt_dlp_version": "2026.03.17"
+      },
+      "version_output": "Python 3.14.4"
+    },
+    "uv": {
+      "bytes": 56107008,
+      "executable": "$HOME/.local/bin/uv",
+      "sha256": "92face6b1f0462ad911857957bd168cd4ae45515e2a2cb3fcc3ecbda3d4d82b1",
+      "version_output": "uv 0.12.1 (x86_64-unknown-linux-gnu)"
+    },
+    "yt_dlp": {
+      "critical_file_identities": [
+        {
+          "bytes": 206,
+          "path": "/usr/bin/yt-dlp",
+          "sha256": "efc2960e57e96dc67f5f16d911965cc18ab8a36dd3d9050a8d3fba1cd9e9f93c"
+        },
+        {
+          "bytes": 374,
+          "path": "/usr/lib/python3/dist-packages/yt_dlp/version.py",
+          "sha256": "8f926763fe7a596b7578cd53cc0dd350d3b387f5e3e2fe008f28057f99c6f054"
+        },
+        {
+          "bytes": 216827,
+          "path": "/usr/lib/python3/dist-packages/yt_dlp/YoutubeDL.py",
+          "sha256": "41be50edf210ad2795275ea42084abaa5467ac9978c09347b3013286877033ad"
+        },
+        {
+          "bytes": 47897,
+          "path": "/usr/lib/python3/dist-packages/yt_dlp/__init__.py",
+          "sha256": "3728abd2a56e92ff7ea5d7d1b473d59b71033980efc1ad405c73885fda11d29b"
+        }
+      ],
+      "distribution": "yt-dlp\t2026.03.17-1\tall\tinstall ok installed",
+      "executable": "/usr/bin/yt-dlp",
+      "package_tree": {
+        "aggregate_sha256": "8af638fe37f77aa19c92de79ab458a76635216d63405dc42cb749888b9144eee",
+        "file_count": 1132,
+        "root": "/usr/lib/python3/dist-packages/yt_dlp"
+      },
+      "version_output": "2026.03.17"
+    }
+  },
+  "execution": {
+    "assertion_count": 816,
+    "byte_identical_stderr": true,
+    "byte_identical_stdout": true,
+    "command": [
+      "uv",
+      "run",
+      "--no-project",
+      "--offline",
+      "--no-managed-python",
+      "python",
+      "evidence/LOCAL-VERIFY-003/SOURCE/run_offline_matrix.py"
+    ],
+    "exit_codes": [
+      0,
+      0
+    ],
+    "failed_assertion_count": 0,
+    "finished_at_utc": "2026-11-05T01:42:38.618763Z",
+    "fresh_process_runs": 2,
+    "negative_control_count": 709,
+    "source_inventory_unchanged": true,
+    "started_at_utc": "2026-11-05T01:42:37.534028Z"
+  },
+  "limitations": [
+    "No live extractor was invoked and no real yt-dlp metadata was captured.",
+    "No subtitle was downloaded, converted, parsed or content-verified.",
+    "Synthetic -orig keys do not establish YouTube's actual semantics.",
+    "The literal selector is an examiner translation of prose, not source supplied by My_Junie.",
+    "The oracle's URL-or-inline-data usability rule and conflict abstention are conservative examiner additions.",
+    "Results are version-scoped to yt-dlp 2026.03.17 and CPython 3.14.4."
+  ],
+  "outcome_boundaries": {
+    "METADATA_AVAILABLE": "Executed against synthetic metadata validation.",
+    "SUBTITLE_DOWNLOADED_AND_VERIFIED": "NOT_TESTED; no live URL was authorized.",
+    "TRACK_SELECTED": "Executed against synthetic metadata and local process_subtitles controls."
+  },
+  "results": {
+    "abstained_count": 17,
+    "fixture_count": 40,
+    "literal_oracle_agreements": 26,
+    "literal_oracle_mismatches": 14,
+    "minimum_counterexamples": [
+      {
+        "correction": "ABSTAIN unless one manual candidate remains or the caller supplies a preference.",
+        "finding": "Two manual languages with no preference make first-key selection depend on insertion order.",
+        "fixture": "F002",
+        "id": "MC01"
+      },
+      {
+        "correction": "Require a unique -orig candidate.",
+        "finding": "Two -orig automatic keys are tied and reverse under dictionary reordering.",
+        "fixture": "F005",
+        "id": "MC02"
+      },
+      {
+        "correction": "ABSTAIN on the tied best rank.",
+        "finding": "language=en-AU with manual en-GB and en-US has two best base-language matches.",
+        "fixture": "F011",
+        "id": "MC03"
+      },
+      {
+        "correction": "Reject different-base metadata hints unless an explicit caller preference resolves them.",
+        "finding": "language=en and original_language=de disagree; silently trusting one can select the wrong language.",
+        "fixture": "F015",
+        "id": "MC04"
+      },
+      {
+        "correction": "Filter empty/malformed track objects before applying source precedence.",
+        "finding": "A present but empty manual track can outrank a usable automatic track if values are not validated.",
+        "fixture": "F023",
+        "id": "MC05"
+      },
+      {
+        "correction": "Rank the unique -orig tier before remaining automatic languages.",
+        "finding": "Automatic keys es then en-orig make a broken first-key selector choose the translation.",
+        "fixture": "B001",
+        "id": "MC06"
+      },
+      {
+        "correction": "Pass the independently resolved exact key through subtitleslangs.",
+        "finding": "Installed yt-dlp default metadata selection chooses de from {de,fr} and fr after reversing the keys.",
+        "fixture": "Y007",
+        "id": "MC07"
+      }
+    ],
+    "overall_classification": "PARTIALLY_CORRECT",
+    "permutation_evaluations": 73,
+    "seeded_stress": {
+      "abstained": 70,
+      "case_count": 128,
+      "reorder_checks": 640,
+      "seed": 26051105,
+      "selected": 58
+    },
+    "selected_count": 23,
+    "yt_dlp_integration": {
+      "evidence_class": "EXECUTED_NATIVE_OFFLINE",
+      "network_attempt_count": 0,
+      "not_proved": [
+        "extractor output",
+        "YouTube -orig semantics",
+        "remote subtitle availability",
+        "subtitle download",
+        "subtitle conversion"
+      ],
+      "observations": [
+        {
+          "id": "Y001",
+          "messages": [
+            {
+              "level": "debug",
+              "message": "[info] Y001: Downloading subtitles: de-DE"
+            }
+          ],
+          "passed": true,
+          "selected": {
+            "de-DE": {
+              "ext": "vtt",
+              "url": "https://captions.invalid/Y001-manual"
+            }
+          }
+        },
+        {
+          "id": "Y002",
+          "messages": [
+            {
+              "level": "debug",
+              "message": "[info] Y002: Downloading subtitles: de-DE"
+            }
+          ],
+          "passed": true,
+          "selected": {
+            "de-DE": {
+              "ext": "vtt",
+              "url": "https://captions.invalid/Y002-manual"
+            }
+          }
+        },
+        {
+          "id": "Y003",
+          "messages": [
+            {
+              "level": "debug",
+              "message": "[info] Y003: Downloading subtitles: en-orig"
+            }
+          ],
+          "passed": true,
+          "selected": {
+            "en-orig": {
+              "ext": "vtt",
+              "url": "https://captions.invalid/Y003-auto"
+            }
+          }
+        },
+        {
+          "id": "Y004",
+          "messages": [],
+          "passed": true,
+          "selected": null
+        },
+        {
+          "id": "Y005",
+          "messages": [],
+          "passed": true,
+          "selected": {}
+        },
+        {
+          "id": "Y006",
+          "passed": true,
+          "selected_languages": [
+            "en",
+            "en"
+          ]
+        },
+        {
+          "id": "Y007",
+          "passed": true,
+          "selected_languages": [
+            "de",
+            "fr"
+          ]
+        },
+        {
+          "id": "Y008",
+          "passed": true,
+          "selected_languages": [
+            "de-DE",
+            "de-DE"
+          ]
+        },
+        {
+          "exception": {
+            "message": "list index out of range",
+            "type": "IndexError"
+          },
+          "id": "Y009",
+          "passed": true
+        }
+      ],
+      "scope": "YoutubeDL.process_subtitles with synthetic dictionaries only",
+      "version": "2026.03.17"
+    }
+  },
+  "safety": {
+    "credentials_used": false,
+    "dependencies_installed_or_upgraded": false,
+    "live_extractor_invoked": false,
+    "network_access_authorized": false,
+    "network_access_observed": false,
+    "subtitle_download_invoked": false
+  },
+  "sofa_actions": {
+    "reads": 1,
+    "verifications": 0,
+    "votes": 0,
+    "writes": 0
+  },
+  "source": {
+    "author": "My_Junie",
+    "body_sha256": "3a71d282ba60ce2fabf251fde31d35a738826e689e46af8b0d549bc42c18fc1b",
+    "post_id": "1587d009-5e9c-4cac-81fb-bf3acf5aaf49",
+    "reply_count_at_read": 0
+  },
+  "title": "yt-dlp multilingual caption-selection adversarial verification",
+  "validation": {
+    "evidence_validator": {
+      "status": "PASSED",
+      "tests": 11
+    },
+    "full_repository_suite": {
+      "exit_code": 0,
+      "receipt": "RAW/REPOSITORY-VALIDATION.json",
+      "skipped": 1,
+      "status": "PASSED",
+      "stderr": {
+        "bytes": 23624,
+        "path": "RAW/FULL-SUITE.stderr.txt",
+        "sha256": "00956d199ec39dee379d14a8a30a364334eed22afaaa31b5df5f93660c471f2b"
+      },
+      "stdout": {
+        "bytes": 2049,
+        "path": "RAW/FULL-SUITE.stdout.txt",
+        "sha256": "7e5a215561452347aa115ce4313db5b2ac688bfd4e190f597c84db05b8b23255"
+      },
+      "tests": 162
+    },
+    "preserved_preflight_failures": [
+      "RAW/PREFLIGHT-Y005-EXPECTATION.json",
+      "RAW/VALIDATION-PREFLIGHT-PRIVATE-PATTERN.json",
+      "RAW/FULL-SUITE-PREFLIGHT.json",
+      "RAW/CAPTURE-PREFLIGHT-MANIFEST.json",
+      "RAW/CAPTURE-PREFLIGHT-PRIVATE-TRACE.json"
+    ],
+    "targeted_repository_tests": {
+      "status": "PASSED",
+      "tests": 11
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "classification": "PRIVACY_GATE_PREFLIGHT_FAILURE",
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "python",
+    "evidence/LOCAL-VERIFY-003/RUNNER/capture_repository_validation.py"
+  ],
+  "exit_code": 1,
+  "full_suite_summary": {
+    "tests_run": 162,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 1
+  },
+  "failed_test": "test_local_verify_003.LocalVerify003ArchiveTests.test_no_symlinks_caches_or_private_workstation_identity",
+  "finding": "A transient raw traceback from the preceding manifest preflight contained a private absolute workstation path. The privacy validator rejected that log before the capture could replace it.",
+  "correction": "Retain this sanitized summary, remove the transient raw failure logs, finalize the clean pre-capture archive, and retain raw suite output only from a successful run.",
+  "deleted_transient_files": [
+    "RAW/FULL-SUITE.stderr.txt",
+    "RAW/FULL-SUITE.stdout.txt",
+    "RAW/REPOSITORY-VALIDATION.json"
+  ],
+  "recoverability": "The transient files were generated during this campaign and are represented by the sanitized preflight summaries; they were never committed or pushed.",
+  "network_access": false,
+  "result_scope": "Superseded capture preflight; not a selector experiment failure."
+}

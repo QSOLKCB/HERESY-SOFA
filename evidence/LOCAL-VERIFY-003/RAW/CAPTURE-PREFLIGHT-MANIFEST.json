@@ -1,0 +1,25 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "classification": "CAPTURE_TOOL_MANIFEST_PREFLIGHT_FAILURE",
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "python",
+    "evidence/LOCAL-VERIFY-003/RUNNER/capture_repository_validation.py"
+  ],
+  "exit_code": 1,
+  "full_suite_summary": {
+    "tests_run": 162,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 1
+  },
+  "failed_test": "test_local_verify_003.LocalVerify003ArchiveTests.test_archive_and_checksum_ledger",
+  "finding": "The capture script was created after the preceding archive finalization, so the manifest correctly reported RUNNER/capture_repository_validation.py as an uncovered file. All other runnable tests passed.",
+  "correction": "Preserve this preflight, finalize the capture tooling into the archive, rerun the capture unchanged, and finalize the successful output files.",
+  "network_access": false,
+  "result_scope": "Superseded capture preflight; not a selector experiment failure."
+}

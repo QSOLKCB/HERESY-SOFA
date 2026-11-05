@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.0",
+  "seed": 26051105,
+  "synthetic_only": true,
+  "network_targets_are_reserved_invalid_domain": true,
+  "fixtures": [
+    {
+      "id": "F001",
+      "category": "missing_language_manual",
+      "description": "Missing video language with one usable uploaded caption.",
+      "metadata": {"language": null, "original_language": null, "formats": [{"acodec": "aac"}], "subtitles": {"de-DE": [{"ext": "vtt", "url": "https://captions.invalid/F001"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "de-DE", "reason": "unique_manual_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F002",
+      "category": "ambiguous_manual",
+      "description": "Two uploaded languages and no language evidence cannot be resolved safely.",
+      "metadata": {"subtitles": {"de": [{"url": "https://captions.invalid/F002-de"}], "en": [{"url": "https://captions.invalid/F002-en"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_manual_without_language", "metadata_available": true},
+      "literal_order_sensitive": true,
+      "minimum_counterexample": true
+    },
+    {
+      "id": "F003",
+      "category": "manual_precedence",
+      "description": "A unique manual caption outranks an original-language automatic caption when language is missing.",
+      "metadata": {"subtitles": {"fr": [{"url": "https://captions.invalid/F003-manual"}]}, "automatic_captions": {"en-orig": [{"url": "https://captions.invalid/F003-auto"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "fr", "reason": "unique_manual_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F004",
+      "category": "original_asr_precedence",
+      "description": "A unique -orig automatic key outranks translated automatic keys.",
+      "metadata": {"automatic_captions": {"de": [{"url": "https://captions.invalid/F004-de"}], "en-orig": [{"url": "https://captions.invalid/F004-en-orig"}], "fr": [{"url": "https://captions.invalid/F004-fr"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "en-orig", "reason": "unique_original_automatic", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F005",
+      "category": "ambiguous_original_asr",
+      "description": "Two -orig automatic keys are equally ranked.",
+      "metadata": {"automatic_captions": {"de-orig": [{"url": "https://captions.invalid/F005-de"}], "en-orig": [{"url": "https://captions.invalid/F005-en"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_original_automatic", "metadata_available": true},
+      "literal_order_sensitive": true,
+      "minimum_counterexample": true
+    },
+    {
+      "id": "F006",
+      "category": "single_automatic",
+      "description": "Exactly one remaining automatic language is selectable.",
+      "metadata": {"automatic_captions": {"de-DE": [{"url": "https://captions.invalid/F006"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "de-DE", "reason": "single_automatic_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F007",
+      "category": "translated_map",
+      "description": "Several automatic languages without -orig require abstention.",
+      "metadata": {"automatic_captions": {"de": [{"url": "https://captions.invalid/F007-de"}], "en": [{"url": "https://captions.invalid/F007-en"}], "fr": [{"url": "https://captions.invalid/F007-fr"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_automatic_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F008",
+      "category": "exact_manual_precedence",
+      "description": "Manual wins when manual and automatic tracks have the same exact key.",
+      "metadata": {"language": "de-DE", "subtitles": {"de-DE": [{"url": "https://captions.invalid/F008-manual"}]}, "automatic_captions": {"de-DE": [{"url": "https://captions.invalid/F008-auto"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "de-DE", "reason": "manual_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F009",
+      "category": "exact_before_base",
+      "description": "An exact automatic match outranks a base-language manual match.",
+      "metadata": {"language": "de-DE", "subtitles": {"de": [{"url": "https://captions.invalid/F009-manual"}]}, "automatic_captions": {"de-DE": [{"url": "https://captions.invalid/F009-auto"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "de-DE", "reason": "automatic_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F010",
+      "category": "base_manual_precedence",
+      "description": "Manual wins within the base-language tier.",
+      "metadata": {"language": "de-AT", "subtitles": {"de-DE": [{"url": "https://captions.invalid/F010-manual"}]}, "automatic_captions": {"de-orig": [{"url": "https://captions.invalid/F010-auto"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "de-DE", "reason": "manual_base", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F011",
+      "category": "ambiguous_base_match",
+      "description": "Two manual region variants are tied at the best base-language tier.",
+      "metadata": {"language": "en-AU", "subtitles": {"en-GB": [{"url": "https://captions.invalid/F011-gb"}], "en-US": [{"url": "https://captions.invalid/F011-us"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_manual_base", "metadata_available": true},
+      "literal_order_sensitive": true,
+      "minimum_counterexample": true
+    },
+    {
+      "id": "F012",
+      "category": "language_unavailable",
+      "description": "A known video language that has no matching caption does not justify another language.",
+      "metadata": {"language": "fr", "subtitles": {"en": [{"url": "https://captions.invalid/F012"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "target_language_unavailable", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F013",
+      "category": "explicit_preference",
+      "description": "An explicit available preference overrides a different metadata language.",
+      "metadata": {"language": "de", "subtitles": {"de": [{"url": "https://captions.invalid/F013-de"}], "es": [{"url": "https://captions.invalid/F013-es"}]}},
+      "preferred": "es",
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "es", "reason": "manual_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F014",
+      "category": "unavailable_preference",
+      "description": "An explicit nonexistent preference must not silently fall back to the video language.",
+      "metadata": {"language": "de", "subtitles": {"de": [{"url": "https://captions.invalid/F014"}]}},
+      "preferred": "zz",
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "preferred_language_unavailable", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F015",
+      "category": "contradictory_hints",
+      "description": "Different-base language and original_language hints are contradictory.",
+      "metadata": {"language": "en", "original_language": "de", "subtitles": {"en": [{"url": "https://captions.invalid/F015-en"}], "de": [{"url": "https://captions.invalid/F015-de"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "conflicting_metadata_hints", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": true
+    },
+    {
+      "id": "F016",
+      "category": "unique_audio_hint",
+      "description": "A unique audio language can drive a unique base-language match.",
+      "metadata": {"formats": [{"language": "pt-BR", "acodec": "aac"}, {"language": "pt-BR", "acodec": "opus"}], "subtitles": {"pt-PT": [{"url": "https://captions.invalid/F016"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "pt-PT", "reason": "manual_base", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F017",
+      "category": "ambiguous_audio_hints",
+      "description": "Two audio languages do not resolve a caption language.",
+      "metadata": {"formats": [{"language": "en", "acodec": "aac"}, {"language": "de", "acodec": "opus"}], "subtitles": {"en": [{"url": "https://captions.invalid/F017-en"}], "de": [{"url": "https://captions.invalid/F017-de"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_audio_hints", "metadata_available": true},
+      "literal_order_sensitive": true,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F018",
+      "category": "region_exact",
+      "description": "An exact regional key wins over another key sharing the base language.",
+      "metadata": {"language": "pt-BR", "subtitles": {"pt-PT": [{"url": "https://captions.invalid/F018-pt"}], "pt-BR": [{"url": "https://captions.invalid/F018-br"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "pt-BR", "reason": "manual_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F019",
+      "category": "region_base_ambiguity",
+      "description": "Two non-exact regional variants remain tied on base language.",
+      "metadata": {"language": "pt-BR", "subtitles": {"pt-PT": [{"url": "https://captions.invalid/F019-pt"}], "pt-AO": [{"url": "https://captions.invalid/F019-ao"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_manual_base", "metadata_available": true},
+      "literal_order_sensitive": true,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F020",
+      "category": "case_normalization",
+      "description": "Language matching is case-insensitive while preserving the exact selected key.",
+      "metadata": {"language": "EN-us", "subtitles": {"en-US": [{"url": "https://captions.invalid/F020"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "en-US", "reason": "manual_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F021",
+      "category": "noncaption_filtering",
+      "description": "live_chat and danmaku are excluded when a real caption exists.",
+      "metadata": {"subtitles": {"live_chat": [{"url": "https://captions.invalid/F021-live"}], "danmaku": [{"url": "https://captions.invalid/F021-danmaku"}], "de": [{"url": "https://captions.invalid/F021-de"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "de", "reason": "unique_manual_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F022",
+      "category": "noncaptions_only",
+      "description": "Non-caption entries alone do not make caption metadata available.",
+      "metadata": {"subtitles": {"live_chat": [{"url": "https://captions.invalid/F022-live"}], "danmaku": [{"url": "https://captions.invalid/F022-danmaku"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "no_eligible_tracks", "metadata_available": false},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F023",
+      "category": "malformed_track",
+      "description": "An empty manual track must not outrank one usable automatic track.",
+      "metadata": {"subtitles": {"de": []}, "automatic_captions": {"en": [{"url": "https://captions.invalid/F023-en"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "en", "reason": "single_automatic_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": true
+    },
+    {
+      "id": "F024",
+      "category": "malformed_maps",
+      "description": "Non-mapping caption containers provide no usable tracks.",
+      "metadata": {"subtitles": ["de"], "automatic_captions": "en"},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "no_eligible_tracks", "metadata_available": false},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F025",
+      "category": "duplicate_normalized_language",
+      "description": "Two raw keys that normalize to the same exact language are still distinct tied candidates.",
+      "metadata": {"language": "en-US", "subtitles": {"en-US": [{"url": "https://captions.invalid/F025-a"}], "EN-us": [{"url": "https://captions.invalid/F025-b"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_manual_exact", "metadata_available": true},
+      "literal_order_sensitive": true,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F026",
+      "category": "deceptive_translation_labels",
+      "description": "A format label containing Original does not replace the -orig key signal.",
+      "metadata": {"automatic_captions": {"fr": [{"name": "English (Original)", "url": "https://captions.invalid/F026-fr-orig-looking"}], "en": [{"name": "French translation", "url": "https://captions.invalid/F026-en"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_automatic_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": true
+    },
+    {
+      "id": "F027",
+      "category": "malformed_manual_and_translations",
+      "description": "Malformed manual metadata cannot resolve an ambiguous translated map.",
+      "metadata": {"subtitles": {"de": [{"ext": "vtt"}]}, "automatic_captions": {"en": [{"url": "https://captions.invalid/F027-en"}], "fr": [{"url": "https://captions.invalid/F027-fr"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_automatic_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F028",
+      "category": "script_region_base",
+      "description": "A single zh base-language candidate is deterministic despite script and region subtags.",
+      "metadata": {"language": "zh-Hant-TW", "subtitles": {"zh-Hant": [{"url": "https://captions.invalid/F028"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "zh-Hant", "reason": "manual_base", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F029",
+      "category": "script_ambiguity",
+      "description": "Hant and Hans variants tie under the stated base-language rule.",
+      "metadata": {"language": "zh-TW", "subtitles": {"zh-Hant": [{"url": "https://captions.invalid/F029-hant"}], "zh-Hans": [{"url": "https://captions.invalid/F029-hans"}]}},
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "ambiguous_manual_base", "metadata_available": true},
+      "literal_order_sensitive": true,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F030",
+      "category": "malformed_exact_manual",
+      "description": "An unusable exact manual entry does not outrank a usable exact automatic entry.",
+      "metadata": {"language": "de", "subtitles": {"de": [{"ext": "vtt"}]}, "automatic_captions": {"de": [{"url": "https://captions.invalid/F030"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "de", "reason": "automatic_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F031",
+      "category": "blank_language_key",
+      "description": "A blank manual key is ignored.",
+      "metadata": {"subtitles": {"   ": [{"url": "https://captions.invalid/F031-blank"}]}, "automatic_captions": {"en": [{"url": "https://captions.invalid/F031-en"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "en", "reason": "single_automatic_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F032",
+      "category": "mixed_format_entries",
+      "description": "One usable inline-data format makes a track eligible despite malformed siblings.",
+      "metadata": {"subtitles": {"de": [42, {"ext": "vtt"}, {"ext": "vtt", "data": "WEBVTT\n"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "de", "reason": "unique_manual_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F033",
+      "category": "original_language_hint",
+      "description": "original_language is used when language is absent.",
+      "metadata": {"language": null, "original_language": "it-IT", "subtitles": {"it": [{"url": "https://captions.invalid/F033"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "it", "reason": "manual_base", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F034",
+      "category": "all_language_fields_missing",
+      "description": "Null language fields and language-free formats do not hide a unique manual caption.",
+      "metadata": {"language": null, "original_language": null, "formats": [{"acodec": "aac"}], "subtitles": {"de-DE": [{"url": "https://captions.invalid/F034"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "de-DE", "reason": "unique_manual_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F035",
+      "category": "same_base_hints",
+      "description": "Same-base metadata hints are not contradictory; exact still outranks base.",
+      "metadata": {"language": "en", "original_language": "en-US", "subtitles": {"en-US": [{"url": "https://captions.invalid/F035-manual"}]}, "automatic_captions": {"en": [{"url": "https://captions.invalid/F035-auto"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "en", "reason": "automatic_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F036",
+      "category": "malformed_top_level",
+      "description": "A non-object metadata value is rejected.",
+      "metadata": [],
+      "preferred": null,
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "metadata_not_mapping", "metadata_available": false},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F037",
+      "category": "invalid_preference",
+      "description": "An explicitly supplied blank preference is invalid rather than silently ignored.",
+      "metadata": {"subtitles": {"de": [{"url": "https://captions.invalid/F037"}]}},
+      "preferred": "",
+      "expected": {"decision": "ABSTAIN", "origin": null, "language": null, "reason": "invalid_explicit_preference", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F038",
+      "category": "blank_metadata_hint",
+      "description": "Whitespace-only metadata language is treated as missing.",
+      "metadata": {"language": "   ", "subtitles": {"de": [{"url": "https://captions.invalid/F038"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "manual", "language": "de", "reason": "unique_manual_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F039",
+      "category": "manual_auto_same_key_validity",
+      "description": "Manual precedence applies only to a usable manual entry.",
+      "metadata": {"language": "en", "subtitles": {"en": []}, "automatic_captions": {"en": [{"url": "https://captions.invalid/F039"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "en", "reason": "automatic_exact", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    },
+    {
+      "id": "F040",
+      "category": "automatic_noncaption_filtering",
+      "description": "Automatic non-caption entries do not make the real automatic track ambiguous.",
+      "metadata": {"automatic_captions": {"live_chat": [{"url": "https://captions.invalid/F040-live"}], "danmaku": [{"url": "https://captions.invalid/F040-danmaku"}], "de": [{"url": "https://captions.invalid/F040-de"}]}},
+      "preferred": null,
+      "expected": {"decision": "SELECT", "origin": "automatic", "language": "de", "reason": "single_automatic_without_language", "metadata_available": true},
+      "literal_order_sensitive": false,
+      "minimum_counterexample": false
+    }
+  ]
+}

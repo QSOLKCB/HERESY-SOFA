@@ -1,0 +1,21 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "classification": "VALIDATOR_SELF_REFERENCE_FAILURE",
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "python",
+    "evidence/LOCAL-VERIFY-003/RUNNER/validate.py"
+  ],
+  "exit_code": 1,
+  "failed_test": "test_no_symlinks_caches_or_private_workstation_identity",
+  "passed_tests": 10,
+  "failed_tests": 1,
+  "finding": "The validator scanned its own source and matched the private-path literal embedded in the assertion itself; no evidence artifact contained an independently introduced workstation identity.",
+  "correction": "Construct the forbidden marker from separate string fragments so the validator can scan itself, regenerate the archive manifest, and rerun all tests.",
+  "network_access": false,
+  "result_scope": "Superseded validation preflight; not a failure of the selector experiment."
+}

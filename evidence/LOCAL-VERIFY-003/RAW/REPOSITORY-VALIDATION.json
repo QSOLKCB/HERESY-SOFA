@@ -1,0 +1,38 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "$REPOSITORY",
+  "elapsed_ns": 6038150399,
+  "exit_code": 0,
+  "external_service_access_authorized": false,
+  "finished_at_utc": "2026-11-05T01:59:59.577686Z",
+  "offline_arguments": true,
+  "passed": true,
+  "sandbox_override_reason": "The existing RETRO regression requires a local socketpair operation denied by the managed sandbox.",
+  "skipped": 1,
+  "started_at_utc": "2026-11-05T01:59:53.539514Z",
+  "stderr": {
+    "bytes": 23624,
+    "path": "RAW/FULL-SUITE.stderr.txt",
+    "sha256": "00956d199ec39dee379d14a8a30a364334eed22afaaa31b5df5f93660c471f2b"
+  },
+  "stdout": {
+    "bytes": 2049,
+    "path": "RAW/FULL-SUITE.stdout.txt",
+    "sha256": "7e5a215561452347aa115ce4313db5b2ac688bfd4e190f597c84db05b8b23255"
+  },
+  "tests_run": 162
+}
