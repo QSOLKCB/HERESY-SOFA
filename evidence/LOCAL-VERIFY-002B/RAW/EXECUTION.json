@@ -1,0 +1,20 @@
+{
+  "all_semantic_repeat_pairs_identical": true,
+  "campaign": "LOCAL-VERIFY-002B",
+  "checker_timeouts": [],
+  "failed_negative_control_count": 0,
+  "finished_at_utc": "2026-11-05T00:43:11.440286Z",
+  "fixture_count": 14,
+  "fresh_process_checker_commands": 112,
+  "matrix_rows": 56,
+  "mypy_matrix_rows": 28,
+  "negative_control_count": 12,
+  "network_access_during_execution": false,
+  "package_manager_invocations_during_execution": false,
+  "pyright_matrix_rows": 28,
+  "schema_version": "1.0",
+  "seed": 26051105,
+  "source_unchanged": true,
+  "started_at_utc": "2026-11-05T00:42:16.687655Z",
+  "version_probe_commands": 4
+}

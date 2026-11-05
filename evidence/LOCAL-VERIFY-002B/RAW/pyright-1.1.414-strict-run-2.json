@@ -1,0 +1,1436 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "checker": "Pyright",
+  "fresh_process_per_fixture": true,
+  "mode": "strict",
+  "python_target": "3.14",
+  "result_count": 14,
+  "results": [
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:06.523029Z",
+      "fixture_id": "GA01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+      "fixture_sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5",
+      "label": "pyright-1.1.414-strict-run-2-GA01",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+            "message": "\"GenericAlias\" is unknown import symbol",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 0
+              },
+              "start": {
+                "character": 19,
+                "line": 0
+              }
+            },
+            "rule": "reportAttributeAccessIssue",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+            "message": "Type of \"GenericAlias\" is unknown",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 0
+              },
+              "start": {
+                "character": 19,
+                "line": 0
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+            "message": "Type of \"T\" is unknown",
+            "range": {
+              "end": {
+                "character": 1,
+                "line": 3
+              },
+              "start": {
+                "character": 0,
+                "line": 3
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+            "message": "Base class type is unknown, obscuring type of derived class",
+            "range": {
+              "end": {
+                "character": 39,
+                "line": 6
+              },
+              "start": {
+                "character": 10,
+                "line": 6
+              }
+            },
+            "rule": "reportUntypedBaseClass",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 4,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.184,
+          "warningCount": 0
+        },
+        "time": "1793839386508",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "55e3d2ef5922aac9dd5deafdc6fd3ff651eabdda99e2d376fca06ff63180b353",
+      "started_at_utc": "2026-11-05T00:43:06.169274Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839386508\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"GenericAlias\\\" is unknown import symbol\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 0,\n                    \"character\": 19\n                },\n                \"end\": {\n                    \"line\": 0,\n                    \"character\": 31\n                }\n            },\n            \"rule\": \"reportAttributeAccessIssue\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"GenericAlias\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 0,\n                    \"character\": 19\n                },\n                \"end\": {\n                    \"line\": 0,\n                    \"character\": 31\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"T\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 3,\n                    \"character\": 0\n                },\n                \"end\": {\n                    \"line\": 3,\n                    \"character\": 1\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py\",\n            \"severity\": \"error\",\n            \"message\": \"Base class type is unknown, obscuring type of derived class\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 6,\n                    \"character\": 10\n                },\n                \"end\": {\n                    \"line\": 6,\n                    \"character\": 39\n                }\n            },\n            \"rule\": \"reportUntypedBaseClass\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 4,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.184\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:06.880619Z",
+      "fixture_id": "GA02",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+      "fixture_sha256": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60",
+      "label": "pyright-1.1.414-strict-run-2-GA02",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Type of \"value\" is unknown",
+            "range": {
+              "end": {
+                "character": 5,
+                "line": 10
+              },
+              "start": {
+                "character": 0,
+                "line": 10
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Object of type \"GenericAlias\" is not callable\n\u00a0\u00a0Attribute \"__call__\" is unknown",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 10
+              },
+              "start": {
+                "character": 8,
+                "line": 10
+              }
+            },
+            "rule": "reportCallIssue",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Type of \"alias\" is \"GenericAlias\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 13
+              },
+              "start": {
+                "character": 16,
+                "line": 13
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Type of \"value\" is \"Unknown\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 14
+              },
+              "start": {
+                "character": 16,
+                "line": 14
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Argument type is unknown\n\u00a0\u00a0Argument corresponds to parameter \"iterable\" in function \"__init__\"",
+            "range": {
+              "end": {
+                "character": 33,
+                "line": 21
+              },
+              "start": {
+                "character": 28,
+                "line": 21
+              }
+            },
+            "rule": "reportUnknownArgumentType",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 3,
+          "filesAnalyzed": 1,
+          "informationCount": 2,
+          "timeInSec": 0.192,
+          "warningCount": 0
+        },
+        "time": "1793839386865",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "bf2af2848fbc17c787f930d8c5bed3e1ff11545e6f90d59bb7d57f1ab298b873",
+      "started_at_utc": "2026-11-05T00:43:06.523317Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839386865\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"value\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 10,\n                    \"character\": 0\n                },\n                \"end\": {\n                    \"line\": 10,\n                    \"character\": 5\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"error\",\n            \"message\": \"Object of type \\\"GenericAlias\\\" is not callable\\n\u00a0\u00a0Attribute \\\"__call__\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 10,\n                    \"character\": 8\n                },\n                \"end\": {\n                    \"line\": 10,\n                    \"character\": 31\n                }\n            },\n            \"rule\": \"reportCallIssue\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"alias\\\" is \\\"GenericAlias\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 13,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 13,\n                    \"character\": 21\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value\\\" is \\\"Unknown\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 14,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 14,\n                    \"character\": 21\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"error\",\n            \"message\": \"Argument type is unknown\\n\u00a0\u00a0Argument corresponds to parameter \\\"iterable\\\" in function \\\"__init__\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 21,\n                    \"character\": 28\n                },\n                \"end\": {\n                    \"line\": 21,\n                    \"character\": 33\n                }\n            },\n            \"rule\": \"reportUnknownArgumentType\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 3,\n        \"warningCount\": 0,\n        \"informationCount\": 2,\n        \"timeInSec\": 0.192\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:07.259323Z",
+      "fixture_id": "GA03",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py",
+      "fixture_sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c",
+      "label": "pyright-1.1.414-strict-run-2-GA03",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py",
+            "message": "Type of \"params\" is partially unknown\n\u00a0\u00a0Type of \"params\" is \"tuple[Unknown, ...] | Any\"",
+            "range": {
+              "end": {
+                "character": 14,
+                "line": 26
+              },
+              "start": {
+                "character": 8,
+                "line": 26
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.207,
+          "warningCount": 0
+        },
+        "time": "1793839387243",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "458aba90ed37df0cfdce343ff9df2ca971de8d086accb116524a58dbef50e2e0",
+      "started_at_utc": "2026-11-05T00:43:06.880932Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839387243\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"params\\\" is partially unknown\\n\u00a0\u00a0Type of \\\"params\\\" is \\\"tuple[Unknown, ...] | Any\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 26,\n                    \"character\": 8\n                },\n                \"end\": {\n                    \"line\": 26,\n                    \"character\": 14\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.207\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:07.667452Z",
+      "fixture_id": "GA04",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+      "fixture_sha256": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff",
+      "label": "pyright-1.1.414-strict-run-2-GA04",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Type of \"args\" is partially unknown\n\u00a0\u00a0Type of \"args\" is \"tuple[Unknown, ...] | tuple[Any]\"",
+            "range": {
+              "end": {
+                "character": 12,
+                "line": 26
+              },
+              "start": {
+                "character": 8,
+                "line": 26
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Argument type is partially unknown\n\u00a0\u00a0Argument corresponds to parameter \"args\" in function \"__init__\"\n\u00a0\u00a0Argument type is \"tuple[Unknown, ...] | tuple[Any]\"",
+            "range": {
+              "end": {
+                "character": 37,
+                "line": 27
+              },
+              "start": {
+                "character": 33,
+                "line": 27
+              }
+            },
+            "rule": "reportUnknownArgumentType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Too many type arguments provided for \"Foo\"; expected 1 but received 2",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 33
+              },
+              "start": {
+                "character": 17,
+                "line": 33
+              }
+            },
+            "rule": "reportInvalidTypeArguments",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 33
+              },
+              "start": {
+                "character": 17,
+                "line": 33
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Too many type arguments provided for \"Foo\"; expected 1 but received 2",
+            "range": {
+              "end": {
+                "character": 27,
+                "line": 42
+              },
+              "start": {
+                "character": 24,
+                "line": 42
+              }
+            },
+            "rule": "reportInvalidTypeArguments",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 27,
+                "line": 42
+              },
+              "start": {
+                "character": 24,
+                "line": 42
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Type of \"alias\" is \"type[Foo[int]]\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 43
+              },
+              "start": {
+                "character": 16,
+                "line": 43
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Type of \"good\" is \"Foo[int]\"",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 44
+              },
+              "start": {
+                "character": 16,
+                "line": 44
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Argument type is unknown\n\u00a0\u00a0Argument corresponds to parameter \"obj\" in function \"repr\"",
+            "range": {
+              "end": {
+                "character": 28,
+                "line": 47
+              },
+              "start": {
+                "character": 24,
+                "line": 47
+              }
+            },
+            "rule": "reportUnknownArgumentType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Type of \"item\" is unknown",
+            "range": {
+              "end": {
+                "character": 38,
+                "line": 47
+              },
+              "start": {
+                "character": 34,
+                "line": 47
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Type of \"args\" is unknown",
+            "range": {
+              "end": {
+                "character": 52,
+                "line": 47
+              },
+              "start": {
+                "character": 42,
+                "line": 47
+              }
+            },
+            "rule": "reportUnknownMemberType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Cannot access attribute \"args\" for class \"alias\"\n\u00a0\u00a0Attribute \"args\" is unknown",
+            "range": {
+              "end": {
+                "character": 52,
+                "line": 47
+              },
+              "start": {
+                "character": 48,
+                "line": 47
+              }
+            },
+            "rule": "reportAttributeAccessIssue",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 10,
+          "filesAnalyzed": 1,
+          "informationCount": 2,
+          "timeInSec": 0.239,
+          "warningCount": 0
+        },
+        "time": "1793839387651",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "879b5de205eb9ea89d973a47454932d522f2feaae5f76b2f282263c69ecb83e1",
+      "started_at_utc": "2026-11-05T00:43:07.259596Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839387651\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"args\\\" is partially unknown\\n\u00a0\u00a0Type of \\\"args\\\" is \\\"tuple[Unknown, ...] | tuple[Any]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 26,\n                    \"character\": 8\n                },\n                \"end\": {\n                    \"line\": 26,\n                    \"character\": 12\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Argument type is partially unknown\\n\u00a0\u00a0Argument corresponds to parameter \\\"args\\\" in function \\\"__init__\\\"\\n\u00a0\u00a0Argument type is \\\"tuple[Unknown, ...] | tuple[Any]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 27,\n                    \"character\": 33\n                },\n                \"end\": {\n                    \"line\": 27,\n                    \"character\": 37\n                }\n            },\n            \"rule\": \"reportUnknownArgumentType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Too many type arguments provided for \\\"Foo\\\"; expected 1 but received 2\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 17\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 20\n                }\n            },\n            \"rule\": \"reportInvalidTypeArguments\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 17\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 20\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Too many type arguments provided for \\\"Foo\\\"; expected 1 but received 2\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 42,\n                    \"character\": 24\n                },\n                \"end\": {\n                    \"line\": 42,\n                    \"character\": 27\n                }\n            },\n            \"rule\": \"reportInvalidTypeArguments\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 42,\n                    \"character\": 24\n                },\n                \"end\": {\n                    \"line\": 42,\n                    \"character\": 27\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"alias\\\" is \\\"type[Foo[int]]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 43,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 43,\n                    \"character\": 21\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"good\\\" is \\\"Foo[int]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 44,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 44,\n                    \"character\": 20\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Argument type is unknown\\n\u00a0\u00a0Argument corresponds to parameter \\\"obj\\\" in function \\\"repr\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 47,\n                    \"character\": 24\n                },\n                \"end\": {\n                    \"line\": 47,\n                    \"character\": 28\n                }\n            },\n            \"rule\": \"reportUnknownArgumentType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"item\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 47,\n                    \"character\": 34\n                },\n                \"end\": {\n                    \"line\": 47,\n                    \"character\": 38\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"args\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 47,\n                    \"character\": 42\n                },\n                \"end\": {\n                    \"line\": 47,\n                    \"character\": 52\n                }\n            },\n            \"rule\": \"reportUnknownMemberType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Cannot access attribute \\\"args\\\" for class \\\"alias\\\"\\n\u00a0\u00a0Attribute \\\"args\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 47,\n                    \"character\": 48\n                },\n                \"end\": {\n                    \"line\": 47,\n                    \"character\": 52\n                }\n            },\n            \"rule\": \"reportAttributeAccessIssue\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 10,\n        \"warningCount\": 0,\n        \"informationCount\": 2,\n        \"timeInSec\": 0.239\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:08.049012Z",
+      "fixture_id": "GA05",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+      "fixture_sha256": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb",
+      "label": "pyright-1.1.414-strict-run-2-GA05",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 32,
+                "line": 16
+              },
+              "start": {
+                "character": 29,
+                "line": 16
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 32,
+                "line": 17
+              },
+              "start": {
+                "character": 29,
+                "line": 17
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "Type of \"ordinary\" is \"Packed[int, str]\"",
+            "range": {
+              "end": {
+                "character": 24,
+                "line": 24
+              },
+              "start": {
+                "character": 16,
+                "line": 24
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "Type of \"with_ellipsis\" is \"Packed[int, ...]\"",
+            "range": {
+              "end": {
+                "character": 29,
+                "line": 25
+              },
+              "start": {
+                "character": 16,
+                "line": 25
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "Type of \"ellipsis_only\" is \"Packed[...]\"",
+            "range": {
+              "end": {
+                "character": 29,
+                "line": 26
+              },
+              "start": {
+                "character": 16,
+                "line": 26
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 2,
+          "filesAnalyzed": 1,
+          "informationCount": 3,
+          "timeInSec": 0.2,
+          "warningCount": 0
+        },
+        "time": "1793839388028",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "0ebd7d3714c72f4f0fe19b3026c7c84a593baa2add6ad8e7ac11a9216bb925ca",
+      "started_at_utc": "2026-11-05T00:43:07.667967Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839388028\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 16,\n                    \"character\": 29\n                },\n                \"end\": {\n                    \"line\": 16,\n                    \"character\": 32\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 17,\n                    \"character\": 29\n                },\n                \"end\": {\n                    \"line\": 17,\n                    \"character\": 32\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"ordinary\\\" is \\\"Packed[int, str]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 24,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 24,\n                    \"character\": 24\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"with_ellipsis\\\" is \\\"Packed[int, ...]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 25,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 25,\n                    \"character\": 29\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"ellipsis_only\\\" is \\\"Packed[...]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 26,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 26,\n                    \"character\": 29\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 2,\n        \"warningCount\": 0,\n        \"informationCount\": 3,\n        \"timeInSec\": 0.2\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:08.400803Z",
+      "fixture_id": "GA06",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py",
+      "fixture_sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458",
+      "label": "pyright-1.1.414-strict-run-2-GA06",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py",
+            "message": "Too many type arguments provided for \"Single\"; expected 1 but received 2",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 12
+              },
+              "start": {
+                "character": 28,
+                "line": 12
+              }
+            },
+            "rule": "reportInvalidTypeArguments",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.182,
+          "warningCount": 0
+        },
+        "time": "1793839388385",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "790c00a4d385bceeb2e60c084b58f506be5c9e85ddb6c39b54e34e58aa6f5113",
+      "started_at_utc": "2026-11-05T00:43:08.049336Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839388385\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py\",\n            \"severity\": \"error\",\n            \"message\": \"Too many type arguments provided for \\\"Single\\\"; expected 1 but received 2\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 12,\n                    \"character\": 28\n                },\n                \"end\": {\n                    \"line\": 12,\n                    \"character\": 31\n                }\n            },\n            \"rule\": \"reportInvalidTypeArguments\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.182\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:08.791075Z",
+      "fixture_id": "DC01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+      "fixture_sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c",
+      "label": "pyright-1.1.414-strict-run-2-DC01",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+            "message": "Type of \"a\" is partially unknown\n\u00a0\u00a0Type of \"a\" is \"myclass[Unknown]\"",
+            "range": {
+              "end": {
+                "character": 1,
+                "line": 23
+              },
+              "start": {
+                "character": 0,
+                "line": 23
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+            "message": "Argument type is partially unknown\n\u00a0\u00a0Argument corresponds to parameter \"values\" in function \"print\"\n\u00a0\u00a0Argument type is \"type[Unknown]\"",
+            "range": {
+              "end": {
+                "character": 17,
+                "line": 25
+              },
+              "start": {
+                "character": 6,
+                "line": 25
+              }
+            },
+            "rule": "reportUnknownArgumentType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+            "message": "Type of \"var\" is unknown",
+            "range": {
+              "end": {
+                "character": 16,
+                "line": 25
+              },
+              "start": {
+                "character": 11,
+                "line": 25
+              }
+            },
+            "rule": "reportUnknownMemberType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+            "message": "Argument type is unknown\n\u00a0\u00a0Argument corresponds to parameter \"o\" in function \"__init__\"",
+            "range": {
+              "end": {
+                "character": 16,
+                "line": 25
+              },
+              "start": {
+                "character": 11,
+                "line": 25
+              }
+            },
+            "rule": "reportUnknownArgumentType",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 4,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.214,
+          "warningCount": 0
+        },
+        "time": "1793839388772",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "f5e010a64d44c90e85b8d73bbd0e4c710b3a12375321d7733dfa9eae190dcf7a",
+      "started_at_utc": "2026-11-05T00:43:08.401085Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839388772\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"a\\\" is partially unknown\\n\u00a0\u00a0Type of \\\"a\\\" is \\\"myclass[Unknown]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 23,\n                    \"character\": 0\n                },\n                \"end\": {\n                    \"line\": 23,\n                    \"character\": 1\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py\",\n            \"severity\": \"error\",\n            \"message\": \"Argument type is partially unknown\\n\u00a0\u00a0Argument corresponds to parameter \\\"values\\\" in function \\\"print\\\"\\n\u00a0\u00a0Argument type is \\\"type[Unknown]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 25,\n                    \"character\": 6\n                },\n                \"end\": {\n                    \"line\": 25,\n                    \"character\": 17\n                }\n            },\n            \"rule\": \"reportUnknownArgumentType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"var\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 25,\n                    \"character\": 11\n                },\n                \"end\": {\n                    \"line\": 25,\n                    \"character\": 16\n                }\n            },\n            \"rule\": \"reportUnknownMemberType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py\",\n            \"severity\": \"error\",\n            \"message\": \"Argument type is unknown\\n\u00a0\u00a0Argument corresponds to parameter \\\"o\\\" in function \\\"__init__\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 25,\n                    \"character\": 11\n                },\n                \"end\": {\n                    \"line\": 25,\n                    \"character\": 16\n                }\n            },\n            \"rule\": \"reportUnknownArgumentType\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 4,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.214\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:09.169807Z",
+      "fixture_id": "DC02",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+      "fixture_sha256": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611",
+      "label": "pyright-1.1.414-strict-run-2-DC02",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+            "message": "Type \"C\" is not assignable to declared type \"CT@MyClass\"\n\u00a0\u00a0Type \"C\" is not assignable to type \"CT@MyClass\"",
+            "range": {
+              "end": {
+                "character": 48,
+                "line": 24
+              },
+              "start": {
+                "character": 14,
+                "line": 24
+              }
+            },
+            "rule": "reportAssignmentType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 29
+              },
+              "start": {
+                "character": 16,
+                "line": 29
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+            "message": "Unnecessary isinstance call; \"C2\" is always an instance of \"C2\"",
+            "range": {
+              "end": {
+                "character": 45,
+                "line": 34
+              },
+              "start": {
+                "character": 20,
+                "line": 34
+              }
+            },
+            "rule": "reportUnnecessaryIsInstance",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 2,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.209,
+          "warningCount": 0
+        },
+        "time": "1793839389153",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "d014a07e711fdff9f5d9578d058f3a81c64892d89a5115275420cc1e85461bd3",
+      "started_at_utc": "2026-11-05T00:43:08.791410Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839389153\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type \\\"C\\\" is not assignable to declared type \\\"CT@MyClass\\\"\\n\u00a0\u00a0Type \\\"C\\\" is not assignable to type \\\"CT@MyClass\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 24,\n                    \"character\": 14\n                },\n                \"end\": {\n                    \"line\": 24,\n                    \"character\": 48\n                }\n            },\n            \"rule\": \"reportAssignmentType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 29,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 29,\n                    \"character\": 25\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py\",\n            \"severity\": \"error\",\n            \"message\": \"Unnecessary isinstance call; \\\"C2\\\" is always an instance of \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 34,\n                    \"character\": 20\n                },\n                \"end\": {\n                    \"line\": 34,\n                    \"character\": 45\n                }\n            },\n            \"rule\": \"reportUnnecessaryIsInstance\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 2,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.209\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:09.546923Z",
+      "fixture_id": "DC03",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py",
+      "fixture_sha256": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645",
+      "label": "pyright-1.1.414-strict-run-2-DC03",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 29
+              },
+              "start": {
+                "character": 16,
+                "line": 29
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py",
+            "message": "Unnecessary isinstance call; \"C2\" is always an instance of \"C2\"",
+            "range": {
+              "end": {
+                "character": 45,
+                "line": 34
+              },
+              "start": {
+                "character": 20,
+                "line": 34
+              }
+            },
+            "rule": "reportUnnecessaryIsInstance",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.207,
+          "warningCount": 0
+        },
+        "time": "1793839389529",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "7ec557989ca716052d821f10238e9febc57727992100fdc36df437ba90600504",
+      "started_at_utc": "2026-11-05T00:43:09.170118Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839389529\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 29,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 29,\n                    \"character\": 25\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py\",\n            \"severity\": \"error\",\n            \"message\": \"Unnecessary isinstance call; \\\"C2\\\" is always an instance of \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 34,\n                    \"character\": 20\n                },\n                \"end\": {\n                    \"line\": 34,\n                    \"character\": 45\n                }\n            },\n            \"rule\": \"reportUnnecessaryIsInstance\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.207\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:09.923014Z",
+      "fixture_id": "DC04",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py",
+      "fixture_sha256": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9",
+      "label": "pyright-1.1.414-strict-run-2-DC04",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 29
+              },
+              "start": {
+                "character": 16,
+                "line": 29
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.205,
+          "warningCount": 0
+        },
+        "time": "1793839389904",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "c7c1025e3f3856af3b10f2a648347431ba2ac6092de425e030c73a4b5da2180c",
+      "started_at_utc": "2026-11-05T00:43:09.547198Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839389904\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 29,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 29,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.205\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:10.311444Z",
+      "fixture_id": "DC05",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py",
+      "fixture_sha256": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f",
+      "label": "pyright-1.1.414-strict-run-2-DC05",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 33
+              },
+              "start": {
+                "character": 16,
+                "line": 33
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.218,
+          "warningCount": 0
+        },
+        "time": "1793839390293",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "e51468ba6adfce2b333b3a8b599a234a12fdebac9b98011fefe445b4208a72d1",
+      "started_at_utc": "2026-11-05T00:43:09.923282Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839390293\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.218\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:10.688694Z",
+      "fixture_id": "DC06",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py",
+      "fixture_sha256": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc",
+      "label": "pyright-1.1.414-strict-run-2-DC06",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 34
+              },
+              "start": {
+                "character": 16,
+                "line": 34
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.208,
+          "warningCount": 0
+        },
+        "time": "1793839390670",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "6aeeb842835519619430f4e02d5f4898385fe069b72239e8f3d9fbf154d36915",
+      "started_at_utc": "2026-11-05T00:43:10.311726Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839390670\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 34,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 34,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.208\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:11.074602Z",
+      "fixture_id": "DC07",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+      "fixture_sha256": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171",
+      "label": "pyright-1.1.414-strict-run-2-DC07",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"bare\" is partially unknown\n\u00a0\u00a0Type of \"bare\" is \"MyClass[Unknown]\"",
+            "range": {
+              "end": {
+                "character": 4,
+                "line": 27
+              },
+              "start": {
+                "character": 0,
+                "line": 27
+              }
+            },
+            "rule": "reportUnknownVariableType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"bare\" is \"MyClass[Unknown]\"",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 32
+              },
+              "start": {
+                "character": 16,
+                "line": 32
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"annotated_c.var\" is \"C\"",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 33
+              },
+              "start": {
+                "character": 16,
+                "line": 33
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"annotated_c2.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 32,
+                "line": 34
+              },
+              "start": {
+                "character": 16,
+                "line": 34
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"var\" is unknown",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 39
+              },
+              "start": {
+                "character": 17,
+                "line": 39
+              }
+            },
+            "rule": "reportUnknownMemberType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Argument type is unknown\n\u00a0\u00a0Argument corresponds to parameter \"o\" in function \"__init__\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 39
+              },
+              "start": {
+                "character": 17,
+                "line": 39
+              }
+            },
+            "rule": "reportUnknownArgumentType",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 3,
+          "filesAnalyzed": 1,
+          "informationCount": 3,
+          "timeInSec": 0.216,
+          "warningCount": 0
+        },
+        "time": "1793839391056",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "d0cd96014e0dae96bf6bd633b9c3ee78867b207e43dde0dadae44b450130b29e",
+      "started_at_utc": "2026-11-05T00:43:10.688971Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839391056\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"bare\\\" is partially unknown\\n\u00a0\u00a0Type of \\\"bare\\\" is \\\"MyClass[Unknown]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 27,\n                    \"character\": 0\n                },\n                \"end\": {\n                    \"line\": 27,\n                    \"character\": 4\n                }\n            },\n            \"rule\": \"reportUnknownVariableType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"bare\\\" is \\\"MyClass[Unknown]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 32,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 32,\n                    \"character\": 20\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"annotated_c.var\\\" is \\\"C\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 31\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"annotated_c2.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 34,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 34,\n                    \"character\": 32\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type of \\\"var\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 39,\n                    \"character\": 17\n                },\n                \"end\": {\n                    \"line\": 39,\n                    \"character\": 25\n                }\n            },\n            \"rule\": \"reportUnknownMemberType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"error\",\n            \"message\": \"Argument type is unknown\\n\u00a0\u00a0Argument corresponds to parameter \\\"o\\\" in function \\\"__init__\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 39,\n                    \"character\": 17\n                },\n                \"end\": {\n                    \"line\": 39,\n                    \"character\": 25\n                }\n            },\n            \"rule\": \"reportUnknownArgumentType\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 3,\n        \"warningCount\": 0,\n        \"informationCount\": 3,\n        \"timeInSec\": 0.216\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-strict.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py"
+      ],
+      "config_path": "CONFIGS/pyright-strict.json",
+      "config_sha256": "d21e502a74b8204e990b3b9dc21e8a928f86f58b012516855eb2b884c7d1d6ba",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:11.438872Z",
+      "fixture_id": "NC01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py",
+      "fixture_sha256": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8",
+      "label": "pyright-1.1.414-strict-run-2-NC01",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py",
+            "message": "\"assert_type\" mismatch: expected \"C\" but received \"C2\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 25
+              },
+              "start": {
+                "character": 12,
+                "line": 25
+              }
+            },
+            "rule": "reportAssertTypeFailure",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.194,
+          "warningCount": 0
+        },
+        "time": "1793839391423",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "4532c161618837b31410842d5f39ec7ef9b23f2c0cd81068ed576eeeaa205bdb",
+      "started_at_utc": "2026-11-05T00:43:11.074977Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839391423\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"assert_type\\\" mismatch: expected \\\"C\\\" but received \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 25,\n                    \"character\": 12\n                },\n                \"end\": {\n                    \"line\": 25,\n                    \"character\": 21\n                }\n            },\n            \"rule\": \"reportAssertTypeFailure\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.194\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    }
+  ],
+  "run_number": 2,
+  "schema_version": "1.0",
+  "version": "1.1.414"
+}

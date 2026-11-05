@@ -1,0 +1,1114 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "checker": "Pyright",
+  "fresh_process_per_fixture": true,
+  "mode": "standard",
+  "python_target": "3.14",
+  "result_count": 14,
+  "results": [
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:01.277301Z",
+      "fixture_id": "GA01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+      "fixture_sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5",
+      "label": "pyright-1.1.414-standard-run-2-GA01",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+            "message": "\"GenericAlias\" is unknown import symbol",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 0
+              },
+              "start": {
+                "character": 19,
+                "line": 0
+              }
+            },
+            "rule": "reportAttributeAccessIssue",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.185,
+          "warningCount": 0
+        },
+        "time": "1793839381262",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "8cd74827d75e1432b4d735830f15324fe2167fac824639c8163aeef7ee8a5611",
+      "started_at_utc": "2026-11-05T00:43:00.924117Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839381262\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"GenericAlias\\\" is unknown import symbol\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 0,\n                    \"character\": 19\n                },\n                \"end\": {\n                    \"line\": 0,\n                    \"character\": 31\n                }\n            },\n            \"rule\": \"reportAttributeAccessIssue\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.185\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:01.639526Z",
+      "fixture_id": "GA02",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+      "fixture_sha256": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60",
+      "label": "pyright-1.1.414-standard-run-2-GA02",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Object of type \"GenericAlias\" is not callable\n\u00a0\u00a0Attribute \"__call__\" is unknown",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 10
+              },
+              "start": {
+                "character": 8,
+                "line": 10
+              }
+            },
+            "rule": "reportCallIssue",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Type of \"alias\" is \"GenericAlias\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 13
+              },
+              "start": {
+                "character": 16,
+                "line": 13
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+            "message": "Type of \"value\" is \"Unknown\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 14
+              },
+              "start": {
+                "character": 16,
+                "line": 14
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 2,
+          "timeInSec": 0.196,
+          "warningCount": 0
+        },
+        "time": "1793839381624",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "57254e5c01035c5e56350d938930787200a648387c18e4587a00e3bf08db0865",
+      "started_at_utc": "2026-11-05T00:43:01.277578Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839381624\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"error\",\n            \"message\": \"Object of type \\\"GenericAlias\\\" is not callable\\n\u00a0\u00a0Attribute \\\"__call__\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 10,\n                    \"character\": 8\n                },\n                \"end\": {\n                    \"line\": 10,\n                    \"character\": 31\n                }\n            },\n            \"rule\": \"reportCallIssue\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"alias\\\" is \\\"GenericAlias\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 13,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 13,\n                    \"character\": 21\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value\\\" is \\\"Unknown\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 14,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 14,\n                    \"character\": 21\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 2,\n        \"timeInSec\": 0.196\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:02.015596Z",
+      "fixture_id": "GA03",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py",
+      "fixture_sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c",
+      "label": "pyright-1.1.414-standard-run-2-GA03",
+      "parsed": {
+        "generalDiagnostics": [],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.206,
+          "warningCount": 0
+        },
+        "time": "1793839381999",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "93a7dea023e4344aa105f59bb5430acb9d488c59219f0e0603da863f4a487df9",
+      "started_at_utc": "2026-11-05T00:43:01.639832Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839381999\",\n    \"generalDiagnostics\": [],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.206\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:02.407490Z",
+      "fixture_id": "GA04",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+      "fixture_sha256": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff",
+      "label": "pyright-1.1.414-standard-run-2-GA04",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Too many type arguments provided for \"Foo\"; expected 1 but received 2",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 33
+              },
+              "start": {
+                "character": 17,
+                "line": 33
+              }
+            },
+            "rule": "reportInvalidTypeArguments",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 33
+              },
+              "start": {
+                "character": 17,
+                "line": 33
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Too many type arguments provided for \"Foo\"; expected 1 but received 2",
+            "range": {
+              "end": {
+                "character": 27,
+                "line": 42
+              },
+              "start": {
+                "character": 24,
+                "line": 42
+              }
+            },
+            "rule": "reportInvalidTypeArguments",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 27,
+                "line": 42
+              },
+              "start": {
+                "character": 24,
+                "line": 42
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Type of \"alias\" is \"type[Foo[int]]\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 43
+              },
+              "start": {
+                "character": 16,
+                "line": 43
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Type of \"good\" is \"Foo[int]\"",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 44
+              },
+              "start": {
+                "character": 16,
+                "line": 44
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+            "message": "Cannot access attribute \"args\" for class \"alias\"\n\u00a0\u00a0Attribute \"args\" is unknown",
+            "range": {
+              "end": {
+                "character": 52,
+                "line": 47
+              },
+              "start": {
+                "character": 48,
+                "line": 47
+              }
+            },
+            "rule": "reportAttributeAccessIssue",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 5,
+          "filesAnalyzed": 1,
+          "informationCount": 2,
+          "timeInSec": 0.223,
+          "warningCount": 0
+        },
+        "time": "1793839382392",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "0dc8236a66cedeb3a0a0b50a01fdbee9f53ded114e325e7d808b307d4d2a9e0f",
+      "started_at_utc": "2026-11-05T00:43:02.015864Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839382392\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Too many type arguments provided for \\\"Foo\\\"; expected 1 but received 2\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 17\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 20\n                }\n            },\n            \"rule\": \"reportInvalidTypeArguments\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 17\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 20\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Too many type arguments provided for \\\"Foo\\\"; expected 1 but received 2\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 42,\n                    \"character\": 24\n                },\n                \"end\": {\n                    \"line\": 42,\n                    \"character\": 27\n                }\n            },\n            \"rule\": \"reportInvalidTypeArguments\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 42,\n                    \"character\": 24\n                },\n                \"end\": {\n                    \"line\": 42,\n                    \"character\": 27\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"alias\\\" is \\\"type[Foo[int]]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 43,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 43,\n                    \"character\": 21\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"good\\\" is \\\"Foo[int]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 44,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 44,\n                    \"character\": 20\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py\",\n            \"severity\": \"error\",\n            \"message\": \"Cannot access attribute \\\"args\\\" for class \\\"alias\\\"\\n\u00a0\u00a0Attribute \\\"args\\\" is unknown\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 47,\n                    \"character\": 48\n                },\n                \"end\": {\n                    \"line\": 47,\n                    \"character\": 52\n                }\n            },\n            \"rule\": \"reportAttributeAccessIssue\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 5,\n        \"warningCount\": 0,\n        \"informationCount\": 2,\n        \"timeInSec\": 0.223\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:02.773670Z",
+      "fixture_id": "GA05",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+      "fixture_sha256": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb",
+      "label": "pyright-1.1.414-standard-run-2-GA05",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 32,
+                "line": 16
+              },
+              "start": {
+                "character": 29,
+                "line": 16
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "\"...\" is not allowed in this context",
+            "range": {
+              "end": {
+                "character": 32,
+                "line": 17
+              },
+              "start": {
+                "character": 29,
+                "line": 17
+              }
+            },
+            "rule": "reportInvalidTypeForm",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "Type of \"ordinary\" is \"Packed[int, str]\"",
+            "range": {
+              "end": {
+                "character": 24,
+                "line": 24
+              },
+              "start": {
+                "character": 16,
+                "line": 24
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "Type of \"with_ellipsis\" is \"Packed[int, ...]\"",
+            "range": {
+              "end": {
+                "character": 29,
+                "line": 25
+              },
+              "start": {
+                "character": 16,
+                "line": 25
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+            "message": "Type of \"ellipsis_only\" is \"Packed[...]\"",
+            "range": {
+              "end": {
+                "character": 29,
+                "line": 26
+              },
+              "start": {
+                "character": 16,
+                "line": 26
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 2,
+          "filesAnalyzed": 1,
+          "informationCount": 3,
+          "timeInSec": 0.191,
+          "warningCount": 0
+        },
+        "time": "1793839382753",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "7ba79bbfe15afddc447f86bcfa80e504fe3d5dd372e06f02fe06fd0917f329c3",
+      "started_at_utc": "2026-11-05T00:43:02.407832Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839382753\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 16,\n                    \"character\": 29\n                },\n                \"end\": {\n                    \"line\": 16,\n                    \"character\": 32\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"...\\\" is not allowed in this context\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 17,\n                    \"character\": 29\n                },\n                \"end\": {\n                    \"line\": 17,\n                    \"character\": 32\n                }\n            },\n            \"rule\": \"reportInvalidTypeForm\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"ordinary\\\" is \\\"Packed[int, str]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 24,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 24,\n                    \"character\": 24\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"with_ellipsis\\\" is \\\"Packed[int, ...]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 25,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 25,\n                    \"character\": 29\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"ellipsis_only\\\" is \\\"Packed[...]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 26,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 26,\n                    \"character\": 29\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 2,\n        \"warningCount\": 0,\n        \"informationCount\": 3,\n        \"timeInSec\": 0.191\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:03.126258Z",
+      "fixture_id": "GA06",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py",
+      "fixture_sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458",
+      "label": "pyright-1.1.414-standard-run-2-GA06",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py",
+            "message": "Too many type arguments provided for \"Single\"; expected 1 but received 2",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 12
+              },
+              "start": {
+                "character": 28,
+                "line": 12
+              }
+            },
+            "rule": "reportInvalidTypeArguments",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.186,
+          "warningCount": 0
+        },
+        "time": "1793839383111",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "494b8b48342434ea7ceb799d55fa5c707dbff6e98afafde0a73c06e3b013732d",
+      "started_at_utc": "2026-11-05T00:43:02.774006Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839383111\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py\",\n            \"severity\": \"error\",\n            \"message\": \"Too many type arguments provided for \\\"Single\\\"; expected 1 but received 2\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 12,\n                    \"character\": 28\n                },\n                \"end\": {\n                    \"line\": 12,\n                    \"character\": 31\n                }\n            },\n            \"rule\": \"reportInvalidTypeArguments\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.186\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:03.514589Z",
+      "fixture_id": "DC01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+      "fixture_sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c",
+      "label": "pyright-1.1.414-standard-run-2-DC01",
+      "parsed": {
+        "generalDiagnostics": [],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.215,
+          "warningCount": 0
+        },
+        "time": "1793839383495",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "f39c4f8ab98787932f41feddc9d11fad3cef75666e5c6239caab408916861f74",
+      "started_at_utc": "2026-11-05T00:43:03.126536Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839383495\",\n    \"generalDiagnostics\": [],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.215\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:03.896424Z",
+      "fixture_id": "DC02",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+      "fixture_sha256": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611",
+      "label": "pyright-1.1.414-standard-run-2-DC02",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+            "message": "Type \"C\" is not assignable to declared type \"CT@MyClass\"\n\u00a0\u00a0Type \"C\" is not assignable to type \"CT@MyClass\"",
+            "range": {
+              "end": {
+                "character": 48,
+                "line": 24
+              },
+              "start": {
+                "character": 14,
+                "line": 24
+              }
+            },
+            "rule": "reportAssignmentType",
+            "severity": "error"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 29
+              },
+              "start": {
+                "character": 16,
+                "line": 29
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.211,
+          "warningCount": 0
+        },
+        "time": "1793839383879",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "4cda06c8534fbe9f393d638ba2ca5188283ddca352fe02442616d886e69cb2be",
+      "started_at_utc": "2026-11-05T00:43:03.514922Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839383879\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py\",\n            \"severity\": \"error\",\n            \"message\": \"Type \\\"C\\\" is not assignable to declared type \\\"CT@MyClass\\\"\\n\u00a0\u00a0Type \\\"C\\\" is not assignable to type \\\"CT@MyClass\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 24,\n                    \"character\": 14\n                },\n                \"end\": {\n                    \"line\": 24,\n                    \"character\": 48\n                }\n            },\n            \"rule\": \"reportAssignmentType\"\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 29,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 29,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.211\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:04.282375Z",
+      "fixture_id": "DC03",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py",
+      "fixture_sha256": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645",
+      "label": "pyright-1.1.414-standard-run-2-DC03",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 29
+              },
+              "start": {
+                "character": 16,
+                "line": 29
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.215,
+          "warningCount": 0
+        },
+        "time": "1793839384264",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "48a32e783b5903eded2143e4861d7d109c27df6b86972a334567fb4f39a8fdeb",
+      "started_at_utc": "2026-11-05T00:43:03.896667Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839384264\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 29,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 29,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.215\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:04.650730Z",
+      "fixture_id": "DC04",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py",
+      "fixture_sha256": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9",
+      "label": "pyright-1.1.414-standard-run-2-DC04",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 29
+              },
+              "start": {
+                "character": 16,
+                "line": 29
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.195,
+          "warningCount": 0
+        },
+        "time": "1793839384632",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "3779550ab3a8419969f5bf6e1754ab707543bb7cf1b30cdc9b1760458ef92453",
+      "started_at_utc": "2026-11-05T00:43:04.282653Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839384632\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 29,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 29,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.195\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:05.035974Z",
+      "fixture_id": "DC05",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py",
+      "fixture_sha256": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f",
+      "label": "pyright-1.1.414-standard-run-2-DC05",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 33
+              },
+              "start": {
+                "character": 16,
+                "line": 33
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.216,
+          "warningCount": 0
+        },
+        "time": "1793839385017",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "a1c8e40e04b429462882600626b83260cda91b0adbcd1c86a6ce6e4f97ecc238",
+      "started_at_utc": "2026-11-05T00:43:04.651010Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839385017\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.216\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:05.416815Z",
+      "fixture_id": "DC06",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py",
+      "fixture_sha256": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc",
+      "label": "pyright-1.1.414-standard-run-2-DC06",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py",
+            "message": "Type of \"value.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 25,
+                "line": 34
+              },
+              "start": {
+                "character": 16,
+                "line": 34
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 1,
+          "timeInSec": 0.21,
+          "warningCount": 0
+        },
+        "time": "1793839385397",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "40772ec0f16f7142135d313869d7c3072f3be9aa3b40dd9364f65d93b63ab9cf",
+      "started_at_utc": "2026-11-05T00:43:05.036260Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839385397\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"value.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 34,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 34,\n                    \"character\": 25\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 1,\n        \"timeInSec\": 0.21\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-05T00:43:05.807523Z",
+      "fixture_id": "DC07",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+      "fixture_sha256": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171",
+      "label": "pyright-1.1.414-standard-run-2-DC07",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"bare\" is \"MyClass[Unknown]\"",
+            "range": {
+              "end": {
+                "character": 20,
+                "line": 32
+              },
+              "start": {
+                "character": 16,
+                "line": 32
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"annotated_c.var\" is \"C\"",
+            "range": {
+              "end": {
+                "character": 31,
+                "line": 33
+              },
+              "start": {
+                "character": 16,
+                "line": 33
+              }
+            },
+            "severity": "information"
+          },
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+            "message": "Type of \"annotated_c2.var\" is \"C2\"",
+            "range": {
+              "end": {
+                "character": 32,
+                "line": 34
+              },
+              "start": {
+                "character": 16,
+                "line": 34
+              }
+            },
+            "severity": "information"
+          }
+        ],
+        "summary": {
+          "errorCount": 0,
+          "filesAnalyzed": 1,
+          "informationCount": 3,
+          "timeInSec": 0.221,
+          "warningCount": 0
+        },
+        "time": "1793839385789",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "bca08827377817fad0f41ea5d61f7ddf7658eb3cfa3bab921b3cd3127a986160",
+      "started_at_utc": "2026-11-05T00:43:05.417084Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839385789\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"bare\\\" is \\\"MyClass[Unknown]\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 32,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 32,\n                    \"character\": 20\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"annotated_c.var\\\" is \\\"C\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 33,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 33,\n                    \"character\": 31\n                }\n            }\n        },\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py\",\n            \"severity\": \"information\",\n            \"message\": \"Type of \\\"annotated_c2.var\\\" is \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 34,\n                    \"character\": 16\n                },\n                \"end\": {\n                    \"line\": 34,\n                    \"character\": 32\n                }\n            }\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 0,\n        \"warningCount\": 0,\n        \"informationCount\": 3,\n        \"timeInSec\": 0.221\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "$HOME/.local/opt/node/bin/node",
+        "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+        "--project",
+        "<REPOSITORY>/evidence/LOCAL-VERIFY-002B/CONFIGS/pyright-standard.json",
+        "--pythonversion",
+        "3.14",
+        "--pythonplatform",
+        "Linux",
+        "--outputjson",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py"
+      ],
+      "config_path": "CONFIGS/pyright-standard.json",
+      "config_sha256": "ef5152d70eb96c3ff27373ed67919f7d10548e9f00ccf49ab6ba34aafc885fa2",
+      "cwd": "<REPOSITORY>",
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-05T00:43:06.168518Z",
+      "fixture_id": "NC01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py",
+      "fixture_sha256": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8",
+      "label": "pyright-1.1.414-standard-run-2-NC01",
+      "parsed": {
+        "generalDiagnostics": [
+          {
+            "file": "<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py",
+            "message": "\"assert_type\" mismatch: expected \"C\" but received \"C2\"",
+            "range": {
+              "end": {
+                "character": 21,
+                "line": 25
+              },
+              "start": {
+                "character": 12,
+                "line": 25
+              }
+            },
+            "rule": "reportAssertTypeFailure",
+            "severity": "error"
+          }
+        ],
+        "summary": {
+          "errorCount": 1,
+          "filesAnalyzed": 1,
+          "informationCount": 0,
+          "timeInSec": 0.192,
+          "warningCount": 0
+        },
+        "time": "1793839386153",
+        "version": "1.1.414"
+      },
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "da0f87fa94af8e5efe98461294ae4dd7fe1232163cace41733aeec9ba7823303",
+      "started_at_utc": "2026-11-05T00:43:05.807805Z",
+      "stderr": "",
+      "stdout": "{\n    \"version\": \"1.1.414\",\n    \"time\": \"1793839386153\",\n    \"generalDiagnostics\": [\n        {\n            \"file\": \"<REPOSITORY>/evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py\",\n            \"severity\": \"error\",\n            \"message\": \"\\\"assert_type\\\" mismatch: expected \\\"C\\\" but received \\\"C2\\\"\",\n            \"range\": {\n                \"start\": {\n                    \"line\": 25,\n                    \"character\": 12\n                },\n                \"end\": {\n                    \"line\": 25,\n                    \"character\": 21\n                }\n            },\n            \"rule\": \"reportAssertTypeFailure\"\n        }\n    ],\n    \"summary\": {\n        \"filesAnalyzed\": 1,\n        \"errorCount\": 1,\n        \"warningCount\": 0,\n        \"informationCount\": 0,\n        \"timeInSec\": 0.192\n    }\n}\n\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    }
+  ],
+  "run_number": 2,
+  "schema_version": "1.0",
+  "version": "1.1.414"
+}

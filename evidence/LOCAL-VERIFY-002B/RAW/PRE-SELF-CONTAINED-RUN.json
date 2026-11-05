@@ -1,0 +1,16 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "classification": "VALID_INTERMEDIATE_RUN_SUPERSEDED_BEFORE_FINALIZATION",
+  "recorded_at_utc": "2026-11-05T00:41:47Z",
+  "execution_window_utc": {
+    "started": "2026-11-05T00:22:47.891116Z",
+    "finished": "2026-11-05T00:23:43.282675Z"
+  },
+  "execution_receipt_sha256": "6c79a9e4508e3eab8e6f685797dbeaf5b2d98da8ff5e058f02148f7f4ddb0076",
+  "mypy_default_run_1_sha256": "761af47bf2dd2726138942386ebd23cd9c5df5ca4ed8afcec57bd064c16ce9c5",
+  "fresh_process_checker_commands": 112,
+  "semantic_repeat_pairs_identical": true,
+  "reason_superseded": "The mypy venv used exact local mypy, librt and ast-serialize wheels but inherited three pure-Python dependencies from system site-packages. The final run uses an entirely self-contained six-wheel venv with the same dependency versions.",
+  "checker_result_invalidated": false,
+  "finalization_status": "NOT_CANONICAL"
+}

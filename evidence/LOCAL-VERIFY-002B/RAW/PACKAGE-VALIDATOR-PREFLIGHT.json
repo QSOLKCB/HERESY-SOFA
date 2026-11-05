@@ -1,0 +1,23 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "classification": "HARNESS_PREFLIGHT_CORRECTIONS",
+  "event_times_utc": "NOT_CAPTURED",
+  "checker_fixture_executed": false,
+  "events": [
+    {
+      "exit_code": 1,
+      "observed_error": "ValueError: unexpected Pyright dependencies: {}",
+      "cause": "The first validator compared registry dependency metadata with the shipped package.json without accounting for fsevents being an optional dependency in the tarball.",
+      "resolution": "Require no shipped runtime dependencies and exactly optional fsevents~2.3.3; record the distinction."
+    },
+    {
+      "exit_code": 1,
+      "observed_error": "ValueError: wheel METADATA identity mismatch",
+      "cause": "The first dependency-wheel validator compared ast-serialize and ast_serialize without normalized distribution-name semantics.",
+      "resolution": "Apply standard case-insensitive dash/underscore/dot normalization before comparing distribution names."
+    }
+  ],
+  "final_validator_result": "ACCEPTED",
+  "final_receipt": "RAW/package-inspection.json",
+  "timestamp_limitation": "These preflight command UTC timestamps were not captured; none are inferred retrospectively."
+}

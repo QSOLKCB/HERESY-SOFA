@@ -1,0 +1,15 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "classification": "HARNESS_PREFLIGHT_CORRECTION",
+  "detected_at_utc": "2026-11-05T00:22:27Z",
+  "finding": "The initial completed harness run preserved mypy GA05 diagnostics in stdout, but its structured parser required a column number and therefore omitted diagnostics emitted as file:line: error. The finalized run uses an optional column and is executed afresh.",
+  "initial_execution_receipt_sha256": "daf0dfdefe9dea8521c97b2e55657add9a8b75c8d93c0e7cc1f8bac710f3e8ed",
+  "initial_mypy_default_run_1_sha256": "c34776389cc12a5a8e7a3dcf9e1ddde30255e08b5f6b367f0ee19c28d529f340",
+  "initial_runner_sha256": "a23a8f3bafa04c6c3891cc5ef5747ac6a9e01c7f5ed3912bedf0cbe0c0888af3",
+  "initial_checker_processes_completed": 112,
+  "initial_checker_timeouts": 0,
+  "initial_semantic_repeat_pairs_identical_under_initial_parser": true,
+  "checker_result_affected": false,
+  "structured_diagnostic_extraction_affected": true,
+  "resolution": "Parser corrected before finalization; all 112 checker processes rerun in fresh processes."
+}

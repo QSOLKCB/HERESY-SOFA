@@ -1,0 +1,926 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "checker": "mypy",
+  "fresh_process_per_fixture": true,
+  "mode": "default",
+  "python_target": "3.14",
+  "result_count": 14,
+  "results": [
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+          "message": "Module \"typing\" does not explicitly export attribute \"GenericAlias\"",
+          "range": {
+            "start": {
+              "character": 1,
+              "line": 1
+            }
+          },
+          "rule": "attr-defined",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+          "message": "Use `from typing_extensions import GenericAlias` instead",
+          "range": {
+            "start": {
+              "character": 1,
+              "line": 1
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+          "message": "See https://mypy.readthedocs.io/en/stable/runtime_troubles.html#using-new-additions-to-the-typing-module",
+          "range": {
+            "start": {
+              "character": 1,
+              "line": 1
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+          "message": "\"GenericAlias\" expects no type arguments, but 1 given",
+          "range": {
+            "start": {
+              "character": 5,
+              "line": 4
+            }
+          },
+          "rule": "type-arg",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+          "message": "\"GenericAlias\" expects no type arguments, but 1 given",
+          "range": {
+            "start": {
+              "character": 11,
+              "line": 7
+            }
+          },
+          "rule": "type-arg",
+          "severity": "error"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:17.540527Z",
+      "fixture_id": "GA01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py",
+      "fixture_sha256": "cd557e23528bb459525391171c07cce3fddcb771d2fb8613e5c121ed1e87efe5",
+      "label": "mypy-2.3.1-default-run-1-GA01",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "e4be11df116e00be5134b1a8764b696cc45b89bfb3c6a70512fee0e08d51ffdc",
+      "started_at_utc": "2026-11-05T00:42:16.950083Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py:1:1: error: Module \"typing\" does not explicitly export attribute \"GenericAlias\"  [attr-defined]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py:1:1: note: Use `from typing_extensions import GenericAlias` instead\nevidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py:1:1: note: See https://mypy.readthedocs.io/en/stable/runtime_troubles.html#using-new-additions-to-the-typing-module\nevidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py:4:5: error: \"GenericAlias\" expects no type arguments, but 1 given  [type-arg]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA01-original-genericalias-reply.py:7:11: error: \"GenericAlias\" expects no type arguments, but 1 given  [type-arg]\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+          "message": "\"GenericAlias\" not callable",
+          "range": {
+            "start": {
+              "character": 9,
+              "line": 11
+            }
+          },
+          "rule": "operator",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+          "message": "Revealed type is \"types.GenericAlias\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 14
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+          "message": "Revealed type is \"Any\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 15
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:18.139089Z",
+      "fixture_id": "GA02",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py",
+      "fixture_sha256": "6c4620944fdd4ba034c1fd836b6cbd35552b7e1ad3d604ae0401f73883f49b60",
+      "label": "mypy-2.3.1-default-run-1-GA02",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "4cd73b0c84ce032c0e8c5812d4d30c528682cc348bd4486168ee763ec984895d",
+      "started_at_utc": "2026-11-05T00:42:17.540745Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py:11:9: error: \"GenericAlias\" not callable  [operator]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py:14:17: note: Revealed type is \"types.GenericAlias\"\nevidence/LOCAL-VERIFY-002/FIXTURES/GA02-types-genericalias-constructor.py:15:17: note: Revealed type is \"Any\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code_from_mypy_1_19_1": 0,
+      "finished_at_utc": "2026-11-05T00:42:18.735925Z",
+      "fixture_id": "GA03",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA03-custom-class-getitem-source.py",
+      "fixture_sha256": "71b919736a377dc881ca6f5653c06603ee27da12b35651bea92a8fe7dffeea8c",
+      "label": "mypy-2.3.1-default-run-1-GA03",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "started_at_utc": "2026-11-05T00:42:18.139281Z",
+      "stderr": "",
+      "stdout": "",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+          "message": "Unexpected \"...\"",
+          "range": {
+            "start": {
+              "character": null,
+              "line": 34
+            }
+          },
+          "rule": "misc",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+          "message": "\"Foo\" expects 1 type argument, but 2 given",
+          "range": {
+            "start": {
+              "character": 9,
+              "line": 34
+            }
+          },
+          "rule": "type-arg",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+          "message": "Unexpected \"...\"",
+          "range": {
+            "start": {
+              "character": null,
+              "line": 43
+            }
+          },
+          "rule": "misc",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+          "message": "\"Foo\" expects 1 type argument, but 2 given",
+          "range": {
+            "start": {
+              "character": 16,
+              "line": 43
+            }
+          },
+          "rule": "type-arg",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+          "message": "Revealed type is \"def (*values: Any) -> GA04-custom-class-getitem-use.Foo[Any]\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 44
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+          "message": "Revealed type is \"GA04-custom-class-getitem-use.Foo[Any]\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 45
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+          "message": "\"type[Foo[Any]]\" has no attribute \"args\"",
+          "range": {
+            "start": {
+              "character": 43,
+              "line": 48
+            }
+          },
+          "rule": "attr-defined",
+          "severity": "error"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:19.333284Z",
+      "fixture_id": "GA04",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py",
+      "fixture_sha256": "6329646143f97dc435af02c9c796c9a0009de1d576f9ba05f9655a8ef860e6ff",
+      "label": "mypy-2.3.1-default-run-1-GA04",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "f0af3c338f16e81f2f0b6b208b7f2d16cc49bc254b3c1007c2397b5ffc7f6b4d",
+      "started_at_utc": "2026-11-05T00:42:18.736096Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py:34: error: Unexpected \"...\"  [misc]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py:34:9: error: \"Foo\" expects 1 type argument, but 2 given  [type-arg]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py:43: error: Unexpected \"...\"  [misc]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py:43:16: error: \"Foo\" expects 1 type argument, but 2 given  [type-arg]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py:44:17: note: Revealed type is \"def (*values: Any) -> GA04-custom-class-getitem-use.Foo[Any]\"\nevidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py:45:17: note: Revealed type is \"GA04-custom-class-getitem-use.Foo[Any]\"\nevidence/LOCAL-VERIFY-002/FIXTURES/GA04-custom-class-getitem-use.py:48:43: error: \"type[Foo[Any]]\" has no attribute \"args\"  [attr-defined]\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+          "message": "Unexpected \"...\"",
+          "range": {
+            "start": {
+              "character": null,
+              "line": 17
+            }
+          },
+          "rule": "misc",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+          "message": "Unexpected \"...\"",
+          "range": {
+            "start": {
+              "character": null,
+              "line": 18
+            }
+          },
+          "rule": "misc",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+          "message": "Revealed type is \"GA05-typevartuple-ellipsis.Packed[int, str]\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 25
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+          "message": "Revealed type is \"GA05-typevartuple-ellipsis.Packed[int, Any]\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 26
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+          "message": "Revealed type is \"GA05-typevartuple-ellipsis.Packed[Any]\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 27
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:19.925363Z",
+      "fixture_id": "GA05",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py",
+      "fixture_sha256": "5433a4cdfbd69366de9a39f1598e93938e7dd83feaa5e88928dea6c477d543cb",
+      "label": "mypy-2.3.1-default-run-1-GA05",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "3a22b738e40e616cbcb8a48d16d1be000fe382a1142d6eb6d548b46aff109266",
+      "started_at_utc": "2026-11-05T00:42:19.333490Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py:17: error: Unexpected \"...\"  [misc]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py:18: error: Unexpected \"...\"  [misc]\nevidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py:25:17: note: Revealed type is \"GA05-typevartuple-ellipsis.Packed[int, str]\"\nevidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py:26:17: note: Revealed type is \"GA05-typevartuple-ellipsis.Packed[int, Any]\"\nevidence/LOCAL-VERIFY-002/FIXTURES/GA05-typevartuple-ellipsis.py:27:17: note: Revealed type is \"GA05-typevartuple-ellipsis.Packed[Any]\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py",
+          "message": "\"Single\" expects 1 type argument, but 2 given",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 13
+            }
+          },
+          "rule": "type-arg",
+          "severity": "error"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:20.514772Z",
+      "fixture_id": "GA06",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py",
+      "fixture_sha256": "8f828222fb7de5ca059aa7dde9812c58b8a12a4087e217bd24d5bf359623a458",
+      "label": "mypy-2.3.1-default-run-1-GA06",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "70eb23072daf353c90d06cc95118e78b02abc0d58013efa0c36314b7699ad7c2",
+      "started_at_utc": "2026-11-05T00:42:19.925572Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/GA06-ordinary-generic-excess.py:13:17: error: \"Single\" expects 1 type argument, but 2 given  [type-arg]\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+          "message": "Need type annotation for \"a\"",
+          "range": {
+            "start": {
+              "character": 5,
+              "line": 24
+            }
+          },
+          "rule": "var-annotated",
+          "severity": "error"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:21.109893Z",
+      "fixture_id": "DC01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py",
+      "fixture_sha256": "c7d3943c84a06152126ddd20df6115544ffe614a4e56a6e55a031f3d0dd3dc7c",
+      "label": "mypy-2.3.1-default-run-1-DC01",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "1cb9465afdc676cdce94ff7fcecde52d116af800251283907f260d6f75aadba3",
+      "started_at_utc": "2026-11-05T00:42:20.514987Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/DC01-original-posted-dataclass.py:24:5: error: Need type annotation for \"a\"  [var-annotated]\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+          "message": "Incompatible types in assignment (expression has type \"C\", variable has type \"CT\")",
+          "range": {
+            "start": {
+              "character": 15,
+              "line": 25
+            }
+          },
+          "rule": "assignment",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+          "message": "Revealed type is \"DC02-unsuppressed-default.C2\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 30
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:21.713932Z",
+      "fixture_id": "DC02",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py",
+      "fixture_sha256": "bf64958a3a516117b8dacef99e9bd89dbd8708ccdf324a4d0805405c0459b611",
+      "label": "mypy-2.3.1-default-run-1-DC02",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "a177a22e9c0b24685db6de0c2ab8b803bac4a2f3dfb274e7d10b0a69c04252c4",
+      "started_at_utc": "2026-11-05T00:42:21.110071Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py:25:15: error: Incompatible types in assignment (expression has type \"C\", variable has type \"CT\")  [assignment]\nevidence/LOCAL-VERIFY-002/FIXTURES/DC02-unsuppressed-default.py:30:17: note: Revealed type is \"DC02-unsuppressed-default.C2\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py",
+          "message": "Revealed type is \"DC03-targeted-ignore.C2\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 30
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code_from_mypy_1_19_1": 0,
+      "finished_at_utc": "2026-11-05T00:42:22.323826Z",
+      "fixture_id": "DC03",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py",
+      "fixture_sha256": "f8f2b48960188b950ce44ea990f5e3093e67b3fb87d593d540d1583ddecbe645",
+      "label": "mypy-2.3.1-default-run-1-DC03",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "661a8a382e181122cf16314ad223f83c919bd1630e488275cf31fd3dc7bb8535",
+      "started_at_utc": "2026-11-05T00:42:21.714122Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/DC03-targeted-ignore.py:30:17: note: Revealed type is \"DC03-targeted-ignore.C2\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py",
+          "message": "Revealed type is \"DC04-required-field.C2\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 30
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code_from_mypy_1_19_1": 0,
+      "finished_at_utc": "2026-11-05T00:42:22.928704Z",
+      "fixture_id": "DC04",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py",
+      "fixture_sha256": "b52972f3f22e58cf7f0325db441c481a7258b3e476221256c4c6dec224c27ed9",
+      "label": "mypy-2.3.1-default-run-1-DC04",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "11c26398d19286942465f2b0e50d6b3f1862be5990568251e2b58fa5157914a4",
+      "started_at_utc": "2026-11-05T00:42:22.324015Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/DC04-required-field.py:30:17: note: Revealed type is \"DC04-required-field.C2\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py",
+          "message": "Revealed type is \"DC05-caller-factory.C2\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 34
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code_from_mypy_1_19_1": 0,
+      "finished_at_utc": "2026-11-05T00:42:23.537470Z",
+      "fixture_id": "DC05",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py",
+      "fixture_sha256": "150bd6298fc826312350962237d0b3e7e43e45d95e28256aa98427935f8bd67f",
+      "label": "mypy-2.3.1-default-run-1-DC05",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "f9a30cac76d41486f03a34250bc043a5785631bf391cb2d70fe9640cdbd0ba00",
+      "started_at_utc": "2026-11-05T00:42:22.928895Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/DC05-caller-factory.py:34:17: note: Revealed type is \"DC05-caller-factory.C2\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py",
+          "message": "Revealed type is \"DC06-concrete-subclass-factory.C2\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 35
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 0,
+      "expected_exit_code_from_mypy_1_19_1": 0,
+      "finished_at_utc": "2026-11-05T00:42:24.129878Z",
+      "fixture_id": "DC06",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py",
+      "fixture_sha256": "518eb8475c8cefad0d3d640127515b8eae3dd36af4f530ce9a5655ad588e48bc",
+      "label": "mypy-2.3.1-default-run-1-DC06",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "913d0aa5dfde55185aeb0fef5fd942dfbd0cfaa610fd663c673015e29144afe4",
+      "started_at_utc": "2026-11-05T00:42:23.537656Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/DC06-concrete-subclass-factory.py:35:17: note: Revealed type is \"DC06-concrete-subclass-factory.C2\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+          "message": "Need type annotation for \"bare\"",
+          "range": {
+            "start": {
+              "character": 8,
+              "line": 28
+            }
+          },
+          "rule": "var-annotated",
+          "severity": "error"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+          "message": "Revealed type is \"DC07-bare-versus-annotated.MyClass[Any]\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 33
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+          "message": "Revealed type is \"DC07-bare-versus-annotated.C\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 34
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        },
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+          "message": "Revealed type is \"DC07-bare-versus-annotated.C2\"",
+          "range": {
+            "start": {
+              "character": 17,
+              "line": 35
+            }
+          },
+          "rule": null,
+          "severity": "note"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:24.748540Z",
+      "fixture_id": "DC07",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py",
+      "fixture_sha256": "b90da9cb7e713809c0304dbfc888be98bfb6bea7374261752c060632fe6fa171",
+      "label": "mypy-2.3.1-default-run-1-DC07",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "fd0bc04b7da47fe6f8ebff7dca114fe0289c7ce387b76cbaeb9cf0a7d660bba0",
+      "started_at_utc": "2026-11-05T00:42:24.130045Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py:28:8: error: Need type annotation for \"bare\"  [var-annotated]\nevidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py:33:17: note: Revealed type is \"DC07-bare-versus-annotated.MyClass[Any]\"\nevidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py:34:17: note: Revealed type is \"DC07-bare-versus-annotated.C\"\nevidence/LOCAL-VERIFY-002/FIXTURES/DC07-bare-versus-annotated.py:35:17: note: Revealed type is \"DC07-bare-versus-annotated.C2\"\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    },
+    {
+      "argv": [
+        "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+        "--python-version",
+        "3.14",
+        "--no-incremental",
+        "--show-error-codes",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--no-color-output",
+        "--no-error-summary",
+        "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py"
+      ],
+      "cwd": "<REPOSITORY>",
+      "diagnostics": [
+        {
+          "file": "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py",
+          "message": "Expression is of type \"C2\", not \"C\"",
+          "range": {
+            "start": {
+              "character": 1,
+              "line": 26
+            }
+          },
+          "rule": "assert-type",
+          "severity": "error"
+        }
+      ],
+      "environment_overrides": {
+        "LC_ALL": "C.UTF-8",
+        "NO_COLOR": "1",
+        "PYTHONHASHSEED": "26051105",
+        "UV_OFFLINE": "1"
+      },
+      "exit_code": 1,
+      "expected_exit_code_from_mypy_1_19_1": 1,
+      "finished_at_utc": "2026-11-05T00:42:25.341825Z",
+      "fixture_id": "NC01",
+      "fixture_path": "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py",
+      "fixture_sha256": "c839ed94d85387ebddb6a60297795ebcbbc06df6177aa7059b82309b81ccbec8",
+      "label": "mypy-2.3.1-default-run-1-NC01",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_sha256": "7345627e21e0ca40d3993eb9696fd3f9a6f1444f0ec3667a19d940a9e09c7a3a",
+      "started_at_utc": "2026-11-05T00:42:24.748735Z",
+      "stderr": "",
+      "stdout": "evidence/LOCAL-VERIFY-002/FIXTURES/NC01-incorrect-type-assertion.py:26:1: error: Expression is of type \"C2\", not \"C\"  [assert-type]\n",
+      "timed_out": false,
+      "timeout_seconds": 90
+    }
+  ],
+  "run_number": 1,
+  "schema_version": "1.0",
+  "version": "2.3.1"
+}

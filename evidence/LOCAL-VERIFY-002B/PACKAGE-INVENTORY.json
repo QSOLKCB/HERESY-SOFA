@@ -1,0 +1,500 @@
+{
+  "acquisition": {
+    "authorized_sources": [
+      "official PyPI",
+      "official npm registry Microsoft Pyright distribution"
+    ],
+    "download_tool": "curl with HTTPS-only/TLS 1.2 minimum",
+    "global_installation": false,
+    "network_phase_separate_from_execution": true,
+    "npm_npx_pnpm_invoked": false,
+    "package_lifecycle_scripts_invoked": false
+  },
+  "acquisition_timestamp_limitation": "Individual curl start/finish timestamps were not captured; no retrospective timestamps are inferred.",
+  "artifact_count": 7,
+  "artifacts": [
+    {
+      "bytes": 1313260,
+      "filename": "ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "zip/wheel",
+      "full_member_inventory": "RAW/package-inspection.json#/mypy_dependencies/ast_serialize/members",
+      "metadata": {
+        "name": "ast_serialize",
+        "requires_dist": [],
+        "requires_python": ">=3.7",
+        "version": "0.13.1"
+      },
+      "official_registry_integrity": "9f99786e0d62082a5b121b3437f3167562133711df22128de1e9886f57f0b226",
+      "official_source_url": "https://files.pythonhosted.org/packages/c5/fa/da311559dd3dae9af5825cf21660775a929b970f72e3786af3f2cd667944/ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "safety": {
+        "absolute_or_traversal_paths": 0,
+        "accepted": true,
+        "bounds": {
+          "max_member_bytes": 209715200,
+          "max_members": 20000,
+          "max_total_bytes": 786432000
+        },
+        "crc_verified": true,
+        "duplicate_paths": 0,
+        "links_devices_fifos": 0,
+        "member_count": 10,
+        "record_hashes_verified": 9,
+        "total_uncompressed_bytes": 3206749
+      },
+      "sha256": "9f99786e0d62082a5b121b3437f3167562133711df22128de1e9886f57f0b226"
+    },
+    {
+      "bytes": 523057,
+      "filename": "librt-0.16.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "zip/wheel",
+      "full_member_inventory": "RAW/package-inspection.json#/mypy_dependencies/librt/members",
+      "metadata": {
+        "name": "librt",
+        "requires_dist": [],
+        "requires_python": ">=3.9",
+        "version": "0.16.0"
+      },
+      "official_registry_integrity": "ca8052401c55d7511dda6760719fda7618067e83535d7d0010096d216c34b667",
+      "official_source_url": "https://files.pythonhosted.org/packages/50/07/79007d2165f649ea93e08c0962d1d62c70af9cde77965255095bf9d96f9a/librt-0.16.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "safety": {
+        "absolute_or_traversal_paths": 0,
+        "accepted": true,
+        "bounds": {
+          "max_member_bytes": 209715200,
+          "max_members": 20000,
+          "max_total_bytes": 786432000
+        },
+        "crc_verified": true,
+        "duplicate_paths": 0,
+        "links_devices_fifos": 0,
+        "member_count": 24,
+        "record_hashes_verified": 20,
+        "total_uncompressed_bytes": 1629939
+      },
+      "sha256": "ca8052401c55d7511dda6760719fda7618067e83535d7d0010096d216c34b667"
+    },
+    {
+      "bytes": 15225538,
+      "filename": "mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "zip/wheel",
+      "full_member_inventory": "RAW/package-inspection.json#/mypy/members",
+      "metadata": {
+        "name": "mypy",
+        "requires_dist": [
+          "typing_extensions>=4.6.0; python_version < \"3.15\"",
+          "typing_extensions>=4.14.0; python_version >= \"3.15\"",
+          "mypy_extensions>=1.0.0",
+          "pathspec>=1.0.0",
+          "tomli>=1.1.0; python_version < \"3.11\"",
+          "librt>=0.13.0; platform_python_implementation != \"PyPy\"",
+          "ast-serialize<1.0.0,>=0.6.0",
+          "psutil>=4.0; extra == \"dmypy\"",
+          "setuptools>=50; extra == \"mypyc\"",
+          "lxml; extra == \"reports\"",
+          "pip; extra == \"install-types\"",
+          "orjson; extra == \"faster-cache\""
+        ],
+        "requires_python": ">=3.10",
+        "version": "2.3.1"
+      },
+      "official_registry_integrity": "8e036f06b41630f4c8a1d48f9ac6aa26acc65f8be089973f5519da643318f03f",
+      "official_source_url": "https://files.pythonhosted.org/packages/78/f7/f4a34edab45667c5465855dc585a20e87978ffa8aee711445b7239d120c6/mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "safety": {
+        "absolute_or_traversal_paths": 0,
+        "accepted": true,
+        "bounds": {
+          "max_member_bytes": 209715200,
+          "max_members": 20000,
+          "max_total_bytes": 786432000
+        },
+        "crc_verified": true,
+        "duplicate_paths": 0,
+        "links_devices_fifos": 0,
+        "member_count": 1569,
+        "record_hashes_verified": 1463,
+        "total_uncompressed_bytes": 50329675
+      },
+      "sha256": "8e036f06b41630f4c8a1d48f9ac6aa26acc65f8be089973f5519da643318f03f"
+    },
+    {
+      "bytes": 4963,
+      "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+      "format": "zip/wheel",
+      "full_member_inventory": "RAW/package-inspection.json#/mypy_dependencies/mypy_extensions/members",
+      "metadata": {
+        "name": "mypy_extensions",
+        "requires_dist": [],
+        "requires_python": ">=3.8",
+        "version": "1.1.0"
+      },
+      "official_registry_integrity": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505",
+      "official_source_url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+      "safety": {
+        "absolute_or_traversal_paths": 0,
+        "accepted": true,
+        "bounds": {
+          "max_member_bytes": 209715200,
+          "max_members": 20000,
+          "max_total_bytes": 786432000
+        },
+        "crc_verified": true,
+        "duplicate_paths": 0,
+        "links_devices_fifos": 0,
+        "member_count": 5,
+        "record_hashes_verified": 4,
+        "total_uncompressed_bytes": 10550
+      },
+      "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505"
+    },
+    {
+      "bytes": 55206,
+      "filename": "pathspec-1.0.4-py3-none-any.whl",
+      "format": "zip/wheel",
+      "full_member_inventory": "RAW/package-inspection.json#/mypy_dependencies/pathspec/members",
+      "metadata": {
+        "name": "pathspec",
+        "requires_dist": [
+          "hyperscan >=0.7 ; extra == \"hyperscan\"",
+          "typing-extensions >=4 ; extra == \"optional\"",
+          "google-re2 >=1.1 ; extra == \"re2\"",
+          "pytest >=9 ; extra == \"tests\"",
+          "typing-extensions >=4.15 ; extra == \"tests\""
+        ],
+        "requires_python": ">=3.9",
+        "version": "1.0.4"
+      },
+      "official_registry_integrity": "fb6ae2fd4e7c921a165808a552060e722767cfa526f99ca5156ed2ce45a5c723",
+      "official_source_url": "https://files.pythonhosted.org/packages/ef/3c/2c197d226f9ea224a9ab8d197933f9da0ae0aac5b6e0f884e2b8d9c8e9f7/pathspec-1.0.4-py3-none-any.whl",
+      "safety": {
+        "absolute_or_traversal_paths": 0,
+        "accepted": true,
+        "bounds": {
+          "max_member_bytes": 209715200,
+          "max_members": 20000,
+          "max_total_bytes": 786432000
+        },
+        "crc_verified": true,
+        "duplicate_paths": 0,
+        "links_devices_fifos": 0,
+        "member_count": 36,
+        "record_hashes_verified": 35,
+        "total_uncompressed_bytes": 156613
+      },
+      "sha256": "fb6ae2fd4e7c921a165808a552060e722767cfa526f99ca5156ed2ce45a5c723"
+    },
+    {
+      "bytes": 4226827,
+      "filename": "pyright-1.1.414.tgz",
+      "format": "gzip-compressed tar",
+      "full_member_inventory": "RAW/package-inspection.json#/pyright/members",
+      "metadata": {
+        "engines": {
+          "node": ">=14.0.0"
+        },
+        "name": "pyright",
+        "version": "1.1.414"
+      },
+      "official_registry_integrity": "sha512-FPZZb51jepDX4eP7TEYDeNFtmE3WgwkkEcJpvH3/QmUSsj0EAy3LXu+xB4T/FWDejtsXlCfFr/rbWFjwuwuXww==",
+      "official_source_url": "https://registry.npmjs.org/pyright/-/pyright-1.1.414.tgz",
+      "safety": {
+        "absolute_or_traversal_paths": 0,
+        "accepted": true,
+        "bounds": {
+          "max_member_bytes": 209715200,
+          "max_members": 20000,
+          "max_total_bytes": 786432000
+        },
+        "controlled_extraction": true,
+        "duplicate_paths": 0,
+        "gzip_and_tar_read_complete": true,
+        "links_devices_fifos": 0,
+        "member_count": 5423,
+        "total_uncompressed_bytes": 19457120
+      },
+      "sha256": "bf5f473f6167c0d14175492c3263d783b4489a6956e1c06c18e15228e3a3fa42"
+    },
+    {
+      "bytes": 44614,
+      "filename": "typing_extensions-4.15.0-py3-none-any.whl",
+      "format": "zip/wheel",
+      "full_member_inventory": "RAW/package-inspection.json#/mypy_dependencies/typing_extensions/members",
+      "metadata": {
+        "name": "typing_extensions",
+        "requires_dist": [],
+        "requires_python": ">=3.9",
+        "version": "4.15.0"
+      },
+      "official_registry_integrity": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548",
+      "official_source_url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+      "safety": {
+        "absolute_or_traversal_paths": 0,
+        "accepted": true,
+        "bounds": {
+          "max_member_bytes": 209715200,
+          "max_members": 20000,
+          "max_total_bytes": 786432000
+        },
+        "crc_verified": true,
+        "duplicate_paths": 0,
+        "links_devices_fifos": 0,
+        "member_count": 5,
+        "record_hashes_verified": 4,
+        "total_uncompressed_bytes": 178133
+      },
+      "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+    }
+  ],
+  "campaign": "LOCAL-VERIFY-002B",
+  "failed_preflight": "RAW/MYPY-DEPENDENCY-PREFLIGHT.json",
+  "full_safety_receipt": {
+    "bytes": 1880000,
+    "path": "RAW/package-inspection.json",
+    "sha256": "9c65b64791e0ac70346204af666b04d60a6434bf437a0939cfcb06b09ea3c271"
+  },
+  "mypy_dependency_resolution": {
+    "command": [
+      "<MYPY_VENV_PYTHON>",
+      "-c",
+      "importlib.metadata inventory"
+    ],
+    "distributions": [
+      {
+        "metadata_name": "mypy",
+        "requested_name": "mypy",
+        "requires": [
+          "typing_extensions>=4.6.0; python_version < \"3.15\"",
+          "typing_extensions>=4.14.0; python_version >= \"3.15\"",
+          "mypy_extensions>=1.0.0",
+          "pathspec>=1.0.0",
+          "tomli>=1.1.0; python_version < \"3.11\"",
+          "librt>=0.13.0; platform_python_implementation != \"PyPy\"",
+          "ast-serialize<1.0.0,>=0.6.0",
+          "psutil>=4.0; extra == \"dmypy\"",
+          "setuptools>=50; extra == \"mypyc\"",
+          "lxml; extra == \"reports\"",
+          "pip; extra == \"install-types\"",
+          "orjson; extra == \"faster-cache\""
+        ],
+        "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+        "version": "2.3.1"
+      },
+      {
+        "metadata_name": "librt",
+        "requested_name": "librt",
+        "requires": [],
+        "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+        "version": "0.16.0"
+      },
+      {
+        "metadata_name": "ast_serialize",
+        "requested_name": "ast-serialize",
+        "requires": [],
+        "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+        "version": "0.13.1"
+      },
+      {
+        "metadata_name": "typing_extensions",
+        "requested_name": "typing-extensions",
+        "requires": [],
+        "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+        "version": "4.15.0"
+      },
+      {
+        "metadata_name": "mypy_extensions",
+        "requested_name": "mypy-extensions",
+        "requires": [],
+        "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+        "version": "1.1.0"
+      },
+      {
+        "metadata_name": "pathspec",
+        "requested_name": "pathspec",
+        "requires": [
+          "hyperscan >=0.7 ; extra == \"hyperscan\"",
+          "typing-extensions >=4 ; extra == \"optional\"",
+          "google-re2 >=1.1 ; extra == \"re2\"",
+          "pytest >=9 ; extra == \"tests\"",
+          "typing-extensions >=4.15 ; extra == \"tests\""
+        ],
+        "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+        "version": "1.0.4"
+      }
+    ],
+    "exit_code": 0
+  },
+  "normalized_acquisition_commands": [
+    {
+      "argv": [
+        "curl",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--tlsv1.2",
+        "--silent",
+        "--show-error",
+        "--output",
+        "<ACQUISITION_ROOT>/downloads/ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "https://files.pythonhosted.org/packages/c5/fa/da311559dd3dae9af5825cf21660775a929b970f72e3786af3f2cd667944/ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+      ],
+      "exit_code": 0,
+      "timestamp": "NOT_CAPTURED"
+    },
+    {
+      "argv": [
+        "curl",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--tlsv1.2",
+        "--silent",
+        "--show-error",
+        "--output",
+        "<ACQUISITION_ROOT>/downloads/librt-0.16.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "https://files.pythonhosted.org/packages/50/07/79007d2165f649ea93e08c0962d1d62c70af9cde77965255095bf9d96f9a/librt-0.16.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+      ],
+      "exit_code": 0,
+      "timestamp": "NOT_CAPTURED"
+    },
+    {
+      "argv": [
+        "curl",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--tlsv1.2",
+        "--silent",
+        "--show-error",
+        "--output",
+        "<ACQUISITION_ROOT>/downloads/mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "https://files.pythonhosted.org/packages/78/f7/f4a34edab45667c5465855dc585a20e87978ffa8aee711445b7239d120c6/mypy-2.3.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+      ],
+      "exit_code": 0,
+      "timestamp": "NOT_CAPTURED"
+    },
+    {
+      "argv": [
+        "curl",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--tlsv1.2",
+        "--silent",
+        "--show-error",
+        "--output",
+        "<ACQUISITION_ROOT>/downloads/mypy_extensions-1.1.0-py3-none-any.whl",
+        "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl"
+      ],
+      "exit_code": 0,
+      "timestamp": "NOT_CAPTURED"
+    },
+    {
+      "argv": [
+        "curl",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--tlsv1.2",
+        "--silent",
+        "--show-error",
+        "--output",
+        "<ACQUISITION_ROOT>/downloads/pathspec-1.0.4-py3-none-any.whl",
+        "https://files.pythonhosted.org/packages/ef/3c/2c197d226f9ea224a9ab8d197933f9da0ae0aac5b6e0f884e2b8d9c8e9f7/pathspec-1.0.4-py3-none-any.whl"
+      ],
+      "exit_code": 0,
+      "timestamp": "NOT_CAPTURED"
+    },
+    {
+      "argv": [
+        "curl",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--tlsv1.2",
+        "--silent",
+        "--show-error",
+        "--output",
+        "<ACQUISITION_ROOT>/downloads/pyright-1.1.414.tgz",
+        "https://registry.npmjs.org/pyright/-/pyright-1.1.414.tgz"
+      ],
+      "exit_code": 0,
+      "timestamp": "NOT_CAPTURED"
+    },
+    {
+      "argv": [
+        "curl",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--tlsv1.2",
+        "--silent",
+        "--show-error",
+        "--output",
+        "<ACQUISITION_ROOT>/downloads/typing_extensions-4.15.0-py3-none-any.whl",
+        "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl"
+      ],
+      "exit_code": 0,
+      "timestamp": "NOT_CAPTURED"
+    }
+  ],
+  "original_archives_unchanged_after_inspection": true,
+  "pyright_dependency_assessment": {
+    "linux_runtime_dependency_install_required": false,
+    "note": "The shipped package has no runtime dependencies. fsevents is optional and is not used on this Linux host. No package-manager install was run.",
+    "optional_dependencies": {
+      "fsevents": "~2.3.3"
+    },
+    "runtime_dependencies": {}
+  },
+  "registry_metadata": [
+    {
+      "bytes": 904924,
+      "filename": "ast-serialize-pypi.json",
+      "official_source_url": "https://pypi.org/pypi/ast-serialize/json",
+      "sha256": "b167560d77fc05f39bb06d6dd5eaa5efd10101426dff4258df3a7cfbae5dc726"
+    },
+    {
+      "bytes": 2454372,
+      "filename": "librt-pypi.json",
+      "official_source_url": "https://pypi.org/pypi/librt/json",
+      "sha256": "f315f109f859a8275738740d913b9a4257c9755d36feb44d61ecab51a4d14896"
+    },
+    {
+      "bytes": 48179,
+      "filename": "mypy-2.3.1-pypi.json",
+      "official_source_url": "https://pypi.org/pypi/mypy/2.3.1/json",
+      "sha256": "6e841ddadb96883e0f9c5be7aaa0aeb932c23aba3ec6bf7b9c1f4bdeb9777748"
+    },
+    {
+      "bytes": 3389,
+      "filename": "mypy-extensions-1.1.0-pypi.json",
+      "official_source_url": "https://pypi.org/pypi/mypy-extensions/1.1.0/json",
+      "sha256": "e9715bb5583e110c5bb663b8d2ee88ae736e8c37928218e1923714559c972fb1"
+    },
+    {
+      "bytes": 16107,
+      "filename": "pathspec-1.0.4-pypi.json",
+      "official_source_url": "https://pypi.org/pypi/pathspec/1.0.4/json",
+      "sha256": "5c77a04aa5dc4c9db7a20fee98d3bc9b1eebb0ab16aa5bd5a590e85f193ef4d1"
+    },
+    {
+      "bytes": 2651,
+      "filename": "pyright-1.1.414-registry.json",
+      "official_source_url": "https://registry.npmjs.org/pyright/1.1.414",
+      "sha256": "de5bf1efacf013a39d0d42507c9dad3f587979084da941fca239c7cbfc4eb38b"
+    },
+    {
+      "bytes": 5590,
+      "filename": "typing-extensions-4.15.0-pypi.json",
+      "official_source_url": "https://pypi.org/pypi/typing-extensions/4.15.0/json",
+      "sha256": "e97e0b1087254aa1c7e8b2074c3796124dfd7d26e0f54ffcdc3a975b53047938"
+    }
+  ],
+  "schema_version": "1.0"
+}

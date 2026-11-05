@@ -1,0 +1,31 @@
+{
+  "queried_at_utc": "2026-11-05T00:43:47Z",
+  "command": [
+    "gh",
+    "pr",
+    "view",
+    "19",
+    "--repo",
+    "QSOLKCB/HERESY-SOFA",
+    "--json",
+    "number,state,isDraft,mergedAt,mergeCommit,headRefName,headRefOid,baseRefName,url,title"
+  ],
+  "exit_code": 0,
+  "response": {
+    "baseRefName": "main",
+    "headRefName": "evidence/local-verify-002-static-checker-matrix",
+    "headRefOid": "98054e2f4002b63bc724882bd6ee86f45f4fdb28",
+    "isDraft": false,
+    "mergeCommit": {
+      "oid": "1ad645e13277a28ba511cad2f6bd2f5d988894d8"
+    },
+    "mergedAt": "2026-11-04T22:40:33Z",
+    "number": 19,
+    "state": "MERGED",
+    "title": "LOCAL-VERIFY-002 — Version-pinned mypy and Pyright adversarial matrix",
+    "url": "https://github.com/QSOLKCB/HERESY-SOFA/pull/19"
+  },
+  "repository_head_at_query": "1ad645e13277a28ba511cad2f6bd2f5d988894d8",
+  "origin_main_at_query": "1ad645e13277a28ba511cad2f6bd2f5d988894d8",
+  "merge_commit_is_ancestor_of_origin_main": true
+}

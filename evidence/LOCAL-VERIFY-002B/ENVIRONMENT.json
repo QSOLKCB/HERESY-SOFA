@@ -1,0 +1,240 @@
+{
+  "campaign": "LOCAL-VERIFY-002B",
+  "collected_at_utc": "2026-11-05T01:00:20.607660Z",
+  "cpu": {
+    "logical_cpu_count": 32,
+    "model": "AMD Ryzen 9 5950X 16-Core Processor"
+  },
+  "execution_window_utc": {
+    "finished": "2026-11-05T00:43:11.440286Z",
+    "started": "2026-11-05T00:42:16.687655Z"
+  },
+  "mypy_environment": {
+    "distribution_inventory": {
+      "command": [
+        "<MYPY_VENV_PYTHON>",
+        "-c",
+        "importlib.metadata inventory"
+      ],
+      "distributions": [
+        {
+          "metadata_name": "mypy",
+          "requested_name": "mypy",
+          "requires": [
+            "typing_extensions>=4.6.0; python_version < \"3.15\"",
+            "typing_extensions>=4.14.0; python_version >= \"3.15\"",
+            "mypy_extensions>=1.0.0",
+            "pathspec>=1.0.0",
+            "tomli>=1.1.0; python_version < \"3.11\"",
+            "librt>=0.13.0; platform_python_implementation != \"PyPy\"",
+            "ast-serialize<1.0.0,>=0.6.0",
+            "psutil>=4.0; extra == \"dmypy\"",
+            "setuptools>=50; extra == \"mypyc\"",
+            "lxml; extra == \"reports\"",
+            "pip; extra == \"install-types\"",
+            "orjson; extra == \"faster-cache\""
+          ],
+          "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+          "version": "2.3.1"
+        },
+        {
+          "metadata_name": "librt",
+          "requested_name": "librt",
+          "requires": [],
+          "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+          "version": "0.16.0"
+        },
+        {
+          "metadata_name": "ast_serialize",
+          "requested_name": "ast-serialize",
+          "requires": [],
+          "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+          "version": "0.13.1"
+        },
+        {
+          "metadata_name": "typing_extensions",
+          "requested_name": "typing-extensions",
+          "requires": [],
+          "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+          "version": "4.15.0"
+        },
+        {
+          "metadata_name": "mypy_extensions",
+          "requested_name": "mypy-extensions",
+          "requires": [],
+          "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+          "version": "1.1.0"
+        },
+        {
+          "metadata_name": "pathspec",
+          "requested_name": "pathspec",
+          "requires": [
+            "hyperscan >=0.7 ; extra == \"hyperscan\"",
+            "typing-extensions >=4 ; extra == \"optional\"",
+            "google-re2 >=1.1 ; extra == \"re2\"",
+            "pytest >=9 ; extra == \"tests\"",
+            "typing-extensions >=4.15 ; extra == \"tests\""
+          ],
+          "root": "$HOME/LOCAL-VERIFY-002B-WORK/venvs/mypy-2.3.1-self-contained/lib/python3.14/site-packages",
+          "version": "1.0.4"
+        }
+      ],
+      "exit_code": 0
+    },
+    "isolated_venv": true,
+    "offline_install": true,
+    "system_site_packages": false,
+    "uv_pip_check": "All installed packages are compatible"
+  },
+  "network_during_checker_execution": false,
+  "npm_npx_pnpm_invoked": false,
+  "operating_system": {
+    "architecture": "x86_64",
+    "kernel_release": "7.0.0-42-generic",
+    "kernel_version": "#42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:06:44 UTC 2026",
+    "os_release": {
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "LOGO": "ubuntu-logo",
+      "NAME": "Ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "UBUNTU_CODENAME": "resolute",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "VERSION_ID": "26.04"
+    }
+  },
+  "python_target": "3.14",
+  "schema_version": "1.0",
+  "seed": 26051105,
+  "tools": {
+    "cpython": {
+      "executable": "/usr/bin/python3.14",
+      "executable_bytes": 7477160,
+      "executable_sha256": "52e0a13e60a981d8c4b6478be2ba5176f69da07948a056bf49cf6f077e30cb41",
+      "version": "3.14.4",
+      "version_receipt": {
+        "argv": [
+          "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/python",
+          "--version"
+        ],
+        "cwd": "<REPOSITORY>",
+        "environment_overrides": {
+          "LC_ALL": "C.UTF-8",
+          "NO_COLOR": "1",
+          "PYTHONHASHSEED": "26051105",
+          "UV_OFFLINE": "1"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-05T00:42:16.878711Z",
+        "label": "python-version",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_stdout_sha256": "63990b3ee50c49ab28d70e29c0f967f0c71330e39243ffeb4d3a8d5878c8a978",
+        "started_at_utc": "2026-11-05T00:42:16.877413Z",
+        "stderr": "",
+        "stdout": "Python 3.14.4\n",
+        "timed_out": false,
+        "timeout_seconds": 90
+      }
+    },
+    "mypy": {
+      "compiled": true,
+      "executable": "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+      "executable_bytes": 374,
+      "executable_sha256": "284a32f352cd841669090b5c57b1a10d90c0ff50c2fea66c61529570f1389be6",
+      "version": "2.3.1",
+      "version_receipt": {
+        "argv": [
+          "<ACQUISITION_ROOT>/venvs/mypy-2.3.1-self-contained/bin/mypy",
+          "--version"
+        ],
+        "cwd": "<REPOSITORY>",
+        "environment_overrides": {
+          "LC_ALL": "C.UTF-8",
+          "NO_COLOR": "1",
+          "PYTHONHASHSEED": "26051105",
+          "UV_OFFLINE": "1"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-05T00:42:16.766945Z",
+        "label": "mypy-version",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_stdout_sha256": "fa7c9d68c73be8f4a3a3b8fdf30f16f2f9f45dd0bf67b878351daa895efb1028",
+        "started_at_utc": "2026-11-05T00:42:16.688549Z",
+        "stderr": "",
+        "stdout": "mypy 2.3.1 (compiled: yes)\n",
+        "timed_out": false,
+        "timeout_seconds": 90
+      }
+    },
+    "node": {
+      "executable": "$HOME/.local/opt/node/bin/node",
+      "executable_bytes": 121613584,
+      "executable_sha256": "ccacb2d6d87ba6d118b2bffc1ae33747a05cc5fc6b1f1ec4fc1d420b687e952d",
+      "version": "22.18.0",
+      "version_receipt": {
+        "argv": [
+          "$HOME/.local/opt/node/bin/node",
+          "--version"
+        ],
+        "cwd": "<REPOSITORY>",
+        "environment_overrides": {
+          "LC_ALL": "C.UTF-8",
+          "NO_COLOR": "1",
+          "PYTHONHASHSEED": "26051105",
+          "UV_OFFLINE": "1"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-05T00:42:16.882547Z",
+        "label": "node-version",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_stdout_sha256": "3908ef42602f8742fa1b947ab741a18df5ac716313cd30eb020712b7f45dab24",
+        "started_at_utc": "2026-11-05T00:42:16.878859Z",
+        "stderr": "",
+        "stdout": "v22.18.0\n",
+        "timed_out": false,
+        "timeout_seconds": 90
+      }
+    },
+    "pyright": {
+      "entrypoint": "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+      "entrypoint_bytes": 218,
+      "entrypoint_sha256": "1b6744d5925694667abb3309c7e27611446aa7f1ee645cb99ecb0b9082a4c61e",
+      "version": "1.1.414",
+      "version_receipt": {
+        "argv": [
+          "$HOME/.local/opt/node/bin/node",
+          "<ACQUISITION_ROOT>/extracted/pyright-1.1.414-self-contained/package/index.js",
+          "--version"
+        ],
+        "cwd": "<REPOSITORY>",
+        "environment_overrides": {
+          "LC_ALL": "C.UTF-8",
+          "NO_COLOR": "1",
+          "PYTHONHASHSEED": "26051105",
+          "UV_OFFLINE": "1"
+        },
+        "exit_code": 0,
+        "finished_at_utc": "2026-11-05T00:42:16.877259Z",
+        "label": "pyright-version",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "raw_stdout_sha256": "6813394fa2cffc0c9286d766110b7b051f458413264efe951cfbf7654b148154",
+        "started_at_utc": "2026-11-05T00:42:16.767078Z",
+        "stderr": "",
+        "stdout": "pyright 1.1.414\n",
+        "timed_out": false,
+        "timeout_seconds": 90
+      }
+    },
+    "uv": {
+      "executable": "/home/trent/.local/bin/uv",
+      "executable_bytes": 56107008,
+      "executable_sha256": "92face6b1f0462ad911857957bd168cd4ae45515e2a2cb3fcc3ecbda3d4d82b1",
+      "version_output": "uv 0.12.1 (x86_64-unknown-linux-gnu)"
+    }
+  }
+}
