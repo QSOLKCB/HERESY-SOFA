@@ -1,0 +1,29 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "classification": "HARNESS_PREFLIGHT_FAILURE",
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--offline",
+    "--no-managed-python",
+    "python",
+    "evidence/LOCAL-VERIFY-003/SOURCE/run_offline_matrix.py"
+  ],
+  "exit_code": 1,
+  "failed_assertion": {
+    "actual": false,
+    "expected": true,
+    "id": "Y005.unavailable_explicit_language",
+    "negative_control": true
+  },
+  "observed": {
+    "logger_messages": [],
+    "process_subtitles_result": {}
+  },
+  "finding": "yt-dlp 2026.03.17 refused the unavailable explicit language by returning an empty selection, but did not emit the warning that the preflight harness additionally required.",
+  "correction": "Retain the empty-selection assertion and remove the unsupported warning-side-effect requirement; rerun every check from a fresh process.",
+  "network_attempt_count": 0,
+  "output_capture_limitation": "The orchestration display truncated the full deterministic JSON after recording the failed assertion; the exact failed assertion and relevant Y005 observation are preserved here.",
+  "result_scope": "Superseded preflight only; not counted as the canonical successful execution."
+}

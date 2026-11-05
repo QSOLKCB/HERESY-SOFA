@@ -22,6 +22,38 @@ SPEC.loader.exec_module(MODULE)
 class LocalVerify002BArchiveTests(MODULE.LocalVerify002BTests):
     """Run the evidence-owned validation contract in repository CI."""
 
+    def test_required_artifacts_and_boundary(self) -> None:
+        """Adapt the historical phase gate without editing frozen evidence.
+
+        The evidence-owned validator correctly asserted during LOCAL-VERIFY-002B
+        that phases 003 and 004 had not begun.  That temporal fact is preserved
+        in its immutable source.  Current repository CI instead verifies that
+        003 is a separate collection and that phase 004 still has not begun.
+        """
+
+        root = REPOSITORY / "evidence/LOCAL-VERIFY-002B"
+        for relative in (
+            "ENVIRONMENT.json",
+            "PACKAGE-INVENTORY.json",
+            "CHECKER-MATRIX.csv",
+            "CLAIM-LEDGER.csv",
+            "REPORT.json",
+            "REVIEW.md",
+            "NEGATIVE-CONTROLS.json",
+            "OPEN-ISSUES.md",
+            "BASELINE.json",
+            "ARCHIVE.json",
+            "SHA256SUMS.txt",
+            "RAW/EXECUTION.json",
+            "RAW/determinism.json",
+            "RAW/package-inspection.json",
+            "RAW/PREFLIGHT-PARSER-CORRECTION.json",
+            "RAW/MYPY-DEPENDENCY-PREFLIGHT.json",
+        ):
+            self.assertTrue((root / relative).is_file(), relative)
+        self.assertTrue((REPOSITORY / "evidence/LOCAL-VERIFY-003/ARCHIVE.json").is_file())
+        self.assertFalse((REPOSITORY / "evidence/LOCAL-VERIFY-004").exists())
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

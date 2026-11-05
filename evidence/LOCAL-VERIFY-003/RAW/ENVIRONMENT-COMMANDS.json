@@ -1,0 +1,58 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "commands": {
+    "module_identity": {
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--offline",
+        "--no-managed-python",
+        "python",
+        "-c",
+        "import json,sys,yt_dlp; from importlib import metadata; from yt_dlp.version import __version__; print(json.dumps({'python':sys.version,'executable':sys.executable,'yt_dlp_version':__version__,'distribution_version':metadata.version('yt-dlp'),'module':yt_dlp.__file__},sort_keys=True))"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"distribution_version\": \"2026.3.17\", \"executable\": \"/usr/bin/python3\", \"module\": \"/usr/lib/python3/dist-packages/yt_dlp/__init__.py\", \"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\", \"yt_dlp_version\": \"2026.03.17\"}\n"
+    },
+    "package_status": {
+      "argv": [
+        "dpkg-query",
+        "-W",
+        "-f=${Package}\\t${Version}\\t${Architecture}\\t${Status}\\n",
+        "yt-dlp"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "yt-dlp\t2026.03.17-1\tall\tinstall ok installed\n"
+    },
+    "python_version": {
+      "argv": [
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Python 3.14.4\n"
+    },
+    "uv_version": {
+      "argv": [
+        "uv",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "uv 0.12.1 (x86_64-unknown-linux-gnu)\n"
+    },
+    "yt_dlp_version": {
+      "argv": [
+        "/usr/bin/yt-dlp",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "2026.03.17\n"
+    }
+  }
+}

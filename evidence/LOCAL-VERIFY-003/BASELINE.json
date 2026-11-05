@@ -1,0 +1,114 @@
+{
+  "branch": "evidence/local-verify-003-ytdlp-caption-selection",
+  "branch_start_head": "a8d5b1783d5f5096f00504b99f2276f0a9fbff44",
+  "campaign": "LOCAL-VERIFY-003",
+  "commands": {
+    "branch": {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "evidence/local-verify-003-ytdlp-caption-selection\n"
+    },
+    "head": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "a8d5b1783d5f5096f00504b99f2276f0a9fbff44\n"
+    },
+    "historical_diff": {
+      "argv": [
+        "git",
+        "diff",
+        "--name-only",
+        "origin/main",
+        "--",
+        "evidence/SOFA-HOT-008",
+        "evidence/SOFA-BAKERS-DOZEN-013",
+        "evidence/LOCAL-VERIFY-001",
+        "evidence/LOCAL-VERIFY-002",
+        "evidence/LOCAL-VERIFY-002B"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "origin_main": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "a8d5b1783d5f5096f00504b99f2276f0a9fbff44\n"
+    }
+  },
+  "frozen_collection_diff": [],
+  "historical_evidence_modified": false,
+  "known_frozen_identities": {
+    "codex_primary_report": {
+      "bytes": 29395,
+      "path": "evidence/SOFA-HOT-008/WITNESSES/CODEX-001-primary/CODEX-001-REPORT.json",
+      "sha256": "3cebb8b7fff60a5344e91f02c531dcbfe23455a83b518630acdc7c007ec33229"
+    },
+    "dual_witness_report": {
+      "bytes": 40486,
+      "path": "evidence/SOFA-HOT-008/RECONCILIATION/SOFA-HOT-008-DUAL-WITNESS-REPORT.json",
+      "sha256": "eb14652b5f4c71f6ddf4949551db536b6cc2cc5b14f61803c228099e915a2db3"
+    },
+    "local_verify_001_report": {
+      "bytes": 17096,
+      "path": "evidence/LOCAL-VERIFY-001/REPORTS/LOCAL-VERIFY-001-REPORT.json",
+      "sha256": "0f8c584a08a37fb3c1fb36d86a8926c5845980f85bd3225962fc2ea957182c93"
+    },
+    "local_verify_002_report": {
+      "bytes": 3024,
+      "path": "evidence/LOCAL-VERIFY-002/REPORT.json",
+      "sha256": "70f846f41b6d1da12c1e84b3de403ef631cf30dc8447b7a233cb284d758b5009"
+    },
+    "local_verify_002b_report": {
+      "bytes": 4323,
+      "path": "evidence/LOCAL-VERIFY-002B/REPORT.json",
+      "sha256": "f76e6fea35a7f423017c3e47f4a1b596c5a1fae02489cdc27e18735668bb0a38"
+    }
+  },
+  "origin_main": "a8d5b1783d5f5096f00504b99f2276f0a9fbff44",
+  "recorded_at_utc": "2026-11-05T01:40:44.358698Z",
+  "required_merges": {
+    "pr_16": {
+      "ancestor_of_origin_main": true,
+      "commit": "22083e28949d5691731f8cf16ed80fae23899980",
+      "exit_code": 0
+    },
+    "pr_17": {
+      "ancestor_of_origin_main": true,
+      "commit": "59b619d5b09e7966f1ceae1dd9ab14313e3ad20a",
+      "exit_code": 0
+    },
+    "pr_18": {
+      "ancestor_of_origin_main": true,
+      "commit": "ddccc1214b7a5d5942c6755ffa4da2c144d0f6ad",
+      "exit_code": 0
+    },
+    "pr_19": {
+      "ancestor_of_origin_main": true,
+      "commit": "1ad645e13277a28ba511cad2f6bd2f5d988894d8",
+      "exit_code": 0
+    },
+    "pr_20": {
+      "ancestor_of_origin_main": true,
+      "commit": "a8d5b1783d5f5096f00504b99f2276f0a9fbff44",
+      "exit_code": 0
+    }
+  },
+  "source_commit": "a8d5b1783d5f5096f00504b99f2276f0a9fbff44",
+  "valid": true
+}

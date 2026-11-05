@@ -1,0 +1,51 @@
+{
+  "status": "offline_plan_only",
+  "case_id": "CODECOV-2021",
+  "model_for_future_separate_workflow": "gpt-6.1-sol",
+  "packet_sha256": "a06195f03076c33618f704d490f8079a8ba6461257a690183ace30ed3dab2303",
+  "packet_bytes": 1087,
+  "estimated_reservation_micro_usd": 66292,
+  "api_calls": 0,
+  "api_spend_usd": 0,
+  "limitations": "No model invocation, network request, credential handling or security verdict."
+}
+HERESY-002: failed (exit 1)
+receipt: /tmp/tmpusrs868z/receipts/HERESY-002.json
+HERESY-002: failed (exit 1)
+receipt: /tmp/tmpdkwbi343/receipts/HERESY-002.json
+HERESY-002: executed (exit 0)
+receipt: /tmp/tmp_w2l4sj3/HERESY-002.json
+HERESY-001: executed (exit 0)
+receipt: /tmp/tmpmry2nec1/HERESY-001.json
+HERESY-004: executed (exit 0)
+receipt: /tmp/tmpw2o0i2i8/HERESY-004.json
+HERESY-001: executed (exit 0)
+receipt: /tmp/tmpjwsh56tx/HERESY-001.json
+HERESY-001: executed (exit 0)
+receipt: /tmp/tmpw_rnmx49/HERESY-001.json
+HERESY-003: executed (exit 0)
+receipt: /tmp/tmp8lk8zu1q/HERESY-003.json
+{"experiment_id": "HERESY-006", "report": "report.json", "run_status": "FAIL"}
+{"experiment_id": "HERESY-006", "report": "report.json", "run_status": "FAIL"}
+{"experiment_id": "HERESY-006", "report": "failed.json", "run_status": "FAIL"}
+{"experiment_id": "HERESY-006", "report": "report.json", "run_status": "NOT_RUN"}
+HERESY-008: executed (exit 0)
+receipt: /tmp/tmpyyiyczps/HERESY-008.json
+HERESY-008: failed (exit 1)
+receipt: /tmp/tmpl4hdlt4g/HERESY-008.json
+HERESY-008: failed (exit 1)
+receipt: /tmp/tmpu5ppk5g8/HERESY-008.json
+HERESY-011: executed (exit 0)
+receipt: /tmp/tmp3zk8mo_o/HERESY-011.json
+HERESY-012: executed (exit 0)
+receipt: /tmp/heresy012-test-k5zjvx4m/HERESY-012.json
+HERESY-009: executed (exit 0)
+receipt: /tmp/tmpy0aju9tf/HERESY-009.json
+HERESY-007: failed (exit 1)
+receipt: /tmp/tmpf9kdeo1k/HERESY-007.json
+HERESY-007: executed (exit 0)
+receipt: /tmp/tmpovn3nzck/HERESY-007.json
+HERESY-009: executed (exit 0)
+receipt: /tmp/tmp1iq6xgx6/HERESY-009.json
+HERESY-010: executed (exit 0)
+receipt: /tmp/tmprt9_khlf/HERESY-010.json

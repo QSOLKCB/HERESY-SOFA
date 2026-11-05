@@ -1,0 +1,42 @@
+{
+  "campaign": "LOCAL-VERIFY-003",
+  "control_count": 709,
+  "failed_control_count": 0,
+  "groups": [
+    {
+      "count": 50,
+      "name": "oracle_caption_map_reordering",
+      "passed": true,
+      "reference": "fixture_results.results[].permutation_count"
+    },
+    {
+      "count": 7,
+      "name": "literal_order_sensitivity_detection",
+      "passed": true,
+      "reference": "F002,F005,F011,F017,F019,F025,F029"
+    },
+    {
+      "count": 640,
+      "name": "seeded_random_reordering",
+      "passed": true,
+      "reference": "seed 26051105"
+    },
+    {
+      "count": 6,
+      "name": "intentionally_broken_selectors",
+      "passed": true,
+      "reference": "B001-B006"
+    },
+    {
+      "count": 6,
+      "name": "installed_ytdlp_negative_controls",
+      "passed": true,
+      "reference": "Y004,Y005,Y007,Y008,Y009,Y010"
+    }
+  ],
+  "preflight_failure": {
+    "canonical_matrix_rerun_after_correction": true,
+    "classification": "HARNESS_PREFLIGHT_FAILURE",
+    "reference": "RAW/PREFLIGHT-Y005-EXPECTATION.json"
+  }
+}
