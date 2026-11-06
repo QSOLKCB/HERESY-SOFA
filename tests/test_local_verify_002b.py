@@ -28,7 +28,7 @@ class LocalVerify002BArchiveTests(MODULE.LocalVerify002BTests):
         The evidence-owned validator correctly asserted during LOCAL-VERIFY-002B
         that phases 003 and 004 had not begun.  That temporal fact is preserved
         in its immutable source.  Current repository CI instead verifies that
-        003 is a separate collection and that phase 004 still has not begun.
+        003 is separate and 004 has an independent source-only Phase A; live Phase B remains NOT_TESTED.
         """
 
         root = REPOSITORY / "evidence/LOCAL-VERIFY-002B"
