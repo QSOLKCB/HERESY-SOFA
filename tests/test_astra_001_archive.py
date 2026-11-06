@@ -3,10 +3,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
+import stat
 import shutil
 import tempfile
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1] / "evidence" / "LOCAL-VERIFY-004" / "ASTRA-001"
 FILES = {
@@ -21,21 +24,44 @@ MANIFEST_BYTES = (
 ).encode("ascii")
 
 
+def read_regular_bytes(path: Path) -> bytes:
+    """Read one opened regular file; reject symlinks, FIFOs and descriptor swaps."""
+    if path.is_symlink():
+        raise ValueError(f"ASTRA-001 missing or nonregular artifact: {path.name}")
+    flags = (
+        os.O_RDONLY
+        | getattr(os, "O_CLOEXEC", 0)
+        | getattr(os, "O_NOFOLLOW", 0)
+        | getattr(os, "O_NONBLOCK", 0)
+    )
+    try:
+        fd = os.open(path, flags)
+    except OSError as exc:
+        raise ValueError(f"ASTRA-001 missing or nonregular artifact: {path.name}") from exc
+    try:
+        if not stat.S_ISREG(os.fstat(fd).st_mode):
+            raise ValueError(f"ASTRA-001 missing or nonregular artifact: {path.name}")
+        with os.fdopen(fd, "rb", closefd=False) as stream:
+            return stream.read()
+    finally:
+        os.close(fd)
+
+
 def audit(root: Path = ROOT) -> dict:
     """Refuse any byte drift before interpreting status; never rewrite the witness."""
     if {p.name for p in root.iterdir()} != set(FILES) | {MANIFEST}:
         raise ValueError("ASTRA-001 artifact membership mismatch")
-    manifest = (root / MANIFEST).read_bytes()
+    manifest = read_regular_bytes(root / MANIFEST)
     if manifest != MANIFEST_BYTES or hashlib.sha256(manifest).hexdigest() != MANIFEST_SHA256:
         raise ValueError("ASTRA-001 checksum manifest mismatch")
+    verified = {}
     for name, (digest, size) in FILES.items():
-        path = root / name
-        if not path.is_file() or path.is_symlink():
-            raise ValueError(f"ASTRA-001 missing or nonregular artifact: {name}")
-        raw = path.read_bytes()
+        raw = read_regular_bytes(root / name)
         if len(raw) != size or hashlib.sha256(raw).hexdigest() != digest:
             raise ValueError(f"ASTRA-001 source byte mismatch: {name}")
-    receipt = json.loads((root / "ASTRA-001-EXECUTION.json").read_bytes())
+        verified[name] = raw
+    # Parse precisely the receipt bytes already hashed, never re-open the pathname.
+    receipt = json.loads(verified["ASTRA-001-EXECUTION.json"])
     if not isinstance(receipt, dict):
         raise ValueError("ASTRA-001 receipt is not an object")
     return receipt
@@ -90,6 +116,41 @@ class Astra001ArchiveTests(unittest.TestCase):
             (staged / MANIFEST).write_bytes(b"not the approved manifest\n")
             with self.assertRaisesRegex(ValueError, "checksum manifest mismatch"):
                 audit(staged)
+
+    def test_symlinked_manifest_rejected_even_when_bytes_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            staged = Path(tmp) / "ASTRA-001"
+            shutil.copytree(ROOT, staged)
+            outside = Path(tmp) / "approved-manifest-copy"
+            outside.write_bytes((staged / MANIFEST).read_bytes())
+            (staged / MANIFEST).unlink()
+            (staged / MANIFEST).symlink_to(outside)
+            with self.assertRaisesRegex(ValueError, "nonregular artifact"):
+                audit(staged)
+        self.assertEqual(audit()["overall_status"], "PREFLIGHT_FAILED")
+
+    def test_verified_receipt_bytes_are_not_read_again(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            staged = Path(tmp) / "ASTRA-001"
+            shutil.copytree(ROOT, staged)
+            original_reader = read_regular_bytes
+            receipt_reads = []
+
+            def mutate_after_read(path):
+                raw = original_reader(path)
+                if path.name == "ASTRA-001-EXECUTION.json":
+                    receipt_reads.append(path)
+                    # Replace the pathname after verified bytes were obtained.
+                    path.write_bytes(b'{"overall_status": "PASSED"}')
+                return raw
+
+            with mock.patch(__name__ + ".read_regular_bytes", side_effect=mutate_after_read):
+                receipt = audit(staged)
+            self.assertEqual(receipt["overall_status"], "PREFLIGHT_FAILED")
+            self.assertEqual(len(receipt_reads), 1)
+            with self.assertRaisesRegex(ValueError, "source byte mismatch"):
+                audit(staged)
+        self.assertEqual(audit()["overall_status"], "PREFLIGHT_FAILED")
 
 
 if __name__ == "__main__":
