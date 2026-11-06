@@ -1,0 +1,396 @@
+{
+  "schema_version": "1.0.0",
+  "witness_receipt": "ASTRA-001",
+  "experiment": "LOCAL-VERIFY-004",
+  "requested_phase": "B",
+  "overall_status": "PREFLIGHT_FAILED",
+  "live_execution_status": "NOT_TESTED",
+  "failure": {
+    "classification": "REQUIRED_EXECUTABLE_UNAVAILABLE",
+    "stage": "offline_preflight",
+    "observed": true,
+    "detail": "yt-dlp not on PATH; active Python has no yt_dlp module. No installation, substitution, upgrade, live runner invocation or YouTube request performed.",
+    "required_version": "2026.03.17",
+    "observed_version": "NOT_TESTED",
+    "binary_sha256": "NOT_TESTED"
+  },
+  "target": {
+    "video_id": "dKp50fVKUtw",
+    "title": "Inside the Bureau of Software Anomalies | HERESY-SOFA",
+    "url": "https://www.youtube.com/watch?v=dKp50fVKUtw",
+    "channel_handle": "@trentslade83",
+    "identity_basis": "User-authorised target and hash-verified frozen Phase A inventory",
+    "live_extractor_identity_verification": "NOT_TESTED"
+  },
+  "preflight": {
+    "started_utc": "2026-11-06T11:25:14.597838Z",
+    "commands": [
+      {
+        "argv": [
+          "bash",
+          "-lc",
+          "command -v yt-dlp"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source",
+        "start_utc": "2026-11-06T11:25:14.889289Z",
+        "end_utc": "2026-11-06T11:25:14.894579Z",
+        "exit_code": 1,
+        "stdout_utf8": "",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "--version"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source",
+        "start_utc": "2026-11-06T11:25:14.894593Z",
+        "end_utc": "2026-11-06T11:25:14.896366Z",
+        "exit_code": 0,
+        "stdout_utf8": "Python 3.12.14\n",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 15,
+        "stdout_sha256": "4c3569f5da09975434dd9fd9a91fadbc4367a91d8f3c3fab59e9241ab9ee4bd8",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "bash",
+          "--version"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source",
+        "start_utc": "2026-11-06T11:25:14.896379Z",
+        "end_utc": "2026-11-06T11:25:14.898137Z",
+        "exit_code": 0,
+        "stdout_utf8": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 308,
+        "stdout_sha256": "f21766c2171625ffe29bcbd9c8fa9bd89da3014e9ecc6ec15e477e8056e87209",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "git",
+          "--version"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source",
+        "start_utc": "2026-11-06T11:25:14.898148Z",
+        "end_utc": "2026-11-06T11:25:14.899705Z",
+        "exit_code": 0,
+        "stdout_utf8": "git version 2.52.0\n",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 19,
+        "stdout_sha256": "1b5be440c77a69dc59d5bf55542e2e2f71cb2c6f721bd6b2ad216897fd59283c",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "uv",
+          "--version"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source",
+        "start_utc": "2026-11-06T11:25:14.899717Z",
+        "end_utc": "2026-11-06T11:25:14.908189Z",
+        "exit_code": 0,
+        "stdout_utf8": "uv 0.13.5 (x86_64-unknown-linux-gnu)\n",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 37,
+        "stdout_sha256": "4d139bd1c36e7f70d98f148097e7394c1d02439732cdd0a7bec4c1fdb434e342",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "sha256sum",
+          "--version"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source",
+        "start_utc": "2026-11-06T11:25:14.908204Z",
+        "end_utc": "2026-11-06T11:25:14.912542Z",
+        "exit_code": 0,
+        "stdout_utf8": "sha256sum (GNU coreutils) 9.7\nPackaged by Debian (9.7-3)\nCopyright (C) 2025 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Ulrich Drepper, Scott Miller, and David Madore.\n",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 368,
+        "stdout_sha256": "20fdce49b3289d487c17c869bbc7946b237d4529c81f0d40d847c253b4ad452c",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "evidence/LOCAL-VERIFY-004/RUNNER/phase_a.py"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source",
+        "start_utc": "2026-11-06T11:25:14.912556Z",
+        "end_utc": "2026-11-06T11:25:14.951320Z",
+        "exit_code": 0,
+        "stdout_utf8": "{\"archive\": \"LOCAL-VERIFY-004\", \"candidates_validated\": 8, \"phase\": \"A\", \"provisional_negative\": 1, \"selected_validated\": 5, \"source_sha256_verified\": 2, \"subtitle_download\": \"NOT_TESTED\", \"ui_listed_positive\": 7, \"yt_dlp_extraction\": \"NOT_TESTED\"}\n",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 249,
+        "stdout_sha256": "9559e0dd5c7382069011da1e1f83d5f8e11424a46977aabbfa603f59dd23eb51",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "sha256sum",
+          "-c",
+          "SHA256SUMS.txt"
+        ],
+        "cwd": "/workspace/scratch/0ccfb0da149c/ASTRA-001-private/source/evidence/LOCAL-VERIFY-004",
+        "start_utc": "2026-11-06T11:25:14.951350Z",
+        "end_utc": "2026-11-06T11:25:14.957194Z",
+        "exit_code": 0,
+        "stdout_utf8": "INPUT/LOCAL-VERIFY-004_selection_report.md: OK\nINPUT/LOCAL-VERIFY-004_youtube_inventory.json: OK\n",
+        "stderr_utf8": "",
+        "stdout_size_bytes": 97,
+        "stdout_sha256": "986cff5bb4be61d5a24c9e49467aec073191ee5ad931d2cf6efdcf8863aa227c",
+        "stderr_size_bytes": 0,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "tools": {
+      "python3": {
+        "resolved_path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "availability": "AVAILABLE",
+        "observed_utc": "2026-11-06T11:25:14.599569Z",
+        "size_bytes": 30894944,
+        "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+        "real_path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "version": "Python 3.12.14"
+      },
+      "bash": {
+        "resolved_path": "/usr/bin/bash",
+        "availability": "AVAILABLE",
+        "observed_utc": "2026-11-06T11:25:14.688009Z",
+        "size_bytes": 1298416,
+        "sha256": "223fe8564b60636bc738b6178d3ba9a50ef7d791266b0efae6363bb716e4c47f",
+        "real_path": "/usr/bin/bash",
+        "version": "GNU bash, version 5.2.37(1)-release (x86_64-pc-linux-gnu)"
+      },
+      "git": {
+        "resolved_path": "/usr/local/bin/git",
+        "availability": "AVAILABLE",
+        "observed_utc": "2026-11-06T11:25:14.690854Z",
+        "size_bytes": 19295504,
+        "sha256": "8a2ae22e7898e163330a96319b541f92ed6f90fc87576414f72c5a89aa1dc352",
+        "real_path": "/usr/local/bin/git",
+        "version": "git version 2.52.0"
+      },
+      "uv": {
+        "resolved_path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+        "availability": "AVAILABLE",
+        "observed_utc": "2026-11-06T11:25:14.758421Z",
+        "size_bytes": 37597160,
+        "sha256": "8a70db72685b7138121bfcda71fa1a00cb709ed9f1fdc4ecf1dd871e8e167e52",
+        "real_path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+        "version": "uv 0.13.5 (x86_64-unknown-linux-gnu)"
+      },
+      "sha256sum": {
+        "resolved_path": "/usr/bin/sha256sum",
+        "availability": "AVAILABLE",
+        "observed_utc": "2026-11-06T11:25:14.888961Z",
+        "size_bytes": 55752,
+        "sha256": "89f8c1d1ba3c76138f3771e1a91e2796ade6180b1c1e4258c04698ff32787c97",
+        "real_path": "/usr/bin/sha256sum",
+        "version": "sha256sum (GNU coreutils) 9.7"
+      },
+      "yt-dlp": {
+        "resolved_path": null,
+        "availability": "UNAVAILABLE",
+        "observed_utc": "2026-11-06T11:25:14.889283Z",
+        "size_bytes": "NOT_TESTED",
+        "sha256": "NOT_TESTED",
+        "version": "NOT_TESTED"
+      }
+    },
+    "environment": {
+      "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "python_implementation": "CPython",
+      "sys_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "machine": "x86_64",
+      "sys_prefix": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python",
+      "python_yt_dlp_module_found": false,
+      "CI": null,
+      "GITHUB_ACTIONS": null,
+      "LOCAL_VERIFY_004_ALLOW_NETWORK": null,
+      "youtube_network_capability": "NOT_TESTED",
+      "reason_no_network_probe": "Missing required executable; stopped before any live network probe."
+    },
+    "source": {
+      "repository": "QSOLKCB/HERESY-SOFA",
+      "requested_ref": "783608c3449689c0c61b7ab4be9c07ce1f1b61d8",
+      "returned_commit_sha": "783608c3449689c0c61b7ab4be9c07ce1f1b61d8",
+      "commit_message": "Merge pull request #22 from QSOLKCB/evidence/local-verify-004-phase-a\n\nLOCAL-VERIFY-004 Phase A — Preserve owner YouTube reconnaissance and gate live caption validation",
+      "acquisition": "GitHub connector fetch_file with exact ref; UTF-8 content re-encoded and independently checked against returned Git blob IDs and frozen SHA-256 ledger.",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "git_blob_sha1": "50c6fe773ef0c7acc063467107e38bd57ce6cc80",
+          "git_blob_matches_connector": true,
+          "source_url": "https://github.com/QSOLKCB/HERESY-SOFA/blob/783608c3449689c0c61b7ab4be9c07ce1f1b61d8/AGENTS.md",
+          "size_bytes": 1749,
+          "sha256": "4fd0a8847b18d9a41f68c2611bc174f405dac945c1b567982b5d9556539df2ba"
+        },
+        {
+          "path": "evidence/LOCAL-VERIFY-004/README.md",
+          "git_blob_sha1": "f49043b7323fb48ce08d827d620b70aa85784e7f",
+          "git_blob_matches_connector": true,
+          "source_url": "https://github.com/QSOLKCB/HERESY-SOFA/blob/783608c3449689c0c61b7ab4be9c07ce1f1b61d8/evidence/LOCAL-VERIFY-004/README.md",
+          "size_bytes": 3542,
+          "sha256": "29ca4cb6862d3bcee91e6c2ca4c2ee866bf6ec83583426ed7ab73cc2617dfb2a"
+        },
+        {
+          "path": "evidence/LOCAL-VERIFY-004/RUNNER/phase_a.py",
+          "git_blob_sha1": "cf1db15ce512563e384c38c501181be69825825a",
+          "git_blob_matches_connector": true,
+          "source_url": "https://github.com/QSOLKCB/HERESY-SOFA/blob/783608c3449689c0c61b7ab4be9c07ce1f1b61d8/evidence/LOCAL-VERIFY-004/RUNNER/phase_a.py",
+          "size_bytes": 6105,
+          "sha256": "ebaab1de4eceb65c53826414fadd66e460b933829ee65f15d80aadbbd8c39b69"
+        },
+        {
+          "path": "evidence/LOCAL-VERIFY-004/RUNNER/phase_b.py",
+          "git_blob_sha1": "49ab8185431a645bfb1fe49984bfe9537d051f5c",
+          "git_blob_matches_connector": true,
+          "source_url": "https://github.com/QSOLKCB/HERESY-SOFA/blob/783608c3449689c0c61b7ab4be9c07ce1f1b61d8/evidence/LOCAL-VERIFY-004/RUNNER/phase_b.py",
+          "size_bytes": 9954,
+          "sha256": "b8824c34b2fe107836c0ad0888485575e5f08995d60d385b57dbdff2d8d2253f"
+        },
+        {
+          "path": "evidence/LOCAL-VERIFY-004/SHA256SUMS.txt",
+          "git_blob_sha1": "b059216e5d4308d2ab87c787b1f09a5493a6e2ad",
+          "git_blob_matches_connector": true,
+          "source_url": "https://github.com/QSOLKCB/HERESY-SOFA/blob/783608c3449689c0c61b7ab4be9c07ce1f1b61d8/evidence/LOCAL-VERIFY-004/SHA256SUMS.txt",
+          "size_bytes": 221,
+          "sha256": "bda26ca185d8bffaea6307727342a5ec5bd0993e0886017cc58cbb068d4d5755"
+        },
+        {
+          "path": "evidence/LOCAL-VERIFY-004/INPUT/LOCAL-VERIFY-004_youtube_inventory.json",
+          "git_blob_sha1": "63882f341de9ab579d492869d2fc2bddecce54a8",
+          "git_blob_matches_connector": true,
+          "source_url": "https://github.com/QSOLKCB/HERESY-SOFA/blob/783608c3449689c0c61b7ab4be9c07ce1f1b61d8/evidence/LOCAL-VERIFY-004/INPUT/LOCAL-VERIFY-004_youtube_inventory.json",
+          "size_bytes": 27280,
+          "sha256": "70cc6b9846dad47c2092820794187e68b68ac5cba8056b97810fe209e4c53abc"
+        },
+        {
+          "path": "evidence/LOCAL-VERIFY-004/INPUT/LOCAL-VERIFY-004_selection_report.md",
+          "git_blob_sha1": "9ef81002d0ca109da8c685bdeaf75e9df3c9196d",
+          "git_blob_matches_connector": true,
+          "source_url": "https://github.com/QSOLKCB/HERESY-SOFA/blob/783608c3449689c0c61b7ab4be9c07ce1f1b61d8/evidence/LOCAL-VERIFY-004/INPUT/LOCAL-VERIFY-004_selection_report.md",
+          "size_bytes": 5860,
+          "sha256": "1785b6804b41cd2326a9e7050224337d5abf1c6aff10f29e00f4288985e0aadb"
+        }
+      ],
+      "local_git_checkout": "NOT_CREATED; exact-ref files materialized through read-only connector",
+      "all_readonly_source_bytes_unchanged_after_preflight": true
+    },
+    "completed_utc": "2026-11-06T11:25:14.957972Z"
+  },
+  "preliminary_discovery": {
+    "timestamp_utc": "NOT_TESTED",
+    "note": "Exploratory shell discovery and source retrieval preceded the instrumented preflight. Exact timestamps were not captured; no times have been reconstructed.",
+    "shell_command": "pwd\ncommand -v python3\npython3 --version\ncommand -v yt-dlp\ncommand -v uv\ncommand -v git",
+    "aggregate_exit_code": 0,
+    "per_command_exit_codes": "NOT_CAPTURED; later instrumented yt-dlp probe independently returned 1",
+    "source_retrieval": "Read-only GitHub fetch_commit and fetch_file calls at the exact approved ref; no shell-based repository network access or Git checkout."
+  },
+  "stage_status": {
+    "stage_1_offline_preflight": "FAILED",
+    "source_subset_identity": "PASSED",
+    "input_sha256_verification": "PASSED",
+    "phase_a_contract": "PASSED",
+    "shell_and_python": "PASSED",
+    "required_executable": "FAILED",
+    "stage_2_live_execution": "NOT_TESTED",
+    "stage_3_live_evidence_reconciliation": "NOT_TESTED",
+    "stage_4_artifact_generation": "COMPLETED"
+  },
+  "live_evidence": {
+    "phase_b_runner_invoked": false,
+    "phase_b_runner_exit_code": null,
+    "phase_b_runner_exit_status": "NOT_TESTED",
+    "extractor_metadata_attempt_count": 0,
+    "subtitle_attempt_count": 0,
+    "metadata_retrieval": "NOT_TESTED",
+    "metadata_exit_code": null,
+    "metadata_size_bytes": null,
+    "metadata_sha256": "NOT_TESTED",
+    "manual_language_keys": "NOT_TESTED",
+    "automatic_language_keys": "NOT_TESTED",
+    "english_track_uniqueness": "NOT_TESTED",
+    "selected_track": "NOT_TESTED",
+    "subtitle_download": "NOT_TESTED",
+    "subtitle_exit_code": null,
+    "webvtt_file_created_by_attempt": false,
+    "webvtt_file_existence_verification": "NOT_TESTED",
+    "webvtt_size_bytes": null,
+    "webvtt_sha256": "NOT_TESTED",
+    "webvtt_structure": "NOT_TESTED",
+    "cue_timestamps": "NOT_TESTED",
+    "cue_payload": "NOT_TESTED",
+    "subtitle_verdict": "NOT_TESTED",
+    "source_language_identity": "NOT_TESTED",
+    "transcript_accuracy": "NOT_TESTED",
+    "caption_completeness": "NOT_TESTED",
+    "youtube_access_refusal": "NOT_TESTED",
+    "raw_extractor_output_generated": false,
+    "raw_preservation_status": "NO_EXTRACTOR_OUTPUT_GENERATED",
+    "signed_urls_generated": false,
+    "null_semantics": "Null exit codes and sizes mean no process/output exists; they do not mean exit 0 or zero-byte retrieved content."
+  },
+  "browser_comparison": {
+    "historical_observation_timestamp_utc": "2026-11-06T10:15:22.182Z",
+    "historical_cc_label": "Subtitles/closed captions unavailable",
+    "historical_menu": "English (auto-generated)",
+    "comparison_status": "NOT_TESTED",
+    "reason": "No extractor observation; neither prior UI signal is confirmed or contradicted."
+  },
+  "runner_static_review": {
+    "expected_ytdlp_version": "2026.03.17",
+    "version_subprocess_timeout_seconds": 10,
+    "metadata_subprocess_timeout_seconds": 60,
+    "subtitle_subprocess_timeout_seconds": 60,
+    "socket_timeout_seconds": 10,
+    "retry_count": 0,
+    "scope": "one allowlisted video; one metadata stage and at most one subtitle stage",
+    "http_request_count_limit": "NOT_IMPLEMENTED_AS_A_COUNTER; two yt-dlp stages may perform multiple HTTP requests",
+    "authorization_gates": [
+      "--authorize-live",
+      "LOCAL_VERIFY_004_ALLOW_NETWORK=YES",
+      "--authorize-subtitles for captions",
+      "CI and GITHUB_ACTIONS must not be true"
+    ],
+    "gates_applied_to_live_run": "NOT_TESTED",
+    "runner_source_modified": false
+  },
+  "constraints": {
+    "installed_dependencies": false,
+    "substituted_tools": false,
+    "video_audio_downloads": 0,
+    "used_credentials_or_cookies": false,
+    "playlist_traversal": false,
+    "automatic_retries": false,
+    "bypass_attempts": false,
+    "github_mutations": false,
+    "sofa_publication": false,
+    "previous_evidence_modified": false
+  },
+  "output_artifacts": [
+    {
+      "name": "ASTRA-001-REVIEW.md",
+      "size_bytes": 7263,
+      "sha256": "7fda4f23def3bd7b53a55779b4718ff8d7bff80fbbbeac88f7f21663e5b5530b"
+    }
+  ],
+  "checksum_coverage": "ASTRA-001-SHA256SUMS.txt contains hashes of final ASTRA-001-EXECUTION.json and ASTRA-001-REVIEW.md; manifest excludes itself. JSON self-size/hash are external to avoid recursion.",
+  "generated_utc": "2026-11-06T11:26:54.146096Z"
+}
