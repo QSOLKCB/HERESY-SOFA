@@ -1,0 +1,594 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "LOCAL-VERIFY-004",
+  "project": "QSOL-IMC / HERESY-SOFA",
+  "artifact_role": "PUBLIC_BROWSER_CANDIDATE_INVENTORY",
+  "execution_status": "NOT_TESTED",
+  "channel": {
+    "name": "Trent Slade",
+    "handle": "@trentslade83",
+    "source_url": "https://www.youtube.com/@trentslade83/videos",
+    "displayed_video_count": 235,
+    "sampling": "Purposive eight-video sample from the initial Latest listing; not a census or a random sample."
+  },
+  "observation_window": {
+    "first_recorded_utc": "2026-11-06T10:14:30.453Z",
+    "last_recorded_utc": "2026-11-06T10:18:22.524Z",
+    "local_timezone": "Australia/Adelaide",
+    "note": "Channel listing was read before the first timestamp. Candidate timestamps mark completion of each candidate observation, not publication time."
+  },
+  "method": {
+    "tool": "Cloud Browser (Chrome/cdp) through cua_repl",
+    "browser_version": "NOT_TESTED",
+    "steps": [
+      "Read public channel Latest listing.",
+      "Open observed watch links and verify title/channel attribution.",
+      "Pause autoplay when a Pause control is exposed; no deliberate sustained playback.",
+      "Expand description to read exact displayed date.",
+      "Read displayed player duration.",
+      "Open Settings, then Subtitles/CC where offered, to inspect track labels without selecting tracks or translations."
+    ],
+    "transcript_export": "NOT_TESTED",
+    "yt_dlp_version": "NOT_TESTED",
+    "yt_dlp_metadata_extraction": "NOT_TESTED",
+    "extracted_metadata_hash": "NOT_TESTED",
+    "subtitle_downloading": "NOT_TESTED",
+    "video_audio_file_downloading": "NOT_PERFORMED",
+    "note": "Normal watch-page rendering may buffer media automatically; no media-file download/export was requested or performed.",
+    "channel_settings_changes": "NOT_PERFORMED",
+    "youtube_uploads": "NOT_PERFORMED",
+    "sofa_publication": "NOT_PERFORMED"
+  },
+  "interpretation": {
+    "positive": "A caption track is explicitly listed in the player menu; suitable for future positive extraction testing, not an executed pass.",
+    "negative_provisional": "No captions are offered by the inspected UI; future extraction must confirm or overturn the negative hypothesis.",
+    "NOT_TESTED": "Not independently verified in this inspection. An unavailable value is never silently inferred.",
+    "manual_caption_confirmation": "NOT_TESTED",
+    "native_multilingual_case_confirmation": "NOT_TESTED"
+  },
+  "common_evidence_limitations": [
+    "Single signed-out Cloud Browser observation; YouTube interface language English and locale marker AU.",
+    "Only rendered public channel/watch-page UI inspected. No hidden player data, YouTube API, yt-dlp, or subtitle endpoint was queried.",
+    "Publication date is the date displayed in expanded description/Video details. Publication instant and timezone are NOT_TESTED.",
+    "Duration is the player total displayed at 0:00; no media-file duration validation.",
+    "Actual spoken/sung language, caption accuracy, completeness, timing, and downloadable content are NOT_TESTED.",
+    "Auto-translate, where offered, is a UI function; it is not counted as an independently supplied caption track. Its target-language list is NOT_TESTED.",
+    "A UI-listed track does not establish yt-dlp metadata extraction or subtitle download success. UI absence does not establish permanent or global absence.",
+    "No screenshots or full raw DOM snapshots are attached; compact evidence below is transcribed from Cloud Browser accessibility/DOM observations."
+  ],
+  "candidates": [
+    {
+      "video_id": "p2zo4fuOhgM",
+      "exact_title": "VanillaJS | Optimized Engine For creating Offline Web Browser Games using Web Standards.",
+      "video_url": "https://www.youtube.com/watch?v=p2zo4fuOhgM",
+      "publication_date": {
+        "value": "2026-11-06",
+        "displayed_text": "Nov 6, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "12:06",
+        "seconds": 726,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "English",
+        "basis": "Explicit English (auto-generated) menu label",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "LISTED_IN_PLAYER_MENU",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [
+          "English (auto-generated)"
+        ],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [
+          "Off",
+          "Auto-translate"
+        ],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "automatic",
+        "origin_verification": "CONFIRMED_BY_EXPLICIT_UI_LABEL",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "positive",
+        "selected_top_five": true,
+        "selection_rank": 4,
+        "rationale": "Recent-release positive; useful for checking caption-state changes on a fresh upload.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:14:51.016Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:44:51.016000+10:30",
+      "evidence": [
+        "Watch-page heading: VanillaJS | Optimized Engine For creating Offline Web Browser Games using Web Standards.",
+        "Expanded description / Video details date: Nov 6, 2026",
+        "Player time: 0:00 / 12:06",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Settings entry: Subtitles/CC English (auto-generated)",
+        "Subtitles/CC submenu: Off; English (auto-generated); Auto-translate"
+      ],
+      "evidence_limitations": [
+        "CC button reported unavailable while the opened menu listed English (auto-generated). Preserve this UI disagreement; do not classify as negative from the CC label alone.",
+        "Automatic origin is confirmed only by the explicit public UI label, not by extractor fields or creator-side provenance."
+      ],
+      "common_limitations_apply": true
+    },
+    {
+      "video_id": "dKp50fVKUtw",
+      "exact_title": "Inside the Bureau of Software Anomalies | HERESY-SOFA",
+      "video_url": "https://www.youtube.com/watch?v=dKp50fVKUtw",
+      "publication_date": {
+        "value": "2026-11-02",
+        "displayed_text": "Nov 2, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "19:03",
+        "seconds": 1143,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "English",
+        "basis": "Explicit English (auto-generated) menu label",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "LISTED_IN_PLAYER_MENU",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [
+          "English (auto-generated)"
+        ],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [
+          "Off",
+          "Auto-translate"
+        ],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "automatic",
+        "origin_verification": "CONFIRMED_BY_EXPLICIT_UI_LABEL",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "positive",
+        "selected_top_five": true,
+        "selection_rank": 1,
+        "rationale": "Directly concerns the experiment project; automatic-English baseline with exact public identity.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:15:22.182Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:45:22.182000+10:30",
+      "evidence": [
+        "Watch-page heading: Inside the Bureau of Software Anomalies | HERESY-SOFA",
+        "Expanded description / Video details date: Nov 2, 2026",
+        "Player time: 0:00 / 19:03",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Settings entry: Subtitles/CC English (auto-generated)",
+        "Subtitles/CC submenu: Off; English (auto-generated); Auto-translate"
+      ],
+      "evidence_limitations": [
+        "CC button reported unavailable while the opened menu listed English (auto-generated). Preserve this UI disagreement; do not classify as negative from the CC label alone.",
+        "Automatic origin is confirmed only by the explicit public UI label, not by extractor fields or creator-side provenance."
+      ],
+      "common_limitations_apply": true
+    },
+    {
+      "video_id": "eki6bbbZ7AI",
+      "exact_title": "CorpoWars OST - No Shareholders Were Consulted",
+      "video_url": "https://www.youtube.com/watch?v=eki6bbbZ7AI",
+      "publication_date": {
+        "value": "2026-11-03",
+        "displayed_text": "Nov 3, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "4:40",
+        "seconds": 280,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "NOT_TESTED",
+        "basis": "No caption-language option was offered",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "NOT_OFFERED_IN_OBSERVED_UI",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "unknown",
+        "origin_verification": "NOT_TESTED",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "negative_provisional",
+        "selected_top_five": true,
+        "selection_rank": 3,
+        "rationale": "Only observed provisional negative: CC unavailable and no Subtitles/CC entry in the opened Settings menu.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:15:52.586Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:45:52.586000+10:30",
+      "evidence": [
+        "Watch-page heading: CorpoWars OST - No Shareholders Were Consulted",
+        "Expanded description / Video details date: Nov 3, 2026",
+        "Player time: 0:00 / 4:40",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Opened Settings menu entries: Sleep timer Off; Playback speed Normal; Quality Auto (Auto). No Subtitles/CC entry.",
+        "No Show transcript control appeared in the expanded-description snapshot."
+      ],
+      "evidence_limitations": [
+        "One UI observation only; absent caption options may reflect processing, client state, or availability restrictions. Actual track absence is NOT_TESTED.",
+        "No caption language or origin can be verified. Do not infer absence, language, or origin from title or genre."
+      ],
+      "common_limitations_apply": true
+    },
+    {
+      "video_id": "bGSY2mbC1XI",
+      "exact_title": "Offline AI Transcription with M4A2TXT v0.4.0 Release: CUDA Engine Fixes & Progress Bars",
+      "video_url": "https://www.youtube.com/watch?v=bGSY2mbC1XI",
+      "publication_date": {
+        "value": "2026-11-04",
+        "displayed_text": "Nov 4, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "20:10",
+        "seconds": 1210,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "English",
+        "basis": "Explicit English (auto-generated) menu label",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "LISTED_IN_PLAYER_MENU",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [
+          "English (auto-generated)"
+        ],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [
+          "Off",
+          "Auto-translate"
+        ],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "automatic",
+        "origin_verification": "CONFIRMED_BY_EXPLICIT_UI_LABEL",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "positive",
+        "selected_top_five": true,
+        "selection_rank": 5,
+        "rationale": "Longer automatic-English positive; provides duration variation and transcription-related subject matter.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:16:26.392Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:46:26.392000+10:30",
+      "evidence": [
+        "Watch-page heading: Offline AI Transcription with M4A2TXT v0.4.0 Release: CUDA Engine Fixes & Progress Bars",
+        "Expanded description / Video details date: Nov 4, 2026",
+        "Player time: 0:00 / 20:10",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Settings entry: Subtitles/CC English (auto-generated)",
+        "Subtitles/CC submenu: Off; English (auto-generated); Auto-translate"
+      ],
+      "evidence_limitations": [
+        "CC button reported unavailable while the opened menu listed English (auto-generated). Preserve this UI disagreement; do not classify as negative from the CC label alone.",
+        "Automatic origin is confirmed only by the explicit public UI label, not by extractor fields or creator-side provenance."
+      ],
+      "common_limitations_apply": true
+    },
+    {
+      "video_id": "-425IRSpUNc",
+      "exact_title": "No Prayer In The Wire",
+      "video_url": "https://www.youtube.com/watch?v=-425IRSpUNc",
+      "publication_date": {
+        "value": "2026-10-30",
+        "displayed_text": "Oct 30, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "4:11",
+        "seconds": 251,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "English",
+        "basis": "Explicit English (auto-generated) menu label",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "LISTED_IN_PLAYER_MENU",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [
+          "English (auto-generated)"
+        ],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [
+          "Off",
+          "Auto-translate"
+        ],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "automatic",
+        "origin_verification": "CONFIRMED_BY_EXPLICIT_UI_LABEL",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "positive",
+        "selected_top_five": true,
+        "selection_rank": 2,
+        "rationale": "Shortest inspected positive; public music description plus explicit automatic-English caption menu contrasts with the provisional negative.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:16:59.361Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:46:59.361000+10:30",
+      "evidence": [
+        "Watch-page heading: No Prayer In The Wire",
+        "Expanded description / Video details date: Oct 30, 2026",
+        "Player time: 0:00 / 4:11",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Settings entry: Subtitles/CC English (auto-generated)",
+        "Subtitles/CC submenu: Off; English (auto-generated); Auto-translate"
+      ],
+      "evidence_limitations": [
+        "CC button reported unavailable while the opened menu listed English (auto-generated). Preserve this UI disagreement; do not classify as negative from the CC label alone.",
+        "Automatic origin is confirmed only by the explicit public UI label, not by extractor fields or creator-side provenance."
+      ],
+      "common_limitations_apply": true
+    },
+    {
+      "video_id": "URO2P5jRGQo",
+      "exact_title": "Three Faces At The Kill Switch",
+      "video_url": "https://www.youtube.com/watch?v=URO2P5jRGQo",
+      "publication_date": {
+        "value": "2026-10-30",
+        "displayed_text": "Oct 30, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "4:29",
+        "seconds": 269,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "English",
+        "basis": "Explicit English (auto-generated) menu label",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "LISTED_IN_PLAYER_MENU",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [
+          "English (auto-generated)"
+        ],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [
+          "Off",
+          "Auto-translate"
+        ],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "automatic",
+        "origin_verification": "CONFIRMED_BY_EXPLICIT_UI_LABEL",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "positive",
+        "selected_top_five": false,
+        "selection_rank": null,
+        "rationale": "Reserve short automatic-English positive; overlaps the shorter selected No Prayer In The Wire case.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:17:21.248Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:47:21.248000+10:30",
+      "evidence": [
+        "Watch-page heading: Three Faces At The Kill Switch",
+        "Expanded description / Video details date: Oct 30, 2026",
+        "Player time: 0:00 / 4:29",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Settings entry: Subtitles/CC English (auto-generated)",
+        "Subtitles/CC submenu: Off; English (auto-generated); Auto-translate"
+      ],
+      "evidence_limitations": [
+        "CC button reported unavailable while the opened menu listed English (auto-generated). Preserve this UI disagreement; do not classify as negative from the CC label alone.",
+        "Automatic origin is confirmed only by the explicit public UI label, not by extractor fields or creator-side provenance."
+      ],
+      "common_limitations_apply": true
+    },
+    {
+      "video_id": "XzLSwYIdhns",
+      "exact_title": "AudioPod Converts Text to AudioBooks with Offline AI",
+      "video_url": "https://www.youtube.com/watch?v=XzLSwYIdhns",
+      "publication_date": {
+        "value": "2026-11-05",
+        "displayed_text": "Nov 5, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "20:46",
+        "seconds": 1246,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "English",
+        "basis": "Explicit English (auto-generated) menu label",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "LISTED_IN_PLAYER_MENU",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [
+          "English (auto-generated)"
+        ],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [
+          "Off",
+          "Auto-translate"
+        ],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "automatic",
+        "origin_verification": "CONFIRMED_BY_EXPLICIT_UI_LABEL",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "positive",
+        "selected_top_five": false,
+        "selection_rank": null,
+        "rationale": "Reserve longer automatic-English positive; overlaps the selected M4A2TXT release case.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:17:55.560Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:47:55.560000+10:30",
+      "evidence": [
+        "Watch-page heading: AudioPod Converts Text to AudioBooks with Offline AI",
+        "Expanded description / Video details date: Nov 5, 2026",
+        "Player time: 0:00 / 20:46",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Settings entry: Subtitles/CC English (auto-generated)",
+        "Subtitles/CC submenu: Off; English (auto-generated); Auto-translate"
+      ],
+      "evidence_limitations": [
+        "CC button reported unavailable while the opened menu listed English (auto-generated). Preserve this UI disagreement; do not classify as negative from the CC label alone.",
+        "Automatic origin is confirmed only by the explicit public UI label, not by extractor fields or creator-side provenance."
+      ],
+      "common_limitations_apply": true
+    },
+    {
+      "video_id": "2yxWX2rcAdw",
+      "exact_title": "Is the Sky ACTUALLY Black? [The Science of Atmospheric Gaslighting]",
+      "video_url": "https://www.youtube.com/watch?v=2yxWX2rcAdw",
+      "publication_date": {
+        "value": "2026-10-30",
+        "displayed_text": "Oct 30, 2026",
+        "basis": "Expanded public description / Video details",
+        "publication_instant": "NOT_TESTED",
+        "timezone": "NOT_TESTED"
+      },
+      "duration": {
+        "displayed": "14:22",
+        "seconds": 862,
+        "basis": "Public player total; seconds are arithmetic conversion"
+      },
+      "language": {
+        "stated_caption_language": "English",
+        "basis": "Explicit English (auto-generated) menu label",
+        "observable_page_text_language": "English",
+        "spoken_or_sung_language": "NOT_TESTED",
+        "uploader_declared_original_language": "NOT_TESTED"
+      },
+      "captions": {
+        "availability_observation": "LISTED_IN_PLAYER_MENU",
+        "actual_extractor_availability": "NOT_TESTED",
+        "visible_language_options": [
+          "English (auto-generated)"
+        ],
+        "visible_language_options_status": "OBSERVED",
+        "visible_other_menu_options": [
+          "Off",
+          "Auto-translate"
+        ],
+        "auto_translate_targets": "NOT_TESTED",
+        "origin": "automatic",
+        "origin_verification": "CONFIRMED_BY_EXPLICIT_UI_LABEL",
+        "manual_track_confirmation": "NOT_TESTED",
+        "track_codes_formats_urls": "NOT_TESTED",
+        "content_retrieval": "NOT_TESTED"
+      },
+      "suitability": {
+        "case_type": "positive",
+        "selected_top_five": false,
+        "selection_rank": null,
+        "rationale": "Reserve automatic-English positive from another experiment; visible chapter navigation offers additional page-layout variation.",
+        "execution_result": "NOT_TESTED"
+      },
+      "observation_timestamp_utc": "2026-11-06T10:18:22.524Z",
+      "observation_timestamp_adelaide": "2026-11-06T20:48:22.524000+10:30",
+      "evidence": [
+        "Watch-page heading: Is the Sky ACTUALLY Black? [The Science of Atmospheric Gaslighting]",
+        "Expanded description / Video details date: Oct 30, 2026",
+        "Player time: 0:00 / 14:22",
+        "Channel attribution: Trent Slade / @trentslade83",
+        "CC button accessibility label: Subtitles/closed captions unavailable",
+        "Settings entry: Subtitles/CC English (auto-generated)",
+        "Subtitles/CC submenu: Off; English (auto-generated); Auto-translate"
+      ],
+      "evidence_limitations": [
+        "CC button reported unavailable while the opened menu listed English (auto-generated). Preserve this UI disagreement; do not classify as negative from the CC label alone.",
+        "Automatic origin is confirmed only by the explicit public UI label, not by extractor fields or creator-side provenance."
+      ],
+      "common_limitations_apply": true
+    }
+  ],
+  "selection": {
+    "video_ids_in_rank_order": [
+      "dKp50fVKUtw",
+      "-425IRSpUNc",
+      "eki6bbbZ7AI",
+      "p2zo4fuOhgM",
+      "bGSY2mbC1XI"
+    ],
+    "positive_count": 4,
+    "provisional_negative_count": 1,
+    "coverage_gaps": [
+      "Confirmed manual captions: NOT_TESTED",
+      "Multiple native caption languages: NOT_TESTED",
+      "No-caption extractor result: NOT_TESTED",
+      "Extractor language keys, formats and URLs: NOT_TESTED",
+      "Subtitle download and content verification: NOT_TESTED"
+    ]
+  }
+}
