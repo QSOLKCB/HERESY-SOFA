@@ -52,7 +52,7 @@ class LocalVerify002BArchiveTests(MODULE.LocalVerify002BTests):
         ):
             self.assertTrue((root / relative).is_file(), relative)
         self.assertTrue((REPOSITORY / "evidence/LOCAL-VERIFY-003/ARCHIVE.json").is_file())
-        self.assertFalse((REPOSITORY / "evidence/LOCAL-VERIFY-004").exists())
+        self.assertTrue((REPOSITORY / "evidence/LOCAL-VERIFY-004/INPUT/LOCAL-VERIFY-004_youtube_inventory.json").is_file())
 
 
 if __name__ == "__main__":
